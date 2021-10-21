@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.slick-prev:before,
+.slick-next:before {
+    color: #000 !important;
+}
+
+.flex-imp {
+    display: flex !important;
+}
+
+.slick-slide>div {
+    margin: 15px;
+}
+
+@media screen and (max-width:768px) {
+    .slick-slide>div {
+        margin: 15px 15px 15px 15px;
+    }
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 30px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 30px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #FFF !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+header .lazy-load-image-background.blur.lazy-load-image-loaded {
+    display: block !important;
+}
