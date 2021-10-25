@@ -15,8 +15,8 @@ import TrustWallet from '../../assets/wallet/trust-wallet.png'
 export default function Header() {
   const [showModal, setShowModal] = useState(false)
   const [showInfo, setShowInfo] = useState(false)
-  const [showSideBar, setShowSideBar] = useState(false)
   const { connect, account, reset } = useWallet()
+  const [triger, setTriger] = useState(false)
   const connectWallet = (what) => {
     setShowModal(false)
     if (what !== '') connect(what)
@@ -26,6 +26,13 @@ export default function Header() {
   useEffect(() => {
     if (account) setShowModal(false)
   }, [account])
+
+  useEffect(() => {
+    if (!triger) {
+      setTriger(true)
+      connect("injected")
+    }
+  }, [connect, triger])
 
   const wallet = [
     {
