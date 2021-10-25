@@ -29,10 +29,8 @@ import RastaIcon from '../../assets/rasta.svg'
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false)
-  const { connect, account, reset } = useWallet()
   const showSidebar = () =>
   {
-    reset()
     setSidebar(!sidebar)
   }
   const rastaPriceUsd = usePriceRastaBusd()
