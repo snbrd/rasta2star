@@ -30,16 +30,16 @@ const ToggleSwitch = ({
   disabled,
 }: Props) => {
   function handleKeyPress(e) {
-  //   if (e.keyCode !== 32) return
-  //   alert()
-  //   e.preventDefault()
-    onChange(e.target.checked)
-    if (checked === true) {
-      history.push(`${url}/history`)
-    } else {
-      history.push(`${url}`)
-    }
-    // onChange(!checked)
+    //   if (e.keyCode !== 32) return
+    //   alert()
+    //   e.preventDefault()
+    // onChange(e.target.checked)
+    // if (checked === true) {
+    //   history.push(`${url}/history`)
+    // } else {
+    //   history.push(`${url}`)
+    // }
+    onChange(!checked)
     // checked ? history.push(`${url}/history`) : history.push(`${url}`)
   }
   const { url, isExact } = useRouteMatch()

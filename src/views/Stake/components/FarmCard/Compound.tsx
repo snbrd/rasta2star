@@ -11,7 +11,7 @@ interface FarmCardActionsProps {
   pid?: number
 }
 
-const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
+const CompoundAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   const TranslateString = useI18n()
   const [pendingTx, setPendingTx] = useState(false)
   const { onReward } = useHarvest(pid)
@@ -31,8 +31,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
           setPendingTx(false)
         }}
       >
-        <FaIcons.FaSearchDollar />
-        <span className="text-sm">HARVEST</span>
+        <span className="text-sm">COMPOUND</span>
       </button>
     </div>
     // <Flex mb="8px" justifyContent="space-between" alignItems="center">
@@ -51,4 +50,4 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   )
 }
 
-export default HarvestAction
+export default CompoundAction

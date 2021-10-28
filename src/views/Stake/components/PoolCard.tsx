@@ -38,9 +38,10 @@ interface PoolWithApy extends Pool {
 interface HarvestProps {
   pool: PoolWithApy
   removed?: boolean
+  type?: boolean
 }
 
-const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
+const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const {
     sousId,
     image,
@@ -59,6 +60,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
     userData,
     stakingLimit,
   } = pool
+
   // Pools using native BNB behave differently than pools using a token
   const isBnbPool = poolCategory === PoolCategory.BINANCE
   const TranslateString = useI18n()
@@ -85,9 +87,9 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
   const accountHasStakedBalance = stakedBalance?.toNumber() > 0
   const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isBnbPool
   const isCardActive = isFinished && accountHasStakedBalance
+  const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
 
   const [isApproval, SETisApproval] = useState(needsApproval)
-
   const convertedLimit = new BigNumber(stakingLimit).multipliedBy(new BigNumber(10).pow(tokenDecimals))
   const [onPresentDeposit] = useModal(
     <DepositModal
@@ -120,17 +122,17 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
 
   return (
     <>
-      <div className="shadow-md p-5 pt-8 pb-8 rounded-lg">
-        <div className="row flex flex-col md:flex-row gap-2 mb-12">
+      <div className="shadow-2xl p-5 pt-8 pb-8 rounded-lg">
+        <div className="row flex flex-col md:flex-row md:gap-12 mb-12">
           <CardHeading
             lpLabel={tokenName}
-            multiplier="30 X"
+            multiplier="35 X"
             isCommunityFarm={false}
-            farmImage="dot"
+            farmImage="binance"
             tokenSymbol="farm.tokenSymbol"
           />
           {!removed && (
-            <div className="apr bg-gray-300 flex flex-col rounded-lg justify-center text-center">
+            <div className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-left py-4 px-6">
               <span className="apr-value text-2xl w-full text-gray-700 ">
                 {isFinished || isOldSyrup || !apy || apy?.isNaN() || !apy?.isFinite() ? (
                   '-'
@@ -141,7 +143,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
                   </span>
                 )}
               </span>
-              <span className="apr-label text-red-rasta text-md">APR</span>
+              <span className="apr-label text-red-rasta text-sm">APR</span>
             </div>
           )}
         </div>
@@ -157,14 +159,14 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
         {!account && <Wallet />}
         {account && isApproval && (
           <span
-            className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
-            onClick={(e) => SETisApproval(!isApproval)}
+            className={(type === false ? "disabled " : "") + buttonClass}
+            onClick={(e) => type === false ? null : SETisApproval(!isApproval)}
           >
             <FaIcons.FaCheck />
             <span>APPROVE RASTA</span>
           </span>
         )}
-        { account && !isApproval && (
+        {account && !isApproval && (
           // <StakeAction
           //   stakedBalance={stakedBalance}
           //   tokenBalance={tokenBalance}

@@ -33,7 +33,6 @@ const Farm: React.FC = () => {
   const block = useBlock()
   const [stackedOnly, setStackedOnly] = useState(false)
   const [Active, setActive] = useState(true)
-
   const bnbPriceUSD = usePriceBnbBusd()
   const bnbPriceDFL = useGetDFLPriceVsBnb()
 
@@ -71,10 +70,10 @@ const Farm: React.FC = () => {
     let rewardTokenPriceInBNB = new BigNumber(0)
     if (rewardTokenFarm) {
       rewardTokenPriceInBNB = priceToBnb(
-      pool.tokenName,
-      rewardTokenFarm?.tokenPriceVsQuote,
-      rewardTokenFarm?.quoteTokenSymbol,
-    )
+        pool.tokenName,
+        rewardTokenFarm?.tokenPriceVsQuote,
+        rewardTokenFarm?.quoteTokenSymbol,
+      )
     } else if (pool.tokenName === 'DFL') {
       rewardTokenPriceInBNB = new BigNumber(bnbPriceDFL)
     }
@@ -98,8 +97,7 @@ const Farm: React.FC = () => {
   const stackedOnlyPools = openPools.filter(
     (pool) => pool.userData && new BigNumber(pool.userData.stakedBalance).isGreaterThan(0),
   )
-  const history = useHistory()
-  const { url, isExact } = useRouteMatch()
+
   return (
     <div>
       <div
@@ -130,26 +128,32 @@ const Farm: React.FC = () => {
                   <Route exact path={`${path}`}>
                     {farmsList(inactiveFarms, true)}
                   </Route> */}
-                <Route exact path={`${path}`}>
-                  <>
-                    {stackedOnly
-                      ? orderBy(stackedOnlyPools, ['sortOrder']).map((pool) => (
+                {/* <Route exact path={`${path}`}> */}
+                {
+                  Active ?
+                    <>
+                      {stackedOnly
+                        ? orderBy(stackedOnlyPools, ['sortOrder']).map((pool) => (
                           <PoolCard key={pool.sousId} pool={pool} />
                         ))
-                      : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
-                  </>
-                </Route>
-                <Route path={`${path}/history`}>
-                  {orderBy(finishedPools, ['sortOrder']).map((pool) => (
-                    <PoolCard key={pool.sousId} pool={pool} />
-                  ))}
-                </Route>
+                        : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
+                    </>
+                    :
+                    <>
+                      {orderBy(finishedPools, ['sortOrder']).map((pool) => (
+                        <PoolCard key={pool.sousId} type={false} pool={pool} />
+                      ))}
+                    </>
+                }
+                {/* </Route> */}
+                {/* <Route path={`${path}/history`}>
+              </Route> */}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
     // <Page>
     //   <Hero>
     //     <div>

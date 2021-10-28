@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link, BrowserRouter as Router } from 'react-router-dom'
+import { useWallet } from '@binance-chain/bsc-use-wallet'
 
 import BgImage from '../../../assets/favCreator-bg.jpg'
 
 export default function FavoriteCreator() {
+  const { connect, account, reset } = useWallet()
+
   return (
     <div>
       <div
@@ -16,7 +19,7 @@ export default function FavoriteCreator() {
         }}
       >
         <div className="flex w-full md:max-w-screen-xl md:mx-auto items-center md:flex-row text-center">
-          <div className="leftSection w-full ">
+          <div className="leftSection w-full">
             <h2 className="text-2xl md:text-5xl font-bold leading-tight">
               Interact with Your Favorite Creators.
               <br />
@@ -37,13 +40,105 @@ export default function FavoriteCreator() {
                   className="bg-gradient-to-r font-bold text-white mx-auto from-yellow-rasta to-green-rasta_cta text-center py-3 px-8 rounded-xl"
                 >
                   <button type="button" className="uppercase">
-                    LaunchPad Coming Soon
+                    GO TO LAUNCH PAD
                   </button>
                 </a>
               </Router>
             </div>
           </div>
         </div>
+      </div>
+      <div className="py-8  w-full bg-white text-black">
+        <div className="h-390 w-full hidden md:flex md:block md:max-w-screen-xl md:mx-auto items-center md:flex-row space-x-8 my-16">
+          {
+            account ?
+              <div className="h-full shadow-2xl p-8 rounded-lg w-1/3">
+                <div className="row flex flex-col gap-10">
+                  <h3 className="text-2xl text-center font-bold">Farms & Stacking</h3>
+                  <div className="row flex flex-col">
+                    <span >RASTA to Harvest:</span>
+                    <span className="text-2xl font-bold">55.193</span>
+                    <span className="text-md font-bold text-red-rasta mb-2">-$11.31</span>
+                    <span>RASTA in Wallet:</span>
+                    <span className="text-2xl font-bold">34.6762</span>
+                    <span className="text-md font-bold text-red-rasta">-$7.10</span>
+                    <Router>
+                      <a
+                        href="http://localhost:3000/#"
+                        rel="noreferrer"
+                        className="bg-gradient-to-r font-bold text-white mt-8 from-yellow-rasta to-green-rasta_cta text-center py-2 px-8 rounded-md"
+                      >
+                        <button type="button" className="uppercase text-sm">
+                          HARVEST ALL
+                        </button>
+                      </a>
+                    </Router>
+                  </div>
+                </div>
+              </div>
+              :
+              <div className="h-full w-1/3" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
+                <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
+                  <span className="text-2xl">Farms & Stacking</span>
+                  <span className="text-sm">Please Connect Wallet to Unlock</span>
+                </div>
+              </div>
+          }
+          {
+            account ?
+              <div className="h-full shadow-2xl p-8 rounded-lg w-1/3">
+                <div className="row flex flex-col gap-5">
+                  <span className="text-2xl text-center font-bold">Rasta Stats</span>
+                  <div className="row flex flex-col py-12 gap-3">
+                    <div className="items-center justify-between flex">
+                      <span className="text-sm">Total RASTA Supply</span>
+                      <span className="font-bold text-sm">1,599,953</span>
+                    </div>
+                    <div className="items-center justify-between flex">
+                      <span className="text-sm">Circulating RASTA Supply</span>
+                      <span className="font-bold text-sm">1,517,782</span>
+                    </div>
+                    <div className="items-center justify-between flex">
+                      <span className="text-sm">Total RASTA Burned</span>
+                      <span className="font-bold text-sm">222,420</span>
+                    </div>
+                    <div className="items-center justify-between flex">
+                      <span className="text-sm">New RASTA/block</span>
+                      <span className="font-bold text-sm">0.2</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              :
+              <div className="h-full w-1/3" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
+                <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
+                  <span className="text-2xl">RASTA Stats</span>
+                  <span className="text-sm">Please Connect Wallet to Unlock</span>
+                </div>
+              </div>
+          }
+          {
+            account ?
+              <div className="h-full shadow-2xl p-8 rounded-lg w-1/3">
+                <div className="row flex flex-col gap-5">
+                  <span className="text-2xl text-center font-bold">Total Value Locked (TVL)</span>
+                  <div className="row flex flex-col py-12 gap-3">
+                    <div className="flex-col flex gap-2">
+                      <span className="text-5xl font-bold text-center">$306,271.06</span>
+                      <span className="text-sm text-gray text-center">Across all LPs and Rasta Pools</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              :
+              <div className="h-full w-1/3" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
+                <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
+                  <span className="text-2xl">Total Value Locked (TVL)</span>
+                  <span className="text-sm">Please Connect Wallet to Unlock</span>
+                </div>
+              </div>
+          }
+          </div>
       </div>
       <div className="bg-gradient-to-r text-white from-red-rasta to-yellow-rasta py-16">
         <div className="flex flex-col mx-auto md:flex-row w-full px-4 space-y-6 md:space-y-0 md:px-0 md:w-10/12 mx-autoitems-center">

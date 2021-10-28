@@ -21,6 +21,18 @@
     }
 }
 
+.mw-200{
+    min-width: 200px;
+}
+
+.h-390{
+    height: 390px;
+}
+
+.disabled{
+    cursor: not-allowed;
+}
+
 .slick-prev:before,
 .slick-next:before {
     font-size: 30px;

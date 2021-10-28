@@ -38,7 +38,7 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, 
       className="bg-white z-50 px-12 py-12 flex flex-col justify-between rounded-lg"
       style={{ width: '443px', height: '415px' }}
     >
-      <div className="text-2xl font-bold text-center pb-6">STAKE LP tokens</div>
+      <div className="text-2xl font-bold text-center pb-6">Deposit RASTA</div>
       {/* <div className="flex flex-row justify-between">
         <span className="text-lg">Stake</span>
         <span className="text-sm">M-RASTA</span>

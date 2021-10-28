@@ -10,7 +10,7 @@ type Props = {
   addLPurl?: string
 }
 export default function FooterCardFarms({
-  farmStake = 'lpLabel',
+  farmStake = 'GET M-RASTA',
   farmValue,
   farmBscLink = `https://bscscan.com/address/`,
   addLPurl = 'addLiquidityUrl',
@@ -21,7 +21,7 @@ export default function FooterCardFarms({
       {show && (
         <div>
           <div className="flex justify-between w-full mt-8">
-            <span className="text-orange-rasta">Get:</span>
+            <span className="text-orange-rasta">Stake:Total Liquidity</span>
             <div className="flex flex-row space-x-4">
               <span className="text-orange-rasta">{farmStake}</span>
               <a href={addLPurl} target="_blank" rel="noreferrer">
@@ -30,15 +30,17 @@ export default function FooterCardFarms({
             </div>
           </div>
           <div className="flex justify-between w-full mt-3">
-            <span className="text-orange-rasta">Total:</span>
+            <span className="text-orange-rasta"> </span>
             <div className="flex flex-col md:flex-row space-x-4">
-              <span className="text-orange-rasta">{parseFloat(farmValue).toFixed(3)}</span>
+              <span className="text-orange-rasta">${parseFloat(farmValue).toFixed(3)}</span>
             </div>
           </div>
         </div>
       )}
       <div className="flex justify-between w-full items-center mt-5">
-        <div />
+        <div>
+          <span className="text-red-rasta">View on BscScan</span>
+        </div>
         <div
           className="flex flex-row space-x-4 items-center text-red-rasta cursor-pointer"
           onClick={() => setShow(!show)}

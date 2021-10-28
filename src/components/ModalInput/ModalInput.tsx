@@ -72,9 +72,9 @@ const ModalInput: React.FC<ModalInputProps> = ({
 
   return (
     <div className="flex flex-col">
-      <div className="flex justify-between">
+      <div className="flex justify-between flex-row items-center">
         <span className="text-xl">{inputTitle}</span>
-        <span className="text-lg">M-RASTA</span>
+        <span className="text-sm font-bold">M-RASTA</span>
       </div>
       <div className="flex justify-between my-2">
         <input
@@ -84,10 +84,10 @@ const ModalInput: React.FC<ModalInputProps> = ({
           placeholder="0"
           value={value}
         />
-        {/* <button type="button" className="bg-red-300 rounded-lg mx-1 px-3 py-1 text-red-800" onClick={onSelectMax}>
+        {/* <button type="button" className="bg-red-300 rounded-lg mx-1 px-3 py-1 text-red-800 font-bold" onClick={onSelectMax}>
           {TranslateString(452, '- MIN')}
         </button> */}
-        <button type="button" className="bg-green-300 rounded-lg mx-1 px-3 py-1 text-green-800" onClick={onSelectMax}>
+        <button type="button" className="bg-green-300 rounded-lg mx-1 px-3 py-1 text-green-800 font-bold" onClick={onSelectMax}>
           {TranslateString(452, '+ MAX')}
         </button>
       </div>
