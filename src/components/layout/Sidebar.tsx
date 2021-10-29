@@ -44,13 +44,13 @@ export default function Sidebar() {
       parent: false,
       child: [],
     },
-    {
-      label: 'About',
-      path: '/about',
-      icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
-    },
+    // {
+    //   label: 'About',
+    //   path: '/about',
+    //   icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
+    //   parent: false,
+    //   child: [],
+    // },
     {
       label: 'Trade',
       path: 'https://exchange.rasta.finance',
@@ -170,13 +170,13 @@ export default function Sidebar() {
         },
       ],
     },
-    {
-      label: 'Contact',
-      path: '/contact',
-      icon: <GoMail className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
-    },
+    // {
+    //   label: 'Contact',
+    //   path: '/contact',
+    //   icon: <GoMail className="inline-block" style={{ width: '32px', height: '32px' }} />,
+    //   parent: false,
+    //   child: [],
+    // },
   ]
   const socialMedia = [
     { name: 'Telegram', icon: <FaTelegramPlane />, link: 'https://www.t.me/rastafinance' },
