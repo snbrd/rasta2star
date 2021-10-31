@@ -83,7 +83,7 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-          path: 'https://app.rasta.finance/farms',
+          path: '/farms',
           label: 'Mr. Rasta',
         },
         {
@@ -99,7 +99,7 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-          path: 'https://app.rasta.finance/pools',
+          path: '/pools',
           label: 'Mr. Rasta',
         },
         {
