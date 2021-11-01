@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Button, IconButton, useModal, AddIcon, Image, Text, Flex } from 'rasta-uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
@@ -93,6 +93,11 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
 
   const [isApproval, SETisApproval] = useState(needsApproval)
+
+  useEffect(() => {
+    SETisApproval(needsApproval)
+  }, [needsApproval])
+
   const convertedLimit = new BigNumber(stakingLimit).multipliedBy(new BigNumber(10).pow(tokenDecimals))
   const [onPresentDeposit] = useModal(
     <DepositModal
@@ -102,9 +107,9 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
     />,
   )
 
-  const [onPresentCompound] = useModal(
-    <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingTokenName} />,
-  )
+  // const [onPresentCompound] = useModal(
+  //   <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingTokenName} />,
+  // )
 
   const [onPresentWithdraw] = useModal(
     <WithdrawModal max={stakedBalance} onConfirm={onUnstake} tokenName={stakingTokenName} />,
@@ -183,7 +188,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
             <button
               type="button"
               disabled={requestedApproval}
-              onClick={handleApprove}
+              onClick={onPresentWithdraw}
               className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
             >
               <span>{TranslateString(758, 'Unstake RASTA')}</span>

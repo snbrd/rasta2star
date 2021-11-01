@@ -1,7 +1,6 @@
 import BigNumber from 'bignumber.js'
 import React, { useCallback, useMemo, useState } from 'react'
-import { Button, Modal, LinkExternal } from 'rasta-uikit'
-import ModalActions from 'components/ModalActions'
+import { LinkExternal } from 'rasta-uikit'
 import ModalInput from 'components/ModalInput'
 import useI18n from 'hooks/useI18n'
 import { getFullDisplayBalance } from 'utils/formatBalance'
@@ -38,11 +37,7 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, 
       className="bg-white z-50 px-12 py-12 flex flex-col justify-between rounded-lg"
       style={{ width: '443px', height: '415px' }}
     >
-      <div className="text-2xl font-bold text-center pb-6">Deposit RASTA</div>
-      {/* <div className="flex flex-row justify-between">
-        <span className="text-lg">Stake</span>
-        <span className="text-sm">M-RASTA</span>
-      </div> */}
+      <div className="text-2xl font-bold text-center pb-6">Deposit {tokenName}</div>
       <ModalInput
         value={val}
         onSelectMax={handleSelectMax}
