@@ -17,19 +17,19 @@ interface FarmCardActionsProps {
 }
 
 const CompoundAction: React.FC<FarmCardActionsProps> = ({ earnings, type, pool }) => {
-  // const {
-  //   sousId,
-  //   stakingTokenName,
-  //   poolCategory,
-  // } = pool
+  const {
+    sousId,
+    stakingTokenName,
+    poolCategory,
+  } = pool
 
-  // const isBnbPool = poolCategory === PoolCategory.BINANCE
+  const isBnbPool = poolCategory === PoolCategory.BINANCE
 
-  // const { onStake } = useSousStake(sousId, isBnbPool)
+  const { onStake } = useSousStake(sousId, isBnbPool)
 
-  // const [onPresentCompound] = useModal(
-  //   <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingTokenName} />,
-  // )
+  const [onPresentCompound] = useModal(
+    <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingTokenName} />,
+  )
 
   const buttonClass = "px-4 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer"
   return (
@@ -39,7 +39,7 @@ const CompoundAction: React.FC<FarmCardActionsProps> = ({ earnings, type, pool }
         className={(type === false ? "disabled " : "") + buttonClass}
         onClick={async () => {
           if (type !== false) {
-            // onPresentCompound()
+            onPresentCompound()
           }
         }}
       >
