@@ -1,9 +1,13 @@
 import React from 'react'
-import * as FaIcons from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Pool } from 'state/types'
+import BigNumber from 'bignumber.js'
 import HarvestAction from '../FarmCard/HarvestAction'
 
 import CompoundAction from '../FarmCard/Compound'
+
+interface PoolWithApy extends Pool {
+  apy: BigNumber
+}
 
 type Props = {
   farmEarned?: any
@@ -11,9 +15,11 @@ type Props = {
   pid?: any
   earning?: any
   lpLabel?: any
+  type?: boolean
+  pool: PoolWithApy
 }
 
-export default function FarmHarvest({ farmEarned, depositFee, pid = 'pid', earning = 'earnings', lpLabel }: Props) {
+export default function FarmHarvest({ farmEarned, type, depositFee, pid = 'pid', earning = 'earnings', lpLabel, pool }: Props) {
   return (
     <div>
       <div className="row flex flex-col md:flex-row xl:flex-row w-full border-b-2 border-black pb-12 mb-6">
@@ -21,8 +27,8 @@ export default function FarmHarvest({ farmEarned, depositFee, pid = 'pid', earni
           <h2 className="text-3xl font-bold text-left">{farmEarned === 0 ? "0.0000" : farmEarned}</h2>
           <span className="text-red-rasta text-left text-sm">{lpLabel} EARNED</span>
           <div className="flex flex-row gap-3">
-            <HarvestAction pid={pid} earnings={earning} />
-            <CompoundAction pid={pid} earnings={earning} />
+            <HarvestAction pid={pid} earnings={earning} type={type} />
+            <CompoundAction pid={pid} earnings={earning} type={type} pool={pool} />
           </div>
         </div>
         <div className="apr py-4 px-6 bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center">

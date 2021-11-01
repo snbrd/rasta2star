@@ -1,52 +1,51 @@
-import React, { useState } from 'react'
+import React from 'react'
 import BigNumber from 'bignumber.js'
-import { Button, Flex, Heading } from 'rasta-uikit'
-import useI18n from 'hooks/useI18n'
-import * as FaIcons from 'react-icons/fa'
-import { useHarvest } from 'hooks/useHarvest'
-import { getBalanceNumber } from 'utils/formatBalance'
+import { Pool } from 'state/types'
+import { useModal } from 'rasta-uikit'
+import { useSousStake } from 'hooks/useStake'
+import { PoolCategory } from 'config/constants/types'
+import CompoundModal from '../CompoundModal'
 
+interface PoolWithApy extends Pool {
+  apy: BigNumber
+}
 interface FarmCardActionsProps {
   earnings?: BigNumber
   pid?: number
+  type?: boolean
+  pool: PoolWithApy
 }
 
-const CompoundAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
-  const TranslateString = useI18n()
-  const [pendingTx, setPendingTx] = useState(false)
-  const { onReward } = useHarvest(pid)
+const CompoundAction: React.FC<FarmCardActionsProps> = ({ earnings, type, pool }) => {
+  // const {
+  //   sousId,
+  //   stakingTokenName,
+  //   poolCategory,
+  // } = pool
 
-  const rawEarningsBalance = getBalanceNumber(earnings)
-  const displayBalance = rawEarningsBalance.toLocaleString()
+  // const isBnbPool = poolCategory === PoolCategory.BINANCE
 
+  // const { onStake } = useSousStake(sousId, isBnbPool)
+
+  // const [onPresentCompound] = useModal(
+  //   <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingTokenName} />,
+  // )
+
+  const buttonClass = "px-4 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer"
   return (
     <div className="harvest flex mt-4 bg-gradient-to-l text-white w-full from-green-rasta to-yellow-rasta  rounded-md">
       <button
         type="button"
-        disabled={rawEarningsBalance === 0 || pendingTx}
-        className="px-4 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer"
+        className={(type === false ? "disabled " : "") + buttonClass}
         onClick={async () => {
-          setPendingTx(true)
-          await onReward()
-          setPendingTx(false)
+          if (type !== false) {
+            // onPresentCompound()
+          }
         }}
       >
         <span className="text-sm">COMPOUND</span>
       </button>
     </div>
-    // <Flex mb="8px" justifyContent="space-between" alignItems="center">
-    //   <Heading color={rawEarningsBalance === 0 ? '#666171' : 'text'}>{displayBalance}</Heading>
-    //   <Button
-    //     disabled={rawEarningsBalance === 0 || pendingTx}
-    //     onClick={async () => {
-    //       setPendingTx(true)
-    //       await onReward()
-    //       setPendingTx(false)
-    //     }}
-    //   >
-    //     {TranslateString(562, 'Harvest')}
-    //   </Button>
-    // </Flex>
   )
 }
 

@@ -21,6 +21,10 @@
     }
 }
 
+.w-26{
+    width: 7rem;
+}
+
 .mw-200{
     min-width: 200px;
 }

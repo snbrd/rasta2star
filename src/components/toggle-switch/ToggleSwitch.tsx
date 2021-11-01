@@ -45,7 +45,7 @@ const ToggleSwitch = ({
   const { url, isExact } = useRouteMatch()
   const history = useHistory()
   return (
-    <div className={`toggle-switch w-24 ${small ? ' small-switch' : ''}`}>
+    <div className={`toggle-switch w-26 ${small ? ' small-switch' : ''}`}>
       <input
         type="checkbox"
         name={name}
@@ -73,6 +73,7 @@ const ToggleSwitch = ({
           <span
             className={disabled ? 'toggle-switch-switch toggle-switch-disabled' : 'toggle-switch-switch'}
             tabIndex={-1}
+            style={checked ? { right: 0 } : { left: 0 }}
           />
         </label>
       ) : null}

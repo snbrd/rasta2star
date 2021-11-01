@@ -65,6 +65,7 @@ const ToggleSwitchForStack = ({ id, name, checked, onChange, optionLabels = ['',
           <span
             className={disabled ? 'toggle-switch-switch toggle-switch-disabled' : 'toggle-switch-switch'}
             tabIndex={-1}
+            style={checked ? { right: 0 } : { left: 0 }}
           />
         </label>
       ) : null}

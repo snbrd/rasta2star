@@ -139,7 +139,7 @@ const Farms: React.FC = () => {
             <Wrapper>
               <ToggleSwitchForStack id="ToggleSwitchForStack" checked={stackedOnly} onChange={setStackedOnly} />
               Stacked Only &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
+              <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
             </Wrapper>
           </div>
           <div className="card items-center text-center w-full mt-16">

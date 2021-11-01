@@ -16,6 +16,8 @@ import { useSousHarvest, useSousDepositFee } from 'hooks/useHarvest'
 import Balance from 'components/Balance'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 import { Pool } from 'state/types'
+import { useFarms } from 'state/hooks'
+
 import * as FaIcons from 'react-icons/fa'
 import DepositModal from './DepositModal'
 import WithdrawModal from './WithdrawModal'
@@ -72,7 +74,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const { onUnstake } = useSousUnstake(sousId)
   const { onReward } = useSousHarvest(sousId, isBnbPool)
   const depositFee = useSousDepositFee(sousId)
-
+  const farmList = useFarms()
+  const farms = farmList.filter((farm) => farm.lpSymbol === tokenName)
   const [requestedApproval, setRequestedApproval] = useState(false)
   const [pendingTx, setPendingTx] = useState(false)
 
@@ -152,8 +155,10 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
             lpLabel={tokenName}
             farmEarned={getBalanceNumber(stakedBalance)}
             depositFee={depositFee}
-            pid="pid"
-            earning="earnings"
+            pid={farms.length ? farms[0].pid : 0}
+            type={type}
+            pool={pool}
+            earning={earnings}
           />
         </div>
         {!account && <Wallet />}
