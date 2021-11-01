@@ -1,27 +1,15 @@
-import React, { useEffect, useMemo } from 'react'
-import BigNumber from 'bignumber.js'
-import { toNumber } from 'lodash'
-import { usePools } from 'state/hooks'
+import React from 'react'
 import { Link, BrowserRouter as Router } from 'react-router-dom'
-import { getFullDisplayBalance } from 'utils/formatBalance'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 
 import BgImage from '../../../assets/favCreator-bg.jpg'
 import StakingCard from "./FarmStakingCard"
 import CakeStats from "./CakeStats"
+import TotalValueLockedCard from "./TotalValueLockedCard"
 
 export default function FavoriteCreator() {
   const { connect, account, reset } = useWallet()
-  const pools = usePools(account)
-  const RastaPool = pools.filter(
-    (pool) => pool.userData && pool.tokenName === "RASTA"
-  )
-  const TokenBalance = new BigNumber(RastaPool.length ? RastaPool[0].userData?.stakingTokenBalance || 0 : 0)
 
-  const StakingTotalBalance = toNumber(getFullDisplayBalance(TokenBalance)).toFixed(4);
-  // const fullBalance = useMemo(() => {
-  // return getFullDisplayBalance(TokenBalance)
-  // }, [TokenBalance])
 
 
   return (
@@ -91,17 +79,7 @@ export default function FavoriteCreator() {
           }
           {
             account ?
-              <div className="h-full shadow-2xl p-8 rounded-lg w-1/3">
-                <div className="row flex flex-col gap-5">
-                  <span className="text-2xl text-center font-bold">Total Value Locked (TVL)</span>
-                  <div className="row flex flex-col py-12 gap-3">
-                    <div className="flex-col flex gap-2">
-                      <span className="text-5xl font-bold text-center">$306,271.06</span>
-                      <span className="text-sm text-gray text-center">Across all LPs and Rasta Pools</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <TotalValueLockedCard />
               :
               <div className="h-full w-1/3" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
                 <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
