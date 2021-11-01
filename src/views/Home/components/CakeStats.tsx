@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { useCountUp } from 'react-countup'
 import { Card, CardBody, Heading, Text } from 'rasta-uikit'
 import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
@@ -28,35 +29,70 @@ const CakeStats = () => {
   const circulatingSupply =
     cakeSupply - getBalanceNumber(buoyancyBalance) - getBalanceNumber(trustBalance) - getBalanceNumber(operatingBalance)
 
+  const cakeSupplyCount = useCountUp({
+    start: 0,
+    end: cakeSupply,
+    duration: 1,
+    separator: ',',
+  })
+
+  const updateCakeSupply = useRef(cakeSupplyCount.update)
+
+  useEffect(() => {
+    updateCakeSupply.current(cakeSupply)
+  }, [cakeSupply, updateCakeSupply])
+
+  const circulatingSupplyCount = useCountUp({
+    start: 0,
+    end: circulatingSupply,
+    duration: 1,
+    separator: ',',
+  })
+
+  const updatecirculatingSupply = useRef(circulatingSupplyCount.update)
+
+  useEffect(() => {
+    updatecirculatingSupply.current(circulatingSupply)
+  }, [circulatingSupply, updatecirculatingSupply])
+
+  const burnedBalanceCount = useCountUp({
+    start: 0,
+    end: getBalanceNumber(burnedBalance),
+    duration: 1,
+    separator: ',',
+  })
+
+  const updateburnedBalance = useRef(burnedBalanceCount.update)
+
+  useEffect(() => {
+    updateburnedBalance.current(getBalanceNumber(burnedBalance))
+  }, [burnedBalance, updateburnedBalance])
+
   return (
-    <StyledCakeStats>
-      <CardBody>
-        <Heading size="xl" mb="24px">
-          {TranslateString(534, 'Rasta Stats')}
-        </Heading>
-        <Row>
-          <Text fontSize="14px">{TranslateString(536, 'Total RASTA Supply')}</Text>
-          {cakeSupply ? <CardValue fontSize="14px" value={cakeSupply} decimals={0} /> : 'Locked'}
-        </Row>
-        <Row>
-          <Text fontSize="14px">{TranslateString(536, 'Circulating RASTA Supply')}</Text>
-          {circulatingSupply ? <CardValue fontSize="14px" value={circulatingSupply} decimals={0} /> : 'Locked'}
-        </Row>
-        <Row>
-          <Text fontSize="14px">{TranslateString(538, 'Total RASTA Burned')}</Text>
-          {burnedBalance && burnedBalance.isGreaterThan(0) ? (
-            <CardValue fontSize="14px" value={getBalanceNumber(burnedBalance)} decimals={0} />
-          ) : (
-            'Locked'
-          )}
-        </Row>
-        <Row>
-          <Text fontSize="14px">{TranslateString(540, 'New RASTA/block')}</Text>
-          <CardValue fontSize="14px" value={0.2} isStats />
-        </Row>
-      </CardBody>
-    </StyledCakeStats>
+    <div className="h-full shadow-2xl p-8 rounded-lg w-1/3">
+      <div className="row flex flex-col gap-5">
+        <span className="text-2xl text-center font-bold">{TranslateString(534, 'Rasta Stats')}</span>
+        <div className="row flex flex-col py-12 gap-3">
+          <div className="items-center justify-between flex">
+            <span className="text-sm">{TranslateString(536, 'Total RASTA Supply')}</span>
+            <span className="font-bold text-sm">{cakeSupplyCount.countUp}</span>
+          </div>
+          <div className="items-center justify-between flex">
+            <span className="text-sm">{TranslateString(536, 'Circulating RASTA Supply')}</span>
+            <span className="font-bold text-sm">{circulatingSupplyCount.countUp}</span>
+          </div>
+          <div className="items-center justify-between flex">
+            <span className="text-sm">Total RASTA Burned</span>
+            <span className="font-bold text-sm">{burnedBalanceCount.countUp}</span>
+          </div>
+          <div className="items-center justify-between flex">
+            <span className="text-sm">New RASTA/block</span>
+            <span className="font-bold text-sm">0.2</span>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
-
+    
 export default CakeStats

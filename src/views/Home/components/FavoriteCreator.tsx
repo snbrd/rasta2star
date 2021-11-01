@@ -8,6 +8,7 @@ import { useWallet } from '@binance-chain/bsc-use-wallet'
 
 import BgImage from '../../../assets/favCreator-bg.jpg'
 import StakingCard from "./FarmStakingCard"
+import CakeStats from "./CakeStats"
 
 export default function FavoriteCreator() {
   const { connect, account, reset } = useWallet()
@@ -79,29 +80,7 @@ export default function FavoriteCreator() {
           }
           {
             account ?
-              <div className="h-full shadow-2xl p-8 rounded-lg w-1/3">
-                <div className="row flex flex-col gap-5">
-                  <span className="text-2xl text-center font-bold">Rasta Stats</span>
-                  <div className="row flex flex-col py-12 gap-3">
-                    <div className="items-center justify-between flex">
-                      <span className="text-sm">Total RASTA Supply</span>
-                      <span className="font-bold text-sm">1,599,953</span>
-                    </div>
-                    <div className="items-center justify-between flex">
-                      <span className="text-sm">Circulating RASTA Supply</span>
-                      <span className="font-bold text-sm">1,517,782</span>
-                    </div>
-                    <div className="items-center justify-between flex">
-                      <span className="text-sm">Total RASTA Burned</span>
-                      <span className="font-bold text-sm">222,420</span>
-                    </div>
-                    <div className="items-center justify-between flex">
-                      <span className="text-sm">New RASTA/block</span>
-                      <span className="font-bold text-sm">0.2</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <CakeStats />
               :
               <div className="h-full w-1/3" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
                 <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >

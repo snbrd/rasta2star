@@ -7,27 +7,15 @@ import { getCakeAddress } from 'utils/addressHelpers'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { usePriceRastaBusd } from 'state/hooks'
 import { BigNumber } from 'bignumber.js'
-import CardValue from './CardValue'
 import CardBusdValue from './CardBusdValue'
 
 const CakeWalletBalance = () => {
-  const TranslateString = useI18n()
   const cakeBalance = useTokenBalance(getCakeAddress())
   const busdBalance = new BigNumber(getBalanceNumber(cakeBalance)).multipliedBy(usePriceRastaBusd()).toNumber()
-  const { account } = useWallet()
-
-  if (!account) {
-    return (
-      <Text color="textDisabled" style={{ lineHeight: '54px' }}>
-        {TranslateString(298, 'Locked')}
-      </Text>
-    )
-  }
 
   return (
     <>
       <span className="text-2xl font-bold">{getBalanceNumber(cakeBalance).toFixed(4)}</span>
-      {/* <CardValue value={getBalanceNumber(cakeBalance)} decimals={4} fontSize="24px" lineHeight="36px" /> */}
       <CardBusdValue value={busdBalance} />
     </>
   )
