@@ -99,6 +99,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   }, [needsApproval])
 
   const convertedLimit = new BigNumber(stakingLimit).multipliedBy(new BigNumber(10).pow(tokenDecimals))
+  console.log(convertedLimit, stakingTokenBalance)
   const [onPresentDeposit] = useModal(
     <DepositModal
       max={stakingLimit && stakingTokenBalance.isGreaterThan(convertedLimit) ? convertedLimit : stakingTokenBalance}

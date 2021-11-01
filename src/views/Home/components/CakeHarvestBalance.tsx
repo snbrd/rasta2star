@@ -10,7 +10,7 @@ import CardValue from './CardValue'
 import CardBusdValue from './CardBusdValue'
 
 const Block = styled.div`
-  margin-bottom: 24px;
+  margin-bottom: 5px;
 }
 `
 
@@ -32,8 +32,9 @@ const CakeHarvestBalance = () => {
   }
 
   return (
-    <Block>
-      <CardValue value={earningsSum} lineHeight="1.5" />
+    <Block className="flex flex-col">
+      {/* <CardValue value={earningsSum} lineHeight="1" /> */}
+      <span className="text-2xl font-bold">{(earningsSum * 1).toFixed(3)}</span>
       <CardBusdValue value={earningsBusd} />
     </Block>
   )

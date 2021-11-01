@@ -40,10 +40,14 @@ const CardValue: React.FC<CardValueProps> = ({
   }, [value, updateValue])
 
   return (
-    <Text bold={bold} fontSize={fontSize} style={{ lineHeight }} color={color}>
+    // <Text bold={bold} fontSize={fontSize} style={{ lineHeight }} color={color}>
+    //   {prefix}
+    //   {isStats ? value : countUp}
+    // </Text>
+    <span className="text-md font-bold text-red-rasta">
       {prefix}
       {isStats ? value : countUp}
-    </Text>
+    </span>
   )
 }
 

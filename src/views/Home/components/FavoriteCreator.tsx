@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { useEffect, useMemo } from 'react'
+import BigNumber from 'bignumber.js'
+import { toNumber } from 'lodash'
+import { usePools } from 'state/hooks'
 import { Link, BrowserRouter as Router } from 'react-router-dom'
+import { getFullDisplayBalance } from 'utils/formatBalance'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 
 import BgImage from '../../../assets/favCreator-bg.jpg'
+import StakingCard from "./FarmStakingCard"
 
 export default function FavoriteCreator() {
   const { connect, account, reset } = useWallet()
+  const pools = usePools(account)
+  const RastaPool = pools.filter(
+    (pool) => pool.userData && pool.tokenName === "RASTA"
+  )
+  const TokenBalance = new BigNumber(RastaPool.length ? RastaPool[0].userData?.stakingTokenBalance || 0 : 0)
+
+  const StakingTotalBalance = toNumber(getFullDisplayBalance(TokenBalance)).toFixed(4);
+  // const fullBalance = useMemo(() => {
+  // return getFullDisplayBalance(TokenBalance)
+  // }, [TokenBalance])
+
 
   return (
     <div>
@@ -52,30 +68,7 @@ export default function FavoriteCreator() {
         <div className="h-390 w-full hidden md:flex md:block md:max-w-screen-xl md:mx-auto items-center md:flex-row space-x-8 my-16">
           {
             account ?
-              <div className="h-full shadow-2xl p-8 rounded-lg w-1/3">
-                <div className="row flex flex-col gap-10">
-                  <h3 className="text-2xl text-center font-bold">Farms & Stacking</h3>
-                  <div className="row flex flex-col">
-                    <span >RASTA to Harvest:</span>
-                    <span className="text-2xl font-bold">55.193</span>
-                    <span className="text-md font-bold text-red-rasta mb-2">-$11.31</span>
-                    <span>RASTA in Wallet:</span>
-                    <span className="text-2xl font-bold">34.6762</span>
-                    <span className="text-md font-bold text-red-rasta">-$7.10</span>
-                    <Router>
-                      <a
-                        href="http://localhost:3000/#"
-                        rel="noreferrer"
-                        className="bg-gradient-to-r font-bold text-white mt-8 from-yellow-rasta to-green-rasta_cta text-center py-2 px-8 rounded-md"
-                      >
-                        <button type="button" className="uppercase text-sm">
-                          HARVEST ALL
-                        </button>
-                      </a>
-                    </Router>
-                  </div>
-                </div>
-              </div>
+              <StakingCard />
               :
               <div className="h-full w-1/3" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
                 <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
@@ -138,7 +131,7 @@ export default function FavoriteCreator() {
                 </div>
               </div>
           }
-          </div>
+        </div>
       </div>
       <div className="bg-gradient-to-r text-white from-red-rasta to-yellow-rasta py-16">
         <div className="flex flex-col mx-auto md:flex-row w-full px-4 space-y-6 md:space-y-0 md:px-0 md:w-10/12 mx-autoitems-center">
