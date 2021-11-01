@@ -131,7 +131,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   return (
     <>
       <div className="shadow-2xl p-5 pt-8 pb-8 rounded-lg">
-        <div className="row flex flex-col md:flex-row md:gap-12 mb-12">
+        <div className="row mb-4 flex flex-col md:flex-row gap-4 md:gap-12  md:mb-12">
           <CardHeading
             lpLabel={tokenName}
             multiplier="35 X"

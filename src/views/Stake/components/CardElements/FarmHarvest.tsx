@@ -22,9 +22,9 @@ type Props = {
 export default function FarmHarvest({ farmEarned, type, depositFee, pid = 'pid', earning = 'earnings', lpLabel, pool }: Props) {
   return (
     <div>
-      <div className="row flex flex-col md:flex-row xl:flex-row w-full border-b-2 border-black pb-12 mb-6">
-        <div className="items-detail flex flex-col pb-2  xl:pr-4 ml-0 md:ml-2">
-          <h2 className="text-3xl font-bold text-left">{farmEarned === 0 ? "0.0000" : farmEarned}</h2>
+      <div className="row flex flex-col md:flex-row xl:flex-row w-full border-b-2 border-black pb-4 md:pb-12 mb-6">
+        <div className="items-detail flex flex-col pb-4 md:pb-0 xl:pr-4 ml-0 md:ml-2">
+          <h2 className="text-3xl font-bold text-left">{farmEarned === 0 ? "0.0000" : (farmEarned * 1).toFixed(4)}</h2>
           <span className="text-red-rasta text-left text-sm">{lpLabel} EARNED</span>
           <div className="flex flex-row gap-3">
             <HarvestAction pid={pid} earnings={earning} type={type} />
