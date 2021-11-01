@@ -61,7 +61,7 @@ export default function FavoriteCreator() {
               :
               <div className="h-full w-1/3" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
                 <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
-                  <span className="text-2xl">Farms & Stacking</span>
+                  <span className="text-2xl">Farms & Staking</span>
                   <span className="text-sm">Please Connect Wallet to Unlock</span>
                 </div>
               </div>
