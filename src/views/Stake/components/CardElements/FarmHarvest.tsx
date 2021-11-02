@@ -31,9 +31,9 @@ export default function FarmHarvest({ farmEarned, type, depositFee, pid = 'pid',
             <CompoundAction pid={pid} earnings={earning} type={type} pool={pool} />
           </div>
         </div>
-        <div className="apr py-4 px-6 bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center">
-          <span className="apr-value text-2xl w-full text-left text-gray-700 ">{depositFee}%</span>
-          <span className="apr-label text-red-rasta text-left text-sm">Deposit Fee</span>
+        <div className="apr py-4 text-center px-6 bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center">
+          <span className="apr-value text-2xl w-full text-gray-700 ">{depositFee}%</span>
+          <span className="apr-label text-red-rasta text-sm">Deposit Fee</span>
         </div>
       </div>
     </div>

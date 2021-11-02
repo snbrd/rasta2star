@@ -131,7 +131,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
             tokenSymbol="farm.tokenSymbol"
           />
           {!removed && (
-            <div className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-left py-4 px-6">
+            <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center text-left py-4 px-6">
               <span className="apr-value text-2xl w-full text-gray-700 ">
                 {isFinished || isOldSyrup || !apy || apy?.isNaN() || !apy?.isFinite() ? (
                   '-'

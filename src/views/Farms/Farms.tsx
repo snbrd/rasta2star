@@ -112,23 +112,18 @@ const Farms: React.FC = () => {
     [farmsLP, bnbPrice, ethPriceUsd, rastaPrice, ethereum, account],
   )
 
-  useEffect(() => {
-    if (checked) history.push(`${path}`)
-    else history.push(`${path}/history`)
-  }, [checked, path, history])
-
   return (
     <div>
       <div
         className="flex w-full text-black flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
         style={{
-          backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
+          backgroundImage: `url(${MrRastaImage})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <h1 className="text-4xl font-bold">{stackedOnly ? 'Mrs. Rasta Farms' : 'Mr. Rasta Farms'}</h1>
+        <h1 className="text-4xl font-bold">{stackedOnly ? 'Mr. Rasta Farms' : 'Mr. Rasta Farms'}</h1>
       </div>
 
       <div className=" py-8 md:py-0 md:pt-16 md:pb-32  w-full bg-white text-black">
@@ -145,12 +140,11 @@ const Farms: React.FC = () => {
           <div className="card items-center text-center w-full mt-16">
             <div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 space-4">
-                <Route exact path={`${path}`}>
-                  {stackedOnly ? farmsList(stackedOnlyFarms, false) : farmsList(activeFarms, false)}
-                </Route>
-                <Route exact path={`${path}/history`}>
-                  {farmsList(inactiveFarms, true)}
-                </Route>
+                {stackedOnly ? farmsList(stackedOnlyFarms, false) :
+                  <>
+                    {checked ? farmsList(activeFarms, false) : farmsList(inactiveFarms, true)}
+                  </>
+                }
               </div>
             </div>
             {/* {checked && <CardsSection itemsToRender={list}/>}

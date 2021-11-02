@@ -151,7 +151,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
           tokenSymbol={farm.tokenSymbol}
         />
         {!removed && (
-          <div className="apr bg-gray-300 flex flex-col rounded-lg justify-center text-center">
+          <div className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-center">
             <span className="apr-value text-2xl w-full text-gray-700 ">{farmAPY}%</span>
             <span className="apr-label text-red-rasta text-md">APR</span>
           </div>
