@@ -54,12 +54,12 @@ export default function FavoriteCreator() {
         </div>
       </div>
       <div className="py-8  w-full bg-white text-black">
-        <div className="h-390 w-full hidden md:flex md:block md:max-w-screen-xl md:mx-auto items-center md:flex-row space-x-8 my-16">
+        <div className="cus-mx grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 items-center my-16 px-5 gap-10 xl:mx-20 lg:mx-20">
           {
             account ?
               <StakingCard />
               :
-              <div className="h-full w-1/3" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
+              <div className="cus-h" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
                 <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
                   <span className="text-2xl">Farms & Staking</span>
                   <span className="text-sm">Please Connect Wallet to Unlock</span>
@@ -70,7 +70,7 @@ export default function FavoriteCreator() {
             account ?
               <CakeStats />
               :
-              <div className="h-full w-1/3" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
+              <div className="cus-h" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
                 <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
                   <span className="text-2xl">RASTA Stats</span>
                   <span className="text-sm">Please Connect Wallet to Unlock</span>
@@ -81,7 +81,7 @@ export default function FavoriteCreator() {
             account ?
               <TotalValueLockedCard />
               :
-              <div className="h-full w-1/3" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
+              <div className="cus-h" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
                 <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
                   <span className="text-2xl">Total Value Locked (TVL)</span>
                   <span className="text-sm">Please Connect Wallet to Unlock</span>

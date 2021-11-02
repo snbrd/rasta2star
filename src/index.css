@@ -24,6 +24,14 @@
     .cus-grid-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     }
+    .cus-mx {
+        margin-left: 200px !important;
+        margin-right: 200px !important;
+    }
+}
+
+.cus-h {
+    height: 400px;
 }
 
 .w-26 {

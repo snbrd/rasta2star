@@ -69,7 +69,7 @@ const CakeStats = () => {
   }, [burnedBalance, updateburnedBalance])
 
   return (
-    <div className="h-full shadow-2xl p-8 rounded-lg w-1/3">
+    <div className="h-full shadow-xl p-8 rounded-lg">
       <div className="row flex flex-col gap-5">
         <span className="text-2xl text-center font-bold">{TranslateString(534, 'Rasta Stats')}</span>
         <div className="row flex flex-col py-12 gap-3">
