@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import React, { useMemo, useState } from 'react'
 import { Button, Modal } from 'rasta-uikit'
 import ModalActions from 'components/ModalActions'
+import CountUp from 'react-countup'
 import Balance from 'components/Balance'
 import useI18n from 'hooks/useI18n'
 import { getFullDisplayBalance } from 'utils/formatBalance'
@@ -22,20 +23,28 @@ const CompoundModal: React.FC<DepositModalProps> = ({ earnings, onConfirm, onDis
   }, [earnings])
 
   return (
-    <Modal
-      title={`${TranslateString(704, 'Compound')} ${TranslateString(330, `${tokenName} Earned`)}`}
-      onDismiss={onDismiss}
+    <div
+      className="bg-white z-50 px-12 py-12 flex flex-col justify-between rounded-lg"
+      style={{ width: '443px', height: '370px' }}
     >
-      <BalanceRow>
-        <Balance value={Number(fullBalance)} />
-      </BalanceRow>
-      <ModalActions>
-        <Button fullWidth variant="secondary" onClick={onDismiss}>
+      <div className="text-2xl font-bold text-center pb-6">{`${TranslateString(704, 'Compound')} ${TranslateString(330, `${tokenName} Earned`)}`}</div>
+      <div className="text-center" style={{marginTop: -30}}>
+        <span className="text-4xl font-bold">
+          <CountUp start={0} end={Number(fullBalance)} decimals={4} duration={1} separator="," />
+        </span>
+      </div>
+      <div className="flex flex-row justify-between mt-2 mb-6">
+        <button
+          type="button"
+          className=" bg-gradient-to-l border-2 text-gray-700 rounded-lg px-12 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
+          onClick={onDismiss}
+        >
           {TranslateString(462, 'Cancel')}
-        </Button>
-        <Button
-          id="compound-cake"
-          fullWidth
+        </button>
+        <button
+          type="button"
+          style={{ maxWidth: "50%" }}
+          className="bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-lg px-12 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
           disabled={pendingTx}
           onClick={async () => {
             setPendingTx(true)
@@ -45,9 +54,35 @@ const CompoundModal: React.FC<DepositModalProps> = ({ earnings, onConfirm, onDis
           }}
         >
           {pendingTx ? TranslateString(488, 'Pending Confirmation') : TranslateString(464, 'Confirm')}
-        </Button>
-      </ModalActions>
-    </Modal>
+        </button>
+      </div>
+    </div>
+    // <Modal
+    //   title={`${TranslateString(704, 'Compound')} ${TranslateString(330, `${tokenName} Earned`)}`}
+    //   onDismiss={onDismiss}
+    // >
+    //   <BalanceRow>
+    //     <Balance value={Number(fullBalance)} />
+    //   </BalanceRow>
+    //   <ModalActions>
+    //     <Button fullWidth variant="secondary" onClick={onDismiss}>
+    //       {TranslateString(462, 'Cancel')}
+    //     </Button>
+    //     <Button
+    //       id="compound-cake"
+    //       fullWidth
+    //       disabled={pendingTx}
+    //       onClick={async () => {
+    //         setPendingTx(true)
+    //         await onConfirm(fullBalance)
+    //         setPendingTx(false)
+    //         onDismiss()
+    //       }}
+    //     >
+    //       {pendingTx ? TranslateString(488, 'Pending Confirmation') : TranslateString(464, 'Confirm')}
+    //     </Button>
+    //   </ModalActions>
+    // </Modal>
   )
 }
 
