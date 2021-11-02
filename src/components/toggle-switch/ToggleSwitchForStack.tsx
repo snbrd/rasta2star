@@ -37,7 +37,7 @@ const ToggleSwitchForStack = ({ id, name, checked, onChange, optionLabels = ['',
   const { url, isExact } = useRouteMatch()
   const history = useHistory()
   return (
-    <div className={`toggle-switch w-16 ${small ? ' small-switch' : ''}`}>
+    <div className={`toggle-switch w-24 ${small ? ' small-switch' : ''}`}>
       <input
         type="checkbox"
         name={name}

@@ -32,7 +32,7 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
 }) => {
   return (
     <>
-      <div className="items-detail flex flex-col border-b-2 pb-2 border-black flex-grow-1">
+      <div className="w-full items-detail flex flex-col border-b-2 pb-2 border-black flex-grow-1">
         <h2 className="text-2xl font-bold text-left">{lpLabel}</h2>
         <div className="coin-info flex  items-center">
           <div className="core p-0 lg:p-1 flex-grow-1 text-left md:text-center">

@@ -138,7 +138,7 @@ const Farms: React.FC = () => {
           <div className="toggle-button items-end flex-col flex w-full">
             <Wrapper>
               <ToggleSwitchForStack id="ToggleSwitchForStack" checked={stackedOnly} onChange={setStackedOnly} />
-              Stacked Only &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Staked Only &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
             </Wrapper>
           </div>

@@ -3,8 +3,6 @@ import React, { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Button, IconButton, useModal, AddIcon, Image, Text, Flex } from 'rasta-uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import UnlockButton from 'components/UnlockButton'
-import Label from 'components/Label'
 import { useERC20 } from 'hooks/useContract'
 import { useSousApprove } from 'hooks/useApprove'
 import useI18n from 'hooks/useI18n'
@@ -13,7 +11,6 @@ import { useSousUnstake } from 'hooks/useUnstake'
 import useBlock from 'hooks/useBlock'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useSousHarvest, useSousDepositFee } from 'hooks/useHarvest'
-import Balance from 'components/Balance'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 import { Pool } from 'state/types'
 import { useFarms } from 'state/hooks'
@@ -21,13 +18,6 @@ import { useFarms } from 'state/hooks'
 import * as FaIcons from 'react-icons/fa'
 import DepositModal from './DepositModal'
 import WithdrawModal from './WithdrawModal'
-import CompoundModal from './CompoundModal'
-
-import CardTitle from './CardTitle'
-import Card from './Card'
-import OldSyrupTitle from './OldSyrupTitle'
-import HarvestButton from './HarvestButton'
-import CardFooter from './CardFooter'
 import CardHeading from './CardHeading'
 import FarmHarvest from './CardElements/FarmHarvest'
 import FooterCardFarms from './CardElements/FooterCardFarms'
@@ -99,7 +89,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   }, [needsApproval])
 
   const convertedLimit = new BigNumber(stakingLimit).multipliedBy(new BigNumber(10).pow(tokenDecimals))
-  console.log(convertedLimit, stakingTokenBalance)
+
   const [onPresentDeposit] = useModal(
     <DepositModal
       max={stakingLimit && stakingTokenBalance.isGreaterThan(convertedLimit) ? convertedLimit : stakingTokenBalance}
@@ -132,7 +122,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   return (
     <>
       <div className="shadow-2xl p-5 pt-8 pb-8 rounded-lg">
-        <div className="row mb-4 flex flex-col md:flex-row gap-4 md:gap-12  md:mb-12">
+        <div className="row mb-4 flex flex-col md:flex-row gap-4 md:gap-8 md:mb-12">
           <CardHeading
             lpLabel={tokenName}
             multiplier="35 X"

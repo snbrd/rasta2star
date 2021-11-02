@@ -2,8 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.slick-prev:before,
-.slick-next:before {
+.slick-prev:before, .slick-next:before {
     color: #000 !important;
 }
 
@@ -21,34 +20,37 @@
     }
 }
 
-.w-26{
+@media screen and (min-width:1550px) {
+    .cus-grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+.w-26 {
     width: 7rem;
 }
 
-.mw-200{
+.mw-200 {
     min-width: 200px;
 }
 
-.h-390{
+.h-390 {
     height: 390px;
 }
 
-.disabled{
+.disabled {
     cursor: not-allowed;
 }
 
-.slick-prev:before,
-.slick-next:before {
+.slick-prev:before, .slick-next:before {
     font-size: 30px;
 }
 
-.slick-prev:before,
-.slick-next:before {
+.slick-prev:before, .slick-next:before {
     font-size: 30px !important;
 }
 
-.slick-prev:before,
-.slick-next:before {
+.slick-prev:before, .slick-next:before {
     color: #FFF !important;
 }
 
