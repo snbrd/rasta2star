@@ -10,7 +10,7 @@ type Props = {
   addLPurl?: string
 }
 export default function FooterCardFarms({
-  farmStake = 'GET M-RASTA',
+  farmStake = 'GET RASTA',
   farmValue,
   farmBscLink = `https://bscscan.com/address/`,
   addLPurl = 'addLiquidityUrl',

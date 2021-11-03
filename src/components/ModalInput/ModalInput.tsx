@@ -74,7 +74,7 @@ const ModalInput: React.FC<ModalInputProps> = ({
     <div className="flex flex-col">
       <div className="flex justify-between flex-row items-center">
         <span className="text-xl">{inputTitle}</span>
-        <span className="text-sm font-bold">M-RASTA</span>
+        <span className="text-sm font-bold">RASTA</span>
       </div>
       <div className="flex justify-between my-2">
         <input
