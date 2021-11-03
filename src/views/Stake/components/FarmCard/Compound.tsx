@@ -43,7 +43,7 @@ const CompoundAction: React.FC<FarmCardActionsProps> = ({ earnings, type, pool }
           }
         }}
       >
-        <span className="text-sm">COMPOUND</span>
+        <span className="text-sm">REWARD & COMPOUND</span>
       </button>
     </div>
   )
