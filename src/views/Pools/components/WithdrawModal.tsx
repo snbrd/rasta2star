@@ -42,7 +42,7 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
       <div className="text-2xl font-bold text-center pb-6">STAKE LP tokens</div>
       {/* <div className="flex flex-row justify-between">
       <span className="text-lg">Stake</span>
-      <span className="text-sm">M-RASTA</span>
+      <span className="text-sm">RASTA</span>
     </div> */}
       <ModalInput
         value={val}
