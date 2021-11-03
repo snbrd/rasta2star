@@ -127,7 +127,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
             lpLabel={tokenName}
             multiplier="60 X"
             isCommunityFarm={false}
-            farmImage="rasta"
+            farmImage="binance"
             tokenSymbol="farm.tokenSymbol"
           />
           {!removed && (
