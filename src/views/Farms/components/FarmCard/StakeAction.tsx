@@ -86,7 +86,7 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
     <div className="flex flex-row justify-between">
       <div className="flex flex-col">
         <span className="text-lg text-left">{displayBalance}</span>
-        <span className="text-sm text-red-600">RASTA STAKED</span>
+        <span className="text-sm text-red-600">TOKENS STAKED</span>
       </div>
       {renderStakingButtons()}
     </div>
