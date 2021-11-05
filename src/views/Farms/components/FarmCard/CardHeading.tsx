@@ -37,7 +37,7 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
         <div className="coin-info flex  items-center">
           {lpLabel.includes('RASTA') && (
             <div className="core p-0 lg:p-1 flex-grow-1 text-left md:text-center">
-              <span className="px-4 py-3 border-2 flex flex-row items-center border-orange-rasta text-orange-rasta bg-white rounded-full whitespace-nowrap">
+              <span className="px-3 py-2 border-2 flex flex-row items-center border-orange-rasta text-orange-rasta bg-white rounded-full whitespace-nowrap">
                 <FaIcons.FaCheckCircle />
                 &nbsp;<span className="text-black">CORE</span>
               </span>
@@ -50,7 +50,7 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
             <div className="bg-orange-rasta rounded-full w-12 h-12  ">
               <div className="bg-orange-rasta rounded-full w-12 h-12  ">
                 <span className="text-white text-3xl flex flex-col pt-2 items-center justify-center">
-                  <Image src={`/images/farms/${farmImage}.svg`} alt={tokenSymbol} width={64} height={64} />
+                  <Image src={`/images/farms/${farmImage}.svg`} alt={tokenSymbol} marginTop={-17} width={64} height={64} />
                 </span>
               </div>
             </div>
