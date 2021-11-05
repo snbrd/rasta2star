@@ -11,6 +11,7 @@ type Props = {
 }
 export default function FooterCardFarms({ farmStake, farmValue, farmBscLink, addLPurl }: Props) {
   const [show, setShow] = useState(false)
+
   return (
     <div className="space-y-8">
       {show && (
@@ -27,7 +28,7 @@ export default function FooterCardFarms({ farmStake, farmValue, farmBscLink, add
           <div className="flex justify-between w-full mt-3">
             <span className="text-orange-rasta">Total:</span>
             <div className="flex flex-col md:flex-row space-x-4">
-              <span className="text-orange-rasta">{parseFloat(farmValue).toFixed(3)}</span>
+              <span className="text-orange-rasta">{farmValue}</span>
             </div>
           </div>
         </div>
