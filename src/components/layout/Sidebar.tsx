@@ -1,18 +1,15 @@
-import React, { useEffect, useState, forwardRef, useImperativeHandle, Ref } from 'react'
+import React, { useState } from 'react'
 import useMRastaPrice from 'hooks/useMRastaPrice'
 import { usePriceRastaBusd } from 'state/hooks'
-import { useWallet } from '@binance-chain/bsc-use-wallet'
 
 import {
   FaHome,
   RiErrorWarningFill,
   IoIosSwap,
-  ImCoinPound,
   RiCoinLine,
   GiTwoCoins,
   AiFillStar,
   IoChatboxEllipsesOutline,
-  FaPhone,
   FaTelegramPlane,
   FaTwitter,
   FaMediumM,
