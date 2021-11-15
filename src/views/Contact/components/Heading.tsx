@@ -1,5 +1,5 @@
 import React from 'react'
-import images from '../../../assets/coin-contact.jpeg'
+import images from '../../../assets/coin-small.jpg'
 
 export default function Heading({ title, desc }: { title: string; desc: any }) {
   return (
