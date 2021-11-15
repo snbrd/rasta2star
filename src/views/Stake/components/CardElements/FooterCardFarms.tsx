@@ -9,13 +9,22 @@ type Props = {
   farmBscLink?: string
   addLPurl?: string
 }
+
+
+
+
 export default function FooterCardFarms({
   farmStake = 'GET RASTA',
   farmValue,
   farmBscLink = `https://bscscan.com/address/`,
   addLPurl = 'addLiquidityUrl',
 }: Props) {
+  
   const [show, setShow] = useState(false)
+  const numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   return (
     <div className="space-y-8">
       {show && (
@@ -32,7 +41,7 @@ export default function FooterCardFarms({
           <div className="flex justify-between w-full mt-3">
             <span className="text-orange-rasta"> </span>
             <div className="flex flex-col md:flex-row space-x-4">
-              <span className="text-orange-rasta">${parseFloat(farmValue).toFixed(3)}</span>
+              <span className="text-orange-rasta">{numberWithCommas(parseFloat(farmValue).toFixed(3))} $RASTA</span>
             </div>
           </div>
         </div>
