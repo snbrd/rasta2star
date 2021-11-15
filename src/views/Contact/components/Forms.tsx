@@ -42,10 +42,10 @@ export default function Form({ fields, contactInfo }: Props) {
             {contactInfo.detail.map((item, index) => {
               return (
                 <div className="" key={index}>
-                  <Link to={item.link} className="flex flex-row flex-grow-1 items-center space-x-4 ">
+                  <a href={item.link} className="flex flex-row flex-grow-1 items-center space-x-4">
                     <span className="text-2xl">{item.icon}</span>
                     <span>{item.text}</span>
-                  </Link>
+                  </a>
                 </div>
               )
             })}

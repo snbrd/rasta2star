@@ -9,7 +9,7 @@ import CardButton from './components/CardButton'
 import TeamSlide from './components/TeamSlide'
 import LetsConnect from './components/LetsConnect'
 import LeafBg from '../../assets/leaf-bg.jpg'
-import AboutHeader from '../../assets/aboutHero.jpg'
+import AboutHeader from '../../assets/lion-statue.jpg'
 import BurdyProfile from '../../assets/senor-burdy.png'
 import EvoProfile from '../../assets/senor-evo.png'
 

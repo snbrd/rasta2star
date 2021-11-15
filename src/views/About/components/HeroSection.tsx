@@ -12,10 +12,11 @@ export default function HeroSection({ images, title, desc, btn }: Props) {
   return (
     <div>
       <div
-        className="flex w-full flex-col bg-cover bg-blend-overlay bg-black bg-opacity-25  bg-top text-white py-16 items-center md:pt-40 md:pb-64"
+        className="flex w-full flex-col bg-cover bg-center bg-blend-overlay text-white py-16 px-6 md:px-0 items-center md:pt-40 md:pb-64"
         style={{
           backgroundImage: `url(${images})`,
           backgroundSize: 'cover',
+          backgroundPosition: 'bottom center',
         }}
       >
         <h1 className="text-4xl font-bold">{title}</h1>
