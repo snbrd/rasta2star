@@ -41,7 +41,7 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
               &nbsp;<span className="text-black">CORE</span>
             </span>
           </div>
-          <div className="core p-0 lg:p-1 flex-grow-1 text-left md:text-center">
+          <div className="core p-0 lg:p-1 flex-grow-1 md:text-center">
             <span className="px-4 py-2 bg-orange-rasta text-white rounded-full whitespace-nowrap">{multiplier}</span>
           </div>
           <div className="core p-1 lg:p-2 text-left">

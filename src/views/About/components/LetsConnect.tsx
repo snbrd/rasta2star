@@ -9,19 +9,19 @@ type Props = {
 export default function LetsConnect({ bg, items }: Props) {
   return (
     <div
-      className="w-full py-64 px-4 items-center flex"
+      className="w-full pt-64 pb-0 md:py-64 px-0 md:px-4 items-center flex"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
       }}
     >
-      <div className="max-w-screen-xl mx-auto bg-white text-black flex px-1 md:px-48 py-12 flex-col md:flex-row mt-8 md:mt-32">
+      <div className="max-w-screen-xl mx-auto bg-white text-black px-6 flex md:px-48 py-12 flex-col md:flex-row mt-8 md:mt-32">
         <div className="rastaFinance flex flex-col flex-grow-1">
           <h2 className="text-2xl font-bold text-center md:text-left">{items.heading}</h2>
           <div className="list-content mt-4 md:mt-12 ">
             {items.listContent.map((item, index) => {
               return (
-                <div className="flex flex-row item-list items-center  px-16 md:px-0" key={item}>
+                <div className="flex flex-row item-list items-center  px-16 md:px-0" key={index}>
                   <span className="icon text-green-rasta text-2xl">
                     <TiIcons.TiTick />
                   </span>
@@ -36,10 +36,10 @@ export default function LetsConnect({ bg, items }: Props) {
             {items.subHeading}
           </h3>
           <div className="desc pl-0 md:pl-8 mt-8 text-center md:text-left">{items.textContent}</div>
-          <div className="button flex flex-row pl-0 md:pl-8 mt-8 space-x-8">
+          <div className="button flex flex-col md:flex-row pl-0 md:pl-8 mt-8 space-y-4 space-x-0 md:space-y-0 md:space-x-8">
             <a
               href={items.link.btn.joinNowLink}
-              className="border-2 border-green-rasta px-8 py py-2 rounded-xl bg-gradient-to-r hover:border-white hover:text-white hover:from-green-rasta hover:to-yellow-rasta"
+              className="border-2 border-green-rasta items-center text-center px-8 py py-2 rounded-xl bg-gradient-to-r hover:border-white hover:text-white hover:from-green-rasta hover:to-yellow-rasta"
               target="_blank"
               rel="noreferrer"
             >
@@ -48,12 +48,12 @@ export default function LetsConnect({ bg, items }: Props) {
 
             <Link
               to={items.link.btn.farmRastaLink}
-              className="border-2 border-green-rasta px-8 py-2 rounded-xl bg-gradient-to-r hover:border-white hover:text-white hover:from-green-rasta hover:to-yellow-rasta"
+              className="border-2 border-green-rasta px-8 py-2 text-center rounded-xl bg-gradient-to-r hover:border-white hover:text-white hover:from-green-rasta hover:to-yellow-rasta"
             >
               <button type="button">Farm Rasta</button>
             </Link>
           </div>
-          <div className="social-media flex flex-row space-x-4 pl-8 mt-4">
+          <div className="social-media  mx-auto md:mx-0 flex flex-row space-x-4 pl-0 items-center md:pl-8 mt-4">
             {items.link.social.map((item, index) => {
               return (
                 <a href={item.link} key={index} target="_blank" rel="noreferrer">
