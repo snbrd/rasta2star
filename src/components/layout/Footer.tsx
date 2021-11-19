@@ -25,12 +25,10 @@ export default function Footer() {
   ]
   const socialMedia = [
     { name: 'Twitter', icon: <FaIcons.FaTwitter />, link: 'https://www.twitter.com/RastaFinance' },
-    { name: 'Tik Tok', icon: <Io5Icons.IoLogoTiktok />, link: 'https://www.tiktok.com/@rasta.finance' },
-    { name: 'Instagram', icon: <FaIcons.FaInstagram />, link: 'https://www.instagram.com/rastafinance' },
     { name: 'Telegram', icon: <FaIcons.FaTelegramPlane />, link: 'https://www.t.me/rastafinance' },
-    { name: 'Reddit', icon: <FaIcons.FaReddit />, link: 'https://www.reddit.com/r/rastafinance' },
+    { name: 'Tik Tok', icon: <Io5Icons.IoLogoTiktok />, link: 'https://www.tiktok.com/@rasta.finance' },
     { name: 'Medium', icon: <FaIcons.FaMediumM />, link: 'https:///rastafinance.medium.com' },
-    { name: 'Youtube', icon: <FaIcons.FaYoutube />, link: 'https://www.twitch.tv/rastafinance' },
+    { name: 'Instagram', icon: <FaIcons.FaInstagram />, link: 'https://www.instagram.com/rastafinance' },
   ]
   function ShowLinks(props) {
     const items = props.items

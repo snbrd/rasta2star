@@ -12,6 +12,10 @@ import LeafBg from '../../assets/leaf-bg.jpg'
 import AboutHeader from '../../assets/lion-statue.jpg'
 import BurdyProfile from '../../assets/senor-burdy.png'
 import EvoProfile from '../../assets/senor-evo.png'
+import MorenzProfile from '../../assets/drmoorenz.jpg'
+import VechainProfile from '../../assets/vendetta.jpg'
+import VesxoneProfile from '../../assets/vexone.jpg'
+import StarbinnaProfile from '../../assets/starbinna.jpg'
 
 export default function About() {
   const cardSection = [
@@ -51,13 +55,33 @@ export default function About() {
     },
     {
       name: '@SeñorEVO',
-      position: 'RastaOperations',
+      position: 'Rasta Operations',
       avatar: EvoProfile,
     },
     {
       name: '@typhoncrypto',
-      position: 'RastaDevelopment',
+      position: 'Development Team',
       avatar: EvoProfile,
+    },
+    {
+      name: '@drmoorenz',
+      position: 'Development Team',
+      avatar: MorenzProfile,
+    },
+    {
+      name: '@vechainvendeta',
+      position: 'Development Team',
+      avatar: VechainProfile,
+    },
+    {
+      name: '@vesxone',
+      position: 'Development Team',
+      avatar: VesxoneProfile,
+    },
+    {
+      name: '@starbinna',
+      position: 'Development Team',
+      avatar: StarbinnaProfile,
     },
   ]
   const letsConnect = {

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, BrowserRouter as Router } from 'react-router-dom'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 
-import BgImage from '../../../assets/favCreator-bg.jpg'
+import BgImage from '../../../assets/favCreator-bg-leafs.jpg'
 import StakingCard from "./FarmStakingCard"
 import CakeStats from "./CakeStats"
 import TotalValueLockedCard from "./TotalValueLockedCard"
@@ -15,10 +15,10 @@ export default function FavoriteCreator() {
   return (
     <div>
       <div
-        className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16"
+        className="flex w-full flex-col text-white py-32"
         style={{
           backgroundImage: `url(${BgImage})`,
-          backgroundPosition: 'center',
+          backgroundPosition: 'top center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         }}
@@ -30,7 +30,7 @@ export default function FavoriteCreator() {
               <br />
               <span className="text-yellow-rasta">Completely Decentralized.</span>
             </h2>
-            <div className="desc">
+            <div className="desc max-w-full md:max-w-xl mx-auto">
               <p className="mt-4">
                 We are bridging creators with their fans, using the latest in blockchain technology. Interact with your
                 favorite artist, pledge support, and earn money. All through your own private screen and wallet.

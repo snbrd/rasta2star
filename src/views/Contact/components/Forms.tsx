@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 type Props = {
   fields: any[]
   contactInfo: any
+  desc: any
 }
-export default function Form({ fields, contactInfo }: Props) {
+export default function Form({ fields, contactInfo, desc }: Props) {
   return (
     <div className="bg-white pb-32 flex px-8 md:px-0">
       <div className="max-w-screen-xl mx-auto bg-white shadow-box flex flex-col md:flex-row  -mt-32 md:-mt-64 w-full md:px-0">
@@ -38,7 +39,9 @@ export default function Form({ fields, contactInfo }: Props) {
         </div>
         <div className="contact-info bg-gray-rasta flex-grow-1 py-16 px-12 flex flex-col">
           <h2 className="text-2xl font-bold">{contactInfo.title}</h2>
-          <div className="detail flex flex-col space-y-16 mt-16 md:mt-24">
+
+        <p className="mt-8 leading-loose">{desc}</p>
+          <div className="detail flex flex-col space-y-16 mt-16 md:mt-8">
             {contactInfo.detail.map((item, index) => {
               return (
                 <div className="" key={index}>

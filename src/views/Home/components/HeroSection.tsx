@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, BrowserRouter as Router } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import HeroImage from '../../../assets/lion-coin.png'
+import HeroImage from '../../../assets/home-header.jpg'
 
 export default function HeroSection() {
   const counter = [
@@ -12,7 +12,11 @@ export default function HeroSection() {
   ]
   return (
     <div>
-      <div className="flex w-full  py-16 bg-gradient-to-b from-black to-red-rasta via-black text-white flex-col">
+      <div className="flex w-full  py-16 text-white flex-col"  style={{
+          backgroundImage: `url(${HeroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+        }}>
         <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row">
           <div className="leftSection w-full md:w-6/12">
             <h1 className="text-4xl font-bold text-center md:text-left md:pr-48 leading-tight">
@@ -39,13 +43,13 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="images hidden md:block md:w-6/12 text-right">
-            <LazyLoadImage src={HeroImage} alt="Logo" className="w-full mx-auto" effect="blur" />
+            {/* <LazyLoadImage src={HeroImage} alt="Logo" className="w-full mx-auto" effect="blur" /> */}
           </div>
         </div>
-        <div className=" w-full hidden md:flex md:block md:max-w-screen-xl md:mx-auto items-center md:flex-row space-x-8 my-16">
+        <div className=" w-full hidden md:flex md:max-w-screen-xl md:mx-auto items-center md:flex-row space-x-8 my-32">
           {counter.map((item, index) => {
             return (
-              <div className="w-1/4 bg-red-rasta rounded-xl text-center py-6" key={item.label}>
+              <div className="w-1/4 bg-red-rasta rounded-xl text-center py-6" key={index}>
                 <div className="number text-3xl font-bold">{item.numbers}</div>
                 <div className="desc">{item.label}</div>
               </div>
