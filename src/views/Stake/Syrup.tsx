@@ -1,9 +1,6 @@
-import React, { useState, useMemo, useEffect } from 'react'
-import { Route, useRouteMatch, useHistory } from 'react-router-dom'
+import React, { useState, useMemo } from 'react'
 import BigNumber from 'bignumber.js'
-import styled from 'styled-components'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Heading } from 'rasta-uikit'
 import { BLOCKS_PER_YEAR } from 'config'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
@@ -13,25 +10,20 @@ import { getBalanceNumber } from 'utils/formatBalance'
 import { useFarms, usePriceBnbBusd, usePools } from 'state/hooks'
 import { useGetDFLPriceVsBnb } from 'hooks/api'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
-import FlexLayout from 'components/layout/Flex'
-import Page from 'components/layout/Page'
 // import Coming from './components/Coming'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
-import PoolTabButtons from './components/PoolTabButtons'
-import Divider from './components/Divider'
 
 import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 import MrsRastaImage from '../../assets/lion-mrs-rasta.jpg'
 
 const Farm: React.FC = () => {
-  const { path } = useRouteMatch()
   const TranslateString = useI18n()
   const { account } = useWallet()
   const farms = useFarms()
   const pools = usePools(account)
   const block = useBlock()
-  const [stackedOnly, setStackedOnly] = useState(false)
+  const stackedOnly = false;
   const [Active, setActive] = useState(true)
   const bnbPriceUSD = usePriceBnbBusd()
   const bnbPriceDFL = useGetDFLPriceVsBnb()
@@ -189,34 +181,5 @@ const Farm: React.FC = () => {
   )
 }
 
-const Hero = styled.div`
-  align-items: center;
-  color: ${({ theme }) => theme.colors.primary};
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 250px;
-  padding: 48px 0;
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-size: 16px;
-    li {
-      margin-bottom: 4px;
-    }
-  }
-  img {
-    height: auto;
-    max-width: 100%;
-  }
-  @media (min-width: 576px) {
-    flex-direction: row;
-    margin: 0;
-    max-width: none;
-  }
-`
 
 export default Farm

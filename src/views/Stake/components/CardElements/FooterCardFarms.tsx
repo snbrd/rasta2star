@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import * as FaIcons from 'react-icons/fa'
-import { Link } from 'react-router-dom'
 
 type Props = {
   farmStake?: string
@@ -16,7 +15,6 @@ type Props = {
 export default function FooterCardFarms({
   farmStake = 'GET RASTA',
   farmValue,
-  farmBscLink = `https://bscscan.com/address/`,
   addLPurl = 'addLiquidityUrl',
 }: Props) {
   
