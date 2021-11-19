@@ -8,7 +8,7 @@ export default function CardSection({ items }: { items: any[] }) {
   return (
     <div className="w-full px-2 md:px-8 py-4 text-black flex-grow-1 bg-white z-index-88 mt-8 md:-mt-32 items-center content-center shadow-xl rounded-md md:max-w-screen-xl mx-auto">
       <div className="wrap flex flex-col md:grid md:grid-cols-3 ">
-        {items.map((item, index) => {
+        {items.map((item) => {
           return (
             <div
               key={item.title}

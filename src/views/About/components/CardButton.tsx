@@ -14,7 +14,7 @@ export default function CardButton({ items }: { items: any[] }) {
   }
   return (
     <div className="max-w-screen-xl mx-auto w-full card-wrapper grid grid-cols-2 md:grid-cols-6 gap-3 text-green-rasta">
-      {items.map((item, index) => {
+      {items.map((item) => {
         return (
           <Link
             to={item.link}

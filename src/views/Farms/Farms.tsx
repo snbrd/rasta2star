@@ -1,5 +1,4 @@
-import React, { useEffect, useCallback, useState, useMemo } from 'react'
-import { Route, useHistory, useParams, useRouteMatch } from 'react-router-dom'
+import React, { useEffect, useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import BigNumber from 'bignumber.js'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
@@ -15,17 +14,13 @@ import useRefresh from 'hooks/useRefresh'
 import { fetchFarmUserDataAsync } from 'state/actions'
 import { QuoteToken } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
-import { useWeb3React } from '@web3-react/core'
 import ToggleSwitchForStack from 'components/toggle-switch/ToggleSwitchForStack'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 // import FarmTabButtons from './components/FarmTabButtons'
 // import Divider from './components/Divider'
 import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
-import MrsRastaImage from '../../assets/lion-mrs-rasta.jpg'
 
 const Farms: React.FC = () => {
-  const { path } = useRouteMatch()
-  const history = useHistory()
   const TranslateString = useI18n()
   const [checked, setChecked] = useState(true)
   const farmList = useFarms()

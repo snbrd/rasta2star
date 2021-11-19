@@ -31,8 +31,8 @@ export default function Footer() {
     { name: 'Instagram', icon: <FaIcons.FaInstagram />, link: 'https://www.instagram.com/rastafinance' },
   ]
   function ShowLinks(props) {
-    const items = props.items
-    return items.map((item, index) => {
+    
+    return props.items.map((item, index) => {
       return (
         <li key={index}>
           {item.path.includes('http') ? (

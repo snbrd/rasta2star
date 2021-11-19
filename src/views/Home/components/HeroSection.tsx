@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link, BrowserRouter as Router } from 'react-router-dom'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { Link } from 'react-router-dom'
 import HeroImage from '../../../assets/home-header.jpg'
 
 export default function HeroSection() {

@@ -1,8 +1,6 @@
-import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { useWalletModal } from 'rasta-uikit'
 import React, { useState, useEffect } from 'react'
+import { useWallet } from '@binance-chain/bsc-use-wallet'
 import * as FaIcons from 'react-icons/fa'
-import { Link } from 'react-router-dom'
 import BinanceWallet from '../../../../assets/wallet/binance-wallet.png'
 import MathWallet from '../../../../assets/wallet/math-wallet.png'
 import MetaMask from '../../../../assets/wallet/meta-mask.png'
@@ -12,8 +10,7 @@ import WalletConnect from '../../../../assets/wallet/wallet-connect.png'
 
 export default function Wallet() {
   const [showModal, setShowModal] = useState(false)
-  const { connect, account, reset } = useWallet()
-  const { onPresentConnectModal } = useWalletModal(connect, reset)
+  const { connect, account } = useWallet()
   const connectWallet = (what) => {
     if (what === 'walletconnect') connect('walletconnect')
     else connect('injected')
@@ -81,7 +78,7 @@ export default function Wallet() {
                       return (
                         <span
                           className="wallet-wrap flex flex-col space-y-3 bg-gray-inBlack px-2 py-4 rounded-xl items-center cursor-pointer"
-                          onClick={(e) => connectWallet(item.link)}
+                          onClick={() => connectWallet(item.link)}
                           key={index}
                         >
                           <span>
@@ -101,7 +98,7 @@ export default function Wallet() {
       ) : null}
       <span
         className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
-        onClick={(e) => setShowModal(true)}
+        onClick={() => setShowModal(true)}
       >
         <FaIcons.FaWallet />
         <span>Unlock Wallet</span>

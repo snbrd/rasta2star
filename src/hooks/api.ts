@@ -48,13 +48,6 @@ export const useGetStats = () => {
   return data
 }
 
-type ApiResponse = {
-  prices: {
-    [key: string]: string
-  }
-  update_at: string
-}
-
 /**
  * Due to Cors the api was forked and a proxy was created
  * @see https://github.com/pancakeswap/gatsby-pancake-api/commit/e811b67a43ccc41edd4a0fa1ee704b2f510aa0ba

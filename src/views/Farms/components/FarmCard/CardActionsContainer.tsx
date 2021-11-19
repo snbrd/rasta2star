@@ -4,15 +4,12 @@ import styled from 'styled-components'
 import { provider } from 'web3-core'
 import { getContract } from 'utils/erc20'
 import { getAddress } from 'utils/addressHelpers'
-import { Button, Flex, Text } from 'rasta-uikit'
 import { Farm } from 'state/types'
 import { useFarmFromSymbol, useFarmUser } from 'state/hooks'
 import * as FaIcons from 'react-icons/fa'
 import useI18n from 'hooks/useI18n'
-import UnlockButton from 'components/UnlockButton'
 import { useApprove } from 'hooks/useApprove'
 import StakeAction from './StakeAction'
-import HarvestAction from './HarvestAction'
 import Wallet from '../CardElements/Wallet'
 
 const Action = styled.div`
@@ -33,7 +30,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account, 
   const TranslateString = useI18n()
   const [requestedApproval, setRequestedApproval] = useState(false)
   const { pid, lpAddresses } = useFarmFromSymbol(farm.lpSymbol)
-  const { allowance, tokenBalance, stakedBalance, earnings } = useFarmUser(pid)
+  const { allowance, tokenBalance, stakedBalance } = useFarmUser(pid)
   const lpAddress = getAddress(lpAddresses)
   const lpName = farm.lpSymbol.toUpperCase()
   const isApproved = account && allowance && allowance.isGreaterThan(0)

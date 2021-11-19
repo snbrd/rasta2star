@@ -1,6 +1,4 @@
 import React from 'react'
-import * as FaIcons from 'react-icons/fa'
-import { Link } from 'react-router-dom'
 import HarvestAction from '../FarmCard/HarvestAction'
 
 type Props = {

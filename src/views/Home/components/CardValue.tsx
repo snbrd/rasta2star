@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 import { useCountUp } from 'react-countup'
-import { Text } from 'rasta-uikit'
 
 export interface CardValueProps {
   value: number
@@ -16,11 +15,7 @@ export interface CardValueProps {
 const CardValue: React.FC<CardValueProps> = ({
   value,
   decimals,
-  fontSize = '40px',
-  lineHeight = '1',
   prefix = '',
-  bold = true,
-  color = 'text',
   isStats = false,
 }) => {
   const { countUp, update } = useCountUp({

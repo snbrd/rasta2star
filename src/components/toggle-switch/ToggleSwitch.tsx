@@ -1,6 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { useRouteMatch, Link, useHistory } from 'react-router-dom'
 import './ToggleSwitch.css'
 
 /*
@@ -29,7 +27,7 @@ const ToggleSwitch = ({
   small,
   disabled,
 }: Props) => {
-  function handleKeyPress(e) {
+  function handleKeyPress() {
     //   if (e.keyCode !== 32) return
     //   alert()
     //   e.preventDefault()
@@ -42,8 +40,6 @@ const ToggleSwitch = ({
     onChange(!checked)
     // checked ? history.push(`${url}/history`) : history.push(`${url}`)
   }
-  const { url, isExact } = useRouteMatch()
-  const history = useHistory()
   return (
     <div className={`toggle-switch w-26 ${small ? ' small-switch' : ''}`}>
       <input
@@ -52,8 +48,8 @@ const ToggleSwitch = ({
         className="toggle-switch-checkbox"
         id={id}
         checked={checked}
-        onChange={(e) => {
-          handleKeyPress(e)
+        onChange={() => {
+          handleKeyPress()
         }}
         disabled={disabled}
       />

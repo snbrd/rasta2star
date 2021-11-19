@@ -133,7 +133,7 @@ export default function Header() {
                         return (
                           <span
                             className="wallet-wrap flex flex-col space-y-3 bg-gray-inBlack px-2 py-4 rounded-xl items-center cursor-pointer"
-                            onClick={(e) => connectWallet(item.link)}
+                            onClick={() => connectWallet(item.link)}
                             key={index}
                           >
                             <span>

@@ -1,17 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { slice, concat } from 'lodash'
-import { useFarms, usePriceBnbBusd, usePriceEthBusd, usePriceRastaBusd } from 'state/hooks'
-import useI18n from 'hooks/useI18n'
 import useRefresh from 'hooks/useRefresh'
-import { useWeb3React } from '@web3-react/core'
 import { useDispatch } from 'react-redux'
 import { fetchFarmUserDataAsync } from 'state/farms'
-import BigNumber from 'bignumber.js'
-import { FarmWithStakedValue } from 'views/Pools/components/FarmCard/FarmCard'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { BLOCKS_PER_YEAR, RASTA_PER_BLOCK, RASTA_POOL_PID } from 'config'
-import { QuoteToken } from 'config/constants/types'
 
 import * as FaIcons from 'react-icons/fa'
 import CardsSection from './components/CardSection'
@@ -26,12 +19,7 @@ interface ParamTypes {
 export default function Farms2() {
   const { farm } = useParams<ParamTypes>()
   let pages = null
-  const farmList = useFarms()
-  const TranslateString = useI18n()
-  const rastaPrice = usePriceRastaBusd()
-  const bnbPrice = usePriceBnbBusd()
-  const ethPriceUsd = usePriceEthBusd()
-  const { account, ethereum } = useWallet()
+  const { account } = useWallet()
 
   const dispatch = useDispatch()
   const { fastRefresh } = useRefresh()
@@ -41,14 +29,7 @@ export default function Farms2() {
     }
   }, [account, dispatch, fastRefresh])
 
-  const [stackedOnly, setStackedOnly] = useState(false)
 
-  const farmsLP = farmList.filter((f) => f.lpSymbol.includes('RLP'))
-  const activeFarms = farmsLP.filter((f) => f.pid !== 0 && f.multiplier !== '0X')
-  const inactiveFarms = farmsLP.filter((f) => f.pid !== 0 && f.multiplier === '0X')
-  const stackedOnlyFarms = activeFarms.filter(
-    (f) => f.userData && new BigNumber(f.userData.stakedBalance).isGreaterThan(0),
-  )
   if (farm === 'mr-rasta')
     pages = {
       name: 'mr-rasta',
@@ -325,45 +306,6 @@ export default function Farms2() {
     setList(newList)
     setShowMore(newShowMore)
   }
-
-  const farmsList = useCallback(
-    (farmsToDisplay, removed: boolean) => {
-      const cakePriceVsBNB = new BigNumber(farmsLP.find((f) => f.pid === RASTA_POOL_PID)?.tokenPriceVsQuote || 0)
-      const farmsToDisplayWithAPY: any[] = farmsToDisplay.map((f) => {
-        if (!f.tokenAmount || !f.lpTotalInQuoteToken || !f.lpTotalInQuoteToken) {
-          return f
-        }
-        const cakeRewardPerBlock = RASTA_PER_BLOCK.times(f.poolWeight)
-        const cakeRewardPerYear = cakeRewardPerBlock.times(BLOCKS_PER_YEAR)
-
-        // cakePriceInQuote * cakeRewardPerYear / lpTotalInQuoteToken
-        let apy = cakePriceVsBNB.times(cakeRewardPerYear).div(f.lpTotalInQuoteToken)
-
-        if (f.quoteTokenSymbol === QuoteToken.BUSD || f.quoteTokenSymbol === QuoteToken.UST) {
-          apy = cakePriceVsBNB.times(cakeRewardPerYear).div(f.lpTotalInQuoteToken).times(bnbPrice)
-        } else if (f.quoteTokenSymbol === QuoteToken.ETH) {
-          apy = rastaPrice.div(ethPriceUsd).times(cakeRewardPerYear).div(f.lpTotalInQuoteToken)
-        } else if (f.quoteTokenSymbol === QuoteToken.RASTA) {
-          apy = cakeRewardPerYear.div(f.lpTotalInQuoteToken)
-        } else if (f.dual) {
-          const cakeApy =
-            farm && cakePriceVsBNB.times(cakeRewardPerBlock).times(BLOCKS_PER_YEAR).div(f.lpTotalInQuoteToken)
-          const dualApy =
-            f.tokenPriceVsQuote &&
-            new BigNumber(f.tokenPriceVsQuote)
-              .times(f.dual.rewardPerBlock)
-              .times(BLOCKS_PER_YEAR)
-              .div(f.lpTotalInQuoteToken)
-
-          apy = cakeApy && dualApy && cakeApy.plus(dualApy)
-        }
-
-        return { ...f, apy }
-      })
-      return <CardsSection itemsToRender={farmsToDisplayWithAPY} />
-    },
-    [farmsLP, bnbPrice, ethPriceUsd, rastaPrice, farm],
-  )
 
   return (
     <div className="">

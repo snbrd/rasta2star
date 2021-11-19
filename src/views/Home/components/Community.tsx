@@ -1,6 +1,5 @@
 import React from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { Link, BrowserRouter as Router } from 'react-router-dom'
 import CommunityImage from '../../../assets/community-lion.png'
 
 export default function Community() {

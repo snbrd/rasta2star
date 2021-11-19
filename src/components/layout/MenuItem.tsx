@@ -37,7 +37,7 @@ export default function MenuItem({ menu, showSidebar }) {
       )}
       {menu.child.length > 0 && children && (
         <ul className="flex flex-col items-start text-sm space-y-4 font-normal mt-4">
-          {menu.child.map((i, id) => {
+          {menu.child.map((i) => {
             return (
               <li key={i.label}>
                 {i.path.includes('http') ? (

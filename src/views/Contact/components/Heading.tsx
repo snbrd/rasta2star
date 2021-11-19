@@ -1,7 +1,7 @@
 import React from 'react'
 import images from '../../../assets/contact-bg.jpg'
 
-export default function Heading({ title, desc }: { title: string; desc: any }) {
+export default function Heading() {
   return (
     <div
       className="w-full bg-blend-overlay bg-black bg-opacity-25 from-red-rasta via-black to-black pb-32"
