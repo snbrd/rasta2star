@@ -23,6 +23,7 @@ import {
 } from 'react-icons/all'
 import MenuItem from './MenuItem'
 import RastaIcon from '../../assets/rasta.svg'
+import MRastaIcon from '../../assets/mrasta.svg'
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false)
