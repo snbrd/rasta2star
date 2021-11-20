@@ -224,7 +224,7 @@ export default function Sidebar() {
             <span className="font-bold">${Math.round(rastaPriceUsd.toNumber() * 1000) / 1000}</span>
           </div>
           <div className="flex items-center mt-2">
-            <img src={RastaIcon} alt="token icon" width="24" className="pr-2" />
+            <img src={MRastaIcon} alt="token icon" width="24" className="pr-2" />
             <span className="font-bold">${Math.round(mRastaPriceUsd * 1000) / 1000}</span>
           </div>
         </div>
