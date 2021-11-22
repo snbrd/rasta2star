@@ -43,7 +43,7 @@ export default function MultipleSlick({ items }: { items: any[] }) {
   return (
     <div className="text-black">
       <Slider {...settings}>
-        {sliders.map((item, index) => {
+        {sliders.map((item) => {
           return (
             <div
               key={item.name}

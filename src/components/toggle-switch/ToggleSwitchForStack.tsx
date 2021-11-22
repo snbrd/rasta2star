@@ -1,6 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { useRouteMatch, Link, useHistory } from 'react-router-dom'
+import { useRouteMatch, useHistory } from 'react-router-dom'
 import './ToggleSwitch.css'
 
 /*
@@ -34,7 +33,7 @@ const ToggleSwitchForStack = ({ id, name, checked, onChange, optionLabels = ['',
     // onChange(!checked)
     // checked ? history.push(`${url}/history`) : history.push(`${url}`)
   }
-  const { url, isExact } = useRouteMatch()
+  const { url } = useRouteMatch()
   const history = useHistory()
   return (
     <div className={`toggle-switch w-16 ${small ? ' small-switch' : ''}`}>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DescriptionSection(props) {
+export default function DescriptionSection() {
   return (
     <div className="max-w-screen-xl mx-auto text-center text-black space-y-6">
       <p>

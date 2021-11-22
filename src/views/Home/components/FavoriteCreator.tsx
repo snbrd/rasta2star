@@ -8,7 +8,7 @@ import CakeStats from "./CakeStats"
 import TotalValueLockedCard from "./TotalValueLockedCard"
 
 export default function FavoriteCreator() {
-  const { connect, account, reset } = useWallet()
+  const { account } = useWallet()
 
 
 

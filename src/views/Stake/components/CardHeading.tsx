@@ -1,9 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Tag, Flex, Heading, Image } from 'rasta-uikit'
-import { CommunityTag, CoreTag } from 'components/Tags'
 import * as FaIcons from 'react-icons/fa'
-import * as SiIcons from 'react-icons/si'
 
 export interface ExpandableSectionProps {
   lpLabel?: string
@@ -13,20 +9,10 @@ export interface ExpandableSectionProps {
   tokenSymbol?: string
 }
 
-const Wrapper = styled(Flex)`
-  svg {
-    margin-right: 0.25rem;
-  }
-`
-
-const MultiplierTag = styled(Tag)`
-  margin-left: 4px;
-`
 
 const CardHeading: React.FC<ExpandableSectionProps> = ({
   lpLabel,
   multiplier = '30X',
-  isCommunityFarm,
   farmImage = 'dot',
   tokenSymbol = 'farm.tokenSymbol',
 }) => {

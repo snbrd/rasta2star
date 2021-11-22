@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import BigNumber from 'bignumber.js'
-import { Button, Flex, Heading } from 'rasta-uikit'
-import useI18n from 'hooks/useI18n'
 import * as FaIcons from 'react-icons/fa'
 import { useHarvest } from 'hooks/useHarvest'
 import { getBalanceNumber } from 'utils/formatBalance'
@@ -12,12 +10,10 @@ interface FarmCardActionsProps {
 }
 
 const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
-  const TranslateString = useI18n()
   const [pendingTx, setPendingTx] = useState(false)
   const { onReward } = useHarvest(pid)
 
   const rawEarningsBalance = getBalanceNumber(earnings)
-  const displayBalance = rawEarningsBalance.toLocaleString()
 
   return (
     <div className="harvest flex mt-4 bg-gradient-to-l text-white w-full from-green-rasta to-yellow-rasta  rounded-xl">

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 import BigNumber from 'bignumber.js'
-import useI18n from 'hooks/useI18n'
 import useAllEarnings from 'hooks/useAllEarnings'
 import { usePriceRastaBusd } from 'state/hooks'
 import styled from 'styled-components'
@@ -14,7 +13,6 @@ const Block = styled.div`
 `
 
 const CakeHarvestBalance = () => {
-  const TranslateString = useI18n()
   const allEarnings = useAllEarnings()
   const earningsSum = allEarnings.reduce((accum, earning) => {
     return accum + new BigNumber(earning).div(new BigNumber(10).pow(18)).toNumber()

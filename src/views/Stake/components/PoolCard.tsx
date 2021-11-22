@@ -1,16 +1,12 @@
 import BigNumber from 'bignumber.js'
-import React, { useCallback, useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { Button, IconButton, useModal, AddIcon, Image, Text, Flex } from 'rasta-uikit'
+import React, { useEffect, useState } from 'react'
+import { useModal } from 'rasta-uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { useERC20 } from 'hooks/useContract'
-import { useSousApprove } from 'hooks/useApprove'
 import useI18n from 'hooks/useI18n'
 import { useSousStake } from 'hooks/useStake'
 import { useSousUnstake } from 'hooks/useUnstake'
-import useBlock from 'hooks/useBlock'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { useSousHarvest, useSousDepositFee } from 'hooks/useHarvest'
+import { useSousDepositFee } from 'hooks/useHarvest'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 import { Pool } from 'state/types'
 import { useFarms } from 'state/hooks'
@@ -36,18 +32,12 @@ interface HarvestProps {
 const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const {
     sousId,
-    image,
     tokenName,
     stakingTokenName,
-    stakingTokenAddress,
-    projectLink,
-    harvest,
     apy,
     tokenDecimals,
     poolCategory,
     totalStaked,
-    startBlock,
-    endBlock,
     isFinished,
     userData,
     stakingLimit,
@@ -56,30 +46,22 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   // Pools using native BNB behave differently than pools using a token
   const isBnbPool = poolCategory === PoolCategory.BINANCE
   const TranslateString = useI18n()
-  const stakingTokenContract = useERC20(stakingTokenAddress)
   const { account } = useWallet()
-  const block = useBlock()
-  const { onApprove } = useSousApprove(stakingTokenContract, sousId)
   const { onStake } = useSousStake(sousId, isBnbPool)
   const { onUnstake } = useSousUnstake(sousId)
-  const { onReward } = useSousHarvest(sousId, isBnbPool)
   const depositFee = useSousDepositFee(sousId)
   const farmList = useFarms()
   const farms = farmList.filter((farm) => farm.lpSymbol === tokenName)
-  const [requestedApproval, setRequestedApproval] = useState(false)
-  const [pendingTx, setPendingTx] = useState(false)
+  const requestedApproval = false;
 
   const allowance = new BigNumber(userData?.allowance || 0)
   const stakingTokenBalance = new BigNumber(userData?.stakingTokenBalance || 0)
   const stakedBalance = new BigNumber(userData?.stakedBalance || 0)
   const earnings = new BigNumber(userData?.pendingReward || 0)
 
-  const blocksUntilStart = Math.max(startBlock - block, 0)
-  const blocksRemaining = Math.max(endBlock - block, 0)
   const isOldSyrup = stakingTokenName === QuoteToken.SYRUP
   const accountHasStakedBalance = stakedBalance?.toNumber() > 0
   const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isBnbPool
-  const isCardActive = isFinished && accountHasStakedBalance
   const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
 
   const [isApproval, SETisApproval] = useState(needsApproval)
@@ -105,19 +87,6 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const [onPresentWithdraw] = useModal(
     <WithdrawModal max={stakedBalance} onConfirm={onUnstake} tokenName={stakingTokenName} />,
   )
-
-  const handleApprove = useCallback(async () => {
-    try {
-      setRequestedApproval(true)
-      const txHash = await onApprove()
-      // user rejected tx or didn't go thru
-      if (!txHash) {
-        setRequestedApproval(false)
-      }
-    } catch (e) {
-      console.error(e)
-    }
-  }, [onApprove, setRequestedApproval])
 
   return (
     <>
@@ -161,7 +130,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
         {account && isApproval && (
           <span
             className={(type === false ? "disabled " : "") + buttonClass}
-            onClick={(e) => type === false ? null : SETisApproval(!isApproval)}
+            onClick={() => type === false ? null : SETisApproval(!isApproval)}
           >
             <FaIcons.FaCheck />
             <span>APPROVE RASTA</span>
@@ -309,40 +278,40 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   )
 }
 
-const PoolFinishedSash = styled.div`
-  background-image: url('/images/pool-finished-sash.svg');
-  background-position: top right;
-  background-repeat: not-repeat;
-  height: 135px;
-  position: absolute;
-  right: -24px;
-  top: -24px;
-  width: 135px;
-`
+// const PoolFinishedSash = styled.div`
+//   background-image: url('/images/pool-finished-sash.svg');
+//   background-position: top right;
+//   background-repeat: not-repeat;
+//   height: 135px;
+//   position: absolute;
+//   right: -24px;
+//   top: -24px;
+//   width: 135px;
+// `
 
-const StyledCardActions = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 16px 0;
-  width: 100%;
-  box-sizing: border-box;
-`
+// const StyledCardActions = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   margin: 16px 0;
+//   width: 100%;
+//   box-sizing: border-box;
+// `
 
-const BalanceAndCompound = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-`
+// const BalanceAndCompound = styled.div`
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   flex-direction: row;
+// `
 
-const StyledActionSpacer = styled.div`
-  height: ${(props) => props.theme.spacing[4]}px;
-  width: ${(props) => props.theme.spacing[4]}px;
-`
+// const StyledActionSpacer = styled.div`
+//   height: ${(props) => props.theme.spacing[4]}px;
+//   width: ${(props) => props.theme.spacing[4]}px;
+// `
 
-const StyledDetails = styled.div`
-  display: flex;
-  font-size: 14px;
-`
+// const StyledDetails = styled.div`
+//   display: flex;
+//   font-size: 14px;
+// `
 
 export default PoolCard

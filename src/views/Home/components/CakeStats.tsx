@@ -1,22 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import { useCountUp } from 'react-countup'
-import { Card, CardBody, Heading, Text } from 'rasta-uikit'
-import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalSupply, useBurnedBalance, useTokenBalanceByAccount } from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
 import { getCakeAddress } from 'utils/addressHelpers'
-import CardValue from './CardValue'
-
-const StyledCakeStats = styled(Card)``
-
-const Row = styled.div`
-  align-items: center;
-  display: flex;
-  font-size: 14px;
-  justify-content: space-between;
-  margin-bottom: 8px;
-`
 
 const CakeStats = () => {
   const TranslateString = useI18n()

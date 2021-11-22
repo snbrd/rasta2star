@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import * as FaIcons from 'react-icons/fa'
-import { Link } from 'react-router-dom'
 
 type Props = {
   farmStake: string
@@ -9,7 +8,7 @@ type Props = {
   farmBscLink: string
   addLPurl?: string
 }
-export default function FooterCardFarms({ farmStake, farmValue, farmBscLink, addLPurl }: Props) {
+export default function FooterCardFarms({ farmStake, farmValue, addLPurl }: Props) {
   const [show, setShow] = useState(false)
 
   return (

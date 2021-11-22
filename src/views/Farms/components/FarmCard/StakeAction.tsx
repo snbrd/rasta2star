@@ -1,7 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { Button, Flex, Heading, IconButton, AddIcon, MinusIcon, useModal } from 'rasta-uikit'
+import { useModal } from 'rasta-uikit'
 import useI18n from 'hooks/useI18n'
 import useStake from 'hooks/useStake'
 import useUnstake from 'hooks/useUnstake'
@@ -17,12 +16,6 @@ interface FarmCardActionsProps {
   addLiquidityUrl?: string
 }
 
-const IconButtonWrapper = styled.div`
-  display: flex;
-  svg {
-    width: 20px;
-  }
-`
 
 const StakeAction: React.FC<FarmCardActionsProps> = ({
   stakedBalance,

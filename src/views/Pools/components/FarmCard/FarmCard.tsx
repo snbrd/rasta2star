@@ -1,21 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import BigNumber from 'bignumber.js'
-import styled from 'styled-components'
-import { Flex, Text, Skeleton } from 'rasta-uikit'
 import { communityFarms } from 'config/constants'
 import { Farm } from 'state/types'
 import { provider } from 'web3-core'
-import useI18n from 'hooks/useI18n'
 import { useFarmFromSymbol, useFarmUser } from 'state/hooks'
 import { getBalanceNumber } from 'utils/formatBalance'
-import ExpandableSectionButton from 'components/ExpandableSectionButton'
 // import { QuoteToken } from 'config/constants/types'
 import { BASE_EXCHANGE_URL } from 'config'
 // import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
-import DetailsSection from './DetailsSection'
 import CardHeading from './CardHeading'
 import CardActionsContainer from './CardActionsContainer'
-import ApyButton from './ApyButton'
 import FarmHarvest from '../CardElements/FarmHarvest'
 import FooterCardFarms from '../CardElements/FooterCardFarms'
 
@@ -62,31 +56,6 @@ export interface FarmWithStakedValue extends Farm {
 //   z-index: -1;
 // `
 
-const FCard = styled.div`
-  align-self: baseline;
-  background: ${(props) => props.theme.card.background};
-  border-radius: 32px;
-  box-shadow: 0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 24px;
-  position: relative;
-  text-align: center;
-`
-
-const Divider = styled.div`
-  background-color: ${({ theme }) => theme.colors.borderColor};
-  height: 1px;
-  margin: 28px auto;
-  width: 100%;
-`
-
-const ExpandingWrapper = styled.div<{ expanded: boolean }>`
-  height: ${(props) => (props.expanded ? '100%' : '0px')};
-  overflow: hidden;
-`
-
 interface FarmCardProps {
   farm: FarmWithStakedValue
   removed: boolean
@@ -97,10 +66,7 @@ interface FarmCardProps {
   account?: string
 }
 
-const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, ethereum, account }) => {
-  const TranslateString = useI18n()
-
-  const [showExpandableSection, setShowExpandableSection] = useState(false)
+const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, ethereum, account }) => {
 
   const isCommunityFarm = communityFarms.includes(farm.tokenSymbol)
   // We assume the token name is coin pair + lp e.g. RASTA-BNB LP, LINK-BNB LP,
@@ -128,7 +94,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, ethereum,
     : '-'
 
   const lpLabel = farm.lpSymbol && farm.lpSymbol.toUpperCase()
-  const earnLabel = farm.dual ? farm.dual.earnLabel : 'RASTA'
   const farmAPY = farm.apy && farm.apy.times(new BigNumber(100)).toNumber().toLocaleString('en-US').slice(0, -1)
 
   // const { quoteTokenAdresses, quoteTokenSymbol, tokenAddresses } = farm

@@ -1,5 +1,5 @@
-import React, { useEffect, useCallback, useState, useMemo } from 'react'
-import { Route, useHistory, useParams, useRouteMatch } from 'react-router-dom'
+import React, { useEffect, useCallback, useState } from 'react'
+import { Route, useHistory, useRouteMatch } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import BigNumber from 'bignumber.js'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
@@ -61,7 +61,7 @@ const Farms: React.FC = () => {
   //   return tokenPriceBN
   // }
 
-  const [stackedOnly, setStackedOnly] = useState(false)
+  const stackedOnly = false;
 
   const farmsLP = farmList.filter((farm) => !farm.lpSymbol.includes('RLP'))
   const activeFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier !== '0X')
