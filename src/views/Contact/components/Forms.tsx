@@ -8,8 +8,8 @@ type Props = {
 export default function Form({ fields, contactInfo, desc }: Props) {
   return (
     <div className="bg-white pb-32 flex px-8 md:px-0">
-      <div className="max-w-screen-xl mx-auto bg-white shadow-box flex flex-col md:flex-row  -mt-32 md:-mt-64 w-full md:px-0">
-        <div className="forms flex items-center  px-4 md:px-32 py-16 w-full md:w-3/5">
+      <div className="max-w-screen-xl mx-auto bg-white shadow-box flex flex-col md:flex-row  -mt-16 md:-mt-64 w-full md:px-0">
+        <div className="forms flex items-center  px-4 md:px-32 py-6 md:py-16 mt-4 w-full md:w-3/5">
           <form action="" className="flex-grow-1 ">
             <div className="fields space-y-12">
               {fields.map((item, index) => {
