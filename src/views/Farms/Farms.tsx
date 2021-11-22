@@ -118,7 +118,6 @@ const Farms: React.FC = () => {
         className="flex w-full bg-left-center-small md:bg-center flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
         style={{
           backgroundImage: `url(${MrRastaImage})`,
-          backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         }}
