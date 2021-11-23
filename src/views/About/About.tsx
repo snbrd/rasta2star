@@ -10,17 +10,17 @@ import TeamSlide from './components/TeamSlide'
 import LetsConnect from './components/LetsConnect'
 import LeafBg from '../../assets/leaf-bg.jpg'
 import AboutHeader from '../../assets/lion-statue.jpg'
-import BurdyProfile from '../../assets/senor-burdy.png'
-import EvoProfile from '../../assets/senor-evo.png'
-import MorenzProfile from '../../assets/drmoorenz.jpg'
-import VechainProfile from '../../assets/vendetta.jpg'
-import VesxoneProfile from '../../assets/vexone.jpg'
-import StarbinnaProfile from '../../assets/starbinna.png'
-import TyphnoProfile from '../../assets/typhno.png'
-import TheMonkProfile from '../../assets/the-monk.jpg'
-import BugBusterProfile from '../../assets/bug-buster.png'
-import Senorsatsrofile from '../../assets/senorsats.png'
-import RaslogicProfile from '../../assets/raslogic.png'
+import BurdyProfile from '../../assets/senor-burdy.jpeg'
+import EvoProfile from '../../assets/senor-evo.jpeg'
+import MorenzProfile from '../../assets/drmoorenz.jpeg'
+import VechainProfile from '../../assets/vechain.jpeg'
+import VesxoneProfile from '../../assets/vesxone.jpeg'
+import StarbinnaProfile from '../../assets/starbinna.jpeg'
+import TyphnoProfile from '../../assets/typhno.jpeg'
+import TheMonkProfile from '../../assets/themonk.jpeg'
+import BugBusterProfile from '../../assets/bugbuster.jpeg'
+import Senorsatsrofile from '../../assets/senorsats.jpeg'
+import RaslogicProfile from '../../assets/ras-logic.jpeg'
 
 export default function About() {
   const cardSection = [
@@ -64,11 +64,6 @@ export default function About() {
       avatar: EvoProfile,
     },
     {
-      name: '@typhnocrypto',
-      position: 'Development Team',
-      avatar: TyphnoProfile,
-    },
-    {
       name: '@drmoorenz',
       position: 'Development Team',
       avatar: MorenzProfile,
@@ -87,6 +82,11 @@ export default function About() {
       name: '@starbinna',
       position: 'Development Team',
       avatar: StarbinnaProfile,
+    },
+    {
+      name: '@typhnocrypto',
+      position: 'Development Team',
+      avatar: TyphnoProfile,
     },
     {
       name: '@themonk',
