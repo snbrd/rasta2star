@@ -1,5 +1,5 @@
 import React from 'react'
-import images from '../../../assets/contact-bg.jpg'
+import images from '../../../assets/contact-header.jpg'
 
 export default function Heading() {
   return (
