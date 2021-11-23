@@ -22,8 +22,8 @@ import {
   FaBook,
 } from 'react-icons/all'
 import MenuItem from './MenuItem'
-import RastaIcon from '../../assets/rasta.svg'
-import MRastaIcon from '../../assets/mrasta.svg'
+import RastaIcon from '../../assets/menu_coin2.jpg'
+import MRastaIcon from '../../assets/menu_coin1.jpg'
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false)
@@ -221,11 +221,11 @@ export default function Sidebar() {
             </div>
           </div>
           <div className="flex items-center">
-            <img src={RastaIcon} alt="token icon" width="24" className="pr-2" />
+            <img src={RastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />
             <span className="font-bold">${Math.round(rastaPriceUsd.toNumber() * 1000) / 1000}</span>
           </div>
           <div className="flex items-center mt-2">
-            <img src={MRastaIcon} alt="token icon" width="24" className="pr-2" />
+            <img src={MRastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />
             <span className="font-bold">${Math.round(mRastaPriceUsd * 1000) / 1000}</span>
           </div>
         </div>

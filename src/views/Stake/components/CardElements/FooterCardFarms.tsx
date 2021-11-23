@@ -53,7 +53,7 @@ export default function FooterCardFarms({
           onClick={() => setShow(!show)}
           style={{ color: 'red' }}
         >
-          <span className="font-bold text-md">DETAIL</span>
+          <span className="font-bold text-md">DETAILS</span>
           {show && <FaIcons.FaChevronCircleUp />}
           {!show && <FaIcons.FaChevronCircleDown />}
         </div>

@@ -40,7 +40,7 @@ export default function FooterCardFarms({ farmStake, farmValue, farmBscLink, add
           style={{ color: 'red' }}
           onClick={() => setShow(!show)}
         >
-          <span className="font-bold text-md">DETAIL</span>
+          <span className="font-bold text-md">DETAILS</span>
           {show && <FaIcons.FaChevronCircleUp />}
           {!show && <FaIcons.FaChevronCircleDown />}
         </div>
