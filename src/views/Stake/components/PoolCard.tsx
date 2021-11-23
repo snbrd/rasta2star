@@ -90,8 +90,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
 
   return (
     <>
-      <div className="shadow-2xl p-5 pt-8 pb-8 rounded-lg">
-        <div className="row mb-4 flex flex-col md:flex-row gap-4 md:gap-8 md:mb-12">
+      <div className="shadow-md p-5 pt-8 pb-8 rounded-lg border-2 border-green-rasta mt-8">
+        <div className="row flex flex-col lg:flex-row gap-0 md:gap-2 mb-12">
           <CardHeading
             lpLabel={tokenName}
             multiplier="60 X"
@@ -100,7 +100,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
             tokenSymbol="farm.tokenSymbol"
           />
           {!removed && (
-            <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center text-left py-4 px-6">
+            <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0">
               <span className="apr-value text-2xl w-full text-gray-700 ">
                 {isFinished || isOldSyrup || !apy || apy?.isNaN() || !apy?.isFinite() ? (
                   '-'
