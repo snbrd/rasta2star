@@ -32,10 +32,10 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
             <span className="px-4 py-2 bg-orange-rasta text-white rounded-full whitespace-nowrap">{multiplier}</span>
           </div>
           <div className="core p-1 lg:p-2 text-left">
-            <div className="bg-orange-rasta rounded-full w-12 h-12  ">
-              <div className="bg-orange-rasta rounded-full w-12 h-12  ">
+            <div className="rounded-full w-12 h-12  ">
+              <div className="rounded-full w-12 h-12  ">
                 <span className="text-white text-3xl flex flex-col pt-2 items-center justify-center">
-                  <Image src={`/images/farms/${farmImage}.svg`} alt={tokenSymbol} width={64} marginTop={-17} height={64} />
+                  <Image src={`/images/farms/${farmImage}.png`} alt={tokenSymbol} width={64} marginTop={-2} height={48} />
                 </span>
               </div>
             </div>
