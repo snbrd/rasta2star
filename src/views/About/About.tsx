@@ -42,7 +42,7 @@ export default function About() {
     { label: 'Rasta<br>Token', link: 'https://bscscan.com/address/0xe3e8cc42da487d1116d26687856e9fb684817c52' },
     { label: 'MRasta<br>Token', link: 'https://bscscan.com/address/0xeaa4a2469a8471bd8314b2ff63c1d113fe8114ba' },
     { label: 'Factory<br>Address', link: 'https://bscscan.com/address/0x3cC0Fc3B82AF5Ea222D3545249F81644159EEc8A' },
-    { label: 'Router<br>Address', link: 'https://bscscan.com/address/0xf2A92c2d85C1A5e4F5A6d4B99C4C8F74D85fBD06' },
+    { label: 'Router<br>Address', link: 'https://bscscan.com/address/0x0f1700cEc9781740a832B370467cbBBcdAf75AD1' },
     { label: 'Bouyancy<br>Fund Address', link: 'https://bscscan.com/address/0xf2A92c2d85C1A5e4F5A6d4B99C4C8F74D85fBD06' },
     { label: 'Rasta <br>Trust Fund <br>Address', link: 'https://bscscan.com/address/0x437326807aAA8be7C0E3d89ab8C9072BC7614131' },
   ]
