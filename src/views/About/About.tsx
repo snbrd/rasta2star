@@ -15,7 +15,12 @@ import EvoProfile from '../../assets/senor-evo.png'
 import MorenzProfile from '../../assets/drmoorenz.jpg'
 import VechainProfile from '../../assets/vendetta.jpg'
 import VesxoneProfile from '../../assets/vexone.jpg'
-import StarbinnaProfile from '../../assets/starbinna.jpg'
+import StarbinnaProfile from '../../assets/starbinna.png'
+import TyphnoProfile from '../../assets/typhno.png'
+import TheMonkProfile from '../../assets/the-monk.jpg'
+import BugBusterProfile from '../../assets/bug-buster.png'
+import Senorsatsrofile from '../../assets/senorsats.png'
+import RaslogicProfile from '../../assets/raslogic.png'
 
 export default function About() {
   const cardSection = [
@@ -59,9 +64,9 @@ export default function About() {
       avatar: EvoProfile,
     },
     {
-      name: '@typhoncrypto',
+      name: '@typhnocrypto',
       position: 'Development Team',
-      avatar: EvoProfile,
+      avatar: TyphnoProfile,
     },
     {
       name: '@drmoorenz',
@@ -82,6 +87,26 @@ export default function About() {
       name: '@starbinna',
       position: 'Development Team',
       avatar: StarbinnaProfile,
+    },
+    {
+      name: '@themonk',
+      position: 'Development Team',
+      avatar: TheMonkProfile,
+    },
+    {
+      name: '@bugbuster',
+      position: 'Development Team',
+      avatar: BugBusterProfile,
+    },
+    {
+      name: '@senorsats',
+      position: 'Development Team',
+      avatar: Senorsatsrofile,
+    },
+    {
+      name: '@raslogic',
+      position: 'Development Team',
+      avatar: RaslogicProfile,
     },
   ]
   const letsConnect = {

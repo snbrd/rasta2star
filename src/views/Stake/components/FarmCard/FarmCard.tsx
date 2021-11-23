@@ -141,8 +141,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, ethereum,
   const displayBalance = rawEarningsBalance.toLocaleString()
 
   return (
-    <div className="shadow-md p-5 pt-8 pb-8 rounded-lg">
-      <div className="row flex flex-col md:flex-row gap-2 mb-12">
+    <div className="shadow-md p-5 pt-8 pb-8 rounded-lg border-2 border-green-rasta mt-8">
+      <div className="row flex flex-col lg:flex-row gap-0 md:gap-2 mb-12">
         <CardHeading
           lpLabel={lpLabel}
           multiplier={farm.multiplier}
@@ -151,7 +151,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, ethereum,
           tokenSymbol={farm.tokenSymbol}
         />
         {!removed && (
-          <div className="apr bg-gray-300 flex flex-col rounded-lg justify-center text-center">
+          <div className="apr bg-gray-300 flex flex-col rounded-lg justify-center text-center  mt-4 md:mt-0">
             <span className="apr-value text-2xl w-full text-gray-700 ">{farmAPY}%</span>
             <span className="apr-label text-red-rasta text-md">APR</span>
           </div>

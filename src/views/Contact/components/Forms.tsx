@@ -1,4 +1,6 @@
 import React from 'react'
+import MrLionFull from "../../../assets/lion-mr-full.png"
+import MsLionFull from "../../../assets/lion-ms-full.png"
 
 type Props = {
   fields: any[]
@@ -8,6 +10,12 @@ type Props = {
 export default function Form({ fields, contactInfo, desc }: Props) {
   return (
     <div className="bg-white pb-32 flex px-8 md:px-0">
+      <div className="img-right absolute hidden md:block right-0 top-1/4">
+        <img src={MrLionFull} alt="Full body mr lion"/>
+      </div>
+      <div className="img-left absolute hidden md:block left-0 top-1/4">
+        <img src={MsLionFull} alt="Full body ms lion"/>
+      </div>
       <div className="max-w-screen-xl mx-auto bg-white shadow-box flex flex-col md:flex-row  -mt-16 md:-mt-64 w-full md:px-0">
         <div className="forms flex items-center  px-4 md:px-32 py-6 md:py-16 mt-4 w-full md:w-3/5">
           <form action="" className="flex-grow-1 ">
