@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
 import MrLionFull from "../../../assets/lion-mr-full.png"
 import MsLionFull from "../../../assets/lion-ms-full.png"
@@ -8,18 +8,31 @@ type Props = {
   contactInfo: any
   desc: any
 }
+
+export default function Form({ fields, contactInfo, desc }: Props) {
+  
+const [isSuccess, setIsSuccess] = useState(false);
+
 function handleSubmit(e) {
   e.preventDefault()
   const chatId = "-624206229";
   const {name, email, message } = e.target.elements;
-  
+  const text = `Email:${email.value}\n\n
+                Name: ${name.value}\n\n
+                Message: ${message.value}`
 
-  const url = `https://api.telegram.org/bot2106092499:AAGctmQaa68yFC-i--XyEhzonDiQRiLSSec/sendMessage?chat_id=${chatId}&name=${name.value}&email=${email.value}&message=${message.value}`
-    axios.get(url).then(resp => {console.log(resp)})
+  const url = `https://api.telegram.org/bot2106092499:AAGctmQaa68yFC-i--XyEhzonDiQRiLSSec/sendMessage?chat_id=${chatId}&text=${text}&parse_mode=HTML`
+    axios.get(url).then(resp => {
+      if(resp.status === 200){
+    setIsSuccess(true);
+    name.value = ''
+    email.value = ''
+    message.value = ''
+  }
+  })
+
 }
 
-export default function Form({ fields, contactInfo, desc }: Props) {
-  
   return (
     <div className="bg-white pb-32 flex px-8 md:px-0">
       <div className="img-right absolute hidden md:block right-0 top-1/4">
@@ -46,6 +59,9 @@ export default function Form({ fields, contactInfo, desc }: Props) {
                 )
               })}
             </div>
+            {isSuccess && 
+            <div className="message mt-8 text-black border-green-rasta py-2 border-2 px-2">Your message has been sent.</div>
+          }
             <div className="button w-full flex items-center mt-24">
               <button
                 type="submit"
