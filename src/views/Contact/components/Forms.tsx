@@ -1,4 +1,5 @@
-import React from 'react'
+import * as React from 'react'
+import axios from 'axios'
 import MrLionFull from "../../../assets/lion-mr-full.png"
 import MsLionFull from "../../../assets/lion-ms-full.png"
 
@@ -7,7 +8,36 @@ type Props = {
   contactInfo: any
   desc: any
 }
+
+// const submitForm = (e) => {
+//   e.preventDefault();
+//   const formEl = document.forms.contactForm;
+//   const formData = new FormData(formEl);
+
+//   return console.log(formData)
+//   // axios.get('https://api.telegram.org/bot365661934:AAHTBDxOPH9_GmtwwNEeIfXtFBRbMW8UPHY/sendMessage', {
+//   //   params: {
+//   //     product: this.product
+//   //   }
+//   // }).then(...)
+// }
+function handleSubmit(e) {
+  e.preventDefault()
+  const {nameData, emailData, messageData } = e.target.elements;
+    axios.get('https://api.telegram.org/bot365661934:AAHTBDxOPH9_GmtwwNEeIfXtFBRbMW8UPHY/sendMessage', {
+    params: {
+      chat_id:"-624206229",
+      name: nameData,
+      email: emailData,
+      message: messageData
+
+    }
+  }).then(resp => {console.log(resp)})
+
+}
+
 export default function Form({ fields, contactInfo, desc }: Props) {
+  
   return (
     <div className="bg-white pb-32 flex px-8 md:px-0">
       <div className="img-right absolute hidden md:block right-0 top-1/4">
@@ -18,7 +48,7 @@ export default function Form({ fields, contactInfo, desc }: Props) {
       </div>
       <div className="max-w-screen-xl mx-auto bg-white shadow-box flex flex-col md:flex-row  -mt-16 md:-mt-64 w-full md:px-0">
         <div className="forms flex items-center  px-4 md:px-32 py-6 md:py-16 mt-4 w-full md:w-3/5">
-          <form action="" className="flex-grow-1 ">
+          <form action="" className="flex-grow-1 " id="contactForm" onSubmit={handleSubmit}>
             <div className="fields space-y-12">
               {fields.map((item, index) => {
                 return (
