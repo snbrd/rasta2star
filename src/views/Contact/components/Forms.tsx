@@ -8,32 +8,14 @@ type Props = {
   contactInfo: any
   desc: any
 }
-
-// const submitForm = (e) => {
-//   e.preventDefault();
-//   const formEl = document.forms.contactForm;
-//   const formData = new FormData(formEl);
-
-//   return console.log(formData)
-//   // axios.get('https://api.telegram.org/bot365661934:AAHTBDxOPH9_GmtwwNEeIfXtFBRbMW8UPHY/sendMessage', {
-//   //   params: {
-//   //     product: this.product
-//   //   }
-//   // }).then(...)
-// }
 function handleSubmit(e) {
   e.preventDefault()
-  const {nameData, emailData, messageData } = e.target.elements;
-    axios.get('https://api.telegram.org/bot365661934:AAHTBDxOPH9_GmtwwNEeIfXtFBRbMW8UPHY/sendMessage', {
-    params: {
-      chat_id:"-624206229",
-      name: nameData,
-      email: emailData,
-      message: messageData
+  const chatId = "-624206229";
+  const {name, email, message } = e.target.elements;
+  
 
-    }
-  }).then(resp => {console.log(resp)})
-
+  const url = `https://api.telegram.org/bot2106092499:AAGctmQaa68yFC-i--XyEhzonDiQRiLSSec/sendMessage?chat_id=${chatId}&name=${name.value}&email=${email.value}&message=${message.value}`
+    axios.get(url).then(resp => {console.log(resp)})
 }
 
 export default function Form({ fields, contactInfo, desc }: Props) {

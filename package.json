@@ -53,6 +53,7 @@
     "html-react-parser": "^1.2.8",
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.1",
+    "qs": "^6.10.1",
     "rasta-uikit": "^2.0.1",
     "react": "^17.0.1",
     "react-chartjs-2": "^2.11.1",
