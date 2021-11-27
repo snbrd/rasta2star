@@ -72,7 +72,7 @@ function handleSubmit(e) {
             </div>
           </form>
         </div>
-        <div className="contact-info bg-gray-rasta flex-grow-1 py-4 md:py-16 px-12 flex flex-col">
+        <div className="contact-info bg-gray-rasta flex-grow-1 py-16 px-4 md:px-12 flex flex-col">
           <h2 className="text-2xl font-bold">{contactInfo.title}</h2>
 
         <p className="mt-8 leading-loose">{desc}</p>
