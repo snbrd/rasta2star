@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import MrLionFull from "../../../assets/lion-mr-full.png"
 import MsLionFull from "../../../assets/lion-ms-full.png"
@@ -10,36 +10,36 @@ type Props = {
 }
 
 export default function Form({ fields, contactInfo, desc }: Props) {
-  
-const [isSuccess, setIsSuccess] = useState(false);
 
-function handleSubmit(e) {
-  e.preventDefault()
-  const chatId = "-624206229";
-  const {name, email, message } = e.target.elements;
-  const text = `Email:${email.value}\n\n
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    const chatId = "-624206229";
+    const { name, email, message } = e.target.elements;
+    const text = `Email:${email.value}\n\n
                 Name: ${name.value}\n\n
                 Message: ${message.value}`
 
-  const url = `https://api.telegram.org/bot2106092499:AAGctmQaa68yFC-i--XyEhzonDiQRiLSSec/sendMessage?chat_id=${chatId}&text=${text}&parse_mode=HTML`
+    const url = `https://api.telegram.org/bot2106092499:AAGctmQaa68yFC-i--XyEhzonDiQRiLSSec/sendMessage?chat_id=${chatId}&text=${text}&parse_mode=HTML`
     axios.get(url).then(resp => {
-      if(resp.status === 200){
-    setIsSuccess(true);
-    name.value = ''
-    email.value = ''
-    message.value = ''
-  }
-  })
+      if (resp.status === 200) {
+        setIsSuccess(true);
+        name.value = ''
+        email.value = ''
+        message.value = ''
+      }
+    })
 
-}
+  }
 
   return (
     <div className="bg-white pb-32 flex px-8 md:px-0">
       <div className="img-right absolute hidden md:block right-0 top-1/4">
-        <img src={MrLionFull} alt="Full body mr lion"/>
+        <img src={MrLionFull} alt="Full body mr lion" />
       </div>
       <div className="img-left absolute hidden md:block left-0 top-1/4">
-        <img src={MsLionFull} alt="Full body ms lion"/>
+        <img src={MsLionFull} alt="Full body ms lion" />
       </div>
       <div className="max-w-screen-xl mx-auto bg-white shadow-box flex flex-col md:flex-row  -mt-16 md:-mt-64 w-full md:px-0">
         <div className="forms flex items-center  px-4 md:px-32 py-6 md:py-16 mt-4 w-full md:w-3/5">
@@ -59,9 +59,9 @@ function handleSubmit(e) {
                 )
               })}
             </div>
-            {isSuccess && 
-            <div className="message mt-8 text-black border-green-rasta py-2 border-2 px-2">Your message has been sent.</div>
-          }
+            {isSuccess &&
+              <div className="message mt-8 text-black border-green-rasta py-2 border-2 px-2">Your message has been sent.</div>
+            }
             <div className="button w-full flex items-center mt-24">
               <button
                 type="submit"
@@ -72,10 +72,10 @@ function handleSubmit(e) {
             </div>
           </form>
         </div>
-        <div className="contact-info bg-gray-rasta flex-grow-1 py-16 px-4 md:px-12 flex flex-col">
-          <h2 className="text-2xl font-bold">{contactInfo.title}</h2>
+        <div className="contact-info bg-gray-rasta flex-grow-1 py-16 px-4 md:px-16 flex flex-col">
+          <h2 className="text-3xl font-bold">{contactInfo.title}</h2>
 
-        <p className="mt-8 leading-loose">{desc}</p>
+          <p className="mt-8 leading-loose">{desc}</p>
           <div className="detail flex flex-col space-y-16 mt-16 md:mt-8">
             {contactInfo.detail.map((item, index) => {
               return (
