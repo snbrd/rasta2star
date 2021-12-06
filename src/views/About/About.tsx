@@ -117,7 +117,7 @@ export default function About() {
     link: {
       btn: {
         joinNowLink: 'https://t.me/rastafinance',
-        farmRastaLink: '/',
+        farmRastaLink: '/farms',
       },
       social: [
         {
