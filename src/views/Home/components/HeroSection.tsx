@@ -5,8 +5,8 @@ import HeroImage from '../../../assets/home-header.jpg'
 export default function HeroSection() {
   const counter = [
     { label: 'Counter', numbers: '3256' },
-    { label: 'Holders', numbers: '56879' },
-    { label: 'Transfers', numbers: '$7,567,008+' },
+    { label: 'Holders', numbers: '3,534' },
+    { label: 'Transfers', numbers: '245,138' },
     { label: 'Continents', numbers: '6' },
   ]
   return (

@@ -28,7 +28,7 @@ export default function Footer() {
     { name: 'Telegram', icon: <FaIcons.FaTelegramPlane />, link: 'https://www.t.me/rastafinance' },
     { name: 'Tik Tok', icon: <Io5Icons.IoLogoTiktok />, link: 'https://www.tiktok.com/@rasta.finance' },
     { name: 'Medium', icon: <FaIcons.FaMediumM />, link: 'https:///rastafinance.medium.com' },
-    { name: 'Instagram', icon: <FaIcons.FaInstagram />, link: 'https://www.instagram.com/rastafinance' },
+    { name: 'Instagram', icon: <FaIcons.FaInstagram />, link: 'https://instagram.com/rasta.finance' },
   ]
   function ShowLinks(props) {
     
