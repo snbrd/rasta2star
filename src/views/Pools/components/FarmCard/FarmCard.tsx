@@ -115,7 +115,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, ethereum, account })
         />
         {!removed && (
           <div className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-center mt-4 md:mt-0">
-            <span className="apr-value text-2xl w-full text-gray-700 ">{typeof (farmAPY) === 'number' ? `${farmAPY}%` : "-"}</span>
+            <span className="apr-value text-2xl w-full text-gray-700 ">{Number(farmAPY) > 0 ? `${farmAPY}%` : "-"}</span>
             <span className="apr-label text-red-rasta text-md">APR</span>
           </div>
         )}
