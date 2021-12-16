@@ -56,17 +56,17 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-          path: 'https://exchange.rasta.finance',
+          path: 'https://pcs.rasta.finance',
           label: 'PancakeSwap LP',
         },
         {
-          path: 'https://exchange.rasta.finance/#/pool',
+          path: 'https://exchange.rasta.finance',
           label: 'RastaDex LP',
         },
       ],
     },
     {
-      label: 'RastaNFT',
+      label: 'RastaDividend NFT',
       sublabel:'(coming soon)',
       path: '#',
       icon: <FaShoppingBag className="inline-block" style={{ width: '32px', height: '32px' }} />,
@@ -115,7 +115,7 @@ export default function Sidebar() {
       ],
     },
     {
-      label: 'STAKE RASTA',
+      label: 'StakeRasta',
       path: '/stake',
       icon: <RiMoneyDollarCircleLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
