@@ -56,13 +56,13 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-          path: 'https://pcs.rasta.finance',
-          label: 'PancakeSwap LP',
-        },
-        {
-          path: 'https://exchange.rasta.finance',
-          label: 'RastaDex LP',
-        },
+        path: 'https://pcs.rasta.finance',
+        label: 'PancakeSwap ★',
+      },
+      {
+        path: 'https://exchange.rasta.finance',
+        label: 'RastaDexchange',
+      },
       ],
     },
     {
