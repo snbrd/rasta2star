@@ -56,8 +56,8 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-        path: 'https://pcs.rasta.finance',
-        label: 'PancakeSwap ★',
+        path: 'https://exchange.croxswap.com/#/swap?outputCurrency=0xe3e8cc42da487d1116d26687856e9fb684817c52',
+        label: 'CroxSwap ★',
       },
       {
         path: 'https://exchange.rasta.finance',
