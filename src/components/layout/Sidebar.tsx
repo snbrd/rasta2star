@@ -8,7 +8,6 @@ import {
   IoIosSwap,
   RiCoinLine,
   GiTwoCoins,
-  AiFillStar,
   IoChatboxEllipsesOutline,
   FaTelegramPlane,
   FaTwitter,
@@ -19,7 +18,6 @@ import {
   GoMail,
   RiMoneyDollarCircleLine,
   FaShoppingBag,
-  FaBook,
 } from 'react-icons/all'
 import MenuItem from './MenuItem'
 import RastaIcon from '../../assets/menu_coin2.jpg'
@@ -27,8 +25,7 @@ import MRastaIcon from '../../assets/menu_coin1.jpg'
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false)
-  const showSidebar = () =>
-  {
+  const showSidebar = () => {
     setSidebar(!sidebar)
   }
   const rastaPriceUsd = usePriceRastaBusd()
@@ -43,11 +40,11 @@ export default function Sidebar() {
       child: [],
     },
     {
-       label: 'About',
-       path: '/about',
-       icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
-       parent: false,
-       child: [],
+      label: 'About',
+      path: '/about',
+      icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
     },
     {
       label: 'Trade',
@@ -56,22 +53,22 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-        path: 'https://exchange.croxswap.com/#/swap?outputCurrency=0xe3e8cc42da487d1116d26687856e9fb684817c52',
-        label: 'CroxSwap ★',
-      },
-      {
-      path: 'https://pancakeswap.finance/swap?outputCurrency=0xe3e8cc42da487d1116d26687856e9fb684817c52',
-      label: 'PancakeSwap',
-    },
-      {
-        path: 'https://exchange.rasta.finance',
-        label: 'RastaDexchange',
-      },
+          path: 'https://exchange.croxswap.com/#/swap?outputCurrency=0xe3e8cc42da487d1116d26687856e9fb684817c52',
+          label: 'CroxSwap ★',
+        },
+        {
+          path: 'https://pancakeswap.finance/swap?outputCurrency=0xe3e8cc42da487d1116d26687856e9fb684817c52',
+          label: 'PancakeSwap',
+        },
+        {
+          path: 'https://exchange.rasta.finance',
+          label: 'RastaDexchange',
+        },
       ],
     },
     {
       label: 'RastaDividend NFT',
-      sublabel:'(coming soon)',
+      sublabel: '(coming soon)',
       path: '#',
       icon: <FaShoppingBag className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
@@ -147,8 +144,8 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-           path: 'https://rasta.finance/files/RastaAudit.pdf',
-           label: 'Audit',
+          path: 'https://rasta.finance/files/RastaAudit.pdf',
+          label: 'Audit',
         },
         {
           path: 'https://coinmarketcap.com/currencies/rasta-finance/',
@@ -193,9 +190,8 @@ export default function Sidebar() {
         <FaBars onClick={showSidebar} />
       </span>
       <nav
-        className={`h-full w-auto top-0 py-6 px-8 bg-gray-rasta z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
-          sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
-        }`}
+        className={`h-full w-auto top-0 py-6 px-8 bg-gray-rasta z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
+          }`}
       >
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer">
           <FaRegWindowClose onClick={showSidebar} />
