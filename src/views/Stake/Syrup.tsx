@@ -114,7 +114,7 @@ const Farm: React.FC = () => {
           </div>
           <div className="card items-center text-center w-full mt-16">
             <div>
-              <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 space-4">
+              <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-4">
                 {/* <Route exact path={`${path}`}>
                     {stackedOnly ? farmsList(stackedOnlyFarms, false) : farmsList(activeFarms, false)}
                   </Route>
