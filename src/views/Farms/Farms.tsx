@@ -133,7 +133,7 @@ const Farms: React.FC = () => {
           </div>
           <div className="card items-center text-center w-full mt-16">
             <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 space-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 space-4">
                 {stackedOnly ? farmsList(stackedOnlyFarms, false) :
                   <>
                     {checked ? farmsList(activeFarms, false) : farmsList(inactiveFarms, true)}

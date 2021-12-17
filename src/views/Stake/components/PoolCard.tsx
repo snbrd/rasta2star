@@ -90,7 +90,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
 
   return (
     <>
-      <div className="px-10 py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 100%", boxShadow: "6px 6px 24px -9px" }}>
+      <div className="px-10 py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
         <div className="row flex flex-col lg:flex-row gap-0 md:gap-4 mb-12">
           <CardHeading
             lpLabel={tokenName}
