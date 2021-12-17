@@ -47,17 +47,17 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, 
         addLiquidityUrl={addLiquidityUrl}
         inputTitle={TranslateString(1070, 'Stake')}
       />
-      <div className="flex flex-row justify-between mt-2 mb-6">
+      <div className="flex flex-row justify-between mt-2 mb-6 gap-5">
         <button
           type="button"
-          className=" bg-gradient-to-l border-2 text-gray-700 rounded-lg px-12 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
+          className="w-1/2 bg-gradient-to-l border-2 text-gray-700 rounded-lg px-12 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
           onClick={onDismiss}
         >
           {TranslateString(462, 'Cancel')}
         </button>
         <button
           type="button"
-          className=" bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-lg px-12 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
+          className="w-1/2 bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-lg px-3 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
           disabled={pendingTx || fullBalance === '0' || !val || Number(val) > Number(fullBalance)}
           onClick={async () => {
             setPendingTx(true)
