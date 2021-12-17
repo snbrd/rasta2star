@@ -60,6 +60,10 @@ export default function Sidebar() {
         label: 'CroxSwap ★',
       },
       {
+      path: 'https://pancakeswap.finance/swap?outputCurrency=0xe3e8cc42da487d1116d26687856e9fb684817c52',
+      label: 'PancekSwap,
+    },
+      {
         path: 'https://exchange.rasta.finance',
         label: 'RastaDexchange',
       },
