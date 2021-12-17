@@ -53,16 +53,12 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-          path: 'https://exchange.croxswap.com/#/swap?outputCurrency=0xe3e8cc42da487d1116d26687856e9fb684817c52',
-          label: 'CroxSwap ★',
-        },
-        {
-          path: 'https://pancakeswap.finance/swap?outputCurrency=0xe3e8cc42da487d1116d26687856e9fb684817c52',
-          label: 'PancakeSwap',
+          path: 'https://rastadex.croxswap.com',
+          label: 'PancakeSwap by CROX ★',
         },
         {
           path: 'https://exchange.rasta.finance',
-          label: 'RastaDexchange',
+          label: 'RastaDexchange (RLP)',
         },
       ],
     },
