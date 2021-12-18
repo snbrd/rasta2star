@@ -16,18 +16,18 @@ export default function FooterCardFarms({ farmStake, farmValue, addLPurl }: Prop
       {show && (
         <div>
           <div className="flex justify-between w-full mt-8">
-            <span className="text-orange-rasta">Get:</span>
+            <span className="text-black-rasta font-black">Get:</span>
             <div className="flex flex-row space-x-4">
-              <span className="text-orange-rasta">{farmStake}</span>
+              <span style={{ color: "red" }}>{farmStake}</span>
               <a href={addLPurl} target="_blank" rel="noreferrer">
                 <FaIcons.FaShareSquare className="text-red-rasta" />
               </a>
             </div>
           </div>
           <div className="flex justify-between w-full mt-3">
-            <span className="text-orange-rasta">Total:</span>
+            <span className="text-black-rasta font-black">Total:</span>
             <div className="flex flex-col md:flex-row space-x-4">
-              <span className="text-orange-rasta">${farmValue}</span>
+              <span style={{ color: "red" }} className='font-bold'>${farmValue}</span>
             </div>
           </div>
         </div>
