@@ -64,8 +64,8 @@ export default function Sidebar() {
     },
     {
       label: 'RastaDividend NFT',
-      sublabel: '(coming soon)',
-      path: '#',
+      sublabel: 'Buy now on AirNFTs',
+      path: 'https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61',
       icon: <FaShoppingBag className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
       child: [],
