@@ -34,7 +34,7 @@ export default function HeroSection() {
                 <button type="button">Farm Rasta Now</button>
               </Link>
               <a
-                href="https://exchange.rasta.finance"
+                href="https://rastadex.croxswap.com"
                 className="border-2 font-bold border-yellow-rasta py-3 rounded-xl w-1/3 text-center"
               >
                 <button type="button">Buy Rasta</button>
