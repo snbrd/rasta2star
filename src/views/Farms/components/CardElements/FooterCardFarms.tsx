@@ -15,18 +15,18 @@ export default function FooterCardFarms({ farmStake, farmValue, farmBscLink, add
       {show && (
         <div>
           <div className="flex justify-between w-full mt-8">
-            <span className="text-orange-rasta">Stake:</span>
+            <span className="text-black-rasta font-bold">Stake:</span>
             <div className="flex flex-row space-x-4">
-              <span className="text-orange-rasta">{farmStake}</span>
+              <span className="text-black-rasta font-bold">{farmStake}</span>
               <a href={addLPurl} target="_blank" rel="noreferrer">
                 <FaIcons.FaShareSquare className="text-red-rasta" />
               </a>
             </div>
           </div>
           <div className="flex justify-between w-full mt-3">
-            <span className="text-orange-rasta">Total Liquidity:</span>
+            <span className="text-black-rasta font-bold">Total Liquidity:</span>
             <div className="flex flex-col md:flex-row space-x-4">
-              <span className="text-orange-rasta">{farmValue}</span>
+              <span className='text-black-rasta font-bold'>{farmValue}</span>
             </div>
           </div>
         </div>

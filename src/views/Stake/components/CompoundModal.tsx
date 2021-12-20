@@ -24,15 +24,15 @@ const CompoundModal: React.FC<DepositModalProps> = ({ earnings, onConfirm, onDis
       style={{ width: '443px', height: '370px' }}
     >
       <div className="text-2xl font-bold text-center pb-6">{`${TranslateString(704, 'Compound')} ${TranslateString(330, `${tokenName} Earned`)}`}</div>
-      <div className="text-center" style={{marginTop: -30}}>
+      <div className="text-center" style={{ marginTop: -30 }}>
         <span className="text-4xl font-bold">
           <CountUp start={0} end={Number(fullBalance)} decimals={4} duration={1} separator="," />
         </span>
       </div>
-      <div className="flex flex-row justify-between mt-2 mb-6">
+      <div className="flex flex-row justify-between mt-2 mb-6 gap-5">
         <button
           type="button"
-          className=" bg-gradient-to-l border-2 text-gray-700 rounded-lg px-12 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
+          className="w-1/2 bg-gradient-to-l border-2 text-gray-700 rounded-lg px-12 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
           onClick={onDismiss}
         >
           {TranslateString(462, 'Cancel')}
@@ -40,7 +40,7 @@ const CompoundModal: React.FC<DepositModalProps> = ({ earnings, onConfirm, onDis
         <button
           type="button"
           style={{ maxWidth: "50%" }}
-          className="bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-lg px-12 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
+          className="w-1/2 bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-lg px-3 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
           disabled={pendingTx}
           onClick={async () => {
             setPendingTx(true)
