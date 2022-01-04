@@ -12,6 +12,7 @@ import Farms2 from './views/Farms/Farms2'
 import ToastListener from './components/ToastListener'
 import PageLoader from './components/PageLoader'
 import Stake from './views/Stake'
+import AirNft from './views/AirNFT'
 import GlobalCheckBullHiccupClaimStatus from './views/Collectibles/components/GlobalCheckBullHiccupClaimStatus'
 import history from './routerHistory'
 import Header from './components/layout/Header'
@@ -80,6 +81,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/stake">
               <Stake />
+            </Route>
+            <Route path="/stakenft">
+              <AirNft />
             </Route>
             <Route path="/lottery">
               <Lottery />

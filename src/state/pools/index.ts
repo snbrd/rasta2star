@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit'
 import poolsConfig from 'config/constants/pools'
+import AirpoolsConfig from 'config/constants/airnfts'
 import { fetchPoolsBlockLimits, fetchPoolsTotalStatking } from './fetchPools'
 import {
   fetchPoolsAllowance,
@@ -10,7 +11,7 @@ import {
 } from './fetchPoolsUser'
 import { PoolsState, Pool } from '../types'
 
-const initialState: PoolsState = { data: [...poolsConfig] }
+const initialState: PoolsState = { data: [...poolsConfig], airdata: [...AirpoolsConfig] }
 
 export const PoolsSlice = createSlice({
   name: 'Pools',
@@ -30,6 +31,13 @@ export const PoolsSlice = createSlice({
         return { ...pool, userData: userPoolData }
       })
     },
+    setAirPoolsUserData: (state, action) => {
+      const userData = action.payload
+      state.airdata = state.airdata.map((pool) => {
+        const userPoolData = userData.find((entry) => entry.sousId === pool.sousId)
+        return { ...pool, userData: userPoolData }
+      })
+    },
     updatePoolsUserData: (state, action) => {
       const { field, value, sousId } = action.payload
       const index = state.data.findIndex((p) => p.sousId === sousId)
@@ -39,7 +47,7 @@ export const PoolsSlice = createSlice({
 })
 
 // Actions
-export const { setPoolsPublicData, setPoolsUserData, updatePoolsUserData } = PoolsSlice.actions
+export const { setPoolsPublicData, setPoolsUserData, setAirPoolsUserData, updatePoolsUserData } = PoolsSlice.actions
 
 // Thunks
 export const fetchPoolsPublicDataAsync = () => async (dispatch) => {
@@ -73,6 +81,23 @@ export const fetchPoolsUserDataAsync = (account) => async (dispatch) => {
   }))
 
   dispatch(setPoolsUserData(userData))
+}
+
+export const fetchAirNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
+  const allowances = await fetchPoolsAllowance(account)
+  const stakingTokenBalances = await fetchUserBalances(account)
+  const stakedBalances = await fetchUserStakeBalances(account)
+  const pendingRewards = await fetchUserPendingRewards(account)
+
+  const userData = AirpoolsConfig.map((pool) => ({
+    sousId: pool.sousId,
+    allowance: allowances[pool.sousId],
+    stakingTokenBalance: stakingTokenBalances[pool.sousId],
+    stakedBalance: stakedBalances[pool.sousId],
+    pendingReward: pendingRewards[pool.sousId],
+  }))
+
+  dispatch(setAirPoolsUserData(userData))
 }
 
 export const updateUserAllowance = (sousId: string, account: string) => async (dispatch) => {
