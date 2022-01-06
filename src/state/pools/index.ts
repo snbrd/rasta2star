@@ -8,6 +8,7 @@ import {
   fetchUserBalances,
   fetchUserStakeBalances,
   fetchUserPendingRewards,
+  fetchUserAirnftBalances
 } from './fetchPoolsUser'
 import { PoolsState, Pool } from '../types'
 
@@ -83,21 +84,8 @@ export const fetchPoolsUserDataAsync = (account) => async (dispatch) => {
   dispatch(setPoolsUserData(userData))
 }
 
-export const fetchAirNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
-  const allowances = await fetchPoolsAllowance(account)
-  const stakingTokenBalances = await fetchUserBalances(account)
-  const stakedBalances = await fetchUserStakeBalances(account)
-  const pendingRewards = await fetchUserPendingRewards(account)
-
-  const userData = AirpoolsConfig.map((pool) => ({
-    sousId: pool.sousId,
-    allowance: allowances[pool.sousId],
-    stakingTokenBalance: stakingTokenBalances[pool.sousId],
-    stakedBalance: stakedBalances[pool.sousId],
-    pendingReward: pendingRewards[pool.sousId],
-  }))
-
-  dispatch(setAirPoolsUserData(userData))
+export const fetchAirNFTPoolsAUserDataAsync = (account) => async () => {
+  await fetchUserAirnftBalances(account)
 }
 
 export const updateUserAllowance = (sousId: string, account: string) => async (dispatch) => {
