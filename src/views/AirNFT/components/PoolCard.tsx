@@ -64,11 +64,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isBnbPool
   const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
 
-  const [isApproval, SETisApproval] = useState(needsApproval)
-
-  useEffect(() => {
-    SETisApproval(needsApproval)
-  }, [needsApproval])
+  const [isStaked, setIsStaked] = useState(false)
 
   const convertedLimit = new BigNumber(stakingLimit).multipliedBy(new BigNumber(10).pow(tokenDecimals))
 
@@ -94,7 +90,6 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
         <div className="row flex flex-col lg:flex-row gap-0 md:gap-10 mb-12">
           <CardHeading
             lpLabel={tokenName}
-            multiplier="60 X"
             isCommunityFarm={false}
             farmImage={tokenName}
             tokenSymbol="farm.tokenSymbol"
@@ -103,7 +98,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
             <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0">
               <span className="apr-value text-2xl w-full text-gray-700 ">
                 {isFinished || isOldSyrup || !apy || apy?.isNaN() || !apy?.isFinite() ? (
-                  '-'
+                  '47%'
                 ) : (
                   // <Balance fontSize="14px" isDisabled={isFinished} value={} decimals={2} unit="%" />
                   <span className="apr-value text-2xl w-full text-gray-700 ">
@@ -127,51 +122,26 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
           />
         </div>
         {!account && <Wallet />}
-        {account && isApproval && (
-          <span
-            className={(type === false ? "disabled " : "") + buttonClass}
-            onClick={() => type === false ? null : SETisApproval(!isApproval)}
-          >
-            <FaIcons.FaCheck />
-            <span>APPROVE RASTA</span>
-          </span>
-        )}
-        {account && !isApproval && (
-          // <StakeAction
-          //   stakedBalance={stakedBalance}
-          //   tokenBalance={tokenBalance}
-          //   tokenName={lpName}
-          //   pid={pid}
-          //   addLiquidityUrl={addLiquidityUrl}
-          // />
+        {account && (
           <div className="flex justify-between">
             <button
               type="button"
               disabled={requestedApproval}
-              onClick={onPresentWithdraw}
+              onClick={() => setIsStaked(!isStaked)}
               className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
             >
-              <span>{TranslateString(758, 'Unstake RASTA')}</span>
-            </button>
-            <button
-              type="button"
-              className="text-gray-800 border-2 border-gray-800 rounded-md w-16 p-0 text-2xl mx-2"
-              onClick={onPresentDeposit}
-            >
-              +
+              <span>{isStaked ? TranslateString(758, 'Unstake NFT') : TranslateString(758, 'Stake NFT')}</span>
             </button>
           </div>
         )}
 
         {/* <CardActionsContainer farm={farm} ethereum={ethereum} account={account} addLiquidityUrl={addLiquidityUrl} /> */}
-        {totalStaked && (
-          <FooterCardFarms
-            farmBscLink="https://bscscan.com/address/"
-            farmValue={getBalanceNumber(totalStaked).toString()}
-            farmStake="lpLabel"
-            addLPurl="addLiquidityUrl"
-          />
-        )}
+        <FooterCardFarms
+          farmBscLink="https://bscscan.com/address/"
+          farmValue={totalStaked ? getBalanceNumber(totalStaked).toString() : '0'}
+          farmStake="lpLabel"
+          addLPurl="addLiquidityUrl"
+        />
       </div>
       {/* <Card isActive={isCardActive} isFinished={isFinished && sousId !== 0}>
         {isFinished && sousId !== 0 && <PoolFinishedSash />}

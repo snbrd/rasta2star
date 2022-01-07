@@ -19,13 +19,13 @@ type Props = {
   pool: PoolWithApy
 }
 
-export default function FarmHarvest({ farmEarned, type, depositFee, pid = 'pid', earning = 'earnings', lpLabel, pool }: Props) {
+export default function FarmHarvest({ farmEarned, type, depositFee, pid = 'pid', earning = 'earnings', pool }: Props) {
   return (
     <div>
       <div className="gap-4 md:gap-8 row flex flex-col md:flex-row xl:flex-row w-full border-b-2 border-black pb-4 md:pb-12 mb-6">
         <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0">
           <h2 className="text-3xl font-bold text-left">{farmEarned === 0 ? "0.0000" : (farmEarned * 1).toFixed(4)}</h2>
-          <span className="text-red-rasta text-left text-sm">{lpLabel} STAKED</span>
+          <span className="text-red-rasta text-left text-sm">RASTA earned</span>
           <div className="flex flex-row gap-3">
             <HarvestAction pid={pid} earnings={earning} type={type} />
             <CompoundAction pid={pid} earnings={earning} type={type} pool={pool} />
