@@ -13,7 +13,7 @@ export default {
   },
   airNft: {
     97: '0x50751588924b480f9e9d4A1541CCa83f75aC0ECC',
-    56: '0x50751588924b480f9e9d4A1541CCa83f75aC0ECC',
+    56: '0x16925e94E87Dd1c98679Ae4BA867Fd841e14866c',
   },
   sousChef: {
     97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',

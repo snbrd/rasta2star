@@ -43,53 +43,53 @@ const Farm: React.FC = () => {
     return tokenPriceBN
   }
 
-  const poolsWithApy = pools.map((pool) => {
-    const isBnbPool = pool.poolCategory === PoolCategory.BINANCE
-    let rewardTokenFarm = null
-    if (pool.tokenName !== 'DFL') {
-      rewardTokenFarm = farms.find((f) => f.tokenSymbol === pool.tokenName)
-    }
-    const stakingTokenFarm = farms.find((s) => s.tokenSymbol === pool.stakingTokenName)
+  // const poolsWithApy = pools.map((pool) => {
+  //   const isBnbPool = pool.poolCategory === PoolCategory.BINANCE
+  //   let rewardTokenFarm = null
+  //   if (pool.tokenName !== 'DFL') {
+  //     rewardTokenFarm = farms.find((f) => f.tokenSymbol === pool.tokenName)
+  //   }
+  //   const stakingTokenFarm = farms.find((s) => s.tokenSymbol === pool.stakingTokenName)
 
-    // tmp mulitplier to support ETH farms
-    // Will be removed after the price api
-    const tempMultiplier = stakingTokenFarm?.quoteTokenSymbol === 'ETH' ? ethPriceBnb : 1
+  //   // tmp mulitplier to support ETH farms
+  //   // Will be removed after the price api
+  //   const tempMultiplier = stakingTokenFarm?.quoteTokenSymbol === 'ETH' ? ethPriceBnb : 1
 
-    // /!\ Assume that the farm quote price is BNB
-    const stakingTokenPriceInBNB = isBnbPool
-      ? new BigNumber(1)
-      : new BigNumber(stakingTokenFarm?.tokenPriceVsQuote).times(tempMultiplier)
-    let rewardTokenPriceInBNB = new BigNumber(0)
-    if (rewardTokenFarm) {
-      rewardTokenPriceInBNB = priceToBnb(
-        pool.tokenName,
-        rewardTokenFarm?.tokenPriceVsQuote,
-        rewardTokenFarm?.quoteTokenSymbol,
-      )
-    } else if (pool.tokenName === 'DFL') {
-      rewardTokenPriceInBNB = new BigNumber(bnbPriceDFL)
-    }
+  //   // /!\ Assume that the farm quote price is BNB
+  //   const stakingTokenPriceInBNB = isBnbPool
+  //     ? new BigNumber(1)
+  //     : new BigNumber(stakingTokenFarm?.tokenPriceVsQuote).times(tempMultiplier)
+  //   let rewardTokenPriceInBNB = new BigNumber(0)
+  //   if (rewardTokenFarm) {
+  //     rewardTokenPriceInBNB = priceToBnb(
+  //       pool.tokenName,
+  //       rewardTokenFarm?.tokenPriceVsQuote,
+  //       rewardTokenFarm?.quoteTokenSymbol,
+  //     )
+  //   } else if (pool.tokenName === 'DFL') {
+  //     rewardTokenPriceInBNB = new BigNumber(bnbPriceDFL)
+  //   }
 
-    if (stakingTokenFarm.tokenSymbol === 'RASTA' && rewardTokenFarm && rewardTokenFarm.quoteTokenSymbol === 'RASTA') {
-      rewardTokenPriceInBNB = new BigNumber(rewardTokenPriceInBNB).times(stakingTokenPriceInBNB)
-    }
+  //   if (stakingTokenFarm.tokenSymbol === 'RASTA' && rewardTokenFarm && rewardTokenFarm.quoteTokenSymbol === 'RASTA') {
+  //     rewardTokenPriceInBNB = new BigNumber(rewardTokenPriceInBNB).times(stakingTokenPriceInBNB)
+  //   }
 
-    const totalRewardPricePerYear = rewardTokenPriceInBNB.times(pool.tokenPerBlock).times(BLOCKS_PER_YEAR)
-    const totalStakingTokenInPool = stakingTokenPriceInBNB.times(getBalanceNumber(pool.totalStaked))
-    const apy = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
+  //   const totalRewardPricePerYear = rewardTokenPriceInBNB.times(pool.tokenPerBlock).times(BLOCKS_PER_YEAR)
+  //   const totalStakingTokenInPool = stakingTokenPriceInBNB.times(getBalanceNumber(pool.totalStaked))
+  //   const apy = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
 
-    return {
-      ...pool,
-      isFinished: pool.sousId === 0 ? false : pool.isFinished || block > pool.endBlock,
-      apy,
-    }
-  })
+  //   return {
+  //     ...pool,
+  //     isFinished: pool.sousId === 0 ? false : pool.isFinished || block > pool.endBlock,
+  //     apy,
+  //   }
+  // })
 
-  const [finishedPools, openPools] = partition(poolsWithApy, (pool) => pool.isFinished)
+  // const [finishedPools, openPools] = partition(poolsWithApy, (pool) => pool.isFinished)
 
-  const stackedOnlyPools = openPools.filter(
-    (pool) => pool.userData && new BigNumber(pool.userData.stakedBalance).isGreaterThan(0),
-  )
+  // const stackedOnlyPools = openPools.filter(
+  //   (pool) => pool.userData && new BigNumber(pool.userData.stakedBalance).isGreaterThan(0),
+  // )
 
   return (
     <div>
@@ -115,20 +115,8 @@ const Farm: React.FC = () => {
             <div>
               <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
                 {
-                  Active ?
-                    <>
-                      {stackedOnly
-                        ? orderBy(stackedOnlyPools, ['sortOrder']).map((pool) => (
-                          <PoolCard key={pool.sousId} pool={pool} />
-                        ))
-                        : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
-                    </>
-                    :
-                    <>
-                      {orderBy(finishedPools, ['sortOrder']).map((pool) => (
-                        <PoolCard key={pool.sousId} type={false} pool={pool} />
-                      ))}
-                    </>
+                  Active &&
+                  <PoolCard key={3} />
                 }
               </div>
             </div>

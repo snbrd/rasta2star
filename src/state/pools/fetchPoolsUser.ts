@@ -35,6 +35,8 @@ export const fetchPoolsAllowance = async (account) => {
 
 export const fetchUserAirnftBalances = async (account) => {
   const balance = await AirNftContract.methods.balanceOf(account).call();
+  return balance;
+  console.log('balance');
   console.log(balance);
 }
 

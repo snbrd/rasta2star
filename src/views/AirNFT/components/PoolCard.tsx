@@ -1,110 +1,52 @@
 import BigNumber from 'bignumber.js'
-import React, { useEffect, useState } from 'react'
-import { useModal } from 'rasta-uikit'
+import React, { useState } from 'react'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import useI18n from 'hooks/useI18n'
-import { useSousStake } from 'hooks/useStake'
-import { useSousUnstake } from 'hooks/useUnstake'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useSousDepositFee } from 'hooks/useHarvest'
-import { QuoteToken, PoolCategory } from 'config/constants/types'
-import { Pool } from 'state/types'
+import { QuoteToken } from 'config/constants/types'
 import { useFarms } from 'state/hooks'
 
-import * as FaIcons from 'react-icons/fa'
-import DepositModal from './DepositModal'
-import WithdrawModal from './WithdrawModal'
 import CardHeading from './CardHeading'
 import FarmHarvest from './CardElements/FarmHarvest'
 import FooterCardFarms from './CardElements/FooterCardFarms'
 import Wallet from './CardElements/Wallet'
 
-interface PoolWithApy extends Pool {
-  apy: BigNumber
-}
+// interface PoolWithApy extends Pool {
+//   apy: BigNumber
+// }
 
 interface HarvestProps {
-  pool: PoolWithApy
+  pool?: any
   removed?: boolean
   type?: boolean
 }
 
 const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
-  const {
-    sousId,
-    tokenName,
-    stakingTokenName,
-    apy,
-    tokenDecimals,
-    poolCategory,
-    totalStaked,
-    isFinished,
-    userData,
-    stakingLimit,
-  } = pool
 
   // Pools using native BNB behave differently than pools using a token
-  const isBnbPool = poolCategory === PoolCategory.BINANCE
   const TranslateString = useI18n()
   const { account } = useWallet()
-  const { onStake } = useSousStake(sousId, isBnbPool)
-  const { onUnstake } = useSousUnstake(sousId)
-  const depositFee = useSousDepositFee(sousId)
   const farmList = useFarms()
-  const farms = farmList.filter((farm) => farm.lpSymbol === tokenName)
   const requestedApproval = false;
 
-  const allowance = new BigNumber(userData?.allowance || 0)
-  const stakingTokenBalance = new BigNumber(userData?.stakingTokenBalance || 0)
-  const stakedBalance = new BigNumber(userData?.stakedBalance || 0)
-  const earnings = new BigNumber(userData?.pendingReward || 0)
-
-  const isOldSyrup = stakingTokenName === QuoteToken.SYRUP
-  const accountHasStakedBalance = stakedBalance?.toNumber() > 0
-  const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isBnbPool
-  const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
 
   const [isStaked, setIsStaked] = useState(false)
-
-  const convertedLimit = new BigNumber(stakingLimit).multipliedBy(new BigNumber(10).pow(tokenDecimals))
-
-  const [onPresentDeposit] = useModal(
-    <DepositModal
-      max={stakingLimit && stakingTokenBalance.isGreaterThan(convertedLimit) ? convertedLimit : stakingTokenBalance}
-      onConfirm={onStake}
-      tokenName={stakingLimit ? `${stakingTokenName} (${stakingLimit} max)` : stakingTokenName}
-    />,
-  )
-
-  // const [onPresentCompound] = useModal(
-  //   <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingTokenName} />,
-  // )
-
-  const [onPresentWithdraw] = useModal(
-    <WithdrawModal max={stakedBalance} onConfirm={onUnstake} tokenName={stakingTokenName} />,
-  )
 
   return (
     <>
       <div className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
         <div className="row flex flex-col lg:flex-row gap-0 md:gap-10 mb-12">
           <CardHeading
-            lpLabel={tokenName}
+            lpLabel='AIRNFT'
             isCommunityFarm={false}
-            farmImage={tokenName}
+            farmImage='airnft'
             tokenSymbol="farm.tokenSymbol"
           />
           {!removed && (
             <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0">
               <span className="apr-value text-2xl w-full text-gray-700 ">
-                {isFinished || isOldSyrup || !apy || apy?.isNaN() || !apy?.isFinite() ? (
-                  '47%'
-                ) : (
-                  // <Balance fontSize="14px" isDisabled={isFinished} value={} decimals={2} unit="%" />
-                  <span className="apr-value text-2xl w-full text-gray-700 ">
-                    {apy?.times(new BigNumber(1)).toNumber().toLocaleString('en-US').slice(0, -1)}%
-                  </span>
-                )}
+                47%
               </span>
               <span className="apr-label text-red-rasta text-sm">APR</span>
             </div>
@@ -112,13 +54,13 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
         </div>
         <div className={` expanded md:block`}>
           <FarmHarvest
-            lpLabel={tokenName}
-            farmEarned={getBalanceNumber(stakedBalance)}
-            depositFee={depositFee}
-            pid={farms.length ? farms[0].pid : 0}
+            lpLabel='AIRNFT'
+            farmEarned={0}
+            depositFee={0}
+            pid={0}
             type={type}
             pool={pool}
-            earning={earnings}
+            earning={0}
           />
         </div>
         {!account && <Wallet />}
@@ -138,7 +80,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
         {/* <CardActionsContainer farm={farm} ethereum={ethereum} account={account} addLiquidityUrl={addLiquidityUrl} /> */}
         <FooterCardFarms
           farmBscLink="https://bscscan.com/address/"
-          farmValue={totalStaked ? getBalanceNumber(totalStaked).toString() : '0'}
+          farmValue='0'
           farmStake="lpLabel"
           addLPurl="addLiquidityUrl"
         />

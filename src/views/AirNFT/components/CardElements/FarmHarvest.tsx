@@ -1,13 +1,8 @@
 import React from 'react'
-import { Pool } from 'state/types'
-import BigNumber from 'bignumber.js'
 import HarvestAction from '../FarmCard/HarvestAction'
 
 import CompoundAction from '../FarmCard/Compound'
 
-interface PoolWithApy extends Pool {
-  apy: BigNumber
-}
 
 type Props = {
   farmEarned?: any
@@ -16,7 +11,7 @@ type Props = {
   earning?: any
   lpLabel?: any
   type?: boolean
-  pool: PoolWithApy
+  pool?: any
 }
 
 export default function FarmHarvest({ farmEarned, type, depositFee, pid = 'pid', earning = 'earnings', pool }: Props) {

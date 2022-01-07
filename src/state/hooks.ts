@@ -76,17 +76,8 @@ export const usePools = (account): Pool[] => {
   const pools = useSelector((state: State) => state.pools.data)
   return pools
 }
-export const useAirNFT = (account): Pool[] => {
-  const { fastRefresh } = useRefresh()
-  const dispatch = useDispatch()
-  useEffect(() => {
-    if (account) {
-      dispatch(fetchAirNFTPoolsAUserDataAsync(account))
-    }
-  }, [account, dispatch, fastRefresh])
-
-  const pools = useSelector((state: State) => state.pools.airdata)
-  return pools
+export const useAirNFT = (account) => {
+  return fetchAirNFTPoolsAUserDataAsync(account)
 }
 
 export const usePoolFromPid = (sousId): Pool => {

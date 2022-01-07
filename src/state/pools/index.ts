@@ -85,7 +85,7 @@ export const fetchPoolsUserDataAsync = (account) => async (dispatch) => {
 }
 
 export const fetchAirNFTPoolsAUserDataAsync = (account) => async () => {
-  await fetchUserAirnftBalances(account)
+  return await fetchUserAirnftBalances(account)
 }
 
 export const updateUserAllowance = (sousId: string, account: string) => async (dispatch) => {
