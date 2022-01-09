@@ -1,9 +1,8 @@
 import React from 'react'
-// import Fade from 'react-reveal/Fade';
+import styled from 'styled-components';
 
 import NormalClock from './components/NormalClock/NormalClock';
 import BannerBG from "../../assets/deadline.png";
-import styled from 'styled-components';
 
 
 
@@ -31,11 +30,9 @@ const AirFarm: React.FC = () => {
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiu sit amet consectetur adipisicing
               </p>
-              {/* <Fade> */}
               <NormalClockWrapper>
                 <NormalClock countdown={deadline} />
               </NormalClockWrapper>
-              {/* </Fade> */}
             </MainContentSection>
           </Container>
         </MainWrapper>

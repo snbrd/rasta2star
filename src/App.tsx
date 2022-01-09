@@ -7,7 +7,7 @@ import About from 'views/About/About'
 import Footer from 'components/layout/Footer'
 import Contact from './views/Contact/Contact'
 import Farms2 from './views/Farms/Farms2'
-// import AirFarm from './views/AirNFT'
+import AirFarm from './views/AirNFT'
 // import GlobalStyle from './style/Global'
 // import Menu from './components/Menu'
 import ToastListener from './components/ToastListener'
@@ -82,9 +82,9 @@ const App: React.FC = () => {
             <Route path="/stake">
               <Stake />
             </Route>
-            {/* <Route path="/stakenft">
+            <Route path="/stakenft">
               <AirFarm />
-            </Route> */}
+            </Route>
             <Route path="/lottery">
               <Lottery />
             </Route>
