@@ -1,20 +1,20 @@
 import React from 'react'
-// import Fade from 'react-reveal/Fade';
+import Fade from 'react-reveal/Fade';
 
-// import {
-//   MainWrapper,
-//   MainContentSection,
-//   NormalClockWrapper,
-//   Container,
-// } from './deadline';
+import {
+  MainWrapper,
+  // MainContentSection,
+  // NormalClockWrapper,
+  // Container,
+} from './deadline';
 // import NormalClock from './components/NormalClock/NormalClock';
-// import BannerBG from "../../assets/deadline.png";
+import BannerBG from "../../assets/deadline.png";
 
 const AirFarm: React.FC = () => {
   // const deadline = new Date(new Date().getTime() + 6 * 60 * 60 * 1000);
   return (
     <div>
-      {/* <div>
+      <div>
         <MainWrapper
           style={{
             backgroundImage: `url(${BannerBG})`,
@@ -26,7 +26,7 @@ const AirFarm: React.FC = () => {
             alignItems: 'center'
           }}
         >
-          <Container className="mainContainer">
+          {/* <Container className="mainContainer">
             <MainContentSection> */}
               <h2>
                 AirNFT Farm is coming soon
@@ -40,9 +40,9 @@ const AirFarm: React.FC = () => {
                 </NormalClockWrapper>
               </Fade>
             </MainContentSection>
-          </Container>
+          </Container> */}
         </MainWrapper>
-      </div> */}
+      </div>
     </div >
   )
 }
