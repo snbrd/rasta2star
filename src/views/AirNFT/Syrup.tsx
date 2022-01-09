@@ -1,14 +1,14 @@
 import React from 'react'
 // import Fade from 'react-reveal/Fade';
 
-// import NormalClock from './components/NormalClock/NormalClock';
+import NormalClock from './components/NormalClock/NormalClock';
 import BannerBG from "../../assets/deadline.png";
 import styled from 'styled-components';
 
 
 
 const AirFarm: React.FC = () => {
-  // const deadline = new Date(new Date().getTime() + 6 * 60 * 60 * 1000);
+  const deadline = new Date(new Date().getTime() + 6 * 60 * 60 * 1000);
   return (
     <div>
       <div>
@@ -31,11 +31,11 @@ const AirFarm: React.FC = () => {
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiu sit amet consectetur adipisicing
               </p>
-              {/* <Fade>
-                <NormalClockWrapper> */}
-                  {/* <NormalClock countdown={deadline} /> */}
-                {/* </NormalClockWrapper>
-              </Fade> */}
+              {/* <Fade> */}
+              <NormalClockWrapper>
+                <NormalClock countdown={deadline} />
+              </NormalClockWrapper>
+              {/* </Fade> */}
             </MainContentSection>
           </Container>
         </MainWrapper>
