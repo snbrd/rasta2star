@@ -1,12 +1,12 @@
 import React from 'react'
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 
-import {
-  MainWrapper,
-  // MainContentSection,
-  // NormalClockWrapper,
-  // Container,
-} from './deadline';
+// import {
+//   MainWrapper,
+//   MainContentSection,
+//   NormalClockWrapper,
+//   Container,
+// } from './deadline';
 // import NormalClock from './components/NormalClock/NormalClock';
 import BannerBG from "../../assets/deadline.png";
 
@@ -15,7 +15,7 @@ const AirFarm: React.FC = () => {
   return (
     <div>
       <div>
-        <MainWrapper
+        <div
           style={{
             backgroundImage: `url(${BannerBG})`,
             backgroundColor: '#e6e8ee',
@@ -41,7 +41,7 @@ const AirFarm: React.FC = () => {
               </Fade>
             </MainContentSection>
           </Container> */}
-        </MainWrapper>
+        </div>
       </div>
     </div >
   )
