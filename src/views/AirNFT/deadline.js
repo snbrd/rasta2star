@@ -96,7 +96,7 @@ export const LogoImageContainer = styled.div`
 //   }
 // `;
 
-export const MainWrapper = styled.section`
+export const MainWrapper = styled.div`
   position: relative;
   height: 80%;
   min-height: 95vh;
