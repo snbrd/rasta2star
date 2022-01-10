@@ -2,10 +2,10 @@ import Web3 from 'web3'
 import { HttpProviderOptions } from 'web3-core-helpers'
 import { AbiItem } from 'web3-utils'
 import { ContractOptions } from 'web3-eth-contract'
-// import getRpcUrl from 'utils/getRpcUrl'
+import getRpcUrl from 'utils/getRpcUrl'
 
-// const RPC_URL = getRpcUrl()
-const httpProvider = new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161', { timeout: 10000 } as HttpProviderOptions)
+const RPC_URL = getRpcUrl()
+const httpProvider = new Web3.providers.HttpProvider(RPC_URL, { timeout: 10000 } as HttpProviderOptions)
 
 /**
  * Provides a web3 instance using our own private provider httpProver
