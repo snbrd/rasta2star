@@ -1,7 +1,7 @@
 import { AbiItem } from 'web3-utils'
 import { Interface } from '@ethersproject/abi'
 import { getWeb3 } from 'utils/web3'
-import MultiCallAbi from 'config/abi/Multicall.json'
+import MultiCallAbi from 'config/abi/Multicall-test.json'
 import { getMulticallAddress } from 'utils/addressHelpers'
 
 interface Call {
@@ -18,7 +18,7 @@ const multicall = async (abi: any[], calls: Call[]) => {
   const calldata = calls.map((call) => [call.address.toLowerCase(), itf.encodeFunctionData(call.name, call.params)])
   const { returnData } = await multi.methods.aggregate(calldata).call()
   const res = returnData.map((call, i) => itf.decodeFunctionResult(calls[i].name, call))
-
+  
   return res
 }
 

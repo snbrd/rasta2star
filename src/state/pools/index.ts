@@ -1,18 +1,18 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit'
 import poolsConfig from 'config/constants/pools'
-import AirpoolsConfig from 'config/constants/airnfts'
 import { fetchPoolsBlockLimits, fetchPoolsTotalStatking } from './fetchPools'
 import {
   fetchPoolsAllowance,
   fetchUserBalances,
   fetchUserStakeBalances,
   fetchUserPendingRewards,
-  fetchUserAirnftBalances
+  fetchUserAirnftBalances,
+  fetchPoolStatus
 } from './fetchPoolsUser'
 import { PoolsState, Pool } from '../types'
 
-const initialState: PoolsState = { data: [...poolsConfig], airdata: [...AirpoolsConfig] }
+const initialState: PoolsState = { data: [...poolsConfig], airdata: {} }
 
 export const PoolsSlice = createSlice({
   name: 'Pools',
@@ -33,11 +33,7 @@ export const PoolsSlice = createSlice({
       })
     },
     setAirPoolsUserData: (state, action) => {
-      const userData = action.payload
-      state.airdata = state.airdata.map((pool) => {
-        const userPoolData = userData.find((entry) => entry.sousId === pool.sousId)
-        return { ...pool, userData: userPoolData }
-      })
+      state.airdata = action.payload;
     },
     updatePoolsUserData: (state, action) => {
       const { field, value, sousId } = action.payload
@@ -84,8 +80,10 @@ export const fetchPoolsUserDataAsync = (account) => async (dispatch) => {
   dispatch(setPoolsUserData(userData))
 }
 
-export const fetchAirNFTPoolsAUserDataAsync = (account) => async () => {
-  return await fetchUserAirnftBalances(account)
+export const fetchAirNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
+  const nftBalance = await fetchUserAirnftBalances(account)
+  const pool = await fetchPoolStatus(account)
+  dispatch(setAirPoolsUserData({ nftBalance, ...pool }))
 }
 
 export const updateUserAllowance = (sousId: string, account: string) => async (dispatch) => {

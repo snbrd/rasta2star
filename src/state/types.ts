@@ -64,7 +64,7 @@ export interface FarmsState {
 
 export interface PoolsState {
   data: Pool[],
-  airdata: Pool[]
+  airdata: Object
 }
 
 export interface ProfileState {

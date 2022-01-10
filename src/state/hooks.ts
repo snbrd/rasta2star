@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { kebabCase } from 'lodash'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
@@ -76,8 +76,18 @@ export const usePools = (account): Pool[] => {
   const pools = useSelector((state: State) => state.pools.data)
   return pools
 }
-export const useAirNFT = (account) => {
-  return fetchAirNFTPoolsAUserDataAsync(account)
+export const useAirNFT = () => {
+  const dispatch = useDispatch()
+  const { account } = useWallet()
+  const fetchData = useCallback(
+    async () => {
+      if (account) {
+        dispatch(fetchAirNFTPoolsAUserDataAsync(account))
+      }
+    },
+    [account, dispatch],
+  );
+  return { onFetch: fetchData };
 }
 
 export const usePoolFromPid = (sousId): Pool => {

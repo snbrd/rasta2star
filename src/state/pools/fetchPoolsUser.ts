@@ -2,11 +2,12 @@ import { AbiItem } from 'web3-utils'
 import poolsConfig from 'config/constants/pools'
 import masterChefABI from 'config/abi/masterchef.json'
 import airNFTABI from 'config/abi/airToken.json'
+import airFarmABI from 'config/abi/airFarm.json'
 import sousChefABI from 'config/abi/sousChef.json'
 import erc20ABI from 'config/abi/erc20.json'
 import { QuoteToken } from 'config/constants/types'
 import multicall from 'utils/multicall'
-import { getAddress, getAirNftAddress, getMasterChefAddress } from 'utils/addressHelpers'
+import { getAddress, getAirFarmAddress, getAirNftAddress, getMasterChefAddress } from 'utils/addressHelpers'
 import { getWeb3 } from 'utils/web3'
 import BigNumber from 'bignumber.js'
 
@@ -35,9 +36,61 @@ export const fetchPoolsAllowance = async (account) => {
 
 export const fetchUserAirnftBalances = async (account) => {
   const balance = await AirNftContract.methods.balanceOf(account).call();
-  return balance;
-  console.log('balance');
-  console.log(balance);
+  const calls = [];
+  for (let i = 0; i < balance; i++) {
+    calls.push({
+      address: getAirNftAddress(),
+      name: 'tokenOfOwnerByIndex',
+      params: [account, i],
+    })
+  }
+  const tokenIds = await multicall(airNFTABI, calls)
+  const priceCalls = [];
+  for (let i = 0; i < tokenIds.length; i++) {
+    priceCalls.push({
+      address: getAirNftAddress(),
+      name: 'price',
+      params: [new BigNumber(tokenIds[i]).toString()],
+    })
+  }
+  const tokenPrices = await multicall(airNFTABI, priceCalls)
+  let totalBalance = 0;
+  for (let i = 0; i < tokenPrices.length; i++) {
+    totalBalance += new BigNumber(tokenPrices[i]).toNumber();
+  }
+  return totalBalance;
+}
+
+export const fetchPoolStatus = async (account) => {
+  const calls = [
+    {
+      address: getAirFarmAddress(),
+      name: 'userInfo',
+      params: [account],
+    },
+    {
+      address: getAirFarmAddress(),
+      name: 'claimable',
+      params: [account],
+    },
+    {
+      address: getAirFarmAddress(),
+      name: 'paused',
+      params: [],
+    },
+    {
+      address: getAirFarmAddress(),
+      name: 'totalSupply',
+      params: [],
+    },
+    {
+      address: getAirFarmAddress(),
+      name: 'rewardRate',
+      params: [],
+    },
+  ];
+  const poolInfo = await multicall(airFarmABI, calls)
+  return poolInfo;
 }
 
 export const fetchUserBalances = async (account) => {

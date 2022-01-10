@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import BigNumber from 'bignumber.js'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { BLOCKS_PER_YEAR } from 'config'
@@ -10,6 +10,8 @@ import { getBalanceNumber } from 'utils/formatBalance'
 import { useFarms, usePriceBnbBusd, useAirNFT } from 'state/hooks'
 import { useGetDFLPriceVsBnb } from 'hooks/api'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
+import { useSelector } from 'react-redux'
+import { State } from 'state/types'
 // import Coming from './components/Coming'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
@@ -21,16 +23,21 @@ const Farm: React.FC = () => {
   const TranslateString = useI18n()
   const { account } = useWallet()
   const farms = useFarms()
-  const pools = useAirNFT(account)
   const block = useBlock()
   const stackedOnly = false;
   const [Active, setActive] = useState(true)
   const bnbPriceUSD = usePriceBnbBusd()
   const bnbPriceDFL = useGetDFLPriceVsBnb()
-
+  const { onFetch } = useAirNFT();
+  const farmInfo = useSelector((state: State) => state.pools.airdata)
+  console.log(bnbPriceDFL)
   const ethPriceBnb = useMemo(() => {
     return new BigNumber(0)
   }, [])
+
+  useEffect(() => {
+    onFetch()
+  }, [onFetch])
 
   const priceToBnb = (tokenName: string, tokenPrice: BigNumber, quoteToken: QuoteToken): BigNumber => {
     const tokenPriceBN = new BigNumber(tokenPrice)
