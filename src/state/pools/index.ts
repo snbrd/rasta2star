@@ -81,9 +81,9 @@ export const fetchPoolsUserDataAsync = (account) => async (dispatch) => {
 }
 
 export const fetchAirNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
-  const nftBalance = await fetchUserAirnftBalances(account)
+  const nftInfo = await fetchUserAirnftBalances(account)
   const pool = await fetchPoolStatus(account)
-  dispatch(setAirPoolsUserData({ nftBalance, ...pool }))
+  dispatch(setAirPoolsUserData({ ...nftInfo, ...pool }))
 }
 
 export const updateUserAllowance = (sousId: string, account: string) => async (dispatch) => {

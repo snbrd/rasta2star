@@ -29,8 +29,8 @@ const Farm: React.FC = () => {
   const bnbPriceUSD = usePriceBnbBusd()
   const bnbPriceDFL = useGetDFLPriceVsBnb()
   const { onFetch } = useAirNFT();
-  const farmInfo = useSelector((state: State) => state.pools.airdata)
-  console.log(bnbPriceDFL)
+  const farmInfo = useSelector((state: State) => state.pools.airdata);
+  
   const ethPriceBnb = useMemo(() => {
     return new BigNumber(0)
   }, [])

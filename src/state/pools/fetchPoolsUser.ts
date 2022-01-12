@@ -10,6 +10,7 @@ import multicall from 'utils/multicall'
 import { getAddress, getAirFarmAddress, getAirNftAddress, getMasterChefAddress } from 'utils/addressHelpers'
 import { getWeb3 } from 'utils/web3'
 import BigNumber from 'bignumber.js'
+import { RastaNftIds } from 'config/constants/airnfts'
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
 // BNB pools use the native BNB token (wrapping ? unwrapping is done at the contract level)
@@ -36,6 +37,7 @@ export const fetchPoolsAllowance = async (account) => {
 
 export const fetchUserAirnftBalances = async (account) => {
   const balance = await AirNftContract.methods.balanceOf(account).call();
+  const approved = await AirNftContract.methods.isApprovedForAll(account, getAirFarmAddress()).call();
   const calls = [];
   for (let i = 0; i < balance; i++) {
     calls.push({
@@ -44,21 +46,18 @@ export const fetchUserAirnftBalances = async (account) => {
       params: [account, i],
     })
   }
-  const tokenIds = await multicall(airNFTABI, calls)
-  const priceCalls = [];
+  const tokenIds = await multicall(airNFTABI, calls);
+  let j = false;
   for (let i = 0; i < tokenIds.length; i++) {
-    priceCalls.push({
-      address: getAirNftAddress(),
-      name: 'price',
-      params: [new BigNumber(tokenIds[i]).toString()],
-    })
+    const res = RastaNftIds.find((item) => item === new BigNumber(tokenIds[i]).toNumber());
+    if (res) {
+      j = true;
+      break;
+    }
   }
-  const tokenPrices = await multicall(airNFTABI, priceCalls)
-  let totalBalance = 0;
-  for (let i = 0; i < tokenPrices.length; i++) {
-    totalBalance += new BigNumber(tokenPrices[i]).toNumber();
-  }
-  return totalBalance;
+
+  if (j) return { approved, balance };
+  return { approved, balance: 0 };
 }
 
 export const fetchPoolStatus = async (account) => {
