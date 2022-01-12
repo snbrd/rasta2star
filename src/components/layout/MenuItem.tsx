@@ -19,20 +19,20 @@ export default function MenuItem({ menu, showSidebar }) {
           rel="noreferrer"
         >
           {menu.icon}
-          <span className="flex-grow-1 pr-8" style={{ fontSize: '18px' }}>
+          <span className="flex-grow-1" style={{ fontSize: '18px' }}>
             {menu.label}
             <h1 style={{ fontSize: '13px' }}>{menu.sublabel}</h1>
           </span>
         </a>
       ) : (
         <Link to={menu.path} className="flex flex-row space-x-4 items-center" onClick={() => showChildren(menu.parent)}>
-        {menu.icon}
-        <span className="flex-grow-1 pr-8" style={{ fontSize: '18px' }}>
-          {menu.label}
-          <h1 style={{ fontSize: '13px' }}>{menu.sublabel}</h1>
-        </span>
-        {menu.parent && children && <IoIcons.IoIosArrowDropdown />}
-        {menu.parent && !children && <IoIcons.IoIosArrowDropright />}
+          {menu.icon}
+          <span className="flex-grow-1" style={{ fontSize: '18px' }}>
+            {menu.label}
+            <h1 style={{ fontSize: '13px' }}>{menu.sublabel}</h1>
+          </span>
+          {menu.parent && children && <IoIcons.IoIosArrowDropdown />}
+          {menu.parent && !children && <IoIcons.IoIosArrowDropright />}
         </Link>
       )}
       {menu.child.length > 0 && children && (
@@ -40,24 +40,42 @@ export default function MenuItem({ menu, showSidebar }) {
           {menu.child.map((i) => {
             return (
               <li key={i.label}>
-                {i.path.includes('http') ? (
-                  <a href={i.path} onClick={showSidebar}>
-                    <span className="ml-10" style={{ fontSize: '18px', marginLeft: '3rem' }}>
-                      {i.label}
-                    </span>
-                  </a>
-                ) : (
-                  <Link to={i.path} onClick={showSidebar}>
+                {(() => {
+                  if (i.blank) {
+                    return <a
+                      href={i.path}
+                      onClick={showSidebar}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span className="ml-10" style={{ fontSize: '18px', marginLeft: '3rem' }}>
+                        {i.label}
+                      </span>
+                    </a>;
+                  }
+                  if (i.path.includes('http')) {
+                    return <a
+                      href={i.path}
+                      onClick={showSidebar}
+                    >
+                      <span className="ml-10" style={{ fontSize: '18px', marginLeft: '3rem' }}>
+                        {i.label}
+                      </span>
+                    </a>
+                  }
+
+                  return <Link to={i.path} onClick={showSidebar}>
                     <span className="ml-10" style={{ fontSize: '18px', marginLeft: '3rem' }}>
                       {i.label}
                     </span>
                   </Link>
-                )}
+                })()}
               </li>
             )
           })}
         </ul>
-      )}
-    </li>
+      )
+      }
+    </li >
   )
 }
