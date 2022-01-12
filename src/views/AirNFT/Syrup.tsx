@@ -25,10 +25,17 @@ const AirFarm: React.FC = () => {
           <Container className="mainContainer">
             <MainContentSection>
               <h2>
-                AirNFT Farm is coming soon
+                RastaDividend NFT Farming Coming Soon
               </h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiu sit amet consectetur adipisicing
+                Purchase your own 1 of 100 unique RastaDividend NFTs from&nbsp;
+                <a
+                  target="_blank"
+                  rel='noreferrer'
+                  href='https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61'
+                  style={{ color: "red", textDecoration: "underline" }}
+                >AirNFT</a>
+                , stake them to earn a boosted $RASTA return.
               </p>
               <NormalClockWrapper>
                 <NormalClock countdown={deadline} />
@@ -126,15 +133,16 @@ const MainContentSection = styled.div`
     }
   }
   p {
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Lato', sans-serif;
     color: #141a3c;
     line-height: 1.9;
     text-align: center;
-    max-width: 420px;
+    max-width: 590px;
     margin-bottom: 0;
     @media (max-width: 1600px) {
       font-size: 16px;
+      max-width: 420px;
     }
     @media (max-width: 768px) {
       font-size: 16px;
