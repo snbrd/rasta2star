@@ -22,7 +22,6 @@ import MrsRastaImage from '../../assets/lion-mrs-rasta.jpg'
 const Farm: React.FC = () => {
   const TranslateString = useI18n()
   const { account } = useWallet()
-  const farms = useFarms()
   const block = useBlock()
   const stackedOnly = false;
   const [Active, setActive] = useState(true)
@@ -30,7 +29,8 @@ const Farm: React.FC = () => {
   const bnbPriceDFL = useGetDFLPriceVsBnb()
   const { onFetch } = useAirNFT();
   const farmInfo = useSelector((state: State) => state.pools.airdata);
-  
+  console.log('-----------------')
+  console.log(farmInfo)
   const ethPriceBnb = useMemo(() => {
     return new BigNumber(0)
   }, [])

@@ -17,7 +17,7 @@ export default {
   },
   AirFarm: {
     97: '0x50751588924b480f9e9d4A1541CCa83f75aC0ECC',
-    56: '0x5e9D1b4876e96C7f61E5fBeCc23bE5be845AC95a',
+    56: '0x6551A6BB81C0500BA1EE9578b37d240535E84fAC',
   },
   sousChef: {
     97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
