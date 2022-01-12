@@ -13,7 +13,6 @@ import {
   FaTwitter,
   FaMediumM,
   FaReddit,
-  FaDonate,
   FaBars,
   FaRegWindowClose,
   GoMail,
@@ -65,11 +64,20 @@ export default function Sidebar() {
     },
     {
       label: 'RastaDividend NFT',
-      sublabel: 'Buy now on AirNFTs',
-      path: 'https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61',
+      path: '#',
       icon: <FaShoppingBag className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
+      parent: true,
+      child: [
+        {
+          path: 'https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61',
+          label: 'Buy',
+          blank: true
+        },
+        {
+          path: '/stakenft',
+          label: 'Stake',
+        },
+      ],
     },
     // {
     //  label: 'Rasino',
@@ -108,14 +116,6 @@ export default function Sidebar() {
       label: 'StakeRasta',
       path: '/stake',
       icon: <RiMoneyDollarCircleLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
-    },
-    {
-      label: 'StakeAirNFT',
-      sublabel:'(coming soon)',
-      path: '/stakenft',
-      icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
       parent: false,
       child: [],
     },
