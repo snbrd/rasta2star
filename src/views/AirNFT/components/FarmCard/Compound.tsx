@@ -1,9 +1,9 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
-import { useModal } from 'rasta-uikit'
-import { useSousStake } from 'hooks/useStake'
-import { PoolCategory } from 'config/constants/types'
-import CompoundModal from '../CompoundModal'
+// import { useModal } from 'rasta-uikit'
+// import { useSousStake } from 'hooks/useStake'
+// import { PoolCategory } from 'config/constants/types'
+// import CompoundModal from '../CompoundModal'
 
 interface FarmCardActionsProps {
   earnings?: BigNumber
@@ -12,7 +12,7 @@ interface FarmCardActionsProps {
   pool: any
 }
 
-const CompoundAction: React.FC<FarmCardActionsProps> = ({ earnings, type, pool }) => {
+const CompoundAction: React.FC<FarmCardActionsProps> = ({ type }) => {
   // const {
   //   sousId,
   //   stakingTokenName,

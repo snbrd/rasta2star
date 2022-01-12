@@ -13,7 +13,6 @@ import {
   FaTwitter,
   FaMediumM,
   FaReddit,
-  FaDonate,
   FaBars,
   FaRegWindowClose,
   GoMail,

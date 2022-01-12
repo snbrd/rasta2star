@@ -90,7 +90,7 @@ export const fetchPoolStatus = async (account) => {
   ];
   const poolInfo = await multicall(airFarmABI, calls)
   console.log('===========')
-  console.log(poolInfo[1][0] * 1)
+  console.log(new BigNumber(poolInfo[1][0]).toNumber())
   return {
     userInfo: poolInfo[0],
     pendingReword: new BigNumber(poolInfo[1][0]).toString(),

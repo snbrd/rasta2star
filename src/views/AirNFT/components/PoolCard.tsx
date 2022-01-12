@@ -1,11 +1,9 @@
-import BigNumber from 'bignumber.js'
 import React, { useState } from 'react'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import useI18n from 'hooks/useI18n'
-import { getBalanceNumber } from 'utils/formatBalance'
-import { useSousDepositFee } from 'hooks/useHarvest'
-import { QuoteToken } from 'config/constants/types'
-import { useFarms } from 'state/hooks'
+// import { getBalanceNumber } from 'utils/formatBalance'
+// import { useSousDepositFee } from 'hooks/useHarvest'
+// import { QuoteToken } from 'config/constants/types'
 
 import CardHeading from './CardHeading'
 import FarmHarvest from './CardElements/FarmHarvest'
@@ -27,7 +25,6 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   // Pools using native BNB behave differently than pools using a token
   const TranslateString = useI18n()
   const { account } = useWallet()
-  const farmList = useFarms()
   const requestedApproval = false;
 
 
