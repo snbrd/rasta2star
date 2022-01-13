@@ -69,7 +69,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
             return <Wallet />;
           }
 
-          if (!balance) {
+          if (!balance && Number(depositedAmount) === 0) {
             return (
               <a href='https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61' target="_blank" rel='noreferrer'>
                 <span
