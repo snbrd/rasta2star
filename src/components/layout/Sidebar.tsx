@@ -17,7 +17,7 @@ import {
   FaRegWindowClose,
   GoMail,
   RiMoneyDollarCircleLine,
-  FaShoppingBag,
+  FaDonate,
 } from 'react-icons/all'
 import MenuItem from './MenuItem'
 import RastaIcon from '../../assets/menu_coin2.jpg'
@@ -65,7 +65,7 @@ export default function Sidebar() {
     {
       label: 'RastaDividend NFT',
       path: '#',
-      icon: <FaShoppingBag className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
       parent: true,
       child: [
         {
