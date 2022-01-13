@@ -7,7 +7,7 @@ import BannerBG from "../../assets/deadline.png";
 
 
 const AirFarm: React.FC = () => {
-  const deadline = new Date(1642068274991);
+  const deadline = new Date(1642074596212);
   return (
     <div>
       <div>
