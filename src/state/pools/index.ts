@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit'
 import poolsConfig from 'config/constants/pools'
+import { initAirData } from 'config/constants/airnfts'
 import { fetchPoolsBlockLimits, fetchPoolsTotalStatking } from './fetchPools'
 import {
   fetchPoolsAllowance,
@@ -10,9 +11,9 @@ import {
   fetchUserAirnftBalances,
   fetchPoolStatus
 } from './fetchPoolsUser'
-import { PoolsState, Pool } from '../types'
+import { PoolsState, Pool, AirData } from '../types'
 
-const initialState: PoolsState = { data: [...poolsConfig], airdata: {} }
+const initialState: PoolsState = { data: [...poolsConfig], airdata: initAirData }
 
 export const PoolsSlice = createSlice({
   name: 'Pools',

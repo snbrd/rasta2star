@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import useI18n from 'hooks/useI18n'
-import { useAirNFT } from 'state/hooks'
+import { useAirNFT, usePriceBnbBusd, usePriceRastaBusd } from 'state/hooks'
 import { useSelector } from 'react-redux'
 import { State } from 'state/types'
+import BigNumber from 'bignumber.js'
 // import Coming from './components/Coming'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
@@ -15,6 +16,8 @@ const Farm: React.FC = () => {
   const stackedOnly = false;
   const [Active, setActive] = useState(true)
   const { onFetch } = useAirNFT();
+  const bnbPriceUSD = usePriceBnbBusd()
+  const rastaPriceUSD = usePriceRastaBusd()
   const farmInfo = useSelector((state: State) => state.pools.airdata);
   console.log('-----------------')
   console.log(farmInfo)
@@ -23,53 +26,7 @@ const Farm: React.FC = () => {
     onFetch()
   }, [onFetch])
 
-  // const poolsWithApy = pools.map((pool) => {
-  //   const isBnbPool = pool.poolCategory === PoolCategory.BINANCE
-  //   let rewardTokenFarm = null
-  //   if (pool.tokenName !== 'DFL') {
-  //     rewardTokenFarm = farms.find((f) => f.tokenSymbol === pool.tokenName)
-  //   }
-  //   const stakingTokenFarm = farms.find((s) => s.tokenSymbol === pool.stakingTokenName)
-
-  //   // tmp mulitplier to support ETH farms
-  //   // Will be removed after the price api
-  //   const tempMultiplier = stakingTokenFarm?.quoteTokenSymbol === 'ETH' ? ethPriceBnb : 1
-
-  //   // /!\ Assume that the farm quote price is BNB
-  //   const stakingTokenPriceInBNB = isBnbPool
-  //     ? new BigNumber(1)
-  //     : new BigNumber(stakingTokenFarm?.tokenPriceVsQuote).times(tempMultiplier)
-  //   let rewardTokenPriceInBNB = new BigNumber(0)
-  //   if (rewardTokenFarm) {
-  //     rewardTokenPriceInBNB = priceToBnb(
-  //       pool.tokenName,
-  //       rewardTokenFarm?.tokenPriceVsQuote,
-  //       rewardTokenFarm?.quoteTokenSymbol,
-  //     )
-  //   } else if (pool.tokenName === 'DFL') {
-  //     rewardTokenPriceInBNB = new BigNumber(bnbPriceDFL)
-  //   }
-
-  //   if (stakingTokenFarm.tokenSymbol === 'RASTA' && rewardTokenFarm && rewardTokenFarm.quoteTokenSymbol === 'RASTA') {
-  //     rewardTokenPriceInBNB = new BigNumber(rewardTokenPriceInBNB).times(stakingTokenPriceInBNB)
-  //   }
-
-  //   const totalRewardPricePerYear = rewardTokenPriceInBNB.times(pool.tokenPerBlock).times(BLOCKS_PER_YEAR)
-  //   const totalStakingTokenInPool = stakingTokenPriceInBNB.times(getBalanceNumber(pool.totalStaked))
-  //   const apy = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
-
-  //   return {
-  //     ...pool,
-  //     isFinished: pool.sousId === 0 ? false : pool.isFinished || block > pool.endBlock,
-  //     apy,
-  //   }
-  // })
-
-  // const [finishedPools, openPools] = partition(poolsWithApy, (pool) => pool.isFinished)
-
-  // const stackedOnlyPools = openPools.filter(
-  //   (pool) => pool.userData && new BigNumber(pool.userData.stakedBalance).isGreaterThan(0),
-  // )
+  // const poolsWithApy = new BigNumber(rastaPriceUSD).div(bnbPriceUSD).times(farmInfo.rewardRate).toString()
 
   return (
     <div>

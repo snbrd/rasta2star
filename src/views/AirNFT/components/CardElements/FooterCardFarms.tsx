@@ -14,6 +14,7 @@ type Props = {
 
 export default function FooterCardFarms({
   farmValue,
+  farmBscLink
 }: Props) {
 
   const [show, setShow] = useState(false)
@@ -29,14 +30,14 @@ export default function FooterCardFarms({
             <span className="text-black-rasta font-bold">Total NFTs Staked</span>
             <span className="text-black-rasta font-bold"> </span>
             <div className="flex flex-col md:flex-row space-x-4">
-              <span className='text-black-rasta font-bold'>{numberWithCommas(parseFloat(farmValue).toFixed(3))} BNB</span>
+              <span className='text-black-rasta font-bold'>{numberWithCommas(parseFloat(farmValue).toFixed(0))}</span>
             </div>
           </div>
         </div>
       )}
       <div className="flex justify-between w-full items-center mt-5">
         <div>
-          <span className="text-red-rasta"><a href='https://bscscan.com/address/0x6551A6BB81C0500BA1EE9578b37d240535E84fAC' target="_blank" rel='noreferrer'>View on BscScan</a></span>
+          <span className="text-red-rasta"><a href={farmBscLink} target="_blank" rel='noreferrer'>View on BscScan</a></span>
         </div>
         <div
           className="flex flex-row space-x-4 items-center text-red-rasta cursor-pointer"

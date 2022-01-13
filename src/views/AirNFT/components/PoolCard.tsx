@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import useI18n from 'hooks/useI18n'
+import { getAirFarmAddress } from 'utils/addressHelpers'
 // import { getBalanceNumber } from 'utils/formatBalance'
 // import { useSousDepositFee } from 'hooks/useHarvest'
 // import { QuoteToken } from 'config/constants/types'
@@ -76,7 +77,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
 
         {/* <CardActionsContainer farm={farm} ethereum={ethereum} account={account} addLiquidityUrl={addLiquidityUrl} /> */}
         <FooterCardFarms
-          farmBscLink="https://bscscan.com/address/"
+          farmBscLink={`https://bscscan.com/address/${getAirFarmAddress()}`}
           farmValue='0'
           farmStake="lpLabel"
           addLPurl="addLiquidityUrl"

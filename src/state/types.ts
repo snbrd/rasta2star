@@ -52,6 +52,16 @@ export interface Profile {
   hasRegistered: boolean
 }
 
+export interface AirData {
+  approved: boolean
+  balance: number
+  depositedAmount: string
+  pendingReword: string
+  paused: boolean
+  totalSupply: string
+  rewardRate: string
+}
+
 // Slices states
 
 export interface ToastsState {
@@ -64,7 +74,7 @@ export interface FarmsState {
 
 export interface PoolsState {
   data: Pool[],
-  airdata: Object
+  airdata: AirData
 }
 
 export interface ProfileState {
