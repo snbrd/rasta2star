@@ -89,14 +89,12 @@ export const fetchPoolStatus = async (account) => {
     },
   ];
   const poolInfo = await multicall(airFarmABI, calls)
-  console.log('===========')
-  console.log(new BigNumber(poolInfo[1][0]).toNumber())
   return {
-    userInfo: poolInfo[0],
-    pendingReword: new BigNumber(poolInfo[1][0]).toString(),
+    depositedAmount: new BigNumber(poolInfo[0].amount._hex).toString(),
+    pendingReword: new BigNumber(poolInfo[1][0]._hex).toString(),
     paused: poolInfo[2][0],
-    totalSupply: new BigNumber(poolInfo[3][0]).toString(),
-    rewardRate: new BigNumber(poolInfo[4][0]).toString(),
+    totalSupply: new BigNumber(poolInfo[3][0]._hex).toString(),
+    rewardRate: new BigNumber(poolInfo[4][0]._hex).toString(),
   };
 }
 

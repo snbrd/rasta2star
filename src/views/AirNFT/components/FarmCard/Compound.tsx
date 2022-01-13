@@ -26,7 +26,7 @@ const CompoundAction: React.FC<FarmCardActionsProps> = ({ type }) => {
         type="button"
         className={(type === false ? "disabled " : "") + buttonClass}
       >
-        <span className="text-sm">REWARD & COMPOUND</span>
+        <span className="text-sm">Compound</span>
       </button>
     </div>
   )

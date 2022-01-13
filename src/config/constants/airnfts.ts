@@ -4,7 +4,7 @@ import { QuoteToken, PoolCategory } from './types'
 const pools = [
   {
     sousId: 0,
-    tokenName: 'AIRNFT',
+    tokenName: 'RastaDividend AirNFT',
     stakingTokenName: QuoteToken.RASTA,
     stakingTokenAddress: getCakeAddress(),
     contractAddress: {
