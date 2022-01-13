@@ -55,21 +55,6 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
           </div>
         </div>
       </div>
-      {/* <Wrapper justifyContent="space-between" alignItems="center" mb="12px">
-      <div className="bg-orange-rasta rounded-full w-12 h-12  ">
-              <span className="text-white text-3xl flex flex-col pt-2 items-center justify-center">
-                <SiIcons.SiBinance />
-              </span>
-            </div>
-      <Flex flexDirection="column" alignItems="flex-end">
-        <Heading color="yellow" mb="4px">
-          {lpLabel}
-        </Heading>
-        <Flex justifyContent="center">
-          <MultiplierTag variant="yellow">{multiplier}</MultiplierTag>
-        </Flex>
-      </Flex>
-    </Wrapper> */}
     </>
   )
 }
