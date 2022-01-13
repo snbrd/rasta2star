@@ -38,7 +38,6 @@ export const fetchPoolsAllowance = async (account) => {
 export const fetchUserAirnftBalances = async (account) => {
   const balance = await AirNftContract.methods.balanceOf(account).call();
   const approved = await AirNftContract.methods.isApprovedForAll(account, getAirFarmAddress()).call();
-  const totalNFT = await AirNftContract.methods.balanceOf(getAirFarmAddress()).call();
   const calls = [];
   for (let i = 0; i < balance; i++) {
     calls.push({
@@ -57,8 +56,8 @@ export const fetchUserAirnftBalances = async (account) => {
     }
   }
 
-  if (j) return { approved, balance, totalNFT };
-  return { approved, balance: 0, totalNFT };
+  if (j) return { approved, balance };
+  return { approved, balance: 0 };
 }
 
 export const fetchAirFarmUserInfo = async (account) => {
@@ -82,6 +81,8 @@ export const fetchAirFarmUserInfo = async (account) => {
 }
 
 export const fetchPoolStatus = async () => {
+  const totalNFT = await AirNftContract.methods.balanceOf(getAirFarmAddress()).call();
+
   const calls = [
     {
       address: getAirFarmAddress(),
@@ -104,6 +105,7 @@ export const fetchPoolStatus = async () => {
     paused: poolInfo[0][0],
     totalSupply: new BigNumber(poolInfo[1][0]._hex).toString(),
     rewardRate: new BigNumber(poolInfo[2][0]._hex).toString(),
+    totalNFT
   };
 }
 
