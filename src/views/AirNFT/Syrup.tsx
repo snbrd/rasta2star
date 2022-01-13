@@ -68,5 +68,4 @@ const Farm: React.FC = () => {
   )
 }
 
-
 export default Farm

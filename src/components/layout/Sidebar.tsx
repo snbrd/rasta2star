@@ -98,10 +98,6 @@ export default function Sidebar() {
           path: '/farms',
           label: 'Mr. Rasta',
         },
-        {
-          path: 'https://m.rasta.finance/farms',
-          label: 'Mrs. Rasta',
-        },
       ],
     },
     {
@@ -113,10 +109,6 @@ export default function Sidebar() {
         {
           path: '/pools',
           label: 'Mr. Rasta',
-        },
-        {
-          path: 'https://m.rasta.finance/pools',
-          label: 'Mrs. Rasta',
         },
       ],
     },
