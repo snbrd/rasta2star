@@ -137,3 +137,12 @@ export const soushHarvestBnb = async (sousChefContract, account) => {
       return tx.transactionHash
     })
 }
+
+export const claim = async (NftFarmContract, account) => {
+  return NftFarmContract.methods
+    .claim()
+    .send({ from: account })
+    .on('transactionHash', (tx) => {
+      return tx.transactionHash
+    })
+}

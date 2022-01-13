@@ -5,8 +5,8 @@ import useI18n from 'hooks/useI18n'
 import { getFullDisplayBalance } from 'utils/formatBalance'
 
 interface DepositModalProps {
-  earnings: BigNumber
-  onConfirm: (amount: string) => void
+  earnings: string
+  onConfirm: () => void
   onDismiss?: () => void
   tokenName?: string
 }
@@ -15,7 +15,7 @@ const CompoundModal: React.FC<DepositModalProps> = ({ earnings, onConfirm, onDis
   const [pendingTx, setPendingTx] = useState(false)
   const TranslateString = useI18n()
   const fullBalance = useMemo(() => {
-    return getFullDisplayBalance(earnings)
+    return getFullDisplayBalance(new BigNumber(earnings))
   }, [earnings])
 
   return (
@@ -41,10 +41,10 @@ const CompoundModal: React.FC<DepositModalProps> = ({ earnings, onConfirm, onDis
           type="button"
           style={{ maxWidth: "50%" }}
           className="w-1/2 bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-lg px-3 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
-          disabled={pendingTx}
+          disabled={pendingTx || Number(fullBalance) === 0}
           onClick={async () => {
             setPendingTx(true)
-            await onConfirm(fullBalance)
+            await onConfirm()
             setPendingTx(false)
             onDismiss()
           }}

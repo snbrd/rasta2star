@@ -18,15 +18,13 @@ import Wallet from './CardElements/Wallet'
 interface HarvestProps {
   pool?: any
   removed?: boolean
-  type?: boolean
 }
 
-const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
+const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
 
-  console.log(pool)
   // Pools using native BNB behave differently than pools using a token
   const TranslateString = useI18n()
-  const { account } = useWallet()
+  const { account, status } = useWallet()
   const requestedApproval = false;
 
 
@@ -55,13 +53,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
         </div>
         <div className={` expanded md:block`}>
           <FarmHarvest
-            lpLabel='AIRNFT'
-            farmEarned={0}
-            depositFee={0}
-            pid={0}
-            type={type}
             pool={pool}
-            earning={0}
+            type={status === "connected"}
           />
         </div>
         {!account && <Wallet />}

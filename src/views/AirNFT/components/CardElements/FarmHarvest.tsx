@@ -1,33 +1,33 @@
 import React from 'react'
+import BigNumber from 'bignumber.js';
 import HarvestAction from '../FarmCard/HarvestAction'
 
 import CompoundAction from '../FarmCard/Compound'
 
 
 type Props = {
-  farmEarned?: any
-  depositFee?: number
-  pid?: any
-  earning?: any
-  lpLabel?: any
-  type?: boolean
   pool?: any
+  type: boolean
 }
 
-export default function FarmHarvest({ farmEarned, type, depositFee, pid = 'pid', earning = 'earnings', pool }: Props) {
+export default function FarmHarvest({ pool, type }: Props) {
+  const {
+    pendingReword,
+  } = pool;
+
   return (
     <div>
       <div className="gap-4 md:gap-8 row flex flex-col md:flex-row xl:flex-row w-full border-b-2 border-black pb-4 md:pb-12 mb-6">
         <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0">
-          <h2 className="text-3xl font-bold text-left">{farmEarned === 0 ? "0.0000" : (farmEarned * 1).toFixed(4)}</h2>
+          <h2 className="text-3xl font-bold text-left">{Number(pendingReword) === 0 ? "0.0000" : Number(new BigNumber(pendingReword).div(10).pow(18)).toFixed(4)}</h2>
           <span className="text-red-rasta text-left text-sm">RASTA earned</span>
           <div className="flex flex-row gap-3">
-            <HarvestAction pid={pid} earnings={earning} type={type} />
-            <CompoundAction pid={pid} earnings={earning} type={type} pool={pool} />
+            <HarvestAction earnings={pendingReword} type={type} />
+            <CompoundAction earnings={pendingReword} pool={pool} type={type} />
           </div>
         </div>
         <div className="apr py-4 text-center px-6 bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center">
-          <span className="apr-value text-2xl w-full text-gray-700 ">{depositFee}%</span>
+          <span className="apr-value text-2xl w-full text-gray-700 ">0%</span>
           <span className="apr-label text-red-rasta text-sm">Deposit Fee</span>
         </div>
       </div>

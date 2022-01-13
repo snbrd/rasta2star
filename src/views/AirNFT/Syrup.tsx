@@ -5,16 +5,13 @@ import { useAirNFT, usePriceBnbBusd, usePriceRastaBusd } from 'state/hooks'
 import { useSelector } from 'react-redux'
 import { State } from 'state/types'
 import BigNumber from 'bignumber.js'
-// import Coming from './components/Coming'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
 
 import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
-import MrsRastaImage from '../../assets/lion-mrs-rasta.jpg'
 
 const Farm: React.FC = () => {
   const TranslateString = useI18n()
-  const stackedOnly = false;
   const [Active, setActive] = useState(true)
   const { onFetch } = useAirNFT();
   const bnbPriceUSD = usePriceBnbBusd()
@@ -40,13 +37,13 @@ const Farm: React.FC = () => {
       <div
         className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
         style={{
-          backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
+          backgroundImage: `url(${MrRastaImage})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <h1 className="text-4xl font-bold">{stackedOnly ? 'Stake RastaDividend NFT' : 'Stake RastaDividend NFT'}</h1>
+        <h1 className="text-4xl font-bold">{TranslateString(696, 'Stake RastaDividend NFT')}</h1>
       </div>
       <div className=" py-8  w-full bg-white text-black">
         <div className=" flex flex-col text-gray-800 items-center w-10/12 mx-auto">
@@ -60,7 +57,7 @@ const Farm: React.FC = () => {
               <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
                 {
                   Active &&
-                  <PoolCard key={3} pool={{ ...farmInfo, poolsWithApy }} />
+                  <PoolCard pool={{ ...farmInfo, poolsWithApy }} />
                 }
               </div>
             </div>
