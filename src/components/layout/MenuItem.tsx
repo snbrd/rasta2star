@@ -29,7 +29,7 @@ export default function MenuItem({ menu, showSidebar }) {
           {menu.icon}
           <span className="flex-grow-1" style={{ fontSize: '18px' }}>
             {menu.label}
-            <h1 style={{ fontSize: '13px', color: "white" }}>{menu.sublabel}</h1>
+            <h1 style={{ fontSize: '13px' }}>{menu.sublabel}</h1>
           </span>
           {menu.parent && children && <IoIcons.IoIosArrowDropdown />}
           {menu.parent && !children && <IoIcons.IoIosArrowDropright />}
@@ -74,7 +74,8 @@ export default function MenuItem({ menu, showSidebar }) {
             )
           })}
         </ul>
-      )}
-    </li>
+      )
+      }
+    </li >
   )
 }

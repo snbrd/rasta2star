@@ -1,16 +1,20 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit'
 import poolsConfig from 'config/constants/pools'
+import { initAirData } from 'config/constants/airnfts'
 import { fetchPoolsBlockLimits, fetchPoolsTotalStatking } from './fetchPools'
 import {
   fetchPoolsAllowance,
   fetchUserBalances,
   fetchUserStakeBalances,
   fetchUserPendingRewards,
+  fetchUserAirnftBalances,
+  fetchPoolStatus,
+  fetchAirFarmUserInfo
 } from './fetchPoolsUser'
 import { PoolsState, Pool } from '../types'
 
-const initialState: PoolsState = { data: [...poolsConfig] }
+const initialState: PoolsState = { data: [...poolsConfig], airdata: initAirData }
 
 export const PoolsSlice = createSlice({
   name: 'Pools',
@@ -30,6 +34,9 @@ export const PoolsSlice = createSlice({
         return { ...pool, userData: userPoolData }
       })
     },
+    setAirPoolsUserData: (state, action) => {
+      state.airdata = action.payload;
+    },
     updatePoolsUserData: (state, action) => {
       const { field, value, sousId } = action.payload
       const index = state.data.findIndex((p) => p.sousId === sousId)
@@ -39,7 +46,7 @@ export const PoolsSlice = createSlice({
 })
 
 // Actions
-export const { setPoolsPublicData, setPoolsUserData, updatePoolsUserData } = PoolsSlice.actions
+export const { setPoolsPublicData, setPoolsUserData, setAirPoolsUserData, updatePoolsUserData } = PoolsSlice.actions
 
 // Thunks
 export const fetchPoolsPublicDataAsync = () => async (dispatch) => {
@@ -73,6 +80,17 @@ export const fetchPoolsUserDataAsync = (account) => async (dispatch) => {
   }))
 
   dispatch(setPoolsUserData(userData))
+}
+
+export const fetchAirNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
+  const pool = await fetchPoolStatus()
+  if (account) {
+    const nftInfo = await fetchUserAirnftBalances(account)
+    const userInfo = await fetchAirFarmUserInfo(account)
+    dispatch(setAirPoolsUserData({ ...nftInfo, ...pool, ...userInfo }))
+  } else {
+    dispatch(setAirPoolsUserData({ ...pool, approved: false, balance: 0, depositedAmount: "0", pendingReword: "0" }))
+  }
 }
 
 export const updateUserAllowance = (sousId: string, account: string) => async (dispatch) => {

@@ -13,6 +13,12 @@ export const getCakeAddress = () => {
 export const getMasterChefAddress = () => {
   return getAddress(addresses.masterChef)
 }
+export const getAirNftAddress = () => {
+  return getAddress(addresses.airNft)
+}
+export const getAirFarmAddress = () => {
+  return getAddress(addresses.AirFarm)
+}
 export const getMulticallAddress = () => {
   return getAddress(addresses.mulltiCall)
 }

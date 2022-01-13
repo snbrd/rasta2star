@@ -5,12 +5,12 @@ import { CampaignType, FarmConfig, Nft, PoolConfig, Team } from 'config/constant
 export type TranslatableText =
   | string
   | {
-      id: number
-      fallback: string
-      data?: {
-        [key: string]: string | number
-      }
+    id: number
+    fallback: string
+    data?: {
+      [key: string]: string | number
     }
+  }
 
 export interface Farm extends FarmConfig {
   tokenAmount?: BigNumber
@@ -52,6 +52,17 @@ export interface Profile {
   hasRegistered: boolean
 }
 
+export interface AirData {
+  approved: boolean
+  balance: number
+  depositedAmount: string
+  pendingReword: string
+  paused: boolean
+  totalSupply: string
+  rewardRate: string
+  totalNFT: string
+}
+
 // Slices states
 
 export interface ToastsState {
@@ -63,7 +74,8 @@ export interface FarmsState {
 }
 
 export interface PoolsState {
-  data: Pool[]
+  data: Pool[],
+  airdata: AirData
 }
 
 export interface ProfileState {

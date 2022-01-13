@@ -1,13 +1,16 @@
 import { AbiItem } from 'web3-utils'
 import poolsConfig from 'config/constants/pools'
 import masterChefABI from 'config/abi/masterchef.json'
+import airNFTABI from 'config/abi/airToken.json'
+import airFarmABI from 'config/abi/airFarm.json'
 import sousChefABI from 'config/abi/sousChef.json'
 import erc20ABI from 'config/abi/erc20.json'
 import { QuoteToken } from 'config/constants/types'
 import multicall from 'utils/multicall'
-import { getAddress, getMasterChefAddress } from 'utils/addressHelpers'
+import { getAddress, getAirFarmAddress, getAirNftAddress, getMasterChefAddress } from 'utils/addressHelpers'
 import { getWeb3 } from 'utils/web3'
 import BigNumber from 'bignumber.js'
+import { RastaNftIds } from 'config/constants/airnfts'
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
 // BNB pools use the native BNB token (wrapping ? unwrapping is done at the contract level)
@@ -16,6 +19,7 @@ const bnbPools = poolsConfig.filter((p) => p.stakingTokenName === QuoteToken.BNB
 const nonMasterPools = poolsConfig.filter((p) => p.sousId !== 0)
 const web3 = getWeb3()
 const masterChefContract = new web3.eth.Contract(masterChefABI as unknown as AbiItem, getMasterChefAddress())
+const AirNftContract = new web3.eth.Contract(airNFTABI as unknown as AbiItem, getAirNftAddress())
 
 export const fetchPoolsAllowance = async (account) => {
   const calls = nonBnbPools.map((p) => ({
@@ -29,6 +33,80 @@ export const fetchPoolsAllowance = async (account) => {
     (acc, pool, index) => ({ ...acc, [pool.sousId]: new BigNumber(allowances[index]).toJSON() }),
     {},
   )
+}
+
+export const fetchUserAirnftBalances = async (account) => {
+  const balance = await AirNftContract.methods.balanceOf(account).call();
+  const approved = await AirNftContract.methods.isApprovedForAll(account, getAirFarmAddress()).call();
+  const calls = [];
+  for (let i = 0; i < balance; i++) {
+    calls.push({
+      address: getAirNftAddress(),
+      name: 'tokenOfOwnerByIndex',
+      params: [account, i],
+    })
+  }
+  const tokenIds = await multicall(airNFTABI, calls);
+  let j = false;
+  for (let i = 0; i < tokenIds.length; i++) {
+    const res = RastaNftIds.find((item) => item === new BigNumber(tokenIds[i]).toNumber());
+    if (res) {
+      j = true;
+      break;
+    }
+  }
+
+  if (j) return { approved, balance };
+  return { approved, balance: 0 };
+}
+
+export const fetchAirFarmUserInfo = async (account) => {
+  const calls = [
+    {
+      address: getAirFarmAddress(),
+      name: 'userInfo',
+      params: [account],
+    },
+    {
+      address: getAirFarmAddress(),
+      name: 'claimable',
+      params: [account],
+    }
+  ];
+  const info = await multicall(airFarmABI, calls)
+  return {
+    depositedAmount: new BigNumber(info[0].amount._hex).toString(),
+    pendingReword: new BigNumber(info[1][0]._hex).toString()
+  };
+}
+
+export const fetchPoolStatus = async () => {
+  const totalNFT = await AirNftContract.methods.balanceOf(getAirFarmAddress()).call();
+
+  const calls = [
+    {
+      address: getAirFarmAddress(),
+      name: 'paused',
+      params: [],
+    },
+    {
+      address: getAirFarmAddress(),
+      name: 'totalSupply',
+      params: [],
+    },
+    {
+      address: getAirFarmAddress(),
+      name: 'rewardRate',
+      params: [],
+    },
+  ];
+  const poolInfo = await multicall(airFarmABI, calls)
+  return {
+    paused: poolInfo[0][0],
+    totalSupply: new BigNumber(poolInfo[1][0]._hex).toString(),
+    rewardRate: new BigNumber(poolInfo[2][0]._hex).toString(),
+    totalNFT
+  };
 }
 
 export const fetchUserBalances = async (account) => {
