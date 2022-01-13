@@ -13,9 +13,7 @@ type Props = {
 
 
 export default function FooterCardFarms({
-  farmStake = 'GET RASTA',
   farmValue,
-  addLPurl = 'addLiquidityUrl',
 }: Props) {
 
   const [show, setShow] = useState(false)
