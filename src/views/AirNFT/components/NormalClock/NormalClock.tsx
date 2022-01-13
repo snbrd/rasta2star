@@ -4,7 +4,7 @@ import './NormalClock.css';
 const StaticCard = ({ position, digit }) => {
   return (
     <div className={position}>
-      <span>{digit}</span>
+      <span>{digit > 0 ? digit : "00"}</span>
     </div>
   );
 };
