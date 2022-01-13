@@ -60,7 +60,7 @@ export const fetchUserAirnftBalances = async (account) => {
   return { approved, balance: 0 };
 }
 
-export const fetchPoolStatus = async (account) => {
+export const fetchAirFarmUserInfo = async (account) => {
   const calls = [
     {
       address: getAirFarmAddress(),
@@ -71,7 +71,17 @@ export const fetchPoolStatus = async (account) => {
       address: getAirFarmAddress(),
       name: 'claimable',
       params: [account],
-    },
+    }
+  ];
+  const info = await multicall(airFarmABI, calls)
+  return {
+    depositedAmount: new BigNumber(info[0].amount._hex).toString(),
+    pendingReword: new BigNumber(info[1][0]._hex).toString()
+  };
+}
+
+export const fetchPoolStatus = async () => {
+  const calls = [
     {
       address: getAirFarmAddress(),
       name: 'paused',
@@ -90,11 +100,9 @@ export const fetchPoolStatus = async (account) => {
   ];
   const poolInfo = await multicall(airFarmABI, calls)
   return {
-    depositedAmount: new BigNumber(poolInfo[0].amount._hex).toString(),
-    pendingReword: new BigNumber(poolInfo[1][0]._hex).toString(),
-    paused: poolInfo[2][0],
-    totalSupply: new BigNumber(poolInfo[3][0]._hex).toString(),
-    rewardRate: new BigNumber(poolInfo[4][0]._hex).toString(),
+    paused: poolInfo[0][0],
+    totalSupply: new BigNumber(poolInfo[1][0]._hex).toString(),
+    rewardRate: new BigNumber(poolInfo[2][0]._hex).toString(),
   };
 }
 

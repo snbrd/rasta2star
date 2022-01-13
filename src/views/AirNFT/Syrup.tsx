@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import useI18n from 'hooks/useI18n'
+import { SEC_PER_YEAR } from 'config'
 import { useAirNFT, usePriceBnbBusd, usePriceRastaBusd } from 'state/hooks'
 import { useSelector } from 'react-redux'
 import { State } from 'state/types'
@@ -19,14 +20,20 @@ const Farm: React.FC = () => {
   const bnbPriceUSD = usePriceBnbBusd()
   const rastaPriceUSD = usePriceRastaBusd()
   const farmInfo = useSelector((state: State) => state.pools.airdata);
-  console.log('-----------------')
-  console.log(farmInfo)
 
   useEffect(() => {
     onFetch()
   }, [onFetch])
 
-  // const poolsWithApy = new BigNumber(rastaPriceUSD).div(bnbPriceUSD).times(farmInfo.rewardRate).toString()
+  const poolsWithApy =
+    new BigNumber(rastaPriceUSD)
+      .div(bnbPriceUSD)
+      .times(farmInfo.rewardRate)
+      .times(SEC_PER_YEAR)
+      .div(Number(farmInfo.totalSupply) > 0 ? farmInfo.totalSupply : new BigNumber(10).pow(18))
+      .times(100)
+      .toFixed(0)
+      .toString();
 
   return (
     <div>
@@ -53,7 +60,7 @@ const Farm: React.FC = () => {
               <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
                 {
                   Active &&
-                  <PoolCard key={3} />
+                  <PoolCard key={3} pool={{ ...farmInfo, poolsWithApy }} />
                 }
               </div>
             </div>

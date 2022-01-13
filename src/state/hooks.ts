@@ -81,9 +81,7 @@ export const useAirNFT = () => {
   const { account } = useWallet()
   const fetchData = useCallback(
     async () => {
-      if (account) {
-        dispatch(fetchAirNFTPoolsAUserDataAsync(account))
-      }
+      dispatch(fetchAirNFTPoolsAUserDataAsync(account))
     },
     [account, dispatch],
   );

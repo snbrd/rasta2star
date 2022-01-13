@@ -7,6 +7,7 @@ BigNumber.config({
 
 export const RASTA_PER_BLOCK = new BigNumber(0.2)
 export const BLOCKS_PER_YEAR = new BigNumber(10512000)
+export const SEC_PER_YEAR = new BigNumber(31536000)
 export const BSC_BLOCK_TIME = 3
 export const RASTA_POOL_PID = 1
 export const BASE_EXCHANGE_URL = 'https://exchange.rasta.finance'

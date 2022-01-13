@@ -9,9 +9,10 @@ import {
   fetchUserStakeBalances,
   fetchUserPendingRewards,
   fetchUserAirnftBalances,
-  fetchPoolStatus
+  fetchPoolStatus,
+  fetchAirFarmUserInfo
 } from './fetchPoolsUser'
-import { PoolsState, Pool, AirData } from '../types'
+import { PoolsState, Pool } from '../types'
 
 const initialState: PoolsState = { data: [...poolsConfig], airdata: initAirData }
 
@@ -82,9 +83,14 @@ export const fetchPoolsUserDataAsync = (account) => async (dispatch) => {
 }
 
 export const fetchAirNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
-  const nftInfo = await fetchUserAirnftBalances(account)
-  const pool = await fetchPoolStatus(account)
-  dispatch(setAirPoolsUserData({ ...nftInfo, ...pool }))
+  const pool = await fetchPoolStatus()
+  if (account) {
+    const nftInfo = await fetchUserAirnftBalances(account)
+    const userInfo = await fetchAirFarmUserInfo(account)
+    dispatch(setAirPoolsUserData({ ...nftInfo, ...pool, ...userInfo }))
+  } else {
+    dispatch(setAirPoolsUserData({ ...pool, approved: false, balance: 0, depositedAmount: "0", pendingReword: "0" }))
+  }
 }
 
 export const updateUserAllowance = (sousId: string, account: string) => async (dispatch) => {

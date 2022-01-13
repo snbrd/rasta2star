@@ -23,6 +23,7 @@ interface HarvestProps {
 
 const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
 
+  console.log(pool)
   // Pools using native BNB behave differently than pools using a token
   const TranslateString = useI18n()
   const { account } = useWallet()
@@ -44,7 +45,9 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
           {!removed && (
             <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0">
               <span className="apr-value text-2xl w-full text-gray-700 ">
-                47%
+                {Number(pool.poolsWithApy) > 0 ?
+                  `${pool.poolsWithApy}%` : '-'
+                }
               </span>
               <span className="apr-label text-red-rasta text-sm">APR</span>
             </div>
