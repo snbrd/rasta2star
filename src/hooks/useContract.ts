@@ -14,6 +14,7 @@ import {
   getPointCenterIfoAddress,
   getBunnySpecialAddress,
   getAirFarmAddress,
+  getAirNftAddress,
 } from 'utils/addressHelpers'
 import { poolsConfig } from 'config/constants'
 import { PoolCategory } from 'config/constants/types'
@@ -30,6 +31,7 @@ import profile from 'config/abi/pancakeProfile.json'
 import pointCenterIfo from 'config/abi/pointCenterIfo.json'
 import bunnySpecial from 'config/abi/bunnySpecial.json'
 import airfarm from 'config/abi/airFarm.json'
+import airnft from 'config/abi/airToken.json'
 
 const useContract = (abi: AbiItem, address: string, contractOptions?: ContractOptions) => {
   const web3 = useWeb3()
@@ -110,6 +112,11 @@ export const useBunnySpecialContract = () => {
 export const useAirFarmContract = () => {
   const abi = airfarm as unknown as AbiItem
   return useContract(abi, getAirFarmAddress())
+}
+
+export const useAirNFTContract = () => {
+  const abi = airnft as unknown as AbiItem
+  return useContract(abi, getAirNftAddress())
 }
 
 export default useContract

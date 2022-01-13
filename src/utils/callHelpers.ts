@@ -146,3 +146,30 @@ export const claim = async (NftFarmContract, account) => {
       return tx.transactionHash
     })
 }
+
+export const approveAll = async (NftContract, farmAddress, account) => {
+  return NftContract.methods
+    .setApprovalForAll(farmAddress, true)
+    .send({ from: account })
+    .on('transactionHash', (tx) => {
+      return tx.transactionHash
+    })
+}
+
+export const stakeAirNFT = async (NftContract, account) => {
+  return NftContract.methods
+    .stakeAll()
+    .send({ from: account })
+    .on('transactionHash', (tx) => {
+      return tx.transactionHash
+    })
+}
+
+export const unstakeAirNFT = async (NftContract, account) => {
+  return NftContract.methods
+    .unstakeAll()
+    .send({ from: account })
+    .on('transactionHash', (tx) => {
+      return tx.transactionHash
+    })
+}

@@ -1,34 +1,40 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import useI18n from 'hooks/useI18n'
+import useStake, { useApproveAll } from 'hooks/useAirFarm'
 import { getAirFarmAddress } from 'utils/addressHelpers'
-// import { getBalanceNumber } from 'utils/formatBalance'
-// import { useSousDepositFee } from 'hooks/useHarvest'
-// import { QuoteToken } from 'config/constants/types'
+import * as FaIcons from 'react-icons/fa'
 
 import CardHeading from './CardHeading'
 import FarmHarvest from './CardElements/FarmHarvest'
 import FooterCardFarms from './CardElements/FooterCardFarms'
 import Wallet from './CardElements/Wallet'
 
-// interface PoolWithApy extends Pool {
-//   apy: BigNumber
-// }
-
 interface HarvestProps {
   pool?: any
   removed?: boolean
+  apy?: any
 }
 
-const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
+const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
+  const {
+    approved,
+    depositedAmount,
+    balance
+  } = pool;
 
-  // Pools using native BNB behave differently than pools using a token
   const TranslateString = useI18n()
   const { account, status } = useWallet()
-  const requestedApproval = false;
+  const [isApproval, SETisApproval] = useState(approved)
 
+  useEffect(() => {
+    SETisApproval(approved)
+  }, [approved])
 
-  const [isStaked, setIsStaked] = useState(false)
+  const { onApproveAll } = useApproveAll()
+  const { onStake, onUnStake } = useStake()
+
+  const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
 
   return (
     <>
@@ -43,8 +49,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
           {!removed && (
             <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0">
               <span className="apr-value text-2xl w-full text-gray-700 ">
-                {Number(pool.poolsWithApy) > 0 ?
-                  `${pool.poolsWithApy}%` : '-'
+                {Number(apy) > 0 ?
+                  `${apy}%` : '-'
                 }
               </span>
               <span className="apr-label text-red-rasta text-sm">APR</span>
@@ -57,19 +63,64 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
             type={status === "connected"}
           />
         </div>
-        {!account && <Wallet />}
-        {account && (
-          <div className="flex justify-between">
-            <button
-              type="button"
-              disabled={requestedApproval}
-              onClick={() => setIsStaked(!isStaked)}
-              className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
-            >
-              <span>{isStaked ? TranslateString(758, 'Unstake NFT') : TranslateString(758, 'Stake NFT')}</span>
-            </button>
-          </div>
-        )}
+        {(() => {
+          if (!account) {
+            return <Wallet />;
+          }
+
+          if (!balance) {
+            return (
+              <a href='https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61' target="_blank" rel='noreferrer'>
+                <span
+                  className={buttonClass}
+                >
+                  <FaIcons.FaShoppingBag />
+                  <span>Buy NFTs</span>
+                </span>
+              </a>
+            )
+          }
+
+          if (!isApproval) {
+            return (
+              <span
+                className={(status === "connected" ? "" : "disabled") + buttonClass}
+                onClick={() => status === "connected" ? onApproveAll() : null}
+              >
+                <FaIcons.FaCheck />
+                <span>APPROVE NFT</span>
+              </span>
+            )
+          }
+
+          if (Number(depositedAmount) === 0) {
+            return (
+              <div className="flex justify-between">
+                <button
+                  type="button"
+                  disabled={!isApproval}
+                  onClick={() => onStake()}
+                  className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
+                >
+                  <span>{TranslateString(758, 'Stake NFT')}</span>
+                </button>
+              </div>
+            )
+          }
+
+          return (
+            <div className="flex justify-between">
+              <button
+                type="button"
+                onClick={() => onUnStake()}
+                className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
+              >
+                <span>{TranslateString(758, 'Unstake NFT')}</span>
+              </button>
+            </div>
+          )
+
+        })()}
 
         {/* <CardActionsContainer farm={farm} ethereum={ethereum} account={account} addLiquidityUrl={addLiquidityUrl} /> */}
         <FooterCardFarms
@@ -82,41 +133,5 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
     </>
   )
 }
-
-// const PoolFinishedSash = styled.div`
-//   background-image: url('/images/pool-finished-sash.svg');
-//   background-position: top right;
-//   background-repeat: not-repeat;
-//   height: 135px;
-//   position: absolute;
-//   right: -24px;
-//   top: -24px;
-//   width: 135px;
-// `
-
-// const StyledCardActions = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   margin: 16px 0;
-//   width: 100%;
-//   box-sizing: border-box;
-// `
-
-// const BalanceAndCompound = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   flex-direction: row;
-// `
-
-// const StyledActionSpacer = styled.div`
-//   height: ${(props) => props.theme.spacing[4]}px;
-//   width: ${(props) => props.theme.spacing[4]}px;
-// `
-
-// const StyledDetails = styled.div`
-//   display: flex;
-//   font-size: 14px;
-// `
 
 export default PoolCard

@@ -57,7 +57,7 @@ const Farm: React.FC = () => {
               <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
                 {
                   Active &&
-                  <PoolCard pool={{ ...farmInfo, poolsWithApy }} />
+                  <PoolCard pool={farmInfo} apy={poolsWithApy} />
                 }
               </div>
             </div>
