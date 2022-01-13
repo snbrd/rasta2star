@@ -3,7 +3,6 @@ import * as FaIcons from 'react-icons/fa'
 
 type Props = {
   farmStake?: string
-  // farmName?: string,
   farmValue: string
   farmBscLink?: string
   addLPurl?: string
@@ -30,7 +29,7 @@ export default function FooterCardFarms({
             <span className="text-black-rasta font-bold">Total NFTs Staked</span>
             <span className="text-black-rasta font-bold"> </span>
             <div className="flex flex-col md:flex-row space-x-4">
-              <span className='text-black-rasta font-bold'>{numberWithCommas(parseFloat(farmValue).toFixed(0))}</span>
+              <span className='text-black-rasta font-bold'>{numberWithCommas(farmValue)}</span>
             </div>
           </div>
         </div>

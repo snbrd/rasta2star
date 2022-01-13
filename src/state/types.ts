@@ -60,6 +60,7 @@ export interface AirData {
   paused: boolean
   totalSupply: string
   rewardRate: string
+  totalNFT: string
 }
 
 // Slices states

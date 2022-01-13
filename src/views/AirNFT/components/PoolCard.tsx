@@ -20,7 +20,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
   const {
     approved,
     depositedAmount,
-    balance
+    balance,
+    totalNFT
   } = pool;
 
   const TranslateString = useI18n()
@@ -125,7 +126,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
         {/* <CardActionsContainer farm={farm} ethereum={ethereum} account={account} addLiquidityUrl={addLiquidityUrl} /> */}
         <FooterCardFarms
           farmBscLink={`https://bscscan.com/address/${getAirFarmAddress()}`}
-          farmValue='0'
+          farmValue={totalNFT}
           farmStake="lpLabel"
           addLPurl="addLiquidityUrl"
         />

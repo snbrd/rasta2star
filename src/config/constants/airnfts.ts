@@ -30,7 +30,8 @@ export const initAirData: AirData = {
   pendingReword: "0",
   paused: false,
   totalSupply: '0',
-  rewardRate: '0'
+  rewardRate: '0',
+  totalNFT: '0'
 }
 
 export const RastaNftIds = [222912, 222905, 221411, 221414, 222910, 222906, 222914, 222908, 222915, 222918, 222916, 222907, 221401, 221406, 221418, 221417, 221404, 221407, 221413, 221402, 221371, 221369, 221366, 221373, 221375, 221374, 221382, 221385, 221370, 221378];
