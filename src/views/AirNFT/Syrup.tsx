@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import useI18n from 'hooks/useI18n'
 import { SEC_PER_YEAR } from 'config'
 import { useAirNFT, usePriceBnbBusd, usePriceRastaBusd } from 'state/hooks'
-import { useSelector } from 'react-redux'
-import { State } from 'state/types'
 import BigNumber from 'bignumber.js'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
@@ -13,14 +11,9 @@ import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 const Farm: React.FC = () => {
   const TranslateString = useI18n()
   const [Active, setActive] = useState(true)
-  const { onFetch } = useAirNFT();
+  const farmInfo = useAirNFT();
   const bnbPriceUSD = usePriceBnbBusd()
   const rastaPriceUSD = usePriceRastaBusd()
-  const farmInfo = useSelector((state: State) => state.pools.airdata);
-
-  useEffect(() => {
-    onFetch()
-  }, [onFetch])
 
   const poolsWithApy =
     new BigNumber(rastaPriceUSD)

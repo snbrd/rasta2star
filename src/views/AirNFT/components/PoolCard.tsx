@@ -27,7 +27,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
   const TranslateString = useI18n()
   const { account, status } = useWallet()
   const [isApproval, SETisApproval] = useState(approved)
-
+  const [loading, setLoading] = useState(false)
   useEffect(() => {
     SETisApproval(approved)
   }, [approved])
@@ -99,9 +99,13 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
               <div className="flex justify-between">
                 <button
                   type="button"
-                  disabled={!isApproval}
-                  onClick={() => onStake()}
-                  className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
+                  disabled={!isApproval || loading}
+                  onClick={async () => {
+                    setLoading(true)
+                    await onStake()
+                    setLoading(false)
+                  }}
+                  className={buttonClass}
                 >
                   <span>{TranslateString(758, 'Stake NFT')}</span>
                 </button>
@@ -110,13 +114,30 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
           }
 
           return (
-            <div className="flex justify-between">
+            <div className="flex justify-between gap-4">
               <button
                 type="button"
-                onClick={() => onUnStake()}
-                className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
+                disabled={loading}
+                onClick={async () => {
+                  setLoading(true)
+                  await onUnStake()
+                  setLoading(false)
+                }}
+                className={buttonClass}
               >
                 <span>{TranslateString(758, 'Unstake NFT')}</span>
+              </button>
+              <button
+                type="button"
+                disabled={!isApproval || loading || (Number(depositedAmount) === 0)}
+                onClick={async () => {
+                  setLoading(true)
+                  await onStake()
+                  setLoading(false)
+                }}
+                className={(!isApproval || loading || (Number(depositedAmount) === 0)) ? `disabled ${buttonClass}` : buttonClass}
+              >
+                <span>{TranslateString(758, 'Stake More')}</span>
               </button>
             </div>
           )
