@@ -142,7 +142,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, ethereum,
 
   return (
     <div className="shadow-md p-5 pt-8 pb-8 rounded-lg border-2 border-green-rasta mt-8">
-      <div className="row flex flex-col lg:flex-row gap-0 md:gap-2 mb-12">
+      <div className="row flex flex-col lg:flex-col gap-0 md:gap-2 mb-12">
         <CardHeading
           lpLabel={lpLabel}
           multiplier={farm.multiplier}

@@ -67,7 +67,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
 
   return (
     <div className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
-      <div className="row flex flex-col lg:flex-row gap-0 md:gap-2 mb-12">
+      <div className="row flex flex-col lg:flex-col gap-0 md:gap-2 mb-12">
         <CardHeading
           lpLabel={lpLabel}
           multiplier={farm.multiplier}
