@@ -11,7 +11,7 @@ type Props = {
 export default function FarmHarvest({ farmEarned, depositFee, pid, earning }: Props) {
   return (
     <div>
-      <div className="row flex flex-col md:flex-row xl:flex-row gap-5 w-full border-b-2 border-black pb-12 mb-6">
+      <div className="row flex flex-col md:flex-col xl:flex-col gap-5 w-full border-b-2 border-black pb-12 mb-6">
         <div className="items-detail flex flex-col pb-2  xl:pr-5 ml-0 md:ml-2">
           <h2 className="text-3xl font-bold text-left">{farmEarned}</h2>
           <span className="text-red-rasta text-left">Rasta Earned</span>

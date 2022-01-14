@@ -54,7 +54,7 @@ export default function FavoriteCreator() {
         </div>
       </div>
       <div className="py-8  w-full bg-white text-black">
-        <div className="cus-mx grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 items-center my-16 px-5 gap-10 xl:mx-20 lg:mx-20">
+        <div className="cus-mx grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 items-center my-8 md:my-16 px-5 gap-10 xl:mx-20 lg:mx-20">
           {
             account ?
               <StakingCard />
