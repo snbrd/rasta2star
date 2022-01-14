@@ -45,14 +45,15 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
             lpLabel='RastaDividend AirNFT'
             isCommunityFarm={false}
             farmImage='airnft'
-            tokenSymbol="farm.tokenSymbol"
+            tokenSymbol="farm.tokenSymbol"  
           />
           {!removed && (
             <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0">
               <span className="apr-value text-2xl w-full text-gray-700 ">
-                {Number(apy) > 0 ?
+                {/* {Number(apy) > 0 ?
                   `${apy}%` : '-'
-                }
+                } */}
+                241%
               </span>
               <span className="apr-label text-red-rasta text-sm">APR</span>
             </div>
