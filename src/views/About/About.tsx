@@ -60,7 +60,7 @@ export default function About() {
     },
     {
       name: '@SeñorEVO',
-      position: 'Rasta Operations',
+      position: 'RastaOperations',
       avatar: EvoProfile,
     },
     {
@@ -69,7 +69,7 @@ export default function About() {
       avatar: MorenzProfile,
     },
     {
-      name: '@vechainvendeta',
+      name: '@typhoncrypto',
       position: 'Development Team',
       avatar: VechainProfile,
     },
