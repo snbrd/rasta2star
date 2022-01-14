@@ -16,7 +16,7 @@ interface HarvestProps {
   apy?: any
 }
 
-const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
+const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
   const {
     approved,
     depositedAmount,
