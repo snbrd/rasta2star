@@ -35,12 +35,12 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
   const { onApproveAll } = useApproveAll()
   const { onStake, onUnStake } = useStake()
 
-  const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
+  const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-md xl:rounded-xl cursor-pointer"
 
   return (
     <>
       <div className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
-        <div className="row flex flex-col lg:flex-row gap-0 md:gap-4 mb-12">
+        <div className="row flex flex-col lg:flex-row gap-0 md:gap-4 mb-4 md:mb-12">
           <CardHeading
             lpLabel='RastaDividend AirNFT'
             isCommunityFarm={false}
@@ -114,7 +114,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
           }
 
           return (
-            <div className="flex justify-between gap-4">
+            <div className="flex justify-between gap-3">
               <button
                 type="button"
                 disabled={loading}
@@ -125,7 +125,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
                 }}
                 className={buttonClass}
               >
-                <span>{TranslateString(758, 'Unstake NFT')}</span>
+                <span>{TranslateString(758, 'Unstake')}</span>
               </button>
               <button
                 type="button"
