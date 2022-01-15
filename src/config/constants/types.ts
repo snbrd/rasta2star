@@ -85,6 +85,17 @@ export interface PoolConfig {
   tokenDecimals: number
 }
 
+export interface AirFarmConfig {
+  id: number,
+  poolName: string,
+  stakingTokenAddress?: string,
+  contractAddress: Address,
+  projectLink: string,
+  harvest?: boolean,
+  isFinished?: boolean,
+  tokenDecimals: number,
+}
+
 export type Images = {
   lg: string
   md: string

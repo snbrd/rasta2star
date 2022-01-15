@@ -13,7 +13,6 @@ import {
   getPancakeRabbitsAddress,
   getPointCenterIfoAddress,
   getBunnySpecialAddress,
-  getAirFarmAddress,
   getAirNftAddress,
 } from 'utils/addressHelpers'
 import { poolsConfig } from 'config/constants'
@@ -109,9 +108,9 @@ export const useBunnySpecialContract = () => {
   return useContract(abi, getBunnySpecialAddress())
 }
 
-export const useAirFarmContract = () => {
+export const useAirFarmContract = (address) => {
   const abi = airfarm as unknown as AbiItem
-  return useContract(abi, getAirFarmAddress())
+  return useContract(abi, address)
 }
 
 export const useAirNFTContract = () => {

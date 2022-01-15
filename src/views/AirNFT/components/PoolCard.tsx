@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import useI18n from 'hooks/useI18n'
 import useStake, { useApproveAll } from 'hooks/useAirFarm'
-import { getAirFarmAddress } from 'utils/addressHelpers'
+import { getAddress } from 'utils/addressHelpers'
 import * as FaIcons from 'react-icons/fa'
+import styled from 'styled-components'
 
 import CardHeading from './CardHeading'
 import FarmHarvest from './CardElements/FarmHarvest'
@@ -16,12 +17,25 @@ interface HarvestProps {
   apy?: any
 }
 
-const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
+const CustomTitle = styled.div`
+    margin-top: -48px;
+    padding: 8px 40px;
+    margin-left: -40px;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    color: white;
+  `;
+
+const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
   const {
     approved,
-    depositedAmount,
+    stakedAmount,
     balance,
-    totalNFT
+    farmbalance,
+    poolName,
+    contractAddress,
+    isFinished,
+    id
   } = pool;
 
   const TranslateString = useI18n()
@@ -32,28 +46,28 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
     SETisApproval(approved)
   }, [approved])
 
-  const { onApproveAll } = useApproveAll()
-  const { onStake, onUnStake } = useStake()
+  const { onApproveAll } = useApproveAll(getAddress(contractAddress))
+  const { onStake, onUnStake } = useStake(getAddress(contractAddress))
 
   const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-md xl:rounded-xl cursor-pointer"
 
   return (
     <>
       <div className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
+        <CustomTitle className='absolute text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta'>{isFinished ? 'Retired' : 'New'}</CustomTitle>
         <div className="row flex flex-col lg:flex-row gap-0 md:gap-4 mb-4 md:mb-12">
           <CardHeading
-            lpLabel='RastaDividend AirNFT'
+            lpLabel={poolName}
             isCommunityFarm={false}
             farmImage='airnft'
-            tokenSymbol="farm.tokenSymbol"  
+            tokenSymbol="farm.tokenSymbol"
           />
           {!removed && (
             <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0">
               <span className="apr-value text-2xl w-full text-gray-700 ">
-                {/* {Number(apy) > 0 ?
+                {Number(apy) > 0 && !isFinished ?
                   `${apy}%` : '-'
-                } */}
-                241%
+                }
               </span>
               <span className="apr-label text-red-rasta text-sm">APR</span>
             </div>
@@ -62,7 +76,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
         <div className={` expanded md:block`}>
           <FarmHarvest
             pool={pool}
-            type={status === "connected"}
+            type={status === "connected" && id !== 123}
           />
         </div>
         {(() => {
@@ -70,7 +84,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
             return <Wallet />;
           }
 
-          if (!balance && Number(depositedAmount) === 0) {
+          if (!balance && Number(stakedAmount) === 0) {
             return (
               <a href='https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61' target="_blank" rel='noreferrer'>
                 <span
@@ -95,18 +109,18 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
             )
           }
 
-          if (Number(depositedAmount) === 0) {
+          if (Number(stakedAmount) === 0) {
             return (
               <div className="flex justify-between">
                 <button
                   type="button"
-                  disabled={!isApproval || loading}
+                  disabled={!isApproval || loading || isFinished}
                   onClick={async () => {
                     setLoading(true)
                     await onStake()
                     setLoading(false)
                   }}
-                  className={buttonClass}
+                  className={(isFinished ? 'disabled ' : '') + buttonClass}
                 >
                   <span>{TranslateString(758, 'Stake NFT')}</span>
                 </button>
@@ -130,13 +144,13 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
               </button>
               <button
                 type="button"
-                disabled={!isApproval || loading || (Number(depositedAmount) === 0)}
+                disabled={!isApproval || loading || (Number(stakedAmount) === 0) || isFinished || !balance}
                 onClick={async () => {
                   setLoading(true)
                   await onStake()
                   setLoading(false)
                 }}
-                className={(!isApproval || loading || (Number(depositedAmount) === 0)) ? `disabled ${buttonClass}` : buttonClass}
+                className={(!isApproval || loading || (Number(stakedAmount) === 0) || isFinished || !balance) ? `disabled ${buttonClass}` : buttonClass}
               >
                 <span>{TranslateString(758, 'Stake More')}</span>
               </button>
@@ -147,10 +161,13 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
 
         {/* <CardActionsContainer farm={farm} ethereum={ethereum} account={account} addLiquidityUrl={addLiquidityUrl} /> */}
         <FooterCardFarms
-          farmBscLink={`https://bscscan.com/address/${getAirFarmAddress()}`}
-          farmValue={totalNFT}
+          farmBscLink={`https://bscscan.com/address/${getAddress(contractAddress)}`}
+          farmValue={farmbalance}
+          stackedValue={stakedAmount}
           farmStake="lpLabel"
           addLPurl="addLiquidityUrl"
+          type={status === "connected"}
+          poolId={id}
         />
       </div>
     </>

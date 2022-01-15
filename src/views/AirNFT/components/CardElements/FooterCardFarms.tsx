@@ -3,19 +3,21 @@ import * as FaIcons from 'react-icons/fa'
 
 type Props = {
   farmStake?: string
-  farmValue: string
+  farmValue?: string
   farmBscLink?: string
   addLPurl?: string
+  stackedValue?: string
+  type?: boolean
+  poolId?: number
 }
-
-
-
 
 export default function FooterCardFarms({
   farmValue,
-  farmBscLink
+  farmBscLink,
+  stackedValue,
+  type,
+  poolId
 }: Props) {
-
   const [show, setShow] = useState(false)
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -32,6 +34,17 @@ export default function FooterCardFarms({
               <span className='text-black-rasta font-bold'>{numberWithCommas(farmValue)}</span>
             </div>
           </div>
+          {
+            type && (
+              <div className="flex justify-between w-full mt-8">
+                <span className="text-black-rasta font-bold">My NFTs Staked</span>
+                <span className="text-black-rasta font-bold"> </span>
+                <div className="flex flex-col md:flex-row space-x-4">
+                  <span className='text-black-rasta font-bold'>{poolId !== 123 ? numberWithCommas(stackedValue) : "-"}</span>
+                </div>
+              </div>
+            )
+          }
         </div>
       )}
       <div className="flex justify-between w-full items-center mt-5">
