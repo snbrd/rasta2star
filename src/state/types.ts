@@ -1,6 +1,6 @@
 import { Toast } from 'rasta-uikit'
 import BigNumber from 'bignumber.js'
-import { CampaignType, FarmConfig, Nft, PoolConfig, Team } from 'config/constants/types'
+import { AirFarmConfig, CampaignType, FarmConfig, Nft, PoolConfig, Team } from 'config/constants/types'
 
 export type TranslatableText =
   | string
@@ -52,15 +52,14 @@ export interface Profile {
   hasRegistered: boolean
 }
 
-export interface AirData {
-  approved: boolean
-  balance: number
-  depositedAmount: string
-  pendingReword: string
-  paused: boolean
-  totalSupply: string
-  rewardRate: string
-  totalNFT: string
+export interface AirData extends AirFarmConfig {
+  farmbalance?: string,
+  rewardRate?: string,
+  paused?: boolean,
+  approved?: boolean,
+  pendingReward?: string,
+  stakedAmount?: string,
+  balance?: number
 }
 
 // Slices states
@@ -75,7 +74,7 @@ export interface FarmsState {
 
 export interface PoolsState {
   data: Pool[],
-  airdata: AirData
+  airdata: AirData[]
 }
 
 export interface ProfileState {
