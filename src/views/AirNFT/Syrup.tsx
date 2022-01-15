@@ -56,7 +56,7 @@ const Farm: React.FC = () => {
                   AirFarms.map((farm, index) => {
                     if (Active) return <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />
                     if (farm.isFinished) return <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />
-                    return <></>;
+                    return null;
                   })
                 }
               </div>
