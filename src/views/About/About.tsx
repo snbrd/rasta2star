@@ -15,7 +15,7 @@ import EvoProfile from '../../assets/senor-evo.jpeg'
 import MorenzProfile from '../../assets/drmoorenz.jpeg'
 import VechainProfile from '../../assets/vechain.jpeg'
 import VesxoneProfile from '../../assets/vesxone.jpeg'
-import StarbinnaProfile from '../../assets/starbinna.jpeg'
+import StarbinnaProfile from '../../assets/rastabinna.png'
 import TyphnoProfile from '../../assets/typhno.jpeg'
 import TheMonkProfile from '../../assets/themonk.jpeg'
 import BugBusterProfile from '../../assets/bugbuster.jpeg'
@@ -79,7 +79,7 @@ export default function About() {
       avatar: VesxoneProfile,
     },
     {
-      name: '@starbinna',
+      name: '@rastabinna',
       position: 'Development Team',
       avatar: StarbinnaProfile,
     },
