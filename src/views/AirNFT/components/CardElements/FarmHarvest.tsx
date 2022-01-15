@@ -22,10 +22,10 @@ export default function FarmHarvest({ pool, type }: Props) {
     <div>
       <div className="gap-4 md:gap-4 row flex flex-col md:flex-row xl:flex-row w-full border-b-2 border-black pb-4 md:pb-12 mb-6">
         <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0">
-          <h2 className="text-3xl font-bold text-left">{Number(pendingReward) === 0 || id === 123 ? "0.0000" : Number(new BigNumber(pendingReward).div(new BigNumber(10).pow(18))).toFixed(4)}</h2>
+          <h2 className="text-3xl font-bold text-left">{!pendingReward || Number(pendingReward) === 0 || id === 123 ? "0.0000" : Number(new BigNumber(pendingReward).div(new BigNumber(10).pow(18))).toFixed(4)}</h2>
           <span className="text-red-rasta text-left text-sm">RASTA earned</span>
           <div className="flex flex-row gap-3">
-            <HarvestAction earnings={new BigNumber(pendingReward)} type={type} poolAddress={getAddress(contractAddress)} />
+            <HarvestAction earnings={pendingReward ? new BigNumber(pendingReward) : new BigNumber('0x00')} type={type} poolAddress={getAddress(contractAddress)} />
             <CompoundAction earnings={new BigNumber(pendingReward)} type={type} />
           </div>
         </div>

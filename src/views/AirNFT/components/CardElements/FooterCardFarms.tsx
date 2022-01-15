@@ -20,7 +20,8 @@ export default function FooterCardFarms({
 }: Props) {
   const [show, setShow] = useState(false)
   const numberWithCommas = (x) => {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    if (x) return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return "0";
   }
 
   return (

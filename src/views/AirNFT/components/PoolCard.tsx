@@ -100,7 +100,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
             return <Wallet />;
           }
 
-          if (!balance && Number(stakedAmount) === 0) {
+          if (!balance && (Number(stakedAmount) === 0 || !stakedAmount)) {
             return (
               <a href='https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61' target="_blank" rel='noreferrer'>
                 <span
@@ -125,7 +125,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
             )
           }
 
-          if (Number(stakedAmount) === 0) {
+          if (Number(stakedAmount) === 0 || !stakedAmount) {
             return (
               <div className="flex justify-between">
                 <button
