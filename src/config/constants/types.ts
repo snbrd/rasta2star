@@ -94,6 +94,8 @@ export interface AirFarmConfig {
   harvest?: boolean,
   isFinished?: boolean,
   tokenDecimals: number,
+  ribbon?: boolean,
+  ribbonText?: string
 }
 
 export type Images = {

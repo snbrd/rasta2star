@@ -18,24 +18,36 @@ interface HarvestProps {
 }
 
 const CustomTitle = styled.div`
-    margin-top: -48px;
     padding: 8px 40px;
+    margin-top: -48px;
     margin-left: -40px;
     border-top-left-radius: 16px;
     border-bottom-right-radius: 16px;
     color: white;
+    @media (max-width: 1280px) {
+      margin-top: -40px;
+      margin-left: -32px;
+    }
+    @media (max-width: 1024px) {
+      margin-top: -32px;
+      margin-left: -20px;
+      padding: 4px 40px;
+    }
   `;
 
 const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
+
   const {
-    approved,
-    stakedAmount,
+    id,
+    ribbon,
     balance,
-    farmbalance,
+    approved,
     poolName,
-    contractAddress,
+    ribbonText,
     isFinished,
-    id
+    farmbalance,
+    stakedAmount,
+    contractAddress,
   } = pool;
 
   const TranslateString = useI18n()
@@ -53,8 +65,12 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
 
   return (
     <>
-      <div className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
-        <CustomTitle className='absolute text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta'>{isFinished ? 'Retired' : 'New'}</CustomTitle>
+      <div className="px-5 lg:px-8 xl:px-10 py-8 lg:py-10 xl:py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
+        {
+          ribbon && (
+            <CustomTitle className='absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta'>{ribbonText}</CustomTitle>
+          )
+        }
         <div className="row flex flex-col lg:flex-row gap-0 md:gap-4 mb-4 md:mb-12">
           <CardHeading
             lpLabel={poolName}

@@ -13,6 +13,8 @@ const AirFarms = [
     harvest: true,
     isFinished: true,
     tokenDecimals: 18,
+    ribbon: true,
+    ribbonText: "Retired"
   },
   {
     id: 234,
@@ -26,6 +28,8 @@ const AirFarms = [
     harvest: true,
     isFinished: false,
     tokenDecimals: 18,
+    ribbon: true,
+    ribbonText: "New"
   }
 ]
 
