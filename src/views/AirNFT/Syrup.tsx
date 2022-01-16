@@ -22,7 +22,7 @@ const Farm: React.FC = () => {
       .times(farmInfo[index].rewardRate)
       .times(SEC_PER_YEAR)
       .div(Number(farmInfo[index].farmbalance) > 0 ?
-        new BigNumber(farmInfo[index].farmbalance).times(new BigNumber(0.5).times(new BigNumber(10).pow(18)))
+        new BigNumber(farmInfo[index].farmbalance).times(new BigNumber(0.4).times(new BigNumber(10).pow(18)))
         : new BigNumber(10).pow(18))
       .times(100)
       .toFixed(0)
