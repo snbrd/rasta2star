@@ -41,7 +41,7 @@ export default function FooterCardFarms({
                 <span className="text-black-rasta font-bold">My NFTs Staked</span>
                 <span className="text-black-rasta font-bold"> </span>
                 <div className="flex flex-col md:flex-row space-x-4">
-                  <span className='text-black-rasta font-bold'>{poolId !== 123 ? numberWithCommas(stackedValue) : "-"}</span>
+                  <span className='text-black-rasta font-bold'>{numberWithCommas(stackedValue)}</span>
                 </div>
               </div>
             )

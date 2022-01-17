@@ -65,7 +65,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
 
   return (
     <>
-      <div className="px-5 lg:px-8 xl:px-10 py-8 lg:py-10 xl:py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
+      <div className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
         {
           ribbon && (
             <CustomTitle className='absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta'>{ribbonText}</CustomTitle>
@@ -92,7 +92,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
         <div className={` expanded md:block`}>
           <FarmHarvest
             pool={pool}
-            type={status === "connected" && id !== 123}
+            type={status === "connected"}
           />
         </div>
         {(() => {
