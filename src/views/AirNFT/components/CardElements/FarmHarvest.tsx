@@ -15,7 +15,6 @@ export default function FarmHarvest({ pool, type }: Props) {
   const {
     pendingReward,
     contractAddress,
-    id
   } = pool;
 
   return (

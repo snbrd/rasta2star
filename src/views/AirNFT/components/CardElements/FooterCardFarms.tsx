@@ -16,7 +16,6 @@ export default function FooterCardFarms({
   farmBscLink,
   stackedValue,
   type,
-  poolId
 }: Props) {
   const [show, setShow] = useState(false)
   const numberWithCommas = (x) => {
