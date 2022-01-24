@@ -16,7 +16,7 @@ const farms: FarmConfig[] = [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
-    depositFee: 0,
+    depositFee: 1,
     farm: true
   },
   {
