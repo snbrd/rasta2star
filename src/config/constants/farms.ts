@@ -3,6 +3,23 @@ import { FarmConfig, QuoteToken } from './types'
 
 const farms: FarmConfig[] = [
   {
+    pid: 28,
+    lpSymbol: 'BNB-RASTA CAKE LP',
+    lpAddresses: {
+      97: '0x57E1bf28D3438002Dc64cc6a98Be2fC5A1302fCD',
+      56: '0x950b7377695e81235397da1b608c2087bc7002dc',
+    },
+    tokenSymbol: 'RASTA',
+    tokenAddresses: {
+      97: '0xeE14CBfAaD3BADa6fc9886bf2BA11D1c5F373DF2',
+      56: '0xE3e8cC42DA487d1116D26687856e9FB684817c52',
+    },
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
+    depositFee: 0,
+    farm: true
+  },
+  {
     pid: 1,
     lpSymbol: 'BNB-RASTA RLP',
     lpAddresses: {
@@ -17,6 +34,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 0,
+    farm: true
   },
   {
     pid: 2,
@@ -30,6 +48,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     depositFee: 0,
+    farm: true
   },
   {
     pid: 26,
@@ -43,6 +62,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.RASTA,
     quoteTokenAdresses: contracts.rasta,
     depositFee: 0,
+    farm: true
   },
   {
     pid: 25,
@@ -56,6 +76,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.RASTA,
     quoteTokenAdresses: contracts.rasta,
     depositFee: 0,
+    farm: true
   },
   {
     pid: 3,
@@ -69,6 +90,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.ETH,
     quoteTokenAdresses: contracts.eth,
     depositFee: 0,
+    farm: true
   },
   {
     pid: 22,
@@ -82,6 +104,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.RASTA,
     quoteTokenAdresses: contracts.rasta,
     depositFee: 0,
+    farm: true
   },
   {
     pid: 19,
@@ -95,6 +118,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.RASTA,
     quoteTokenAdresses: contracts.rasta,
     depositFee: 0,
+    farm: true
   },
   {
     pid: 20,
@@ -108,6 +132,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.RASTA,
     quoteTokenAdresses: contracts.rasta,
     depositFee: 0,
+    farm: true
   },
   {
     pid: 21,
@@ -121,6 +146,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.RASTA,
     quoteTokenAdresses: contracts.rasta,
     depositFee: 0,
+    farm: true
   },
   {
     pid: 4,
@@ -134,6 +160,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 4,
+    farm: true
   },
   {
     pid: 5,
@@ -147,6 +174,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     depositFee: 4,
+    farm: true
   },
   {
     pid: 6,
@@ -160,6 +188,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 4,
+    farm: true
   },
   {
     pid: 7,
@@ -173,6 +202,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 4,
+    farm: true
   },
   {
     pid: 8,
@@ -186,6 +216,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     depositFee: 4,
+    farm: true
   },
   {
     pid: 9,
@@ -199,6 +230,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     depositFee: 4,
+    farm: true
   },
   {
     pid: 10,
@@ -212,6 +244,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 4,
+    farm: true
   },
   {
     pid: 0,
@@ -222,6 +255,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.RASTA,
     quoteTokenAdresses: contracts.rasta,
     depositFee: 0,
+    farm: false
   },
   {
     pid: 27,
@@ -232,6 +266,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 4,
+    farm: false
   },
   {
     pid: 23,
@@ -242,6 +277,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 0,
+    farm: false
   },
   {
     pid: 11,
@@ -252,6 +288,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     depositFee: 4,
+    farm: false
   },
   {
     pid: 12,
@@ -262,6 +299,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 4,
+    farm: false
   },
   {
     pid: 13,
@@ -272,6 +310,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 4,
+    farm: false
   },
   {
     pid: 14,
@@ -282,6 +321,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     depositFee: 4,
+    farm: false
   },
   {
     pid: 15,
@@ -292,6 +332,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.ETH,
     quoteTokenAdresses: contracts.eth,
     depositFee: 4,
+    farm: false
   },
   {
     pid: 16,
@@ -302,6 +343,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     depositFee: 4,
+    farm: false
   },
   {
     pid: 17,
@@ -312,6 +354,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 4,
+    farm: false
   },
   {
     pid: 18,
@@ -322,6 +365,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 4,
+    farm: false
   },
 ]
 
