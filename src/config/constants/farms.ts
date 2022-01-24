@@ -249,7 +249,11 @@ const farms: FarmConfig[] = [
   {
     pid: 0,
     lpSymbol: 'RASTA',
-    lpAddresses: contracts.rasta,
+    // lpAddresses: contracts.rasta,
+    lpAddresses: {
+      97: '0x35b1EF3FF9763F72C11e9f08B471D0b6b5A7515D',
+      56: '0xec89Be665c851FfBAe2a8Ded03080F3E64116539',
+    },
     tokenSymbol: 'RASTA',
     tokenAddresses: contracts.rasta,
     quoteTokenSymbol: QuoteToken.RASTA,
