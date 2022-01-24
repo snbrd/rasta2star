@@ -54,7 +54,7 @@ export default function Sidebar() {
       child: [
         {
           path: 'https://rastadex.croxswap.com',
-          label: 'PancakeSwap by CROX ★',
+          label: 'RastaSwap (CAKE LP)★',
         },
         {
           path: 'https://exchange.rasta.finance',
