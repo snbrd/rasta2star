@@ -66,6 +66,7 @@ export interface FarmConfig {
     endBlock: number
   }
   depositFee?: number
+  farm: boolean
 }
 
 export interface PoolConfig {
