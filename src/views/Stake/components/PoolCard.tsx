@@ -21,6 +21,7 @@ import Wallet from './CardElements/Wallet'
 
 interface PoolWithApy extends Pool {
   apy: BigNumber
+  multiplier: string
 }
 
 interface HarvestProps {
@@ -41,6 +42,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
     isFinished,
     userData,
     stakingLimit,
+    multiplier
   } = pool
 
   // Pools using native BNB behave differently than pools using a token
@@ -94,7 +96,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
         <div className="row flex flex-col lg:flex-row gap-0 md:gap-4 mb-12">
           <CardHeading
             lpLabel={tokenName}
-            multiplier="60 X"
+            multiplier={multiplier}
             isCommunityFarm={false}
             farmImage={tokenName}
             tokenSymbol="farm.tokenSymbol"
