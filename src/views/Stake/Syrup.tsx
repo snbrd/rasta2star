@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { BLOCKS_PER_YEAR } from 'config'
+import { SEC_PER_YEAR } from 'config'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
 import useI18n from 'hooks/useI18n'
@@ -74,12 +74,13 @@ const Farm: React.FC = () => {
       rewardTokenPriceInBNB = new BigNumber(rewardTokenPriceInBNB).times(stakingTokenPriceInBNB)
     }
 
-    const totalRewardPricePerYear = rewardTokenPriceInBNB.times(pool.tokenPerBlock).times(BLOCKS_PER_YEAR)
+    const totalRewardPricePerYear = rewardTokenPriceInBNB.times(pool.tokenPerBlock).times(SEC_PER_YEAR)
     const totalStakingTokenInPool = stakingTokenPriceInBNB.times(getBalanceNumber(pool.totalStaked))
     const apy = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
 
     return {
       ...pool,
+      multiplier: stakingTokenFarm.multiplier,
       isFinished: pool.sousId === 0 ? false : pool.isFinished || block > pool.endBlock,
       apy,
     }

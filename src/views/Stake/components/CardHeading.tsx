@@ -12,7 +12,7 @@ export interface ExpandableSectionProps {
 
 const CardHeading: React.FC<ExpandableSectionProps> = ({
   lpLabel,
-  multiplier = '30X',
+  multiplier,
   farmImage = 'dot',
   tokenSymbol = 'farm.tokenSymbol',
 }) => {
