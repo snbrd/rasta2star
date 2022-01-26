@@ -71,7 +71,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
             <CustomTitle className='absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta'>{ribbonText}</CustomTitle>
           )
         }
-        <div className="row flex flex-col lg:flex-row gap-0 md:gap-4 mb-4 md:mb-12">
+        <div className="row flex flex-col lg:flex-row space-x-0 md:space-x-4 mb-4 md:mb-12">
           <CardHeading
             lpLabel={poolName}
             isCommunityFarm={false}

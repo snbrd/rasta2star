@@ -26,7 +26,7 @@ export default function FarmHarvest({ farmEarned, type, depositFee, pid = 'pid',
         <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0">
           <h2 className="text-3xl font-bold text-left">{farmEarned === 0 ? "0.0000" : (farmEarned * 1).toFixed(4)}</h2>
           <span className="text-red-rasta text-left text-sm">{lpLabel} STAKED</span>
-          <div className="flex flex-row gap-3">
+          <div className="flex flex-row md:space-x-3 gap-3">
             <HarvestAction pid={pid} earnings={earning} type={type} />
             <CompoundAction pid={pid} earnings={earning} type={type} pool={pool} />
           </div>
