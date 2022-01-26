@@ -10,23 +10,17 @@ const useStake = (poolAddress) => {
   const { account } = useWallet()
   const airFarmContract = useAirFarmContract(poolAddress)
 
-  const handleStake = useCallback(
-    async () => {
-      const txHash = await stakeAirNFT(airFarmContract, account)
-      dispatch(fetchAirNFTPoolsAUserDataAsync(account))
-      console.info(txHash)
-    },
-    [account, dispatch, airFarmContract],
-  )
+  const handleStake = useCallback(async () => {
+    const txHash = await stakeAirNFT(airFarmContract, account)
+    dispatch(fetchAirNFTPoolsAUserDataAsync(account))
+    console.info(txHash)
+  }, [account, dispatch, airFarmContract])
 
-  const handleUnStake = useCallback(
-    async () => {
-      const txHash = await unstakeAirNFT(airFarmContract, account)
-      dispatch(fetchAirNFTPoolsAUserDataAsync(account))
-      console.info(txHash)
-    },
-    [account, dispatch, airFarmContract],
-  )
+  const handleUnStake = useCallback(async () => {
+    const txHash = await unstakeAirNFT(airFarmContract, account)
+    dispatch(fetchAirNFTPoolsAUserDataAsync(account))
+    console.info(txHash)
+  }, [account, dispatch, airFarmContract])
 
   return { onStake: handleStake, onUnStake: handleUnStake }
 }
@@ -36,16 +30,13 @@ export const useClaim = (poolAddress) => {
   const { account } = useWallet()
   const airFarmContract = useAirFarmContract(poolAddress)
 
-  const handleClaim = useCallback(
-    async () => {
-      if (account) {
-        const tx = await claim(airFarmContract, account);
-        dispatch(fetchAirNFTPoolsAUserDataAsync(account));
-        console.info(tx)
-      }
-    },
-    [account, dispatch, airFarmContract],
-  )
+  const handleClaim = useCallback(async () => {
+    if (account) {
+      const tx = await claim(airFarmContract, account)
+      dispatch(fetchAirNFTPoolsAUserDataAsync(account))
+      console.info(tx)
+    }
+  }, [account, dispatch, airFarmContract])
 
   return { onClaim: handleClaim }
 }
@@ -55,16 +46,13 @@ export const useApproveAll = (poolAddress) => {
   const { account } = useWallet()
   const airNftContract = useAirNFTContract()
 
-  const handleApproveAll = useCallback(
-    async () => {
-      if (account) {
-        const tx = await approveAll(airNftContract, poolAddress, account);
-        dispatch(fetchAirNFTPoolsAUserDataAsync(account));
-        console.info(tx)
-      }
-    },
-    [account, dispatch, airNftContract, poolAddress],
-  )
+  const handleApproveAll = useCallback(async () => {
+    if (account) {
+      const tx = await approveAll(airNftContract, poolAddress, account)
+      dispatch(fetchAirNFTPoolsAUserDataAsync(account))
+      console.info(tx)
+    }
+  }, [account, dispatch, airNftContract, poolAddress])
 
   return { onApproveAll: handleApproveAll }
 }

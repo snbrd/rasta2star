@@ -5,12 +5,12 @@ import { AirFarmConfig, CampaignType, FarmConfig, Nft, PoolConfig, Team } from '
 export type TranslatableText =
   | string
   | {
-    id: number
-    fallback: string
-    data?: {
-      [key: string]: string | number
+      id: number
+      fallback: string
+      data?: {
+        [key: string]: string | number
+      }
     }
-  }
 
 export interface Farm extends FarmConfig {
   tokenAmount?: BigNumber
@@ -53,12 +53,12 @@ export interface Profile {
 }
 
 export interface AirData extends AirFarmConfig {
-  farmbalance?: string,
-  rewardRate?: string,
-  paused?: boolean,
-  approved?: boolean,
-  pendingReward?: string,
-  stakedAmount?: string,
+  farmbalance?: string
+  rewardRate?: string
+  paused?: boolean
+  approved?: boolean
+  pendingReward?: string
+  stakedAmount?: string
   balance?: number
 }
 
@@ -73,7 +73,7 @@ export interface FarmsState {
 }
 
 export interface PoolsState {
-  data: Pool[],
+  data: Pool[]
   airdata: AirData[]
 }
 

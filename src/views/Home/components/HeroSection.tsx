@@ -14,7 +14,7 @@ export default function HeroSection() {
       <div className="flex w-full  py-16 text-white flex-col"  style={{
           backgroundImage: `url(${HeroImage})`,
           backgroundSize: 'cover',
-          backgroundPosition: '60% 50%',
+          backgroundPosition: 'left center',
         }}>
         <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row">
           <div className="leftSection w-full md:w-6/12">

@@ -85,7 +85,7 @@ export const useAirNFT = () => {
     dispatch(fetchAirNFTPoolsAUserDataAsync(account))
   }, [account, dispatch, fastRefresh])
 
-  const airFarm = useSelector((state: State) => state.pools.airdata);
+  const airFarm = useSelector((state: State) => state.pools.airdata)
   return airFarm
 }
 
