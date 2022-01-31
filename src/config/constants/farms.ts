@@ -17,7 +17,9 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 0,
-    farm: true
+    farm: true,
+    ribbon: true,
+    ribbonText: "Stake Here"
   },
   {
     pid: 1,
@@ -34,7 +36,9 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 0,
-    farm: true
+    farm: true,
+    ribbon: true,
+    ribbonText: "Expiring"
   },
   {
     pid: 2,

@@ -67,6 +67,8 @@ export interface FarmConfig {
   }
   depositFee?: number
   farm: boolean
+  ribbon?: boolean
+  ribbonText?: string
 }
 
 export interface PoolConfig {
