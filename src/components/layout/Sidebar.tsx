@@ -13,6 +13,7 @@ import {
   FaTwitter,
   FaMediumM,
   FaReddit,
+  FaDiscord,
   FaBars,
   FaRegWindowClose,
   GoMail,
@@ -179,6 +180,7 @@ export default function Sidebar() {
     { name: 'Twitter', icon: <FaTwitter />, link: 'https://www.twitter.com/RastaFinance' },
     { name: 'Medium', icon: <FaMediumM />, link: 'https:///rastafinance.medium.com' },
     { name: 'Reddit', icon: <FaReddit />, link: 'https://www.reddit.com/r/rastafinance' },
+    { name: 'Discord', icon: <FaDiscord />, link: 'https://discord.gg/JgMKca38' },
   ]
 
   return (
