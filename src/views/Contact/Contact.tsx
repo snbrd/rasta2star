@@ -59,6 +59,7 @@ export default function Contact() {
         icon: <FaIcons.FaMediumM />,
         link: 'https:///rastafinance.medium.com',
       },
+      { icon: <FaIcons.FaDiscord />, link: 'https://discord.gg/JgMKca38' },
     ],
   }
   return (
