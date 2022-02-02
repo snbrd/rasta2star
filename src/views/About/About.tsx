@@ -26,21 +26,18 @@ export default function About() {
   const cardSection = [
     {
       icon: <AiIcons.AiFillQuestionCircle />,
-      title: 'What’s Rasta?',
-      desc: `The precious $RASTA token is the official Token of the RastaFinance eco-system.
-        Through its decentralized exchange (DEX) and architecture, RastaFinance is putting the people's money, back into the people's hands `,
+      title: 'What is Rasta?',
+      desc: `Founded in 2020, RastaFinance is a decentralized crypto community, building unique tools that bridge the crypto-world to real-world projects `,
     },
     {
       icon: <FaIcons.FaLink />,
       title: 'Connect Directly to Your Wallet',
-      desc: `The Rasta.Finance platform connects straight to your smart chain wallet,
-        in order to ensure swift interaction with our DeFi protocols. Please find the guide on connecting your Binance Smart Chain (BSC) enabled wallet. `,
+      desc: `Built upon the principles of Web3.0, Rasta uses advanced, secure and decentralized block-chain technology to connect directly to your wallet (MetaMask, TrustWallet, SafePal and more)`,
     },
     {
       icon: <FaIcons.FaUsers />,
       title: 'Join a Community that Cares',
-      desc: `Farming the $RASTA token involves staking your coins to provide liquidity for the
-        RastaDEX. By a whole community doing this together, we grow the community and make it easier for new Rastas to join`,
+      desc: `As we grow the Rasta Eco-System, join the community and farm for more $RASTA tokens, that way you can grow your crypto portfolio`,
     },
   ]
   const cardBtnItem = [
@@ -59,34 +56,34 @@ export default function About() {
       avatar: BurdyProfile,
     },
     {
+      name: '@raslogic',
+      position: 'Founder and Vice President',
+      avatar: RaslogicProfile,
+    },
+    {
       name: '@SeñorEVO',
-      position: 'RastaOperations',
+      position: 'Founder & RastaOperations',
       avatar: EvoProfile,
     },
     {
+      name: '@vesxone',
+      position: 'Founder and RastaDesign',
+      avatar: VesxoneProfile,
+    },
+    {
       name: '@drmoorenz',
-      position: 'Development Team',
+      position: 'RastaMedia Management',
       avatar: MorenzProfile,
+    },
+    {
+      name: '@rastabinna',
+      position: 'Head of Development Team',
+      avatar: StarbinnaProfile,
     },
     {
       name: '@typhoncrypto',
       position: 'Development Team',
       avatar: VechainProfile,
-    },
-    {
-      name: '@vesxone',
-      position: 'Development Team',
-      avatar: VesxoneProfile,
-    },
-    {
-      name: '@rastabinna',
-      position: 'Development Team',
-      avatar: StarbinnaProfile,
-    },
-    {
-      name: '@typhnocrypto',
-      position: 'Development Team',
-      avatar: TyphnoProfile,
     },
     {
       name: '@themonk',
@@ -95,18 +92,13 @@ export default function About() {
     },
     {
       name: '@bugbuster',
-      position: 'Development Team',
+      position: 'Partnerships',
       avatar: BugBusterProfile,
     },
     {
       name: '@senorsats',
-      position: 'Development Team',
+      position: 'RastaFund Manager',
       avatar: Senorsatsrofile,
-    },
-    {
-      name: '@raslogic',
-      position: 'Development Team',
-      avatar: RaslogicProfile,
     },
   ]
   const letsConnect = {
