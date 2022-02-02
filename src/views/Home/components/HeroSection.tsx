@@ -4,10 +4,10 @@ import HeroImage from '../../../assets/home-header.jpg'
 
 export default function HeroSection() {
   const counter = [
-    { label: 'Months Active', numbers: '9' },
-    { label: 'Holders', numbers: '3,534' },
-    { label: 'Transfers', numbers: '245,138' },
-    { label: 'Continents', numbers: '6' },
+    { label: 'Months Active', numbers: '11' },
+    { label: 'Holders', numbers: '3,618' },
+    { label: 'Transfers', numbers: '257,613' },
+    { label: 'Network', numbers: 'BSC (BEP20)' },
   ]
   return (
     <div>
@@ -19,12 +19,12 @@ export default function HeroSection() {
         <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row">
           <div className="leftSection w-full md:w-6/12">
             <h1 className="text-4xl font-bold text-center md:text-left md:pr-48 leading-tight">
-              <span className="text-yellow-rasta">Pride and Joy</span>
-              <br /> of the Binance Smart Chain
+              <span className="text-yellow-rasta">Empowering Creators</span>
+              <br /> ZION LaunchPad
             </h1>
             <p className="mt-8 text-center md:text-left">
-              Join thousands of Rastas on a journey to ZION. RastaFinance is decentralizing finance, using the latest in
-              blockchain technology. Seize the power of your own money, join the revolution.
+              ZION LP by Rasta, unites artists with their fanbase, offering a revolutionary suite of tools that empowers creators.
+              Built upon the foundation of Web3.0, Rasta utilizes latest in blockchain technology to earn more income for those that deserve it.
             </p>
             <div className="cta flex-row mt-8 space-x-8 hidden md:flex">
               <Link
@@ -35,7 +35,7 @@ export default function HeroSection() {
               </Link>
               <a
                 href="https://rastadex.croxswap.com"
-                className="border-2 font-bold border-yellow-rasta py-3 rounded-xl w-1/3 text-center"
+                className="bg-gradient-to-r font-bold w-1/3 from-green-rasta to-yellow-rasta_cta text-center py-3 rounded-xl"
               >
                 <button type="button">Buy Rasta</button>
               </a>
