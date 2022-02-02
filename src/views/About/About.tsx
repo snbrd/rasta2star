@@ -81,27 +81,27 @@ export default function About() {
       avatar: MorenzProfile,
     },
     {
-      name: '@rastabinna',
+      name: '@RastaBinna',
       position: 'Head of Development Team',
       avatar: StarbinnaProfile,
     },
     {
-      name: '@typhoncrypto',
+      name: '@Typhoncrypto',
       position: 'Development Team',
       avatar: TyphnoProfile,
     },
     {
-      name: '@themonk',
+      name: '@TheMonk',
       position: 'Development Team',
       avatar: TheMonkProfile,
     },
     {
-      name: '@bugbuster',
+      name: '@BugBuster',
       position: 'Partnerships Team',
       avatar: BugBusterProfile,
     },
     {
-      name: '@senorsats',
+      name: '@SenorSats',
       position: 'RastaFund & Merchandise Team',
       avatar: Senorsatsrofile,
     },
