@@ -66,7 +66,7 @@ export default function About() {
       avatar: EvoProfile,
     },
     {
-      name: '@vesxone',
+      name: '@Badger',
       position: 'Founder and RastaDesign Team',
       avatar: VesxoneProfile,
     },
