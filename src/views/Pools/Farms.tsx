@@ -64,8 +64,8 @@ const Farms: React.FC = () => {
   const stackedOnly = false;
 
   const farmsLP = farmList.filter((farm) => !farm.farm)
-  const activeFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier !== '0X')
-  const inactiveFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier === '0X')
+  const activeFarms = farmsLP.filter((farm) => farm.multiplier !== '0X')
+  const inactiveFarms = farmsLP.filter((farm) => farm.multiplier === '0X')
   const stackedOnlyFarms = activeFarms.filter(
     (farm) => farm.userData && new BigNumber(farm.userData.stakedBalance).isGreaterThan(0),
   )
@@ -91,6 +91,8 @@ const Farms: React.FC = () => {
           price = mrastaPrice.toString()
         } else if (farm.lpSymbol === 'CNR') {
           price = new BigNumber(cnsPriceVsBnb).times(115).times(bnbPrice).toString()
+        } else if (farm.lpSymbol === 'RASTA') {
+          price = rastaPrice.toString();
         } else {
           price = priceData.prices[farm.tokenSymbol]
         }
