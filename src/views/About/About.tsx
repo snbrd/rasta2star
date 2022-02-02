@@ -56,7 +56,7 @@ export default function About() {
       avatar: BurdyProfile,
     },
     {
-      name: '@raslogic',
+      name: '@RasLogic',
       position: 'Founder and Vice President',
       avatar: RaslogicProfile,
     },
@@ -67,12 +67,17 @@ export default function About() {
     },
     {
       name: '@vesxone',
-      position: 'Founder and RastaDesign',
+      position: 'Founder and RastaDesign Team',
       avatar: VesxoneProfile,
     },
     {
-      name: '@drmoorenz',
-      position: 'RastaMedia Management',
+      name: '@VechainVendetta',
+      position: 'Founder and RastaMedia Team',
+      avatar: VechainProfile,
+    },
+    {
+      name: '@Blessed RMG',
+      position: 'RastaMedia Team',
       avatar: MorenzProfile,
     },
     {
@@ -83,7 +88,7 @@ export default function About() {
     {
       name: '@typhoncrypto',
       position: 'Development Team',
-      avatar: VechainProfile,
+      avatar: TyphnoProfile,
     },
     {
       name: '@themonk',
@@ -92,12 +97,12 @@ export default function About() {
     },
     {
       name: '@bugbuster',
-      position: 'Partnerships',
+      position: 'Partnerships Team',
       avatar: BugBusterProfile,
     },
     {
       name: '@senorsats',
-      position: 'RastaFund Manager',
+      position: 'RastaFund & Merchandise Team',
       avatar: Senorsatsrofile,
     },
   ]
