@@ -35,7 +35,7 @@ export default function HeroSection() {
               </Link>
               <a
                 href="https://rastadex.croxswap.com"
-                className="bg-gradient-to-r font-bold w-1/3 from-green-rasta to-yellow-rasta_cta text-center py-3 rounded-xl"
+                className="bg-gradient-to-r border-2 font-bold border-yellow w-1/3 from-green-rasta to-yellow-rasta_cta text-center py-3 rounded-xl"
               >
                 <button type="button">Buy Rasta</button>
               </a>
