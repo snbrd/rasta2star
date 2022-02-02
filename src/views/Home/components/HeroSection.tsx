@@ -19,7 +19,7 @@ export default function HeroSection() {
         <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row">
           <div className="leftSection w-full md:w-6/12">
             <h1 className="text-4xl font-bold text-center md:text-left md:pr-48 leading-tight">
-              <span className="text-yellow-rasta">Empowering Creators</span>
+              <span className="text-yellow-rasta">Empowering Artists</span>
               <br /> ZION LaunchPad
             </h1>
             <p className="mt-8 text-center md:text-left">
