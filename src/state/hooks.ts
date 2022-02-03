@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import BigNumber from 'bignumber.js'
 import { kebabCase } from 'lodash'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
@@ -103,10 +103,21 @@ export const usePriceBnbBusd = (): BigNumber => {
 }
 
 export const usePriceRastaBusd = (): BigNumber => {
-  const pid = 1 // RASTA-BNB LP
-  const bnbPriceUSD = usePriceBnbBusd()
-  const farm = useFarmFromPid(pid)
-  return farm.tokenPriceVsQuote ? bnbPriceUSD.times(farm.tokenPriceVsQuote) : ZERO
+  const [rastaPrice, setPrice] = useState(ZERO);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch(`https://api.pancakeswap.info/api/v2/tokens/0xe3e8cc42da487d1116d26687856e9fb684817c52`)
+        const { data } = await response.json()
+        return setPrice(new BigNumber(data.price));
+      } catch (error) {
+        return setPrice(ZERO);
+      }
+    })()
+  }, [])
+
+  return rastaPrice;
 }
 
 export const usePriceEthBusd = (): BigNumber => {
