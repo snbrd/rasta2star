@@ -83,7 +83,8 @@ export const RastaNftIds = [
   243115,
   243113,
   243111,
-  243110
+  243110,
+  245257
 ];
 
 export default AirFarms
