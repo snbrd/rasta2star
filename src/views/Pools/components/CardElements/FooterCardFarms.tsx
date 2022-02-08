@@ -27,7 +27,7 @@ export default function FooterCardFarms({ farmStake, farmValue, addLPurl }: Prop
           <div className="flex justify-between w-full mt-3">
             <span className="text-black-rasta font-black">Total:</span>
             <div className="flex flex-col md:flex-row space-x-4">
-              <span className='text-black-rasta font-bold'>${farmValue}</span>
+              <span className='text-black-rasta font-bold'>{farmValue}</span>
             </div>
           </div>
         </div>
