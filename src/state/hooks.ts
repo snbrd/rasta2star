@@ -115,7 +115,7 @@ export const usePriceRastaBusd = (): BigNumber => {
         return setPrice(ZERO);
       }
     })()
-  }, [setPrice])
+  }, [])
 
   return rastaPrice;
 }
