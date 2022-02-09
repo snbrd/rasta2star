@@ -239,7 +239,6 @@ export const useAchievements = () => {
 
 export const useTotalValue = (): BigNumber => {
   const farms = useFarms()
-  const nftPools = useAirNFT();
   const bnbPrice = usePriceBnbBusd()
   const rastaPrice = usePriceRastaBusd()
   const cnrPrice = usePriceCNRBusd()
@@ -287,10 +286,5 @@ export const useTotalValue = (): BigNumber => {
     value = value.plus(new BigNumber(farm.singleTokenAmount).times(Number(price)))
   }
 
-  for (let i = 0; i < nftPools.length; i++) {
-    const nftPool = nftPools[i];
-    const val = bnbPrice.times(new BigNumber(nftPool.farmbalance).times(0.4));
-    value = value.plus(val);
-  }
   return value
 }
