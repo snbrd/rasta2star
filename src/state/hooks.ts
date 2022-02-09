@@ -120,6 +120,24 @@ export const usePriceRastaBusd = (): BigNumber => {
   return rastaPrice;
 }
 
+export const usePriceCNRBusd = (): BigNumber => {
+  const [cnrPrice, setPrice] = useState(ZERO);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch(`https://api.pancakeswap.info/api/v2/tokens/0xdCbA3fbd7BBc28abD18A472D28358089467A8a74`)
+        const { data } = await response.json()
+        return setPrice(new BigNumber(data.price));
+      } catch (error) {
+        return setPrice(ZERO);
+      }
+    })()
+  }, [])
+
+  return cnrPrice;
+}
+
 export const usePriceEthBusd = (): BigNumber => {
   const pid = 7 // ETH-BNB LP
   const bnbPriceUSD = usePriceBnbBusd()
@@ -221,13 +239,15 @@ export const useAchievements = () => {
 
 export const useTotalValue = (): BigNumber => {
   const farms = useFarms()
+  const nftPools = useAirNFT();
   const bnbPrice = usePriceBnbBusd()
   const rastaPrice = usePriceRastaBusd()
+  const cnrPrice = usePriceCNRBusd()
   const mrastaPrice = useMRastaPrice()
   const ethPrice = usePriceEthBusd()
   const priceData = useGetPriceData()
   let value = new BigNumber(0)
-  const farmsLP = farms.filter((farm) => farm.lpSymbol.includes('RLP'))
+  const farmsLP = farms.filter((farm) => farm.lpSymbol.includes('RLP') || farm.lpSymbol.includes('LP'))
   for (let i = 0; i < farmsLP.length; i++) {
     const farm = farmsLP[i]
     if (farm.lpTotalInQuoteToken) {
@@ -247,7 +267,7 @@ export const useTotalValue = (): BigNumber => {
     }
   }
   value = value.times(new BigNumber(2))
-  const farmsNonLP = farms.filter((farm) => !farm.lpSymbol.includes('RLP'))
+  const farmsNonLP = farms.filter((farm) => !farm.lpSymbol.includes('RLP') && !farm.lpSymbol.includes('LP'))
   for (let i = 0; i < farmsNonLP.length; i++) {
     const farm = farmsNonLP[i]
     if (!farm.singleTokenAmount || !priceData) {
@@ -257,10 +277,20 @@ export const useTotalValue = (): BigNumber => {
     let price
     if (farm.pid === 0) {
       price = rastaPrice.toNumber()
+    } else if (farm.pid === 23) {
+      price = mrastaPrice;
+    } else if (farm.pid === 27) {
+      price = cnrPrice;
     } else {
       price = farm.tokenSymbol === 'CAKE' ? priceData.prices.Cake : priceData.prices[farm.tokenSymbol]
     }
     value = value.plus(new BigNumber(farm.singleTokenAmount).times(Number(price)))
+  }
+
+  for (let i = 0; i < nftPools.length; i++) {
+    const nftPool = nftPools[i];
+    const val = bnbPrice.times(new BigNumber(nftPool.farmbalance).times(0.4));
+    value = value.plus(val);
   }
   return value
 }

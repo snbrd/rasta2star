@@ -31,7 +31,7 @@ const useRastaPrice = () => {
     if (mrastaRastaPairContract) {
       fetchBalance()
     }
-  }, [setPrice, fetchBalance, block])
+  }, [fetchBalance, block])
 
   return price
 }
