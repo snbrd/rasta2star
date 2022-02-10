@@ -28,7 +28,7 @@ export default function FarmHarvest({ pool, type }: Props) {
             <CompoundAction earnings={new BigNumber(pendingReward)} type={type} />
           </div>
         </div>
-        <div className="apr py-4 text-center px-6 bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center">
+        <div className="apr py-4 px-6 bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center">
           <span className="apr-value text-2xl w-full text-gray-700 ">0%</span>
           <span className="apr-label text-red-rasta text-sm">Deposit Fee</span>
         </div>
