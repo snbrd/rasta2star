@@ -15,7 +15,7 @@ export default function FavoriteCreator() {
   return (
     <div>
       <div
-        className="flex w-full flex-col text-white py-32"
+        className="flex w-full flex-col text-white py-16 md:py-32"
         style={{
           backgroundImage: `url(${BgImage})`,
           backgroundPosition: 'top center',
@@ -103,7 +103,7 @@ export default function FavoriteCreator() {
             <Router>
               <Link
                 to="/"
-                className="bg-red-rasta font-bold text-white mx-auto text-center py-4 px-8 mb-8 md:mb-0 rounded-xl flex items-center"
+                className="bg-red-rasta w-6/12 md:w-full font-bold text-white mx-auto text-center py-4 px-8 mb-8 md:mb-0 rounded-xl flex items-center"
               >
                 <button type="button" className="w-full ">
                   COMING SOON

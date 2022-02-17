@@ -15,7 +15,7 @@ export default function LetsConnect({ bg, items }: Props) {
         backgroundSize: 'cover',
       }}
     >
-      <div className="max-w-screen-xl mx-auto bg-white text-black px-6 flex md:px-48 py-12 flex-col md:flex-row mt-8 md:mt-32">
+      <div className="max-w-screen-xl mx-auto bg-white text-black px-6 flex md:px-48 py-16 flex-col md:flex-row mt-8 md:mt-32">
         <div className="rastaFinance flex flex-col flex-grow-1">
           <h2 className="text-2xl font-bold text-center md:text-left">{items.heading}</h2>
           <div className="list-content mt-4 md:mt-12 ">

@@ -157,7 +157,7 @@ export default function About() {
       <section className=" w-full bg-white md:mx-auto items-center  md:pt-16">
         <TeamSlide items={team} />
       </section>
-      <section className=" w-full flex bg-white md:mx-auto items-center md:flex-row -mt-64 ">
+      <section className=" w-full flex bg-white md:mx-auto items-center md:flex-row -mt-56 md:-mt-64 ">
         <LetsConnect items={letsConnect} bg={LeafBg} />
       </section>
     </div>

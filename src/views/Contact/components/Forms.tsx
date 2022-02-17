@@ -34,7 +34,7 @@ export default function Form({ fields, contactInfo, desc }: Props) {
   }
 
   return (
-    <div className="bg-white pb-32 flex px-8 md:px-0">
+    <div className="bg-white pb-16 md:pb-32 flex px-8 md:px-0">
       <div className="img-right absolute hidden md:block right-0 top-1/4">
         <img src={MrLionFull} alt="Full body mr lion" />
       </div>
@@ -42,7 +42,7 @@ export default function Form({ fields, contactInfo, desc }: Props) {
         <img src={MsLionFull} alt="Full body ms lion" />
       </div>
       <div className="max-w-screen-xl mx-auto bg-white shadow-box flex flex-col md:flex-row  -mt-16 md:-mt-64 w-full md:px-0">
-        <div className="forms flex items-center  px-4 md:px-32 py-6 md:py-16 mt-4 w-full md:w-3/5">
+        <div className="forms flex items-center  px-8 md:px-32 py-6 md:py-16 mt-4 w-full md:w-3/5">
           <form action="" className="flex-grow-1 " id="contactForm" onSubmit={handleSubmit}>
             <div className="fields space-y-12">
               {fields.map((item, index) => {
@@ -76,7 +76,7 @@ export default function Form({ fields, contactInfo, desc }: Props) {
           <h2 className="text-3xl font-bold">{contactInfo.title}</h2>
 
           <p className="mt-8 leading-loose">{desc}</p>
-          <div className="detail flex flex-col space-y-16 mt-16 md:mt-8">
+          <div className="detail flex flex-col space-y-16 mt-4 md:mt-8">
             {contactInfo.detail.map((item, index) => {
               return (
                 <div className="" key={index}>
@@ -88,7 +88,7 @@ export default function Form({ fields, contactInfo, desc }: Props) {
               )
             })}
           </div>
-          <div className="social mt-16 md:mt-24 flex flex-row space-x-4">
+          <div className="social mt-4 md:mt-24 flex flex-row space-x-4">
             {contactInfo.socialMedia.map((item, index) => {
               return (
                 <a
