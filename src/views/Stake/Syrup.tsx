@@ -23,7 +23,7 @@ const Farm: React.FC = () => {
   const farms = useFarms()
   const pools = usePools(account)
   const block = useBlock()
-  const stackedOnly = false;
+  const stackedOnly = false
   const [Active, setActive] = useState(true)
   const bnbPriceUSD = usePriceBnbBusd()
   const bnbPriceDFL = useGetDFLPriceVsBnb()
@@ -123,22 +123,21 @@ const Farm: React.FC = () => {
                     {farmsList(inactiveFarms, true)}
                   </Route> */}
                 {/* <Route exact path={`${path}`}> */}
-                {
-                  Active ?
-                    <>
-                      {stackedOnly
-                        ? orderBy(stackedOnlyPools, ['sortOrder']).map((pool) => (
+                {Active ? (
+                  <>
+                    {stackedOnly
+                      ? orderBy(stackedOnlyPools, ['sortOrder']).map((pool) => (
                           <PoolCard key={pool.sousId} pool={pool} />
                         ))
-                        : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
-                    </>
-                    :
-                    <>
-                      {orderBy(finishedPools, ['sortOrder']).map((pool) => (
-                        <PoolCard key={pool.sousId} type={false} pool={pool} />
-                      ))}
-                    </>
-                }
+                      : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
+                  </>
+                ) : (
+                  <>
+                    {orderBy(finishedPools, ['sortOrder']).map((pool) => (
+                      <PoolCard key={pool.sousId} type={false} pool={pool} />
+                    ))}
+                  </>
+                )}
                 {/* </Route> */}
                 {/* <Route path={`${path}/history`}>
               </Route> */}
@@ -147,7 +146,7 @@ const Farm: React.FC = () => {
           </div>
         </div>
       </div>
-    </div >
+    </div>
     // <Page>
     //   <Hero>
     //     <div>
@@ -181,6 +180,5 @@ const Farm: React.FC = () => {
     // </Page>
   )
 }
-
 
 export default Farm

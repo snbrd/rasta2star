@@ -3,14 +3,12 @@ import { Link, BrowserRouter as Router } from 'react-router-dom'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 
 import BgImage from '../../../assets/favCreator-bg-leafs.jpg'
-import StakingCard from "./FarmStakingCard"
-import CakeStats from "./CakeStats"
-import TotalValueLockedCard from "./TotalValueLockedCard"
+import StakingCard from './FarmStakingCard'
+import CakeStats from './CakeStats'
+import TotalValueLockedCard from './TotalValueLockedCard'
 
 export default function FavoriteCreator() {
   const { account } = useWallet()
-
-
 
   return (
     <div>
@@ -23,7 +21,7 @@ export default function FavoriteCreator() {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="flex w-full md:max-w-screen-xl md:mx-auto items-center md:flex-row text-center">
+        <div className="flex mb-2 w-full md:max-w-screen-xl md:mx-auto items-center md:flex-row text-center">
           <div className="leftSection w-full">
             <h2 className="text-2xl md:text-5xl font-bold leading-tight">
               Interact with Your Favorite Creators.
@@ -31,7 +29,7 @@ export default function FavoriteCreator() {
               <span className="text-yellow-rasta">Completely Decentralized.</span>
             </h2>
             <div className="desc max-w-full md:max-w-xl mx-auto">
-              <p className="mt-4">
+              <p className="mt-4 px-8">
                 We are bridging creators with their fans, using the latest in blockchain technology. Interact with your
                 favorite artist, pledge support, and earn money. All through your own private screen and wallet.
               </p>
@@ -53,45 +51,63 @@ export default function FavoriteCreator() {
           </div>
         </div>
       </div>
-      <div className="py-8  w-full bg-white text-black">
+      <div className="pt-8 pb-3  w-full bg-white text-black md:pt-8 md:pb-8">
         <div className="cus-mx grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 items-center my-8 md:my-16 px-5 gap-10 xl:mx-20 lg:mx-20">
-          {
-            account ?
-              <StakingCard />
-              :
-              <div className="cus-h" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
-                <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
-                  <span className="text-2xl">Farms & Staking</span>
-                  <span className="text-sm">Please Connect Wallet to Unlock</span>
-                </div>
+          {account ? (
+            <StakingCard />
+          ) : (
+            <div
+              className="cus-h"
+              style={{
+                backgroundImage: `url(/images/Background.png)`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '100% 100%',
+              }}
+            >
+              <div className="pb-5 row flex flex-col justify-center items-center h-full text-white">
+                <span className="text-2xl">Farms & Staking</span>
+                <span className="text-sm">Please Connect Wallet to Unlock</span>
               </div>
-          }
-          {
-            account ?
-              <CakeStats />
-              :
-              <div className="cus-h" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
-                <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
-                  <span className="text-2xl">RASTA Stats</span>
-                  <span className="text-sm">Please Connect Wallet to Unlock</span>
-                </div>
+            </div>
+          )}
+          {account ? (
+            <CakeStats />
+          ) : (
+            <div
+              className="cus-h"
+              style={{
+                backgroundImage: `url(/images/Background.png)`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '100% 100%',
+              }}
+            >
+              <div className="pb-5 row flex flex-col justify-center items-center h-full text-white">
+                <span className="text-2xl">RASTA Stats</span>
+                <span className="text-sm">Please Connect Wallet to Unlock</span>
               </div>
-          }
-          {
-            account ?
-              <TotalValueLockedCard />
-              :
-              <div className="cus-h" style={{ backgroundImage: `url(/images/Background.png)`, backgroundRepeat: "no-repeat", backgroundSize: "100% 100%" }}>
-                <div className="pb-5 row flex flex-col justify-center items-center h-full text-white" >
-                  <span className="text-2xl">Total Value Locked (TVL)</span>
-                  <span className="text-sm">Please Connect Wallet to Unlock</span>
-                </div>
+            </div>
+          )}
+          {account ? (
+            <TotalValueLockedCard />
+          ) : (
+            <div
+              className="cus-h"
+              style={{
+                backgroundImage: `url(/images/Background.png)`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '100% 100%',
+              }}
+            >
+              <div className="pb-5 row flex flex-col justify-center items-center h-full text-white">
+                <span className="text-2xl">Total Value Locked (TVL)</span>
+                <span className="text-sm">Please Connect Wallet to Unlock</span>
               </div>
-          }
+            </div>
+          )}
         </div>
       </div>
       <div className="bg-gradient-to-r text-white from-red-rasta to-yellow-rasta py-16">
-        <div className="flex flex-col mx-auto md:flex-row w-full px-4 space-y-6 md:space-y-0 md:px-0 md:w-10/12 mx-autoitems-center">
+        <div className="flex flex-col mx-auto md:flex-row w-full px-4 space-y-6 mb-1 md:space-y-0 md:px-0 md:w-10/12 md:mb-0 mx-autoitems-center">
           <div className="text w-full md:w-8/12 text-center md:text-left">
             <span className="text-2xl font-bold block">REQUEST A LAUNCH:</span>
             <span className="block">
@@ -103,7 +119,7 @@ export default function FavoriteCreator() {
             <Router>
               <Link
                 to="/"
-                className="bg-red-rasta w-6/12 md:w-full font-bold text-white mx-auto text-center py-4 px-8 mb-8 md:mb-0 rounded-xl flex items-center"
+                className="bg-red-rasta w-6/12 md:w-full font-bold text-white mx-auto text-center py-4 px-8 mb-0 md:mb-0 rounded-xl flex items-center"
               >
                 <button type="button" className="w-full ">
                   COMING SOON

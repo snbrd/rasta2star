@@ -6,7 +6,7 @@ export default function Community() {
   return (
     <div>
       <div className="flex w-full  py-16 bg-white text-black flex-col">
-        <div className="flex w-full md:max-w-screen-xl md:mx-auto items-center px-4 md:px-0 md:flex-row">
+        <div className="flex w-full mb-1 md:max-w-screen-xl md:mx-auto items-center px-4 md:px-0 md:flex-row md:mb-0">
           <div className="images md:w-6/12 text-center hidden md:block">
             <LazyLoadImage src={CommunityImage} alt="Logo" className="w-full mx-auto" effect="blur" />
           </div>
@@ -19,7 +19,7 @@ export default function Community() {
               make up this loving community. <br />
               Powered by the People!
             </p>
-            <div className="cta flex flex-col md:flex-row mt-8 space-y-3 md:space-y-0 space-x-0 md:space-x-8">
+            <div className="cta flex flex-col px-4 md:px-0 md:flex-row mt-8 space-y-3 md:space-y-0 space-x-0 md:space-x-8">
               <a
                 href="https://docs.rasta.finance"
                 target="_blank"

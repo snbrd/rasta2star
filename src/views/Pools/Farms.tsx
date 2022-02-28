@@ -61,7 +61,7 @@ const Farms: React.FC = () => {
   //   return tokenPriceBN
   // }
 
-  const stackedOnly = false;
+  const stackedOnly = false
 
   const farmsLP = farmList.filter((farm) => !farm.farm)
   const activeFarms = farmsLP.filter((farm) => farm.multiplier !== '0X')
@@ -92,7 +92,7 @@ const Farms: React.FC = () => {
         } else if (farm.lpSymbol === 'CNR') {
           price = new BigNumber(cnsPriceVsBnb).times(115).times(bnbPrice).toString()
         } else if (farm.lpSymbol === 'RASTA') {
-          price = rastaPrice.toString();
+          price = rastaPrice.toString()
         } else {
           price = priceData.prices[farm.tokenSymbol]
         }
@@ -166,7 +166,7 @@ const Farms: React.FC = () => {
           <div className="toggle-button items-end flex-col flex w-full">
             <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
           </div>
-          <div className="card items-center text-center w-full mt-16">
+          <div className="card items-center text-center w-full mt-0 mb-16 md:mt-16 md:mb-0">
             <div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 space-4">
                 <Route exact path={`${path}`}>

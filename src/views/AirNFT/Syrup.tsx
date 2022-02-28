@@ -12,7 +12,7 @@ import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 const Farm: React.FC = () => {
   const TranslateString = useI18n()
   const [Active, setActive] = useState(true)
-  const farmInfo = useAirNFT();
+  const farmInfo = useAirNFT()
   const bnbPriceUSD = usePriceBnbBusd()
   const rastaPriceUSD = usePriceRastaBusd()
 
@@ -21,12 +21,14 @@ const Farm: React.FC = () => {
       .div(bnbPriceUSD)
       .times(farmInfo[index].rewardRate)
       .times(SEC_PER_YEAR)
-      .div(Number(farmInfo[index].farmbalance) > 0 ?
-        new BigNumber(farmInfo[index].farmbalance).times(new BigNumber(0.4).times(new BigNumber(10).pow(18)))
-        : new BigNumber(10).pow(18))
+      .div(
+        Number(farmInfo[index].farmbalance) > 0
+          ? new BigNumber(farmInfo[index].farmbalance).times(new BigNumber(0.4).times(new BigNumber(10).pow(18)))
+          : new BigNumber(10).pow(18),
+      )
       .times(100)
       .toFixed(0)
-      .toString()
+      .toString(),
   }))
 
   return (
@@ -49,22 +51,26 @@ const Farm: React.FC = () => {
           <div className="toggle-button items-end flex-col flex w-full">
             <ToggleSwitch id="toggleSwitch" checked={Active} onChange={setActive} />
           </div>
-          <div className="card items-center text-center w-full mt-16">
+          <div className="card items-center text-center w-full mt-16 mb-16">
             <div>
               <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
-                {
-                  AirFarms.map((farm, index) => {
-                    if (Active) return <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />
-                    if (farm.isFinished) return <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />
-                    return null;
-                  })
-                }
+                {AirFarms.map((farm, index) => {
+                  if (Active)
+                    return (
+                      <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />
+                    )
+                  if (farm.isFinished)
+                    return (
+                      <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />
+                    )
+                  return null
+                })}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div >
+    </div>
   )
 }
 

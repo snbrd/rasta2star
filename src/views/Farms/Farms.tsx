@@ -124,21 +124,21 @@ const Farms: React.FC = () => {
         <div className=" flex flex-col text-gray-800 items-center w-10/12 mx-auto">
           <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Liquidity Pool Tokens')}</h2>
           <p className="text-gray-700">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
-          <div className="toggle-button items-end flex-col flex w-full">
+          <div className="toggle-button items-center md:items-end flex-col flex w-full">
             <Wrapper>
               <ToggleSwitchForStack id="ToggleSwitchForStack" checked={stackedOnly} onChange={setStackedOnly} />
               Staked Only &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
             </Wrapper>
           </div>
-          <div className="card items-center text-center w-full mt-16">
+          <div className="card items-center text-center w-full mt-0 mb-16 md:mt-16 md:mb-0">
             <div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 space-4">
-                {stackedOnly ? farmsList(stackedOnlyFarms, false) :
-                  <>
-                    {checked ? farmsList(activeFarms, false) : farmsList(inactiveFarms, true)}
-                  </>
-                }
+                {stackedOnly ? (
+                  farmsList(stackedOnlyFarms, false)
+                ) : (
+                  <>{checked ? farmsList(activeFarms, false) : farmsList(inactiveFarms, true)}</>
+                )}
               </div>
             </div>
             {/* {checked && <CardsSection itemsToRender={list}/>}
