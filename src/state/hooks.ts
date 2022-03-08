@@ -103,39 +103,43 @@ export const usePriceBnbBusd = (): BigNumber => {
 }
 
 export const usePriceRastaBusd = (): BigNumber => {
-  const [rastaPrice, setPrice] = useState(ZERO);
+  const [rastaPrice, setPrice] = useState(ZERO)
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch(`https://api.pancakeswap.info/api/v2/tokens/0xe3e8cc42da487d1116d26687856e9fb684817c52`)
+        const response = await fetch(
+          `https://api.pancakeswap.info/api/v2/tokens/0xe3e8cc42da487d1116d26687856e9fb684817c52`,
+        )
         const { data } = await response.json()
-        return setPrice(new BigNumber(data.price));
+        return setPrice(new BigNumber(data.price))
       } catch (error) {
-        return setPrice(ZERO);
+        return setPrice(ZERO)
       }
     })()
   }, [])
 
-  return rastaPrice;
+  return rastaPrice
 }
 
 export const usePriceCNRBusd = (): BigNumber => {
-  const [cnrPrice, setPrice] = useState(ZERO);
+  const [cnrPrice, setPrice] = useState(ZERO)
 
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch(`https://api.pancakeswap.info/api/v2/tokens/0xdCbA3fbd7BBc28abD18A472D28358089467A8a74`)
+        const response = await fetch(
+          `https://api.pancakeswap.info/api/v2/tokens/0xdCbA3fbd7BBc28abD18A472D28358089467A8a74`,
+        )
         const { data } = await response.json()
-        return setPrice(new BigNumber(data.price));
+        return setPrice(new BigNumber(data.price))
       } catch (error) {
-        return setPrice(ZERO);
+        return setPrice(ZERO)
       }
     })()
   }, [])
 
-  return cnrPrice;
+  return cnrPrice
 }
 
 export const usePriceEthBusd = (): BigNumber => {
@@ -277,9 +281,9 @@ export const useTotalValue = (): BigNumber => {
     if (farm.pid === 0) {
       price = rastaPrice.toNumber()
     } else if (farm.pid === 23) {
-      price = mrastaPrice;
+      price = mrastaPrice
     } else if (farm.pid === 27) {
-      price = cnrPrice;
+      price = cnrPrice
     } else {
       price = farm.tokenSymbol === 'CAKE' ? priceData.prices.Cake : priceData.prices[farm.tokenSymbol]
     }
