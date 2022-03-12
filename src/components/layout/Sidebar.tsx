@@ -53,12 +53,12 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-          path: 'https://rastadex.croxswap.com',
-          label: 'RastaSwap (CAKE LP)★',
+          path: 'https://swap.rasta.finance/',
+          label: 'RastaSwap ★',
         },
         {
           path: 'https://exchange.rasta.finance',
-          label: 'RastaDexchange (RLP)',
+          label: 'Old RastaDex (RLP)',
         },
       ],
     },
