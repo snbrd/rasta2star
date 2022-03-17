@@ -26,7 +26,7 @@ const FarmedStakingCard = () => {
   }, [onReward])
 
   return (
-    <div className="h-full shadow-xl p-8 rounded-lg">
+    <div data-aos="fade-up" data-aos-duration="1000" className="h-full shadow-xl p-8 rounded-lg">
       <div className="row flex flex-col gap-10">
         <h3 className="text-2xl text-center font-bold">Farms & Staking</h3>
         <div className="row flex flex-col">
