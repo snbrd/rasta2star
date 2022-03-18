@@ -16,7 +16,7 @@ export default function LetsConnect({ bg, items }: Props) {
       }}
     >
       <div className="max-w-screen-xl mx-12 bg-white text-black px-6 mb-16 flex md:px-48 py-16 flex-col md:flex-row mt-8 md:mt-32 md:mb-0 md:mx-auto">
-        <div className="rastaFinance flex flex-col flex-grow-1">
+        <div data-aos="fade-in" data-aos-duration="1000" className="rastaFinance flex flex-col flex-grow-1">
           <h2 className="text-2xl font-bold text-center md:text-left">{items.heading}</h2>
           <div className="list-content mt-4 md:mt-12 ">
             {items.listContent.map((item, index) => {
@@ -32,11 +32,11 @@ export default function LetsConnect({ bg, items }: Props) {
           </div>
         </div>
         <div className="lets-connect flex flex-col w-full md:w-6/12 mt-8">
-          <h3 className="text-xl  border-l-0 md:border-l-4 border-green-rasta pl-0 md:pl-8 font-bold text-center md:text-left">
+          <h3 data-aos="fade-in" data-aos-duration="1000" className="text-xl  border-l-0 md:border-l-4 border-green-rasta pl-0 md:pl-8 font-bold text-center md:text-left">
             {items.subHeading}
           </h3>
-          <div className="desc pl-0 md:pl-8 mt-8 text-center md:text-left">{items.textContent}</div>
-          <div className="button flex flex-col md:flex-row pl-0 md:pl-8 mt-8 space-y-4 space-x-0 md:space-y-0 md:space-x-8">
+          <div data-aos="fade-in" data-aos-duration="1000" className="desc pl-0 md:pl-8 mt-8 text-center md:text-left">{items.textContent}</div>
+          <div data-aos="fade-in" data-aos-duration="1000" className="button flex flex-col md:flex-row pl-0 md:pl-8 mt-8 space-y-4 space-x-0 md:space-y-0 md:space-x-8">
             <a
               href={items.link.btn.joinNowLink}
               className="border-2 border-green-rasta items-center text-center px-8 py py-2 rounded-xl bg-gradient-to-r hover:border-white hover:text-white hover:from-green-rasta hover:to-yellow-rasta"
@@ -53,7 +53,7 @@ export default function LetsConnect({ bg, items }: Props) {
               <button type="button">Farm Rasta</button>
             </Link>
           </div>
-          <div className="social-media  mx-auto md:mx-0 flex flex-row space-x-4 pl-0 items-center md:pl-8 mt-4">
+          <div data-aos="fade-in" data-aos-duration="1000" className="social-media  mx-auto md:mx-0 flex flex-row space-x-4 pl-0 items-center md:pl-8 mt-4">
             {items.link.social.map((item, index) => {
               return (
                 <a href={item.link} key={index} target="_blank" rel="noreferrer">

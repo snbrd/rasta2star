@@ -13,11 +13,12 @@ export default function CardButton({ items }: { items: any[] }) {
   }
   return (
     <div className="max-w-screen-xl mx-auto w-full card-wrapper grid grid-cols-2 md:grid-cols-6 gap-3 text-green-rasta">
-      {items.map((item) => {
+      {items.map((item, index) => {
         return (
           <a
             href={item.link}
             key={item.label}
+            data-aos="fade-up" data-aos-duration="1000" data-aos-delay={100 * index}
             className="px-8  md:flex text-center shadow-box items-center
             content-center py-8 justify-center font-bold rounded-xl bg-gradient-to-r hover:text-white hover:from-yellow-rasta hover:to-green-rasta"
             target='_blank'

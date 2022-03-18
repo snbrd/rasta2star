@@ -18,9 +18,10 @@ export default function HeroSection({ images, title, desc, btn }: Props) {
           backgroundPosition: 'bottom center',
         }}
       >
-        <h1 className="text-4xl font-bold">{title}</h1>
-        <p className="mt-4">{desc}</p>
+        <h1 data-aos="zoom-in" data-aos-duration="1000" className="text-4xl font-bold">{title}</h1>
+        <p data-aos="zoom-in" data-aos-duration="1000"  data-aos-delay="100" className="mt-4">{desc}</p>
         <a
+          data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200"
           href={btn.link}
           className="bg-gradient-to-r from-yellow-rasta to-green-rasta mt-4 px-4 w-64 text-center py-2 rounded-xl"
           target="_blank"
