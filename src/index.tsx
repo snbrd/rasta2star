@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import AOS from 'aos';
-import 'aos/dist/aos.css';
 import App from './App'
 import Providers from './Providers'
+import 'aos/dist/aos.css';
 import './index.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
