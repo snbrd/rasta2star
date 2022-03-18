@@ -11,12 +11,12 @@ export default function HeroSection() {
   ]
   return (
     <div>
-      <div className="flex w-full  py-16 text-white flex-col"  style={{
-          backgroundImage: `url(${HeroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'left center',
-        }}>
-        <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row">
+      <div className="flex w-full  py-16 text-white flex-col" style={{
+        backgroundImage: `url(${HeroImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'left center',
+      }}>
+        <div data-aos="fade-up" data-aos-duration="1000" className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row">
           <div className="leftSection w-full md:w-6/12">
             <h1 className="text-4xl font-bold text-center md:text-left md:pr-48 leading-tight">
               <span className="text-yellow-rasta">Empowering Artists</span>
@@ -48,7 +48,7 @@ export default function HeroSection() {
         <div className=" w-full hidden md:flex md:max-w-screen-xl md:mx-auto items-center md:flex-row space-x-8 my-32">
           {counter.map((item, index) => {
             return (
-              <div className="w-1/4 bg-red-rasta rounded-xl text-center py-6 shadow-inset" key={index}>
+              <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay={150 * index} className="w-1/4 bg-red-rasta rounded-xl text-center py-6 shadow-inset" key={index}>
                 <div className="number text-3xl font-bold">{item.numbers}</div>
                 <div className="desc">{item.label}</div>
               </div>
