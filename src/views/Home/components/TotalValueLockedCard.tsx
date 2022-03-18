@@ -25,7 +25,7 @@ const TotalValueLockedCard = () => {
 
 
   return (
-    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" className="h-full shadow-xl p-8 rounded-lg">
+    <div className="h-full shadow-xl p-8 rounded-lg">
       <div className="row flex flex-col gap-5">
         <span className="text-2xl text-center font-bold">Total Value Locked (TVL)</span>
         <div className="row flex flex-col py-12 gap-3">
