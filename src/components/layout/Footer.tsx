@@ -53,10 +53,10 @@ export default function Footer() {
       <div className="mx-auto w-10/12">
         <div className="flex flex-col md:flex-row space-between border-b-1 pb-8 mb-4">
           <div className="flex-grow-1 flex flex-col">
-            <LazyLoadImage data-aos="zoom-in" data-aos-duration="1000" src={Logo} alt="Logo" className="w-64" effect="blur" />
+            <LazyLoadImage data-aos="fade-up" data-aos-duration="1000" src={Logo} alt="Logo" className="w-64" effect="blur" />
             {textUnderLogo.map((item, index) => {
               return (
-                <span data-aos="zoom-in" data-aos-duration="1000" key={index} className="pl-6">
+                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-6">
                   {item}
                 </span>
               )
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
           {navigation.map((item, index) => {
             return (
-              <div data-aos="zoom-in" data-aos-duration="1000" className="flex flex-col mr-4 last:mr-0 pl-6 md:pl-0 mt-4" key={index}>
+              <div data-aos="fade-up" data-aos-duration="1000" className="flex flex-col mr-4 last:mr-0 pl-6 md:pl-0 mt-4" key={index}>
                 {item.title}
                 <ul className="list-none mt-0 md:mt-6 text-yellow-rasta">
                   <ShowLinks items={item.item} />
