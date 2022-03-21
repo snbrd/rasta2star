@@ -52,7 +52,9 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
     depositFee: 0,
-    farm: true
+    farm: true,
+    ribbon: true,
+    ribbonText: "Expiring"
   },
   {
     pid: 26,
