@@ -19,8 +19,7 @@ export default function Footer() {
       title: 'Farms',
       item: [
         { label: 'Mr. Rasta', path: '/farms' },
-        { label: 'Mrs. Rasta', path: 'https://m.rasta.finance/farms' },
-      ],
+       ],
     },
   ]
   const socialMedia = [
