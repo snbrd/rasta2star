@@ -74,12 +74,12 @@ const CakeStats = () => {
           </div>
           <div className="items-center justify-between flex">
             <span className="text-sm">New RASTA/block</span>
-            <span className="font-bold text-sm">0.2</span>
+            <span className="font-bold text-sm">0.1</span>
           </div>
         </div>
       </div>
     </div>
   )
 }
-    
+
 export default CakeStats
