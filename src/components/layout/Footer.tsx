@@ -79,7 +79,7 @@ export default function Footer() {
               <a href="/" className="text-yellow-rasta">
                 Rasta Finance
               </a>{' '}
-              2021 // All Right Reserved
+              2022 // All Right Reserved
             </span>
           </div>
           <div className="social-media text-left md:text-right justify-items-end">
