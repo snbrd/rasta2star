@@ -106,7 +106,7 @@ export const usePriceRastaBusd = (): BigNumber => {
   const [rastaPrice, setPrice] = useState(ZERO)
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       try {
         const response = await fetch(
           `https://api.pancakeswap.info/api/v2/tokens/0xe3e8cc42da487d1116d26687856e9fb684817c52`,
@@ -126,7 +126,7 @@ export const usePriceCNRBusd = (): BigNumber => {
   const [cnrPrice, setPrice] = useState(ZERO)
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       try {
         const response = await fetch(
           `https://api.pancakeswap.info/api/v2/tokens/0xdCbA3fbd7BBc28abD18A472D28358089467A8a74`,
