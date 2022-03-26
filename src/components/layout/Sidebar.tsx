@@ -63,6 +63,23 @@ export default function Sidebar() {
       ],
     },
     {
+      label: 'ZionLP',
+      path: '#',
+      icon: <FaHandHoldingUsd className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: true,
+      child: [
+        {
+          path: 'https://zionlp.com/launchpad-artists',
+          label: 'Launchpad Artists',
+          blank: true
+        },
+        {
+          path: 'https://zionlp.com',
+          label: 'Launchpad NFTs',
+        },
+      ],
+    },
+    {
       label: 'RastaDividend NFT',
       path: '#',
       icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,

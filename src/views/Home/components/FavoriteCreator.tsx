@@ -37,13 +37,13 @@ export default function FavoriteCreator() {
             <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" className="cta flex flex-row mt-4 space-x-8 items-center text-center">
               <Router>
                 <a
-                  href="https://t.me/rastafinance"
+                  href="https://zionlp.com"
                   target="_blank"
                   rel="noreferrer"
                   className="bg-gradient-to-r font-bold text-white mx-auto from-yellow-rasta to-green-rasta_cta text-center py-3 px-8 rounded-xl"
                 >
                   <button type="button" className="uppercase">
-                    GO TO LAUNCH PAD
+                    GO TO ZIONLP
                   </button>
                 </a>
               </Router>
