@@ -18,6 +18,7 @@ import {
   FaRegWindowClose,
   GoMail,
   FaDonate,
+  FaHandHoldingUsd
 } from 'react-icons/all'
 import MenuItem from './MenuItem'
 import RastaIcon from '../../assets/menu_coin2.jpg'
