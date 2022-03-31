@@ -83,6 +83,10 @@ export default {
     56: '0xd675ff2b0ff139e14f86d87b7a6049ca7c66d76e',
     97: '',
   },
+  latte: {
+    56: '0xa269A9942086f5F87930499dC8317ccC9dF2b6CB',
+    97: '',
+  },
   pancakeProfile: {
     56: '0xDf4dBf6536201370F95e06A0F8a7a70fE40E388a',
     97: '0x4B683C7E13B6d5D7fd1FeA9530F451954c1A7c8A',

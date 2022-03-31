@@ -11,7 +11,7 @@ import AirFarm from './views/AirNFT'
 // import Menu from './components/Menu'
 import ToastListener from './components/ToastListener'
 import PageLoader from './components/PageLoader'
-// import Stake from './views/Stake'
+import Stake from './views/Stake'
 import GlobalCheckBullHiccupClaimStatus from './views/Collectibles/components/GlobalCheckBullHiccupClaimStatus'
 import history from './routerHistory'
 import Header from './components/layout/Header'
@@ -79,9 +79,9 @@ const App: React.FC = () => {
             <Route path="/pools">
               <Pools />
             </Route>
-            {/* <Route path="/stake">
+            <Route path="/stake">
               <Stake />
-            </Route> */}
+            </Route>
             <Route path="/stakenft">
               <AirFarm />
             </Route>

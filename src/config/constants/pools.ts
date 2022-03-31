@@ -2,19 +2,36 @@ import { getCakeAddress } from 'utils/addressHelpers'
 import { PoolConfig, QuoteToken, PoolCategory } from './types'
 
 const pools: PoolConfig[] = [
+  // {
+  //   sousId: 0,
+  //   tokenName: 'RASTA',
+  //   stakingTokenName: QuoteToken.RASTA,
+  //   stakingTokenAddress: getCakeAddress(),
+  //   contractAddress: {
+  //     97: '0x35b1EF3FF9763F72C11e9f08B471D0b6b5A7515D',
+  //     56: '0xec89Be665c851FfBAe2a8Ded03080F3E64116539',
+  //   },
+  //   poolCategory: PoolCategory.CORE,
+  //   projectLink: 'https://rasta.finance/',
+  //   harvest: true,
+  //   tokenPerBlock: '0.0338409478',
+  //   sortOrder: 1,
+  //   isFinished: false,
+  //   tokenDecimals: 18,
+  // },
   {
-    sousId: 0,
-    tokenName: 'RASTA',
+    sousId: 4,
+    tokenName: 'LATTE',
     stakingTokenName: QuoteToken.RASTA,
     stakingTokenAddress: getCakeAddress(),
     contractAddress: {
-      97: '0x35b1EF3FF9763F72C11e9f08B471D0b6b5A7515D',
-      56: '0xec89Be665c851FfBAe2a8Ded03080F3E64116539',
+      97: '0xE774a84865a34557C852F129638809b337c3130f',
+      56: '0x16b7809224470bEEF2275a81D460386177d8929c',
     },
     poolCategory: PoolCategory.CORE,
-    projectLink: 'https://rasta.finance/',
+    projectLink: 'https://app.latteswap.com/',
     harvest: true,
-    tokenPerBlock: '0.0338409478',
+    tokenPerBlock: '0.001',
     sortOrder: 1,
     isFinished: false,
     tokenDecimals: 18,
@@ -70,23 +87,23 @@ const pools: PoolConfig[] = [
     isFinished: false,
     tokenDecimals: 18,
   },
-  {
-    sousId: 10001,
-    tokenName: 'CNS',
-    stakingTokenName: QuoteToken.RASTA,
-    stakingTokenAddress: getCakeAddress(),
-    contractAddress: {
-      97: '',
-      56: '0x32b8474919EdFC658b81186Eb5dcA3d236A306CA',
-    },
-    poolCategory: PoolCategory.CORE,
-    projectLink: 'https://www.centric.com/',
-    harvest: true,
-    tokenPerBlock: '0',
-    sortOrder: 10001,
-    isFinished: true,
-    tokenDecimals: 18,
-  },
+  // {
+  //   sousId: 10001,
+  //   tokenName: 'CNS',
+  //   stakingTokenName: QuoteToken.RASTA,
+  //   stakingTokenAddress: getCakeAddress(),
+  //   contractAddress: {
+  //     97: '',
+  //     56: '0x32b8474919EdFC658b81186Eb5dcA3d236A306CA',
+  //   },
+  //   poolCategory: PoolCategory.CORE,
+  //   projectLink: 'https://www.centric.com/',
+  //   harvest: true,
+  //   tokenPerBlock: '0',
+  //   sortOrder: 10001,
+  //   isFinished: true,
+  //   tokenDecimals: 18,
+  // },
 ]
 
 export default pools

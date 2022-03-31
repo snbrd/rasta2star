@@ -19,7 +19,7 @@ interface FarmCardActionsProps {
 const CompoundAction: React.FC<FarmCardActionsProps> = ({ earnings, type, pool }) => {
   const {
     sousId,
-    stakingTokenName,
+    tokenName,
     poolCategory,
   } = pool
 
@@ -28,7 +28,7 @@ const CompoundAction: React.FC<FarmCardActionsProps> = ({ earnings, type, pool }
   const { onStake } = useSousStake(sousId, isBnbPool)
 
   const [onPresentCompound] = useModal(
-    <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingTokenName} />,
+    <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={tokenName} />,
   )
 
   const buttonClass = "px-4 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer"

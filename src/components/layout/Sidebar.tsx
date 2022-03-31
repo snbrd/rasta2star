@@ -18,7 +18,8 @@ import {
   FaRegWindowClose,
   GoMail,
   FaDonate,
-  FaHandHoldingUsd
+  FaHandHoldingUsd,
+  RiMoneyDollarCircleLine
 } from 'react-icons/all'
 import MenuItem from './MenuItem'
 import RastaIcon from '../../assets/menu_coin2.jpg'
@@ -130,13 +131,13 @@ export default function Sidebar() {
         },
       ],
     },
-    // {
-    //   label: 'StakeRasta',
-    //   path: '/stake',
-    //   icon: <RiMoneyDollarCircleLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
-    //   parent: false,
-    //   child: [],
-    // },
+    {
+      label: 'StakeRasta',
+      path: '/stake',
+      icon: <RiMoneyDollarCircleLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
+    },
     // {
     //  label: 'TOP LAUNCH PAD',
     //  sublabel:'(coming soon)',
