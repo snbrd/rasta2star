@@ -63,7 +63,7 @@ export const useSousDepositFee = (sousId) => {
     const fetchValue = async () => {
       if (sousChefContract.methods.depositFee) {
         const res = await sousChefContract.methods.depositFee().call()
-        setFee(Number(res) / 100)
+        setFee(Number(res))
       }
     }
 

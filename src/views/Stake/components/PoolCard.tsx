@@ -6,7 +6,7 @@ import useI18n from 'hooks/useI18n'
 import { useSousStake } from 'hooks/useStake'
 import { useSousUnstake } from 'hooks/useUnstake'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { useSousDepositFee, useSousHarvestFee } from 'hooks/useHarvest'
+import { useSousDepositFee } from 'hooks/useHarvest'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 import { Pool } from 'state/types'
 import { useFarms } from 'state/hooks'
@@ -55,7 +55,6 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const { onApprove } = useSousApprove(sousId)
 
   const depositFee = useSousDepositFee(sousId)
-  const harvestFee = useSousHarvestFee(sousId)
   const farmList = useFarms()
   const farms = farmList.filter((farm) => farm.lpSymbol === tokenName)
   const requestedApproval = false;
@@ -126,7 +125,6 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
             lpLabel={tokenName}
             farmEarned={getBalanceNumber(stakedBalance)}
             depositFee={depositFee}
-            harvestFee={harvestFee}
             pid={farms.length ? farms[0].pid : 0}
             type={type}
             pool={pool}
