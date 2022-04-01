@@ -25,6 +25,7 @@ import lottery from 'config/abi/lottery.json'
 import lotteryTicket from 'config/abi/lotteryNft.json'
 import masterChef from 'config/abi/masterchef.json'
 import sousChef from 'config/abi/sousChef.json'
+import sousChefV2 from 'config/abi/sousChef.v2.json'
 import sousChefBnb from 'config/abi/sousChefBnb.json'
 import profile from 'config/abi/pancakeProfile.json'
 import pointCenterIfo from 'config/abi/pointCenterIfo.json'
@@ -93,7 +94,10 @@ export const useMasterchef = () => {
 
 export const useSousChef = (id) => {
   const config = poolsConfig.find((pool) => pool.sousId === id)
-  const rawAbi = config.poolCategory === PoolCategory.BINANCE ? sousChefBnb : sousChef
+  let rawAbi = config.poolCategory === PoolCategory.BINANCE ? sousChefBnb : sousChef
+  if (config.harvestFee) {
+    rawAbi = sousChefV2
+  }
   const abi = rawAbi as unknown as AbiItem
   return useContract(abi, getAddress(config.contractAddress))
 }

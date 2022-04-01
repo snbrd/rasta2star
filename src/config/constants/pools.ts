@@ -31,6 +31,7 @@ const pools: PoolConfig[] = [
     poolCategory: PoolCategory.CORE,
     projectLink: 'https://app.latteswap.com/',
     harvest: true,
+    harvestFee: true,
     tokenPerBlock: '0.01',
     sortOrder: 1,
     isFinished: false,

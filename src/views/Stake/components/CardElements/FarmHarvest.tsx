@@ -12,6 +12,7 @@ interface PoolWithApy extends Pool {
 type Props = {
   farmEarned?: any
   depositFee?: number
+  harvestFee?: number
   pid?: any
   earning?: any
   lpLabel?: any
@@ -19,7 +20,7 @@ type Props = {
   pool: PoolWithApy
 }
 
-export default function FarmHarvest({ farmEarned, type, depositFee, pid = 'pid', earning = 'earnings', pool }: Props) {
+export default function FarmHarvest({ farmEarned, type, depositFee, harvestFee, pid = 'pid', earning = 'earnings', pool }: Props) {
   return (
     <div>
       <div className="gap-4 md:gap-8 row flex flex-col md:flex-row xl:flex-row w-full border-b-2 border-black pb-4 md:pb-12 mb-6">
@@ -32,8 +33,8 @@ export default function FarmHarvest({ farmEarned, type, depositFee, pid = 'pid',
           </div>
         </div>
         <div className="apr py-4 text-center px-6 bg-gray-300 w-full flex flex-col rounded-lg justify-center">
-          <span className="apr-value text-2xl w-full text-gray-700 ">{depositFee}%</span>
-          <span className="apr-label text-red-rasta text-sm">Deposit Fee</span>
+          <span className="apr-value text-2xl w-full text-gray-700 ">{Number(harvestFee) > 0 ? harvestFee : depositFee}%</span>
+          <span className="apr-label text-red-rasta text-sm">{Number(harvestFee) > 0 ? 'Harvest Fee' : 'Deposit Fee'}</span>
         </div>
       </div>
     </div>
