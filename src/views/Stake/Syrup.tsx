@@ -7,7 +7,7 @@ import partition from 'lodash/partition'
 import useI18n from 'hooks/useI18n'
 import useBlock from 'hooks/useBlock'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { useFarms, usePriceBnbBusd, usePools } from 'state/hooks'
+import { useFarms, usePriceBnbBusd, usePools, usePriceLatteBnb } from 'state/hooks'
 import { useGetDFLPriceVsBnb } from 'hooks/api'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 // import Coming from './components/Coming'
@@ -25,9 +25,9 @@ const Farm: React.FC = () => {
   const block = useBlock()
   const stackedOnly = false
   const [Active, setActive] = useState(true)
+  const lattePriceBnb = usePriceLatteBnb()
   const bnbPriceUSD = usePriceBnbBusd()
   const bnbPriceDFL = useGetDFLPriceVsBnb()
-
   const ethPriceBnb = useMemo(() => {
     return new BigNumber(0)
   }, [])
@@ -46,7 +46,7 @@ const Farm: React.FC = () => {
   const poolsWithApy = pools.map((pool) => {
     const isBnbPool = pool.poolCategory === PoolCategory.BINANCE
     let rewardTokenFarm = null
-    if (pool.tokenName !== 'DFL') {
+    if (pool.tokenName !== 'DFL' && pool.tokenName !== 'LATTE') {
       rewardTokenFarm = farms.find((f) => f.tokenSymbol === pool.tokenName)
     }
     const stakingTokenFarm = farms.find((s) => s.tokenSymbol === pool.stakingTokenName)
@@ -68,6 +68,8 @@ const Farm: React.FC = () => {
       )
     } else if (pool.tokenName === 'DFL') {
       rewardTokenPriceInBNB = new BigNumber(bnbPriceDFL)
+    } else if (pool.tokenName === 'LATTE') {
+      rewardTokenPriceInBNB = new BigNumber(lattePriceBnb)
     }
 
     if (stakingTokenFarm.tokenSymbol === 'RASTA' && rewardTokenFarm && rewardTokenFarm.quoteTokenSymbol === 'RASTA') {
@@ -127,8 +129,8 @@ const Farm: React.FC = () => {
                   <>
                     {stackedOnly
                       ? orderBy(stackedOnlyPools, ['sortOrder']).map((pool) => (
-                          <PoolCard key={pool.sousId} pool={pool} />
-                        ))
+                        <PoolCard key={pool.sousId} pool={pool} />
+                      ))
                       : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
                   </>
                 ) : (

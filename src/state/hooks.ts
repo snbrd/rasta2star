@@ -122,6 +122,26 @@ export const usePriceRastaBusd = (): BigNumber => {
   return rastaPrice
 }
 
+export const usePriceLatteBnb = (): BigNumber => {
+  const [lattePrice, setPrice] = useState(ZERO)
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch(
+          `https://api.coingecko.com/api/v3/simple/price?ids=latteswap&vs_currencies=BNB`,
+        )
+        const { latteswap } = await response.json()
+        return setPrice(new BigNumber(latteswap.bnb))
+      } catch (error) {
+        return setPrice(ZERO)
+      }
+    })()
+  }, [])
+
+  return lattePrice
+}
+
 export const usePriceCNRBusd = (): BigNumber => {
   const [cnrPrice, setPrice] = useState(ZERO)
 
