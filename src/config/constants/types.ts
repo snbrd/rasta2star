@@ -84,6 +84,7 @@ export interface PoolConfig {
   tokenPerBlock: string
   sortOrder?: number
   harvest?: boolean
+  harvestFee?: boolean
   isFinished?: boolean
   tokenDecimals: number
 }

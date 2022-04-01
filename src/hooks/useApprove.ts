@@ -27,20 +27,21 @@ export const useApprove = (lpContract: Contract) => {
 }
 
 // Approve a Pool
-export const useSousApprove = (lpContract: Contract, sousId) => {
+export const useSousApprove = (sousId) => {
   const dispatch = useDispatch()
   const { account }: { account: string } = useWallet()
   const sousChefContract = useSousChef(sousId)
+  const rastaContract = useCake()
 
   const handleApprove = useCallback(async () => {
     try {
-      const tx = await approve(lpContract, sousChefContract, account)
+      const tx = await approve(rastaContract, sousChefContract, account)
       dispatch(updateUserAllowance(sousId, account))
       return tx
     } catch (e) {
       return false
     }
-  }, [account, dispatch, lpContract, sousChefContract, sousId])
+  }, [account, dispatch, rastaContract, sousChefContract, sousId])
 
   return { onApprove: handleApprove }
 }

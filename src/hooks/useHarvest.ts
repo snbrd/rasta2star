@@ -63,7 +63,27 @@ export const useSousDepositFee = (sousId) => {
     const fetchValue = async () => {
       if (sousChefContract.methods.depositFee) {
         const res = await sousChefContract.methods.depositFee().call()
-        setFee(Number(res) / 100)
+        setFee(Number(res))
+      }
+    }
+
+    if (sousId > 0 && sousChefContract) {
+      fetchValue()
+    }
+  }, [sousChefContract, sousId])
+
+  return fee
+}
+
+export const useSousHarvestFee = (sousId) => {
+  const sousChefContract = useSousChef(sousId)
+  const [fee, setFee] = useState(0)
+
+  useEffect(() => {
+    const fetchValue = async () => {
+      if (sousChefContract.methods.harvestFee) {
+        const res = await sousChefContract.methods.harvestFee().call()
+        setFee(Number(res))
       }
     }
 

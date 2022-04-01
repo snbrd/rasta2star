@@ -10,6 +10,7 @@ import { useSousDepositFee } from 'hooks/useHarvest'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 import { Pool } from 'state/types'
 import { useFarms } from 'state/hooks'
+import { useSousApprove } from 'hooks/useApprove'
 
 import * as FaIcons from 'react-icons/fa'
 import DepositModal from './DepositModal'
@@ -51,6 +52,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const { account } = useWallet()
   const { onStake } = useSousStake(sousId, isBnbPool)
   const { onUnstake } = useSousUnstake(sousId)
+  const { onApprove } = useSousApprove(sousId)
+
   const depositFee = useSousDepositFee(sousId)
   const farmList = useFarms()
   const farms = farmList.filter((farm) => farm.lpSymbol === tokenName)
@@ -132,7 +135,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
         {account && isApproval && (
           <span
             className={(type === false ? "disabled " : "") + buttonClass}
-            onClick={() => type === false ? null : SETisApproval(!isApproval)}
+            onClick={onApprove}
           >
             <FaIcons.FaCheck />
             <span>APPROVE RASTA</span>

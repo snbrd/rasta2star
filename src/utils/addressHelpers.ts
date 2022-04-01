@@ -25,6 +25,9 @@ export const getWbnbAddress = () => {
 export const getLotteryAddress = () => {
   return getAddress(addresses.lottery)
 }
+export const getLatteAddress = () => {
+  return getAddress(addresses.latte)
+}
 export const getLotteryTicketAddress = () => {
   return getAddress(addresses.lotteryNFT)
 }
