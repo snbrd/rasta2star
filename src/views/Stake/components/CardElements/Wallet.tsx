@@ -94,7 +94,7 @@ export default function Wallet() {
         </>
       ) : null}
       <span
-        className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
+        className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-md md:text-xl rounded-xl cursor-pointer"
         onClick={() => setShowModal(true)}
       >
         <FaIcons.FaWallet />

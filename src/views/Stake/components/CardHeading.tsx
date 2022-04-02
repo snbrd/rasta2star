@@ -1,5 +1,4 @@
 import React from 'react'
-import * as FaIcons from 'react-icons/fa'
 
 export interface ExpandableSectionProps {
   lpLabel?: string
@@ -18,18 +17,9 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
   return (
     <>
       <div className="w-full items-detail flex flex-col border-b-2 pb-2 border-black flex-grow-1">
-        <h2 className="text-2xl font-bold text-left">{lpLabel}</h2>
         <div className="coin-info flex justify-between items-center">
-          <div className="core p-0 lg:p-1 text-left md:text-center">
-            <span className="px-4 py-1 border-2 flex flex-row items-center border-orange-rasta text-orange-rasta bg-white rounded-full whitespace-nowrap">
-              <FaIcons.FaCheckCircle />
-              &nbsp;<span className="text-black text-sm font-bold">CORE</span>
-            </span>
-          </div>
-          {/* <div className="core p-0 lg:p-1 flex-grow-1 text-center">
-            <span className="px-4 py-2 text-sm bg-orange-rasta text-white rounded-full whitespace-nowrap">{multiplier}</span>
-          </div> */}
-          <div className="core p-1 text-left w-12 h-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-left">{lpLabel}</h2>
+          <div className="core p-1 text-left w-12 md:w-16 h-12 md:h-16">
             <img src={`/images/tokens/${farmImage}.png`} alt={tokenSymbol} width={64} height={64} />
             {/* <div className="bg-orange-rasta rounded-full w-10 h-10  ">
               <span className="text-white text-3xl flex flex-col items-center justify-center">

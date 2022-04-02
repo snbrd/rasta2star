@@ -24,7 +24,7 @@ export default function FooterCardFarms({
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {show && (
         <div>
           <div className="flex justify-between w-full mt-8">
