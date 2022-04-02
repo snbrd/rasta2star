@@ -262,7 +262,9 @@ export const useAchievements = () => {
 }
 
 export const useTotalValue = (): BigNumber => {
+  const { account } = useWallet()
   const farms = useFarms()
+  const pools = usePools(account)
   const bnbPrice = usePriceBnbBusd()
   const rastaPrice = usePriceRastaBusd()
   const cnrPrice = usePriceCNRBusd()
@@ -308,6 +310,11 @@ export const useTotalValue = (): BigNumber => {
       price = farm.tokenSymbol === 'CAKE' ? priceData.prices.Cake : priceData.prices[farm.tokenSymbol]
     }
     value = value.plus(new BigNumber(farm.singleTokenAmount).times(Number(price)))
+  }
+  for (let i = 0; i < pools.length; i++) {
+    const _pool = pools[i];
+    const val = rastaPrice.times(new BigNumber(_pool.totalStaked).div(new BigNumber(10).pow(18)))
+    value = value.plus(val)
   }
 
   return value
