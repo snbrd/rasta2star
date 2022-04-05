@@ -1,21 +1,6 @@
 import { getCakeAddress } from 'utils/addressHelpers'
 
 const AirFarms = [
-  // {
-  //   id: 123,
-  //   poolName: 'RastaDividend AirNFT',
-  //   stakingTokenAddress: getCakeAddress(),
-  //   contractAddress: {
-  //     97: '',
-  //     56: '0x6551A6BB81C0500BA1EE9578b37d240535E84fAC',
-  //   },
-  //   projectLink: 'https://rasta.finance/',
-  //   harvest: true,
-  //   isFinished: true,
-  //   tokenDecimals: 18,
-  //   ribbon: true,
-  //   ribbonText: "Retired"
-  // },
   {
     id: 234,
     poolName: 'RastaDividend AirNFT',
