@@ -37,7 +37,7 @@ const farms: FarmConfig[] = [
     quoteTokenAdresses: contracts.wbnb,
     depositFee: 0,
     farm: true,
-    ribbon: true,
+    ribbon: false,
     ribbonText: "Expiring"
   },
   {
@@ -53,7 +53,7 @@ const farms: FarmConfig[] = [
     quoteTokenAdresses: contracts.busd,
     depositFee: 0,
     farm: true,
-    ribbon: true,
+    ribbon: false,
     ribbonText: "Expiring"
   },
   {
