@@ -35,9 +35,9 @@ export const fetchPoolsAllowance = async (account) => {
   )
 }
 
-export const fetchAirAllowance = async (account) => {
+export const fetchNFTAllowance = async (account) => {
   const call = nftPools.map((farm) => ({
-    address: getAirNftAddress(),
+    address: farm.nftContractAddress,
     name: 'isApprovedForAll',
     params: [account, getAddress(farm.contractAddress)],
   }));
@@ -70,15 +70,15 @@ export const fetchAirUserBalance = async (account) => {
   return 0;
 }
 
-export const fetchAirStakedAmount = async (account) => {
+export const fetchStakedBalance = async (account) => {
   const call = nftPools.map((farm) => ({
     address: getAddress(farm.contractAddress),
-    name: 'userInfo',
+    name: 'userTokenBalanceOf',
     params: [account],
   }));
   const stakedAmount = await multicall(airFarmABI, call);
   return nftPools.map((farm, index) => ({
-    [farm.id]: new BigNumber(stakedAmount[index].amount._hex).toJSON()
+    [farm.id]: new BigNumber(stakedAmount[index]._hex).toJSON()
   }))
 }
 

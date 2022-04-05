@@ -46,7 +46,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
     ribbonText,
     isFinished,
     farmbalance,
-    stakedAmount,
+    stakedBalance,
     contractAddress,
   } = pool;
 
@@ -100,7 +100,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
             return <Wallet />;
           }
 
-          if (!balance && (Number(stakedAmount) === 0 || !stakedAmount)) {
+          if (!balance && (Number(stakedBalance) === 0 || !stakedBalance)) {
             return (
               <a href='https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61' target="_blank" rel='noreferrer'>
                 <span
@@ -125,7 +125,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
             )
           }
 
-          if (Number(stakedAmount) === 0 || !stakedAmount) {
+          if (Number(stakedBalance) === 0 || !stakedBalance) {
             return (
               <div className="flex justify-between">
                 <button
@@ -160,13 +160,13 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
               </button>
               <button
                 type="button"
-                disabled={!isApproval || loading || (Number(stakedAmount) === 0) || isFinished || !balance}
+                disabled={!isApproval || loading || (Number(stakedBalance) === 0) || isFinished || !balance}
                 onClick={async () => {
                   setLoading(true)
                   await onStake()
                   setLoading(false)
                 }}
-                className={(!isApproval || loading || (Number(stakedAmount) === 0) || isFinished || !balance) ? `disabled ${buttonClass}` : buttonClass}
+                className={(!isApproval || loading || (Number(stakedBalance) === 0) || isFinished || !balance) ? `disabled ${buttonClass}` : buttonClass}
               >
                 <span>{TranslateString(758, 'Stake More')}</span>
               </button>
@@ -179,7 +179,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
         <FooterCardFarms
           farmBscLink={`https://bscscan.com/address/${getAddress(contractAddress)}`}
           farmValue={farmbalance}
-          stackedValue={stakedAmount}
+          stackedValue={stakedBalance}
           farmStake="lpLabel"
           addLPurl="addLiquidityUrl"
           type={status === "connected"}
