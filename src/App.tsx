@@ -7,6 +7,7 @@ import About from 'views/About/About'
 import Contact from './views/Contact/Contact'
 import Farms2 from './views/Farms/Farms2'
 import AirFarm from './views/AirNFT'
+import StreetPunksNFT from './views/StreetPunks'
 // import GlobalStyle from './style/Global'
 // import Menu from './components/Menu'
 import ToastListener from './components/ToastListener'
@@ -84,6 +85,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/stakenft">
               <AirFarm />
+            </Route>
+            <Route path="/streetpunksnft">
+              <StreetPunksNFT />
             </Route>
             <Route path="/lottery">
               <Lottery />
