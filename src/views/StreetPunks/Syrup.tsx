@@ -3,7 +3,7 @@ import useI18n from 'hooks/useI18n'
 import { SEC_PER_YEAR } from 'config'
 import { useAirNFT, usePriceBnbBusd, usePriceRastaBusd } from 'state/hooks'
 import BigNumber from 'bignumber.js'
-import AirFarms from 'config/constants/nftPools'
+import nftPools from 'config/constants/nftPools'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
 
@@ -16,7 +16,7 @@ const Farm: React.FC = () => {
   const bnbPriceUSD = usePriceBnbBusd()
   const rastaPriceUSD = usePriceRastaBusd()
 
-  const poolsWithApy = AirFarms.map((farm, index) => ({
+  const poolsWithApy = nftPools.map((farm, index) => ({
     [farm.id]: new BigNumber(rastaPriceUSD)
       .div(bnbPriceUSD)
       .times(farmInfo[index].rewardRate)
@@ -54,7 +54,7 @@ const Farm: React.FC = () => {
           <div className="card items-center text-center w-full mt-16 mb-16">
             <div>
               <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
-                {AirFarms.map((farm, index) => {
+                {nftPools.map((farm, index) => {
                   if (Active)
                     return (
                       <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />

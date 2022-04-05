@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit'
 import poolsConfig from 'config/constants/pools'
-import AirFarms from 'config/constants/nftPools'
+import nftPools from 'config/constants/nftPools'
 import { fetchPoolsBlockLimits, fetchPoolsTotalStatking } from './fetchPools'
 import {
   fetchPoolsAllowance,
@@ -9,8 +9,7 @@ import {
   fetchUserStakeBalances,
   fetchUserPendingRewards,
   fetchPoolStatus,
-  fetchAirBalance,
-  fetchAirRewardRate,
+  fetchNftBalance,
   fetchAirAllowance,
   fetchAirUserBalance,
   fetchAirStakedAmount,
@@ -18,7 +17,7 @@ import {
 } from './fetchPoolsUser'
 import { PoolsState, Pool } from '../types'
 
-const initialState: PoolsState = { data: [...poolsConfig], airdata: [...AirFarms] }
+const initialState: PoolsState = { data: [...poolsConfig], airdata: [...nftPools] }
 
 export const PoolsSlice = createSlice({
   name: 'Pools',
@@ -87,8 +86,7 @@ export const fetchPoolsUserDataAsync = (account) => async (dispatch) => {
 }
 
 export const fetchAirNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
-  const farmbalance = await fetchAirBalance();
-  const rewardRate = await fetchAirRewardRate();
+  const farmbalance = await fetchNftBalance();
   const paused = await fetchPoolStatus()
   if (account) {
     const approved = await fetchAirAllowance(account)
@@ -96,9 +94,8 @@ export const fetchAirNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
     const stakedAmount = await fetchAirStakedAmount(account)
     const pendingReward = await fetchAirPendingReward(account)
 
-    const pool = AirFarms.map((farm, index) => ({
+    const pool = nftPools.map((farm, index) => ({
       farmbalance: farmbalance[index][farm.id],
-      rewardRate: rewardRate[index][farm.id],
       paused: paused[index][farm.id],
       approved: approved[index][farm.id],
       pendingReward: pendingReward[index][farm.id],
@@ -107,13 +104,12 @@ export const fetchAirNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
     }));
     dispatch(setAirPoolsUserData(pool))
   } else {
-    const pool = AirFarms.map((farm, index) => ({
+    const pool = nftPools.map((farm, index) => ({
       approved: false,
       balance: 0,
       stakedAmount: "0",
       pendingReward: "0",
       farmbalance: farmbalance[index][farm.id],
-      rewardRate: rewardRate[index][farm.id],
       paused: paused[index][farm.id]
     }));
 

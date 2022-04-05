@@ -1,24 +1,24 @@
 import { getCakeAddress } from 'utils/addressHelpers'
 
-const AirFarms = [
+const nftPools = [
   {
     id: 234,
     poolName: 'RastaDividend AirNFT',
-    stakingTokenAddress: getCakeAddress(),
+    rewardTokenAddress: getCakeAddress(),
+    nftContractAddress: '0xF5db804101d8600c26598A1Ba465166c33CdAA4b',
     contractAddress: {
       97: '',
       56: '0xcc406fdA6ea668ca89C0F7a6c70658a875Af082C',
     },
+    rewardRate: '10000000000000000',
+    type: 'airnft',
     projectLink: 'https://rasta.finance/',
     harvest: true,
     isFinished: false,
     tokenDecimals: 18,
     ribbon: false,
     ribbonText: "New"
-  }
-]
-
-export const StreetPunks = [
+  },
   {
     id: 123,
     poolName: 'StreetPunks NFT',
@@ -28,6 +28,8 @@ export const StreetPunks = [
       97: '',
       56: '0x2709f5D9a35d89B2Ca7930bb10165300F169E42E',
     },
+    rewardRate: '1150000000000000',
+    type: 'spnft',
     projectLink: 'https://rasta.finance/',
     harvest: true,
     isFinished: false,
@@ -36,6 +38,7 @@ export const StreetPunks = [
     ribbonText: "New"
   }
 ]
+
 
 export const RastaNftIds = [
   222912,
@@ -111,4 +114,4 @@ export const RastaNftIds = [
   251898
 ];
 
-export default AirFarms
+export default nftPools
