@@ -5,6 +5,7 @@ const nftPools = [
     id: 234,
     poolName: 'RastaDividend AirNFT',
     rewardTokenAddress: getCakeAddress(),
+    rewardTokenSymbol: "RASTA",
     nftContractAddress: '0xF5db804101d8600c26598A1Ba465166c33CdAA4b',
     contractAddress: {
       97: '',
@@ -24,6 +25,7 @@ const nftPools = [
     id: 123,
     poolName: 'StreetPunks NFT',
     rewardTokenAddress: '0x3ca35c4f8bc33D44d10d379F3fE601bA67bBbE7f',
+    rewardTokenSymbol: "PUNKS",
     nftContractAddress: '0xB6b545Ac637aec4EC6599258F7CDe70261676333',
     contractAddress: {
       97: '',
