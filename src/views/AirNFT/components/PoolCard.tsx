@@ -39,6 +39,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
 
   const {
     id,
+    icon,
     ribbon,
     balance,
     approved,
@@ -46,6 +47,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
     ribbonText,
     isFinished,
     farmbalance,
+    projectLink,
     stakedBalance,
     contractAddress,
   } = pool;
@@ -75,7 +77,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
           <CardHeading
             lpLabel={poolName}
             isCommunityFarm={false}
-            farmImage='airnft'
+            farmImage={icon}
             tokenSymbol="farm.tokenSymbol"
           />
           {!removed && (
@@ -102,7 +104,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
 
           if (!balance && (Number(stakedBalance) === 0 || !stakedBalance)) {
             return (
-              <a href='https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61' target="_blank" rel='noreferrer'>
+              <a href={projectLink} target="_blank" rel='noreferrer'>
                 <span
                   className={buttonClass}
                 >

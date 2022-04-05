@@ -39,6 +39,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
 
   const {
     id,
+    icon,
     ribbon,
     balance,
     approved,
@@ -46,9 +47,9 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
     ribbonText,
     isFinished,
     farmbalance,
+    projectLink,
     stakedBalance,
     contractAddress,
-    projectLink
   } = pool;
 
   const TranslateString = useI18n()
@@ -76,7 +77,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
           <CardHeading
             lpLabel={poolName}
             isCommunityFarm={false}
-            farmImage='airnft'
+            farmImage={icon}
             tokenSymbol="farm.tokenSymbol"
           />
           {!removed && (
