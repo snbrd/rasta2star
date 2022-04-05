@@ -18,7 +18,7 @@ const AirFarms = [
   }
 ]
 
-const StreetPunks = [
+export const StreetPunks = [
   {
     id: 123,
     poolName: 'StreetPunks NFT',
