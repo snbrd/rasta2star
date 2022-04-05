@@ -15,6 +15,7 @@ export default function FarmHarvest({ pool, type }: Props) {
   const {
     pendingReward,
     contractAddress,
+    projectLink
   } = pool;
 
   return (
@@ -25,7 +26,7 @@ export default function FarmHarvest({ pool, type }: Props) {
           <span className="text-red-rasta text-left text-sm">RASTA earned</span>
           <div className="flex flex-row space-x-3">
             <HarvestAction earnings={pendingReward ? new BigNumber(pendingReward) : new BigNumber('0x00')} type={type} poolAddress={getAddress(contractAddress)} />
-            <CompoundAction earnings={new BigNumber(pendingReward)} type={type} />
+            <CompoundAction earnings={new BigNumber(pendingReward)} url={projectLink} type={type} />
           </div>
         </div>
         <div className="apr py-4 px-6 bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center">

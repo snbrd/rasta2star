@@ -78,7 +78,7 @@ export const fetchStakedBalance = async (account) => {
   }));
   const stakedAmount = await multicall(airFarmABI, call);
   return nftPools.map((farm, index) => ({
-    [farm.id]: new BigNumber(stakedAmount[index]._hex).toJSON()
+    [farm.id]: new BigNumber(stakedAmount[index]).toJSON()
   }))
 }
 

@@ -19,7 +19,7 @@ const Farm: React.FC = () => {
   const poolsWithApy = nftPools.map((farm, index) => ({
     [farm.id]: new BigNumber(rastaPriceUSD)
       .div(bnbPriceUSD)
-      .times(farmInfo[index].rewardRate)
+      .times(farm.rewardRate)
       .times(SEC_PER_YEAR)
       .div(
         Number(farmInfo[index].farmbalance) > 0
