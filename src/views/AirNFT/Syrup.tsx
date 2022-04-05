@@ -3,7 +3,7 @@ import useI18n from 'hooks/useI18n'
 import { SEC_PER_YEAR } from 'config'
 import { useAirNFT, usePriceBnbBusd, usePriceRastaBusd } from 'state/hooks'
 import BigNumber from 'bignumber.js'
-import AirFarms from 'config/constants/airnfts'
+import AirFarms from 'config/constants/nftPools'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
 

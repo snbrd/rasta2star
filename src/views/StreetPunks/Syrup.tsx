@@ -3,7 +3,7 @@ import useI18n from 'hooks/useI18n'
 import { SEC_PER_YEAR } from 'config'
 import { useAirNFT, usePriceBnbBusd, usePriceRastaBusd } from 'state/hooks'
 import BigNumber from 'bignumber.js'
-import AirFarms from 'config/constants/airnfts'
+import AirFarms from 'config/constants/nftPools'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
 
@@ -42,12 +42,12 @@ const Farm: React.FC = () => {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <h1 className="text-4xl font-bold text-center">{TranslateString(696, 'Stake RastaDividend NFT')}</h1>
+        <h1 className="text-4xl font-bold text-center">{TranslateString(696, 'Stake StreetPunks NFT')}</h1>
       </div>
       <div className=" py-8  w-full bg-white text-black">
         <div className=" flex flex-col text-gray-800 items-center w-10/12 mx-auto">
-          <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Purchased AirNFTs')}</h2>
-          <p className="text-gray-700">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
+          <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Purchased StreetPunks NFTs')}</h2>
+          <p className="text-gray-700">{TranslateString(696, 'Earn Brand New StreetPunk Tokens')}</p>
           <div className="toggle-button items-end flex-col flex w-full">
             <ToggleSwitch id="toggleSwitch" checked={Active} onChange={setActive} />
           </div>

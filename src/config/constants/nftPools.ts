@@ -18,6 +18,25 @@ const AirFarms = [
   }
 ]
 
+const StreetPunks = [
+  {
+    id: 123,
+    poolName: 'StreetPunks NFT',
+    rewardTokenAddress: '0x3ca35c4f8bc33D44d10d379F3fE601bA67bBbE7f',
+    nftContractAddress: '0xB6b545Ac637aec4EC6599258F7CDe70261676333',
+    contractAddress: {
+      97: '',
+      56: '0x2709f5D9a35d89B2Ca7930bb10165300F169E42E',
+    },
+    projectLink: 'https://rasta.finance/',
+    harvest: true,
+    isFinished: false,
+    tokenDecimals: 18,
+    ribbon: false,
+    ribbonText: "New"
+  }
+]
+
 export const RastaNftIds = [
   222912,
   222905,

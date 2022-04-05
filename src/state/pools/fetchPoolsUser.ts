@@ -10,7 +10,7 @@ import multicall from 'utils/multicall'
 import { getAddress, getAirNftAddress, getMasterChefAddress } from 'utils/addressHelpers'
 import { getWeb3 } from 'utils/web3'
 import BigNumber from 'bignumber.js'
-import AirFarms, { RastaNftIds } from 'config/constants/airnfts'
+import AirFarms, { RastaNftIds } from 'config/constants/nftPools'
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
 // BNB pools use the native BNB token (wrapping ? unwrapping is done at the contract level)
