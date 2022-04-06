@@ -16,20 +16,36 @@ const Farm: React.FC = () => {
   const bnbPriceUSD = usePriceBnbBusd()
   const rastaPriceUSD = usePriceRastaBusd()
 
-  const poolsWithApy = nftPools.map((farm, index) => ({
-    [farm.id]: new BigNumber(rastaPriceUSD)
-      .div(bnbPriceUSD)
-      .times(farm.rewardRate)
-      .times(SEC_PER_YEAR)
-      .div(
-        Number(farmInfo[index].farmbalance) > 0
-          ? new BigNumber(farmInfo[index].farmbalance).times(new BigNumber(0.4).times(new BigNumber(10).pow(18)))
-          : new BigNumber(10).pow(18),
-      )
-      .times(100)
-      .toFixed(0)
-      .toString(),
-  }))
+  const poolsWithApy = nftPools.map((farm, index) => {
+    if (farm.type === "airnft") {
+      return {
+        [farm.id]: new BigNumber(rastaPriceUSD)
+          .div(bnbPriceUSD)
+          .times(farm.rewardRate)
+          .times(SEC_PER_YEAR)
+          .div(
+            Number(farmInfo[index].farmbalance) > 0
+              ? new BigNumber(farmInfo[index].farmbalance).times(new BigNumber(0.4).times(new BigNumber(10).pow(18)))
+              : new BigNumber(10).pow(18),
+          )
+          .times(100)
+          .toFixed(0)
+          .toString(),
+      }
+    }
+    return {
+      [farm.id]: new BigNumber(farm.rewardRate)
+        .times(SEC_PER_YEAR)
+        .div(
+          Number(farmInfo[index].farmbalance) > 0
+            ? new BigNumber(farmInfo[index].farmbalance).times(new BigNumber(0.1).times(new BigNumber(10).pow(18)))
+            : new BigNumber(10).pow(18),
+        )
+        .times(100)
+        .toFixed(0)
+        .toString(),
+    }
+  })
 
   return (
     <div>
