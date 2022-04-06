@@ -163,13 +163,13 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
               </button>
               <button
                 type="button"
-                disabled={!isApproval || loading || (Number(stakedBalance) === 0) || isFinished || !balance}
+                disabled={!isApproval || loading || (Number(stakedBalance) === 0) || isFinished || !Number(balance)}
                 onClick={async () => {
                   setLoading(true)
                   await onStake()
                   setLoading(false)
                 }}
-                className={(!isApproval || loading || (Number(stakedBalance) === 0) || isFinished || !balance) ? `disabled ${buttonClass}` : buttonClass}
+                className={(!isApproval || loading || (Number(stakedBalance) === 0) || isFinished || !Number(balance)) ? `disabled ${buttonClass}` : buttonClass}
               >
                 <span>{TranslateString(758, 'Stake More')}</span>
               </button>

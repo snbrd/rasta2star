@@ -71,6 +71,7 @@ const Farm: React.FC = () => {
             <div>
               <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
                 {nftPools.map((farm, index) => {
+                  if (farm.type !== "airnft") return null;
                   if (Active)
                     return (
                       <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />
