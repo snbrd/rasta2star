@@ -148,7 +148,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
           }
 
           return (
-            <div className="flex justify-between gap-3">
+            <div className="flex justify-between space-x-3">
               <button
                 type="button"
                 disabled={loading}
