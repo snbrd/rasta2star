@@ -21,7 +21,7 @@ import { fetchProfile } from './profile'
 import { fetchTeam, fetchTeams } from './teams'
 import { fetchAchievements } from './achievements'
 import { QuoteToken } from '../config/constants/types'
-import { fetchAirNFTPoolsAUserDataAsync } from './pools'
+import { fetchNFTPoolsAUserDataAsync } from './pools'
 
 const ZERO = new BigNumber(0)
 
@@ -82,7 +82,7 @@ export const useAirNFT = () => {
   const { account } = useWallet()
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchAirNFTPoolsAUserDataAsync(account))
+    dispatch(fetchNFTPoolsAUserDataAsync(account))
   }, [account, dispatch, fastRefresh])
 
   const airFarm = useSelector((state: State) => state.pools.airdata)

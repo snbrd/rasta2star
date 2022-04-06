@@ -10,7 +10,7 @@ import multicall from 'utils/multicall'
 import { getAddress, getAirNftAddress, getMasterChefAddress } from 'utils/addressHelpers'
 import { getWeb3 } from 'utils/web3'
 import BigNumber from 'bignumber.js'
-import AirFarms, { RastaNftIds } from 'config/constants/airnfts'
+import nftPools, { RastaNftIds } from 'config/constants/nftPools'
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
 // BNB pools use the native BNB token (wrapping ? unwrapping is done at the contract level)
@@ -35,20 +35,27 @@ export const fetchPoolsAllowance = async (account) => {
   )
 }
 
-export const fetchAirAllowance = async (account) => {
-  const call = AirFarms.map((farm) => ({
-    address: getAirNftAddress(),
+export const fetchNFTAllowance = async (account) => {
+  const call = nftPools.map((farm) => ({
+    address: farm.nftContractAddress,
     name: 'isApprovedForAll',
     params: [account, getAddress(farm.contractAddress)],
   }));
   const approved = await multicall(airNFTABI, call);
-  return AirFarms.map((farm, index) => ({
+  return nftPools.map((farm, index) => ({
     [farm.id]: approved[index][0]
   }))
 }
 
-export const fetchAirUserBalance = async (account) => {
+export const fetchNFTUserBalance = async (account) => {
   const balance = await AirNftContract.methods.balanceOf(account).call();
+  const call = nftPools.map((farm) => ({
+    address: farm.nftContractAddress,
+    name: 'balanceOf',
+    params: [account],
+  }));
+  const balances = await multicall(airNFTABI, call);
+
   const calls = [];
   for (let i = 0; i < balance; i++) {
     calls.push({
@@ -59,6 +66,7 @@ export const fetchAirUserBalance = async (account) => {
   }
   const tokenIds = await multicall(airNFTABI, calls);
   let j = false;
+  let airBalance = 0;
   for (let i = 0; i < tokenIds.length; i++) {
     const res = RastaNftIds.indexOf(new BigNumber(tokenIds[i]).toNumber());
     if (res !== -1) {
@@ -66,66 +74,72 @@ export const fetchAirUserBalance = async (account) => {
       break;
     }
   }
-  if (j) return balance;
-  return 0;
+  if (j) airBalance = balances;
+
+  return nftPools.map((farm, index) => {
+    if (farm.type === "airnft") {
+      return { [farm.id]: airBalance }
+    }
+    return { [farm.id]: new BigNumber(balances[index]).toJSON() }
+  })
 }
 
-export const fetchAirStakedAmount = async (account) => {
-  const call = AirFarms.map((farm) => ({
+export const fetchStakedBalance = async (account) => {
+  const call = nftPools.map((farm) => ({
     address: getAddress(farm.contractAddress),
-    name: 'userInfo',
+    name: 'userTokenBalanceOf',
     params: [account],
   }));
   const stakedAmount = await multicall(airFarmABI, call);
-  return AirFarms.map((farm, index) => ({
-    [farm.id]: new BigNumber(stakedAmount[index].amount._hex).toJSON()
+  return nftPools.map((farm, index) => ({
+    [farm.id]: new BigNumber(stakedAmount[index]).toJSON()
   }))
 }
 
-export const fetchAirPendingReward = async (account) => {
-  const call = AirFarms.map((farm) => ({
+export const fetchNFTPendingReward = async (account) => {
+  const call = nftPools.map((farm) => ({
     address: getAddress(farm.contractAddress),
     name: 'claimable',
     params: [account],
   }));
   const pendingReward = await multicall(airFarmABI, call);
-  return AirFarms.map((farm, index) => ({
+  return nftPools.map((farm, index) => ({
     [farm.id]: new BigNumber(pendingReward[index]).toJSON()
   }))
 }
 
-export const fetchAirBalance = async () => {
-  const call = AirFarms.map((farm) => ({
-    address: getAirNftAddress(),
+export const fetchNftBalance = async () => {
+  const call = nftPools.map((farm) => ({
+    address: farm.nftContractAddress,
     name: 'balanceOf',
     params: [getAddress(farm.contractAddress)],
   }));
   const balance = await multicall(airNFTABI, call);
-  return AirFarms.map((farm, index) => ({
+  return nftPools.map((farm, index) => ({
     [farm.id]: new BigNumber(balance[index]).toJSON()
   }))
 }
 
 export const fetchAirRewardRate = async () => {
-  const call3 = AirFarms.map((farm) => ({
+  const call3 = nftPools.map((farm) => ({
     address: getAddress(farm.contractAddress),
     name: 'rewardRate',
     params: [],
   }));
   const rewardRate = await multicall(airFarmABI, call3);
-  return AirFarms.map((farm, index) => ({
+  return nftPools.map((farm, index) => ({
     [farm.id]: new BigNumber(rewardRate[index]).toJSON()
   }))
 }
 
 export const fetchPoolStatus = async () => {
-  const call2 = AirFarms.map((farm) => ({
+  const call2 = nftPools.map((farm) => ({
     address: getAddress(farm.contractAddress),
     name: 'paused',
     params: [],
   }));
   const paused = await multicall(airFarmABI, call2);
-  return AirFarms.map((farm, index) => ({
+  return nftPools.map((farm, index) => ({
     [farm.id]: paused[index][0]
   }))
 }

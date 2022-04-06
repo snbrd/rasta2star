@@ -1,30 +1,40 @@
 import { getCakeAddress } from 'utils/addressHelpers'
 
-const AirFarms = [
-  // {
-  //   id: 123,
-  //   poolName: 'RastaDividend AirNFT',
-  //   stakingTokenAddress: getCakeAddress(),
-  //   contractAddress: {
-  //     97: '',
-  //     56: '0x6551A6BB81C0500BA1EE9578b37d240535E84fAC',
-  //   },
-  //   projectLink: 'https://rasta.finance/',
-  //   harvest: true,
-  //   isFinished: true,
-  //   tokenDecimals: 18,
-  //   ribbon: true,
-  //   ribbonText: "Retired"
-  // },
+const nftPools = [
   {
     id: 234,
     poolName: 'RastaDividend AirNFT',
-    stakingTokenAddress: getCakeAddress(),
+    rewardTokenAddress: getCakeAddress(),
+    rewardTokenSymbol: "RASTA",
+    nftContractAddress: '0xF5db804101d8600c26598A1Ba465166c33CdAA4b',
     contractAddress: {
       97: '',
       56: '0xcc406fdA6ea668ca89C0F7a6c70658a875Af082C',
     },
-    projectLink: 'https://rasta.finance/',
+    rewardRate: '10000000000000000',
+    projectLink: 'https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61',
+    type: 'airnft',
+    icon: 'airnft.svg',
+    harvest: true,
+    isFinished: false,
+    tokenDecimals: 18,
+    ribbon: false,
+    ribbonText: "New"
+  },
+  {
+    id: 123,
+    poolName: 'StreetPunks NFT',
+    rewardTokenAddress: '0x3ca35c4f8bc33D44d10d379F3fE601bA67bBbE7f',
+    rewardTokenSymbol: "PUNKS",
+    nftContractAddress: '0xB6b545Ac637aec4EC6599258F7CDe70261676333',
+    contractAddress: {
+      97: '',
+      56: '0x2709f5D9a35d89B2Ca7930bb10165300F169E42E',
+    },
+    rewardRate: '1000000000000', // 1150000000000000
+    projectLink: 'https://tofunft.com/collection/street-punks/items',
+    type: 'spnft',
+    icon: 'streetpunk.png',
     harvest: true,
     isFinished: false,
     tokenDecimals: 18,
@@ -32,6 +42,7 @@ const AirFarms = [
     ribbonText: "New"
   }
 ]
+
 
 export const RastaNftIds = [
   222912,
@@ -107,4 +118,4 @@ export const RastaNftIds = [
   251898
 ];
 
-export default AirFarms
+export default nftPools
