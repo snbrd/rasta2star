@@ -3,7 +3,9 @@ import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { useDispatch } from 'react-redux'
 import { claim, approveAll, stakeAirNFT, unstakeAirNFT } from 'utils/callHelpers'
 import { fetchNFTPoolsAUserDataAsync } from 'state/pools'
-import { useAirFarmContract, useAirNFTContract } from './useContract'
+import airnft from 'config/abi/airToken.json'
+import { AbiItem } from 'web3-utils'
+import useContract, { useAirFarmContract } from './useContract'
 
 const useStake = (poolAddress) => {
   const dispatch = useDispatch()
@@ -41,18 +43,23 @@ export const useClaim = (poolAddress) => {
   return { onClaim: handleClaim }
 }
 
-export const useApproveAll = (poolAddress) => {
+export const useApproveAll = (nftContractAddress, poolAddress) => {
   const dispatch = useDispatch()
   const { account } = useWallet()
-  const airNftContract = useAirNFTContract()
+  const abi = airnft as unknown as AbiItem
+  const NftContract = useContract(abi, nftContractAddress);
 
   const handleApproveAll = useCallback(async () => {
     if (account) {
-      const tx = await approveAll(airNftContract, poolAddress, account)
-      dispatch(fetchNFTPoolsAUserDataAsync(account))
-      console.info(tx)
+      try {
+        const tx = await approveAll(NftContract, poolAddress, account)
+        dispatch(fetchNFTPoolsAUserDataAsync(account))
+        console.info(tx)
+      } catch (error) {
+        console.log(error)
+      }
     }
-  }, [account, dispatch, airNftContract, poolAddress])
+  }, [account, dispatch, NftContract, poolAddress])
 
   return { onApproveAll: handleApproveAll }
 }
