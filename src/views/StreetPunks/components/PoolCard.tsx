@@ -64,7 +64,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
   const { onApproveAll } = useApproveAll(nftContractAddress, getAddress(contractAddress))
   const { onStake, onUnStake } = useStake(getAddress(contractAddress))
 
-  const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-md xl:rounded-xl cursor-pointer"
+  const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer"
 
   return (
     <>

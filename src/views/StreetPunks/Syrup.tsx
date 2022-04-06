@@ -50,7 +50,7 @@ const Farm: React.FC = () => {
   return (
     <div>
       <div
-        className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
+        className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 px-3 items-center"
         style={{
           backgroundImage: `url(${MrRastaImage})`,
           backgroundPosition: 'center',
@@ -62,7 +62,7 @@ const Farm: React.FC = () => {
       </div>
       <div className=" py-8  w-full bg-white text-black">
         <div className=" flex flex-col text-gray-800 items-center w-10/12 mx-auto">
-          <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Purchased StreetPunks NFTs')}</h2>
+          <h2 className="font-bold text-xl text-center">{TranslateString(696, 'Stake Purchased StreetPunks NFTs')}</h2>
           <p className="text-gray-700">{TranslateString(696, 'Earn Brand New StreetPunk Tokens')}</p>
           <div className="toggle-button items-end flex-col flex w-full">
             <ToggleSwitch id="toggleSwitch" checked={Active} onChange={setActive} />
