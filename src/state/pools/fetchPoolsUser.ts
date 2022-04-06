@@ -47,8 +47,15 @@ export const fetchNFTAllowance = async (account) => {
   }))
 }
 
-export const fetchAirUserBalance = async (account) => {
+export const fetchNFTUserBalance = async (account) => {
   const balance = await AirNftContract.methods.balanceOf(account).call();
+  const call = nftPools.map((farm) => ({
+    address: farm.nftContractAddress,
+    name: 'balanceOf',
+    params: [account],
+  }));
+  const balances = await multicall(airNFTABI, call);
+
   const calls = [];
   for (let i = 0; i < balance; i++) {
     calls.push({
@@ -59,6 +66,7 @@ export const fetchAirUserBalance = async (account) => {
   }
   const tokenIds = await multicall(airNFTABI, calls);
   let j = false;
+  let airBalance = 0;
   for (let i = 0; i < tokenIds.length; i++) {
     const res = RastaNftIds.indexOf(new BigNumber(tokenIds[i]).toNumber());
     if (res !== -1) {
@@ -66,8 +74,14 @@ export const fetchAirUserBalance = async (account) => {
       break;
     }
   }
-  if (j) return balance;
-  return 0;
+  if (j) airBalance = balances;
+
+  return nftPools.map((farm, index) => {
+    if (farm.type === "airnft") {
+      return { [farm.id]: airBalance }
+    }
+    return { [farm.id]: new BigNumber(balances[index]).toJSON() }
+  })
 }
 
 export const fetchStakedBalance = async (account) => {
@@ -82,7 +96,7 @@ export const fetchStakedBalance = async (account) => {
   }))
 }
 
-export const fetchAirPendingReward = async (account) => {
+export const fetchNFTPendingReward = async (account) => {
   const call = nftPools.map((farm) => ({
     address: getAddress(farm.contractAddress),
     name: 'claimable',

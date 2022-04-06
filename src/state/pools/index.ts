@@ -11,9 +11,9 @@ import {
   fetchPoolStatus,
   fetchNftBalance,
   fetchNFTAllowance,
-  fetchAirUserBalance,
+  fetchNFTUserBalance,
   fetchStakedBalance,
-  fetchAirPendingReward
+  fetchNFTPendingReward
 } from './fetchPoolsUser'
 import { PoolsState, Pool } from '../types'
 
@@ -90,9 +90,9 @@ export const fetchNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
   const paused = await fetchPoolStatus()
   if (account) {
     const approved = await fetchNFTAllowance(account)
-    const balance = await fetchAirUserBalance(account)
+    const balance = await fetchNFTUserBalance(account)
     const stakedBalance = await fetchStakedBalance(account)
-    const pendingReward = await fetchAirPendingReward(account)
+    const pendingReward = await fetchNFTPendingReward(account)
 
     const pool = nftPools.map((farm, index) => ({
       farmbalance: farmbalance[index][farm.id],
@@ -100,7 +100,7 @@ export const fetchNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
       approved: approved[index][farm.id],
       pendingReward: pendingReward[index][farm.id],
       stakedBalance: stakedBalance[index][farm.id],
-      balance
+      balance: balance[index][farm.id],
     }));
     dispatch(setAirPoolsUserData(pool))
   } else {
