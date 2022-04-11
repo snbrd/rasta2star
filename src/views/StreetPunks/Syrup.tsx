@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import useI18n from 'hooks/useI18n'
 import { SEC_PER_YEAR } from 'config'
-import { useAirNFT, usePriceBnbBusd, usePriceRastaBusd } from 'state/hooks'
+import { useAirNFT, usePriceBnbBusd, usePricePunksBnb, usePriceRastaBusd } from 'state/hooks'
 import BigNumber from 'bignumber.js'
 import nftPools from 'config/constants/nftPools'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
@@ -15,6 +15,7 @@ const Farm: React.FC = () => {
   const farmInfo = useAirNFT()
   const bnbPriceUSD = usePriceBnbBusd()
   const rastaPriceUSD = usePriceRastaBusd()
+  const punksPriceBnb = usePricePunksBnb()
 
   const poolsWithApy = nftPools.map((farm, index) => {
     if (farm.type === "airnft") {
@@ -34,7 +35,8 @@ const Farm: React.FC = () => {
       }
     }
     return {
-      [farm.id]: new BigNumber(farm.rewardRate)
+      [farm.id]: new BigNumber(punksPriceBnb)
+        .times(farm.rewardRate)
         .times(SEC_PER_YEAR)
         .div(
           Number(farmInfo[index].farmbalance) > 0

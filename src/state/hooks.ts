@@ -142,6 +142,26 @@ export const usePriceLatteBnb = (): BigNumber => {
   return lattePrice
 }
 
+export const usePricePunksBnb = (): BigNumber => {
+  const [punksPrice, setPrice] = useState(ZERO)
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch(
+          `https://api.pancakeswap.info/api/v2/tokens/0x3ca35c4f8bc33D44d10d379F3fE601bA67bBbE7f`,
+        )
+        const { data } = await response.json()
+        return setPrice(new BigNumber(data.price_BNB))
+      } catch (error) {
+        return setPrice(ZERO)
+      }
+    })()
+  }, [])
+
+  return punksPrice
+}
+
 export const usePriceCNRBusd = (): BigNumber => {
   const [cnrPrice, setPrice] = useState(ZERO)
 

@@ -31,7 +31,7 @@ const nftPools = [
       97: '',
       56: '0x2709f5D9a35d89B2Ca7930bb10165300F169E42E',
     },
-    rewardRate: '1000000000000', // 1150000000000000
+    rewardRate: '93339307048984470000000',
     projectLink: 'https://tofunft.com/collection/street-punks/items',
     type: 'spnft',
     icon: 'streetpunk.png',
