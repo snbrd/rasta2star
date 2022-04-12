@@ -52,7 +52,7 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
           className=" bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-xl px-12 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer"
           onClick={onPresentDeposit}
         >
-          {TranslateString(999, 'Stake LP')}
+          {TranslateString(999, `Stake ${tokenName}`)}
         </button>
       </div>
     ) : (
