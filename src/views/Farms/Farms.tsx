@@ -117,7 +117,7 @@ const Farms: React.FC = () => {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <h1 className="text-4xl font-bold">{stackedOnly ? 'Mr. Rasta Farms' : 'Mr. Rasta Farms'}</h1>
+        <h1 className="text-4xl font-bold">{stackedOnly ? 'Mr Rasta Liquidity' : 'Mr Rasta Liquidity'}</h1>
       </div>
 
       <div className=" py-8 md:py-0 md:pt-16 md:pb-32  w-full bg-white text-black">

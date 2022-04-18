@@ -28,13 +28,23 @@ export default function FavoriteCreator() {
               <br />
               <span className="text-yellow-rasta">Completely Decentralized.</span>
             </h2>
-            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" className="desc max-w-full md:max-w-xl mx-auto">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              className="desc max-w-full md:max-w-xl mx-auto"
+            >
               <p className="mt-4 px-8">
                 We are bridging creators with their fans, using the latest in blockchain technology. Interact with your
                 favorite artist, pledge support, and earn money. All through your own private screen and wallet.
               </p>
             </div>
-            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" className="cta flex flex-row mt-4 space-x-8 items-center text-center">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              className="cta flex flex-row mt-4 space-x-8 items-center text-center"
+            >
               <Router>
                 <a
                   href="https://zionlp.com"
@@ -57,7 +67,8 @@ export default function FavoriteCreator() {
             <StakingCard />
           ) : (
             <div
-              data-aos="fade-up" data-aos-duration="1000"
+              data-aos="fade-up"
+              data-aos-duration="1000"
               className="cus-h"
               style={{
                 backgroundImage: `url(/images/Background.png)`,
@@ -66,7 +77,7 @@ export default function FavoriteCreator() {
               }}
             >
               <div className="pb-5 row flex flex-col justify-center items-center h-full text-white">
-                <span className="text-2xl">Farms & Staking</span>
+                <span className="text-2xl">Staking</span>
                 <span className="text-sm">Please Connect Wallet to Unlock</span>
               </div>
             </div>
@@ -75,7 +86,9 @@ export default function FavoriteCreator() {
             <CakeStats />
           ) : (
             <div
-              data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
               className="cus-h"
               style={{
                 backgroundImage: `url(/images/Background.png)`,
@@ -93,7 +106,9 @@ export default function FavoriteCreator() {
             <TotalValueLockedCard />
           ) : (
             <div
-              data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="400"
               className="cus-h"
               style={{
                 backgroundImage: `url(/images/Background.png)`,
@@ -111,7 +126,11 @@ export default function FavoriteCreator() {
       </div>
       <div className="bg-gradient-to-r text-white from-red-rasta to-yellow-rasta py-16">
         <div className="flex flex-col mx-auto md:flex-row w-full px-4 space-y-6 mb-1 md:space-y-0 md:px-0 md:w-10/12 md:mb-0 mx-autoitems-center">
-          <div data-aos="fade-right" data-aos-duration="1000" className="text w-full md:w-8/12 text-center md:text-left">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            className="text w-full md:w-8/12 text-center md:text-left"
+          >
             <span className="text-2xl font-bold block">REQUEST A LAUNCH:</span>
             <span className="block">
               Sign up to join the community as an artist, and receive direct financial benefit from your fan-base and

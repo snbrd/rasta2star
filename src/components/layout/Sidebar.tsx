@@ -19,7 +19,7 @@ import {
   GoMail,
   FaDonate,
   FaHandHoldingUsd,
-  RiMoneyDollarCircleLine
+  RiMoneyDollarCircleLine,
 } from 'react-icons/all'
 import MenuItem from './MenuItem'
 import RastaIcon from '../../assets/menu_coin2.jpg'
@@ -73,7 +73,7 @@ export default function Sidebar() {
         {
           path: 'https://zionlp.com/launchpad-artists',
           label: 'Launchpad Artists',
-          blank: true
+          blank: true,
         },
         {
           path: 'https://zionlp.com',
@@ -107,13 +107,13 @@ export default function Sidebar() {
     //  child: [],
     // },
     {
-      label: 'Farms',
+      label: 'Stake Liquidity',
       path: '#',
       icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: true,
       child: [
         {
-          path: '/farms',
+          path: '/liquidity',
           label: 'Mr. Rasta',
         },
       ],
@@ -206,8 +206,9 @@ export default function Sidebar() {
         <FaBars onClick={showSidebar} />
       </span>
       <nav
-        className={`h-full w-auto top-0 py-6 px-8 bg-gray-rasta z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
-          }`}
+        className={`h-full w-auto top-0 py-6 px-8 bg-gray-rasta z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
+          sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
+        }`}
       >
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer">
           <FaRegWindowClose onClick={showSidebar} />

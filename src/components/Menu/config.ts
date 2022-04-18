@@ -23,7 +23,7 @@ const config: MenuEntry[] = [
   {
     label: 'Mr. Rasta Farms',
     icon: 'LionIcon',
-    href: '/farms',
+    href: '/liquidity',
   },
   {
     label: 'Mr. Rasta Pools',
