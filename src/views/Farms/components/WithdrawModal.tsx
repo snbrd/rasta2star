@@ -38,7 +38,7 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
       className="bg-white z-50 px-12 py-12 flex flex-col justify-between rounded-lg"
       style={{ width: '443px', height: '415px' }}
     >
-      <div className="text-2xl font-bold text-center pb-6">STAKE LP tokens</div>
+      <div className="text-2xl font-bold text-center pb-6">Unstake LP tokens</div>
       {/* <div className="flex flex-row justify-between">
         <span className="text-lg">Stake</span>
         <span className="text-sm">M-RASTA</span>
@@ -50,7 +50,7 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
         max={fullBalance}
         symbol={tokenName}
         // addLiquidityUrl={addLiquidityUrl}
-        inputTitle={TranslateString(1070, 'Stake')}
+        inputTitle={TranslateString(1070, 'Unstake')}
       />
       <div className="flex flex-row justify-between mt-2 mb-6">
         <button
