@@ -114,16 +114,11 @@ export default function Sidebar() {
       child: [],
     },
     {
-      label: 'Pools',
-      path: '#',
+      label: 'Stake Tokens',
+      path: '/pools',
       icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: true,
-      child: [
-        {
-          path: '/pools',
-          label: 'Mr. Rasta',
-        },
-      ],
+      parent: false,
+      child: [],
     },
     {
       label: 'StakeRasta',
