@@ -107,7 +107,7 @@ export default function Sidebar() {
     //  child: [],
     // },
     {
-      label: 'Stake Mr. Rasta',
+      label: 'Stake Liquidity',
       path: '/liquidity',
       icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
