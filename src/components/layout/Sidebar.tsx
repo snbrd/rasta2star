@@ -107,16 +107,11 @@ export default function Sidebar() {
     //  child: [],
     // },
     {
-      label: 'Stake Liquidity',
-      path: '#',
+      label: 'Stake Mr. Rasta',
+      path: '/liquidity',
       icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: true,
-      child: [
-        {
-          path: '/liquidity',
-          label: 'Mr. Rasta',
-        },
-      ],
+      parent: false,
+      child: [],
     },
     {
       label: 'Pools',
