@@ -18,7 +18,7 @@ import {
   FaRegWindowClose,
   GoMail,
   FaDonate,
-  FaHandHoldingUsd,
+  GiLion,
   RiMoneyDollarCircleLine,
 } from 'react-icons/all'
 import MenuItem from './MenuItem'
@@ -65,9 +65,9 @@ export default function Sidebar() {
       ],
     },
     {
-      label: 'ZionLP',
+      label: 'Zion Launchpad',
       path: '#',
-      icon: <FaHandHoldingUsd className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      icon: <GiLion className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: true,
       child: [
         {
