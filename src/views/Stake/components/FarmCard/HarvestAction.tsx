@@ -26,8 +26,13 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, type, pid }) 
         onClick={async () => {
           if (type !== false) {
             setPendingTx(true)
-            await onReward()
-            setPendingTx(false)
+            try {
+              await onReward()
+              setPendingTx(false)
+            } catch (error) {
+              console.log(error);
+              setPendingTx(false)
+            }
           }
         }}
       >

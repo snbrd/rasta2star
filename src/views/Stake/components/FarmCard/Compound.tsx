@@ -2,8 +2,9 @@ import React from 'react'
 import BigNumber from 'bignumber.js'
 import { Pool } from 'state/types'
 import { useModal } from 'rasta-uikit'
-import { useSousStake } from 'hooks/useStake'
-import { PoolCategory } from 'config/constants/types'
+// import { useSousStake } from 'hooks/useStake'
+// import { PoolCategory } from 'config/constants/types'
+import { useHarvest } from 'hooks/useHarvest'
 import CompoundModal from '../CompoundModal'
 
 interface PoolWithApy extends Pool {
@@ -16,19 +17,19 @@ interface FarmCardActionsProps {
   pool: PoolWithApy
 }
 
-const CompoundAction: React.FC<FarmCardActionsProps> = ({ earnings, type, pool }) => {
+const CompoundAction: React.FC<FarmCardActionsProps> = ({ pid, earnings, type, pool }) => {
   const {
-    sousId,
+    // sousId,
     tokenName,
-    poolCategory,
+    // poolCategory,
   } = pool
+  const { onReward } = useHarvest(pid)
+  // const isBnbPool = poolCategory === PoolCategory.BINANCE
 
-  const isBnbPool = poolCategory === PoolCategory.BINANCE
-
-  const { onStake } = useSousStake(sousId, isBnbPool)
+  // const { onStake } = useSousStake(sousId, isBnbPool)
 
   const [onPresentCompound] = useModal(
-    <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={tokenName} />,
+    <CompoundModal earnings={earnings} onConfirm={onReward} tokenName={tokenName} />,
   )
 
   const buttonClass = "px-4 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer"

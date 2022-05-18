@@ -6,7 +6,8 @@ import { getFullDisplayBalance } from 'utils/formatBalance'
 
 interface DepositModalProps {
   earnings: BigNumber
-  onConfirm: (amount: string) => void
+  onConfirm: () => void
+  // onConfirm: (amount: string) => void
   onDismiss?: () => void
   tokenName?: string
 }
@@ -44,7 +45,7 @@ const CompoundModal: React.FC<DepositModalProps> = ({ earnings, onConfirm, onDis
           disabled={pendingTx}
           onClick={async () => {
             setPendingTx(true)
-            await onConfirm(fullBalance)
+            await onConfirm()
             setPendingTx(false)
             onDismiss()
           }}
