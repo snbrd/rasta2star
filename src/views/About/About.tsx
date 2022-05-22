@@ -12,7 +12,7 @@ import LeafBg from '../../assets/leaf-bg.jpg'
 import AboutHeader from '../../assets/lion-statue.jpg'
 import BurdyProfile from '../../assets/senor-burdy.jpeg'
 import EvoProfile from '../../assets/senor-evo.jpeg'
-import MorenzProfile from '../../assets/drmoorenz.jpeg'
+import MiguelProfile from '../../assets/rastalorean.jpeg'
 import VechainProfile from '../../assets/vechain.jpeg'
 import VesxoneProfile from '../../assets/vesxone.jpeg'
 import StarbinnaProfile from '../../assets/rastabinna.png'
@@ -82,9 +82,9 @@ export default function About() {
       avatar: VechainProfile,
     },
     {
-      name: '@Blessed RMG',
-      position: 'RastaMedia Team',
-      avatar: MorenzProfile,
+      name: '@Monzon403',
+      position: 'Rasta Ambassador to Mars Colony',
+      avatar: MiguelProfile,
     },
     {
       name: '@RastaBinna',
