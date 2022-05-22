@@ -37,8 +37,8 @@ export default function Contact() {
     detail: [
       {
         icon: <FaIcons.FaRegEnvelope />,
-        text: 'devs@rasta.finance',
-        link: 'mailto:devs@rasta.finance',
+        text: 'devs@zionlabs.info',
+        link: 'mailto:devs@zionlabs.info',
       },
     ],
 
@@ -53,7 +53,7 @@ export default function Contact() {
       },
       {
         icon: <Io5Icons.IoLogoTiktok />,
-        link: 'https://www.tiktok.com/@rasta.finance',
+        link: 'https://www.tiktok.com/@zionlabs.info',
       },
       {
         icon: <FaIcons.FaMediumM />,

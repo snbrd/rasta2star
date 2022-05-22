@@ -55,11 +55,11 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-          path: 'https://swap.rasta.finance/',
+          path: 'https://swap.zionlabs.info/',
           label: 'RastaSwap ★',
         },
         {
-          path: 'https://exchange.rasta.finance',
+          path: 'https://exchange.zionlabs.info',
           label: 'Old RastaDex (RLP)',
         },
       ],
@@ -137,7 +137,7 @@ export default function Sidebar() {
     // },
     // {
     //   label: 'TECHRATE AUDIT',
-    //   path: 'https://rasta.finance/files/RastaAudit.pdf',
+    //   path: 'https://zionlabs.info/files/RastaAudit.pdf',
     //  icon: <FaBook className="inline-block" style={{ width: '32px', height: '32px' }} />,
     //  parent: false,
     //  child: [],
@@ -149,7 +149,7 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-          path: 'https://rasta.finance/files/RastaAudit.pdf',
+          path: 'https://zionlabs.info/files/RastaAudit.pdf',
           label: 'Audit',
         },
         {
@@ -157,7 +157,7 @@ export default function Sidebar() {
           label: 'CoinMarketCap',
         },
         {
-          path: 'https://docs.rasta.finance',
+          path: 'https://docs.zionlabs.info',
           label: 'Whitepaper',
         },
         // {

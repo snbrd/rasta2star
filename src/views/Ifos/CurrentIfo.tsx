@@ -52,10 +52,10 @@ const Ifo = () => {
             <li>{TranslateString(598, 'Get RASTA-BNB LP tokens by adding RASTA and BNB liquidity')}</li>
           </List>
           <Flex mb="16px">
-            <LinkExternal href="https://swap.rasta.finance/#/swap" mr="16px">
+            <LinkExternal href="https://swap.zionlabs.info/#/swap" mr="16px">
               {TranslateString(1060, 'Buy RASTA')}
             </LinkExternal>
-            <LinkExternal href="https://exchange.rasta.finance/#/add/ETH/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82">
+            <LinkExternal href="https://exchange.zionlabs.info/#/add/ETH/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82">
               {TranslateString(1062, 'Get LP tokens')}
             </LinkExternal>
           </Flex>
@@ -72,7 +72,7 @@ const Ifo = () => {
             <Button
               as="a"
               variant="secondary"
-              href="https://docs.rasta.finance/core-products/ifo-initial-farm-offering"
+              href="https://docs.zionlabs.info/core-products/ifo-initial-farm-offering"
             >
               {TranslateString(610, 'Read more')}
             </Button>

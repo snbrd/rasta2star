@@ -12,11 +12,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://exchange.rasta.finance',
+        href: 'https://exchange.zionlabs.info',
       },
       {
         label: 'Liquidity',
-        href: 'https://exchange.rasta.finance/#/pool',
+        href: 'https://exchange.zionlabs.info/#/pool',
       },
     ],
   },
@@ -38,22 +38,22 @@ const config: MenuEntry[] = [
   {
     label: 'Ms. Rasta Farms - (Paused)',
     icon: 'LionnessIcon',
-    href: 'https://m.rasta.finance/farms',
+    href: 'https://m.zionlabs.info/farms',
   },
   {
     label: 'Ms. Rasta Pools - (Paused)',
     icon: 'LionnessIcon',
-    href: 'https://m.rasta.finance/pools',
+    href: 'https://m.zionlabs.info/pools',
   },
   {
     label: 'TechRate Audit',
     icon: 'AuditIcon',
-    href: 'https://rasta.finance/files/RastaAudit.pdf',
+    href: 'https://zionlabs.info/files/RastaAudit.pdf',
   },
   // {
   //  label: 'Rasino',
   //  icon: 'RasinoIcon',
-  //  href: 'https://rasta.finance/Rasino.html',
+  //  href: 'https://zionlabs.info/Rasino.html',
   // },
   // {
   //   label: 'Stats (Coming soon)',
@@ -70,7 +70,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Whitepaper',
-        href: 'https://docs.rasta.finance',
+        href: 'https://docs.zionlabs.info',
       },
       {
         label: 'Medium',

@@ -12,7 +12,7 @@ const pools: PoolConfig[] = [
   //     56: '0xec89Be665c851FfBAe2a8Ded03080F3E64116539',
   //   },
   //   poolCategory: PoolCategory.CORE,
-  //   projectLink: 'https://rasta.finance/',
+  //   projectLink: 'https://zionlabs.info/',
   //   harvest: true,
   //   tokenPerBlock: '0.0338409478',
   //   sortOrder: 1,

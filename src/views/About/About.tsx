@@ -113,7 +113,7 @@ export default function About() {
     },
   ]
   const letsConnect = {
-    heading: 'Rasta.Finance',
+    heading: 'zionlabs.info',
     subHeading: "Let's connect and get to know each other",
     listContent: ['Decentralized', 'Community Driven', 'For The People.', 'By The People.'],
     textContent: `Best way to get in touch with us is to join the Telegram community, our admins are from all over the world and we are ready to answer any questions you may have.`,
@@ -133,7 +133,7 @@ export default function About() {
         },
         {
           icon: <Io5Icons.IoLogoTiktok />,
-          link: 'https://www.tiktok.com/@rasta.finance',
+          link: 'https://www.tiktok.com/@zionlabs.info',
         },
         {
           icon: <FaIcons.FaMediumM />,
@@ -149,7 +149,7 @@ export default function About() {
         images={AboutHeader}
         title="About Us"
         desc="We are a big team with an even bigger heart."
-        btn={{ link: 'https://docs.rasta.finance', label: 'Read The Docs' }}
+        btn={{ link: 'https://docs.zionlabs.info', label: 'Read The Docs' }}
       />
       <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row  pb-8">
         <Card items={cardSection} />

@@ -21,7 +21,7 @@ export default function Community() {
             </p>
             <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" className="cta flex flex-col px-4 md:px-0 md:flex-row mt-8 space-y-3 md:space-y-0 space-x-0 md:space-x-8">
               <a
-                href="https://docs.rasta.finance"
+                href="https://docs.zionlabs.info"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-gradient-to-r font-bold text-white w-full md:w-1/3 from-yellow-rasta to-green-rasta_cta text-center py-3  rounded-xl"

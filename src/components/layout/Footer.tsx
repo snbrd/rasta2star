@@ -6,7 +6,7 @@ import * as Io5Icons from 'react-icons/io5'
 import Logo from '../../assets/logo.png'
 
 export default function Footer() {
-  const textUnderLogo = ['@rastafinance', 'www.rasta.finance']
+  const textUnderLogo = ['@rastafinance', 'www.zionlabs.info']
   const navigation = [
     {
       title: 'Useful Links',
@@ -23,9 +23,9 @@ export default function Footer() {
   const socialMedia = [
     { name: 'Twitter', icon: <FaIcons.FaTwitter />, link: 'https://www.twitter.com/RastaFinance' },
     { name: 'Telegram', icon: <FaIcons.FaTelegramPlane />, link: 'https://www.t.me/rastafinance' },
-    { name: 'Tik Tok', icon: <Io5Icons.IoLogoTiktok />, link: 'https://www.tiktok.com/@rasta.finance' },
+    { name: 'Tik Tok', icon: <Io5Icons.IoLogoTiktok />, link: 'https://www.tiktok.com/@zionlabs.info' },
     { name: 'Medium', icon: <FaIcons.FaMediumM />, link: 'https:///rastafinance.medium.com' },
-    { name: 'Instagram', icon: <FaIcons.FaInstagram />, link: 'https://instagram.com/rasta.finance' },
+    { name: 'Instagram', icon: <FaIcons.FaInstagram />, link: 'https://instagram.com/zionlabs.info' },
     { name: 'Discord', icon: <FaIcons.FaDiscord />, link: 'https://discord.gg/JgMKca38' },
   ]
   function ShowLinks(props) {

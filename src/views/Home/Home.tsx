@@ -10,7 +10,7 @@ const Home: React.FC = () => {
     // <Page>
     //   <Hero>
     //     <Heading as="h1" size="xl" mb="24px" color="#543212">
-    //       {TranslateString(576, 'Rasta.Finance')}
+    //       {TranslateString(576, 'zionlabs.info')}
     //     </Heading>
     //     <Text color="black">{TranslateString(578, 'Community Driven High Yield AMM')}</Text>
     //   </Hero>

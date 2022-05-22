@@ -1,7 +1,7 @@
 # Contributing to the Rasta ecosystem 🥞
 
 Thanks for taking the time to contribute ! This is appreciated
-You can start by reading our [Contribution guidelines](https://docs.rasta.finance/code/contributing) first.
+You can start by reading our [Contribution guidelines](https://docs.zionlabs.info/code/contributing) first.
 
 ## Setup
 
