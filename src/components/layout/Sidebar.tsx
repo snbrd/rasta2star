@@ -184,8 +184,8 @@ export default function Sidebar() {
   ]
   const socialMedia = [
     { name: 'Telegram', icon: <FaTelegramPlane />, link: 'https://www.t.me/rastafinance' },
-    { name: 'Twitter', icon: <FaTwitter />, link: 'https://www.twitter.com/RastaFinance' },
-    { name: 'Medium', icon: <FaMediumM />, link: 'https:///rastafinance.medium.com' },
+    { name: 'Twitter', icon: <FaTwitter />, link: 'https://www.twitter.com/zionlabs_info' },
+    { name: 'Medium', icon: <FaMediumM />, link: 'https:///zionlabs.medium.com' },
     { name: 'Reddit', icon: <FaReddit />, link: 'https://www.reddit.com/r/rastafinance' },
     { name: 'Discord', icon: <FaDiscord />, link: 'https://discord.gg/JgMKca38' },
   ]
