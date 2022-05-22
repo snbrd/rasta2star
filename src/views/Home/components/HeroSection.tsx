@@ -4,7 +4,7 @@ import HeroImage from '../../../assets/home-header.jpg'
 
 export default function HeroSection() {
   const counter = [
-    { label: 'Months Active', numbers: '13' },
+    { label: 'Months Active', numbers: '15' },
     { label: 'Holders', numbers: '3,600+' },
     { label: 'Transfers', numbers: '257,613' },
     { label: 'Network', numbers: 'BSC (BEP20)' },

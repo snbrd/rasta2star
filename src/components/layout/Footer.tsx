@@ -6,7 +6,7 @@ import * as Io5Icons from 'react-icons/io5'
 import Logo from '../../assets/logo.png'
 
 export default function Footer() {
-  const textUnderLogo = ['@rastafinance', 'www.zionlabs.info']
+  const textUnderLogo = ['@zionlabs_info', 'www.zionlabs.info']
   const navigation = [
     {
       title: 'Useful Links',
@@ -85,7 +85,7 @@ export default function Footer() {
           <div className="copyright flex-grow-1">
             <span>
               <a href="/" className="text-yellow-rasta">
-                Rasta Finance
+                Zion Labs
               </a>{' '}
               2022 // All Rights Reserved
             </span>
