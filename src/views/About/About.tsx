@@ -21,6 +21,7 @@ import TheMonkProfile from '../../assets/themonk.jpeg'
 import BugBusterProfile from '../../assets/bugbuster.jpeg'
 import Senorsatsrofile from '../../assets/senorsats.jpeg'
 import RaslogicProfile from '../../assets/ras-logic.jpeg'
+import ChicagoProfile from '/../../assets/chicago.jpeg'
 
 export default function About() {
   const cardSection = [
@@ -90,6 +91,11 @@ export default function About() {
       name: '@RastaBinna',
       position: 'Head of Development Team',
       avatar: StarbinnaProfile,
+    },
+    {
+      name: "@ChicagoD'One",
+      position: "Head Graphic Designer"
+      avatar: ChicagoProfile,
     },
     {
       name: '@Typhoncrypto',
