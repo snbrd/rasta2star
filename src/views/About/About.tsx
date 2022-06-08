@@ -94,7 +94,7 @@ export default function About() {
     },
     {
       name: "@ChicagoD'One",
-      position: "Head Graphic Designer"
+      position: "Head Graphic Designer",
       avatar: ChicagoProfile,
     },
     {
