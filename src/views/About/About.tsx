@@ -21,7 +21,7 @@ import TheMonkProfile from '../../assets/themonk.jpeg'
 import BugBusterProfile from '../../assets/bugbuster.jpeg'
 import Senorsatsrofile from '../../assets/senorsats.jpeg'
 import RaslogicProfile from '../../assets/ras-logic.jpeg'
-import ChicagoProfile from '/../../assets/chicago.jpeg'
+import ChicagoProfile from '../../assets/chicago.jpeg'
 
 export default function About() {
   const cardSection = [
