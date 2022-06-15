@@ -27,10 +27,10 @@ export default function HeroSection() {
           <div className="leftSection w-full md:w-6/12">
             <h1 className="text-4xl font-bold text-center md:text-left md:pr-48 leading-tight">
               <span className="text-yellow-rasta">Empowering Artists</span>
-              <br /> ZION LaunchPad
+              <br /> ZION Launch Pad
             </h1>
             <p className="mt-8 text-center md:text-left">
-              ZION LP by Rasta, unites artists with their fanbase, offering a revolutionary suite of tools that empowers
+              ZION Launch Pad by Rasta, unites artists with their fanbase, offering a revolutionary suite of tools that empowers
               creators. Built upon the foundation of Web3.0, Rasta utilizes latest in blockchain technology to earn more
               income for those that deserve it.
             </p>

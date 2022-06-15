@@ -3,7 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 import * as Io5Icons from 'react-icons/io5'
-import Logo from '../../assets/logo.png'
+import Logo from '../../assets/logo-rescaled.png'
 
 export default function Footer() {
   const textUnderLogo = ['@zionlabs_info', 'www.zionlabs.info']
@@ -58,7 +58,7 @@ export default function Footer() {
             />
             {textUnderLogo.map((item, index) => {
               return (
-                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-6">
+                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-8">
                   {item}
                 </span>
               )
