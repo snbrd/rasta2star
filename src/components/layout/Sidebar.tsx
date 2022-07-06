@@ -196,7 +196,7 @@ export default function Sidebar() {
         <FaBars onClick={showSidebar} />
       </span>
       <nav
-        className={`h-full w-auto top-0 py-6 px-8 bg-gray-rasta z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
+        className={`h-full w-auto top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
           sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
         }`}
       >

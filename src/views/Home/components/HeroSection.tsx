@@ -12,7 +12,7 @@ export default function HeroSection() {
   return (
     <div>
       <div
-        className="flex w-full  py-16 text-white flex-col"
+        className="flex w-full bg-blend-overlay bg-black bg-opacity-50  py-16 text-white flex-col"
         style={{
           backgroundImage: `url(${HeroImage})`,
           backgroundSize: 'cover',

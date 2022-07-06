@@ -47,7 +47,7 @@ export const useApproveAll = (nftContractAddress, poolAddress) => {
   const dispatch = useDispatch()
   const { account } = useWallet()
   const abi = airnft as unknown as AbiItem
-  const NftContract = useContract(abi, nftContractAddress);
+  const NftContract = useContract(abi, nftContractAddress)
 
   const handleApproveAll = useCallback(async () => {
     if (account) {

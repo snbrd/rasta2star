@@ -3,7 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 import * as Io5Icons from 'react-icons/io5'
-import Logo from '../../assets/logo-rescaled.png'
+import Logo from '../../assets/z1-rescaled.png'
 
 export default function Footer() {
   const textUnderLogo = ['@zionlabs_info', 'www.zionlabs.info']
