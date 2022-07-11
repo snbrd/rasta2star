@@ -13,6 +13,7 @@ export default function Footer() {
       item: [
         { label: 'About', path: '/about' },
         { label: 'Contact', path: '/contact' },
+        { label: 'ZLP By Rasta', path: 'https://zionlp.com' },
       ],
     },
     {
