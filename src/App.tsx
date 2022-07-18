@@ -60,7 +60,6 @@ const App: React.FC = () => {
         {/* <ResetCSS /> */}
         {/* <GlobalStyle /> */}
         {/* <Menu> */}
-        
         <aside>
           <Sidebar/>
         {/* </Menu> */}
