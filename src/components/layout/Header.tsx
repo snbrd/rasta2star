@@ -4,7 +4,7 @@ import * as FaIcons from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import WalletConnect from '../../assets/wallet/wallet-connect.png'
-// import Sidebar from './Sidebar'
+import Sidebar from './Sidebar'
 import Logo from '../../assets/z1-rescaled.png'
 import BinanceWallet from '../../assets/wallet/binance-wallet.png'
 import MathWallet from '../../assets/wallet/math-wallet.png'
@@ -80,7 +80,7 @@ export default function Header() {
       <div>
         <header className="border-b-default border-white border-opacity-50">
           <div className="flex  items-center justify-between w-10/12 mx-auto">
-            {/* <Sidebar /> */}
+            <Sidebar />
             
             <div className="logo flex-grow-1 text-center">
               <Link to="/">
