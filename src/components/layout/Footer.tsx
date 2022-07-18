@@ -27,7 +27,6 @@ export default function Footer() {
     { name: 'Tik Tok', icon: <Io5Icons.IoLogoTiktok />, link: 'https://www.tiktok.com/@zionlabs.info' },
     { name: 'Medium', icon: <FaIcons.FaMediumM />, link: 'https:///zionlabs.medium.com' },
     { name: 'Instagram', icon: <FaIcons.FaInstagram />, link: 'https://instagram.com/zionlabs_info' },
-    { name: 'Discord', icon: <FaIcons.FaDiscord />, link: 'https://discord.gg/JgMKca38' },
   ]
   function ShowLinks(props) {
     return props.items.map((item, index) => {

@@ -14,7 +14,7 @@ import {
   FaTwitter,
   FaMediumM,
   FaReddit,
-  FaDiscord,
+  FaInstagram,
   FaBars,
   FaRegWindowClose,
   GoMail,
@@ -192,7 +192,7 @@ export default function NewSidebar() {
     { name: 'Twitter', icon: <FaTwitter />, link: 'https://www.twitter.com/zionlabs_info' },
     { name: 'Medium', icon: <FaMediumM />, link: 'https:///zionlabs.medium.com' },
     { name: 'Reddit', icon: <FaReddit />, link: 'https://www.reddit.com/r/rastafinance' },
-    { name: 'Discord', icon: <FaDiscord />, link: 'https://discord.gg/JgMKca38' },
+    { name: 'Instagram', icon: <FaInstagram />, link: 'https://instagram.com/zionlabs_info?igshid=YmMyMTA2M2Y=' },
   ]
 
   return (
