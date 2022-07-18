@@ -78,14 +78,14 @@ export default function Header() {
   return (
     <>
       <div>
-        <header className="py-5 md:py-10">
+        <header className="border-b-default border-white border-opacity-50">
           <div className="flex  items-center justify-between w-10/12 mx-auto">
             {/* <Sidebar /> */}
             
             <div className="logo flex-grow-1 text-center">
-              {/* <Link to="/">
+              <Link to="/">
                 <LazyLoadImage src={Logo} alt="Logo" className="w-64 mx-auto d-block" effect="blur" />
-              </Link> */}
+              </Link>
             </div>
             <div className="right-cta items-center flex flex-row">
               {!account ? (
