@@ -17,7 +17,7 @@ import GlobalCheckBullHiccupClaimStatus from './views/Collectibles/components/Gl
 import history from './routerHistory'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
-
+import NewDesktopSidebar from './components/layout/NewDesktopSidebar'
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page'
 const Home = lazy(() => import('./views/Home'))
@@ -54,77 +54,78 @@ const App: React.FC = () => {
   useFetchProfile()
 
   return (
-    <div className="bg-black font-roboto text-white relative">
+    <div className="flex bg-black font-roboto text-white relative">
       <Router history={history}>
-        {/* <ResetCSS /> */}
-        {/* <GlobalStyle /> */}
-        {/* <Menu> */}
-        <Header />
-        <Suspense fallback={<PageLoader />}>
-          <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/about" exact>
-              <About />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/farming/:farm">
-              <Farms2 />
-            </Route>
-            <Route path="/liquidity">
-              <Farms />
-            </Route>
-            <Route path="/pools">
-              <Pools />
-            </Route>
-            <Route path="/stake">
-              <Stake />
-            </Route>
-            <Route path="/stakenft">
-              <AirFarm />
-            </Route>
-            <Route path="/streetpunksnft">
-              <StreetPunksNFT />
-            </Route>
-            <Route path="/lottery">
-              <Lottery />
-            </Route>
-            <Route path="/ifo">
-              <Ifos />
-            </Route>
-            <Route path="/collectibles">
-              <Collectibles />
-            </Route>
-            <Route exact path="/teams">
-              <Teams />
-            </Route>
-            <Route path="/teams/:id">
-              <Team />
-            </Route>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-            {/* Redirect */}
-            <Route path="/staking">
-              <Redirect to="/pools" />
-            </Route>
-            <Route path="/syrup">
-              <Redirect to="/pools" />
-            </Route>
-            <Route path="/nft">
-              <Redirect to="/collectibles" />
-            </Route>
-            {/* 404 */}
-            <Route component={NotFound} />
-          </Switch>
-        </Suspense>
-        {/* </Menu> */}
-        <Footer />
-        <ToastListener />
-        <GlobalCheckBullHiccupClaimStatus />
+        <aside className="hidden md:block">
+          <NewDesktopSidebar />
+        </aside>
+        <div className="flex-1 md:ml-64 overflow-x-hidden">
+          <Header />
+          <Suspense fallback={<PageLoader />}>
+            <Switch>
+              <Route path="/" exact>
+                <Home />
+              </Route>
+              <Route path="/about" exact>
+                <About />
+              </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
+              <Route path="/farming/:farm">
+                <Farms2 />
+              </Route>
+              <Route path="/liquidity">
+                <Farms />
+              </Route>
+              <Route path="/pools">
+                <Pools />
+              </Route>
+              <Route path="/stake">
+                <Stake />
+              </Route>
+              <Route path="/stakenft">
+                <AirFarm />
+              </Route>
+              <Route path="/streetpunksnft">
+                <StreetPunksNFT />
+              </Route>
+              <Route path="/lottery">
+                <Lottery />
+              </Route>
+              <Route path="/ifo">
+                <Ifos />
+              </Route>
+              <Route path="/collectibles">
+                <Collectibles />
+              </Route>
+              <Route exact path="/teams">
+                <Teams />
+              </Route>
+              <Route path="/teams/:id">
+                <Team />
+              </Route>
+              <Route path="/profile">
+                <Profile />
+              </Route>
+              {/* Redirect */}
+              <Route path="/staking">
+                <Redirect to="/pools" />
+              </Route>
+              <Route path="/syrup">
+                <Redirect to="/pools" />
+              </Route>
+              <Route path="/nft">
+                <Redirect to="/collectibles" />
+              </Route>
+              {/* 404 */}
+              <Route component={NotFound} />
+            </Switch>
+          </Suspense>
+          <Footer />
+          <ToastListener />
+          <GlobalCheckBullHiccupClaimStatus />
+        </div>
       </Router>
     </div>
   )

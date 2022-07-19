@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import useMRastaPrice from 'hooks/useMRastaPrice'
 import { usePriceRastaBusd } from 'state/hooks'
 
+import { Link } from 'react-router-dom'
+
 import {
   FaHome,
   RiErrorWarningFill,
@@ -21,11 +23,15 @@ import {
   GiLion,
   RiMoneyDollarCircleLine,
 } from 'react-icons/all'
+
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+
 import MenuItem from './MenuItem'
 import RastaIcon from '../../assets/menu_coin2.jpg'
 import MRastaIcon from '../../assets/menu_coin1.jpg'
+import Logo from '../../assets/z1-rescaled.png'
 
-export default function Sidebar() {
+export default function NewDesktopSidebar() {
   const [sidebar, setSidebar] = useState(false)
   const showSidebar = () => {
     setSidebar(!sidebar)
@@ -191,20 +197,34 @@ export default function Sidebar() {
   ]
 
   return (
-    <div className="navbar text-white">
+    <div className="navbar text-white hidden md:block">
       <span className="menu-bars text-2xl cursor-pointer">
-        <FaBars onClick={showSidebar} className="md:hidden" />
+        <FaBars onClick={showSidebar} className="hidden" />
       </span>
-      <nav
-        className={`h-full w-full top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
+      {/* <nav
+        className={`h-full w-auto top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
           sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
         }`}
+      > */}
+      <nav
+        className={`h-full w-64 top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
+          sidebar ? 'left-0 ml-0' : ''
+        }`}
         style={{ backgroundColor: '#303446' }}
+        data-aos="fade-right"
+        data-aos-duration="1000"
       >
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer">
-          <FaRegWindowClose onClick={showSidebar} />
+          <FaRegWindowClose onClick={showSidebar} className="hidden" />
         </span>
-        <ul className="menu-items text-white mt-32 text-2xl space-y-6 font-light font-sans">
+
+        <div className="text-center">
+          <Link to="/">
+            <LazyLoadImage src={Logo} alt="Logo" className="w-64 mx-auto d-block" effect="blur" />
+          </Link>
+        </div>
+
+        <ul className="menu-items text-white mt-0 text-2xl space-y-6 font-sans font-light">
           {menu.map((item, index) => {
             return <MenuItem key={index} menu={item} showSidebar={showSidebar} />
           })}
