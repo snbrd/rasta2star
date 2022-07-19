@@ -5,7 +5,6 @@ import Community from './components/Community'
 import FavCreator from './components/FavoriteCreator'
 
 const Home: React.FC = () => {
-
   return (
     // <Page>
     //   <Hero>

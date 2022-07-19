@@ -29,7 +29,6 @@ export default function Farms2() {
     }
   }, [account, dispatch, fastRefresh])
 
-
   if (farm === 'mr-rasta')
     pages = {
       name: 'mr-rasta',

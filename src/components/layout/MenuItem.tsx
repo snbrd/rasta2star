@@ -21,7 +21,7 @@ export default function MenuItem({ menu, showSidebar }) {
           {menu.icon}
           <span className="flex-grow-1" style={{ fontSize: '18px' }}>
             {menu.label}
-            <h1 style={{ fontSize: '13px', color: "white" }}>{menu.sublabel}</h1>
+            <h1 style={{ fontSize: '13px', color: 'white' }}>{menu.sublabel}</h1>
           </span>
         </a>
       ) : (
@@ -42,40 +42,37 @@ export default function MenuItem({ menu, showSidebar }) {
               <li key={i.label}>
                 {(() => {
                   if (i.blank) {
-                    return <a
-                      href={i.path}
-                      onClick={showSidebar}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <span className="ml-10" style={{ fontSize: '18px', marginLeft: '3rem' }}>
-                        {i.label}
-                      </span>
-                    </a>;
+                    return (
+                      <a href={i.path} onClick={showSidebar} target="_blank" rel="noreferrer">
+                        <span className="ml-10" style={{ fontSize: '18px', marginLeft: '3rem' }}>
+                          {i.label}
+                        </span>
+                      </a>
+                    )
                   }
                   if (i.path.includes('http')) {
-                    return <a
-                      href={i.path}
-                      onClick={showSidebar}
-                    >
+                    return (
+                      <a href={i.path} onClick={showSidebar}>
+                        <span className="ml-10" style={{ fontSize: '18px', marginLeft: '3rem' }}>
+                          {i.label}
+                        </span>
+                      </a>
+                    )
+                  }
+
+                  return (
+                    <Link to={i.path} onClick={showSidebar}>
                       <span className="ml-10" style={{ fontSize: '18px', marginLeft: '3rem' }}>
                         {i.label}
                       </span>
-                    </a>
-                  }
-
-                  return <Link to={i.path} onClick={showSidebar}>
-                    <span className="ml-10" style={{ fontSize: '18px', marginLeft: '3rem' }}>
-                      {i.label}
-                    </span>
-                  </Link>
+                    </Link>
+                  )
                 })()}
               </li>
             )
           })}
         </ul>
-      )
-      }
-    </li >
+      )}
+    </li>
   )
 }

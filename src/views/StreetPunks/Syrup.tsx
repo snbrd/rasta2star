@@ -18,7 +18,7 @@ const Farm: React.FC = () => {
   const punksPriceBnb = usePricePunksBnb()
 
   const poolsWithApy = nftPools.map((farm, index) => {
-    if (farm.type === "airnft") {
+    if (farm.type === 'airnft') {
       return {
         [farm.id]: new BigNumber(rastaPriceUSD)
           .div(bnbPriceUSD)
@@ -73,7 +73,7 @@ const Farm: React.FC = () => {
             <div>
               <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
                 {nftPools.map((farm, index) => {
-                  if (farm.type !== "spnft") return null;
+                  if (farm.type !== 'spnft') return null
                   if (Active)
                     return (
                       <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />

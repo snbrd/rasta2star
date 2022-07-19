@@ -18,25 +18,24 @@ interface HarvestProps {
 }
 
 const CustomTitle = styled.div`
-    padding: 8px 40px;
-    margin-top: -48px;
-    margin-left: -40px;
-    border-top-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    color: white;
-    @media (max-width: 1280px) {
-      margin-top: -40px;
-      margin-left: -32px;
-    }
-    @media (max-width: 1024px) {
-      margin-top: -32px;
-      margin-left: -20px;
-      padding: 4px 40px;
-    }
-  `;
+  padding: 8px 40px;
+  margin-top: -48px;
+  margin-left: -40px;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  color: white;
+  @media (max-width: 1280px) {
+    margin-top: -40px;
+    margin-left: -32px;
+  }
+  @media (max-width: 1024px) {
+    margin-top: -32px;
+    margin-left: -20px;
+    padding: 4px 40px;
+  }
+`
 
 const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
-
   const {
     id,
     icon,
@@ -50,8 +49,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
     projectLink,
     stakedBalance,
     contractAddress,
-    nftContractAddress
-  } = pool;
+    nftContractAddress,
+  } = pool
 
   const TranslateString = useI18n()
   const { account, status } = useWallet()
@@ -64,51 +63,47 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
   const { onApproveAll } = useApproveAll(nftContractAddress, getAddress(contractAddress))
   const { onStake, onUnStake } = useStake(getAddress(contractAddress))
 
-  const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer"
+  const buttonClass =
+    'w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
 
   return (
     <>
-      <div className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
-        {
-          ribbon && (
-            <CustomTitle className='absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta'>{ribbonText}</CustomTitle>
-          )
-        }
+      <div
+        className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8"
+        style={{
+          backgroundImage: "url('images/cardbg.png')",
+          backgroundSize: '100% 580px',
+          boxShadow: '6px 6px 24px -9px',
+        }}
+      >
+        {ribbon && (
+          <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta">
+            {ribbonText}
+          </CustomTitle>
+        )}
         <div className="row flex flex-col lg:flex-row space-x-0 md:space-x-4 mb-4 md:mb-12">
-          <CardHeading
-            lpLabel={poolName}
-            isCommunityFarm={false}
-            farmImage={icon}
-            tokenSymbol="farm.tokenSymbol"
-          />
+          <CardHeading lpLabel={poolName} isCommunityFarm={false} farmImage={icon} tokenSymbol="farm.tokenSymbol" />
           {!removed && (
             <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0">
               <span className="apr-value text-2xl w-full text-gray-700 ">
-                {Number(apy) > 0 && !isFinished ?
-                  `${apy}%` : '-'
-                }
+                {Number(apy) > 0 && !isFinished ? `${apy}%` : '-'}
               </span>
               <span className="apr-label text-red-rasta text-sm">APR</span>
             </div>
           )}
         </div>
         <div className={` expanded md:block`}>
-          <FarmHarvest
-            pool={pool}
-            type={status === "connected"}
-          />
+          <FarmHarvest pool={pool} type={status === 'connected'} />
         </div>
         {(() => {
           if (!account) {
-            return <Wallet />;
+            return <Wallet />
           }
 
           if (!balance && (Number(stakedBalance) === 0 || !stakedBalance)) {
             return (
-              <a href={projectLink} target="_blank" rel='noreferrer'>
-                <span
-                  className={buttonClass}
-                >
+              <a href={projectLink} target="_blank" rel="noreferrer">
+                <span className={buttonClass}>
                   <FaIcons.FaShoppingBag />
                   <span>Buy NFTs</span>
                 </span>
@@ -119,8 +114,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
           if (!isApproval) {
             return (
               <span
-                className={(status === "connected" ? "" : "disabled") + buttonClass}
-                onClick={() => status === "connected" ? onApproveAll() : null}
+                className={(status === 'connected' ? '' : 'disabled') + buttonClass}
+                onClick={() => (status === 'connected' ? onApproveAll() : null)}
               >
                 <FaIcons.FaCheck />
                 <span>APPROVE NFT</span>
@@ -163,19 +158,22 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
               </button>
               <button
                 type="button"
-                disabled={!isApproval || loading || (Number(stakedBalance) === 0) || isFinished || !Number(balance)}
+                disabled={!isApproval || loading || Number(stakedBalance) === 0 || isFinished || !Number(balance)}
                 onClick={async () => {
                   setLoading(true)
                   await onStake()
                   setLoading(false)
                 }}
-                className={(!isApproval || loading || (Number(stakedBalance) === 0) || isFinished || !Number(balance)) ? `disabled ${buttonClass}` : buttonClass}
+                className={
+                  !isApproval || loading || Number(stakedBalance) === 0 || isFinished || !Number(balance)
+                    ? `disabled ${buttonClass}`
+                    : buttonClass
+                }
               >
                 <span>{TranslateString(758, 'Stake More')}</span>
               </button>
             </div>
           )
-
         })()}
 
         {/* <CardActionsContainer farm={farm} ethereum={ethereum} account={account} addLiquidityUrl={addLiquidityUrl} /> */}
@@ -185,7 +183,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
           stackedValue={stakedBalance}
           farmStake="lpLabel"
           addLPurl="addLiquidityUrl"
-          type={status === "connected"}
+          type={status === 'connected'}
           poolId={id}
         />
       </div>

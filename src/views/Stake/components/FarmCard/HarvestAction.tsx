@@ -15,14 +15,14 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, type, pid }) 
   const { onReward } = useHarvest(pid)
 
   const rawEarningsBalance = getBalanceNumber(earnings)
-  const buttonClass = "px-4 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer"
+  const buttonClass = 'px-4 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer'
 
   return (
     <div className="harvest flex mt-4 bg-gradient-to-l text-white w-full from-green-rasta to-yellow-rasta  rounded-md">
       <button
         type="button"
         disabled={rawEarningsBalance === 0 || pendingTx}
-        className={(type === false ? "disabled " : "") + buttonClass}
+        className={(type === false ? 'disabled ' : '') + buttonClass}
         onClick={async () => {
           if (type !== false) {
             setPendingTx(true)
@@ -30,7 +30,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, type, pid }) 
               await onReward()
               setPendingTx(false)
             } catch (error) {
-              console.log(error);
+              console.log(error)
               setPendingTx(false)
             }
           }

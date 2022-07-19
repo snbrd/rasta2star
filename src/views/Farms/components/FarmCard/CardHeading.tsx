@@ -10,12 +10,7 @@ export interface ExpandableSectionProps {
   tokenSymbol?: string
 }
 
-const CardHeading: React.FC<ExpandableSectionProps> = ({
-  lpLabel,
-  multiplier,
-  farmImage,
-  tokenSymbol,
-}) => {
+const CardHeading: React.FC<ExpandableSectionProps> = ({ lpLabel, multiplier, farmImage, tokenSymbol }) => {
   return (
     <>
       <div className="w-full items-detail flex flex-col border-b-2 pb-2 border-black flex-grow-1">
@@ -36,7 +31,13 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
             <div className="rounded-full w-12 h-12  ">
               <div className="rounded-full w-12 h-12  ">
                 <span className="text-white text-3xl flex flex-col pt-2 items-center justify-center">
-                  <Image src={`/images/farms/${farmImage}.png`} alt={tokenSymbol} marginTop={-2} width={64} height={47} />
+                  <Image
+                    src={`/images/farms/${farmImage}.png`}
+                    alt={tokenSymbol}
+                    marginTop={-2}
+                    width={64}
+                    height={47}
+                  />
                 </span>
               </div>
             </div>

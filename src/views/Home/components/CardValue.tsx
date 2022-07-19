@@ -12,12 +12,7 @@ export interface CardValueProps {
   isStats?: boolean
 }
 
-const CardValue: React.FC<CardValueProps> = ({
-  value,
-  decimals,
-  prefix = '',
-  isStats = false,
-}) => {
+const CardValue: React.FC<CardValueProps> = ({ value, decimals, prefix = '', isStats = false }) => {
   const { countUp, update } = useCountUp({
     start: 0,
     end: value,

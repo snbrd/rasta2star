@@ -18,10 +18,12 @@ export default function CardButton({ items }: { items: any[] }) {
           <a
             href={item.link}
             key={item.label}
-            data-aos="fade-up" data-aos-duration="1000" data-aos-delay={100 * index}
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay={100 * index}
             className="px-8  md:flex text-center shadow-box items-center
             content-center py-8 justify-center font-bold rounded-xl bg-gradient-to-r hover:text-white hover:from-yellow-rasta hover:to-green-rasta"
-            target='_blank'
+            target="_blank"
             rel="noreferrer"
           >
             {convertHtml(item.label)}

@@ -12,7 +12,9 @@ export default function CardSection({ items }: { items: any[] }) {
           return (
             <div
               key={item.title}
-              data-aos="fade-up" data-aos-duration="1000" data-aos-delay={100 * (index + 1)}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay={100 * (index + 1)}
               className="card-item border-b-2 md:border-b-0 md:border-r-2 last:border-b-0 last:border-r-0 flex flex-col flex-grow-1 items-center align-center content-center border-gray-200 py-8 md:py-4 px-4 md:px-16"
             >
               <div className="icon text-center text-5xl text-green-rasta">{item.icon}</div>

@@ -12,13 +12,7 @@ interface ModalInputProps {
   inputTitle?: string
 }
 
-const ModalInput: React.FC<ModalInputProps> = ({
-  max,
-  onChange,
-  onSelectMax,
-  value,
-  inputTitle,
-}) => {
+const ModalInput: React.FC<ModalInputProps> = ({ max, onChange, onSelectMax, value, inputTitle }) => {
   const TranslateString = useI18n()
   const isBalanceZero = max === '0' || !max
 
@@ -41,7 +35,11 @@ const ModalInput: React.FC<ModalInputProps> = ({
         {/* <button type="button" className="bg-red-300 rounded-lg mx-1 px-3 py-1 text-red-800 font-bold" onClick={onSelectMax}>
           {TranslateString(452, '- MIN')}
         </button> */}
-        <button type="button" className="bg-green-300 rounded-lg mx-1 px-3 py-1 text-green-800 font-bold" onClick={onSelectMax}>
+        <button
+          type="button"
+          className="bg-green-300 rounded-lg mx-1 px-3 py-1 text-green-800 font-bold"
+          onClick={onSelectMax}
+        >
           {TranslateString(452, '+ MAX')}
         </button>
       </div>

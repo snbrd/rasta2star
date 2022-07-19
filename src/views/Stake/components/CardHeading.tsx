@@ -8,7 +8,6 @@ export interface ExpandableSectionProps {
   tokenSymbol?: string
 }
 
-
 const CardHeading: React.FC<ExpandableSectionProps> = ({
   lpLabel,
   farmImage = 'dot',

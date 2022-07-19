@@ -16,7 +16,6 @@ interface FarmCardActionsProps {
   addLiquidityUrl?: string
 }
 
-
 const StakeAction: React.FC<FarmCardActionsProps> = ({
   stakedBalance,
   tokenBalance,

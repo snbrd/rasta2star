@@ -25,14 +25,18 @@ export default function HeroSection() {
           className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row justify-center h-full"
         >
           <div className="leftSection w-full md:w-6/12">
-            <h1 className="text-4xl font-bold text-center md:text-left md:pr-48 leading-tight" data-aos="fade-right" data-aos-duration="1000">
+            <h1
+              className="text-4xl font-bold text-center md:text-left md:pr-48 leading-tight"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
               <span className="text-yellow-rasta">Empowering Artists</span>
               <br /> ZION Launch Pad
             </h1>
             <p className="mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
-              ZION Launch Pad by Rasta, unites artists with their fanbase, offering a revolutionary suite of tools that empowers
-              creators. Built upon the foundation of Web3.0, Rasta utilizes latest in blockchain technology to earn more
-              income for those that deserve it.
+              ZION Launch Pad by Rasta, unites artists with their fanbase, offering a revolutionary suite of tools that
+              empowers creators. Built upon the foundation of Web3.0, Rasta utilizes latest in blockchain technology to
+              earn more income for those that deserve it.
             </p>
             <div className="cta flex-row mt-8 space-x-8 hidden md:flex" data-aos="fade-right" data-aos-duration="2500">
               <Link

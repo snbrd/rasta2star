@@ -70,7 +70,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account, 
         onClick={handleApprove}
         className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
       >
-        <FaIcons.FaWallet/>
+        <FaIcons.FaWallet />
         <span>{TranslateString(758, 'Approve Contract')}</span>
       </button>
     )

@@ -90,15 +90,15 @@ export interface PoolConfig {
 }
 
 export interface AirFarmConfig {
-  id: number,
-  poolName: string,
-  stakingTokenAddress?: string,
-  contractAddress: Address,
-  projectLink: string,
-  harvest?: boolean,
-  isFinished?: boolean,
-  tokenDecimals: number,
-  ribbon?: boolean,
+  id: number
+  poolName: string
+  stakingTokenAddress?: string
+  contractAddress: Address
+  projectLink: string
+  harvest?: boolean
+  isFinished?: boolean
+  tokenDecimals: number
+  ribbon?: boolean
   ribbonText?: string
 }
 

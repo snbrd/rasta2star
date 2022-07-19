@@ -15,22 +15,22 @@ import FarmHarvest from '../CardElements/FarmHarvest'
 import FooterCardFarms from '../CardElements/FooterCardFarms'
 
 const CustomTitle = styled.div`
-    padding: 6px 40px;
-    margin-top: -48px;
-    margin-left: -40px;
-    border-top-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    color: white;
-    @media (max-width: 1280px) {
-      margin-top: -40px;
-      margin-left: -32px;
-    }
-    @media (max-width: 1024px) {
-      margin-top: -40px;
-      margin-left: -20px;
-      padding: 4px 40px;
-    }
-  `;
+  padding: 6px 40px;
+  margin-top: -48px;
+  margin-left: -40px;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  color: white;
+  @media (max-width: 1280px) {
+    margin-top: -40px;
+    margin-left: -32px;
+  }
+  @media (max-width: 1024px) {
+    margin-top: -40px;
+    margin-left: -20px;
+    padding: 4px 40px;
+  }
+`
 
 export interface FarmWithStakedValue extends Farm {
   apy?: BigNumber
@@ -47,11 +47,7 @@ interface FarmCardProps {
 }
 
 const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice, ethPrice, ethereum, account }) => {
-
-  const {
-    ribbon,
-    ribbonText
-  } = farm;
+  const { ribbon, ribbonText } = farm
 
   const isCommunityFarm = communityFarms.includes(farm.tokenSymbol)
   // We assume the token name is coin pair + lp e.g. RASTA-BNB LP, LINK-BNB LP,
@@ -90,12 +86,19 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
   const displayBalance = rawEarningsBalance.toLocaleString()
 
   return (
-    <div className={`px-5 lg:px-8 xl:px-10 ${ribbon ? 'py-10' : 'py-6'} lg:py-10 xl:py-12 rounded-2xl mt-8`} style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
-      {
-        ribbon && (
-          <CustomTitle className='absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta'>{ribbonText}</CustomTitle>
-        )
-      }
+    <div
+      className={`px-5 lg:px-8 xl:px-10 ${ribbon ? 'py-10' : 'py-6'} lg:py-10 xl:py-12 rounded-2xl mt-8`}
+      style={{
+        backgroundImage: "url('images/cardbg.png')",
+        backgroundSize: '100% 580px',
+        boxShadow: '6px 6px 24px -9px',
+      }}
+    >
+      {ribbon && (
+        <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta">
+          {ribbonText}
+        </CustomTitle>
+      )}
       <div className="row flex flex-col lg:flex-col gap-0 md:gap-2 mb-12">
         <CardHeading
           lpLabel={lpLabel}

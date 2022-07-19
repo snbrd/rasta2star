@@ -13,7 +13,7 @@ import {
   fetchNFTAllowance,
   fetchNFTUserBalance,
   fetchStakedBalance,
-  fetchNFTPendingReward
+  fetchNFTPendingReward,
 } from './fetchPoolsUser'
 import { PoolsState, Pool } from '../types'
 
@@ -38,7 +38,7 @@ export const PoolsSlice = createSlice({
       })
     },
     setAirPoolsUserData: (state, action) => {
-      state.airdata = action.payload;
+      state.airdata = action.payload
     },
     updatePoolsUserData: (state, action) => {
       const { field, value, sousId } = action.payload
@@ -86,7 +86,7 @@ export const fetchPoolsUserDataAsync = (account) => async (dispatch) => {
 }
 
 export const fetchNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
-  const farmbalance = await fetchNftBalance();
+  const farmbalance = await fetchNftBalance()
   const paused = await fetchPoolStatus()
   if (account) {
     const approved = await fetchNFTAllowance(account)
@@ -101,17 +101,17 @@ export const fetchNFTPoolsAUserDataAsync = (account) => async (dispatch) => {
       pendingReward: pendingReward[index][farm.id],
       stakedBalance: stakedBalance[index][farm.id],
       balance: balance[index][farm.id],
-    }));
+    }))
     dispatch(setAirPoolsUserData(pool))
   } else {
     const pool = nftPools.map((farm, index) => ({
       approved: false,
       balance: 0,
-      stakedBalance: "0",
-      pendingReward: "0",
+      stakedBalance: '0',
+      pendingReward: '0',
       farmbalance: farmbalance[index][farm.id],
-      paused: paused[index][farm.id]
-    }));
+      paused: paused[index][farm.id],
+    }))
 
     dispatch(setAirPoolsUserData(pool))
   }

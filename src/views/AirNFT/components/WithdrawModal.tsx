@@ -13,7 +13,13 @@ interface WithdrawModalProps {
   addLiquidityUrl?: string
 }
 
-const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max, tokenName = '', addLiquidityUrl }) => {
+const WithdrawModal: React.FC<WithdrawModalProps> = ({
+  onConfirm,
+  onDismiss,
+  max,
+  tokenName = '',
+  addLiquidityUrl,
+}) => {
   const [val, setVal] = useState('')
   const [pendingTx, setPendingTx] = useState(false)
   const TranslateString = useI18n()
@@ -33,7 +39,6 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
   }, [fullBalance, setVal])
 
   return (
-
     <div
       className="bg-white z-50 px-12 py-12 flex flex-col justify-between rounded-lg"
       style={{ width: '443px', height: '415px' }}
@@ -58,7 +63,7 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
         </button>
         <button
           type="button"
-          style={{maxWidth : "50%"}}
+          style={{ maxWidth: '50%' }}
           className="bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-lg px-12 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
           disabled={pendingTx || fullBalance === '0' || !val || Number(val) > Number(fullBalance)}
           onClick={async () => {

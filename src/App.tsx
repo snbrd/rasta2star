@@ -56,13 +56,13 @@ const App: React.FC = () => {
   return (
     <div className="flex bg-black font-roboto text-white relative">
       <Router history={history}>
-      <Suspense fallback={<PageLoader />}>
-        <aside className="hidden md:block">
-          <NewDesktopSidebar />
-        </aside>
-        <div className="flex-1 md:ml-64 overflow-x-hidden">
-          <Header />
-          {/* <Suspense fallback={<PageLoader />}> */}
+        <Suspense fallback={<PageLoader />}>
+          <aside className="hidden md:block">
+            <NewDesktopSidebar />
+          </aside>
+          <div className="flex-1 md:ml-64 overflow-x-hidden">
+            <Header />
+            {/* <Suspense fallback={<PageLoader />}> */}
             <Switch>
               <Route path="/" exact>
                 <Home />
@@ -122,11 +122,11 @@ const App: React.FC = () => {
               {/* 404 */}
               <Route component={NotFound} />
             </Switch>
-          {/* </Suspense> */}
-          <Footer />
-          <ToastListener />
-          <GlobalCheckBullHiccupClaimStatus />
-        </div>
+            {/* </Suspense> */}
+            <Footer />
+            <ToastListener />
+            <GlobalCheckBullHiccupClaimStatus />
+          </div>
         </Suspense>
       </Router>
     </div>

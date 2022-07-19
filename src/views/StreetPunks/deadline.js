@@ -1,4 +1,4 @@
-import styled, { keyframes, createGlobalStyle } from 'styled-components';
+import styled, { keyframes, createGlobalStyle } from 'styled-components'
 
 export const ModalStyle = createGlobalStyle`
   .newsletter-modal{
@@ -7,7 +7,7 @@ export const ModalStyle = createGlobalStyle`
     max-width: 100%;
     max-height: 100%;
   }
-`;
+`
 
 const ring = keyframes`
   0% { transform: rotate(0); }
@@ -34,7 +34,7 @@ const ring = keyframes`
   41% { transform: rotate(1deg); }
   43% { transform: rotate(0); }
   100% { transform: rotate(0); }
-`;
+`
 
 const goRight = keyframes`
    0%, 20%, 80%, 100% {
@@ -46,7 +46,7 @@ const goRight = keyframes`
   60% {
     transform: translateX(6px);
   }
-`;
+`
 
 export const PageWrapper = styled.div`
   .background-img {
@@ -65,7 +65,7 @@ export const PageWrapper = styled.div`
       }
     }
   }
-`;
+`
 
 export const LogoImageContainer = styled.div`
   text-align: center;
@@ -76,7 +76,7 @@ export const LogoImageContainer = styled.div`
   img {
     margin-bottom: 0;
   }
-`;
+`
 
 // export const MainWrapper = styled.div`
 //   display: flex;
@@ -111,7 +111,7 @@ export const MainWrapper = styled.section`
     padding-bottom: 150px;
     min-height: 75vh;
   }
-`;
+`
 
 export const NormalClockWrapper = styled.div`
   position: relative;
@@ -265,7 +265,7 @@ export const NormalClockWrapper = styled.div`
       }
     }
   }
-`;
+`
 export const MainContentSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -340,7 +340,7 @@ export const MainContentSection = styled.div`
       max-width: 100%;
     }
   }
-`;
+`
 
 export const ButtonWrapper = styled.div`
   text-align: center;
@@ -443,7 +443,7 @@ export const ButtonWrapper = styled.div`
       }
     }
   }
-`;
+`
 
 export const SideBar = styled.div`
   width: 0;
@@ -480,7 +480,7 @@ export const SideBar = styled.div`
       height: 100%;
     }
   }
-`;
+`
 
 export const Overlay = styled.div`
   position: absolute;
@@ -495,7 +495,7 @@ export const Overlay = styled.div`
     transform: translateX(-100%);
     transition-delay: 0.4s;
   }
-`;
+`
 
 export const SidebarContent = styled.div`
   position: relative;
@@ -512,7 +512,7 @@ export const SidebarContent = styled.div`
   @media (max-width: 600px) {
     padding: 50px 65px 50px 35px;
   }
-`;
+`
 
 export const About = styled.div`
   text-align: center;
@@ -542,7 +542,7 @@ export const About = styled.div`
       font-size: 15px;
     }
   }
-`;
+`
 
 export const Contact = styled.div`
   margin-bottom: 120px;
@@ -563,12 +563,12 @@ export const Contact = styled.div`
       margin-bottom: 15px;
     }
   }
-`;
+`
 
 export const Info = styled.div`
   display: flex;
   flex-wrap: wrap;
-`;
+`
 
 export const InfoItem = styled.div`
   flex: 0 0 33.333333%;
@@ -596,7 +596,7 @@ export const InfoItem = styled.div`
     line-height: 1.6;
     margin-bottom: 0;
   }
-`;
+`
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -608,12 +608,12 @@ export const Container = styled.div`
   @media (min-width: 993px) {
     width: 80%;
   }
-`;
+`
 
 export const InfoIcon = styled.div`
   color: #bfbcc7;
   margin-bottom: 25px;
-`;
+`
 
 export const SidebarClose = styled.button`
   display: block;
@@ -633,4 +633,4 @@ export const SidebarClose = styled.button`
     top: 25px;
     right: 35px;
   }
-`;
+`

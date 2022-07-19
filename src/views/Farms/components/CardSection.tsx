@@ -5,7 +5,6 @@ import Wallet from './CardElements/Wallet'
 import FooterCardFarms from './CardElements/FooterCardFarms'
 
 const items = ({ itemsToRender }: { itemsToRender: any[] }) => {
-
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">

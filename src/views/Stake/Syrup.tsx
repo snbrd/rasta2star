@@ -129,8 +129,8 @@ const Farm: React.FC = () => {
                   <>
                     {stackedOnly
                       ? orderBy(stackedOnlyPools, ['sortOrder']).map((pool) => (
-                        <PoolCard key={pool.sousId} pool={pool} />
-                      ))
+                          <PoolCard key={pool.sousId} pool={pool} />
+                        ))
                       : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
                   </>
                 ) : (

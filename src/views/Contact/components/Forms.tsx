@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import MrLionFull from "../../../assets/lion-mr-full.png"
-import MsLionFull from "../../../assets/lion-ms-full.png"
+import MrLionFull from '../../../assets/lion-mr-full.png'
+import MsLionFull from '../../../assets/lion-ms-full.png'
 
 type Props = {
   fields: any[]
@@ -10,27 +10,25 @@ type Props = {
 }
 
 export default function Form({ fields, contactInfo, desc }: Props) {
-
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false)
 
   function handleSubmit(e) {
     e.preventDefault()
-    const chatId = "-624206229";
-    const { name, email, message } = e.target.elements;
+    const chatId = '-624206229'
+    const { name, email, message } = e.target.elements
     const text = `Email:${email.value}\n\n
                 Name: ${name.value}\n\n
                 Message: ${message.value}`
 
     const url = `https://api.telegram.org/bot2106092499:AAGctmQaa68yFC-i--XyEhzonDiQRiLSSec/sendMessage?chat_id=${chatId}&text=${text}&parse_mode=HTML`
-    axios.get(url).then(resp => {
+    axios.get(url).then((resp) => {
       if (resp.status === 200) {
-        setIsSuccess(true);
+        setIsSuccess(true)
         name.value = ''
         email.value = ''
         message.value = ''
       }
     })
-
   }
 
   return (
@@ -47,7 +45,13 @@ export default function Form({ fields, contactInfo, desc }: Props) {
             <div className="fields space-y-12">
               {fields.map((item, index) => {
                 return (
-                  <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay={100 * index} className="w-full" key={index}>
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay={100 * index}
+                    className="w-full"
+                    key={index}
+                  >
                     <input
                       type={item.type}
                       placeholder={item.placeholder}
@@ -59,10 +63,17 @@ export default function Form({ fields, contactInfo, desc }: Props) {
                 )
               })}
             </div>
-            {isSuccess &&
-              <div className="message mt-8 text-black border-green-rasta py-2 border-2 px-2">Your message has been sent.</div>
-            }
-            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" className="button w-full flex items-center mt-24">
+            {isSuccess && (
+              <div className="message mt-8 text-black border-green-rasta py-2 border-2 px-2">
+                Your message has been sent.
+              </div>
+            )}
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+              className="button w-full flex items-center mt-24"
+            >
               <button
                 type="submit"
                 className="bg-gradient-to-r from-yellow-rasta to-green-rasta py-2 rounded-xl mx-auto w-full md:w-2/4"
@@ -73,9 +84,13 @@ export default function Form({ fields, contactInfo, desc }: Props) {
           </form>
         </div>
         <div className="contact-info bg-gray-rasta flex-grow-1 py-16 px-4 md:px-16 flex flex-col">
-          <h2 data-aos="fade-in" data-aos-duration="1000" className="text-3xl font-bold">{contactInfo.title}</h2>
+          <h2 data-aos="fade-in" data-aos-duration="1000" className="text-3xl font-bold">
+            {contactInfo.title}
+          </h2>
 
-          <p data-aos="fade-in" data-aos-duration="1000" className="mt-8 leading-loose">{desc}</p>
+          <p data-aos="fade-in" data-aos-duration="1000" className="mt-8 leading-loose">
+            {desc}
+          </p>
           <div data-aos="fade-in" data-aos-duration="1000" className="detail flex flex-col space-y-16 mt-4 md:mt-8">
             {contactInfo.detail.map((item, index) => {
               return (

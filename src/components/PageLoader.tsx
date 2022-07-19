@@ -14,7 +14,7 @@ const PageLoader: React.FC = () => {
   return (
     <Wrapper>
       {/* <Spinner /> */}
-      <img src={Logo} alt="logo"/>
+      <img src={Logo} alt="logo" />
     </Wrapper>
   )
 }

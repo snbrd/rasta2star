@@ -43,7 +43,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
     isFinished,
     userData,
     stakingLimit,
-    multiplier
+    multiplier,
   } = pool
 
   // Pools using native BNB behave differently than pools using a token
@@ -57,7 +57,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const depositFee = useSousDepositFee(sousId)
   const farmList = useFarms()
   const farms = farmList.filter((farm) => farm.lpSymbol === tokenName)
-  const requestedApproval = false;
+  const requestedApproval = false
 
   const allowance = new BigNumber(userData?.allowance || 0)
   const stakingTokenBalance = new BigNumber(userData?.stakingTokenBalance || 0)
@@ -67,7 +67,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const isOldSyrup = stakingTokenName === QuoteToken.SYRUP
   const accountHasStakedBalance = stakedBalance?.toNumber() > 0
   const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isBnbPool
-  const buttonClass = "w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
+  const buttonClass =
+    'w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer'
 
   const [isApproval, SETisApproval] = useState(needsApproval)
 
@@ -95,7 +96,14 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
 
   return (
     <>
-      <div className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8" style={{ backgroundImage: "url('images/cardbg.png')", backgroundSize: "100% 580px", boxShadow: "6px 6px 24px -9px" }}>
+      <div
+        className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8"
+        style={{
+          backgroundImage: "url('images/cardbg.png')",
+          backgroundSize: '100% 580px',
+          boxShadow: '6px 6px 24px -9px',
+        }}
+      >
         <div className="row flex flex-col gap-0 md:gap-4 mb-4">
           <CardHeading
             lpLabel={tokenName}
@@ -133,10 +141,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
         </div>
         {!account && <Wallet />}
         {account && isApproval && (
-          <span
-            className={(type === false ? "disabled " : "") + buttonClass}
-            onClick={onApprove}
-          >
+          <span className={(type === false ? 'disabled ' : '') + buttonClass} onClick={onApprove}>
             <FaIcons.FaCheck />
             <span>APPROVE RASTA</span>
           </span>

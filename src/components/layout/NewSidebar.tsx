@@ -31,10 +31,10 @@ import MRastaIcon from '../../assets/menu_coin1.jpg'
 import Logo from '../../assets/z1-rescaled.png'
 
 export default function NewSidebar() {
-    const [sidebar, setSidebar] = useState(false)
-    const showSidebar = () => {
-      setSidebar(!sidebar)
-    }
+  const [sidebar, setSidebar] = useState(false)
+  const showSidebar = () => {
+    setSidebar(!sidebar)
+  }
   const rastaPriceUsd = usePriceRastaBusd()
   const mRastaPriceUsd = useMRastaPrice()
 
@@ -197,13 +197,20 @@ export default function NewSidebar() {
 
   return (
     <div className="navbar text-white">
-      <span className="menu-bars text-2xl cursor-pointer visible md:invisible absolute p-6"><FaBars onClick={showSidebar} /></span>
-      <nav className={`h-full w-full top-0 py-6 px-8 z-50 transition duration-1000 flex flex-col justify-between overflow-x-auto fixed md:visible md:w-64 ${sidebar ? 'visible' : 'invisible'}`} style={{backgroundColor:"#303446"}}>
+      <span className="menu-bars text-2xl cursor-pointer visible md:invisible absolute p-6">
+        <FaBars onClick={showSidebar} />
+      </span>
+      <nav
+        className={`h-full w-full top-0 py-6 px-8 z-50 transition duration-1000 flex flex-col justify-between overflow-x-auto fixed md:visible md:w-64 ${
+          sidebar ? 'visible' : 'invisible'
+        }`}
+        style={{ backgroundColor: '#303446' }}
+      >
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer md:invisible">
           <FaRegWindowClose onClick={showSidebar} />
         </span>
 
-        <div className='text-center'>
+        <div className="text-center">
           <Link to="/">
             <LazyLoadImage src={Logo} alt="Logo" className="w-64 mx-auto d-block" effect="blur" />
           </Link>
