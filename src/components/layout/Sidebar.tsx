@@ -120,13 +120,13 @@ export default function Sidebar() {
       parent: false,
       child: [],
     },
-    {
-      label: 'StakeRasta',
-      path: '/stake',
-      // icon: <RiMoneyDollarCircleLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
-    },
+    // {
+    //   label: 'StakeRasta',
+    //   path: '/stake',
+    //   // icon: <RiMoneyDollarCircleLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
+    //   parent: false,
+    //   child: [],
+    // },
     // {
     //  label: 'TOP LAUNCH PAD',
     //  sublabel:'(coming soon)',
