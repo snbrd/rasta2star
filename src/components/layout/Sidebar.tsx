@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import useMRastaPrice from 'hooks/useMRastaPrice'
 import { usePriceRastaBusd } from 'state/hooks'
+import { Link } from 'react-router-dom'
 
 import {
   FaHome,
@@ -21,9 +22,14 @@ import {
   GiLion,
   RiMoneyDollarCircleLine,
 } from 'react-icons/all'
+
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+
 import MenuItem from './MenuItem'
 import RastaIcon from '../../assets/menu_coin2.jpg'
 import MRastaIcon from '../../assets/menu_coin1.jpg'
+
+import Logo from '../../assets/z1-rescaled.png'
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false)
@@ -204,7 +210,14 @@ export default function Sidebar() {
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer">
           <FaRegWindowClose onClick={showSidebar} />
         </span>
-        <ul className="menu-items text-white mt-32 text-2xl space-y-6 font-light font-sans">
+
+        <div className="text-center">
+          <Link to="/">
+            <LazyLoadImage src={Logo} alt="Logo" className="w-64 mx-auto d-block" effect="blur" />
+          </Link>
+        </div>
+
+        <ul className="menu-items text-white mt-0 text-2xl space-y-6 font-light font-sans">
           {menu.map((item, index) => {
             return <MenuItem key={index} menu={item} showSidebar={showSidebar} />
           })}
