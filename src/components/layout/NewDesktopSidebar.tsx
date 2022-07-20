@@ -189,10 +189,10 @@ export default function NewDesktopSidebar() {
     },
   ]
   const socialMedia = [
-    { name: 'Telegram', icon: <FaTelegramPlane />, link: 'https://www.t.me/rastafinance' },
+    { name: 'Telegram', icon: <FaTelegramPlane />, link: 'https://t.me/zionlabscommunity' },
     { name: 'Twitter', icon: <FaTwitter />, link: 'https://www.twitter.com/zionlabs_info' },
     { name: 'Medium', icon: <FaMediumM />, link: 'https:///zionlabs.medium.com' },
-    { name: 'Reddit', icon: <FaReddit />, link: 'https://www.reddit.com/r/rastafinance' },
+    // { name: 'Reddit', icon: <FaReddit />, link: 'https://www.reddit.com/r/rastafinance' },
     { name: 'Instagram', icon: <FaInstagram />, link: 'https://instagram.com/zionlabs_info?igshid=YmMyMTA2M2Y=' },
   ]
 
@@ -207,7 +207,7 @@ export default function NewDesktopSidebar() {
         }`}
       > */}
       <nav
-        className={`h-full w-64 top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
+        className={`h-full w-48 top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
           sidebar ? 'left-0 ml-0' : ''
         }`}
         style={{ backgroundColor: '#303446' }}

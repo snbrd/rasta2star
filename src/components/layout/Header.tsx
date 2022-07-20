@@ -84,7 +84,7 @@ export default function Header() {
 
             <div className="logo flex-grow-1 text-center md:hidden">
               <Link to="/">
-                <LazyLoadImage src={Logo} alt="Logo" className="w-64 mx-auto d-block" effect="blur" />
+                <LazyLoadImage src={Logo} alt="Logo" className="w-40 mx-auto d-block" effect="blur" />
               </Link>
             </div>
             <div className="right-cta items-center flex flex-row">

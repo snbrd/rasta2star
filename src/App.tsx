@@ -60,7 +60,7 @@ const App: React.FC = () => {
           <aside className="hidden md:block">
             <NewDesktopSidebar />
           </aside>
-          <div className="flex-1 md:ml-64 overflow-x-hidden">
+          <div className="flex-1 md:ml-48 overflow-x-hidden">
             <Header />
             {/* <Suspense fallback={<PageLoader />}> */}
             <Switch>
