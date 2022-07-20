@@ -205,7 +205,7 @@ export default function Sidebar() {
         className={`h-full w-full top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
           sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
         }`}
-        style={{ backgroundColor: '#303446' }}
+        
       >
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer">
           <FaRegWindowClose onClick={showSidebar} />

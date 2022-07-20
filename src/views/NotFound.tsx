@@ -22,9 +22,13 @@ const NotFound = () => {
         <img src={Logo} className="w-64 mb-4" alt="logo" />
         <Heading size="xxl">404</Heading>
         <Text mb="16px">{TranslateString(1122, 'Oops, page not found.')}</Text>
-        <Button as="a" href="/" size="sm">
+        {/* <Button as="a" href="/" size="sm">
           {TranslateString(1124, 'Back Home')}
-        </Button>
+        </Button> */}
+
+        <a href='/' className="bg-gradient-to-b font-bold from-blue-zion to-blue-zion_cyan text-center py-3 px-10 rounded-xl">
+        {TranslateString(1124, 'Back Home')}
+        </a>
       </StyledNotFound>
     </Page>
   )

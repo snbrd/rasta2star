@@ -105,6 +105,8 @@ module.exports = {
         700: '#2b6cb0',
         800: '#2c5282',
         900: '#2a4365',
+        zion: '#0f84ff',
+        zion_cyan: '#02c4fe',
       },
       indigo: {
         100: '#ebf4ff',
