@@ -19,7 +19,7 @@ export default function MenuItem({ menu, showSidebar }) {
           rel="noreferrer"
         >
           {menu.icon}
-          <span className="flex-grow-1" style={{ fontSize: '14px' }}>
+          <span className="flex-grow-1" style={{ fontSize: '18px' }}>
             {menu.label}
             <h1 style={{ fontSize: '13px', color: 'white' }}>{menu.sublabel}</h1>
           </span>

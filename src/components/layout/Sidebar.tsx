@@ -66,27 +66,33 @@ export default function Sidebar() {
         },
         {
           path: 'https://exchange.zionlabs.info',
-          label: 'Old RastaDex (RLP)',
+          label: 'Old RastaDex',
         },
       ],
     },
     {
-      label: 'Zion Launchpad',
-      path: '#',
-      // icon: <GiLion className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: true,
-      child: [
-        {
-          path: 'https://zionlp.com/launchpad-artists',
-          label: 'Launchpad Artists',
-          blank: true,
-        },
-        {
-          path: 'https://zionlp.com',
-          label: 'Launchpad NFTs',
-        },
-      ],
+      label: 'Launchpad',
+      path: 'https://zionlp.com/launchpad-artists',
+      parent: false,
+      child: [],
     },
+    // {
+    //   label: 'Zion Launchpad',
+    //   path: '#',
+    //   // icon: <GiLion className="inline-block" style={{ width: '32px', height: '32px' }} />,
+    //   parent: true,
+    //   child: [
+    //     {
+    //       path: 'https://zionlp.com/launchpad-artists',
+    //       label: 'Launchpad Artists',
+    //       blank: true,
+    //     },
+    //     {
+    //       path: 'https://zionlp.com',
+    //       label: 'Launchpad NFTs',
+    //     },
+    //   ],
+    // },
     {
       label: 'NFT Staking',
       path: '#',
@@ -120,7 +126,7 @@ export default function Sidebar() {
       child: [],
     },
     {
-      label: 'Stake Tokens',
+      label: 'Stake Rasta',
       path: '/pools',
       // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
@@ -155,6 +161,10 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
+          path: 'https://docs.zionlabs.info',
+          label: 'Whitepaper',
+        },
+        {
           path: 'https://zionlabs.info/files/RastaAudit.pdf',
           label: 'Audit',
         },
@@ -162,10 +172,7 @@ export default function Sidebar() {
           path: 'https://coinmarketcap.com/currencies/rasta-finance/',
           label: 'CoinMarketCap',
         },
-        {
-          path: 'https://docs.zionlabs.info',
-          label: 'Whitepaper',
-        },
+        
         // {
         //   path: 'https://rastafinance.medium.com',
         //   label: 'Medium',

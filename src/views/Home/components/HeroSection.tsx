@@ -30,34 +30,48 @@ export default function HeroSection() {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-              <span className="text-yellow-rasta">Empowering Artists</span>
-              <br /> ZION Launch Pad
+              <span className="text-yellow-rasta">Zion Labs</span>
+              <br /> Part of The Stronger Together Alliance
             </h1>
             <p className="mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
-              ZION Launch Pad by Rasta, unites artists with their fanbase, offering a revolutionary suite of tools that
-              empowers creators. Built upon the foundation of Web3.0, Rasta utilizes latest in blockchain technology to
-              earn more income for those that deserve it.
+              ZION Labs powered by Rasta, from the island of ZION we unite artists into the blockchain NFT revolution
             </p>
             <div className="cta flex-row mt-8 space-x-8 hidden md:flex" data-aos="fade-right" data-aos-duration="2500">
-              <Link
+              {/* <Link
                 to="/liquidity"
                 className="bg-gradient-to-r font-bold w-1/3 from-yellow-rasta to-green-rasta_cta text-center py-3 rounded-xl"
               >
                 <button type="button">Stake Rasta Now</button>
+              </Link> */}
+
+              <Link
+                to="/liquidity"
+                className="bg-gradient-to-b font-bold w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
+              >
+                <button type="button">Stake Rasta</button>
               </Link>
-              <a
+
+              {/* <a
                 href="https://rastadex.croxswap.com"
                 className="bg-gradient-to-r border-2 font-bold border-yellow w-1/3 from-green-rasta to-yellow-rasta_cta text-center py-3 rounded-xl"
               >
                 <button type="button">Buy Rasta</button>
+              </a> */}
+
+              <a
+                href="https://www.zionlp.com/"
+                className="border-2 font-bold border-yellow w-1/3 to-yellow-rasta_cta text-center py-3 rounded-xl"
+              >
+                <button type="button">Launchpad</button>
               </a>
+
             </div>
           </div>
           <div className="images hidden md:block md:w-6/12 text-right">
             {/* <LazyLoadImage src={HeroImage} alt="Logo" className="w-full mx-auto" effect="blur" /> */}
           </div>
         </div>
-        <div className=" w-full hidden md:flex md:max-w-screen-xl md:mx-auto items-center md:flex-row space-x-8 my-32 md:my-20 invisible md:visible">
+        <div className=" w-full hidden md:flex md:max-w-screen-xl md:mx-auto items-center md:flex-row space-x-8 my-32 md:my-20 invisible">
           {counter.map((item, index) => {
             return (
               <div

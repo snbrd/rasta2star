@@ -21,7 +21,8 @@ export default function Community() {
               data-aos-duration="1000"
               className="text-4xl md:text-5xl font-bold pr-0 md:pr-48 text-center md:text-left leading-tight"
             >
-              Join The Community That Cares
+              {/* Join The Community That Cares */}
+              The Stronger Together Alliance
             </h1>
             <p
               data-aos="fade-up"
@@ -29,9 +30,12 @@ export default function Community() {
               data-aos-delay="100"
               className="mt-8 text-center md:text-left"
             >
-              Built by the very same people that <br />
+              {/* Built by the very same people that <br />
               make up this loving community. <br />
-              Powered by the People!
+              Powered by the People! */}
+              Together we bring creative artists <br />
+              and blockhcain infucious to Web3. <br />
+            
             </p>
             <div
               data-aos="fade-up"
@@ -39,19 +43,37 @@ export default function Community() {
               data-aos-delay="200"
               className="cta flex flex-col px-4 md:px-0 md:flex-row mt-8 space-y-3 md:space-y-0 space-x-0 md:space-x-8"
             >
-              <a
+              {/* <a
                 href="https://docs.zionlabs.info"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-gradient-to-r font-bold text-white w-full md:w-1/3 from-yellow-rasta to-green-rasta_cta text-center py-3  rounded-xl"
               >
                 <button type="button">Whitepaper</button>
-              </a>
+              </a> */}
+
               <a
-                href="https://t.me/rastafinance"
+                href="https://docs.zionlabs.info"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-gradient-to-b font-bold text-white w-full md:w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3  rounded-xl"
+              >
+                <button type="button">Whitepaper</button>
+              </a>
+
+              {/* <a
+                href="https://t.me/zionlabscommunity"
                 target="_blank"
                 rel="noreferrer"
                 className="border-2 font-bold border-green-rasta_cta text-green-rasta_cta py-3 rounded-xl w-full md:w-1/3 text-center"
+              >
+                <button type="button">Join The Community</button>
+              </a> */}
+              <a
+                href="https://t.me/zionlabscommunity"
+                target="_blank"
+                rel="noreferrer"
+                className="border-2 font-bold border-black text-black py-3 rounded-xl w-full md:w-1/3 text-center"
               >
                 <button type="button">Join The Community</button>
               </a>
