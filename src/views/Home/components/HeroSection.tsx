@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import HeroImage from '../../../assets/home-header.jpg'
+// import HeroImage from '../../../assets/home-header.jpg'
+import HeroImage from '../../../assets/hero-new-background-zion.jpg'
 
 export default function HeroSection() {
   const counter = [
@@ -30,7 +31,7 @@ export default function HeroSection() {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-              <span className="text-yellow-rasta">Zion Labs</span>
+              <span className="text-blue-zion_cyan">Zion Labs</span>
               <br /> Part of The Stronger Together Alliance
             </h1>
             <p className="mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
@@ -60,7 +61,7 @@ export default function HeroSection() {
 
               <a
                 href="https://www.zionlp.com/"
-                className="border-2 font-bold border-yellow w-1/3 to-yellow-rasta_cta text-center py-3 rounded-xl"
+                className="border-2 font-bold border-blue-zion_cyan w-1/3 to-blue-zion_cyan text-center py-3 rounded-xl text-blue-zion_cyan"
               >
                 <button type="button">Launchpad</button>
               </a>

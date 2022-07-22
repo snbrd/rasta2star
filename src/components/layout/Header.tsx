@@ -91,7 +91,7 @@ export default function Header() {
               {!account ? (
                 <button
                   type="button"
-                  className="text-white border-1 px-8 py-1 rounded-xl border-green-rasta"
+                  className="text-white border-1 px-8 py-1 rounded-xl border-blue-zion_cyan"
                   onClick={() => setShowModal(true)}
                 >
                   Connect
@@ -99,7 +99,7 @@ export default function Header() {
               ) : (
                 <button
                   type="button"
-                  className="text-white border-1 px-8 py-1 rounded-xl border-green-rasta"
+                  className="text-white border-1 px-8 py-1 rounded-xl border-blue-zion_cyan"
                   onClick={() => setShowInfo(true)}
                 >
                   {displayAddress(account)}
