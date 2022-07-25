@@ -96,8 +96,12 @@ export default function Wallet() {
           <div className="opacity-25 fixed inset-0 z-40 bg-black" />
         </>
       ) : null}
-      <span
+      {/* <span
         className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
+        onClick={() => setShowModal(true)}
+      > */}
+      <span
+        className="w-full flex flex-row text-white py-2 bg-gradient-to-b from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
         onClick={() => setShowModal(true)}
       >
         <FaIcons.FaWallet />

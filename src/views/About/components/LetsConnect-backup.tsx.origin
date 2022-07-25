@@ -15,9 +15,8 @@ export default function LetsConnect({ bg, items }: Props) {
         backgroundSize: 'cover',
       }}
     >
-      {/* <div className="max-w-screen-xl mx-12 bg-white text-black px-6 mb-16 flex md:px-48 py-16 flex-col md:flex-row mt-8 md:mt-32 md:mb-0 md:mx-auto"> */}
-      {/* <div className="max-w-screen-md mx-12 bg-white text-black px-6 mb-16 flex md:px-24 py-16 flex-col md:flex-row mt-8 md:mt-32 md:mb-0 md:mx-auto">
-        <div data-aos="fade-in" data-aos-duration="1000" className="rastaFinance flex flex-col flex-grow-1 mt-8">
+      <div className="max-w-screen-xl mx-12 bg-white text-black px-6 mb-16 flex md:px-48 py-16 flex-col md:flex-row mt-8 md:mt-32 md:mb-0 md:mx-auto">
+        <div data-aos="fade-in" data-aos-duration="1000" className="rastaFinance flex flex-col flex-grow-1">
           <h2 className="text-2xl font-bold text-center md:text-left">{items.heading}</h2>
           <div className="list-content mt-4 md:mt-12 ">
             {items.listContent.map((item, index) => {
@@ -50,7 +49,7 @@ export default function LetsConnect({ bg, items }: Props) {
           >
             <a
               href={items.link.btn.joinNowLink}
-              className="border-2 border-green-rasta items-center text-center px-4 py py-2 rounded-xl bg-gradient-to-r hover:border-white hover:text-white hover:from-green-rasta hover:to-yellow-rasta"
+              className="border-2 border-green-rasta items-center text-center px-8 py py-2 rounded-xl bg-gradient-to-r hover:border-white hover:text-white hover:from-green-rasta hover:to-yellow-rasta"
               target="_blank"
               rel="noreferrer"
             >
@@ -59,7 +58,7 @@ export default function LetsConnect({ bg, items }: Props) {
 
             <Link
               to={items.link.btn.farmRastaLink}
-              className="border-2 border-green-rasta px-4 py-2 text-center rounded-xl bg-gradient-to-r hover:border-white hover:text-white hover:from-green-rasta hover:to-yellow-rasta"
+              className="border-2 border-green-rasta px-8 py-2 text-center rounded-xl bg-gradient-to-r hover:border-white hover:text-white hover:from-green-rasta hover:to-yellow-rasta"
             >
               <button type="button">Stake Rasta</button>
             </Link>
@@ -80,7 +79,7 @@ export default function LetsConnect({ bg, items }: Props) {
             })}
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }

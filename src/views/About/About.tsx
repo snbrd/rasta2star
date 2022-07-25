@@ -8,20 +8,28 @@ import Dsc from './components/DescriptionSection'
 import CardButton from './components/CardButton'
 import TeamSlide from './components/TeamSlide'
 import LetsConnect from './components/LetsConnect'
-import LeafBg from '../../assets/leaf-bg.jpg'
-import AboutHeader from '../../assets/lion-statue.jpg'
-import BurdyProfile from '../../assets/senor-burdy.jpeg'
-import EvoProfile from '../../assets/senor-evo.jpeg'
-import MiguelProfile from '../../assets/rastalorean.jpeg'
-import VechainProfile from '../../assets/vechain.jpeg'
-import VesxoneProfile from '../../assets/vesxone.jpeg'
-import StarbinnaProfile from '../../assets/rastabinna.png'
-import TyphnoProfile from '../../assets/typhno.jpeg'
-import TheMonkProfile from '../../assets/themonk.jpeg'
-import BugBusterProfile from '../../assets/bugbuster.jpeg'
-import Senorsatsrofile from '../../assets/senorsats.jpeg'
-import RaslogicProfile from '../../assets/ras-logic.jpeg'
-import ChicagoProfile from '../../assets/chicago.jpeg'
+// import LeafBg from '../../assets/leaf-bg.jpg'
+import NFTsBackground from '../../assets/hero-new-background-zion.jpg'
+// import AboutHeader from '../../assets/lion-statue.jpg'
+import AboutHeader from '../../assets/bg-withoutlogo.jpg'
+// import BurdyProfile from '../../assets/senor-burdy.jpeg'
+// import EvoProfile from '../../assets/senor-evo.jpeg'
+// import MiguelProfile from '../../assets/rastalorean.jpeg'
+// import VechainProfile from '../../assets/vechain.jpeg'
+// import VesxoneProfile from '../../assets/vesxone.jpeg'
+// import StarbinnaProfile from '../../assets/rastabinna.png'
+// import TyphnoProfile from '../../assets/typhno.jpeg'
+// import TheMonkProfile from '../../assets/themonk.jpeg'
+// import BugBusterProfile from '../../assets/bugbuster.jpeg'
+// import Senorsatsrofile from '../../assets/senorsats.jpeg'
+// import RaslogicProfile from '../../assets/ras-logic.jpeg'
+// import ChicagoProfile from '../../assets/chicago.jpeg'
+import BurdyProfile from '../../assets/Zion-Rasta-SenorBurdy.jpg'
+import BinnaProfile from '../../assets/Zion-Rasta-Binna.jpg'
+import BioTechProfile from '../../assets/Zion-Rasta-BioTech.jpg'
+import ChicagoProfile from '../../assets/Zion-Rasta-ChicagoDOne.jpg'
+import BadgerProfile from '../../assets/Zion-Rasta-DrBadger.jpg'
+import LoreanProfile from '../../assets/Zion-Rasta-Lorean.jpg'
 
 export default function About() {
   const cardSection = [
@@ -56,68 +64,96 @@ export default function About() {
     },
   ]
 
+  // const team = [
+  //   {
+  //     name: '@SeñorBurdy',
+  //     position: 'Founder & CEO',
+  //     avatar: BurdyProfile,
+  //   },
+  //   {
+  //     name: '@RasLogic',
+  //     position: 'Founder and Vice President',
+  //     avatar: RaslogicProfile,
+  //   },
+  //   {
+  //     name: '@SeñorEVO',
+  //     position: 'Founder & RastaOperations',
+  //     avatar: EvoProfile,
+  //   },
+  //   {
+  //     name: '@Badger',
+  //     position: 'Founder and RastaDesign Team',
+  //     avatar: VesxoneProfile,
+  //   },
+  //   {
+  //     name: '@VechainVendetta',
+  //     position: 'Founder and RastaMedia Team',
+  //     avatar: VechainProfile,
+  //   },
+  //   {
+  //     name: '@Monzon403',
+  //     position: 'Rasta Ambassador to Mars Colony',
+  //     avatar: MiguelProfile,
+  //   },
+  //   {
+  //     name: '@RastaBinna',
+  //     position: 'Head of Development Team',
+  //     avatar: StarbinnaProfile,
+  //   },
+  //   {
+  //     name: "@ChicagoD'One",
+  //     position: 'Head Graphic Designer',
+  //     avatar: ChicagoProfile,
+  //   },
+  //   {
+  //     name: '@Typhoncrypto',
+  //     position: 'Development Team',
+  //     avatar: TyphnoProfile,
+  //   },
+  //   {
+  //     name: '@TheMonk',
+  //     position: 'Development Team',
+  //     avatar: TheMonkProfile,
+  //   },
+  //   {
+  //     name: '@BugBuster',
+  //     position: 'Partnerships Team',
+  //     avatar: BugBusterProfile,
+  //   },
+  //   {
+  //     name: '@SenorSats',
+  //     position: 'RastaFund & Merchandise Team',
+  //     avatar: Senorsatsrofile,
+  //   },
+  // ]
+
   const team = [
     {
       name: '@SeñorBurdy',
-      position: 'Founder & CEO',
       avatar: BurdyProfile,
     },
     {
-      name: '@RasLogic',
-      position: 'Founder and Vice President',
-      avatar: RaslogicProfile,
-    },
-    {
-      name: '@SeñorEVO',
-      position: 'Founder & RastaOperations',
-      avatar: EvoProfile,
-    },
-    {
-      name: '@Badger',
-      position: 'Founder and RastaDesign Team',
-      avatar: VesxoneProfile,
-    },
-    {
-      name: '@VechainVendetta',
-      position: 'Founder and RastaMedia Team',
-      avatar: VechainProfile,
-    },
-    {
-      name: '@Monzon403',
-      position: 'Rasta Ambassador to Mars Colony',
-      avatar: MiguelProfile,
-    },
-    {
       name: '@RastaBinna',
-      position: 'Head of Development Team',
-      avatar: StarbinnaProfile,
+      avatar: BinnaProfile,
+    },
+    {
+      name: '@BioTech',
+      avatar: BioTechProfile,
     },
     {
       name: "@ChicagoD'One",
-      position: 'Head Graphic Designer',
       avatar: ChicagoProfile,
     },
     {
-      name: '@Typhoncrypto',
-      position: 'Development Team',
-      avatar: TyphnoProfile,
+      name: "@Dr. Badger",
+      avatar: BadgerProfile,
     },
     {
-      name: '@TheMonk',
-      position: 'Development Team',
-      avatar: TheMonkProfile,
-    },
-    {
-      name: '@BugBuster',
-      position: 'Partnerships Team',
-      avatar: BugBusterProfile,
-    },
-    {
-      name: '@SenorSats',
-      position: 'RastaFund & Merchandise Team',
-      avatar: Senorsatsrofile,
+      name: "@Lorean",
+      avatar: LoreanProfile,
     },
   ]
+
   const letsConnect = {
     heading: 'zionlabs.info',
     subHeading: "Let's connect and get to know each other",
@@ -125,7 +161,7 @@ export default function About() {
     textContent: `Best way to get in touch with us is to join the Telegram community, our admins are from all over the world and we are ready to answer any questions you may have.`,
     link: {
       btn: {
-        joinNowLink: 'https://t.me/rastafinance',
+        joinNowLink: 'https://t.me/zionlabscommunity',
         farmRastaLink: '/liquidity',
       },
       social: [
@@ -135,7 +171,7 @@ export default function About() {
         },
         {
           icon: <FaIcons.FaTelegramPlane />,
-          link: 'https://www.t.me/rastafinance',
+          link: 'https://t.me/zionlabscommunity',
         },
         {
           icon: <Io5Icons.IoLogoTiktok />,
@@ -170,7 +206,7 @@ export default function About() {
         <TeamSlide items={team} />
       </section>
       <section className=" w-full flex bg-white md:mx-auto items-center md:flex-row -mt-56 md:-mt-64 ">
-        <LetsConnect items={letsConnect} bg={LeafBg} />
+        <LetsConnect items={letsConnect} bg={NFTsBackground} />
       </section>
     </div>
   )

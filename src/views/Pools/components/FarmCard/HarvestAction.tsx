@@ -16,7 +16,8 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   const rawEarningsBalance = getBalanceNumber(earnings)
 
   return (
-    <div className="harvest flex mt-4 bg-gradient-to-l text-white w-full from-green-rasta to-yellow-rasta  rounded-xl">
+    // <div className="harvest flex mt-4 bg-gradient-to-l text-white w-full from-green-rasta to-yellow-rasta  rounded-xl">
+    <div className="harvest flex mt-4 bg-gradient-to-b text-white w-full from-blue-zion to-blue-zion_cyan  rounded-xl">
       <button
         type="button"
         disabled={rawEarningsBalance === 0 || pendingTx}

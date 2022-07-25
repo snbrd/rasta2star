@@ -86,16 +86,29 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
   const displayBalance = rawEarningsBalance.toLocaleString()
 
   return (
+    // <div
+    //   className={`px-5 lg:px-8 xl:px-10 ${ribbon ? 'py-10' : 'py-6'} lg:py-10 xl:py-12 rounded-2xl mt-8`}
+    //   style={{
+    //     backgroundImage: "url('images/cardbg.png')",
+    //     backgroundSize: '100% 580px',
+    //     boxShadow: '6px 6px 24px -9px',
+    //   }}
+    // >
     <div
       className={`px-5 lg:px-8 xl:px-10 ${ribbon ? 'py-10' : 'py-6'} lg:py-10 xl:py-12 rounded-2xl mt-8`}
       style={{
-        backgroundImage: "url('images/cardbg.png')",
+        // backgroundImage: "url('images/cardbg.png')",
         backgroundSize: '100% 580px',
         boxShadow: '6px 6px 24px -9px',
+        background: '#3d3846',
+        color: '#fff',
       }}
     >
       {ribbon && (
-        <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta">
+        // <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta">
+        //   {ribbonText}
+        // </CustomTitle>
+        <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-b from-blue-zion to-blue-zion_cyan">
           {ribbonText}
         </CustomTitle>
       )}
@@ -108,9 +121,13 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
           tokenSymbol={farm.tokenSymbol}
         />
         {!removed && (
-          <div className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-center mt-4 md:mt-0">
-            <span className="apr-value text-2xl w-full text-gray-700 ">{farmAPY}%</span>
-            <span className="apr-label text-red-rasta text-md">APR</span>
+          <div className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-center mt-4 md:mt-0" style={{
+            background: "#241f31"
+          }}>
+            {/* <span className="apr-value text-2xl w-full text-gray-700 ">{farmAPY}%</span> */}
+            <span className="apr-value text-2xl w-full text-white">{farmAPY}%</span>
+            {/* <span className="apr-label text-red-rasta text-md">APR</span> */}
+            <span className="apr-label text-blue-zion_cyan text-md">APR</span>
           </div>
           // <Flex justifyContent="space-between" alignItems="center">
           //   <Text color="yellow">{TranslateString(736, 'APR')}:</Text>

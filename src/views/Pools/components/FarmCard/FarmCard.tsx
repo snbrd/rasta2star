@@ -103,10 +103,19 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, ethereum, account })
   const displayBalance = rawEarningsBalance.toLocaleString()
 
   return (
+    // <div
+    //   className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8"
+    //   style={{
+    //     backgroundImage: "url('https://app.zionlabs.info/images/cardbg.pngx')",
+    //     backgroundSize: '100% 580px',
+    //     boxShadow: '6px 6px 24px -9px',
+    //   }}
+    // >
     <div
       className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8"
       style={{
-        backgroundImage: "url('https://app.zionlabs.info/images/cardbg.png')",
+        background: '#3d3846',
+        color: '#fff',
         backgroundSize: '100% 580px',
         boxShadow: '6px 6px 24px -9px',
       }}
@@ -120,11 +129,15 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, ethereum, account })
           tokenSymbol={farm.tokenSymbol}
         />
         {!removed && (
-          <div className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-center mt-4 md:mt-0">
-            <span className="apr-value text-2xl w-full text-gray-700 ">
+          // <div className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-center mt-4 md:mt-0">
+          <div className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-center mt-4 md:mt-0" style={{ 
+            background: '#241f31',
+          }}>
+            <span className="apr-value text-2xl w-full text-white ">
               {Number(farmAPY) > 0 ? `${farmAPY}%` : '-'}
             </span>
-            <span className="apr-label text-red-rasta text-md">APR</span>
+            {/* <span className="apr-label text-red-rasta text-md">APR</span> */}
+            <span className="apr-label text-blue-zion_cyan text-md">APR</span>
           </div>
         )}
       </div>
