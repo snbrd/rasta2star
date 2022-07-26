@@ -52,7 +52,7 @@ export default function MenuItem({ menu, showSidebar }) {
                   }
                   if (i.path.includes('http')) {
                     return (
-                      <a href={i.path} onClick={showSidebar}>
+                      <a href={i.path} onClick={showSidebar} target="_blank" rel='noreferrer'>
                         <span className="ml-10" style={{ fontSize: '14px', marginLeft: '1rem' }}>
                           {i.label}
                         </span>

@@ -71,6 +71,20 @@ export default function Sidebar() {
       ],
     },
     {
+      label: 'Stake Liquidity',
+      path: '/liquidity',
+      // icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
+    },
+    {
+      label: 'Stake Rasta',
+      path: '/pools',
+      // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
+    },
+    {
       label: 'Launchpad',
       path: 'https://zionlp.com/launchpad-artists',
       parent: false,
@@ -118,20 +132,20 @@ export default function Sidebar() {
     //  parent: false,
     //  child: [],
     // },
-    {
-      label: 'Stake Liquidity',
-      path: '/liquidity',
-      // icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
-    },
-    {
-      label: 'Stake Rasta',
-      path: '/pools',
-      // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
-    },
+    // {
+    //   label: 'Stake Liquidity',
+    //   path: '/liquidity',
+    //   // icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
+    //   parent: false,
+    //   child: [],
+    // },
+    // {
+    //   label: 'Stake Rasta',
+    //   path: '/pools',
+    //   // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
+    //   parent: false,
+    //   child: [],
+    // },
     // {
     //   label: 'StakeRasta',
     //   path: '/stake',
@@ -177,14 +191,14 @@ export default function Sidebar() {
         //   path: 'https://rastafinance.medium.com',
         //   label: 'Medium',
         // },
-        {
-          path: 'https://dappradar.com/binance-smart-chain/defi/rasta-finance',
-          label: 'Dapp Radar',
-        },
-        {
-          path: 'https://dex.guru/token/0xe3e8cc42da487d1116d26687856e9fb684817c52-bsc',
-          label: 'Chart',
-        },
+        // {
+        //   path: 'https://dappradar.com/binance-smart-chain/defi/rasta-finance',
+        //   label: 'Dapp Radar',
+        // },
+        // {
+        //   path: 'https://dex.guru/token/0xe3e8cc42da487d1116d26687856e9fb684817c52-bsc',
+        //   label: 'Chart',
+        // },
       ],
     },
     {

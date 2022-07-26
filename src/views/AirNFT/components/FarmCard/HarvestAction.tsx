@@ -16,7 +16,8 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, type, poolAdd
   const buttonClass = 'px-4 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer'
   const { onClaim } = useClaim(poolAddress)
   return (
-    <div className="harvest flex mt-4 bg-gradient-to-l text-white w-full from-green-rasta to-yellow-rasta  rounded-md">
+    // <div className="harvest flex mt-4 bg-gradient-to-l text-white w-full from-green-rasta to-yellow-rasta  rounded-md">
+    <div className="harvest flex mt-4 bg-gradient-to-b text-white w-full from-blue-zion to-blue-zion_cyan rounded-md">
       <button
         type="button"
         disabled={rawEarningsBalance === 0 || pendingTx || !type}

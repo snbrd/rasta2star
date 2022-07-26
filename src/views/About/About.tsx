@@ -24,12 +24,12 @@ import AboutHeader from '../../assets/bg-withoutlogo.jpg'
 // import Senorsatsrofile from '../../assets/senorsats.jpeg'
 // import RaslogicProfile from '../../assets/ras-logic.jpeg'
 // import ChicagoProfile from '../../assets/chicago.jpeg'
-import BurdyProfile from '../../assets/Zion-Rasta-SenorBurdy.jpg'
-import BinnaProfile from '../../assets/Zion-Rasta-Binna.jpg'
-import BioTechProfile from '../../assets/Zion-Rasta-BioTech.jpg'
-import ChicagoProfile from '../../assets/Zion-Rasta-ChicagoDOne.jpg'
-import BadgerProfile from '../../assets/Zion-Rasta-DrBadger.jpg'
-import LoreanProfile from '../../assets/Zion-Rasta-Lorean.jpg'
+import BurdyProfile from '../../assets/Zion-Rasta-SenorBurdy.png'
+import BinnaProfile from '../../assets/Zion-Rasta-Binna.png'
+import BioTechProfile from '../../assets/Zion-Rasta-BioTech.png'
+import ChicagoProfile from '../../assets/Zion-Rasta-ChicagoDOne.png'
+import BadgerProfile from '../../assets/Zion-Rasta-DrBadger.png'
+import LoreanProfile from '../../assets/Zion-Rasta-Lorean.png'
 
 export default function About() {
   const cardSection = [
@@ -202,10 +202,10 @@ export default function About() {
       <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-8 md:py-16">
         <CardButton items={cardBtnItem} />
       </section>
-      <section className=" w-full bg-white md:mx-auto items-center  md:pt-16">
+      <section className=" w-full bg-white md:mx-auto items-center pt-32 md:pt-16">
         <TeamSlide items={team} />
       </section>
-      <section className=" w-full flex bg-white md:mx-auto items-center md:flex-row -mt-56 md:-mt-64 ">
+      <section className=" w-full flex bg-white md:mx-auto items-center md:flex-row -mt-48 md:-mt-64 ">
         <LetsConnect items={letsConnect} bg={NFTsBackground} />
       </section>
     </div>

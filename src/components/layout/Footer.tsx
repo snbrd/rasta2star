@@ -53,12 +53,12 @@ export default function Footer() {
               data-aos-duration="1000"
               src={Logo}
               alt="Logo"
-              className="w-64"
+              className="w-40 pl-6 md:pl-0"
               effect="blur"
             />
             {textUnderLogo.map((item, index) => {
               return (
-                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-8">
+                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-6 md:pl-0">
                   {item}
                 </span>
               )

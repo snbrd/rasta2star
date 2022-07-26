@@ -36,7 +36,7 @@ export default function Form({ fields, contactInfo, desc }: Props) {
       <div data-aos="fade-left" data-aos-duration="1000" className="img-right absolute hidden md:block right-0 top-1/4">
         <img src={MrLionFull} alt="Full body mr lion" />
       </div>
-      <div data-aos="fade-right" data-aos-duration="1000" className="img-left absolute hidden md:block left-0 top-1/4">
+      <div data-aos="fade-right" data-aos-duration="1000" className="img-left absolute hidden md:block left-40 top-1/4">
         <img src={MsLionFull} alt="Full body ms lion" />
       </div>
       <div className="max-w-screen-xl mx-auto bg-white shadow-box flex flex-col md:flex-row  -mt-16 md:-mt-64 w-full md:px-0">
@@ -74,9 +74,13 @@ export default function Form({ fields, contactInfo, desc }: Props) {
               data-aos-delay="400"
               className="button w-full flex items-center mt-24"
             >
-              <button
+              {/* <button
                 type="submit"
                 className="bg-gradient-to-r from-yellow-rasta to-green-rasta py-2 rounded-xl mx-auto w-full md:w-2/4"
+              > */}
+              <button
+                type="submit"
+                className="bg-gradient-to-b from-blue-zion to-blue-zion_cyan py-2 rounded-xl mx-auto w-full md:w-2/4"
               >
                 SEND IT
               </button>

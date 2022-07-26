@@ -22,8 +22,10 @@ export default function FarmHarvest({ pool, type }: Props) {
               ? '0.0000'
               : Number(new BigNumber(pendingReward).div(new BigNumber(10).pow(18))).toFixed(4)}
           </h2>
-          <span className="text-red-rasta text-left text-sm">{rewardTokenSymbol} earned</span>
-          <span className="text-red-rasta text-left text-sm">Reward locked for a week</span>
+          {/* <span className="text-red-rasta text-left text-sm">{rewardTokenSymbol} earned</span>
+          <span className="text-red-rasta text-left text-sm">Reward locked for a week</span> */}
+          <span className="text-blue-zion_cyan text-left text-sm">{rewardTokenSymbol} earned</span>
+          <span className="text-blue-zion_cyan text-left text-sm">Reward locked for a week</span>
           <div className="flex flex-row space-x-3">
             <HarvestAction
               earnings={pendingReward ? new BigNumber(pendingReward) : new BigNumber('0x00')}
@@ -33,9 +35,12 @@ export default function FarmHarvest({ pool, type }: Props) {
             <CompoundAction earnings={new BigNumber(pendingReward)} url={projectLink} type={type} />
           </div>
         </div>
-        <div className="apr py-4 px-6 bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center">
-          <span className="apr-value text-2xl w-full text-gray-700 ">0%</span>
-          <span className="apr-label text-red-rasta text-sm">Deposit Fee</span>
+        <div className="apr py-4 px-6 bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center" style={{
+          background:'#241f31'
+        }}>
+          <span className="apr-value text-2xl w-full text-white ">0%</span>
+          {/* <span className="apr-label text-red-rasta text-sm">Deposit Fee</span> */}
+          <span className="apr-label text-blue-zion_cyan text-sm">Deposit Fee</span>
         </div>
       </div>
     </div>

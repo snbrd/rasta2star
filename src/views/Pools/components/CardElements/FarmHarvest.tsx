@@ -19,7 +19,7 @@ export default function FarmHarvest({ farmEarned, depositFee, pid, earning }: Pr
           <HarvestAction pid={pid} earnings={earning} />
         </div>
 
-        <div className="apr bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center" style={{background: '#241f31',}}>
+        <div className="apr bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center py-3" style={{background: '#241f31',}}>
           <span className="apr-value text-2xl w-full text-white ">{depositFee}%</span>
           {/* <span className="apr-label text-red-rasta text-md">Deposit Fee</span> */}
           <span className="apr-label text-blue-zion_cyan text-md">Deposit Fee</span>

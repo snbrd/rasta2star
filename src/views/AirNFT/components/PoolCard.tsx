@@ -63,15 +63,26 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
   const { onApproveAll } = useApproveAll(nftContractAddress, getAddress(contractAddress))
   const { onStake, onUnStake } = useStake(getAddress(contractAddress))
 
+  // const buttonClass =
+  //   'w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
   const buttonClass =
-    'w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
+    'w-full flex flex-row text-white py-2 bg-gradient-to-b from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
 
   return (
     <>
+      {/* <div
+        className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8"
+        style={{
+          // backgroundImage: "url('images/cardbg.png')",
+          backgroundSize: '100% 580px',
+          boxShadow: '6px 6px 24px -9px',
+        }}
+      > */}
       <div
         className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8"
         style={{
-          backgroundImage: "url('images/cardbg.png')",
+          background: '#3d3846',
+          color: '#fff',
           backgroundSize: '100% 580px',
           boxShadow: '6px 6px 24px -9px',
         }}
@@ -84,11 +95,14 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
         <div className="row flex flex-col lg:flex-row space-x-0 md:space-x-4 mb-4 md:mb-12">
           <CardHeading lpLabel={poolName} isCommunityFarm={false} farmImage={icon} tokenSymbol="farm.tokenSymbol" />
           {!removed && (
-            <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0">
-              <span className="apr-value text-2xl w-full text-gray-700 ">
+            <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0" style={{
+              background:'#241f31'
+            }}>
+              <span className="apr-value text-2xl w-full text-white ">
                 {Number(apy) > 0 && !isFinished ? `${apy}%` : '-'}
               </span>
-              <span className="apr-label text-red-rasta text-sm">APR</span>
+              {/* <span className="apr-label text-red-rasta text-sm">APR</span> */}
+              <span className="apr-label text-blue-zion_cyan text-sm">APR</span>
             </div>
           )}
         </div>

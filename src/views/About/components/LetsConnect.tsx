@@ -8,8 +8,15 @@ type Props = {
 }
 export default function LetsConnect({ bg, items }: Props) {
   return (
+    // <div
+    //   className="w-full pt-64 pb-0 md:pt-64 md:pb-32  px-0 md:px-4 items-center flex"
+    //   style={{
+    //     backgroundImage: `url(${bg})`,
+    //     backgroundSize: 'cover',
+    //   }}
+    // >
     <div
-      className="w-full pt-64 pb-0 md:pt-64 md:pb-32  px-0 md:px-4 items-center flex"
+      className="w-full pt-64 pb-0 md:pt-64 md:pb-24  px-0 md:px-4 items-center flex"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',

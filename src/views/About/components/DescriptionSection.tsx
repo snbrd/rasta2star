@@ -8,7 +8,7 @@ export default function DescriptionSection() {
       className="max-w-screen-xl mx-auto text-center text-black space-y-6"
     >
       <p>
-        RastaFinance is a truly decentralized initiative building simple tools for creators to conduct and manage their
+        ZionLabs is a truly decentralized initiative building simple tools for creators to conduct and manage their
         own finances.
       </p>
       <p>

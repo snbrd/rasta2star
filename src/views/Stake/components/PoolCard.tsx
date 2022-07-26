@@ -67,8 +67,10 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const isOldSyrup = stakingTokenName === QuoteToken.SYRUP
   const accountHasStakedBalance = stakedBalance?.toNumber() > 0
   const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isBnbPool
+  // const buttonClass =
+  //   'w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer'
   const buttonClass =
-    'w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer'
+    'w-full flex flex-row text-white py-2 bg-gradient-to-r from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 rounded-xl cursor-pointer'
 
   const [isApproval, SETisApproval] = useState(needsApproval)
 
@@ -96,10 +98,19 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
 
   return (
     <>
-      <div
+      {/* <div
         className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8"
         style={{
           backgroundImage: "url('images/cardbg.png')",
+          backgroundSize: '100% 580px',
+          boxShadow: '6px 6px 24px -9px',
+        }}
+      > */}
+      <div
+        className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8"
+        style={{
+          background: '#3d3846',
+          color: '#fff',
           backgroundSize: '100% 580px',
           boxShadow: '6px 6px 24px -9px',
         }}
@@ -113,8 +124,10 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
             tokenSymbol="farm.tokenSymbol"
           />
           {!removed && (
-            <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0">
-              <span className="apr-value text-2xl w-full text-gray-700 ">
+            <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0" style={{
+              background:'#241f31'
+            }}>
+              <span className="apr-value text-2xl w-full text-white ">
                 {isFinished || isOldSyrup || !apy || apy?.isNaN() || !apy?.isFinite() ? (
                   '-'
                 ) : (
@@ -155,11 +168,17 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
           //   addLiquidityUrl={addLiquidityUrl}
           // />
           <div className="flex justify-between">
-            <button
+            {/* <button
               type="button"
               disabled={requestedApproval}
               onClick={onPresentWithdraw}
               className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
+            > */}
+            <button
+              type="button"
+              disabled={requestedApproval}
+              onClick={onPresentWithdraw}
+              className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 rounded-xl cursor-pointer"
             >
               <span>{TranslateString(758, 'Unstake RASTA')}</span>
             </button>
