@@ -8,15 +8,12 @@ export default function DescriptionSection() {
       className="max-w-screen-xl mx-auto text-center text-black space-y-6"
     >
       <p>
-        ZionLabs is a truly decentralized initiative building simple tools for creators to conduct and manage their
-        own finances.
+      Conceptualized in 2020, Zion Labs is a decentralized community project that helps music artists and creatives gain funding to further their careers via the Zion Launchpad.
       </p>
       <p>
-        We value transparency, love, compassion and camaraderie above all else. We stand strong as ONE, as we are
-        determined to re-gain the power of our own money, taking it back from the institutions and exploiters that have
-        kept us apart.
+      A crowdfunding platform designed to encourage entertainment engagement and investment opportunity for it&apos;s community.
       </p>
-      <p>So connect your browser-based wallet, and join the Decentralized REVOLUTION!</p>
+      {/* <p>So connect your browser-based wallet, and join the Decentralized REVOLUTION!</p> */}
     </div>
   )
 }

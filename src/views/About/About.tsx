@@ -35,18 +35,18 @@ export default function About() {
   const cardSection = [
     {
       icon: <AiIcons.AiFillQuestionCircle />,
-      title: 'What is Rasta?',
-      desc: `Founded in 2020, RastaFinance is a decentralized crypto community, building unique tools that bridge the crypto-world to real-world projects `,
+      title: 'Big Fat Mr Rasta',
+      desc: `Rasta is our tax free currency. Our platform and community fuels its eco-system from artistic creations such as Zion NFTs. From every NFT sale, we feed "Big Fat Mr Rasta" with BNB buy backs, so the currency its self grows in value, helping increase the price floor and value of the token while maintaining tax-free trading. `,
     },
     {
       icon: <FaIcons.FaLink />,
-      title: 'Connect Directly to Your Wallet',
-      desc: `Built upon the principles of Web3.0, Rasta uses advanced, secure and decentralized block-chain technology to connect directly to your wallet (MetaMask, TrustWallet, SafePal and more)`,
+      title: 'Miss Rasta',
+      desc: `Ms Rasta can only be bought with $Rasta and has a smaller supply (read docs). Ms Rasta is used to support the Zion Launchpad, helping musicians in their careers through airdrops and NFT sales. $MRasta holders will be part of the Ms Rasta prize pool for VIP events, quests and airdrops.`,
     },
     {
       icon: <FaIcons.FaUsers />,
-      title: 'Join a Community that Cares',
-      desc: `As we grow the Rasta Eco-System, join the community and farm for more $RASTA tokens, that way you can grow your crypto portfolio`,
+      title: 'Seamless dApp',
+      desc: `Built upon the principles of Web3.0, Rasta uses advanced, secure and decentralized block-chain technology to connect directly to your wallet (MetaMask, TrustWallet, SafePal and more). Our audited platform allows users to stake, earn and buy NFTs and Tokens seamlessly throughout the Zion Labs dApp.`,
     },
   ]
   const cardBtnItem = [
