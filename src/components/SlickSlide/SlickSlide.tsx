@@ -57,7 +57,7 @@ export default function MultipleSlick({ items }: { items: any[] }) {
               data-aos-duration="1000"
               className="flex-imp  flex-col w-full items-center content-center justify-center"
             >
-              <LazyLoadImage src={item.avatar} alt="Logo" className="w-1/2 mx-auto" effect="blur" />
+              <LazyLoadImage src={item.avatar} alt="Logo" className="w-64 mx-auto" effect="blur" />
               {/* <h2 className="mt-8 font-bold text-xl">{item.name}</h2> */}
               {/* <h3 className="mt-4 text-md">{item.position}</h3> */}
             </div>

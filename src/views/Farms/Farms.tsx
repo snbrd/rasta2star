@@ -18,7 +18,8 @@ import ToggleSwitchForStack from 'components/toggle-switch/ToggleSwitchForStack'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 // import FarmTabButtons from './components/FarmTabButtons'
 // import Divider from './components/Divider'
-import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
+// import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
+import MrRastaImage from '../../assets/headerImageZionLabs11.jpg'
 
 const Farms: React.FC = () => {
   const TranslateString = useI18n()
@@ -115,6 +116,7 @@ const Farms: React.FC = () => {
           backgroundImage: `url(${MrRastaImage})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'top center',
         }}
       >
         <h1 className="text-4xl font-bold">{stackedOnly ? 'Mr Rasta Liquidity' : 'Mr Rasta Liquidity'}</h1>

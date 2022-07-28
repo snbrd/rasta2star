@@ -7,7 +7,8 @@ import nftPools from 'config/constants/nftPools'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
 
-import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
+// import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
+import MrRastaImage from '../../assets/headerImageZionLabs11.jpg'
 
 const Farm: React.FC = () => {
   const TranslateString = useI18n()
@@ -55,7 +56,7 @@ const Farm: React.FC = () => {
         className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 px-3 items-center"
         style={{
           backgroundImage: `url(${MrRastaImage})`,
-          backgroundPosition: 'center',
+          backgroundPosition: 'top center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         }}

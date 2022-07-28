@@ -23,7 +23,8 @@ import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 // import Divider from './components/Divider'
 // import PoolCard from '../Stake/components/PoolCard'
 
-import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
+// import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
+import MrRastaImage from '../../assets/headerImageZionLabs11.jpg'
 import MrsRastaImage from '../../assets/lion-mrs-rasta.jpg'
 
 const Farms: React.FC = () => {
@@ -155,6 +156,7 @@ const Farms: React.FC = () => {
           backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'top center',
         }}
       >
         <h1 className="text-4xl font-bold">{stackedOnly ? 'Mrs. Rasta Pools' : 'Mr. Rasta Pools'}</h1>

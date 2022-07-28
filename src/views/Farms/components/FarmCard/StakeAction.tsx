@@ -48,7 +48,8 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
       <div className="flex">
         <button
           type="button"
-          className=" bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-xl px-12 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer"
+          // className=" bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-xl px-12 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer"
+          className=" bg-gradient-to-b text-white from-blue-zion to-blue-zion_cyan  rounded-xl px-12 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer"
           onClick={onPresentDeposit}
         >
           {TranslateString(999, 'Stake LP')}
@@ -78,7 +79,7 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
     <div className="flex flex-row justify-between">
       <div className="flex flex-col">
         <span className="text-lg text-left">{displayBalance}</span>
-        <span className="text-sm text-red-600">TOKENS STAKED</span>
+        <span className="text-sm text-blue-zion_cyan">TOKENS STAKED</span>
       </div>
       {renderStakingButtons()}
     </div>
