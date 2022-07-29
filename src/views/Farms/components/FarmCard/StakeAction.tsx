@@ -59,14 +59,16 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
       <div>
         <button
           type="button"
-          className="text-gray-800 border-2 border-gray-800 rounded-md w-10 p-0 text-2xl mx-2"
+          // className="text-gray-800 border-2 border-gray-800 rounded-md w-10 p-0 text-2xl mx-2"
+          className="text-blue-zion_cyan border-2 border-blue-zion_cyan rounded-md w-10 p-0 text-2xl mx-2"
           onClick={onPresentWithdraw}
         >
           -
         </button>
         <button
           type="button"
-          className="text-gray-800 border-2 border-gray-800 rounded-md w-10 p-0 text-2xl mx-2"
+          // className="text-gray-800 border-2 border-gray-800 rounded-md w-10 p-0 text-2xl mx-2"
+          className="text-blue-zion_cyan border-2 border-blue-zion_cyan rounded-md w-10 p-0 text-2xl mx-2"
           onClick={onPresentDeposit}
         >
           +
