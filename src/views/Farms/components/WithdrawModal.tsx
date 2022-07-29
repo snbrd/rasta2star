@@ -62,7 +62,7 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
         </button>
         <button
           type="button"
-          className=" bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-lg px-12 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
+          className=" bg-gradient-to-b text-white from-blue-zion to-blue-zion_cyan  rounded-lg px-12 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
           disabled={pendingTx || fullBalance === '0' || !val || Number(val) > Number(fullBalance)}
           onClick={async () => {
             setPendingTx(true)

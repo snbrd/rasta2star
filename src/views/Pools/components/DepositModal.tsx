@@ -70,7 +70,7 @@ const DepositModal: React.FC<DepositModalProps> = ({
         </button>
         <button
           type="button"
-          className="w-1/2 bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-lg px-3 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
+          className="w-1/2 bg-gradient-to-b text-white from-blue-zion to-blue-zion_cyan  rounded-lg px-3 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
           disabled={pendingTx || fullBalance === '0' || !val || Number(val) > Number(fullBalance)}
           onClick={async () => {
             setPendingTx(true)
