@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 // import HeroImage from '../../../assets/home-header.jpg'
 import HeroImage from '../../../assets/hero-new-background-zion.jpg'
 
-
 export default function HeroSection() {
   const counter = [
     { label: 'Months Active', numbers: '15' },
@@ -13,7 +12,6 @@ export default function HeroSection() {
   ]
   return (
     <div>
-
       <div
         className="flex w-full bg-opacity-50 py-0 md:py-0 md:justify-between text-white flex-col h-screen z-10"
         style={{
@@ -22,10 +20,9 @@ export default function HeroSection() {
           backgroundPosition: 'left center',
         }}
       >
-        
-        <video autoPlay muted loop id="myVideo" className='absolute invisible md:visible w-full'>
+        <video autoPlay muted loop id="myVideo" className="absolute invisible md:visible w-full">
           {/* <source src='/hero-video.mp4' type="video/mp4"/> */}
-          <source src='/hero-video.mp4' type="video/mp4"/>
+          <source src="/new-hero-video.mp4" type="video/mp4" />
         </video>
 
         <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row justify-center h-full z-20 md:mt-48">
@@ -42,7 +39,6 @@ export default function HeroSection() {
               ZION Labs powered by Rasta, from the island of ZION we unite artists into the blockchain NFT revolution
             </p>
             <div className="cta flex-row mt-8 space-x-8 hidden md:flex" data-aos="fade-right" data-aos-duration="2500">
-
               <Link
                 to="/liquidity"
                 className="bg-gradient-to-b font-bold w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
@@ -56,7 +52,6 @@ export default function HeroSection() {
               >
                 <button type="button">Launchpad</button>
               </a>
-
             </div>
           </div>
           <div className="images hidden md:block md:w-6/12 text-right">
@@ -80,8 +75,6 @@ export default function HeroSection() {
           })}
         </div>
       </div>
-
-      
     </div>
   )
 }
