@@ -13,14 +13,14 @@ export default function HeroSection() {
   return (
     <div>
       <div
-        className="flex w-full bg-opacity-50 py-0 md:py-0 md:justify-between text-white flex-col h-screen z-10"
+        className="flex w-full bg-opacity-50 py-0 md:py-0 md:justify-between text-white flex-col h-screen"
         style={{
           backgroundImage: `url(${HeroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'left center',
         }}
       >
-        <video autoPlay muted loop id="myVideo" className="absolute invisible md:visible w-full">
+        <video autoPlay muted loop id="myVideo" className="absolute invisible md:visible w-auto h-screen md:left-48">
           {/* <source src='/hero-video.mp4' type="video/mp4"/> */}
           <source src="/new-hero-video.mp4" type="video/mp4" />
         </video>
