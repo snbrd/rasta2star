@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 // import HeroImage from '../../../assets/home-header.jpg'
 import HeroImage from '../../../assets/hero-new-background-zion.jpg'
 
+
 export default function HeroSection() {
   const counter = [
     { label: 'Months Active', numbers: '15' },
@@ -12,19 +13,22 @@ export default function HeroSection() {
   ]
   return (
     <div>
+
       <div
-        className="flex w-full bg-blend-overlay bg-black bg-opacity-50 py-0 md:py-32 md:justify-between text-white flex-col h-screen"
+        className="flex w-full bg-opacity-50 py-0 md:py-0 md:justify-between text-white flex-col h-screen z-10"
         style={{
           backgroundImage: `url(${HeroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'left center',
         }}
       >
-        <div
-          // data-aos="fade-up"
-          // data-aos-duration="1000"
-          className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row justify-center h-full"
-        >
+        
+        <video autoPlay muted loop id="myVideo" className='absolute invisible md:visible w-full'>
+          {/* <source src='/hero-video.mp4' type="video/mp4"/> */}
+          <source src='/hero-video.mp4' type="video/mp4"/>
+        </video>
+
+        <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row justify-center h-full z-20 md:mt-48">
           <div className="leftSection w-full md:w-6/12 md:pl-16">
             <h1
               className="text-4xl font-bold text-center md:text-left md:pr-48 leading-tight"
@@ -38,12 +42,6 @@ export default function HeroSection() {
               ZION Labs powered by Rasta, from the island of ZION we unite artists into the blockchain NFT revolution
             </p>
             <div className="cta flex-row mt-8 space-x-8 hidden md:flex" data-aos="fade-right" data-aos-duration="2500">
-              {/* <Link
-                to="/liquidity"
-                className="bg-gradient-to-r font-bold w-1/3 from-yellow-rasta to-green-rasta_cta text-center py-3 rounded-xl"
-              >
-                <button type="button">Stake Rasta Now</button>
-              </Link> */}
 
               <Link
                 to="/liquidity"
@@ -51,13 +49,6 @@ export default function HeroSection() {
               >
                 <button type="button">Stake Rasta</button>
               </Link>
-
-              {/* <a
-                href="https://rastadex.croxswap.com"
-                className="bg-gradient-to-r border-2 font-bold border-yellow w-1/3 from-green-rasta to-yellow-rasta_cta text-center py-3 rounded-xl"
-              >
-                <button type="button">Buy Rasta</button>
-              </a> */}
 
               <a
                 href="https://www.zionlp.com/"
@@ -89,6 +80,8 @@ export default function HeroSection() {
           })}
         </div>
       </div>
+
+      
     </div>
   )
 }

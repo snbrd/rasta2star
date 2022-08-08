@@ -55,6 +55,12 @@ export default function NewDesktopSidebar() {
       child: [],
     },
     {
+      label: 'Docs',
+      path: 'https://docs.zionlabs.info',
+      parent: false,
+      child: [],
+    },
+    {
       label: 'Trade',
       path: '#',
       // icon: <IoIosSwap className="inline-block" style={{ width: '32px', height: '32px' }} />,
@@ -179,7 +185,7 @@ export default function NewDesktopSidebar() {
           label: 'Whitepaper',
         },
         {
-          path: 'https://zionlabs.info/files/RastaAudit.pdf',
+          path: 'https://docs.zionlabs.info/faq/rasta-audit',
           label: 'Audit',
         },
         {

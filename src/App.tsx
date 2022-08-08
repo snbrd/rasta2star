@@ -54,7 +54,7 @@ const App: React.FC = () => {
   useFetchProfile()
 
   return (
-    <div className="flex bg-black font-roboto text-white relative">
+    <div className="flex bg-black font-roboto text-white relative overflow-x-hidden">
       <Router history={history}>
         <Suspense fallback={<PageLoader />}>
           <aside className="hidden md:block">
