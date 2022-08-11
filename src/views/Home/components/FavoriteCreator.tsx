@@ -29,7 +29,7 @@ export default function FavoriteCreator() {
               Interact with Your Favorite Creators.
               <br />
               {/* <span className="text-yellow-rasta">Completely Decentralized.</span> */}
-              <span className="text-blue-zion_cyan">with ZIONLabs Launchpad</span>
+              <span className="text-blue-zion_cyan">with ZION Labs Launchpad</span>
             </h2>
             <div
               data-aos="fade-up"

@@ -15,7 +15,8 @@ export default function HeroSection() {
       <div
         className="flex w-full bg-opacity-50 py-0 md:py-0 md:justify-between text-white flex-col h-screen"
         style={{
-          backgroundImage: `url(${HeroImage})`,
+          backgroundColor: '#000',
+          // backgroundImage: `url(${HeroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'left center',
         }}

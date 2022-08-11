@@ -37,7 +37,7 @@ const Home: React.FC = () => {
               <LazyLoadImage
                 src={NFTNomicsImage}
                 alt="nftnomics"
-                className="w-1/3 mx-auto"
+                className="md:w-1/3 mx-auto px-10 md:px-0"
                 effect="blur"
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -61,7 +61,7 @@ const Home: React.FC = () => {
                   data-aos-delay="100"
                 >
                   <div className="card-title flex justify-between items-center">
-                    <h2 className="md:text-xl font-bold pr-0 md:pr-48 text-center md:text-left leading-tight">
+                    <h2 className="md:text-xl font-bold pr-0 md:pr-48 text-left md:text-left leading-tight flex-1">
                       ZIONLION - BNB
                     </h2>
 
@@ -76,7 +76,7 @@ const Home: React.FC = () => {
                   </div>
 
                   <div className="card-body">
-                    <ul>
+                    <ul className="space-y-2">
                       <li>5% Sweep the floor</li>
                       <li>10% Liquidity for Rasta/BNB locked pool</li>
                       <li>35% Rasta buy back</li>
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
                   data-aos-delay="200"
                 >
                   <div className="card-title flex justify-between">
-                    <h2 className="md:text-xl font-bold pr-0 md:pr-48 text-center md:text-left leading-tight">
+                    <h2 className="md:text-xl font-bold pr-0 md:pr-48 text-left md:text-left leading-tight flex-1">
                       Launchpad NFTs - MRASTA
                     </h2>
 
@@ -111,7 +111,7 @@ const Home: React.FC = () => {
                   </div>
 
                   <div className="card-body">
-                    <ul>
+                    <ul className="space-y-2">
                       <li>25% to Artist</li>
                       <li>25% to Creator</li>
                       <li>20% to Rare NFT Pool</li>
@@ -132,7 +132,7 @@ const Home: React.FC = () => {
                   data-aos-delay="300"
                 >
                   <div className="card-title flex justify-between items-center">
-                    <h2 className="md:text-xl font-bold pr-0 md:pr-48 text-center md:text-left leading-tight">
+                    <h2 className="md:text-xl font-bold pr-0 md:pr-48 text-left md:text-left leading-tight flex-1">
                       Launchpad Staking Tokenomics
                     </h2>
 
@@ -147,7 +147,7 @@ const Home: React.FC = () => {
                   </div>
 
                   <div className="card-body">
-                    <ul>
+                    <ul className="space-y-2">
                       <li>Harvest is locked for 30 days (for both artists and users)</li>
                       <li>User receives 65% of Harvest (2 years)</li>
                       <li>Artist receives 25% of Harvest (90 days)</li>

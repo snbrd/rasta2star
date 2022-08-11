@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as AiIcons from 'react-icons/ai'
 import * as FaIcons from 'react-icons/fa'
 import * as Io5Icons from 'react-icons/io5'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import Header from './components/HeroSection'
 import Card from './components/CardSection'
 import Dsc from './components/DescriptionSection'
 import CardButton from './components/CardButton'
 import TeamSlide from './components/TeamSlide'
 import LetsConnect from './components/LetsConnect'
+import Accordion from './components/Accordion'
 // import LeafBg from '../../assets/leaf-bg.jpg'
 import NFTsBackground from '../../assets/hero-new-background-zion.jpg'
 // import AboutHeader from '../../assets/lion-statue.jpg'
@@ -30,6 +32,7 @@ import BioTechProfile from '../../assets/Zion-Rasta-BioTech.png'
 import ChicagoProfile from '../../assets/Zion-Rasta-ChicagoDOne.png'
 import BadgerProfile from '../../assets/Zion-Rasta-DrBadger.png'
 import LoreanProfile from '../../assets/Zion-Rasta-Lorean.png'
+import LionAbout from '../../assets/Farmer1.png'
 
 export default function About() {
   const cardSection = [
@@ -61,6 +64,21 @@ export default function About() {
     {
       label: 'Rasta <br>Trust Fund <br>Address',
       link: 'https://bscscan.com/address/0x437326807aAA8be7C0E3d89ab8C9072BC7614131',
+    },
+  ]
+
+  const AccordionData = [
+    {
+      title: 'The NFT Sale Tokenomics are:',
+      content: `<ul class="italic mt-4"><li>25% to Artist</li><li>25% to Creator</li><li>20% to Rare NFT Pool</li><li>15% to Genesis Prize Pool</li><li>15% to Future Pool (Stored)</li></ul>`,
+    },
+    {
+      title: 'Benefits for MRASTA NFT Holders:',
+      content: `<p className='mt-4'>All Zion Launchpad NFT holders will have governance vote over interaction of the Genesis Pool and all community voting power.</p>`,
+    },
+    {
+      title: 'The Launchpad NFT staking Tokenomics are:',
+      content: `<ul class="italic mt-4 space-y-3"><li>Harvest is locked for 30 days (for both artists and users)</li><li>User receives 65% of Harvest (2 years)</li><li>Artist receives 25% of Harvest (90 days)</li><li>10% of all Harvest rewards are put into liquidity for MRASTA/RASTA LP</li></ul>`,
     },
   ]
 
@@ -145,11 +163,11 @@ export default function About() {
       avatar: ChicagoProfile,
     },
     {
-      name: "@Dr. Badger",
+      name: '@Dr. Badger',
       avatar: BadgerProfile,
     },
     {
-      name: "@Lorean",
+      name: '@Lorean',
       avatar: LoreanProfile,
     },
   ]
@@ -189,25 +207,72 @@ export default function About() {
     <div>
       <Header
         images={AboutHeader}
-        title="About Us"
-        desc="We are a big team with an even bigger heart."
+        // title="Art is our asset,
+        // RASTA is our currency. Building something
+        // dope on blockchain"
+        desc=""
         btn={{ link: 'https://docs.zionlabs.info', label: 'Read The Docs' }}
       />
-      <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row  pb-8">
+      {/* <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row  pb-8">
         <Card items={cardSection} />
-      </section>
+      </section> */}
       <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-8 md:py-16">
         <Dsc />
       </section>
-      <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-8 md:py-16">
-        <CardButton items={cardBtnItem} />
+
+      <section className=" w-full grid md:grid-cols-2 bg-white md:mx-auto items-center px-8 md:px-12 md:flex-row py-8 md:py-24">
+        <div data-aos="fade-right" data-aos-duration="1000" className="mx-auto text-black space-y-6">
+          <LazyLoadImage src={LionAbout} alt="" className="w-auto" effect="blur" />
+        </div>
+
+        <div data-aos="fade-left" data-aos-duration="1000" className="mx-auto text-black space-y-6">
+          <div className="card flex flex-col space-y-5 shadow-lg rounded-lg py-8 px-10">
+            <div className="card-title">
+              <h2 className="text-3xl font-bold pr-0">What is the Zion Launchpad</h2>
+            </div>
+            <div className="card-content flex flex-col space-y-5">
+              <div className="card-content-1">
+                <p>
+                  The Zion Launchpad is a reggae artist music profile hub, selected artists can upload their music to
+                  their own launchpad playlist for the community to listen. Each artist has exclusive NFTs for sale on
+                  Zion Labs for the artist which can be further more staked for MRASTA both profiting for the artists
+                  future careers as well as fans and community supporters of the launchpad artists.
+                </p>
+              </div>
+              <div className="card-content-2 flex flex-col space-y-5">
+                <h3 className="text-xl font-bold pr-0">Launchpad NFTs</h3>
+                <p>
+                  The Zion Launchpad is an NFT based utility minting / launchpad for artists. Artists that come to the
+                  launchpad are able to earn revenue from NFT sales which the user can further more stake on the artist
+                  profile.
+                </p>
+
+                {AccordionData.map(({ title, content }) => (
+                  <Accordion title={title} content={content} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-      <section className=" w-full bg-white md:mx-auto items-center pt-32 md:pt-16">
+
+      {/* <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-8 md:py-16">
+        <CardButton items={cardBtnItem} />
+      </section> */}
+
+      <section
+        className=" w-full bg-black md:mx-auto items-center pt-32 pb-32 md:pt-16 md:pb-16"
+        style={{
+          backgroundImage: `url(${NFTsBackground})`,
+          backgroundSize: 'cover',
+        }}
+      >
         <TeamSlide items={team} />
       </section>
-      <section className=" w-full flex bg-white md:mx-auto items-center md:flex-row -mt-48 md:-mt-64 ">
+
+      {/* <section className=" w-full flex bg-white md:mx-auto items-center md:flex-row -mt-48 md:-mt-64 ">
         <LetsConnect items={letsConnect} bg={NFTsBackground} />
-      </section>
+      </section> */}
     </div>
   )
 }
