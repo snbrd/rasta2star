@@ -9,14 +9,13 @@ import React from 'react'
 type Props = {
   images: any
   desc: string
-  btn: any
 }
 
-export default function HeroSection({ images, desc, btn }: Props) {
+export default function HeroSection({ images, desc }: Props) {
   return (
     <div>
       <div
-        className="flex w-full flex-col bg-cover bg-center bg-blend-overlay text-white py-16 px-6 md:px-0 items-center md:pt-40 md:pb-56"
+        className="flex w-full flex-col bg-cover bg-center bg-blend-overlay text-white py-16 px-6 md:px-0 items-center md:pt-40 md:pb-40"
         style={{
           background: `url(${images}) rgb(0 0 0 / 22%)`,
           backgroundSize: 'cover',
@@ -31,7 +30,7 @@ export default function HeroSection({ images, desc, btn }: Props) {
         <p data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" className="mt-4">
           {desc}
         </p>
-        <a
+        {/* <a
           data-aos="zoom-in"
           data-aos-duration="1000"
           data-aos-delay="200"
@@ -43,7 +42,7 @@ export default function HeroSection({ images, desc, btn }: Props) {
           <button type="button" className="">
             {btn.label}
           </button>
-        </a>
+        </a> */}
       </div>
     </div>
   )

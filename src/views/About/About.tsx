@@ -32,7 +32,7 @@ import BioTechProfile from '../../assets/Zion-Rasta-BioTech.png'
 import ChicagoProfile from '../../assets/Zion-Rasta-ChicagoDOne.png'
 import BadgerProfile from '../../assets/Zion-Rasta-DrBadger.png'
 import LoreanProfile from '../../assets/Zion-Rasta-Lorean.png'
-import LionAbout from '../../assets/Farmer1.png'
+import LionAbout from '../../assets/Ganyah22.png'
 
 export default function About() {
   const cardSection = [
@@ -211,7 +211,7 @@ export default function About() {
         // RASTA is our currency. Building something
         // dope on blockchain"
         desc=""
-        btn={{ link: 'https://docs.zionlabs.info', label: 'Read The Docs' }}
+        // btn={{ link: 'https://docs.zionlabs.info', label: 'Read The Docs' }}
       />
       {/* <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row  pb-8">
         <Card items={cardSection} />
