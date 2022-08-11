@@ -1,82 +1,122 @@
 import React from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import CommunityImage from '../../../assets/community-lion.png'
+import SectionImage from '../../../assets/section-background.jpg'
+import ButtonImage from '../../../assets/ZionLion-SAGA.png'
 
 export default function Community() {
   return (
     <div>
-      <div className="flex w-full  py-16 bg-white text-black flex-col">
-        <div className="flex w-full mb-1 md:max-w-screen-xl md:mx-auto items-center px-4 md:px-0 md:flex-row md:mb-0">
+      <div
+        className="flex w-full  py-16 bg-white text-white flex-col"
+        style={{
+          backgroundColor: '#00000030',
+          backgroundImage: `url(${SectionImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'multiply',
+        }}
+      >
+        <div className="flex flex-col w-full mb-1 md:max-w-screen-xl md:mx-auto items-center px-4 md:px-0 md:flex-row md:mb-0">
+          {/* left section */}
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="50"
-            className="images md:w-6/12 text-center hidden md:block"
+            className="images md:w-6/12 text-center md:px-20"
           >
-            <LazyLoadImage src={CommunityImage} alt="Logo" className="w-full mx-auto" effect="blur" />
+            <div className="sectionTitle">
+              <h1
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="text-4xl md:text-4xl font-bold pr-0 md:pr-48 text-center md:text-left leading-tight font-lora"
+              >
+                ZionLion SAGA - Chapter #1
+              </h1>
+            </div>
+            <div className="sectionContent flex flex-col">
+              <p
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="100"
+                className="pt-8 text-center md:text-left"
+              >
+                Legend has it that when the Imperial Army began its ruthless invasion of The Caribbean, Lions that were
+                once native to the islands were cast away and left for dead on the wild and unforgiving waters of the
+                Atlantic Ocean.
+              </p>
+            </div>
+            <div className="sectionFooter flex my-8 justify-center md:justify-start">
+              <a
+                href="https://docs.zionlabs.info/introduction/zion-lions-of-zion-island-nfts"
+                target="_blank"
+                rel="noreferrer"
+                className="font-bold text-center"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+              >
+                <LazyLoadImage src={ButtonImage} alt="t4-professor" className="w-48" effect="blur" />
+              </a>
+            </div>
           </div>
+
+          {/* right section */}
           <div className="leftSection md:w-6/12">
-            <h1
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              className="text-4xl md:text-5xl font-bold pr-0 md:pr-48 text-center md:text-left leading-tight"
-            >
-              {/* Join The Community That Cares */}
-              The Stronger Together Alliance
-            </h1>
-            <p
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="100"
-              className="mt-8 text-center md:text-left"
-            >
-              {/* Built by the very same people that <br />
-              make up this loving community. <br />
-              Powered by the People! */}
-              Together we bring creative artists <br />
-              and blockhcain infucious to Web3. <br />
-            
-            </p>
-            <div
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="200"
-              className="cta flex flex-col px-4 md:px-0 md:flex-row mt-8 space-y-3 md:space-y-0 space-x-0 md:space-x-8"
-            >
-              {/* <a
-                href="https://docs.zionlabs.info"
-                target="_blank"
-                rel="noreferrer"
-                className="bg-gradient-to-r font-bold text-white w-full md:w-1/3 from-yellow-rasta to-green-rasta_cta text-center py-3  rounded-xl"
+            <div>
+              <h1
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="text-4xl md:text-5xl font-bold pr-0 md:pr-48 text-center md:text-left leading-tight font-lora"
               >
-                <button type="button">Whitepaper</button>
-              </a> */}
+                A Legend Prevails
+              </h1>
+            </div>
 
-              <a
-                href="https://docs.zionlabs.info"
-                target="_blank"
-                rel="noreferrer"
-                className="bg-gradient-to-b font-bold text-white w-full md:w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3  rounded-xl"
-              >
-                <button type="button">Whitepaper</button>
-              </a>
+            <div className="sectionContent flex flex-col space-y-5">
+              <div>
+                <p
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="100"
+                  className="mt-8 text-center md:text-left"
+                >
+                  After the journey of tretures sea crossing our lions have arrived on to the island of ZION. The
+                  following survivors are listed into rarity sectors.
+                </p>
+              </div>
 
-              {/* <a
-                href="https://t.me/zionlabscommunity"
-                target="_blank"
-                rel="noreferrer"
-                className="border-2 font-bold border-green-rasta_cta text-green-rasta_cta py-3 rounded-xl w-full md:w-1/3 text-center"
-              >
-                <button type="button">Join The Community</button>
-              </a> */}
-              <a
-                href="https://t.me/zionlabscommunity"
-                target="_blank"
-                rel="noreferrer"
-                className="border-2 font-bold border-black text-black py-3 rounded-xl w-full md:w-1/3 text-center"
-              >
-                <button type="button">Join The Community</button>
-              </a>
+              <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <h3 className="font-bold">Farmer</h3>
+                <p>
+                  The humblest and modest of all lions. Farmers a hard-working and essential for creating supply for the
+                  whole lion family.
+                </p>
+              </div>
+
+              <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <h3 className="font-bold">Explorer</h3>
+                <p>
+                  Couragest and Bold, The explorer takes it to the limit finding new paths and meadows. Legend has it
+                  the explorer are the reason we found ZION island.
+                </p>
+              </div>
+
+              <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <h3 className="font-bold">Builder</h3>
+                <p>
+                  After surviving the flee from the imperial army, and losing cities of magical treasures, The Builders
+                  are ready to build a new empire on ZION island.
+                </p>
+              </div>
+
+              <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                <h3 className="font-bold">T4 professor</h3>
+                <p>
+                  Born into magical bio-tech, The professors continue to create technology. Thanks to the help of the
+                  Farms, Explorers, and Builders a new empire begins.
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Spinner } from 'rasta-uikit'
+// import { Spinner } from 'rasta-uikit'
 import Page from './layout/Page'
 import Logo from '../assets/zionlabs-logo.gif'
 

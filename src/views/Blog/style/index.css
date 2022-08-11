@@ -1,0 +1,25 @@
+figure.wp-block-image {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-style: italic;
+}
+
+@media screen and (min-width:768px) {
+    hr.wp-block-separator.has-alpha-channel-opacity {
+        width: 5%;
+        margin: auto;
+        border-top: 7px dotted;
+    }
+}
+
+@media screen and (max-width:767px) {
+    hr.wp-block-separator.has-alpha-channel-opacity {
+        width: 13%;
+        margin: auto;
+        border-top: 7px dotted;
+    }
+}

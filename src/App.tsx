@@ -31,6 +31,10 @@ const Teams = lazy(() => import('./views/Teams'))
 const Team = lazy(() => import('./views/Teams/Team'))
 const Profile = lazy(() => import('./views/Profile'))
 
+const Blog = lazy(() => import('./views/Blog'))
+const SinglePost = lazy(() => import('./views/Blog/SinglePost'))
+const Category = lazy(() => import('./views/Blog/Category'))
+
 // This config is required for number formating
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
@@ -119,6 +123,20 @@ const App: React.FC = () => {
               <Route path="/nft">
                 <Redirect to="/collectibles" />
               </Route>
+
+              {/* activate blog later after have contents */}
+              {/* <Route exact path="/blogs">
+                <Blog />
+              </Route>
+
+              <Route path="/blog/:id">
+                <SinglePost />
+              </Route>
+            
+              <Route path="/category/:id">
+                <Category/>
+              </Route> */}
+
               {/* 404 */}
               <Route component={NotFound} />
             </Switch>

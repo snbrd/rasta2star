@@ -5,23 +5,23 @@ import { usePriceRastaBusd } from 'state/hooks'
 import { Link } from 'react-router-dom'
 
 import {
-  FaHome,
-  RiErrorWarningFill,
-  IoIosSwap,
-  RiCoinLine,
-  GiTwoCoins,
-  IoChatboxEllipsesOutline,
+  // FaHome,
+  // RiErrorWarningFill,
+  // IoIosSwap,
+  // RiCoinLine,
+  // GiTwoCoins,
+  // IoChatboxEllipsesOutline,
   FaTelegramPlane,
   FaTwitter,
   FaMediumM,
-  FaReddit,
+  // FaReddit,
   FaInstagram,
   FaBars,
   FaRegWindowClose,
-  GoMail,
-  FaDonate,
-  GiLion,
-  RiMoneyDollarCircleLine,
+  // GoMail,
+  // FaDonate,
+  // GiLion,
+  // RiMoneyDollarCircleLine,
 } from 'react-icons/all'
 
 import { LazyLoadImage } from 'react-lazy-load-image-component'
@@ -96,6 +96,14 @@ export default function NewDesktopSidebar() {
       parent: false,
       child: [],
     },
+    // blog
+    // {
+    //   label: 'Blog',
+    //   path: '/blogs',
+    //   parent: false,
+    //   child: [],
+    // },
+    // end blog
     // {
     //   label: 'Zion Launchpad',
     //   path: '#',
@@ -192,7 +200,7 @@ export default function NewDesktopSidebar() {
           path: 'https://coinmarketcap.com/currencies/rasta-finance/',
           label: 'CoinMarketCap',
         },
-        
+
         // {
         //   path: 'https://rastafinance.medium.com',
         //   label: 'Medium',
@@ -237,7 +245,7 @@ export default function NewDesktopSidebar() {
         className={`h-full w-48 top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
           sidebar ? 'left-0 ml-0' : ''
         }`}
-        
+
         // data-aos="fade-right"
         // data-aos-duration="1000"
       >

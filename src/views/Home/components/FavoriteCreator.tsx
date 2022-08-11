@@ -2,10 +2,11 @@ import React from 'react'
 import { Link, BrowserRouter as Router } from 'react-router-dom'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 
-import BgImage from '../../../assets/favCreator-bg-leafs.jpg'
+// import BgImage from '../../../assets/favCreator-bg-leafs.jpg'
 import StakingCard from './FarmStakingCard'
 import CakeStats from './CakeStats'
 import TotalValueLockedCard from './TotalValueLockedCard'
+import SpaceBackground from '../../../assets/section-background-new.jpg'
 
 export default function FavoriteCreator() {
   const { account } = useWallet()
@@ -15,7 +16,8 @@ export default function FavoriteCreator() {
       <div
         className="flex w-full flex-col text-white py-16 md:py-32"
         style={{
-          backgroundImage: `url(${BgImage})`,
+          // backgroundImage: `url(${BgImage})`,
+          backgroundImage: `url(${SpaceBackground})`,
           backgroundPosition: 'top center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
@@ -27,7 +29,7 @@ export default function FavoriteCreator() {
               Interact with Your Favorite Creators.
               <br />
               {/* <span className="text-yellow-rasta">Completely Decentralized.</span> */}
-              <span className="text-blue-zion_cyan">with The Blockchain</span>
+              <span className="text-blue-zion_cyan">with ZIONLabs Launchpad</span>
             </h2>
             <div
               data-aos="fade-up"
@@ -64,7 +66,7 @@ export default function FavoriteCreator() {
                   className="bg-gradient-to-b font-bold text-white mx-auto from-blue-zion to-blue-zion_cyan text-center py-3 px-8 rounded-xl"
                 >
                   <button type="button" className="uppercase">
-                    GO TO ZIONLP
+                    Launchpad
                   </button>
                 </a>
               </Router>
@@ -180,7 +182,7 @@ export default function FavoriteCreator() {
             <Router>
               <Link
                 to="/"
-                className="w-6/12 md:w-full font-bold text-white mx-auto text-center py-4 px-8 mb-0 md:mb-0 rounded-xl flex items-center border-2"
+                className="w-6/12 md:w-full font-bold text-white mx-auto text-center py-2 px-6 mb-0 md:mb-0 rounded-xl flex items-center border-2 mt-4"
               >
                 <button type="button" className="w-full ">
                   COMING SOON

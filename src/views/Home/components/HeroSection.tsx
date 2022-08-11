@@ -36,7 +36,9 @@ export default function HeroSection() {
               <br /> Part of The Stronger Together Alliance
             </h1>
             <p className="mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
-              ZION Labs powered by Rasta, from the island of ZION we unite artists into the blockchain NFT revolution
+              For a sustainable future and longevity of our Zion Labs eco system, we will always be tax free. Our
+              currency grows value from NFT art sales which we believe will play a big role in the future of blockchain
+              adoption.
             </p>
             <div className="cta flex-row mt-8 space-x-8 hidden md:flex" data-aos="fade-right" data-aos-duration="2500">
               <Link
@@ -47,10 +49,12 @@ export default function HeroSection() {
               </Link>
 
               <a
-                href="https://www.zionlp.com/"
+                href="https://docs.zionlabs.info/introduction/master"
+                target="_blank"
+                rel="noreferrer"
                 className="border-2 font-bold border-blue-zion_cyan w-1/3 to-blue-zion_cyan text-center py-3 rounded-xl text-blue-zion_cyan"
               >
-                <button type="button">Launchpad</button>
+                <button type="button">Docs</button>
               </a>
             </div>
           </div>

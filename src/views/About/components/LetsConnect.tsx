@@ -1,6 +1,6 @@
 import React from 'react'
-import * as TiIcons from 'react-icons/ti'
-import { Link } from 'react-router-dom'
+// import * as TiIcons from 'react-icons/ti'
+// import { Link } from 'react-router-dom'
 
 type Props = {
   bg: any
