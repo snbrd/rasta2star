@@ -10,6 +10,9 @@ export default function Accordion({ title, content }) {
         <div
           className="accordion-title flex bg-gradient-to-r from-blue-zion to-blue-zion_cyan py-2 px-5 rounded-md text-white justify-between"
           onClick={() => setAccordion(!accordion)}
+          style={{
+            cursor: 'pointer',
+          }}
         >
           <div>
             <strong>{title}</strong>

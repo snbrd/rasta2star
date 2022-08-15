@@ -48,6 +48,12 @@ export default function Sidebar() {
       child: [],
     },
     {
+      label: 'Launchpad',
+      path: 'https://zionlp.com/launchpad-artists',
+      parent: false,
+      child: [],
+    },
+    {
       label: 'About',
       path: '/about',
       // icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
@@ -61,21 +67,27 @@ export default function Sidebar() {
       child: [],
     },
     {
-      label: 'Trade',
-      path: '#',
-      // icon: <IoIosSwap className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: true,
-      child: [
-        {
-          path: 'https://swap.zionlabs.info/',
-          label: 'RastaSwap ★',
-        },
-        {
-          path: 'https://exchange.zionlabs.info',
-          label: 'Old RastaDex',
-        },
-      ],
+      label: 'RastaSwap ★',
+      path: 'https://swap.zionlabs.info/',
+      parent: false,
+      child: [],
     },
+    // {
+    //   label: 'Trade',
+    //   path: '#',
+    //   // icon: <IoIosSwap className="inline-block" style={{ width: '32px', height: '32px' }} />,
+    //   parent: true,
+    //   child: [
+    //     {
+    //       path: 'https://swap.zionlabs.info/',
+    //       label: 'RastaSwap ★',
+    //     },
+    //     {
+    //       path: 'https://exchange.zionlabs.info',
+    //       label: 'Old RastaDex',
+    //     },
+    //   ],
+    // },
     {
       label: 'Stake Liquidity',
       path: '/liquidity',
@@ -90,12 +102,12 @@ export default function Sidebar() {
       parent: false,
       child: [],
     },
-    {
-      label: 'Launchpad',
-      path: 'https://zionlp.com/launchpad-artists',
-      parent: false,
-      child: [],
-    },
+    // {
+    //   label: 'Launchpad',
+    //   path: 'https://zionlp.com/launchpad-artists',
+    //   parent: false,
+    //   child: [],
+    // },
     // {
     //   label: 'Zion Launchpad',
     //   path: '#',
@@ -192,7 +204,7 @@ export default function Sidebar() {
           path: 'https://coinmarketcap.com/currencies/rasta-finance/',
           label: 'CoinMarketCap',
         },
-        
+
         // {
         //   path: 'https://rastafinance.medium.com',
         //   label: 'Medium',
@@ -232,7 +244,6 @@ export default function Sidebar() {
         className={`h-full w-full top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
           sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
         }`}
-        
       >
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer">
           <FaRegWindowClose onClick={showSidebar} />

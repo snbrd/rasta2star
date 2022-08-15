@@ -34,13 +34,14 @@ export default function Form({ fields, contactInfo, desc }: Props) {
   return (
     <div className="bg-white pb-16 md:pb-32 flex px-8 md:px-0">
       <div data-aos="fade-left" data-aos-duration="1000" className="img-right absolute hidden md:block right-0 top-1/4">
-        <img src={MrLionFull} alt="Full body mr lion" />
+        {/* <img src={MrLionFull} alt="Full body mr lion" /> */}
       </div>
       <div data-aos="fade-right" data-aos-duration="1000" className="img-left absolute hidden md:block left-40 top-1/4">
-        <img src={MsLionFull} alt="Full body ms lion" />
+        {/* <img src={MsLionFull} alt="Full body ms lion" /> */}
       </div>
-      <div className="max-w-screen-xl mx-auto bg-white shadow-box flex flex-col md:flex-row  -mt-16 md:-mt-64 w-full md:px-0">
-        <div className="forms flex items-center  px-8 md:px-32 py-6 md:py-16 mt-4 w-full md:w-3/5">
+      {/* <div className="max-w-screen-xl mx-auto bg-white shadow-box flex flex-col md:flex-row  -mt-16 md:-mt-64 w-full md:px-0"> */}
+      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row  -mt-16 md:-mt-56 w-full md:px-20">
+        <div className="forms flex items-center  px-8 md:px-32 py-6 md:py-16 mt-0 bg-white shadow-box w-full md:w-3/5">
           <form action="" className="flex-grow-1 " id="contactForm" onSubmit={handleSubmit}>
             <div className="fields space-y-12">
               {fields.map((item, index) => {
@@ -113,7 +114,7 @@ export default function Form({ fields, contactInfo, desc }: Props) {
                 <a
                   href={item.link}
                   key={index}
-                  className="rounded-full p-2 border-1 border-white bg-gradient-to-r hover:border-gray-rasta hover:from-yellow-rasta hover:to-green-rasta"
+                  className="rounded-full p-2 border-1 border-white bg-gradient-to-b hover:border-gray-rasta hover:from-blue-zion hover:to-blue-zion_cyan"
                 >
                   {item.icon}
                 </a>

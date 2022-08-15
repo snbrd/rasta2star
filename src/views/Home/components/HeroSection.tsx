@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 // import HeroImage from '../../../assets/home-header.jpg'
-import HeroImage from '../../../assets/hero-new-background-zion.jpg'
+// import HeroImage from '../../../assets/hero-new-background-zion.jpg'
 
 export default function HeroSection() {
   const counter = [
@@ -37,7 +37,7 @@ export default function HeroSection() {
               <br /> Part of The Stronger Together Alliance
             </h1>
             <p className="mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
-              For a sustainable future and longevity of our Zion Labs eco system, we will always be tax free. Our
+              For a sustainable future and longevity of our Zion Labs ecosystem, we will always be tax-free. Our
               currency grows value from NFT art sales which we believe will play a big role in the future of blockchain
               adoption.
             </p>

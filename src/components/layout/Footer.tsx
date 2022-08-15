@@ -13,12 +13,15 @@ export default function Footer() {
       item: [
         { label: 'About', path: '/about' },
         { label: 'Contact', path: '/contact' },
-        { label: 'ZLP By Rasta', path: 'https://zionlp.com' },
+        { label: 'Zion Launchpad', path: 'https://zionlp.com' },
       ],
     },
     {
       title: 'Stake',
-      item: [{ label: 'Mr. Rasta', path: '/liquidity' }],
+      item: [
+        { label: 'Mr. Rasta', path: '/liquidity' },
+        { label: 'Ms. Rasta', path: '/liquidity' },
+      ],
     },
   ]
   const socialMedia = [

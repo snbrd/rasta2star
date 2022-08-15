@@ -48,6 +48,12 @@ export default function NewDesktopSidebar() {
       child: [],
     },
     {
+      label: 'Launchpad',
+      path: 'https://zionlp.com/launchpad-artists',
+      parent: false,
+      child: [],
+    },
+    {
       label: 'About',
       path: '/about',
       // icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
@@ -61,21 +67,27 @@ export default function NewDesktopSidebar() {
       child: [],
     },
     {
-      label: 'Trade',
-      path: '#',
-      // icon: <IoIosSwap className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: true,
-      child: [
-        {
-          path: 'https://swap.zionlabs.info/',
-          label: 'RastaSwap ★',
-        },
-        {
-          path: 'https://exchange.zionlabs.info',
-          label: 'Old RastaDex',
-        },
-      ],
+      label: 'RastaSwap ★',
+      path: 'https://swap.zionlabs.info/',
+      parent: false,
+      child: [],
     },
+    // {
+    //   label: 'Trade',
+    //   path: '#',
+    //   // icon: <IoIosSwap className="inline-block" style={{ width: '32px', height: '32px' }} />,
+    //   parent: true,
+    //   child: [
+    //     {
+    //       path: 'https://swap.zionlabs.info/',
+    //       label: 'RastaSwap ★',
+    //     },
+    //     {
+    //       path: 'https://exchange.zionlabs.info',
+    //       label: 'Old RastaDex',
+    //     },
+    //   ],
+    // },
     {
       label: 'Stake Rasta',
       path: '/pools',
@@ -90,12 +102,12 @@ export default function NewDesktopSidebar() {
       parent: false,
       child: [],
     },
-    {
-      label: 'Launchpad',
-      path: 'https://zionlp.com/launchpad-artists',
-      parent: false,
-      child: [],
-    },
+    // {
+    //   label: 'Launchpad',
+    //   path: 'https://zionlp.com/launchpad-artists',
+    //   parent: false,
+    //   child: [],
+    // },
     // blog
     // {
     //   label: 'Blog',

@@ -1,19 +1,20 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+import React from 'react'
 import * as AiIcons from 'react-icons/ai'
 import * as FaIcons from 'react-icons/fa'
 import * as Io5Icons from 'react-icons/io5'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import Header from './components/HeroSection'
-import Card from './components/CardSection'
+// import Card from './components/CardSection'
 import Dsc from './components/DescriptionSection'
-import CardButton from './components/CardButton'
+// import CardButton from './components/CardButton'
 import TeamSlide from './components/TeamSlide'
-import LetsConnect from './components/LetsConnect'
+// import LetsConnect from './components/LetsConnect'
 import Accordion from './components/Accordion'
 // import LeafBg from '../../assets/leaf-bg.jpg'
-import NFTsBackground from '../../assets/hero-new-background-zion.jpg'
+// import NFTsBackground from '../../assets/hero-new-background-zion.jpg'
 // import AboutHeader from '../../assets/lion-statue.jpg'
-import AboutHeader from '../../assets/bg-withoutlogo.jpg'
+// import AboutHeader from '../../assets/bg-withoutlogo.jpg'
 // import BurdyProfile from '../../assets/senor-burdy.jpeg'
 // import EvoProfile from '../../assets/senor-evo.jpeg'
 // import MiguelProfile from '../../assets/rastalorean.jpeg'
@@ -33,6 +34,7 @@ import ChicagoProfile from '../../assets/Zion-Rasta-ChicagoDOne.png'
 import BadgerProfile from '../../assets/Zion-Rasta-DrBadger.png'
 import LoreanProfile from '../../assets/Zion-Rasta-Lorean.png'
 import LionAbout from '../../assets/Ganyah22.png'
+import AboutBackground from '../../assets/about-background.jpg'
 
 export default function About() {
   const cardSection = [
@@ -148,26 +150,33 @@ export default function About() {
   const team = [
     {
       name: '@SeñorBurdy',
+      position: 'Co-Founder',
       avatar: BurdyProfile,
     },
     {
-      name: '@RastaBinna',
-      avatar: BinnaProfile,
+      name: '@Dr. Badger',
+      position: 'Co-Founder',
+      avatar: BadgerProfile,
     },
+
     {
       name: '@BioTech',
+      position: 'Co-Founder',
       avatar: BioTechProfile,
     },
     {
       name: "@ChicagoD'One",
+      position: 'Graphics',
       avatar: ChicagoProfile,
     },
     {
-      name: '@Dr. Badger',
-      avatar: BadgerProfile,
+      name: '@RastaBinna',
+      position: 'Development',
+      avatar: BinnaProfile,
     },
     {
       name: '@Lorean',
+      position: 'NFTNOMICS and Marketing',
       avatar: LoreanProfile,
     },
   ]
@@ -206,7 +215,7 @@ export default function About() {
   return (
     <div>
       <Header
-        images={AboutHeader}
+        images={AboutBackground}
         // title="Art is our asset,
         // RASTA is our currency. Building something
         // dope on blockchain"
@@ -234,16 +243,16 @@ export default function About() {
               <div className="card-content-1">
                 <p>
                   The Zion Launchpad is a reggae artist music profile hub, selected artists can upload their music to
-                  their own launchpad playlist for the community to listen. Each artist has exclusive NFTs for sale on
-                  Zion Labs for the artist which can be further more staked for MRASTA both profiting for the artists
-                  future careers as well as fans and community supporters of the launchpad artists.
+                  their own launchpad playlist for the community to listen to. Each artist has exclusive NFTs for sale
+                  on Zion Labs for the artist which can be furthermore staked for MRASTA both profiting for the
+                  artists&lsquo; future careers as well as fans and community supporters of the launchpad artists.
                 </p>
               </div>
               <div className="card-content-2 flex flex-col space-y-5">
                 <h3 className="text-xl font-bold pr-0">Launchpad NFTs</h3>
                 <p>
-                  The Zion Launchpad is an NFT based utility minting / launchpad for artists. Artists that come to the
-                  launchpad are able to earn revenue from NFT sales which the user can further more stake on the artist
+                  The Zion Launchpad is an NFT-based utility minting/launchpad for artists. Artists that come to the
+                  launchpad are able to earn revenue from NFT sales which the user can furthermore stake on the artist
                   profile.
                 </p>
 
@@ -263,8 +272,10 @@ export default function About() {
       <section
         className=" w-full bg-black md:mx-auto items-center pt-32 pb-32 md:pt-16 md:pb-16"
         style={{
-          backgroundImage: `url(${NFTsBackground})`,
+          backgroundImage: `url(${AboutBackground})`,
           backgroundSize: 'cover',
+          backgroundPosition: 'center bottom',
+          backgroundRepeat: 'no-repeat',
         }}
       >
         <TeamSlide items={team} />

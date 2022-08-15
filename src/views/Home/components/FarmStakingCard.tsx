@@ -37,7 +37,7 @@ const FarmedStakingCard = () => {
           <button
             type="button"
             onClick={harvestAllFarms}
-            className="uppercase text-sm bg-gradient-to-r text-white mt-8 from-yellow-rasta to-green-rasta_cta text-center py-3 px-8 rounded-md"
+            className="uppercase text-sm bg-gradient-to-b text-white mt-8 from-blue-zion to-blue-zion_cyan text-center py-3 px-8 rounded-md"
           >
             {pendingTx ? TranslateString(548, 'Collecting RASTA') : TranslateString(532, `HARVEST ALL`)}
           </button>

@@ -1,14 +1,17 @@
 import React from 'react'
-import images from '../../../assets/contact-header.jpg'
+// import images from '../../../assets/contact-header.jpg'
+import images from '../../../assets/contact-background-new.jpg'
+import ArtistsImages from '../../../assets/nft-artits.png'
 
 export default function Heading() {
   return (
     <div
-      className="w-full bg-blend-overlay bg-black bg-opacity-25 from-red-rasta via-black to-black pb-32"
+      className="w-full pb-32 md:bg-blend-soft-light"
       style={{
-        backgroundImage: `url(${images})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'right center',
+        backgroundImage: `url(${images}), url(${ArtistsImages})`,
+        backgroundSize: 'cover, 90%',
+        backgroundPosition: 'center center, center center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       <div className="max-w-screen-xl text-white flex flex-col mx-auto pt-8 pb-16 px-4 md:px-0 md:py-56">

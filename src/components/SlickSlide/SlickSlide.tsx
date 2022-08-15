@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import Slider from 'react-slick'
+import TeamBackground from '../../assets/team-paper.png'
 
 export default function MultipleSlick({ items }: { items: any[] }) {
   const [sliders, setSliders] = useState([])
@@ -57,9 +58,18 @@ export default function MultipleSlick({ items }: { items: any[] }) {
               data-aos-duration="1000"
               className="flex-imp  flex-col w-full items-center content-center justify-center"
             >
-              <LazyLoadImage src={item.avatar} alt="Logo" className="w-64 mx-auto" effect="blur" />
-              {/* <h2 className="mt-8 font-bold text-xl">{item.name}</h2> */}
-              {/* <h3 className="mt-4 text-md">{item.position}</h3> */}
+              <div
+                style={{
+                  backgroundImage: `url(${TeamBackground})`,
+                  backgroundSize: '100% 100%',
+                  backgroundRepeat: 'no-repeat',
+                }}
+                className="md:py-12 md:px-8"
+              >
+                <LazyLoadImage src={item.avatar} alt="Logo" className="w-64 mx-auto" effect="blur" />
+                {/* <h2 className="mt-8 font-bold text-xl">{item.name}</h2> */}
+                <h3 className="mt-4 text-xl font-bold text-black text-center">{item.position}</h3>
+              </div>
             </div>
           )
         })}

@@ -84,14 +84,21 @@ export default function FavoriteCreator() {
               data-aos-duration="1000"
               className="cus-h"
               style={{
-                backgroundImage: `url(/images/Background.png)`,
+                backgroundImage: `url(/images/lion1.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '100% 100%',
               }}
             >
-              <div className="pb-5 row flex flex-col justify-center items-center h-full text-white">
-                <span className="text-2xl">Staking</span>
-                <span className="text-sm">Please Connect Wallet to Unlock</span>
+              <div className="pb-5 row flex flex-col justify-end items-center h-full text-white rounded-lg shadow-2xl">
+                <div
+                  className="flex flex-col text-center w-full py-4 rounded-md"
+                  style={{
+                    backgroundColor: '#000000cf',
+                  }}
+                >
+                  <span className="text-2xl">Staking</span>
+                  <span className="text-sm">Please Connect Wallet to Unlock</span>
+                </div>
               </div>
             </div>
           )}
@@ -104,14 +111,21 @@ export default function FavoriteCreator() {
               data-aos-delay="200"
               className="cus-h"
               style={{
-                backgroundImage: `url(/images/Background.png)`,
+                backgroundImage: `url(/images/lion2.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '100% 100%',
               }}
             >
-              <div className="pb-5 row flex flex-col justify-center items-center h-full text-white">
-                <span className="text-2xl">RASTA Stats</span>
-                <span className="text-sm">Please Connect Wallet to Unlock</span>
+              <div className="pb-5 row flex flex-col justify-end items-center h-full text-white rounded-lg shadow-2xl">
+                <div
+                  className="flex flex-col text-center w-full py-4 rounded-md"
+                  style={{
+                    backgroundColor: '#000000cf',
+                  }}
+                >
+                  <span className="text-2xl">RASTA Stats</span>
+                  <span className="text-sm">Please Connect Wallet to Unlock</span>
+                </div>
               </div>
             </div>
           )}
@@ -124,14 +138,21 @@ export default function FavoriteCreator() {
               data-aos-delay="400"
               className="cus-h"
               style={{
-                backgroundImage: `url(/images/Background.png)`,
+                backgroundImage: `url(/images/lion3.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '100% 100%',
               }}
             >
-              <div className="pb-5 row flex flex-col justify-center items-center h-full text-white">
-                <span className="text-2xl">Total Value Locked (TVL)</span>
-                <span className="text-sm">Please Connect Wallet to Unlock</span>
+              <div className="pb-5 row flex flex-col justify-end items-center h-full text-white rounded-lg shadow-2xl">
+                <div
+                  className="flex flex-col text-center w-full py-4 rounded-md"
+                  style={{
+                    backgroundColor: '#000000cf',
+                  }}
+                >
+                  <span className="text-2xl">Total Value Locked (TVL)</span>
+                  <span className="text-sm">Please Connect Wallet to Unlock</span>
+                </div>
               </div>
             </div>
           )}
