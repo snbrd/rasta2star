@@ -149,20 +149,25 @@ export default function About() {
 
   const team = [
     {
-      name: '@SeñorBurdy',
-      position: 'Co-Founder',
-      avatar: BurdyProfile,
+      name: '@Lorean',
+      position: 'NFTNOMICS',
+      avatar: LoreanProfile,
     },
+    {
+      name: '@BioTech',
+      position: 'Co-Founder',
+      avatar: BioTechProfile,
+    },
+    
     {
       name: '@Dr. Badger',
       position: 'Co-Founder',
       avatar: BadgerProfile,
     },
-
     {
-      name: '@BioTech',
+      name: '@SeñorBurdy',
       position: 'Co-Founder',
-      avatar: BioTechProfile,
+      avatar: BurdyProfile,
     },
     {
       name: "@ChicagoD'One",
@@ -173,11 +178,6 @@ export default function About() {
       name: '@RastaBinna',
       position: 'Development',
       avatar: BinnaProfile,
-    },
-    {
-      name: '@Lorean',
-      position: 'NFTNOMICS and Marketing',
-      avatar: LoreanProfile,
     },
   ]
 
