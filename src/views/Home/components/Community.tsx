@@ -91,40 +91,35 @@ export default function Community() {
                     data-aos-delay="100"
                     className="mt-8 text-center md:text-left"
                   >
-                    After the journey of the torturous sea crossing our lions have arrived on the island of ZION. The
-                    following survivors are listed in rarity sectors.
+                    After a torturous sea crossing, our Lions have arrived on the island of ZION. In the arrival memos, following survivors are listed by their skill rarities;
                   </p>
                 </div>
 
                 <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                   <h3 className="font-bold">T1 - Farmer</h3>
                   <p>
-                    The humblest and modest of all lions. Farmers a hard-working and essential for creating supplies for
-                    the whole lion family.
+                  The humblest and modest of all lions. Farmers are hard-working and essential for creating supplies for the whole lion family.
                   </p>
                 </div>
 
                 <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                   <h3 className="font-bold">T2 - Explorer</h3>
                   <p>
-                    Courage and Bold, The explorer takes it to the limit finding new paths and meadows. Legend has it
-                    the explorer are the reason we found ZION island.
+                  Courage and Bold, The explorer takes it to the limit finding new paths and meadows. Legend has it the explorer are the reason we found ZION island.
                   </p>
                 </div>
 
                 <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                   <h3 className="font-bold">T3 - Builder</h3>
                   <p>
-                    After surviving the flee from the imperial army, and losing cities of magical treasures, The
-                    Builders are ready to build a new empire on ZION island.
+                  After surviving the flee from the imperial army, and losing cities of magical treasures, The Builders are ready to build a new empire on ZION island.
                   </p>
                 </div>
 
                 <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                   <h3 className="font-bold">T4 - Professor</h3>
                   <p>
-                    Born into magical biotech, The professors continue to create technology. Thanks to the help of the
-                    Farms, Explorers, and Builders a new empire begins.
+                  Born into magical biotech, The professors continue to create technology. Thanks to the help of the Farms, Explorers, and Builders a new empire begins.
                   </p>
                 </div>
               </div>
