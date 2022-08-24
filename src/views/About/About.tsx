@@ -169,16 +169,16 @@ export default function About() {
       position: 'Co-Founder',
       avatar: BurdyProfile,
     },
-    {
-      name: "@ChicagoD'One",
-      position: 'Graphics',
-      avatar: ChicagoProfile,
-    },
-    {
-      name: '@RastaBinna',
-      position: 'Development',
-      avatar: BinnaProfile,
-    },
+    // {
+    //   name: "@ChicagoD'One",
+    //   position: 'Graphics',
+    //   avatar: ChicagoProfile,
+    // },
+    // {
+    //   name: '@RastaBinna',
+    //   position: 'Development',
+    //   avatar: BinnaProfile,
+    // },
   ]
 
   const letsConnect = {
