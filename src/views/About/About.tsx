@@ -35,6 +35,7 @@ import BadgerProfile from '../../assets/Zion-Rasta-DrBadger.png'
 import LoreanProfile from '../../assets/Zion-Rasta-Lorean.png'
 import LionAbout from '../../assets/Ganyah22.png'
 import AboutBackground from '../../assets/about-background.jpg'
+import AboutBackground2 from '../../assets/about-background-bottom.jpg'
 
 export default function About() {
   const cardSection = [
@@ -272,7 +273,7 @@ export default function About() {
       <section
         className=" w-full bg-black md:mx-auto items-center pt-32 pb-32 md:pt-16 md:pb-16"
         style={{
-          backgroundImage: `url(${AboutBackground})`,
+          backgroundImage: `url(${AboutBackground2})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center bottom',
           backgroundRepeat: 'no-repeat',
