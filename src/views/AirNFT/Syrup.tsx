@@ -6,9 +6,15 @@ import BigNumber from 'bignumber.js'
 import nftPools from 'config/constants/nftPools'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
-
+import { getWeb3 } from 'utils/web3'
+import { AbiItem } from 'web3-utils'
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 import MrRastaImage from '../../assets/headerImageZionLabs11.jpg'
+import airNFTABI from 'config/abi/airToken.json'
+
+const web3 = getWeb3()
+const AirNftContract = new web3.eth.Contract(airNFTABI as unknown as AbiItem, '0xcc406fdA6ea668ca89C0F7a6c70658a875Af082C')
+
 
 const Farm: React.FC = () => {
   const TranslateString = useI18n()
@@ -17,16 +23,17 @@ const Farm: React.FC = () => {
   const bnbPriceUSD = usePriceBnbBusd()
   const rastaPriceUSD = usePriceRastaBusd()
 
-  const poolsWithApy = nftPools.map((farm, index) => {
+  const poolsWithApy = nftPools.map(async (farm, index) => {
+    const rewardRate = await AirNftContract.methods.rewardRate().call()
     if (farm.type === 'airnft') {
       return {
         [farm.id]: new BigNumber(rastaPriceUSD)
           .div(bnbPriceUSD)
-          .times(farm.rewardRate)
+          .times(rewardRate)
           .times(SEC_PER_YEAR)
           .div(
             Number(farmInfo[index].farmbalance) > 0
-              ? new BigNumber(farmInfo[index].farmbalance).times(new BigNumber(0.4).times(new BigNumber(10).pow(18)))
+              ? new BigNumber(farmInfo[index].farmbalance).times(new BigNumber(0.5).times(new BigNumber(10).pow(18)))
               : new BigNumber(10).pow(18),
           )
           .times(100)
