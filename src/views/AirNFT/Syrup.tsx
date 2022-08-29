@@ -5,12 +5,13 @@ import { useAirNFT, usePriceBnbBusd, usePriceRastaBusd } from 'state/hooks'
 import BigNumber from 'bignumber.js'
 import nftPools from 'config/constants/nftPools'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
-import PoolCard from './components/PoolCard'
+import airNFTABI from 'config/abi/airToken.json'
 import { getWeb3 } from 'utils/web3'
 import { AbiItem } from 'web3-utils'
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
+import PoolCard from './components/PoolCard'
 import MrRastaImage from '../../assets/headerImageZionLabs11.jpg'
-import airNFTABI from 'config/abi/airToken.json'
+
 
 const web3 = getWeb3()
 const AirNftContract = new web3.eth.Contract(airNFTABI as unknown as AbiItem, '0xcc406fdA6ea668ca89C0F7a6c70658a875Af082C')
