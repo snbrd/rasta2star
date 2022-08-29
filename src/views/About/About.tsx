@@ -170,11 +170,11 @@ export default function About() {
       position: 'Co-Founder',
       avatar: BurdyProfile,
     },
-    // {
-    //   name: "@ChicagoD'One",
-    //   position: 'Graphics',
-    //   avatar: ChicagoProfile,
-    // },
+    {
+      name: "@ChicagoD'One",
+      position: 'Graphics',
+      avatar: ChicagoProfile,
+    },
     // {
     //   name: '@RastaBinna',
     //   position: 'Development',
@@ -258,7 +258,7 @@ export default function About() {
                 </p>
 
                 {AccordionData.map(({ title, content }) => (
-                  <Accordion title={title} content={content} />
+                  <Accordion title={title} content={content} key={title} />
                 ))}
               </div>
             </div>
