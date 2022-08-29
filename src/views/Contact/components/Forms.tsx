@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import MrLionFull from '../../../assets/lion-mr-full.png'
-import MsLionFull from '../../../assets/lion-ms-full.png'
+// import MrLionFull from '../../../assets/lion-mr-full.png'
+// import MsLionFull from '../../../assets/lion-ms-full.png'
 
 type Props = {
   fields: any[]
