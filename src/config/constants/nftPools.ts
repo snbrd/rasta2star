@@ -11,7 +11,7 @@ const nftPools = [
       97: '',
       56: '0xcc406fdA6ea668ca89C0F7a6c70658a875Af082C',
     },
-    rewardRate: '100000000000000',
+    rewardRate: '1000000000000000',
     projectLink: 'https://app.airnfts.com/creators/0x21C8B8069f7B9950cbdA2EF4Af12Aa98c9D97A61',
     type: 'airnft',
     icon: 'airnft.svg',
