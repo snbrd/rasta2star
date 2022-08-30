@@ -1,36 +1,46 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import useI18n from 'hooks/useI18n'
 import { SEC_PER_YEAR } from 'config'
 import { useAirNFT, usePriceBnbBusd, usePriceRastaBusd } from 'state/hooks'
 import BigNumber from 'bignumber.js'
 import nftPools from 'config/constants/nftPools'
+import airFarmABI from 'config/abi/airFarm.json'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
-import airNFTABI from 'config/abi/airToken.json'
+
 import { getWeb3 } from 'utils/web3'
 import { AbiItem } from 'web3-utils'
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 import PoolCard from './components/PoolCard'
 import MrRastaImage from '../../assets/headerImageZionLabs11.jpg'
 
-
 const web3 = getWeb3()
-const AirNftContract = new web3.eth.Contract(airNFTABI as unknown as AbiItem, '0xcc406fdA6ea668ca89C0F7a6c70658a875Af082C')
-
+const AirNftPoolContract = new web3.eth.Contract(
+  airFarmABI as unknown as AbiItem,
+  '0xcc406fdA6ea668ca89C0F7a6c70658a875Af082C',
+)
 
 const Farm: React.FC = () => {
   const TranslateString = useI18n()
   const [Active, setActive] = useState(true)
+  const [rate, setRate] = useState(0)
   const farmInfo = useAirNFT()
   const bnbPriceUSD = usePriceBnbBusd()
   const rastaPriceUSD = usePriceRastaBusd()
 
-  const poolsWithApy = nftPools.map(async (farm, index) => {
-    const rewardRate = await AirNftContract.methods.rewardRate().call()
+  useEffect(() => {
+    ;(async () => {
+      const _rate = await AirNftPoolContract.methods.rewardRate().call()
+      setRate(_rate)
+    })()
+  }, [])
+
+  const poolsWithApy = nftPools.map((farm, index) => {
     if (farm.type === 'airnft') {
+      // Promise.resolve(rewardRate).then((result) => {
       return {
         [farm.id]: new BigNumber(rastaPriceUSD)
           .div(bnbPriceUSD)
-          .times(rewardRate)
+          .times(rate)
           .times(SEC_PER_YEAR)
           .div(
             Number(farmInfo[index].farmbalance) > 0
@@ -41,6 +51,7 @@ const Farm: React.FC = () => {
           .toFixed(0)
           .toString(),
       }
+      // })
     }
     return {
       [farm.id]: new BigNumber(farm.rewardRate)
