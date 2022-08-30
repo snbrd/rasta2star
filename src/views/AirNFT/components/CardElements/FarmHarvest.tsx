@@ -24,7 +24,7 @@ export default function FarmHarvest({ pool, type }: Props) {
           </h2>
           {/* <span className="text-red-rasta text-left text-sm">{rewardTokenSymbol} earned</span> */}
           <span className="text-blue-zion_cyan text-left text-sm">{rewardTokenSymbol} earned</span>
-          <div className="flex flex-row space-x-3">
+          <div className="flex flex-row space-x-3 xl:flex-col xl:space-x-0">
             <HarvestAction
               earnings={pendingReward ? new BigNumber(pendingReward) : new BigNumber('0x00')}
               type={type}
