@@ -30,6 +30,7 @@ const Home: React.FC = () => {
     <div>
       <section>
         <HeroSection />
+        <iframe src="http://zionlions.vercel.app/" className="w-full minting-app" title="minting"/>
         <Community />
         <div className="flex w-full  py-16 bg-white text-black flex-col">
           <div className="container mx-auto">
