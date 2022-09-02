@@ -27,8 +27,11 @@ const NotFound = () => {
           {TranslateString(1124, 'Back Home')}
         </Button> */}
 
-        <a href='/' className="bg-gradient-to-b font-bold from-blue-zion to-blue-zion_cyan text-center py-3 px-10 rounded-xl">
-        {TranslateString(1124, 'Back Home')}
+        <a
+          href="/"
+          className="bg-gradient-to-b font-bold from-blue-zion to-blue-zion_cyan text-center py-3 px-10 rounded-xl"
+        >
+          {TranslateString(1124, 'Back Home')}
         </a>
       </StyledNotFound>
     </Page>
