@@ -77,6 +77,13 @@
 header .lazy-load-image-background.blur.lazy-load-image-loaded {
   display: block !important;
 }
-.minting-app{
-  min-height:120vh;
+
+.minting-app {
+  min-height: 120vh;
+}
+
+@media screen and (max-width: 1440px) {
+  .minting-app {
+    min-height: 150vh;
+  }
 }
