@@ -37,7 +37,7 @@ export default function Blog() {
 
       <div className="flex items-center justify-center align-middle">
         <button
-          className={`-right-6 p-5 h-auto bg-gray-700 w-auto fixed bottom-1/2 z-20 transform -rotate-90 `}
+          className={`-right-6 p-5 h-auto bg-blue-zion_cyan w-auto fixed bottom-1/2 z-20 transform -rotate-90 `}
           type="button"
           onClick={showSidenav}
         >
@@ -64,7 +64,7 @@ export default function Blog() {
                   <div className="card-body p-2 flex flex-col justify-between">
                     <div className="px-6 py-4">
                       <div className="font-bold text-xl mb-2">
-                        <Link to={`/blog/${blog.slug}`}>{blog.title.rendered}</Link>
+                        <Link to={`/education/${blog.slug}`}>{blog.title.rendered}</Link>
                       </div>
                       {renderHTML(blog.excerpt.rendered)}
                     </div>
@@ -74,7 +74,7 @@ export default function Blog() {
                       </span>
                     </div>
                     <div className="px-6 pt-4 pb-2">
-                      <Link to={`/blog/${blog.slug}`}>Read more</Link>
+                      <Link to={`/education/${blog.slug}`}>Read more</Link>
                     </div>
                   </div>
                 </div>

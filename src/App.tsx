@@ -125,11 +125,11 @@ const App: React.FC = () => {
               </Route>
 
               {/* activate blog later after have contents */}
-              <Route exact path="/blogs">
+              <Route exact path="/educations">
                 <Blog />
               </Route>
 
-              <Route path="/blog/:id">
+              <Route path="/education/:id">
                 <SinglePost />
               </Route>
 

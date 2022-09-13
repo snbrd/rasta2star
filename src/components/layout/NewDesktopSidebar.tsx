@@ -111,7 +111,7 @@ export default function NewDesktopSidebar() {
     // blog
     {
       label: 'Education',
-      path: '/blogs',
+      path: '/educations',
       parent: false,
       child: [],
     },

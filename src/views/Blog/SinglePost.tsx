@@ -37,7 +37,7 @@ export default function SinglePost() {
     <>
       <div className="flex items-center justify-center align-middle">
         <button
-          className={`-right-6 p-5 h-auto bg-gray-700 w-auto fixed bottom-1/2 z-20 transform -rotate-90 `}
+          className={`-right-6 p-5 h-auto bg-blue-zion_cyan w-auto fixed bottom-1/2 z-20 transform -rotate-90 `}
           type="button"
           onClick={showSidenav}
         >

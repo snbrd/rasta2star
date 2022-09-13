@@ -104,7 +104,7 @@ export default function Sidebar() {
     },
     {
       label: 'Education',
-      path: '/blogs',
+      path: '/educations',
       parent: false,
       child: [],
     },
