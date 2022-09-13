@@ -125,17 +125,17 @@ const App: React.FC = () => {
               </Route>
 
               {/* activate blog later after have contents */}
-              {/* <Route exact path="/blogs">
+              <Route exact path="/blogs">
                 <Blog />
               </Route>
 
               <Route path="/blog/:id">
                 <SinglePost />
               </Route>
-            
+
               <Route path="/category/:id">
-                <Category/>
-              </Route> */}
+                <Category />
+              </Route>
 
               {/* 404 */}
               <Route component={NotFound} />

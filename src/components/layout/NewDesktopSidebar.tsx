@@ -109,12 +109,12 @@ export default function NewDesktopSidebar() {
     //   child: [],
     // },
     // blog
-    // {
-    //   label: 'Blog',
-    //   path: '/blogs',
-    //   parent: false,
-    //   child: [],
-    // },
+    {
+      label: 'Education',
+      path: '/blogs',
+      parent: false,
+      child: [],
+    },
     // end blog
     // {
     //   label: 'Zion Launchpad',

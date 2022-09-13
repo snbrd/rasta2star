@@ -89,6 +89,13 @@ export default function Sidebar() {
     //   ],
     // },
     {
+      label: 'Stake Rasta',
+      path: '/pools',
+      // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
+    },
+    {
       label: 'Stake Liquidity',
       path: '/liquidity',
       // icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
@@ -96,9 +103,8 @@ export default function Sidebar() {
       child: [],
     },
     {
-      label: 'Stake Rasta',
-      path: '/pools',
-      // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      label: 'Education',
+      path: '/blogs',
       parent: false,
       child: [],
     },
