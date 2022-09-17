@@ -175,11 +175,11 @@ export default function About() {
       position: 'Graphics',
       avatar: ChicagoProfile,
     },
-    // {
-    //   name: '@RastaBinna',
-    //   position: 'Development',
-    //   avatar: BinnaProfile,
-    // },
+    {
+      name: '@RastaBinna',
+      position: 'Development',
+      avatar: BinnaProfile,
+    },
   ]
 
   const letsConnect = {
