@@ -132,19 +132,23 @@ export default function Sidebar() {
     //   ],
     // },
     {
-      label: 'NFT Staking',
+      label: 'NFTs',
       path: '#',
       // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
       parent: true,
       child: [
         {
           path: '/stakenft',
-          label: 'RastaDividendNFT',
+          label: 'DividendNFT',
         },
         {
-          path: '/streetpunksnft',
-          label: 'Streetpunk NFT',
+          path: '/',
+          label: 'ZionLion NFT',
         },
+        // {
+        //   path: '/streetpunksnft',
+        //   label: 'Streetpunk NFT',
+        // },
       ],
     },
     // {
