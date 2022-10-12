@@ -33,24 +33,6 @@ const Home: React.FC = () => {
       <section>
         <HeroSection />
         <Mint />
-        <div
-          style={{
-            backgroundImage: `url(${MinterImage})`,
-            backgroundSize: 'cover',
-          }}
-          className="w-full py-32 flex flex-col gap-y-5 px-10 block md:hidden"
-        >
-          <h2 className="text-4xl font-bold pr-0 md:pr-48 text-center leading-tight flex-1 justify-center items-center">
-            ZionLion NFTs
-          </h2>
-
-          <a
-            className="bg-gradient-to-b font-bold text-white from-blue-zion to-blue-zion_cyan text-center py-2 px-8 rounded-md w-fit"
-            href="https://mint.zionlabs.info/"
-          >
-            Mobile Mint
-          </a>
-        </div>
         <Community />
         <div className="flex w-full  py-16 bg-white text-black flex-col">
           <div className="container mx-auto">
