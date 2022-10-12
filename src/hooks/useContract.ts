@@ -32,6 +32,7 @@ import pointCenterIfo from 'config/abi/pointCenterIfo.json'
 import bunnySpecial from 'config/abi/bunnySpecial.json'
 import airfarm from 'config/abi/airFarm.json'
 import airnft from 'config/abi/airToken.json'
+import mintAbi from 'config/abi/mintAbi.json'
 
 const useContract = (abi: AbiItem, address: string, contractOptions?: ContractOptions) => {
   const web3 = useWeb3()
@@ -120,6 +121,11 @@ export const useAirFarmContract = (address) => {
 export const useAirNFTContract = () => {
   const abi = airnft as unknown as AbiItem
   return useContract(abi, getAirNftAddress())
+}
+
+export const useMintNFTContract = (address) => {
+  const abi = mintAbi as unknown as AbiItem
+  return useContract(abi, address)
 }
 
 export default useContract

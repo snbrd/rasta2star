@@ -1,0 +1,19 @@
+{
+  "CONTRACT_ADDRESS": "0x8492d8e17f3e520e171682d792b0eb79dc126b4e",
+  "SCAN_LINK": "https://bscscan.com/token/0x8492d8e17f3e520e171682d792b0eb79dc126b4e",
+  "NETWORK": {
+    "NAME": "Binance Smart Chain",
+    "SYMBOL": "BNB",
+    "ID": 56
+  },
+  "NFT_NAME": "Zion Labs",
+  "SYMBOL": "ZionLion",
+  "MAX_SUPPLY": 6200,
+  "WEI_COST": 180000000000000000,
+  "DISPLAY_COST": 0.18,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "NFTKey",
+  "MARKETPLACE_LINK": "https://nftkey.app/collections/zionlions/",
+  "SHOW_BACKGROUND": true
+
+}
