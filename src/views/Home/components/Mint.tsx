@@ -241,12 +241,12 @@ function Mint() {
               />
             </s.FlexDiv>
 
-            <s.FlexDiv direction={['column']} gap="2rem" margin="16px 0 0 0" md_width="87%">
-              <s.Text align="justify" line_height="1.5rem">
+            <s.FlexDiv direction={['column']} gap="2rem" margin="16px 0 0 0" mdWidth="87%">
+              <s.Text align="justify" lineHeight="1.5rem">
                 Please make sure you are connected to the right network (Binance Smart Chain Mainnet) and the correct
                 address. Please note: Once you mint, this action cannot be undone.
               </s.Text>
-              <s.Text align="justify" line_height="1.5rem">
+              <s.Text align="justify" lineHeight="1.5rem">
                 {`We have set the gas limit to 285000 for the contract to successfully mint your NFT. We recommend that
                 you don't lower the gas limit`}
               </s.Text>
@@ -399,7 +399,7 @@ function Mint() {
                 </>
               )}
             </s.FlexDiv>
-            <s.FlexDiv direction={['row']} gap="1rem" content="center" mobile_hide="true">
+            <s.FlexDiv direction={['row']} gap="1rem" content="center" mobileHide="true">
               <s.RoundedImage src="/images/mint/newgif.gif" />
             </s.FlexDiv>
           </s.FlexDiv>

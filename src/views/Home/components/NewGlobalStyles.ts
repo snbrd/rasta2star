@@ -55,11 +55,11 @@ export const Heading2 = styled.h2`
   font-weight: 700;
 `
 
-export const Text = styled(`p`)<{ align?: string; color?: string; line_height?: string }>`
+export const Text = styled(`p`)<{ align?: string; color?: string; lineHeight?: string }>`
   font-family: 'Roboto', sans-serif;
   color: ${({ color }) => color || '#ffffff'};
   text-align: ${({ align }) => align};
-  line-height: ${({ line_height }) => line_height || 1};
+  line-height: ${({ lineHeight }) => lineHeight || 1};
 `
 
 export const Link = styled.a`
@@ -84,8 +84,8 @@ export const FlexDiv = styled(`div`)<{
   gap?: string
   items?: string
   content?: string
-  md_width?: string
-  mobile_hide?: any
+  mdWidth?: string
+  mobileHide?: any
   margin?: string
   grow?: number
 }>`
@@ -95,11 +95,11 @@ export const FlexDiv = styled(`div`)<{
   align-items: ${({ items }) => items};
   justify-content: ${({ content }) => content};
   @media screen and (min-width: 768px) {
-    width: ${({ md_width }) => md_width};
+    width: ${({ mdWidth }) => mdWidth};
   }
   @media screen and (max-width: 767px) {
     flex-direction: ${(props) => (props.direction[1] ? props.direction[1] : props.direction[0])};
-    display: ${({ mobile_hide }) => (mobile_hide ? 'none;' : '')};
+    display: ${({ mobileHide }) => (mobileHide ? 'none;' : '')};
   }
   margin: ${({ margin }) => margin};
   flex-grow: ${({ grow }) => grow};
