@@ -60,7 +60,7 @@ export default function FavoriteCreator() {
                   </button>
                 </a> */}
                 <a
-                  href="https://zionlp.com"
+                  href="https://www.zionlp.com/launchpad-artists"
                   target="_blank"
                   rel="noreferrer"
                   className="bg-gradient-to-b font-bold text-white mx-auto from-blue-zion to-blue-zion_cyan text-center py-3 px-8 rounded-xl"
