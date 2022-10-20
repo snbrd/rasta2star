@@ -65,7 +65,7 @@ export default function FavoriteCreator() {
                   rel="noreferrer"
                   className="bg-gradient-to-b font-bold text-white mx-auto from-blue-zion to-blue-zion_cyan text-center py-3 px-8 rounded-xl"
                 >
-                  <button type="button" className="uppercase">
+                  <button type="button" className="uppercase ">
                     Launchpad
                   </button>
                 </a>
