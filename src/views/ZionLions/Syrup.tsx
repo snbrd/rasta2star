@@ -28,7 +28,7 @@ const Farm: React.FC = () => {
   const rastaPriceUSD = usePriceRastaBusd()
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       const _rate = await ZionLionsContract.methods.rewardRate().call()
       setRate(_rate)
     })()

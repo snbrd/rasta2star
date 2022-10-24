@@ -28,7 +28,7 @@ const Farm: React.FC = () => {
   const rastaPriceUSD = usePriceRastaBusd()
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       const _rate = await AirNftPoolContract.methods.rewardRate().call()
       setRate(_rate)
     })()
