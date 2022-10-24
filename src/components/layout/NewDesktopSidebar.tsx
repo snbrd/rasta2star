@@ -143,6 +143,10 @@ export default function NewDesktopSidebar() {
           path: '/stakenft',
           label: 'DividendNFT',
         },
+        // {
+        //   path: '/stake-zionlions',
+        //   label: 'ZionBuilders',
+        // },
         {
           path: '/',
           label: 'ZionLion NFT',

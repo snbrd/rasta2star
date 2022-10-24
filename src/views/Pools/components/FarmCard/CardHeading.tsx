@@ -18,9 +18,12 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({ lpLabel, multiplier, fa
         <div className="coin-info flex  items-center">
           <div className="core p-0 lg:p-1 flex-grow-1 text-left md:text-center">
             {/* <span className="px-3 py-2 border-2 flex flex-row items-center border-orange-rasta text-orange-rasta bg-white rounded-full whitespace-nowrap"> */}
-            <span className="px-3 py-2 border-2 flex flex-row items-center border-none text-orange-rasta bg-white rounded-full whitespace-nowrap justify-center" style={{
-                background:'#241f31'
-              }}>
+            <span
+              className="px-3 py-2 border-2 flex flex-row items-center border-none text-orange-rasta bg-white rounded-full whitespace-nowrap justify-center"
+              style={{
+                background: '#241f31',
+              }}
+            >
               <FaIcons.FaCheckCircle />
               &nbsp;<span className="text-white">CORE</span>
             </span>

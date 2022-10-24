@@ -6,7 +6,6 @@ import Community from './components/Community'
 import FavCreator from './components/FavoriteCreator'
 import ZIONLIONImage from '../../assets/zionlion-nft.jpg'
 import NFTNomicsImage from '../../assets/NFTNomics.png'
-import MinterImage from '../../assets/minterbg.jpg'
 import Mint from './components/Mint'
 
 const Home: React.FC = () => {

@@ -6,7 +6,10 @@ export default function CardSection({ items }: { items: any[] }) {
   const showDesc = () => setDesc(!desc)
 
   return (
-    <div className="w-full px-2 md:px-8 py-4 text-white flex-grow-1 bg-white z-index-88 -mt-10 md:-mt-32 items-center content-center shadow-xl rounded-md md:max-w-screen-xl mx-auto" style={{ backgroundColor:"#241f31" }}>
+    <div
+      className="w-full px-2 md:px-8 py-4 text-white flex-grow-1 bg-white z-index-88 -mt-10 md:-mt-32 items-center content-center shadow-xl rounded-md md:max-w-screen-xl mx-auto"
+      style={{ backgroundColor: '#241f31' }}
+    >
       <div className="wrap flex flex-col md:grid md:grid-cols-3 ">
         {items.map((item, index) => {
           return (

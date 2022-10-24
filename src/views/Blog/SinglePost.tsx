@@ -24,7 +24,7 @@ export default function SinglePost() {
         .then((response) => {
           setPost(response.data)
         })
-        .catch(function (error) {
+        .catch((error) => {
           console.error(error)
         })
     }

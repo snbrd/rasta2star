@@ -52,10 +52,10 @@ export default function Category() {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {blogs
-              .filter(function (flt) {
+              .filter((flt) => {
                 return flt.category_slug === `${slug}`
               })
-              .map(function (flt) {
+              .map((flt) => {
                 return (
                   <>
                     <div

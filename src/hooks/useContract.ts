@@ -113,7 +113,7 @@ export const useBunnySpecialContract = () => {
   return useContract(abi, getBunnySpecialAddress())
 }
 
-export const useAirFarmContract = (address) => {
+export const useNftFarmContract = (address) => {
   const abi = airfarm as unknown as AbiItem
   return useContract(abi, address)
 }

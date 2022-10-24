@@ -1,14 +1,5 @@
 import styled from 'styled-components'
 
-const Input = styled.input.attrs((props) => ({
-  type: props.type,
-  size: props.size || '1em',
-}))`
-  border: 2px solid palevioletred;
-  margin: ${(props) => props.size};
-  padding: ${(props) => props.size};
-`
-
 export const Screen = styled(`div`)<{ image: string }>`
   background-color: var(--primary);
   background-image: ${({ image }) => (image ? `url(${image})` : 'none')};

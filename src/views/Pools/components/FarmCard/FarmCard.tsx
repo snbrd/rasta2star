@@ -130,12 +130,13 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, ethereum, account })
         />
         {!removed && (
           // <div className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-center mt-4 md:mt-0">
-          <div className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-center mt-4 md:mt-0 py-3" style={{ 
-            background: '#241f31',
-          }}>
-            <span className="apr-value text-2xl w-full text-white ">
-              {Number(farmAPY) > 0 ? `${farmAPY}%` : '-'}
-            </span>
+          <div
+            className="w-full apr bg-gray-300 flex flex-col rounded-lg justify-center text-center mt-4 md:mt-0 py-3"
+            style={{
+              background: '#241f31',
+            }}
+          >
+            <span className="apr-value text-2xl w-full text-white ">{Number(farmAPY) > 0 ? `${farmAPY}%` : '-'}</span>
             {/* <span className="apr-label text-red-rasta text-md">APR</span> */}
             <span className="apr-label text-blue-zion_cyan text-md">APR</span>
           </div>

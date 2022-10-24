@@ -16,6 +16,9 @@ export const getMasterChefAddress = () => {
 export const getAirNftAddress = () => {
   return getAddress(addresses.airNft)
 }
+export const getZionLionsNftAddress = () => {
+  return getAddress(addresses.zionlionsNFT)
+}
 export const getMulticallAddress = () => {
   return getAddress(addresses.mulltiCall)
 }

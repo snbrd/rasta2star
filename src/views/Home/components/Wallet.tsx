@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import * as FaIcons from 'react-icons/fa'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import BinanceWallet from '../../../assets/wallet/binance-wallet.png'
 import MathWallet from '../../../assets/wallet/math-wallet.png'

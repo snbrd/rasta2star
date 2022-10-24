@@ -124,9 +124,12 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
             tokenSymbol="farm.tokenSymbol"
           />
           {!removed && (
-            <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0" style={{
-              background:'#241f31'
-            }}>
+            <div
+              className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0"
+              style={{
+                background: '#241f31',
+              }}
+            >
               <span className="apr-value text-2xl w-full text-white ">
                 {isFinished || isOldSyrup || !apy || apy?.isNaN() || !apy?.isFinite() ? (
                   '-'

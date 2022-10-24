@@ -141,6 +141,10 @@ export default function Sidebar() {
           path: '/stakenft',
           label: 'DividendNFT',
         },
+        // {
+        //   path: '/stake-zionlions',
+        //   label: 'ZionBuilders',
+        // },
         {
           path: '/',
           label: 'ZionLion NFT',

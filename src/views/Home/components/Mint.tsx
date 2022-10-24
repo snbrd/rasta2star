@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { useMintNFTContract } from 'hooks/useContract'
-import { AbiItem } from 'web3-utils'
 import styled from 'styled-components'
 import * as s from './NewGlobalStyles'
 import '../style.css'

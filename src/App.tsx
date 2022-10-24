@@ -34,6 +34,7 @@ const Profile = lazy(() => import('./views/Profile'))
 const Blog = lazy(() => import('./views/Blog'))
 const SinglePost = lazy(() => import('./views/Blog/SinglePost'))
 const Category = lazy(() => import('./views/Blog/Category'))
+const ZionLions = lazy(() => import('./views/ZionLions'))
 
 // This config is required for number formating
 BigNumber.config({
@@ -91,6 +92,9 @@ const App: React.FC = () => {
               </Route>
               <Route path="/stakenft">
                 <AirFarm />
+              </Route>
+              <Route path="/stake-zionlions">
+                <ZionLions />
               </Route>
               <Route path="/streetpunksnft">
                 <StreetPunksNFT />
