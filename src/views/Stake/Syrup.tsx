@@ -11,6 +11,7 @@ import { useFarms, usePriceBnbBusd, usePools, usePriceLatteBnb } from 'state/hoo
 import { useGetDFLPriceVsBnb } from 'hooks/api'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 // import Coming from './components/Coming'
+import AnimatedPage from 'components/AnimatedPage'
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
 
@@ -96,60 +97,62 @@ const Farm: React.FC = () => {
   )
 
   return (
-    <div>
-      <div
-        className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
-        style={{
-          backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
-        <h1 className="text-4xl font-bold">{stackedOnly ? 'STAKE RASTA' : 'STAKE RASTA'}</h1>
-      </div>
-      <div className=" py-8  w-full bg-white text-black">
-        <div className=" flex flex-col text-gray-800 items-center w-10/12 mx-auto">
-          <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Rasta Tokens')}</h2>
-          <p className="text-gray-700">{TranslateString(696, 'Earn Other Tokens')}</p>
-          <div className="toggle-button items-end flex-col flex w-full">
-            <ToggleSwitch id="toggleSwitch" checked={Active} onChange={setActive} />
-            {/* <PoolTabButtons stackedOnly={stackedOnly} setStackedOnly={setStackedOnly} /> */}
-          </div>
-          <div className="card items-center text-center w-full mt-16">
-            <div>
-              <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
-                {/* <Route exact path={`${path}`}>
-                    {stackedOnly ? farmsList(stackedOnlyFarms, false) : farmsList(activeFarms, false)}
-                  </Route>
-                  <Route exact path={`${path}`}>
-                    {farmsList(inactiveFarms, true)}
-                  </Route> */}
-                {/* <Route exact path={`${path}`}> */}
-                {Active ? (
-                  <>
-                    {stackedOnly
-                      ? orderBy(stackedOnlyPools, ['sortOrder']).map((pool) => (
-                          <PoolCard key={pool.sousId} pool={pool} />
-                        ))
-                      : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
-                  </>
-                ) : (
-                  <>
-                    {orderBy(finishedPools, ['sortOrder']).map((pool) => (
-                      <PoolCard key={pool.sousId} type={false} pool={pool} />
-                    ))}
-                  </>
-                )}
-                {/* </Route> */}
-                {/* <Route path={`${path}/history`}>
-              </Route> */}
+    <AnimatedPage>
+      <div>
+        <div
+          className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
+          style={{
+            backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <h1 className="text-4xl font-bold">{stackedOnly ? 'STAKE RASTA' : 'STAKE RASTA'}</h1>
+        </div>
+        <div className=" py-8  w-full bg-white text-black">
+          <div className=" flex flex-col text-gray-800 items-center w-10/12 mx-auto">
+            <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Rasta Tokens')}</h2>
+            <p className="text-gray-700">{TranslateString(696, 'Earn Other Tokens')}</p>
+            <div className="toggle-button items-end flex-col flex w-full">
+              <ToggleSwitch id="toggleSwitch" checked={Active} onChange={setActive} />
+              {/* <PoolTabButtons stackedOnly={stackedOnly} setStackedOnly={setStackedOnly} /> */}
+            </div>
+            <div className="card items-center text-center w-full mt-16">
+              <div>
+                <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
+                  {/* <Route exact path={`${path}`}>
+                      {stackedOnly ? farmsList(stackedOnlyFarms, false) : farmsList(activeFarms, false)}
+                    </Route>
+                    <Route exact path={`${path}`}>
+                      {farmsList(inactiveFarms, true)}
+                    </Route> */}
+                  {/* <Route exact path={`${path}`}> */}
+                  {Active ? (
+                    <>
+                      {stackedOnly
+                        ? orderBy(stackedOnlyPools, ['sortOrder']).map((pool) => (
+                            <PoolCard key={pool.sousId} pool={pool} />
+                          ))
+                        : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
+                    </>
+                  ) : (
+                    <>
+                      {orderBy(finishedPools, ['sortOrder']).map((pool) => (
+                        <PoolCard key={pool.sousId} type={false} pool={pool} />
+                      ))}
+                    </>
+                  )}
+                  {/* </Route> */}
+                  {/* <Route path={`${path}/history`}>
+                </Route> */}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </AnimatedPage>
     // <Page>
     //   <Hero>
     //     <div>

@@ -134,7 +134,7 @@ export default function NewDesktopSidebar() {
     //   ],
     // },
     {
-      label: 'NFTs',
+      label: 'NFT Staking',
       path: '#',
       // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
       parent: true,

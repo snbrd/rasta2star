@@ -34,7 +34,7 @@ export default function HeroSection() {
               data-aos-duration="1000"
             >
               <span className="text-blue-zion_cyan">Zion Labs</span>
-              <br /> Part of The Stronger Together Alliance
+              <br /> #ZionArmy #ZionLions #ZionArmyTakeover
             </h1>
             <p className="mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
               For a sustainable future and longevity of our Zion Labs ecosystem, we will always be tax-free. Our

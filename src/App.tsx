@@ -1,6 +1,9 @@
 import React, { useEffect, Suspense, lazy } from 'react'
 import { Router, Redirect, Route, Switch } from 'react-router-dom'
 // import { ResetCSS } from 'rasta-uikit'
+// framer-motion
+import {AnimatePresence} from 'framer-motion/dist/framer-motion'
+
 import BigNumber from 'bignumber.js'
 import { useFetchProfile, useFetchPublicData } from 'state/hooks'
 import About from 'views/About/About'
@@ -68,6 +71,7 @@ const App: React.FC = () => {
           <div className="flex-1 md:ml-48 overflow-x-hidden">
             <Header />
             {/* <Suspense fallback={<PageLoader />}> */}
+            <AnimatePresence exitBeforeEnter>
             <Switch>
               <Route path="/" exact>
                 <Home />
@@ -144,6 +148,7 @@ const App: React.FC = () => {
               {/* 404 */}
               <Route component={NotFound} />
             </Switch>
+            </AnimatePresence>
             {/* </Suspense> */}
             <Footer />
             <ToastListener />

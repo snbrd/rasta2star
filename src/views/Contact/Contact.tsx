@@ -1,6 +1,7 @@
 import React from 'react'
 import * as FaIcons from 'react-icons/fa'
 import * as Io5Icons from 'react-icons/io5'
+import AnimatedPage from 'components/AnimatedPage'
 import Heading from './components/Heading'
 import Forms from './components/Forms'
 
@@ -63,9 +64,11 @@ export default function Contact() {
     ],
   }
   return (
-    <div>
-      <Heading />
-      <Forms fields={fields} desc={heading.desc} contactInfo={contactInfo} />
-    </div>
+    <AnimatedPage>
+      <div>
+        <Heading />
+        <Forms fields={fields} desc={heading.desc} contactInfo={contactInfo} />
+      </div>
+    </AnimatedPage>
   )
 }

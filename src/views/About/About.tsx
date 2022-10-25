@@ -4,6 +4,8 @@ import React from 'react'
 // import * as FaIcons from 'react-icons/fa'
 // import * as Io5Icons from 'react-icons/io5'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
+import AnimatedPage from 'components/AnimatedPage'
+
 import Header from './components/HeroSection'
 // import Card from './components/CardSection'
 import Dsc from './components/DescriptionSection'
@@ -214,77 +216,79 @@ export default function About() {
   //   },
   // }
   return (
-    <div>
-      <Header
-        images={AboutBackground}
-        // title="Art is our asset,
-        // RASTA is our currency. Building something
-        // dope on blockchain"
-        desc=""
-        // btn={{ link: 'https://docs.zionlabs.info', label: 'Read The Docs' }}
-      />
-      {/* <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row  pb-8">
-        <Card items={cardSection} />
-      </section> */}
-      <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-8 md:py-16">
-        <Dsc />
-      </section>
+    <AnimatedPage>
+      <div>
+        <Header
+          images={AboutBackground}
+          // title="Art is our asset,
+          // RASTA is our currency. Building something
+          // dope on blockchain"
+          desc=""
+          // btn={{ link: 'https://docs.zionlabs.info', label: 'Read The Docs' }}
+        />
+        {/* <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row  pb-8">
+          <Card items={cardSection} />
+        </section> */}
+        <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-8 md:py-16">
+          <Dsc />
+        </section>
 
-      <section className=" w-full grid md:grid-cols-2 bg-white md:mx-auto items-center px-8 md:px-12 md:flex-row py-8 md:py-24">
-        <div data-aos="fade-right" data-aos-duration="1000" className="mx-auto text-black space-y-6">
-          <LazyLoadImage src={LionAbout} alt="" className="w-auto" effect="blur" />
-        </div>
+        <section className=" w-full grid md:grid-cols-2 bg-white md:mx-auto items-center px-8 md:px-12 md:flex-row py-8 md:py-24">
+          <div data-aos="fade-right" data-aos-duration="1000" className="mx-auto text-black space-y-6">
+            <LazyLoadImage src={LionAbout} alt="" className="w-auto" effect="blur" />
+          </div>
 
-        <div data-aos="fade-left" data-aos-duration="1000" className="mx-auto text-black space-y-6">
-          <div className="card flex flex-col space-y-5 shadow-lg rounded-lg py-8 px-10">
-            <div className="card-title">
-              <h2 className="text-3xl font-bold pr-0">What is the Zion Launchpad</h2>
-            </div>
-            <div className="card-content flex flex-col space-y-5">
-              <div className="card-content-1">
-                <p>
-                  The Zion Launchpad is a reggae artist music profile hub, selected artists can upload their music to
-                  their own launchpad playlist for the community to listen to. Each artist has exclusive NFTs for sale
-                  on Zion Labs for the artist which can be furthermore staked for MRASTA both profiting for the
-                  artists&lsquo; future careers as well as fans and community supporters of the launchpad artists.
-                </p>
+          <div data-aos="fade-left" data-aos-duration="1000" className="mx-auto text-black space-y-6">
+            <div className="card flex flex-col space-y-5 shadow-lg rounded-lg py-8 px-10">
+              <div className="card-title">
+                <h2 className="text-3xl font-bold pr-0">What is the Zion Launchpad</h2>
               </div>
-              <div className="card-content-2 flex flex-col space-y-5">
-                <h3 className="text-xl font-bold pr-0">Launchpad NFTs</h3>
-                <p>
-                  The Zion Launchpad is an NFT-based utility minting/launchpad for artists. Artists that come to the
-                  launchpad are able to earn revenue from NFT sales which the user can furthermore stake on the artist
-                  profile.
-                </p>
+              <div className="card-content flex flex-col space-y-5">
+                <div className="card-content-1">
+                  <p>
+                    The Zion Launchpad is a reggae artist music profile hub, selected artists can upload their music to
+                    their own launchpad playlist for the community to listen to. Each artist has exclusive NFTs for sale
+                    on Zion Labs for the artist which can be furthermore staked for MRASTA both profiting for the
+                    artists&lsquo; future careers as well as fans and community supporters of the launchpad artists.
+                  </p>
+                </div>
+                <div className="card-content-2 flex flex-col space-y-5">
+                  <h3 className="text-xl font-bold pr-0">Launchpad NFTs</h3>
+                  <p>
+                    The Zion Launchpad is an NFT-based utility minting/launchpad for artists. Artists that come to the
+                    launchpad are able to earn revenue from NFT sales which the user can furthermore stake on the artist
+                    profile.
+                  </p>
 
-                {AccordionData.map(({ title, content }) => (
-                  <Accordion title={title} content={content} key={title} />
-                ))}
+                  {AccordionData.map(({ title, content }) => (
+                    <Accordion title={title} content={content} key={title} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-8 md:py-16">
-        <CardButton items={cardBtnItem} />
-      </section> */}
+        {/* <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-8 md:py-16">
+          <CardButton items={cardBtnItem} />
+        </section> */}
 
-      <section
-        className=" w-full bg-black md:mx-auto items-center pt-32 pb-32 md:pt-16 md:pb-16"
-        style={{
-          backgroundImage: `url(${AboutBackground2})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center bottom',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
-        <TeamSlide items={team} />
-      </section>
+        <section
+          className=" w-full bg-black md:mx-auto items-center pt-32 pb-32 md:pt-16 md:pb-16"
+          style={{
+            backgroundImage: `url(${AboutBackground2})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center bottom',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <TeamSlide items={team} />
+        </section>
 
-      {/* <section className=" w-full flex bg-white md:mx-auto items-center md:flex-row -mt-48 md:-mt-64 ">
-        <LetsConnect items={letsConnect} bg={NFTsBackground} />
-      </section> */}
-    </div>
+        {/* <section className=" w-full flex bg-white md:mx-auto items-center md:flex-row -mt-48 md:-mt-64 ">
+          <LetsConnect items={letsConnect} bg={NFTsBackground} />
+        </section> */}
+      </div>
+    </AnimatedPage>
   )
 }
