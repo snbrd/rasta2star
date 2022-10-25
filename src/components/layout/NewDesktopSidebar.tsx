@@ -148,7 +148,7 @@ export default function NewDesktopSidebar() {
         //   label: 'ZionBuilders',
         // },
         {
-          path: '/',
+          path: '/stake-zionlions',
           label: 'ZionLion NFT',
         },
         // {

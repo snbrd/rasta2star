@@ -146,7 +146,7 @@ export default function Sidebar() {
         //   label: 'ZionBuilders',
         // },
         {
-          path: '/',
+          path: '/stake-zionlions',
           label: 'ZionLion NFT',
         },
         // {
