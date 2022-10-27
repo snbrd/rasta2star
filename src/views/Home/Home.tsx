@@ -6,7 +6,7 @@ import HeroSection from './components/HeroSection'
 import Community from './components/Community'
 import FavCreator from './components/FavoriteCreator'
 import ZIONLIONImage from '../../assets/zionlion-nft.jpg'
-import NFTNomicsImage from '../../assets/NFTNomics.png'
+import NFTNomicsImage from '../../assets/NFTNomics-n.png'
 import Mint from './components/Mint'
 
 const Home: React.FC = () => {
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
           <HeroSection />
           <Mint />
           <Community />
-          <div className="flex w-full  py-16 bg-white text-black flex-col">
+          <div className="flex w-full  py-20 bg-white text-black flex-col">
             <div className="container mx-auto">
               <div className="mx-auto mb-8">
                 <LazyLoadImage

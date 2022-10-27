@@ -229,11 +229,11 @@ export default function About() {
         {/* <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row  pb-8">
           <Card items={cardSection} />
         </section> */}
-        <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-8 md:py-16">
+        <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-8 md:py-20">
           <Dsc />
         </section>
 
-        <section className=" w-full grid md:grid-cols-2 bg-white md:mx-auto items-center px-8 md:px-12 md:flex-row py-8 md:py-24">
+        <section className=" w-full grid md:grid-cols-2 bg-white md:mx-auto items-center px-8 md:px-12 md:flex-row py-8 md:py-20">
           <div data-aos="fade-right" data-aos-duration="1000" className="mx-auto text-black space-y-6">
             <LazyLoadImage src={LionAbout} alt="" className="w-auto" effect="blur" />
           </div>

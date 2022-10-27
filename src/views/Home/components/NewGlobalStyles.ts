@@ -6,16 +6,19 @@ export const Screen = styled(`div`)<{ image: string }>`
   background-size: cover;
   background-position: center;
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   overflow-x: hidden;
-  padding: 0 4.313rem;
+  padding: 6rem 4.313rem;
   @media screen and (max-width: 767px) {
-    padding: 3rem 1.5rem;
+    padding: 6rem 1.5rem;
+  }
+  @media screen and (max-height:767px) {
+    padding-top: 12vh;
+    padding-bottom: 12vh;
   }
 `
 

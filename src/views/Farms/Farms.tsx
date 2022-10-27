@@ -125,10 +125,10 @@ const Farms: React.FC = () => {
           <h1 className="text-4xl font-bold">{stackedOnly ? 'Mr Rasta Liquidity' : 'Mr Rasta Liquidity'}</h1>
         </div>
 
-        <div className=" py-8 md:py-0 md:pt-16 md:pb-32  w-full bg-white text-black">
-          <div className=" flex flex-col text-gray-800 items-center w-10/12 mx-auto">
+        <div className=" py-8 md:py-0 md:pt-16 md:pb-32  w-full bg-gradient-to-br from-red-rasta to-blue-zion text-black">
+          <div className=" flex flex-col text-white items-center w-10/12 mx-auto">
             <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Liquidity Pool Tokens')}</h2>
-            <p className="text-gray-700">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
+            <p className="text-white">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
             <div className="toggle-button items-center md:items-end flex-col flex w-full">
               <Wrapper>
                 <ToggleSwitchForStack id="ToggleSwitchForStack" checked={stackedOnly} onChange={setStackedOnly} />

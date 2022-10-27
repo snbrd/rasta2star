@@ -220,7 +220,7 @@ function Mint() {
       <s.Heading2
         style={{
           textAlign: 'center',
-          padding: '0 0 10vh 0',
+          padding: '0 0 5vh 0',
         }}
       >
         ZionLion NFTs

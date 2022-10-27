@@ -99,8 +99,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
       style={{
         // backgroundImage: "url('images/cardbg.png')",
         backgroundSize: '100% 580px',
-        boxShadow: '6px 6px 24px -9px',
-        background: '#3d3846',
+        boxShadow: '6px 6px 24px -9px #000000',
+        background: '#3d38467a',
         color: '#fff',
       }}
     >
