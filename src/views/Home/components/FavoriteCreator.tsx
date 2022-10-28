@@ -14,7 +14,7 @@ export default function FavoriteCreator() {
   return (
     <div>
       <div
-        className="flex w-full flex-col text-white py-16 md:py-20"
+        className="flex w-full flex-col text-white py-20 md:py-16"
         style={{
           // backgroundImage: `url(${BgImage})`,
           backgroundImage: `url(${SpaceBackground})`,
@@ -46,7 +46,7 @@ export default function FavoriteCreator() {
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="100"
-              className="cta flex flex-row mt-4 space-x-8 items-center text-center"
+              className="cta flex flex-row mt-4 mb-2 space-x-8 items-center text-center"
             >
               <Router>
                 {/* <a
@@ -74,7 +74,7 @@ export default function FavoriteCreator() {
           </div>
         </div>
       </div>
-      <div className="pt-8 pb-3  w-full bg-white text-black md:pt-8 md:pb-8">
+      <div className="pt-16 pb-16  w-full bg-white text-black md:pt-4 md:pb-4">
         <div className="cus-mx grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 items-center my-8 md:my-16 px-5 gap-10 xl:mx-20 lg:mx-20">
           {account ? (
             <StakingCard />
@@ -82,8 +82,9 @@ export default function FavoriteCreator() {
             <div
               data-aos="fade-up"
               data-aos-duration="1000"
-              className="cus-h"
+              className="cus-h rounded-md"
               style={{
+                backgroundColor: '#fff',
                 backgroundImage: `url(/images/lion1.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '100% 100%',
@@ -109,8 +110,9 @@ export default function FavoriteCreator() {
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="200"
-              className="cus-h"
+              className="cus-h rounded-md"
               style={{
+                backgroundColor: '#fff',
                 backgroundImage: `url(/images/lion2.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '100% 100%',
@@ -136,8 +138,9 @@ export default function FavoriteCreator() {
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="400"
-              className="cus-h"
+              className="cus-h rounded-md"
               style={{
+                backgroundColor: '#fff',
                 backgroundImage: `url(/images/lion3.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '100% 100%',

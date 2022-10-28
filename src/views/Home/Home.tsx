@@ -35,7 +35,9 @@ const Home: React.FC = () => {
           <HeroSection />
           <Mint />
           <Community />
-          <div className="flex w-full  py-20 bg-white text-black flex-col">
+          <div className="flex w-full bg-white text-black flex-col" style={{
+            padding: '4.5rem 0'
+          }}>
             <div className="container mx-auto">
               <div className="mx-auto mb-8">
                 <LazyLoadImage
@@ -166,6 +168,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
             </div>
+            <div style={{ height: '0.5rem'}}>&nbsp;</div>
           </div>
           <FavCreator />
         </section>

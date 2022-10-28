@@ -78,7 +78,7 @@ export default function Header() {
   return (
     <>
       <div>
-        <header className="border-b-default border-white md:border-none border-opacity-50 py-6 md:py-10">
+        <header className="border-b-default border-none md:border-none border-opacity-50 py-6 md:py-10">
           <div className="flex  items-center justify-between w-10/12 mx-auto">
             <Sidebar />
 

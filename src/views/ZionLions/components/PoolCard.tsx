@@ -88,7 +88,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
         }}
       >
         {ribbon && (
-          <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta">
+          // <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta">
+          <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-blue-zion to-blue-zion_cyan">
             {ribbonText}
           </CustomTitle>
         )}
