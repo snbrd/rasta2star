@@ -74,7 +74,7 @@ export default function FavoriteCreator() {
           </div>
         </div>
       </div>
-      <div className="pt-16 pb-16  w-full bg-white text-black md:pt-4 md:pb-4">
+      <div className="pt-6 pb-6  w-full bg-white text-black md:pt-4 md:pb-4">
         <div className="cus-mx grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 items-center my-8 md:my-16 px-5 gap-10 xl:mx-20 lg:mx-20">
           {account ? (
             <StakingCard />
@@ -188,7 +188,7 @@ export default function FavoriteCreator() {
           </div>
         </div>
       </div> */}
-      <div className="bg-gradient-to-b text-white from-blue-zion to-blue-zion_cyan py-16">
+      <div className="bg-gradient-to-b text-white from-blue-zion to-blue-zion_cyan py-12 md:py-16">
         <div className="flex flex-col mx-auto md:flex-row w-full px-4 space-y-6 mb-1 md:space-y-0 md:px-0 md:w-10/12 md:mb-0 mx-autoitems-center">
           <div
             data-aos="fade-right"
