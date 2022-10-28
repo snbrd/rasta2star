@@ -20,6 +20,10 @@ export const Screen = styled(`div`)<{ image: string }>`
     padding-top: 12vh;
     padding-bottom: 12vh;
   }
+  @media screen and (max-width: 480px){
+    padding-top: 2vh;
+    padding-bottom: 5.5vh;
+  }
 `
 
 export const Container = styled.div`
@@ -131,4 +135,10 @@ export const RoundedOutlineButton = styled(`button`)<{ height?: string; width?: 
   border-radius: 666px;
   height: ${(props) => props.height};
   width: ${(props) => props.width};
+`
+
+export const MobileHide = styled(`span`)<{ disabled?: boolean }>`
+@media screen and (max-width: 767px) {
+  display:none;
+}
 `

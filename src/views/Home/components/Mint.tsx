@@ -217,6 +217,7 @@ function Mint() {
 
   return (
     <s.Screen image={CONFIG.SHOW_BACKGROUND ? '/images/mint/newbg.jpg' : null}>
+      <s.MobileHide>
       <s.Heading2
         style={{
           textAlign: 'center',
@@ -225,6 +226,7 @@ function Mint() {
       >
         ZionLion NFTs
       </s.Heading2>
+      </s.MobileHide>
       <s.Container>
         <s.Column bordered={false} width="35%">
           <s.FlexDiv direction={['column']}>

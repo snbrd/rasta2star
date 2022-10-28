@@ -82,14 +82,14 @@ const Farm: React.FC = () => {
         >
           <h1 className="text-4xl font-bold text-center">{TranslateString(696, 'Stake ZionLions NFT')}</h1>
         </div>
-        <div className=" py-8  w-full bg-gradient-to-br from-red-rasta to-blue-zion text-black">
+        <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-gradient-to-br from-red-rasta to-blue-zion text-black">
           <div className=" flex flex-col text-white items-center w-10/12 mx-auto">
             <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Purchased ZionLions')}</h2>
             <p className="text-white">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
             <div className="toggle-button items-end flex-col flex w-full">
               <ToggleSwitch id="toggleSwitch" checked={Active} onChange={setActive} />
             </div>
-            <div className="card items-center text-center w-full mt-16 mb-16">
+            <div className="card items-center text-center w-full mt-3 md:mt-16 mb-12">
               <div>
                 <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
                   {nftPools.map((farm, index) => {

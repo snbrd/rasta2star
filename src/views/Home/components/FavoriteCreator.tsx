@@ -14,7 +14,7 @@ export default function FavoriteCreator() {
   return (
     <div>
       <div
-        className="flex w-full flex-col text-white py-20 md:py-16"
+        className="flex w-full flex-col text-white py-12 md:py-16"
         style={{
           // backgroundImage: `url(${BgImage})`,
           backgroundImage: `url(${SpaceBackground})`,

@@ -125,7 +125,7 @@ const Farms: React.FC = () => {
           <h1 className="text-4xl font-bold">{stackedOnly ? 'Mr Rasta Liquidity' : 'Mr Rasta Liquidity'}</h1>
         </div>
 
-        <div className=" py-8 md:py-0 md:pt-16 md:pb-32  w-full bg-gradient-to-br from-red-rasta to-blue-zion text-black">
+        <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-gradient-to-br from-red-rasta to-blue-zion text-black">
           <div className=" flex flex-col text-white items-center w-10/12 mx-auto">
             <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Liquidity Pool Tokens')}</h2>
             <p className="text-white">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
@@ -136,7 +136,7 @@ const Farms: React.FC = () => {
                 <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
               </Wrapper>
             </div>
-            <div className="card items-center text-center w-full mt-0 mb-16 md:mt-16 md:mb-0">
+            <div className="card items-center text-center w-full mt-3 md:mt-16 mb-12">
               <div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 space-4">
                   {stackedOnly ? (

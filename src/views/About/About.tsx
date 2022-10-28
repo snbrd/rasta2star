@@ -229,11 +229,11 @@ export default function About() {
         {/* <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row  pb-8">
           <Card items={cardSection} />
         </section> */}
-        <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-8 md:py-20">
+        <section className=" w-full flex bg-white md:mx-auto items-center px-8 md:px-0 md:flex-row py-12 md:py-20">
           <Dsc />
         </section>
 
-        <section className=" w-full grid md:grid-cols-2 bg-white md:mx-auto items-center px-8 md:px-12 md:flex-row py-8 md:py-20">
+        <section className=" w-full grid md:grid-cols-2 bg-white md:mx-auto items-center px-8 md:px-12 md:flex-row py-16 md:py-20">
           <div data-aos="fade-right" data-aos-duration="1000" className="mx-auto text-black space-y-6">
             <LazyLoadImage src={LionAbout} alt="" className="w-auto" effect="blur" />
           </div>
@@ -274,7 +274,7 @@ export default function About() {
         </section> */}
 
         <section
-          className=" w-full bg-black md:mx-auto items-center pt-32 pb-32 md:pt-16 md:pb-16"
+          className=" w-full bg-black md:mx-auto items-center pt-10 pb-10 md:pt-16 md:pb-16"
           style={{
             backgroundImage: `url(${AboutBackground2})`,
             backgroundSize: 'cover',

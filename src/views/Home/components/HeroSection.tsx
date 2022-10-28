@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PotionImage from '../../../assets/potion-bottle.png'
 // import HeroImage from '../../../assets/home-header.jpg'
 // import HeroImage from '../../../assets/hero-new-background-zion.jpg'
 
@@ -13,7 +14,7 @@ export default function HeroSection() {
   return (
     <div>
       <div
-        className="flex w-full bg-opacity-50 py-0 md:py-0 md:justify-between text-white flex-col h-screen"
+        className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto md:h-screen"
         style={{
           backgroundColor: '#000',
           // backgroundImage: `url(${HeroImage})`,
@@ -28,6 +29,8 @@ export default function HeroSection() {
 
         <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row justify-center h-full z-20 md:mt-48">
           <div className="leftSection w-full md:w-6/12 md:pl-16">
+            <img src={PotionImage} className="w-32 text-center block md:hidden m-auto" alt='potion bottle' data-aos="fade-right"
+              data-aos-duration="1000"/>
             <h1
               className="text-4xl font-bold text-center md:text-left md:pr-48 leading-tight"
               data-aos="fade-right"
@@ -36,7 +39,7 @@ export default function HeroSection() {
               <span className="text-blue-zion_cyan">Zion Labs</span>
               <br /> <span className='hidden md:block'>#ZionArmy #ZionLions #ZionArmyTakeover</span>
             </h1>
-            <p className="mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
+            <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
               For a sustainable future and longevity of our Zion Labs ecosystem, we will always be tax-free. Our
               currency grows value from NFT art sales which we believe will play a big role in the future of blockchain
               adoption.
