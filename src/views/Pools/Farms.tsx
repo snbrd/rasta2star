@@ -67,7 +67,7 @@ const Farms: React.FC = () => {
 
   const farmsLP = farmList.filter((farm) => !farm.farm)
   const activeFarms = farmsLP.filter((farm) => farm.multiplier !== '0X')
-  const inactiveFarms = farmsLP.filter((farm) => farm.multiplier === '0X')
+  // const inactiveFarms = farmsLP.filter((farm) => farm.multiplier === '0X')
   const stackedOnlyFarms = activeFarms.filter(
     (farm) => farm.userData && new BigNumber(farm.userData.stakedBalance).isGreaterThan(0),
   )
@@ -80,7 +80,7 @@ const Farms: React.FC = () => {
         farmList.find((farm) => farm.pid === RASTA_POOL_PID)?.tokenPriceVsQuote || 0,
       )
       const farmsToDisplayWithAPY: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
-        if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken || !priceData) {
+        if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !priceData) {
           return farm
         }
         const cakeRewardPerBlock = RASTA_PER_BLOCK.times(farm.poolWeight)

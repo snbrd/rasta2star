@@ -56,7 +56,7 @@ const Farms: React.FC = () => {
     (farmsToDisplay, removed: boolean) => {
       const cakePriceVsBNB = new BigNumber(farmsLP.find((farm) => farm.pid === RASTA_POOL_PID)?.tokenPriceVsQuote || 0)
       const farmsToDisplayWithAPY: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
-        if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
+        if (!farm.tokenAmount || !farm.lpTotalInQuoteToken) {
           return farm
         }
         const cakeRewardPerBlock = RASTA_PER_BLOCK.times(farm.poolWeight)
