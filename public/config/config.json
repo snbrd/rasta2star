@@ -10,7 +10,7 @@
   "SYMBOL": "ZionLion",
   "MAX_SUPPLY": 6200,
   "WEI_COST": 180000000000000000,
-  "DISPLAY_COST": 0.18,
+  "DISPLAY_COST": 0.22,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "NFTKey",
   "MARKETPLACE_LINK": "https://nftkey.app/collections/zionlions/",
