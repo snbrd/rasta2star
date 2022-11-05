@@ -17,6 +17,7 @@ type Props = {
   rastaContract?: any
   stakedAmount?: any
   rastaBalance?: any
+  onFetch?: any
 }
 
 const buttonClass =
@@ -28,7 +29,7 @@ const activeButtonClass =
 const activeButtonClass2 =
   'w-full font-bold flex flex-row text-white py-2 bg-gradient-to-b from-yellow-rasta to-orange-zion items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
 
-export default function FarmHarvest({ rastaBalance, stakedAmount, poolContract, rastaContract, allowance, staked, isApproval, pool }: Props) {
+export default function FarmHarvest({ onFetch, rastaBalance, stakedAmount, poolContract, rastaContract, allowance, staked, isApproval, pool }: Props) {
   const {
     balance,
     contractAddress,
@@ -49,6 +50,7 @@ export default function FarmHarvest({ rastaBalance, stakedAmount, poolContract, 
 
     try {
       await poolContract.methods.stakeAll().send({ from: account });
+      onFetch()
     } catch (error) {
       console.log(error)
     }
@@ -59,6 +61,7 @@ export default function FarmHarvest({ rastaBalance, stakedAmount, poolContract, 
 
     try {
       await poolContract.methods.unStack().send({ from: account });
+      onFetch()
     } catch (error) {
       console.log(error)
     }
@@ -82,6 +85,7 @@ export default function FarmHarvest({ rastaBalance, stakedAmount, poolContract, 
     setLoading(true);
     try {
       await poolContract.methods.stakeRasta(new BigNumber(amount).times(new BigNumber(10).pow(18)).toString()).send({ from: account });
+      onFetch()
     } catch (error) {
       console.log(error)
     }
@@ -94,6 +98,7 @@ export default function FarmHarvest({ rastaBalance, stakedAmount, poolContract, 
 
     try {
       await poolContract.methods.withdrawRasta(new BigNumber(amount).times(new BigNumber(10).pow(18)).toString()).send({ from: account });
+      onFetch()
     } catch (error) {
       console.log(error)
     }

@@ -45,7 +45,6 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
     ribbonText,
     depositFee,
     isFinished,
-    totalSupply,
     description,
     pendingReward,
     contractAddress,
@@ -56,6 +55,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
   const [isApproval, SETisApproval] = useState(approved)
   const [allowance, setAllowance] = useState('0')
   const [staked, setStaked] = useState(false);
+  const [totalSupply, setTotalSupply] = useState(new BigNumber(0));
   const [rastaBalance, setRastaBalance] = useState(new BigNumber(0));
   const [stakedAmount, setStakedAmount] = useState(new BigNumber(0));
 
@@ -66,7 +66,9 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
   const handleFetch = useCallback(async () => {
     if (poolContract) {
       const _rate = await poolContract.methods.rewardRate().call()
+      const _tvl = await poolContract.methods.totalSupply().call()
       setRate(_rate)
+      setTotalSupply(new BigNumber(_tvl));
 
       if (account) {
         try {
@@ -169,6 +171,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
             isApproval={isApproval}
             stakedAmount={stakedAmount}
             rastaBalance={rastaBalance}
+            onFetch={handleFetch}
           />
           <div className='flex flex-col justify-between md:w-2/5'>
             <div
