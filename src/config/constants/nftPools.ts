@@ -80,7 +80,7 @@ const nftPools = [
     isFinished: false,
     tokenDecimals: 18,
     maxDepositAmount: '25000000000000000000000',
-    depositFee: 0,
+    depositFee: 3,
     ribbon: true,
     ribbonText: 'New',
   },
