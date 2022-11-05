@@ -117,13 +117,13 @@ export default function FarmHarvest({ rastaBalance, stakedAmount, poolContract, 
   )
 
   return (
-    <div className='w-full'>
+    <div className='w-full mt-4 md:mt-0'>
       <div className="gap-4 md:gap-10 row flex flex-col w-full">
         <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0 gap-8">
           <h2 className="text-xl font-bold text-left">
             STEP 1: Approve and Stake 10 Explorer NFTs
           </h2>
-          <div className="flex flex-row space-x-3 xl:space-x-0 justify-between pr-10">
+          <div className="flex flex-row space-x-3 xl:space-x-0 justify-between md:pr-10">
             <button
               type="button"
               disabled={loading}
@@ -163,7 +163,7 @@ export default function FarmHarvest({ rastaBalance, stakedAmount, poolContract, 
           <h2 className="text-xl font-bold text-left">
             STEP 2: Stake your $RASTA Tokens for A Supercharged Return
           </h2>
-          <div className="flex flex-row space-x-3 xl:space-x-0 justify-between pr-10">
+          <div className="flex flex-row space-x-3 xl:space-x-0 justify-between md:pr-10">
             <button
               type="button"
               disabled={loading}

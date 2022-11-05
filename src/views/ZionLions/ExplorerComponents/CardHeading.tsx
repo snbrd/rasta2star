@@ -14,14 +14,14 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({ lpLabel, description, f
     <>
       <div className="w-full items-detail flex flex-col flex-grow-1 justify-center">
         <div className="coin-info flex items-center gap-3">
-          <div className="core p-1 text-right w-24 xl:w-32 h-28">
+          <div className="core p-1 text-right w-40 xl:w-40 h-28">
             <img
               src={`/images/tokens/${farmImage}`}
               alt={tokenSymbol}
               className="rounded-lg"
-              width={100}
+              width="100%"
               style={{ maxWidth: 100 }}
-              height={100}
+              height="100%"
             />
           </div>
           <div className='h-full flex justify-around flex-col'>

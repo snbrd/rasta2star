@@ -115,7 +115,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
   return (
     <>
       <div
-        className={`${ribbon ? 'pt-8 ' : ''}px-5 col-span-2 lg:px-8 xl:px-10 py-6 pb-10 lg:pt-10 xl:pt-12 rounded-2xl mt-8`}
+        className={`${ribbon ? 'pt-8 ' : ''}px-5 col-span-2 lg:px-8 xl:px-10 py-6 pb-10 lg:pt-10 xl:pt-12 rounded-2xl`}
         style={{
           background: '#3d38467a',
           color: '#fff',
@@ -128,9 +128,9 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
             {ribbonText}
           </CustomTitle>
         )}
-        <div className="row flex flex-col lg:flex-row space-x-0 md:space-x-4 mb-4 md:mb-12 border-b-2 pb-3 border-black">
+        <div className="row flex flex-col lg:flex-row space-x-0 md:space-x-4 mb-4 md:mb-12 border-b-2 pb-4 border-black">
           <CardHeading lpLabel={poolName} description={description} isCommunityFarm={false} farmImage={icon} tokenSymbol="farm.tokenSymbol" />
-          <div className='w-full flex gap-4'>
+          <div className='w-full flex flex-col md:flex-row gap:2 md:gap-4'>
             <div
               className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0"
               style={{
@@ -159,7 +159,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
             )}
           </div>
         </div>
-        <div className="flex gap-6">
+        <div className="flex gap-3 md:gap-6 flex-col md:flex-row">
           <FarmHarvest
             poolContract={poolContract}
             allowance={allowance}
@@ -170,7 +170,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
             stakedAmount={stakedAmount}
             rastaBalance={rastaBalance}
           />
-          <div className='flex flex-col justify-between w-2/5'>
+          <div className='flex flex-col justify-between md:w-2/5'>
             <div
               className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-6 px-6  mt-4 md:mt-0"
               style={{
@@ -198,7 +198,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
           </div>
         </div>
         <div className='mt-8 flex justify-center'>
-          <h2 className="text-md text-left">
+          <h2 className="text-md text-center">
             Please note that unstaking your explorers will unstake your $RASTA
           </h2>
         </div>

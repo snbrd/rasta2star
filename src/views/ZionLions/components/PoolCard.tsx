@@ -132,7 +132,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
         }}
       > */}
       <div
-        className={`${ribbon ? 'pt-8 ' : ''}px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8`}
+        className={`${ribbon ? 'pt-8 ' : ''}px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl`}
         style={{
           background: '#3d38467a',
           color: '#fff',
