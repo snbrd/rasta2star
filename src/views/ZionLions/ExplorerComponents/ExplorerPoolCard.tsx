@@ -45,7 +45,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
     ribbonText,
     depositFee,
     isFinished,
-    farmbalance,
+    totalSupply,
     description,
     pendingReward,
     contractAddress,
@@ -102,8 +102,8 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
       new BigNumber(rate)
         .times(SEC_PER_YEAR)
         .div(
-          Number(farmbalance) > 0
-            ? new BigNumber(farmbalance).times(new BigNumber(0.18).times(new BigNumber(10).pow(18)))
+          Number(totalSupply) > 0
+            ? new BigNumber(totalSupply)
             : new BigNumber(10).pow(18),
         )
         .times(100)

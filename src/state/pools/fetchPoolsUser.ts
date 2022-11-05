@@ -160,6 +160,18 @@ export const fetchNftBalance = async () => {
   }))
 }
 
+export const fetchTotalSupply = async () => {
+  const call = nftPools.map((farm) => ({
+    address: getAddress(farm.contractAddress),
+    name: 'totalSupply',
+    params: [],
+  }))
+  const balance = await multicall(airFarmABI, call)
+  return nftPools.map((farm, index) => ({
+    [farm.id]: new BigNumber(balance[index]).toJSON(),
+  }))
+}
+
 export const fetchAirRewardRate = async () => {
   const call3 = nftPools.map((farm) => ({
     address: getAddress(farm.contractAddress),
