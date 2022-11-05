@@ -15,6 +15,10 @@ export default {
     97: '0x50751588924b480f9e9d4A1541CCa83f75aC0ECC',
     56: '0xF5db804101d8600c26598A1Ba465166c33CdAA4b',
   },
+  zionlionsNFT: {
+    97: '0xF71cff2D42D02De425A37180A33d65d9aE619621',
+    56: '0x8492d8e17f3e520e171682d792b0eb79dc126b4e',
+  },
   sousChef: {
     97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
     56: '0x6ab8463a4185b80905e05a9ff80a2d6b714b9e95',

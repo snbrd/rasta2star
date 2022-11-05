@@ -27,7 +27,7 @@ export default function HeroSection({ images, desc }: Props) {
           <br />
           Building something dope on blockchain
         </h1>
-        <p data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" className="mt-4">
+        <p data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" className="mt-4 hidden">
           {desc}
         </p>
         {/* <a

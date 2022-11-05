@@ -18,6 +18,7 @@ import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import { useGetPriceData, useGetCNSPriceVsBnb } from 'hooks/api'
 import useMRastaPrice from 'hooks/useMRastaPrice'
 // import { getBalanceNumber } from 'utils/formatBalance'
+import AnimatedPage from 'components/AnimatedPage'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 // import FarmTabButtons from './components/FarmTabButtons'
 // import Divider from './components/Divider'
@@ -66,7 +67,7 @@ const Farms: React.FC = () => {
 
   const farmsLP = farmList.filter((farm) => !farm.farm)
   const activeFarms = farmsLP.filter((farm) => farm.multiplier !== '0X')
-  const inactiveFarms = farmsLP.filter((farm) => farm.multiplier === '0X')
+  // const inactiveFarms = farmsLP.filter((farm) => farm.multiplier === '0X')
   const stackedOnlyFarms = activeFarms.filter(
     (farm) => farm.userData && new BigNumber(farm.userData.stakedBalance).isGreaterThan(0),
   )
@@ -79,7 +80,7 @@ const Farms: React.FC = () => {
         farmList.find((farm) => farm.pid === RASTA_POOL_PID)?.tokenPriceVsQuote || 0,
       )
       const farmsToDisplayWithAPY: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
-        if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken || !priceData) {
+        if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !priceData) {
           return farm
         }
         const cakeRewardPerBlock = RASTA_PER_BLOCK.times(farm.poolWeight)
@@ -149,47 +150,50 @@ const Farms: React.FC = () => {
   }, [checked, path, history])
 
   return (
-    <div>
-      <div
-        className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 bg-left-center-small md:bg-center text-white py-16 items-center"
-        style={{
-          backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'top center',
-        }}
-      >
-        <h1 className="text-4xl font-bold">{stackedOnly ? 'Mrs. Rasta Pools' : 'Mr. Rasta Pools'}</h1>
-      </div>
-      <div className=" py-8  w-full bg-white text-black">
-        <div className=" flex flex-col text-gray-800 items-center w-10/12 mx-auto">
-          <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Tokens')}</h2>
-          <p className="text-gray-700">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
-          <div className="toggle-button items-end flex-col flex w-full">
-            <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
-          </div>
-          <div className="card items-center text-center w-full mt-0 mb-16 md:mt-16 md:mb-0">
-            <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 space-4">
-                <Route exact path={`${path}`}>
-                  {stackedOnly ? farmsList(stackedOnlyFarms, false) : farmsList(activeFarms, false)}
-                </Route>
-                <Route exact path={`${path}/history`}>
-                  {farmsList(inactiveFarms, true)}
-                </Route>
-              </div>
+    <AnimatedPage>
+      <div>
+        <div
+          className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 bg-left-center-small md:bg-center text-white py-16 items-center"
+          style={{
+            backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'top center',
+          }}
+        >
+          <h1 className="text-4xl font-bold">{stackedOnly ? 'Mrs. Rasta Pools' : 'Mr. Rasta Pools'}</h1>
+        </div>
+        <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-gradient-to-br from-red-rasta to-blue-zion text-black">
+          <div className=" flex flex-col text-white items-center w-10/12 mx-auto">
+            <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Tokens')}</h2>
+            <p className="text-white">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
+            <div className="toggle-button items-end flex-col flex w-full">
+              <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
             </div>
-            {/* {checked && <CardsSection itemsToRender={list}/>}
-            {showMore && checked &&
-              <button type="button" onClick={loadMore} className="flex items-center justify-center mx-auto mt-8 text-md space-x-4 hover:text-red-rasta" > 
-              <FaIcons.FaChevronCircleDown/>
-              <span>Load More</span> </button>
-            }
-            {!checked && "No Farm Data Found"} */}
+            <div className="card items-center text-center w-full mt-3 md:mt-16 mb-12">
+              <div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 space-4">
+                  <Route exact path={`${path}`}>
+                    {stackedOnly ? farmsList(stackedOnlyFarms, false) : farmsList(activeFarms, false)}
+                  </Route>
+                  {/* <div style={{minHeight:'20vh'}}>&nbsp;</div> */}
+                  {/* <Route exact path={`${path}/history`}>
+                    {farmsList(inactiveFarms, true)}
+                  </Route> */}
+                </div>
+              </div>
+              {/* {checked && <CardsSection itemsToRender={list}/>}
+              {showMore && checked &&
+                <button type="button" onClick={loadMore} className="flex items-center justify-center mx-auto mt-8 text-md space-x-4 hover:text-red-rasta" > 
+                <FaIcons.FaChevronCircleDown/>
+                <span>Load More</span> </button>
+              }
+              {!checked && "No Farm Data Found"} */}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </AnimatedPage>
   )
 }
 

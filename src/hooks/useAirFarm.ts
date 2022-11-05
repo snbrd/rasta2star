@@ -5,23 +5,31 @@ import { claim, approveAll, stakeAirNFT, unstakeAirNFT } from 'utils/callHelpers
 import { fetchNFTPoolsAUserDataAsync } from 'state/pools'
 import airnft from 'config/abi/airToken.json'
 import { AbiItem } from 'web3-utils'
-import useContract, { useAirFarmContract } from './useContract'
+import useContract, { useNftFarmContract } from './useContract'
 
 const useStake = (poolAddress) => {
   const dispatch = useDispatch()
   const { account } = useWallet()
-  const airFarmContract = useAirFarmContract(poolAddress)
+  const airFarmContract = useNftFarmContract(poolAddress)
 
   const handleStake = useCallback(async () => {
-    const txHash = await stakeAirNFT(airFarmContract, account)
-    dispatch(fetchNFTPoolsAUserDataAsync(account))
-    console.info(txHash)
+    try {
+      const txHash = await stakeAirNFT(airFarmContract, account)
+      dispatch(fetchNFTPoolsAUserDataAsync(account))
+      console.info(txHash)
+    } catch (error) {
+      console.log(error)
+    }
   }, [account, dispatch, airFarmContract])
 
   const handleUnStake = useCallback(async () => {
-    const txHash = await unstakeAirNFT(airFarmContract, account)
-    dispatch(fetchNFTPoolsAUserDataAsync(account))
-    console.info(txHash)
+    try {
+      const txHash = await unstakeAirNFT(airFarmContract, account)
+      dispatch(fetchNFTPoolsAUserDataAsync(account))
+      console.info(txHash)
+    } catch (error) {
+      console.log(error)
+    }
   }, [account, dispatch, airFarmContract])
 
   return { onStake: handleStake, onUnStake: handleUnStake }
@@ -30,15 +38,19 @@ const useStake = (poolAddress) => {
 export const useClaim = (poolAddress) => {
   const dispatch = useDispatch()
   const { account } = useWallet()
-  const airFarmContract = useAirFarmContract(poolAddress)
+  const nftFarmContract = useNftFarmContract(poolAddress)
 
   const handleClaim = useCallback(async () => {
     if (account) {
-      const tx = await claim(airFarmContract, account)
-      dispatch(fetchNFTPoolsAUserDataAsync(account))
-      console.info(tx)
+      try {
+        const tx = await claim(nftFarmContract, account)
+        dispatch(fetchNFTPoolsAUserDataAsync(account))
+        console.info(tx)
+      } catch (error) {
+        console.log(error)
+      }
     }
-  }, [account, dispatch, airFarmContract])
+  }, [account, dispatch, nftFarmContract])
 
   return { onClaim: handleClaim }
 }

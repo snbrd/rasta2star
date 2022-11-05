@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { useMintNFTContract } from 'hooks/useContract'
-import { AbiItem } from 'web3-utils'
 import styled from 'styled-components'
 import * as s from './NewGlobalStyles'
 import '../style.css'
@@ -219,14 +217,16 @@ function Mint() {
 
   return (
     <s.Screen image={CONFIG.SHOW_BACKGROUND ? '/images/mint/newbg.jpg' : null}>
+      <s.MobileHide>
       <s.Heading2
         style={{
           textAlign: 'center',
-          padding: '0 0 10vh 0',
+          padding: '0 0 5vh 0',
         }}
       >
         ZionLion NFTs
       </s.Heading2>
+      </s.MobileHide>
       <s.Container>
         <s.Column bordered={false} width="35%">
           <s.FlexDiv direction={['column']}>

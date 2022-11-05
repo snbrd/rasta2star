@@ -9,7 +9,7 @@ export default function Community() {
   return (
     <div>
       <div
-        className="flex w-full  py-16 bg-white text-white flex-col md:px-8"
+        className="flex w-full py-12 bg-white text-white flex-col md:py-20 md:px-8"
         style={{
           backgroundColor: '#00000030',
           backgroundImage: `url(${SectionImage})`,

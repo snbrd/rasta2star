@@ -14,6 +14,8 @@ import useRefresh from 'hooks/useRefresh'
 import { fetchFarmUserDataAsync } from 'state/actions'
 import { QuoteToken } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
+import AnimatedPage from 'components/AnimatedPage'
+
 import ToggleSwitchForStack from 'components/toggle-switch/ToggleSwitchForStack'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 // import FarmTabButtons from './components/FarmTabButtons'
@@ -54,7 +56,7 @@ const Farms: React.FC = () => {
     (farmsToDisplay, removed: boolean) => {
       const cakePriceVsBNB = new BigNumber(farmsLP.find((farm) => farm.pid === RASTA_POOL_PID)?.tokenPriceVsQuote || 0)
       const farmsToDisplayWithAPY: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
-        if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
+        if (!farm.tokenAmount || !farm.lpTotalInQuoteToken) {
           return farm
         }
         const cakeRewardPerBlock = RASTA_PER_BLOCK.times(farm.poolWeight)
@@ -109,52 +111,54 @@ const Farms: React.FC = () => {
   )
 
   return (
-    <div>
-      <div
-        className="flex w-full bg-left-center-small md:bg-center flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
-        style={{
-          backgroundImage: `url(${MrRastaImage})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'top center',
-        }}
-      >
-        <h1 className="text-4xl font-bold">{stackedOnly ? 'Mr Rasta Liquidity' : 'Mr Rasta Liquidity'}</h1>
-      </div>
+    <AnimatedPage>
+      <div>
+        <div
+          className="flex w-full bg-left-center-small md:bg-center flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
+          style={{
+            backgroundImage: `url(${MrRastaImage})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'top center',
+          }}
+        >
+          <h1 className="text-4xl font-bold">{stackedOnly ? 'Mr Rasta Liquidity' : 'Mr Rasta Liquidity'}</h1>
+        </div>
 
-      <div className=" py-8 md:py-0 md:pt-16 md:pb-32  w-full bg-white text-black">
-        <div className=" flex flex-col text-gray-800 items-center w-10/12 mx-auto">
-          <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Liquidity Pool Tokens')}</h2>
-          <p className="text-gray-700">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
-          <div className="toggle-button items-center md:items-end flex-col flex w-full">
-            <Wrapper>
-              <ToggleSwitchForStack id="ToggleSwitchForStack" checked={stackedOnly} onChange={setStackedOnly} />
-              Staked Only &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
-            </Wrapper>
-          </div>
-          <div className="card items-center text-center w-full mt-0 mb-16 md:mt-16 md:mb-0">
-            <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 space-4">
-                {stackedOnly ? (
-                  farmsList(stackedOnlyFarms, false)
-                ) : (
-                  <>{checked ? farmsList(activeFarms, false) : farmsList(inactiveFarms, true)}</>
-                )}
-              </div>
+        <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-gradient-to-br from-red-rasta to-blue-zion text-black">
+          <div className=" flex flex-col text-white items-center w-10/12 mx-auto">
+            <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Liquidity Pool Tokens')}</h2>
+            <p className="text-white">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
+            <div className="toggle-button items-center md:items-end flex-col flex w-full">
+              <Wrapper>
+                <ToggleSwitchForStack id="ToggleSwitchForStack" checked={stackedOnly} onChange={setStackedOnly} />
+                Staked Only &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
+              </Wrapper>
             </div>
-            {/* {checked && <CardsSection itemsToRender={list}/>}
-            {showMore && checked &&
-              <button type="button" onClick={loadMore} className="flex items-center justify-center mx-auto mt-8 text-md space-x-4 hover:text-red-rasta" > 
-              <FaIcons.FaChevronCircleDown/>
-              <span>Load More</span> </button>
-            }
-            {!checked && "No Farm Data Found"} */}
+            <div className="card items-center text-center w-full mt-3 md:mt-16 mb-12">
+              <div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 space-4">
+                  {stackedOnly ? (
+                    farmsList(stackedOnlyFarms, false)
+                  ) : (
+                    <>{checked ? farmsList(activeFarms, false) : farmsList(inactiveFarms, true)}</>
+                  )}
+                </div>
+              </div>
+              {/* {checked && <CardsSection itemsToRender={list}/>}
+              {showMore && checked &&
+                <button type="button" onClick={loadMore} className="flex items-center justify-center mx-auto mt-8 text-md space-x-4 hover:text-red-rasta" > 
+                <FaIcons.FaChevronCircleDown/>
+                <span>Load More</span> </button>
+              }
+              {!checked && "No Farm Data Found"} */}
+            </div>
           </div>
         </div>
+        {/* <FarmTabButtons stackedOnly={stackedOnly} setStackedOnly={setStackedOnly} /> */}
       </div>
-      {/* <FarmTabButtons stackedOnly={stackedOnly} setStackedOnly={setStackedOnly} /> */}
-    </div>
+    </AnimatedPage>
   )
 }
 

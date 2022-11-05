@@ -89,6 +89,18 @@ export const useAirNFT = () => {
   return airFarm
 }
 
+export const useZionLionsNFT = () => {
+  const { fastRefresh } = useRefresh()
+  const { account } = useWallet()
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchNFTPoolsAUserDataAsync(account))
+  }, [account, dispatch, fastRefresh])
+
+  const airFarm = useSelector((state: State) => state.pools.airdata)
+  return airFarm
+}
+
 export const usePoolFromPid = (sousId): Pool => {
   const pool = useSelector((state: State) => state.pools.data.find((p) => p.sousId === sousId))
   return pool

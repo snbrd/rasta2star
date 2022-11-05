@@ -1,30 +1,28 @@
 import styled from 'styled-components'
 
-const Input = styled.input.attrs((props) => ({
-  type: props.type,
-  size: props.size || '1em',
-}))`
-  border: 2px solid palevioletred;
-  margin: ${(props) => props.size};
-  padding: ${(props) => props.size};
-`
-
 export const Screen = styled(`div`)<{ image: string }>`
   background-color: var(--primary);
   background-image: ${({ image }) => (image ? `url(${image})` : 'none')};
   background-size: cover;
   background-position: center;
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   overflow-x: hidden;
-  padding: 0 4.313rem;
+  padding: 6rem 4.313rem;
   @media screen and (max-width: 767px) {
-    padding: 3rem 1.5rem;
+    padding: 6rem 1.5rem;
+  }
+  @media screen and (max-height: 767px) {
+    padding-top: 12vh;
+    padding-bottom: 12vh;
+  }
+  @media screen and (max-width: 480px) {
+    padding-top: 2vh;
+    padding-bottom: 7.5vh;
   }
 `
 
@@ -137,4 +135,10 @@ export const RoundedOutlineButton = styled(`button`)<{ height?: string; width?: 
   border-radius: 666px;
   height: ${(props) => props.height};
   width: ${(props) => props.width};
+`
+
+export const MobileHide = styled(`span`)<{ disabled?: boolean }>`
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 `

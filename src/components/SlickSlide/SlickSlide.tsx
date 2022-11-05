@@ -66,9 +66,9 @@ export default function MultipleSlick({ items }: { items: any[] }) {
                 }}
                 className="md:py-12 md:px-8"
               >
-                <LazyLoadImage src={item.avatar} alt="Logo" className="w-64 mx-auto" effect="blur" />
+                <LazyLoadImage src={item.avatar} alt="Logo" className="p-6 md:p-0 w-64 mx-auto" effect="blur" />
                 {/* <h2 className="mt-8 font-bold text-xl">{item.name}</h2> */}
-                <h3 className="mt-4 text-xl font-bold text-black text-center">{item.position}</h3>
+                <h3 className="mt-0 mb-4 md:mt-4 md:mb-0 text-xl font-bold text-black text-center">{item.position}</h3>
               </div>
             </div>
           )

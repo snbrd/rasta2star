@@ -1,6 +1,9 @@
 import React, { useEffect, Suspense, lazy } from 'react'
 import { Router, Redirect, Route, Switch } from 'react-router-dom'
 // import { ResetCSS } from 'rasta-uikit'
+// framer-motion
+import {AnimatePresence} from 'framer-motion/dist/framer-motion'
+
 import BigNumber from 'bignumber.js'
 import { useFetchProfile, useFetchPublicData } from 'state/hooks'
 import About from 'views/About/About'
@@ -34,6 +37,7 @@ const Profile = lazy(() => import('./views/Profile'))
 const Blog = lazy(() => import('./views/Blog'))
 const SinglePost = lazy(() => import('./views/Blog/SinglePost'))
 const Category = lazy(() => import('./views/Blog/Category'))
+const ZionLions = lazy(() => import('./views/ZionLions'))
 
 // This config is required for number formating
 BigNumber.config({
@@ -67,6 +71,7 @@ const App: React.FC = () => {
           <div className="flex-1 md:ml-48 overflow-x-hidden">
             <Header />
             {/* <Suspense fallback={<PageLoader />}> */}
+            <AnimatePresence exitBeforeEnter>
             <Switch>
               <Route path="/" exact>
                 <Home />
@@ -91,6 +96,9 @@ const App: React.FC = () => {
               </Route>
               <Route path="/stakenft">
                 <AirFarm />
+              </Route>
+              <Route path="/stake-zionlions">
+                <ZionLions />
               </Route>
               <Route path="/streetpunksnft">
                 <StreetPunksNFT />
@@ -140,6 +148,7 @@ const App: React.FC = () => {
               {/* 404 */}
               <Route component={NotFound} />
             </Switch>
+            </AnimatePresence>
             {/* </Suspense> */}
             <Footer />
             <ToastListener />

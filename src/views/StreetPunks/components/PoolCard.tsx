@@ -81,23 +81,27 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
       <div
         className="px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8"
         style={{
-          background: '#3d3846',
+          background: '#3d38467a',
           color: '#fff',
           backgroundSize: '100% 580px',
-          boxShadow: '6px 6px 24px -9px',
+          boxShadow: '6px 6px 24px -9px #000000',
         }}
       >
         {ribbon && (
-          <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta">
+          // <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta">
+          <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-blue-zion to-blue-zion_cyan">
             {ribbonText}
           </CustomTitle>
         )}
         <div className="row flex flex-col lg:flex-row space-x-0 md:space-x-4 mb-4 md:mb-12">
           <CardHeading lpLabel={poolName} isCommunityFarm={false} farmImage={icon} tokenSymbol="farm.tokenSymbol" />
           {!removed && (
-            <div className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0" style={{
-              background:'#241f31'
-            }}>
+            <div
+              className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0"
+              style={{
+                background: '#241f31',
+              }}
+            >
               <span className="apr-value text-2xl w-full text-white ">
                 {Number(apy) > 0 && !isFinished ? `${apy}%` : '-'}
               </span>

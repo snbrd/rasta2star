@@ -47,7 +47,7 @@ export default function Footer() {
     })
   }
   return (
-    <div className="w-full bg-black text-white py-12">
+    <div className="w-full bg-black text-white py-10 md:py-12">
       <div className="mx-auto w-10/12">
         <div className="flex flex-col md:flex-row space-between border-b-1 pb-8 mb-4">
           <div className="flex-grow-1 flex flex-col">

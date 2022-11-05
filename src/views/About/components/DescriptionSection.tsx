@@ -8,7 +8,7 @@ export default function DescriptionSection() {
       className="max-w-screen-xl mx-auto text-center text-black space-y-6"
     >
       <div className="flex flex-col">
-        <h2 className="text-3xl font-bold pr-0">What is RASTA?</h2>
+        <h2 className="text-xl font-bold pr-0">What is RASTA?</h2>
         <hr className="w-1/2 md:w-1/6 mx-auto border-2 border-blue-zion_cyan" />
       </div>
       <p>

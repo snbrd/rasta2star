@@ -35,9 +35,12 @@ export default function FarmHarvest({ pool, type }: Props) {
             <CompoundAction earnings={new BigNumber(pendingReward)} url={projectLink} type={type} />
           </div>
         </div>
-        <div className="apr py-4 px-6 bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center" style={{
-          background:'#241f31'
-        }}>
+        <div
+          className="apr py-4 px-6 bg-gray-300 w-full text-center flex flex-col rounded-lg justify-center"
+          style={{
+            background: '#241f31',
+          }}
+        >
           <span className="apr-value text-2xl w-full text-white ">0%</span>
           {/* <span className="apr-label text-red-rasta text-sm">Deposit Fee</span> */}
           <span className="apr-label text-blue-zion_cyan text-sm">Deposit Fee</span>

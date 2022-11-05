@@ -9,11 +9,10 @@ export default function SideNavigation({ sidenav, showSidenav }) {
     const getPost = async () => {
       api
         .get(`/wp-json/wp/v2/categories`)
-
         .then((response) => {
           setCategories(response.data)
         })
-        .catch(function (error) {
+        .catch((error) => {
           console.log(error)
         })
     }

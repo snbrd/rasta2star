@@ -32,7 +32,7 @@ export default function Form({ fields, contactInfo, desc }: Props) {
   }
 
   return (
-    <div className="bg-white pb-16 md:pb-32 flex px-8 md:px-0">
+    <div className="bg-white pb-12 md:pb-32 flex px-8 md:px-0">
       <div data-aos="fade-left" data-aos-duration="1000" className="img-right absolute hidden md:block right-0 top-1/4">
         {/* <img src={MrLionFull} alt="Full body mr lion" /> */}
       </div>

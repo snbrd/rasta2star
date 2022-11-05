@@ -132,7 +132,7 @@ export default function Sidebar() {
     //   ],
     // },
     {
-      label: 'NFTs',
+      label: 'NFT Staking',
       path: '#',
       // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
       parent: true,
@@ -141,8 +141,12 @@ export default function Sidebar() {
           path: '/stakenft',
           label: 'DividendNFT',
         },
+        // {
+        //   path: '/stake-zionlions',
+        //   label: 'ZionBuilders',
+        // },
         {
-          path: '/',
+          path: '/stake-zionlions',
           label: 'ZionLion NFT',
         },
         // {
@@ -261,7 +265,7 @@ export default function Sidebar() {
 
         <div className="text-center">
           <Link to="/">
-            <LazyLoadImage src={Logo} alt="Logo" className="w-64 mx-auto d-block" effect="blur" />
+            <LazyLoadImage src={Logo} alt="Logo" className="w-40 mx-auto d-block" effect="blur" />
           </Link>
         </div>
 

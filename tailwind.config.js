@@ -56,6 +56,7 @@ module.exports = {
         700: '#c05621',
         800: '#9c4221',
         900: '#7b341e',
+        zion: '#FF4040',
         rasta: '#F1B92B',
       },
       yellow: {
@@ -68,6 +69,7 @@ module.exports = {
         700: '#b7791f',
         800: '#975a16',
         900: '#744210',
+        zion: '#e4f57bde',
         rasta: '#F4E400',
       },
       green: {
@@ -80,6 +82,7 @@ module.exports = {
         700: '#2f855a',
         800: '#276749',
         900: '#22543d',
+        zion: '#02FE0C',
         rasta: '#309A42',
         rasta_cta: '#249647',
       },
