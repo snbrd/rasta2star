@@ -11,7 +11,7 @@ import multicall from 'utils/multicall'
 import { getAddress, getAirNftAddress, getMasterChefAddress, getZionLionsNftAddress } from 'utils/addressHelpers'
 import { getWeb3 } from 'utils/web3'
 import BigNumber from 'bignumber.js'
-import nftPools, { RastaNftIds, ZionLionsNftIDs } from 'config/constants/nftPools'
+import nftPools, { RastaNftIds, ZionLionsExplorerIDs, ZionLionsNftIDs } from 'config/constants/nftPools'
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
 // BNB pools use the native BNB token (wrapping ? unwrapping is done at the contract level)
@@ -49,7 +49,7 @@ export const fetchNFTAllowance = async (account) => {
   }))
 }
 
-const calcuAirNFT = async (account, balances) => {
+const calcuAirNFT = async (account) => {
   const airbalance = await AirNftContract.methods.balanceOf(account).call()
 
   const calls = []
@@ -70,11 +70,11 @@ const calcuAirNFT = async (account, balances) => {
       break
     }
   }
-  if (j) _airBalance = balances
+  if (j) _airBalance = 1
 
   return _airBalance
 }
-const calcuZionLionsNFT = async (account, balances) => {
+const calcuZionLionsNFT = async (account) => {
   const zionlionsbalance = await ZionLionsContract.methods.balanceOf(account).call()
 
   const calls = []
@@ -86,18 +86,18 @@ const calcuZionLionsNFT = async (account, balances) => {
     })
   }
   const tokenIds = await multicall(airNFTABI, calls)
-  let j = false
-  let _zionBalance = 0
-  for (let i = 0; i < tokenIds.length; i++) {
-    const res = ZionLionsNftIDs.indexOf(new BigNumber(tokenIds[i]).toNumber())
-    if (res !== -1) {
-      j = true
-      break
-    }
+  const balances = {
+    builder: 0,
+    explorer: 0,
   }
-  if (j) _zionBalance = balances
+  for (let i = 0; i < tokenIds.length; i++) {
+    const is1 = ZionLionsNftIDs.indexOf(new BigNumber(tokenIds[i]).toNumber())
+    const is2 = ZionLionsExplorerIDs.indexOf(new BigNumber(tokenIds[i]).toNumber())
+    if (is1 !== -1) balances.builder++
+    if (is2 !== -1) balances.explorer++
+  }
 
-  return _zionBalance
+  return balances
 }
 
 export const fetchNFTUserBalance = async (account) => {
@@ -107,15 +107,18 @@ export const fetchNFTUserBalance = async (account) => {
     params: [account],
   }))
   const balances = await multicall(airNFTABI, call)
-  const airBalance = await calcuAirNFT(account, balances)
-  const zionlionsBalance = await calcuZionLionsNFT(account, balances)
+  const airBalance = await calcuAirNFT(account)
+  const zionlionsBalance = await calcuZionLionsNFT(account)
 
   return nftPools.map((farm, index) => {
     if (farm.type === 'airnft') {
       return { [farm.id]: airBalance }
     }
     if (farm.type === 'zlnft') {
-      return { [farm.id]: zionlionsBalance }
+      if (farm.id === 4) {
+        return { [farm.id]: zionlionsBalance.explorer }
+      }
+      return { [farm.id]: zionlionsBalance.builder }
     }
     return { [farm.id]: new BigNumber(balances[index]).toJSON() }
   })
@@ -152,6 +155,18 @@ export const fetchNftBalance = async () => {
     params: [getAddress(farm.contractAddress)],
   }))
   const balance = await multicall(airNFTABI, call)
+  return nftPools.map((farm, index) => ({
+    [farm.id]: new BigNumber(balance[index]).toJSON(),
+  }))
+}
+
+export const fetchTotalSupply = async () => {
+  const call = nftPools.map((farm) => ({
+    address: getAddress(farm.contractAddress),
+    name: 'totalSupply',
+    params: [],
+  }))
+  const balance = await multicall(airFarmABI, call)
   return nftPools.map((farm, index) => ({
     [farm.id]: new BigNumber(balance[index]).toJSON(),
   }))

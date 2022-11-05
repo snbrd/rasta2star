@@ -5,6 +5,11 @@ import useStake, { useApproveAll } from 'hooks/useAirFarm'
 import { getAddress } from 'utils/addressHelpers'
 import * as FaIcons from 'react-icons/fa'
 import styled from 'styled-components'
+import BigNumber from 'bignumber.js'
+import zionLionsABI from 'config/abi/zionlionsPool.json'
+import { getWeb3 } from 'utils/web3'
+import { AbiItem } from 'web3-utils'
+import { SEC_PER_YEAR } from 'config'
 
 import CardHeading from './CardHeading'
 import FarmHarvest from './CardElements/FarmHarvest'
@@ -35,18 +40,24 @@ const CustomTitle = styled.div`
   }
 `
 
-const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
+const web3 = getWeb3()
+
+const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
   const {
     id,
     icon,
+    type,
     ribbon,
     balance,
     approved,
     poolName,
+    rewardRate,
     ribbonText,
     isFinished,
+    bnbPriceUSD,
     farmbalance,
     projectLink,
+    rastaPriceUSD,
     stakedBalance,
     contractAddress,
     nftContractAddress,
@@ -55,10 +66,52 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
   const TranslateString = useI18n()
   const { account, status } = useWallet()
   const [isApproval, SETisApproval] = useState(approved)
+  const [rate, setRate] = useState(0)
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     SETisApproval(approved)
   }, [approved])
+
+  useEffect(() => {
+    (async () => {
+      const ZionLionsContract = new web3.eth.Contract(
+        zionLionsABI as unknown as AbiItem,
+        getAddress(contractAddress),
+      )
+      const _rate = await ZionLionsContract.methods.rewardRate().call()
+      setRate(_rate)
+    })()
+  }, [contractAddress])
+
+  const apy = (() => {
+    if (type === 'zlnft') {
+      return (
+        new BigNumber(rastaPriceUSD)
+          .div(bnbPriceUSD)
+          .times(rate)
+          .times(SEC_PER_YEAR)
+          .div(
+            Number(farmbalance) > 0
+              ? new BigNumber(farmbalance).times(new BigNumber(0.18).times(new BigNumber(10).pow(18)))
+              : new BigNumber(10).pow(18),
+          )
+          .times(100)
+          .toFixed(0)
+          .toString())
+    }
+    return (
+      new BigNumber(rewardRate)
+        .times(SEC_PER_YEAR)
+        .div(
+          Number(farmbalance) > 0
+            ? new BigNumber(farmbalance).times(new BigNumber(0.1).times(new BigNumber(10).pow(18)))
+            : new BigNumber(10).pow(18),
+        )
+        .times(100)
+        .toFixed(0)
+        .toString()
+    )
+  })();
 
   const { onApproveAll } = useApproveAll(nftContractAddress, getAddress(contractAddress))
   const { onStake, onUnStake } = useStake(getAddress(contractAddress))
@@ -79,7 +132,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
         }}
       > */}
       <div
-        className={`${ribbon ? 'pt-8 ' : ''}px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl mt-8`}
+        className={`${ribbon ? 'pt-8 ' : ''}px-5 lg:px-8 xl:px-10 py-6 lg:py-10 xl:py-12 rounded-2xl`}
         style={{
           background: '#3d38467a',
           color: '#fff',

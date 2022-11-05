@@ -1,72 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import useI18n from 'hooks/useI18n'
-import { SEC_PER_YEAR } from 'config'
 import { useZionLionsNFT, usePriceBnbBusd, usePriceRastaBusd } from 'state/hooks'
-import BigNumber from 'bignumber.js'
 import nftPools from 'config/constants/nftPools'
-import zionLionsABI from 'config/abi/zionlionsPool.json'
+
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 
-import { getWeb3 } from 'utils/web3'
-import { AbiItem } from 'web3-utils'
+
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 import AnimatedPage from 'components/AnimatedPage'
 import PoolCard from './components/PoolCard'
 import MrRastaImage from '../../assets/headerImageZionLabs11.jpg'
+import ExplorerPoolCard from './ExplorerComponents/ExplorerPoolCard'
 
-const web3 = getWeb3()
-const ZionLionsContract = new web3.eth.Contract(
-  zionLionsABI as unknown as AbiItem,
-  '0xF5475159CeE27693ad975286Ab51848afA332E27',
-)
 
 const Farm: React.FC = () => {
   const TranslateString = useI18n()
   const [Active, setActive] = useState(true)
-  const [rate, setRate] = useState(0)
   const farmInfo = useZionLionsNFT()
   const bnbPriceUSD = usePriceBnbBusd()
   const rastaPriceUSD = usePriceRastaBusd()
-
-  useEffect(() => {
-    (async () => {
-      const _rate = await ZionLionsContract.methods.rewardRate().call()
-      setRate(_rate)
-    })()
-  }, [])
-
-  const poolsWithApy = nftPools.map((farm, index) => {
-    if (farm.type === 'zlnft') {
-      // Promise.resolve(rewardRate).then((result) => {
-      return {
-        [farm.id]: new BigNumber(rastaPriceUSD)
-          .div(bnbPriceUSD)
-          .times(rate)
-          .times(SEC_PER_YEAR)
-          .div(
-            Number(farmInfo[index].farmbalance) > 0
-              ? new BigNumber(farmInfo[index].farmbalance).times(new BigNumber(0.18).times(new BigNumber(10).pow(18)))
-              : new BigNumber(10).pow(18),
-          )
-          .times(100)
-          .toFixed(0)
-          .toString(),
-      }
-      // })
-    }
-    return {
-      [farm.id]: new BigNumber(farm.rewardRate)
-        .times(SEC_PER_YEAR)
-        .div(
-          Number(farmInfo[index].farmbalance) > 0
-            ? new BigNumber(farmInfo[index].farmbalance).times(new BigNumber(0.1).times(new BigNumber(10).pow(18)))
-            : new BigNumber(10).pow(18),
-        )
-        .times(100)
-        .toFixed(0)
-        .toString(),
-    }
-  })
 
   return (
     <AnimatedPage>
@@ -91,16 +43,22 @@ const Farm: React.FC = () => {
             </div>
             <div className="card items-center text-center w-full mt-3 md:mt-16 mb-12">
               <div>
-                <div className="cus-grid-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 space-8">
+                <div className="cus-grid-3 grid gap-0 space-y-8 xl:space-y-0 xl:gap-8 grid-cols-1 mt-8 md:mt-0 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
                   {nftPools.map((farm, index) => {
                     if (farm.type !== 'zlnft') return null
-                    if (Active)
+                    if (Active) {
+                      if (farm.id === 4) {
+                        return (
+                          <ExplorerPoolCard key={index} pool={{ ...farmInfo[index], ...farm, bnbPriceUSD, rastaPriceUSD }} />
+                        )
+                      }
                       return (
-                        <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />
+                        <PoolCard key={index} pool={{ ...farmInfo[index], ...farm, bnbPriceUSD, rastaPriceUSD }} />
                       )
+                    }
                     if (farm.isFinished)
                       return (
-                        <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />
+                        <PoolCard key={index} pool={{ ...farmInfo[index], ...farm, bnbPriceUSD, rastaPriceUSD }} />
                       )
                     return null
                   })}
