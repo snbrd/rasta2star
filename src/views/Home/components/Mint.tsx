@@ -298,7 +298,7 @@ function Mint() {
                         <tr>
                           <td>1 - 1000 {CONFIG.SYMBOL}</td>
                           <td> costs </td>
-                          <td>0.20 {CONFIG.NETWORK.SYMBOL}</td>
+                          <td>0.18 {CONFIG.NETWORK.SYMBOL}</td>
                         </tr>
                         <tr>
                           <td>1001 - 3100 {CONFIG.SYMBOL}</td>
