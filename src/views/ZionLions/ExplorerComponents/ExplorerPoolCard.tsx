@@ -8,6 +8,7 @@ import { AbiItem } from 'web3-utils'
 import { SEC_PER_YEAR } from 'config'
 import useContract, { useCake } from 'hooks/useContract'
 import { getAllowance } from 'utils/erc20'
+import { useClaim } from 'hooks/useAirFarm'
 
 import CardHeading from './CardHeading'
 import FarmHarvest from './CardElements/FarmHarvest'
@@ -36,6 +37,13 @@ const CustomTitle = styled.div`
   }
 `
 
+const buttonClass =
+  'w-full disabled font-bold flex flex-row text-white py-2 bg-gradient-to-b from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
+
+const activeButtonClass2 =
+  'w-full font-bold flex flex-row text-white py-2 bg-gradient-to-b from-yellow-rasta to-orange-zion items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
+
+
 const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
   const {
     icon,
@@ -55,6 +63,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
   const [isApproval, SETisApproval] = useState(approved)
   const [allowance, setAllowance] = useState('0')
   const [staked, setStaked] = useState(false);
+  const [loading, setLoading] = useState(false)
   const [totalSupply, setTotalSupply] = useState(new BigNumber(0));
   const [rastaBalance, setRastaBalance] = useState(new BigNumber(0));
   const [stakedAmount, setStakedAmount] = useState(new BigNumber(0));
@@ -62,6 +71,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
   const rastaContract = useCake();
   const poolContract = useContract(zionLionsABI as unknown as AbiItem, getAddress(contractAddress));
   const [rate, setRate] = useState(0)
+  const { onClaim } = useClaim(getAddress(contractAddress))
 
   const handleFetch = useCallback(async () => {
     if (poolContract) {
@@ -117,7 +127,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
   return (
     <>
       <div
-        className={`${ribbon ? 'pt-8 ' : ''}px-5 col-span-2 lg:px-8 xl:px-10 py-6 pb-10 lg:pt-10 xl:pt-12 rounded-2xl`}
+        className={`${ribbon ? 'pt-8 ' : ''}px-5 col-span-2 lg:px-8 xl:px-10 py-6 pb-8 lg:pt-10 xl:pt-12 rounded-2xl`}
         style={{
           background: '#3d38467a',
           color: '#fff',
@@ -130,7 +140,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
             {ribbonText}
           </CustomTitle>
         )}
-        <div className="row flex flex-col lg:flex-row space-x-0 md:space-x-4 mb-4 md:mb-12 border-b-2 pb-4 border-black">
+        <div className="row flex flex-col lg:flex-row space-x-0 md:space-x-4 mb-4 md:mb-8 border-b-2 pb-4 border-black">
           <CardHeading lpLabel={poolName} description={description} isCommunityFarm={false} farmImage={icon} tokenSymbol="farm.tokenSymbol" />
           <div className='w-full flex flex-col md:flex-row gap:2 md:gap-4'>
             <div
@@ -200,8 +210,23 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
             </div>
           </div>
         </div>
-        <div className='mt-8 flex justify-center'>
-          <h2 className="text-md text-center">
+        <div className='w-full mt-10 md:mt-12 gap-4 flex flex-col md:flex-row items-center'>
+          <button
+            type="button"
+            disabled={loading}
+            className={`${Number(pendingReward) > 0 ? activeButtonClass2 : buttonClass} ${loading && " disabled"}`}
+            style={{ maxWidth: 220 }}
+            onClick={async () => {
+              if (Number(pendingReward) > 0) {
+                setLoading(true)
+                await onClaim()
+                setLoading(false)
+              }
+            }}
+          >
+            <span>Harvest</span>
+          </button>
+          <h2 className="text-md w-full text-center">
             Please note that unstaking your explorers will unstake your $RASTA
           </h2>
         </div>

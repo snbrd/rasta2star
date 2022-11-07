@@ -124,7 +124,7 @@ export default function FarmHarvest({ onFetch, rastaBalance, stakedAmount, poolC
   return (
     <div className='w-full mt-4 md:mt-0'>
       <div className="gap-4 md:gap-10 row flex flex-col w-full">
-        <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0 gap-8">
+        <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0 gap-6">
           <h2 className="text-xl font-bold text-left">
             STEP 1: Approve and Stake 10 Explorer NFTs
           </h2>
@@ -146,7 +146,7 @@ export default function FarmHarvest({ onFetch, rastaBalance, stakedAmount, poolC
             <button
               type="button"
               disabled={loading}
-              className={`${staked ? activeButtonClass2 : buttonClass} ${!isApproval && " cursor-not-allowed"}`}
+              className={`${staked ? activeButtonClass2 : buttonClass} ${!isApproval && " disabled"}`}
               style={{ maxWidth: 220 }}
               onClick={async () => {
                 setLoading(true);
@@ -164,7 +164,7 @@ export default function FarmHarvest({ onFetch, rastaBalance, stakedAmount, poolC
             </button>
           </div>
         </div>
-        <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0 gap-8">
+        <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0 gap-6">
           <h2 className="text-xl font-bold text-left">
             STEP 2: Stake your $RASTA Tokens for A Supercharged Return
           </h2>
@@ -172,7 +172,7 @@ export default function FarmHarvest({ onFetch, rastaBalance, stakedAmount, poolC
             <button
               type="button"
               disabled={loading}
-              className={`${isApprovedToken ? activeButtonClass : buttonClass} ${!staked && " cursor-not-allowed"}`}
+              className={`${isApprovedToken ? activeButtonClass : buttonClass} ${!staked && " disabled"}`}
               style={{ maxWidth: 220 }}
               onClick={async () => {
                 if (loading) return;
@@ -190,7 +190,7 @@ export default function FarmHarvest({ onFetch, rastaBalance, stakedAmount, poolC
             <button
               type="button"
               disabled={loading}
-              className={`${isStakedToken ? activeButtonClass2 : buttonClass} ${!isApprovedToken && " cursor-not-allowed"}`}
+              className={`${isStakedToken ? activeButtonClass2 : buttonClass} ${!isApprovedToken && " disabled"}`}
               style={{ maxWidth: 220 }}
               onClick={async () => {
                 if (loading) return;
