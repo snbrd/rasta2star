@@ -63,7 +63,7 @@ const nftPools = [
   },
   {
     id: 5,
-    poolName: 'Explorer Bounty Pool',
+    poolName: 'Explorer Adventure Pool',
     description: 'Stake 10 Explorers to supercharge your $RASTA staking.',
     rewardTokenAddress: getCakeAddress(),
     rewardTokenSymbol: 'RASTA',
@@ -86,7 +86,7 @@ const nftPools = [
   },
   {
     id: 4,
-    poolName: 'Explorer Bounty Pool',
+    poolName: 'Expired Explorer Pool',
     description: 'Stake 10 Explorers to supercharge your $RASTA staking.',
     rewardTokenAddress: getCakeAddress(),
     rewardTokenSymbol: 'RASTA',
