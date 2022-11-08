@@ -47,19 +47,28 @@ const Farm: React.FC = () => {
                   {nftPools.map((farm, index) => {
                     if (farm.type !== 'zlnft') return null
                     if (Active) {
-                      if (farm.id === 4) {
+                      if (!farm.isFinished) {
+                        if (farm.id === 4 || farm.id === 5) {
+                          return (
+                            <ExplorerPoolCard key={index} pool={{ ...farmInfo[index], ...farm, rastaPriceUSD }} />
+                          )
+                        }
                         return (
-                          <ExplorerPoolCard key={index} pool={{ ...farmInfo[index], ...farm, bnbPriceUSD, rastaPriceUSD }} />
+                          <PoolCard key={index} pool={{ ...farmInfo[index], ...farm, bnbPriceUSD, rastaPriceUSD }} />
+                        )
+                      }
+                      return null;
+                    }
+                    if (farm.isFinished) {
+                      if (farm.id === 4 || farm.id === 5) {
+                        return (
+                          <ExplorerPoolCard key={index} pool={{ ...farmInfo[index], ...farm, rastaPriceUSD }} />
                         )
                       }
                       return (
                         <PoolCard key={index} pool={{ ...farmInfo[index], ...farm, bnbPriceUSD, rastaPriceUSD }} />
                       )
                     }
-                    if (farm.isFinished)
-                      return (
-                        <PoolCard key={index} pool={{ ...farmInfo[index], ...farm, bnbPriceUSD, rastaPriceUSD }} />
-                      )
                     return null
                   })}
                 </div>

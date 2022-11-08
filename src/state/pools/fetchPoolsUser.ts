@@ -115,7 +115,7 @@ export const fetchNFTUserBalance = async (account) => {
       return { [farm.id]: airBalance }
     }
     if (farm.type === 'zlnft') {
-      if (farm.id === 4) {
+      if (farm.id === 4 || farm.id === 5) {
         return { [farm.id]: zionlionsBalance.explorer }
       }
       return { [farm.id]: zionlionsBalance.builder }
