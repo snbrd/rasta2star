@@ -211,25 +211,21 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
           </div>
         </div>
         <div className='w-full mt-10 md:mt-12 gap-4 flex flex-col md:flex-row items-center'>
-          {
-            isFinished ? null : (
-              <button
-                type="button"
-                disabled={loading}
-                className={`${Number(pendingReward) > 0 ? activeButtonClass2 : buttonClass} ${loading && " disabled"}`}
-                style={{ maxWidth: 220 }}
-                onClick={async () => {
-                  if (Number(pendingReward) > 0) {
-                    setLoading(true)
-                    await onClaim()
-                    setLoading(false)
-                  }
-                }}
-              >
-                <span>Harvest</span>
-              </button>
-            )
-          }
+          <button
+            type="button"
+            disabled={loading}
+            className={`${Number(pendingReward) > 0 ? activeButtonClass2 : buttonClass} ${loading && " disabled"}`}
+            style={{ maxWidth: 220 }}
+            onClick={async () => {
+              if (Number(pendingReward) > 0) {
+                setLoading(true)
+                await onClaim()
+                setLoading(false)
+              }
+            }}
+          >
+            <span>Harvest</span>
+          </button>
           <h2 className="text-md w-full text-center">
             Please note that unstaking your explorers will unstake your $RASTA
           </h2>
