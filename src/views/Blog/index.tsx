@@ -57,9 +57,21 @@ export default function Blog() {
                   data-aos-duration="1000"
                   key={blog.id}
                 >
-                  <figure>
-                    <img src={blog._embedded['wp:featuredmedia'][0].source_url} alt="" />
-                  </figure>
+                  {/*  <figure>
+                     <img src={blog._embedded['wp:featuredmedia'][0].source_url} alt="" />
+                   </figure>
+
+                  */}
+
+                  <div
+                    className="h-64"
+                    style={{
+                      background: `url(${blog._embedded['wp:featuredmedia'][0].source_url})`,
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                    &nbsp;
+                  </div>
 
                   <div className="card-body p-2 flex flex-col justify-between">
                     <div className="px-6 py-4">
