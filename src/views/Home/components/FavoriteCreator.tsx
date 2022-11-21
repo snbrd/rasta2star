@@ -6,7 +6,7 @@ import { useWallet } from '@binance-chain/bsc-use-wallet'
 import StakingCard from './FarmStakingCard'
 import CakeStats from './CakeStats'
 import TotalValueLockedCard from './TotalValueLockedCard'
-import SpaceBackground from '../../../assets/section-background-new.jpg'
+import SpaceBackground from '../../../assets/Interact-with-your-favorit-creators.jpg'
 
 export default function FavoriteCreator() {
   const { account } = useWallet()
