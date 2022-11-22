@@ -48,7 +48,7 @@ const Farm: React.FC = () => {
                     if (farm.type !== 'zlnft') return null
                     if (Active) {
                       if (!farm.isFinished) {
-                        if (farm.id === 4 || farm.id === 5) {
+                        if (farm.id === 5) {
                           return (
                             <ExplorerPoolCard key={index} pool={{ ...farmInfo[index], ...farm, rastaPriceUSD }} />
                           )

@@ -11,7 +11,12 @@ import multicall from 'utils/multicall'
 import { getAddress, getAirNftAddress, getMasterChefAddress, getZionLionsNftAddress } from 'utils/addressHelpers'
 import { getWeb3 } from 'utils/web3'
 import BigNumber from 'bignumber.js'
-import nftPools, { RastaNftIds, ZionLionsExplorerIDs, ZionLionsNftIDs } from 'config/constants/nftPools'
+import nftPools, {
+  RastaNftIds,
+  ZionLionsExplorerIDs,
+  ZionLionsFarmersIDs,
+  ZionLionsNftIDs,
+} from 'config/constants/nftPools'
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
 // BNB pools use the native BNB token (wrapping ? unwrapping is done at the contract level)
@@ -89,12 +94,15 @@ const calcuZionLionsNFT = async (account) => {
   const balances = {
     builder: 0,
     explorer: 0,
+    farmers: 0,
   }
   for (let i = 0; i < tokenIds.length; i++) {
     const is1 = ZionLionsNftIDs.indexOf(new BigNumber(tokenIds[i]).toNumber())
     const is2 = ZionLionsExplorerIDs.indexOf(new BigNumber(tokenIds[i]).toNumber())
+    const is3 = ZionLionsFarmersIDs.indexOf(new BigNumber(tokenIds[i]).toNumber())
     if (is1 !== -1) balances.builder++
     if (is2 !== -1) balances.explorer++
+    if (is3 !== -1) balances.farmers++
   }
 
   return balances
@@ -115,10 +123,13 @@ export const fetchNFTUserBalance = async (account) => {
       return { [farm.id]: airBalance }
     }
     if (farm.type === 'zlnft') {
-      if (farm.id === 4 || farm.id === 5) {
+      if (farm.id === 5) {
         return { [farm.id]: zionlionsBalance.explorer }
       }
-      return { [farm.id]: zionlionsBalance.builder }
+      if (farm.id === 3) {
+        return { [farm.id]: zionlionsBalance.builder }
+      }
+      return { [farm.id]: zionlionsBalance.farmers }
     }
     return { [farm.id]: new BigNumber(balances[index]).toJSON() }
   })
