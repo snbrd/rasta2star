@@ -12,7 +12,7 @@ import { AbiItem } from 'web3-utils'
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 import AnimatedPage from 'components/AnimatedPage'
 import PoolCard from './components/PoolCard'
-import MrRastaImage from '../../assets/headerImageZionLabs11.jpg'
+import MrRastaImage from '../../assets/new-banner-image.jpg'
 
 const web3 = getWeb3()
 const AirNftPoolContract = new web3.eth.Contract(

@@ -36,7 +36,7 @@ import ChicagoProfile from '../../assets/Zion-Rasta-ChicagoDOne.png'
 import BadgerProfile from '../../assets/Zion-Rasta-DrBadger.png'
 import LoreanProfile from '../../assets/Zion-Rasta-Lorean.png'
 import LionAbout from '../../assets/Ganyah22.png'
-import AboutBackground from '../../assets/about-background.jpg'
+import AboutBackground from '../../assets/about-new-banner.jpg'
 import AboutBackground2 from '../../assets/about-background-bottom.jpg'
 
 export default function About() {

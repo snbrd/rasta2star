@@ -9,7 +9,7 @@ import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 import AnimatedPage from 'components/AnimatedPage'
 import PoolCard from './components/PoolCard'
-import MrRastaImage from '../../assets/headerImageZionLabs11.jpg'
+import MrRastaImage from '../../assets/new-banner-image.jpg'
 import ExplorerPoolCard from './ExplorerComponents/ExplorerPoolCard'
 
 

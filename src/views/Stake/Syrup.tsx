@@ -16,7 +16,7 @@ import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
 
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
-import MrRastaImage from '../../assets/headerImageZionLabs11.jpg'
+import MrRastaImage from '../../assets/new-banner-image.jpg'
 import MrsRastaImage from '../../assets/lion-mrs-rasta.jpg'
 
 const Farm: React.FC = () => {

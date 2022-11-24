@@ -216,7 +216,7 @@ function Mint() {
   }, [nftContract, getData])
 
   return (
-    <s.Screen image={CONFIG.SHOW_BACKGROUND ? '/images/mint/newbg.jpg' : null}>
+    <s.Screen image={CONFIG.SHOW_BACKGROUND ? '/images/mint/ZL-Background-2.jpg' : null}>
       <s.MobileHide>
       <s.Heading2
         style={{

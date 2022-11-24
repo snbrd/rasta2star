@@ -1,6 +1,6 @@
 import React from 'react'
 // import images from '../../../assets/contact-header.jpg'
-import images from '../../../assets/contact-background-new.jpg'
+import images from '../../../assets/Contact-Info.jpg'
 import ArtistsImages from '../../../assets/nft-artits.png'
 
 export default function Heading() {
