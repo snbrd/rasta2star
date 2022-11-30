@@ -216,22 +216,22 @@ function Mint() {
   }, [nftContract, getData])
 
   return (
-    <s.Screen image={CONFIG.SHOW_BACKGROUND ? '/images/mint/ZL-Background-2.jpg' : null}>
+    <s.Screen image={CONFIG.SHOW_BACKGROUND ? '/images/mint/ZL-Background-2.jpg' : null} id="mintstation">
       <s.MobileHide>
-      <s.Heading2
-        style={{
-          textAlign: 'center',
-          padding: '0 0 5vh 0',
-        }}
-      >
-        ZionLion NFTs
-      </s.Heading2>
+        <s.Heading2
+          style={{
+            textAlign: 'center',
+            padding: '0 0 5vh 0',
+          }}
+        >
+          Zion Lions NFT Mint Station
+        </s.Heading2>
       </s.MobileHide>
       <s.Container>
         <s.Column bordered={false} width="35%">
           <s.FlexDiv direction={['column']}>
             <s.FlexDiv direction={['column']}>
-              <s.Heading2>ZionLion Minting</s.Heading2>
+              <s.Heading2>Mint and then Stake</s.Heading2>
               <hr
                 style={{
                   marginTop: '0.75rem',
@@ -251,6 +251,15 @@ function Mint() {
                 you don't lower the gas limit`}
               </s.Text>
             </s.FlexDiv>
+
+            <a href='/stake-zionlions' style={{
+              marginTop: '20px',
+              textAlign: 'center'
+            }}>
+              <s.FilledButton>
+                Stake NFT
+              </s.FilledButton>
+            </a>
           </s.FlexDiv>
         </s.Column>
         <s.Column bordered="true" grow="true">

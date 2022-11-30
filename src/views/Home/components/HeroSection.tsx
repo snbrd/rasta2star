@@ -30,7 +30,7 @@ export default function HeroSection() {
         <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row justify-center h-full z-20 md:mt-48">
           <div className="leftSection w-full md:w-6/12 md:pl-16">
             <img src={PotionImage} className="w-32 text-center block md:hidden m-auto" alt='potion bottle' data-aos="fade-right"
-              data-aos-duration="1000"/>
+              data-aos-duration="1000" />
             <h1
               className="text-4xl font-bold text-center md:text-left md:pr-48 leading-tight"
               data-aos="fade-right"
@@ -50,6 +50,13 @@ export default function HeroSection() {
                 className="bg-gradient-to-b font-bold w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
               >
                 <button type="button">Stake Rasta</button>
+              </Link>
+
+              <Link
+                to="/stake-zionlions"
+                className="bg-gradient-to-b font-bold w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
+              >
+                <button type="button">Stake NFT</button>
               </Link>
 
               <a

@@ -48,6 +48,30 @@ export default function NewDesktopSidebar() {
       child: [],
     },
     {
+      label: 'NFT Staking',
+      path: '#',
+      // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
+      parent: true,
+      child: [
+        {
+          path: '/stakenft',
+          label: 'DividendNFT',
+        },
+        // {
+        //   path: '/stake-zionlions',
+        //   label: 'ZionBuilders',
+        // },
+        {
+          path: '/stake-zionlions',
+          label: 'ZionLion NFT',
+        },
+        {
+          path: '/#mintstation',
+          label: 'NFT Staking',
+        },
+      ],
+    },
+    {
       label: 'Launchpad',
       path: 'https://zionlp.com/launchpad-artists',
       parent: false,
@@ -133,30 +157,30 @@ export default function NewDesktopSidebar() {
     //     },
     //   ],
     // },
-    {
-      label: 'NFT Staking',
-      path: '#',
-      // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
-      parent: true,
-      child: [
-        {
-          path: '/stakenft',
-          label: 'DividendNFT',
-        },
-        // {
-        //   path: '/stake-zionlions',
-        //   label: 'ZionBuilders',
-        // },
-        {
-          path: '/stake-zionlions',
-          label: 'ZionLion NFT',
-        },
-        // {
-        //   path: '/streetpunksnft',
-        //   label: 'Streetpunk NFT',
-        // },
-      ],
-    },
+    // {
+    //   label: 'NFT Staking',
+    //   path: '#',
+    //   // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
+    //   parent: true,
+    //   child: [
+    //     {
+    //       path: '/stakenft',
+    //       label: 'DividendNFT',
+    //     },
+    //     // {
+    //     //   path: '/stake-zionlions',
+    //     //   label: 'ZionBuilders',
+    //     // },
+    //     {
+    //       path: '/stake-zionlions',
+    //       label: 'ZionLion NFT',
+    //     },
+    //     // {
+    //     //   path: '/streetpunksnft',
+    //     //   label: 'Streetpunk NFT',
+    //     // },
+    //   ],
+    // },
     // {
     //  label: 'Rasino',
     //  sublabel:'(coming soon)',
@@ -262,12 +286,11 @@ export default function NewDesktopSidebar() {
         }`}
       > */}
       <nav
-        className={`h-full w-48 top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
-          sidebar ? 'left-0 ml-0' : ''
-        }`}
+        className={`h-full w-48 top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${sidebar ? 'left-0 ml-0' : ''
+          }`}
 
-        // data-aos="fade-right"
-        // data-aos-duration="1000"
+      // data-aos="fade-right"
+      // data-aos-duration="1000"
       >
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer">
           <FaRegWindowClose onClick={showSidebar} className="hidden" />

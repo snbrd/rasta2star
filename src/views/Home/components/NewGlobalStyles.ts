@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Screen = styled(`div`)<{ image: string }>`
+export const Screen = styled(`div`) <{ image: string }>`
   background-color: var(--primary);
   background-image: ${({ image }) => (image ? `url(${image})` : 'none')};
   background-size: cover;
@@ -36,7 +36,7 @@ export const Container = styled.div`
   gap: 4rem;
 `
 
-export const Column = styled(`div`)<{ bordered?: any; grow?: any; width?: string }>`
+export const Column = styled(`div`) <{ bordered?: any; grow?: any; width?: string }>`
   background-color: #00000099;
   border: ${({ bordered }) => (bordered ? 'solid 3px #02c4fe;' : '')};
   padding: 2rem;
@@ -53,7 +53,7 @@ export const Heading2 = styled.h2`
   font-weight: 700;
 `
 
-export const Text = styled(`p`)<{ align?: string; color?: string; lineHeight?: string }>`
+export const Text = styled(`p`) <{ align?: string; color?: string; lineHeight?: string }>`
   font-family: 'Roboto', sans-serif;
   color: ${({ color }) => color || '#ffffff'};
   text-align: ${({ align }) => align};
@@ -70,14 +70,14 @@ export const Link = styled.a`
   }
 `
 
-export const RoundedImage = styled(`img`)<{ flip?: boolean }>`
+export const RoundedImage = styled(`img`) <{ flip?: boolean }>`
   width: 12rem;
   height: 12rem;
   border-radius: 666px;
   transform: ${({ flip }) => (flip ? 'scaleX(-1)' : '')};
 `
 
-export const FlexDiv = styled(`div`)<{
+export const FlexDiv = styled(`div`) <{
   direction?: any
   gap?: string
   items?: string
@@ -103,7 +103,7 @@ export const FlexDiv = styled(`div`)<{
   flex-grow: ${({ grow }) => grow};
 `
 
-export const OutlineButton = styled(`button`)<{ disabled?: boolean }>`
+export const OutlineButton = styled(`button`) <{ disabled?: boolean }>`
   padding: 1rem;
   background: transparent;
   border: solid 1px #02c4fe;
@@ -122,7 +122,20 @@ export const OutlineButton = styled(`button`)<{ disabled?: boolean }>`
   border-radius: 15px;
 `
 
-export const RoundedOutlineButton = styled(`button`)<{ height?: string; width?: string; disabled?: boolean }>`
+export const FilledButton = styled(`button`) <{ disabled?: boolean }>`
+padding-top: 1rem;
+padding-bottom: 1rem; 
+padding-left: 3rem;
+padding-right: 3rem; 
+background: rgb(15,132,255);
+background: linear-gradient(175deg, rgba(15,132,255,1) 35%, rgba(2,196,254,1) 100%);
+color: #ffffff; 
+font-weight: 700; 
+text-align: center; 
+border-radius: 0.75rem; 
+`
+
+export const RoundedOutlineButton = styled(`button`) <{ height?: string; width?: string; disabled?: boolean }>`
   background: transparent;
   border: solid 1px #fff;
   color: #fff;
@@ -137,7 +150,7 @@ export const RoundedOutlineButton = styled(`button`)<{ height?: string; width?: 
   width: ${(props) => props.width};
 `
 
-export const MobileHide = styled(`span`)<{ disabled?: boolean }>`
+export const MobileHide = styled(`span`) <{ disabled?: boolean }>`
   @media screen and (max-width: 767px) {
     display: none;
   }

@@ -13758,6 +13758,11 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+react-anchor-link-smooth-scroll-v2@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-anchor-link-smooth-scroll-v2/-/react-anchor-link-smooth-scroll-v2-2.0.1.tgz#7e9d0acd16a20d50d0c1d2b167af619c0b58142a"
+  integrity sha512-Xx9/u2qPiG//GteW9tz8u6pNjPNzlP0vMjFPR1sVoPydmdJhGm/hFXGKIEnzeeKuqisKYw7CKrIZDUD7Wy4HHg==
+
 react-app-polyfill@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-2.0.0.tgz#a0bea50f078b8a082970a9d853dc34b6dcc6a3cf"

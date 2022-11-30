@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import * as IoIcons from 'react-icons/io'
+import AnchorLink from 'react-anchor-link-smooth-scroll-v2'
 
 export default function MenuItem({ menu, showSidebar }) {
+  const location = useLocation()
   const [children, setChildren] = useState(false)
   const showChildren = (isParent) => {
     if (isParent) setChildren(!children)
@@ -57,6 +59,31 @@ export default function MenuItem({ menu, showSidebar }) {
                           {i.label}
                         </span>
                       </a>
+                    )
+                  }
+
+                  if (i.path.includes('/#')) {
+
+                    if (location.pathname !== '/') {
+                      return (
+                        <a href={i.path} onClick={showSidebar} rel="noreferrer">
+                          <span className="ml-10" style={{ fontSize: '14px', marginLeft: '1rem' }}>
+                            {i.label}
+                          </span>
+                        </a>
+                      )
+                    }
+                    return (
+                      <AnchorLink href='#mintstation'>
+                        <span className="ml-10" style={{ fontSize: '14px', marginLeft: '1rem' }}>
+                          {i.label}
+                        </span>
+                      </AnchorLink>
+                      // <a href={i.path} onClick={showSidebar} target="_blank" rel="noreferrer">
+                      //   <span className="ml-10" style={{ fontSize: '14px', marginLeft: '1rem' }}>
+                      //     {i.label}
+                      //   </span>
+                      // </a>
                     )
                   }
 
