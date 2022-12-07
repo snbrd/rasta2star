@@ -2,7 +2,7 @@ import React, { useEffect, Suspense, lazy } from 'react'
 import { Router, Redirect, Route, Switch } from 'react-router-dom'
 // import { ResetCSS } from 'rasta-uikit'
 // framer-motion
-import {AnimatePresence} from 'framer-motion/dist/framer-motion'
+import { AnimatePresence } from 'framer-motion/dist/framer-motion'
 
 import BigNumber from 'bignumber.js'
 import { useFetchProfile, useFetchPublicData } from 'state/hooks'
@@ -72,82 +72,82 @@ const App: React.FC = () => {
             <Header />
             {/* <Suspense fallback={<PageLoader />}> */}
             <AnimatePresence exitBeforeEnter>
-            <Switch>
-              <Route path="/" exact>
-                <Home />
-              </Route>
-              <Route path="/about" exact>
-                <About />
-              </Route>
-              <Route path="/contact">
-                <Contact />
-              </Route>
-              <Route path="/farming/:farm">
-                <Farms2 />
-              </Route>
-              <Route path="/liquidity">
-                <Farms />
-              </Route>
-              <Route path="/pools">
-                <Pools />
-              </Route>
-              <Route path="/stake">
-                <Stake />
-              </Route>
-              <Route path="/stakenft">
-                <AirFarm />
-              </Route>
-              <Route path="/stake-zionlions">
-                <ZionLions />
-              </Route>
-              <Route path="/streetpunksnft">
-                <StreetPunksNFT />
-              </Route>
-              <Route path="/lottery">
-                <Lottery />
-              </Route>
-              <Route path="/ifo">
-                <Ifos />
-              </Route>
-              <Route path="/collectibles">
-                <Collectibles />
-              </Route>
-              <Route exact path="/teams">
-                <Teams />
-              </Route>
-              <Route path="/teams/:id">
-                <Team />
-              </Route>
-              <Route path="/profile">
-                <Profile />
-              </Route>
-              {/* Redirect */}
-              <Route path="/staking">
-                <Redirect to="/pools" />
-              </Route>
-              <Route path="/syrup">
-                <Redirect to="/pools" />
-              </Route>
-              <Route path="/nft">
-                <Redirect to="/collectibles" />
-              </Route>
+              <Switch>
+                <Route path="/" exact>
+                  <Home />
+                </Route>
+                <Route path="/about" exact>
+                  <About />
+                </Route>
+                <Route path="/contact">
+                  <Contact />
+                </Route>
+                <Route path="/farming/:farm">
+                  <Farms2 />
+                </Route>
+                <Route path="/liquidity">
+                  <Farms />
+                </Route>
+                <Route path="/pools">
+                  <Pools />
+                </Route>
+                <Route path="/stake">
+                  <Stake />
+                </Route>
+                <Route path="/stakenft">
+                  <AirFarm />
+                </Route>
+                <Route path="/stake-zionlions">
+                  <ZionLions />
+                </Route>
+                <Route path="/streetpunksnft">
+                  <StreetPunksNFT />
+                </Route>
+                <Route path="/lottery">
+                  <Lottery />
+                </Route>
+                <Route path="/ifo">
+                  <Ifos />
+                </Route>
+                <Route path="/collectibles">
+                  <Collectibles />
+                </Route>
+                <Route exact path="/teams">
+                  <Teams />
+                </Route>
+                <Route path="/teams/:id">
+                  <Team />
+                </Route>
+                <Route path="/profile">
+                  <Profile />
+                </Route>
+                {/* Redirect */}
+                <Route path="/staking">
+                  <Redirect to="/pools" />
+                </Route>
+                <Route path="/syrup">
+                  <Redirect to="/pools" />
+                </Route>
+                <Route path="/nft">
+                  <Redirect to="/collectibles" />
+                </Route>
 
-              {/* activate blog later after have contents */}
-              <Route exact path="/educations">
-                <Blog />
-              </Route>
+                {/* activate blog later after have contents */}
+                <Route exact path="/educations">
+                  <Blog />
+                </Route>
 
-              <Route path="/education/:id">
-                <SinglePost />
-              </Route>
+                <Route path="/education/:id">
+                  <SinglePost />
+                </Route>
 
-              <Route path="/category/:id">
-                <Category />
-              </Route>
+                <Route path="/category/:id">
+                  <Category />
+                </Route>
 
-              {/* 404 */}
-              <Route component={NotFound} />
-            </Switch>
+                {/* 404 */}
+                <Route component={NotFound} />
+              </Switch>
             </AnimatePresence>
             {/* </Suspense> */}
             <Footer />

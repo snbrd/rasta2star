@@ -5,13 +5,11 @@ import nftPools from 'config/constants/nftPools'
 
 import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 
-
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 import AnimatedPage from 'components/AnimatedPage'
 import PoolCard from './components/PoolCard'
 import MrRastaImage from '../../assets/new-banner-image.jpg'
 import ExplorerPoolCard from './ExplorerComponents/ExplorerPoolCard'
-
 
 const Farm: React.FC = () => {
   const TranslateString = useI18n()
@@ -49,25 +47,19 @@ const Farm: React.FC = () => {
                     if (Active) {
                       if (!farm.isFinished) {
                         if (farm.id === 5) {
-                          return (
-                            <ExplorerPoolCard key={index} pool={{ ...farmInfo[index], ...farm, rastaPriceUSD }} />
-                          )
+                          return <ExplorerPoolCard key={index} pool={{ ...farmInfo[index], ...farm, rastaPriceUSD }} />
                         }
                         return (
                           <PoolCard key={index} pool={{ ...farmInfo[index], ...farm, bnbPriceUSD, rastaPriceUSD }} />
                         )
                       }
-                      return null;
+                      return null
                     }
                     if (farm.isFinished) {
                       if (farm.id === 4 || farm.id === 5) {
-                        return (
-                          <ExplorerPoolCard key={index} pool={{ ...farmInfo[index], ...farm, rastaPriceUSD }} />
-                        )
+                        return <ExplorerPoolCard key={index} pool={{ ...farmInfo[index], ...farm, rastaPriceUSD }} />
                       }
-                      return (
-                        <PoolCard key={index} pool={{ ...farmInfo[index], ...farm, bnbPriceUSD, rastaPriceUSD }} />
-                      )
+                      return <PoolCard key={index} pool={{ ...farmInfo[index], ...farm, bnbPriceUSD, rastaPriceUSD }} />
                     }
                     return null
                   })}

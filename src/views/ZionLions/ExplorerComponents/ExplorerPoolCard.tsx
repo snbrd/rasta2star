@@ -43,7 +43,6 @@ const buttonClass =
 const activeButtonClass2 =
   'w-full font-bold flex flex-row text-white py-2 bg-gradient-to-b from-yellow-rasta to-orange-zion items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
 
-
 const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
   const {
     icon,
@@ -62,14 +61,14 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
   const { account } = useWallet()
   const [isApproval, SETisApproval] = useState(approved)
   const [allowance, setAllowance] = useState('0')
-  const [staked, setStaked] = useState(false);
+  const [staked, setStaked] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [totalSupply, setTotalSupply] = useState(new BigNumber(0));
-  const [rastaBalance, setRastaBalance] = useState(new BigNumber(0));
-  const [stakedAmount, setStakedAmount] = useState(new BigNumber(0));
+  const [totalSupply, setTotalSupply] = useState(new BigNumber(0))
+  const [rastaBalance, setRastaBalance] = useState(new BigNumber(0))
+  const [stakedAmount, setStakedAmount] = useState(new BigNumber(0))
 
-  const rastaContract = useCake();
-  const poolContract = useContract(zionLionsABI as unknown as AbiItem, getAddress(contractAddress));
+  const rastaContract = useCake()
+  const poolContract = useContract(zionLionsABI as unknown as AbiItem, getAddress(contractAddress))
   const [rate, setRate] = useState(0)
   const { onClaim } = useClaim(getAddress(contractAddress))
 
@@ -78,19 +77,19 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
       const _rate = await poolContract.methods.rewardRate().call()
       const _tvl = await poolContract.methods.totalSupply().call()
       setRate(_rate)
-      setTotalSupply(new BigNumber(_tvl));
+      setTotalSupply(new BigNumber(_tvl))
 
       if (account) {
         try {
           const userInfo = await poolContract.methods.userInfo(account).call()
-          setStaked(userInfo.staked);
-          setStakedAmount(new BigNumber(userInfo.amount));
+          setStaked(userInfo.staked)
+          setStakedAmount(new BigNumber(userInfo.amount))
 
           if (rastaContract) {
             const res = await getAllowance(rastaContract, poolContract, account)
-            setAllowance(new BigNumber(res).toString());
-            const _balance = await rastaContract.methods.balanceOf(account).call();
-            setRastaBalance(new BigNumber(_balance));
+            setAllowance(new BigNumber(res).toString())
+            const _balance = await rastaContract.methods.balanceOf(account).call()
+            setRastaBalance(new BigNumber(_balance))
           }
         } catch (error) {
           console.log(error)
@@ -100,8 +99,8 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
   }, [account, poolContract, rastaContract])
 
   useEffect(() => {
-    (async () => {
-      await handleFetch();
+    ;(async () => {
+      await handleFetch()
     })()
   }, [handleFetch])
 
@@ -110,19 +109,13 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
   }, [approved])
 
   const apy = (() => {
-    return (
-      new BigNumber(rate)
-        .times(SEC_PER_YEAR)
-        .div(
-          new BigNumber(totalSupply).toNumber() > 0
-            ? new BigNumber(totalSupply)
-            : new BigNumber(10).pow(18),
-        )
-        .times(100)
-        .toFixed(0)
-        .toString()
-    )
-  })();
+    return new BigNumber(rate)
+      .times(SEC_PER_YEAR)
+      .div(new BigNumber(totalSupply).toNumber() > 0 ? new BigNumber(totalSupply) : new BigNumber(10).pow(18))
+      .times(100)
+      .toFixed(0)
+      .toString()
+  })()
 
   return (
     <>
@@ -141,8 +134,14 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
           </CustomTitle>
         )}
         <div className="row flex flex-col lg:flex-row space-x-0 md:space-x-4 mb-4 md:mb-8 border-b-2 pb-4 border-black">
-          <CardHeading lpLabel={poolName} description={description} isCommunityFarm={false} farmImage={icon} tokenSymbol="farm.tokenSymbol" />
-          <div className='w-full flex flex-col md:flex-row gap:2 md:gap-4'>
+          <CardHeading
+            lpLabel={poolName}
+            description={description}
+            isCommunityFarm={false}
+            farmImage={icon}
+            tokenSymbol="farm.tokenSymbol"
+          />
+          <div className="w-full flex flex-col md:flex-row gap:2 md:gap-4">
             <div
               className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0"
               style={{
@@ -183,16 +182,14 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
             rastaBalance={rastaBalance}
             onFetch={handleFetch}
           />
-          <div className='flex flex-col justify-between md:w-2/5'>
+          <div className="flex flex-col justify-between md:w-2/5">
             <div
               className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-6 px-6  mt-4 md:mt-0"
               style={{
                 background: '#241f31',
               }}
             >
-              <span className="apr-value text-2xl w-full text-white ">
-                {depositFee}%
-              </span>
+              <span className="apr-value text-2xl w-full text-white ">{depositFee}%</span>
               <span className="apr-label text-blue-zion_cyan text-sm">Deposit Fee</span>
             </div>
             <div
@@ -210,11 +207,11 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
             </div>
           </div>
         </div>
-        <div className='w-full mt-10 md:mt-12 gap-4 flex flex-col md:flex-row items-center'>
+        <div className="w-full mt-10 md:mt-12 gap-4 flex flex-col md:flex-row items-center">
           <button
             type="button"
             disabled={loading}
-            className={`${Number(pendingReward) > 0 ? activeButtonClass2 : buttonClass} ${loading && " disabled"}`}
+            className={`${Number(pendingReward) > 0 ? activeButtonClass2 : buttonClass} ${loading && ' disabled'}`}
             style={{ maxWidth: 220 }}
             onClick={async () => {
               if (Number(pendingReward) > 0) {

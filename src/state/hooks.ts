@@ -118,7 +118,7 @@ export const usePriceRastaBusd = (): BigNumber => {
   const [rastaPrice, setPrice] = useState(ZERO)
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       try {
         const response = await fetch(
           `https://api.pancakeswap.info/api/v2/tokens/0xe3e8cc42da487d1116d26687856e9fb684817c52`,
@@ -138,7 +138,7 @@ export const usePriceLatteBnb = (): BigNumber => {
   const [lattePrice, setPrice] = useState(ZERO)
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       try {
         const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=latteswap&vs_currencies=BNB`)
         const { latteswap } = await response.json()
@@ -156,7 +156,7 @@ export const usePricePunksBnb = (): BigNumber => {
   const [punksPrice, setPrice] = useState(ZERO)
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       try {
         const response = await fetch(
           `https://api.pancakeswap.info/api/v2/tokens/0x3ca35c4f8bc33D44d10d379F3fE601bA67bBbE7f`,
@@ -176,7 +176,7 @@ export const usePriceCNRBusd = (): BigNumber => {
   const [cnrPrice, setPrice] = useState(ZERO)
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       try {
         const response = await fetch(
           `https://api.pancakeswap.info/api/v2/tokens/0xdCbA3fbd7BBc28abD18A472D28358089467A8a74`,

@@ -29,38 +29,43 @@ const activeButtonClass =
 const activeButtonClass2 =
   'w-full font-bold flex flex-row text-white py-2 bg-gradient-to-b from-yellow-rasta to-orange-zion items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
 
-export default function FarmHarvest({ onFetch, rastaBalance, stakedAmount, poolContract, rastaContract, allowance, staked, isApproval, pool }: Props) {
-  const {
-    balance,
-    contractAddress,
-    maxDepositAmount,
-    nftContractAddress,
-  } = pool;
+export default function FarmHarvest({
+  onFetch,
+  rastaBalance,
+  stakedAmount,
+  poolContract,
+  rastaContract,
+  allowance,
+  staked,
+  isApproval,
+  pool,
+}: Props) {
+  const { balance, contractAddress, maxDepositAmount, nftContractAddress } = pool
 
   const { account } = useWallet()
-  const { onApproveAll } = useApproveAll(nftContractAddress, getAddress(contractAddress));
+  const { onApproveAll } = useApproveAll(nftContractAddress, getAddress(contractAddress))
   const [loading, setLoading] = useState(false)
 
   const isApprovedToken = useMemo(() => Number(allowance) >= Number(maxDepositAmount), [allowance, maxDepositAmount])
-  const isStakedToken = useMemo(() => (new BigNumber(stakedAmount).toNumber()) > 0, [stakedAmount])
+  const isStakedToken = useMemo(() => new BigNumber(stakedAmount).toNumber() > 0, [stakedAmount])
 
   const onStakeNft = async () => {
-    if (!poolContract) return;
-    if (!balance || balance < 10) return;
+    if (!poolContract) return
+    if (!balance || balance < 10) return
 
     try {
-      await poolContract.methods.stakeAll().send({ from: account });
+      await poolContract.methods.stakeAll().send({ from: account })
       onFetch()
     } catch (error) {
       console.log(error)
     }
   }
-  
+
   const onUnStakeNft = async () => {
-    if (!poolContract) return;
+    if (!poolContract) return
 
     try {
-      await poolContract.methods.unStack().send({ from: account });
+      await poolContract.methods.unStack().send({ from: account })
       onFetch()
     } catch (error) {
       console.log(error)
@@ -68,66 +73,60 @@ export default function FarmHarvest({ onFetch, rastaBalance, stakedAmount, poolC
   }
 
   const onApproveToken = async () => {
-    if (!poolContract || !account) return;
-    setLoading(true);
+    if (!poolContract || !account) return
+    setLoading(true)
 
     try {
-      await approve(rastaContract, poolContract, account);
+      await approve(rastaContract, poolContract, account)
     } catch (error) {
       console.log(error)
     }
-    setLoading(false);
+    setLoading(false)
   }
 
   const onStakeRasta = async (amount) => {
-    if (!poolContract || !account) return;
+    if (!poolContract || !account) return
 
-    setLoading(true);
+    setLoading(true)
     try {
-      await poolContract.methods.stakeRasta(new BigNumber(amount).times(new BigNumber(10).pow(18)).toString()).send({ from: account });
+      await poolContract.methods
+        .stakeRasta(new BigNumber(amount).times(new BigNumber(10).pow(18)).toString())
+        .send({ from: account })
       onFetch()
     } catch (error) {
       console.log(error)
     }
-    setLoading(false);
+    setLoading(false)
   }
 
   const onWithdrawRasta = async (amount) => {
-    if (!poolContract || !account) return;
-    setLoading(true);
+    if (!poolContract || !account) return
+    setLoading(true)
 
     try {
-      await poolContract.methods.withdrawRasta(new BigNumber(amount).times(new BigNumber(10).pow(18)).toString()).send({ from: account });
+      await poolContract.methods
+        .withdrawRasta(new BigNumber(amount).times(new BigNumber(10).pow(18)).toString())
+        .send({ from: account })
       onFetch()
     } catch (error) {
       console.log(error)
     }
-    setLoading(false);
+    setLoading(false)
   }
 
   const [onPresentDeposit] = useModal(
-    <DepositModal
-      max={new BigNumber(rastaBalance)}
-      onConfirm={onStakeRasta}
-      tokenName="Rasta"
-    />,
+    <DepositModal max={new BigNumber(rastaBalance)} onConfirm={onStakeRasta} tokenName="Rasta" />,
   )
 
   const [onPresentWithdraw] = useModal(
-    <WithdrawModal
-      max={stakedAmount}
-      onConfirm={onWithdrawRasta}
-      tokenName="Rasta"
-    />,
+    <WithdrawModal max={stakedAmount} onConfirm={onWithdrawRasta} tokenName="Rasta" />,
   )
 
   return (
-    <div className='w-full mt-4 md:mt-0'>
+    <div className="w-full mt-4 md:mt-0">
       <div className="gap-4 md:gap-10 row flex flex-col w-full">
         <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0 gap-6">
-          <h2 className="text-xl font-bold text-left">
-            STEP 1: Approve and Stake 10 Explorer NFTs
-          </h2>
+          <h2 className="text-xl font-bold text-left">STEP 1: Approve and Stake 10 Explorer NFTs</h2>
           <div className="flex flex-row space-x-3 xl:space-x-0 justify-between md:pr-10">
             <button
               type="button"
@@ -135,75 +134,73 @@ export default function FarmHarvest({ onFetch, rastaBalance, stakedAmount, poolC
               className={isApproval ? activeButtonClass : buttonClass}
               style={{ maxWidth: 220 }}
               onClick={async () => {
-                if (isApproval || loading) return;
-                setLoading(true);
-                await onApproveAll();
-                setLoading(false);
+                if (isApproval || loading) return
+                setLoading(true)
+                await onApproveAll()
+                setLoading(false)
               }}
             >
-              <span>{isApproval ? "Approved" : "Approve"}</span>
+              <span>{isApproval ? 'Approved' : 'Approve'}</span>
             </button>
             <button
               type="button"
               disabled={loading}
-              className={`${staked ? activeButtonClass2 : buttonClass} ${!isApproval && " disabled"}`}
+              className={`${staked ? activeButtonClass2 : buttonClass} ${!isApproval && ' disabled'}`}
               style={{ maxWidth: 220 }}
               onClick={async () => {
-                setLoading(true);
+                setLoading(true)
                 if (!staked) {
-                  if(!isApproval) return;
+                  if (!isApproval) return
 
-                  await onStakeNft();
+                  await onStakeNft()
                 } else {
-                  await onUnStakeNft();
+                  await onUnStakeNft()
                 }
-                setLoading(false);
+                setLoading(false)
               }}
             >
-              <span>{staked ? "Unstake Explorers" : "Stake 10 Explorers"}</span>
+              <span>{staked ? 'Unstake Explorers' : 'Stake 10 Explorers'}</span>
             </button>
           </div>
         </div>
         <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0 gap-6">
-          <h2 className="text-xl font-bold text-left">
-            STEP 2: Stake your $RASTA Tokens for A Supercharged Return
-          </h2>
+          <h2 className="text-xl font-bold text-left">STEP 2: Stake your $RASTA Tokens for A Supercharged Return</h2>
           <div className="flex flex-row space-x-3 xl:space-x-0 justify-between md:pr-10">
             <button
               type="button"
               disabled={loading}
-              className={`${isApprovedToken ? activeButtonClass : buttonClass} ${!staked && " disabled"}`}
+              className={`${isApprovedToken ? activeButtonClass : buttonClass} ${!staked && ' disabled'}`}
               style={{ maxWidth: 220 }}
               onClick={async () => {
-                if (loading) return;
-                if (!staked) return;
+                if (loading) return
+                if (!staked) return
 
                 if (isApprovedToken) {
-                  onPresentDeposit();
+                  onPresentDeposit()
                 } else {
-                  await onApproveToken();
+                  await onApproveToken()
                 }
               }}
             >
-              <span>{isApprovedToken ? "Stake More $RASTA" : "Approve"}</span>
+              <span>{isApprovedToken ? 'Stake More $RASTA' : 'Approve'}</span>
             </button>
             <button
               type="button"
               disabled={loading}
-              className={`${isStakedToken ? activeButtonClass2 : buttonClass} ${!isApprovedToken && " disabled"}`}
+              className={`${isStakedToken ? activeButtonClass2 : buttonClass} ${!isApprovedToken && ' disabled'}`}
               style={{ maxWidth: 220 }}
               onClick={async () => {
-                if (loading) return;
-                if (!isApprovedToken) return;
+                if (loading) return
+                if (!isApprovedToken) return
 
                 if (!isStakedToken) {
-                  onPresentDeposit();
+                  onPresentDeposit()
                 } else {
-                  onPresentWithdraw();
+                  onPresentWithdraw()
                 }
               }}
             >
-              <span>{isStakedToken ? "Unstake $RASTA" : "Stake $RASTA"}</span>
+              <span>{isStakedToken ? 'Unstake $RASTA' : 'Stake $RASTA'}</span>
             </button>
           </div>
         </div>

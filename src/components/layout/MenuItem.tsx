@@ -63,7 +63,6 @@ export default function MenuItem({ menu, showSidebar }) {
                   }
 
                   if (i.path.includes('/#')) {
-
                     if (location.pathname !== '/') {
                       return (
                         <a href={i.path} onClick={showSidebar} rel="noreferrer">
@@ -74,7 +73,7 @@ export default function MenuItem({ menu, showSidebar }) {
                       )
                     }
                     return (
-                      <AnchorLink href='#mintstation'>
+                      <AnchorLink href="#mintstation">
                         <span className="ml-10" style={{ fontSize: '14px', marginLeft: '1rem' }}>
                           {i.label}
                         </span>

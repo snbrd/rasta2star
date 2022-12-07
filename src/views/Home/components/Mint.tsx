@@ -252,13 +252,14 @@ function Mint() {
               </s.Text>
             </s.FlexDiv>
 
-            <a href='/stake-zionlions' style={{
-              marginTop: '20px',
-              textAlign: 'center'
-            }}>
-              <s.FilledButton>
-                Stake NFT
-              </s.FilledButton>
+            <a
+              href="/stake-zionlions"
+              style={{
+                marginTop: '20px',
+                textAlign: 'center',
+              }}
+            >
+              <s.FilledButton>Stake NFT</s.FilledButton>
             </a>
           </s.FlexDiv>
         </s.Column>
@@ -312,7 +313,9 @@ function Mint() {
                         <tr>
                           <td>1001 - 3100 {CONFIG.SYMBOL}</td>
                           <td> costs </td>
-                          <td>{CONFIG.DISPLAY_COST} {CONFIG.NETWORK.SYMBOL}</td>
+                          <td>
+                            {CONFIG.DISPLAY_COST} {CONFIG.NETWORK.SYMBOL}
+                          </td>
                         </tr>
                         <tr>
                           <td>3101 - 6200 {CONFIG.SYMBOL}</td>

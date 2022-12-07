@@ -73,11 +73,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
   }, [approved])
 
   useEffect(() => {
-    (async () => {
-      const ZionLionsContract = new web3.eth.Contract(
-        zionLionsABI as unknown as AbiItem,
-        getAddress(contractAddress),
-      )
+    ;(async () => {
+      const ZionLionsContract = new web3.eth.Contract(zionLionsABI as unknown as AbiItem, getAddress(contractAddress))
       const _rate = await ZionLionsContract.methods.rewardRate().call()
       setRate(_rate)
     })()
@@ -85,33 +82,30 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
 
   const apy = (() => {
     if (type === 'zlnft') {
-      return (
-        new BigNumber(rastaPriceUSD)
-          .div(bnbPriceUSD)
-          .times(rate)
-          .times(SEC_PER_YEAR)
-          .div(
-            Number(farmbalance) > 0
-              ? new BigNumber(farmbalance).times(new BigNumber(0.18).times(new BigNumber(10).pow(18)))
-              : new BigNumber(10).pow(18),
-          )
-          .times(100)
-          .toFixed(0)
-          .toString())
-    }
-    return (
-      new BigNumber(rewardRate)
+      return new BigNumber(rastaPriceUSD)
+        .div(bnbPriceUSD)
+        .times(rate)
         .times(SEC_PER_YEAR)
         .div(
           Number(farmbalance) > 0
-            ? new BigNumber(farmbalance).times(new BigNumber(0.1).times(new BigNumber(10).pow(18)))
+            ? new BigNumber(farmbalance).times(new BigNumber(0.18).times(new BigNumber(10).pow(18)))
             : new BigNumber(10).pow(18),
         )
         .times(100)
         .toFixed(0)
         .toString()
-    )
-  })();
+    }
+    return new BigNumber(rewardRate)
+      .times(SEC_PER_YEAR)
+      .div(
+        Number(farmbalance) > 0
+          ? new BigNumber(farmbalance).times(new BigNumber(0.1).times(new BigNumber(10).pow(18)))
+          : new BigNumber(10).pow(18),
+      )
+      .times(100)
+      .toFixed(0)
+      .toString()
+  })()
 
   const { onApproveAll } = useApproveAll(nftContractAddress, getAddress(contractAddress))
   const { onStake, onUnStake } = useStake(getAddress(contractAddress))

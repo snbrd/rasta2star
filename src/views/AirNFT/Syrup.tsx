@@ -29,7 +29,7 @@ const Farm: React.FC = () => {
   const rastaPriceUSD = usePriceRastaBusd()
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       const _rate = await AirNftPoolContract.methods.rewardRate().call()
       setRate(_rate)
     })()
@@ -96,11 +96,19 @@ const Farm: React.FC = () => {
                     if (farm.type !== 'airnft') return null
                     if (Active)
                       return (
-                        <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />
+                        <PoolCard
+                          key={index}
+                          pool={{ ...farmInfo[index], ...farm }}
+                          apy={poolsWithApy[index][farm.id]}
+                        />
                       )
                     if (farm.isFinished)
                       return (
-                        <PoolCard key={index} pool={{ ...farmInfo[index], ...farm }} apy={poolsWithApy[index][farm.id]} />
+                        <PoolCard
+                          key={index}
+                          pool={{ ...farmInfo[index], ...farm }}
+                          apy={poolsWithApy[index][farm.id]}
+                        />
                       )
                     return null
                   })}

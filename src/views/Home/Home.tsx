@@ -166,7 +166,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div style={{ height: '0.5rem'}}>&nbsp;</div>
+            <div style={{ height: '0.5rem' }}>&nbsp;</div>
           </div>
           <FavCreator />
         </section>
