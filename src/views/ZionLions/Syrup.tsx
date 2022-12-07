@@ -43,7 +43,7 @@ const Farm: React.FC = () => {
             </div>
             <div className="card items-center text-center w-full mt-3 md:mt-16 mb-12">
               <div>
-                <div className="cus-grid-3 grid gap-0 space-y-8 xl:space-y-0 xl:gap-8 grid-cols-1 mt-8 md:mt-0 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
+                <div className="cus-grid-3 flex flex-col md:grid gap-0 space-y-8 xl:space-y-0 xl:gap-8 grid-cols-1 mt-8 md:mt-0 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
                   {nftPools.map((farm, index) => {
                     if (farm.type !== 'zlnft') return null
                     if (Active) {
