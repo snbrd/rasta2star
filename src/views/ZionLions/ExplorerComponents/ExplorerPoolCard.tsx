@@ -99,7 +99,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
   }, [account, poolContract, rastaContract])
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       await handleFetch()
     })()
   }, [handleFetch])

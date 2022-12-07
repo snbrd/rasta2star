@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PotionImage from '../../../assets/potion-bottle.png'
+import HeroImage from '../../../assets/Banner-Twitter-Zionlab.jpg'
 // import HeroImage from '../../../assets/home-header.jpg'
 // import HeroImage from '../../../assets/hero-new-background-zion.jpg'
 
@@ -17,15 +18,17 @@ export default function HeroSection() {
         className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto md:h-screen"
         style={{
           backgroundColor: '#000',
-          // backgroundImage: `url(${HeroImage})`,
+          backgroundImage: `url(${HeroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'left center',
         }}
       >
-        <video autoPlay muted loop id="myVideo" className="absolute invisible md:visible w-auto h-screen md:left-48">
-          {/* <source src='/hero-video.mp4' type="video/mp4"/> */}
-          <source src="/new-hero-video.mp4" type="video/mp4" />
-        </video>
+        {/* <img src={HeroImage} alt='' className="absolute invisible md:visible h-screen w-full object-cover" /> */}
+        {/* video background */}
+        {/* <video autoPlay muted loop id="myVideo" className="absolute invisible md:visible w-auto h-screen md:left-48"> */}
+        {/* <source src='/hero-video.mp4' type="video/mp4"/> */}
+        {/* <source src="/new-hero-video.mp4" type="video/mp4" />
+        </video> */}
 
         <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row justify-center h-full z-20 md:mt-48">
           <div className="leftSection w-full md:w-6/12 md:pl-16">

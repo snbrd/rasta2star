@@ -73,7 +73,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
   }, [approved])
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       const ZionLionsContract = new web3.eth.Contract(zionLionsABI as unknown as AbiItem, getAddress(contractAddress))
       const _rate = await ZionLionsContract.methods.rewardRate().call()
       setRate(_rate)

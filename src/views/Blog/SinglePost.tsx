@@ -65,7 +65,7 @@ export default function SinglePost() {
           </div>
 
           <div className="bg-white text-black w-full py-20">
-            <div className="container mx-auto px-10 md:px-56">
+            <div className="container mx-auto px-10 md:px-10 lg:px-0">
               <div className="flex flex-col space-y-8" data-aos="fade-up" data-aos-duration="1000">
                 {renderHTML(pos.content.rendered)}
               </div>
