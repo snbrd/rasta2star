@@ -84,7 +84,7 @@ const Farms: React.FC = () => {
           return farm
         }
         const cakeRewardPerBlock = RASTA_PER_BLOCK.times(farm.poolWeight)
-        const cakeRewardPerYear = cakeRewardPerBlock.times(BLOCKS_PER_YEAR)
+        let cakeRewardPerYear = cakeRewardPerBlock.times(BLOCKS_PER_YEAR)
 
         let price = ''
         if (farm.tokenSymbol === 'CAKE') {
@@ -95,10 +95,10 @@ const Farms: React.FC = () => {
           price = new BigNumber(cnsPriceVsBnb).times(115).times(bnbPrice).toString()
         } else if (farm.lpSymbol === 'RASTA') {
           price = rastaPrice.toString()
+          cakeRewardPerYear = new BigNumber(farm.rastaPerBlock).times(BLOCKS_PER_YEAR).div(1e18);
         } else {
           price = priceData.prices[farm.tokenSymbol]
         }
-
         const apy = rastaPriceVsBNB
           .times(bnbPrice)
           .times(cakeRewardPerYear)

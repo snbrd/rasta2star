@@ -71,7 +71,7 @@ const fetchFarms = async () => {
         .div(new BigNumber(10).pow(quoteTokenDecimals))
         .times(lpTokenRatio)
 
-      const [info, totalAllocPoint] = await multicall(masterchefABI, [
+      const [info, totalAllocPoint, rastaPerBlock] = await multicall(masterchefABI, [
         {
           address: getMasterChefAddress(),
           name: 'poolInfo',
@@ -80,6 +80,10 @@ const fetchFarms = async () => {
         {
           address: getMasterChefAddress(),
           name: 'totalAllocPoint',
+        },
+        {
+          address: getMasterChefAddress(),
+          name: 'rastaPerBlock',
         },
       ])
 
@@ -93,6 +97,7 @@ const fetchFarms = async () => {
         lpTotalInQuoteToken: lpTotalInQuoteToken.toJSON(),
         tokenPriceVsQuote: quoteTokenAmount.div(tokenAmount).toJSON(),
         poolWeight: poolWeight.toJSON(),
+        rastaPerBlock: new BigNumber(rastaPerBlock[0]._hex).toJSON(),
         multiplier: `${allocPoint.div(10).toString()}X`,
         singleTokenAmount: singleTokenAmount.toJSON(),
       }
