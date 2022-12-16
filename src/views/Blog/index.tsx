@@ -78,7 +78,16 @@ export default function Blog() {
                       <div className="font-bold text-xl mb-2">
                         <Link to={`/education/${blog.slug}`}>{blog.title.rendered}</Link>
                       </div>
-                      {renderHTML(blog.excerpt.rendered)}
+                      <span style={{
+                        display: 'block',
+                        width: '250px',
+                        overflow: 'hidden',
+                        whiteSpace: 'nowrap',
+                        textOverflow: 'ellipsis',
+                      }}>
+
+                        {renderHTML(blog.excerpt.rendered)}
+                      </span>
                     </div>
                     <div className="px-6 pt-4 pb-2">
                       <span className="inline-block bg-blue-zion_cyan rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">

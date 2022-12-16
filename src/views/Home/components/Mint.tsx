@@ -228,10 +228,10 @@ function Mint() {
         </s.Heading2>
       </s.MobileHide>
       <s.Container>
-        <s.Column bordered={false} width="35%">
+        <s.Column bordered={false} width="35%" className='black-bg'>
           <s.FlexDiv direction={['column']}>
             <s.FlexDiv direction={['column']}>
-              <s.Heading2>Mint and then Stake</s.Heading2>
+              <s.Heading2>Mint and then Stake ZLS</s.Heading2>
               <hr
                 style={{
                   marginTop: '0.75rem',
@@ -242,6 +242,9 @@ function Mint() {
             </s.FlexDiv>
 
             <s.FlexDiv direction={['column']} gap="2rem" margin="16px 0 0 0" mdWidth="87%">
+              <s.Text align='justify' lineHeight='1.5rem'>
+                To complement the strong community, a novel collection of ZionLions have been released as 6,200 NFTs with rarity factors that are unrivaled in the space. Made up of 4 unique tiers (Farmers, Explorers, Builders and Professors), each ZionLion unlocks its own set of utility and return on investment.
+              </s.Text>
               <s.Text align="justify" lineHeight="1.5rem">
                 Please make sure you are connected to the right network (Binance Smart Chain Mainnet) and the correct
                 address. Please note: Once you mint, this action cannot be undone.

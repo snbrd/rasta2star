@@ -21,3 +21,7 @@
         vertical-align: middle;
     }
 }
+
+.black-bg {
+    background-color: #000 !important;
+}
