@@ -46,7 +46,7 @@ export default function HeroSection() {
               data-aos-duration="1000"
             >
               <span className="text-blue-zion_cyan">Zion Labs</span>
-              <br /> <span className="hidden md:block">ZionArmy ZionLions ZionArmyTakeover</span>
+              <br /> <span className="hidden md:block">Zion lions, staking club and music artist ZLP</span>
             </h1>
             <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
             ZionLabs is a creative collective with a strong presence on the Binance Blockchain. Powered by Web3 tools, ZionLabs is the custodian of a fully decentralized financial eco-system, in addition to providing Web3 and React development services for various initiatives across the world.
