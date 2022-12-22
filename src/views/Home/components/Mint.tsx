@@ -262,7 +262,7 @@ function Mint() {
                 textAlign: 'center',
               }}
             >
-              <s.FilledButton>Stake NFT</s.FilledButton>
+              <s.FilledButton>Stake NFTs</s.FilledButton>
             </a>
           </s.FlexDiv>
         </s.Column>

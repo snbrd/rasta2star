@@ -201,7 +201,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
                   }}
                   className={(isFinished ? 'disabled ' : '') + buttonClass}
                 >
-                  <span>{TranslateString(758, 'Stake NFT')}</span>
+                  <span>{TranslateString(758, 'Stake NFTs')}</span>
                 </button>
               </div>
             )
