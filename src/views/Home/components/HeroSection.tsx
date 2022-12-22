@@ -17,10 +17,11 @@ export default function HeroSection() {
       <div
         className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto md:h-screen"
         style={{
-          backgroundColor: '#000',
+          backgroundColor: '#0000008c',
           backgroundImage: `url(${HeroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'left center',
+          backgroundBlendMode: 'multiply'
         }}
       >
         {/* <img src={HeroImage} alt='' className="absolute invisible md:visible h-screen w-full object-cover" /> */}
