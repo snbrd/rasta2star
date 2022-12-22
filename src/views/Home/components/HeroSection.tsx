@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PotionImage from '../../../assets/potion-bottle.png'
-import HeroImage from '../../../assets/Banner-Twitter-Zionlab.jpg'
+import HeroImage from '../../../assets/Banner-Twitter-Zionlab-new.jpg'
 // import HeroImage from '../../../assets/home-header.jpg'
 // import HeroImage from '../../../assets/hero-new-background-zion.jpg'
 
@@ -48,9 +48,7 @@ export default function HeroSection() {
               <br /> <span className="hidden md:block">#ZionArmy #ZionLions #ZionArmyTakeover</span>
             </h1>
             <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
-              For a sustainable future and longevity of our Zion Labs ecosystem, we will always be tax-free. Our
-              currency grows value from NFT art sales which we believe will play a big role in the future of blockchain
-              adoption.
+            ZionLabs is a creative collective with a strong presence on the Binance Blockchain. Powered by Web3 tools, ZionLabs is the custodian of a fully decentralized financial eco-system, in addition to providing Web3 and React development services for various initiatives across the world.
             </p>
             <div className="cta flex-row mt-8 space-x-8 hidden md:flex" data-aos="fade-right" data-aos-duration="2500">
               <Link
