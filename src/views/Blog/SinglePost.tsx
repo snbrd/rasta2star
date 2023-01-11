@@ -37,7 +37,7 @@ export default function SinglePost() {
     <>
       <div className="flex items-center justify-center align-middle">
         <button
-          className={`-right-6 p-5 h-auto bg-blue-zion_cyan w-auto fixed bottom-1/2 z-20 transform -rotate-90 rounded-lg `}
+          className={`-right-6 p-3 md:p-5 h-auto bg-blue-zion_cyan w-auto fixed bottom-1/2 z-20 transform -rotate-90 rounded-lg `}
           type="button"
           onClick={showSidenav}
         >
@@ -56,13 +56,14 @@ export default function SinglePost() {
               backgroundImage: `url(${pos._embedded['wp:featuredmedia'][0].source_url})`,
               backgroundSize: 'cover',
               backgroundBlendMode: 'multiply',
-              backgroundAttachment: 'fixed',
             }}
           >
-            <h1 className="text-4xl font-bold" data-aos="fade-right" data-aos-duration="1000">
+            <h1 className="text-4xl font-bold hidden" data-aos="fade-right" data-aos-duration="1000">
               {pos.title.rendered}
             </h1>
+            <div className='hidden'>
             {renderHTML(pos.excerpt.rendered)}
+            </div>
           </div>
 
           <div
@@ -74,7 +75,10 @@ export default function SinglePost() {
             <h1 className="text-4xl font-bold" data-aos="fade-right" data-aos-duration="1000">
               {pos.title.rendered}
             </h1>
+            <div className=''>
+
             {renderHTML(pos.excerpt.rendered)}
+            </div>
           </div>
 
           <div className="bg-white text-black w-full py-20 md:px-20">

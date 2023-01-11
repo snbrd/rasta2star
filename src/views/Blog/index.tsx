@@ -37,7 +37,7 @@ export default function Blog() {
 
       <div className="flex items-center justify-center align-middle">
         <button
-          className={`-right-6 p-5 h-auto bg-blue-zion_cyan w-auto fixed bottom-1/2 z-20 transform -rotate-90 rounded-lg `}
+          className={`-right-6 p-3 md:p-5 h-auto bg-blue-zion_cyan w-auto fixed bottom-1/2 z-20 transform -rotate-90 rounded-lg `}
           type="button"
           onClick={showSidenav}
         >
@@ -64,11 +64,22 @@ export default function Blog() {
                   */}
 
                   <div
-                    className="h-64"
+                    className="h-64 md:hidden"
                     style={{
                       background: `url(${blog._embedded['wp:featuredmedia'][0].source_url})`,
                       backgroundSize: 'cover',
                       backgroundPositionX: '10%',
+                      backgroundRepeat: 'no-repeat'
+                    }}
+                  >
+                    &nbsp;
+                  </div>
+
+                  <div
+                    className="h-64 hidden md:block"
+                    style={{
+                      background: `url(${blog._embedded['wp:featuredmedia'][0].source_url})`,
+                      backgroundSize: 'cover',
                       backgroundRepeat: 'no-repeat'
                     }}
                   >
@@ -87,8 +98,10 @@ export default function Blog() {
                         whiteSpace: 'nowrap',
                         textOverflow: 'ellipsis',
                       }}>
+                      <div className='hidden'>
 
                         {renderHTML(blog.excerpt.rendered)}
+                    </div>
                       </span>
                     </div>
                     <div className="px-6 pt-4 pb-2">

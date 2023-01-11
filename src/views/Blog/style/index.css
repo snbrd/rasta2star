@@ -19,6 +19,11 @@ h2 {
     margin: auto;
     border-top: 7px dotted;
   }
+  .image-group {
+    display: flex;
+    flex-direction: row;
+    column-gap: 3vw;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -26,5 +31,11 @@ h2 {
     width: 13%;
     margin: auto;
     border-top: 7px dotted;
+  }
+
+  .image-group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3vw;
   }
 }

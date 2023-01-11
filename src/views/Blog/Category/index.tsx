@@ -34,7 +34,7 @@ export default function Category() {
     <>
       <div className="flex items-center justify-center align-middle">
         <button
-          className={`-right-6 p-5 h-auto bg-blue-zion_cyan w-auto fixed bottom-1/2 z-20 transform -rotate-90 rounded-lg `}
+          className={`-right-6 p-3 md:p-5 h-auto bg-blue-zion_cyan w-auto fixed bottom-1/2 z-20 transform -rotate-90 rounded-lg `}
           type="button"
           onClick={showSidenav}
         >
@@ -73,7 +73,9 @@ export default function Category() {
                           <div className="font-bold text-xl mb-2">
                             <Link to={`/education/${flt.slug}`}>{flt.title.rendered}</Link>
                           </div>
+                          <div className='hidden'>
                           {renderHTML(flt.excerpt.rendered)}
+                          </div>
                         </div>
                         <div className="px-6 pt-4 pb-2">
                           <span className="inline-block bg-blue-zion_cyan rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
