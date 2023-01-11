@@ -50,13 +50,25 @@ export default function SinglePost() {
       {post.map((pos) => (
         <div key={pos.id}>
           <div
-            className="h-screen flex flex-col items-start justify-center px-10 md:px-40 gap-y-5"
+            className="h-screen hidden md:flex md:flex-col items-start justify-center px-10 md:px-40 gap-y-5"
             style={{
               backgroundColor: '#00000059',
               backgroundImage: `url(${pos._embedded['wp:featuredmedia'][0].source_url})`,
               backgroundSize: 'cover',
               backgroundBlendMode: 'multiply',
               backgroundAttachment: 'fixed',
+            }}
+          >
+            <h1 className="text-4xl font-bold" data-aos="fade-right" data-aos-duration="1000">
+              {pos.title.rendered}
+            </h1>
+            {renderHTML(pos.excerpt.rendered)}
+          </div>
+
+          <div
+            className="h-screen md:hidden flex flex-col items-start justify-center px-10 md:px-40 gap-y-5"
+            style={{
+              backgroundColor: '#000000',
             }}
           >
             <h1 className="text-4xl font-bold" data-aos="fade-right" data-aos-duration="1000">

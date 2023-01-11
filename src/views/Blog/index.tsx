@@ -68,6 +68,8 @@ export default function Blog() {
                     style={{
                       background: `url(${blog._embedded['wp:featuredmedia'][0].source_url})`,
                       backgroundSize: 'cover',
+                      backgroundPositionX: '10%',
+                      backgroundRepeat: 'no-repeat'
                     }}
                   >
                     &nbsp;
