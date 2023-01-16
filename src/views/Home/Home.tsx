@@ -38,14 +38,17 @@ const Home: React.FC = () => {
           <div className="flex w-full bg-white text-black flex-col py-12 md:py-16">
             <div className="container mx-auto">
               <div className="mx-auto mb-8">
-                <LazyLoadImage
+              <h2 data-aos="fade-up" data-aos-duration="1000" className="text-2xl text-center md:text-5xl font-bold leading-tight">
+             NFTNOMICS
+            </h2>
+                {/* <LazyLoadImage
                   src={NFTNomicsImage}
                   alt="nftnomics"
                   className="md:w-1/3 mx-auto px-10 md:px-0"
                   effect="blur"
                   data-aos="fade-up"
                   data-aos-duration="1000"
-                />
+                /> */}
               </div>
 
               <div className="flex flex-col md:flex-row">

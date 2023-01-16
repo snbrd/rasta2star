@@ -188,7 +188,7 @@ export default function FavoriteCreator() {
           </div>
         </div>
       </div> */}
-      <div className="bg-gradient-to-b text-white from-blue-zion to-blue-zion_cyan py-12 md:py-16">
+      {/* <div className="bg-gradient-to-b text-white from-blue-zion to-blue-zion_cyan py-12 md:py-16">
         <div className="flex flex-col mx-auto md:flex-row w-full px-4 space-y-6 mb-1 md:space-y-0 md:px-0 md:w-10/12 md:mb-0 mx-autoitems-center">
           <div
             data-aos="fade-right"
@@ -215,7 +215,7 @@ export default function FavoriteCreator() {
             </Router>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

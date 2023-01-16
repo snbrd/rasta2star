@@ -216,7 +216,8 @@ function Mint() {
   }, [nftContract, getData])
 
   return (
-    <s.Screen image={CONFIG.SHOW_BACKGROUND ? '/images/mint/ZL-Background-2.jpg' : null} id="mintstation">
+    // <s.Screen image={CONFIG.SHOW_BACKGROUND ? '/images/mint/ZL-Background-2.jpg' : null} id="mintstation">
+    <s.Screen image={CONFIG.SHOW_BACKGROUND ? '' : null} id="mintstation">
       <s.MobileHide>
         <s.Heading2
           style={{
@@ -224,14 +225,14 @@ function Mint() {
             padding: '0 0 5vh 0',
           }}
         >
-          Zion Lions NFT Mint Station
+          ZION LIONS
         </s.Heading2>
       </s.MobileHide>
       <s.Container>
         <s.Column bordered={false} width="35%" className='black-bg'>
           <s.FlexDiv direction={['column']}>
             <s.FlexDiv direction={['column']}>
-              <s.Heading2>Mint and then Stake ZLS</s.Heading2>
+              <s.Heading2>MINT</s.Heading2>
               <hr
                 style={{
                   marginTop: '0.75rem',
@@ -286,7 +287,8 @@ function Mint() {
 
           <s.FlexDiv direction={['row', 'column']} content="space-around">
             <s.FlexDiv direction={['row']} gap="1rem" content="center">
-              <s.RoundedImage src="/images/mint/newgif.gif" />
+              {/* <s.RoundedImage src="/images/mint/newgif.gif" /> */}
+              <s.RoundedImage src="/images/mint/lion-nft.jpg" />
             </s.FlexDiv>
 
             <s.FlexDiv direction={['column']} content="center" grow={0}>
@@ -413,7 +415,8 @@ function Mint() {
               )}
             </s.FlexDiv>
             <s.FlexDiv direction={['row']} gap="1rem" content="center" mobileHide="true">
-              <s.RoundedImage src="/images/mint/newgif.gif" />
+              {/* <s.RoundedImage src="/images/mint/newgif.gif" /> */}
+              <s.RoundedImage src="/images/mint/lion-nft-2.jpg" />
             </s.FlexDiv>
           </s.FlexDiv>
         </s.Column>

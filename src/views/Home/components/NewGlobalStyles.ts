@@ -73,7 +73,7 @@ export const Link = styled.a`
 export const RoundedImage = styled(`img`)<{ flip?: boolean }>`
   width: 12rem;
   height: 12rem;
-  border-radius: 666px;
+  border-radius: 10px;
   transform: ${({ flip }) => (flip ? 'scaleX(-1)' : '')};
 `
 
