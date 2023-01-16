@@ -45,8 +45,9 @@ export default function HeroSection() {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-              <span className="text-blue-zion_cyan">Zion Labs</span>
-              <br /> <span className="hidden md:block">Zion lions, staking club and music artist ZLP</span>
+              <span className="text-blue-zion_cyan text-heading font-bold uppercase">Zion Labs</span>
+              <br /> 
+              <span className="hidden md:block">Enjoy your Rasta experience on web 3</span>
             </h1>
             <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
             ZionLabs is a creative collective with a strong presence on the Binance Blockchain. Powered by Web3 tools, ZionLabs is the custodian of a fully decentralized financial eco-system, in addition to providing Web3 and React development services for various initiatives across the world.
@@ -56,14 +57,14 @@ export default function HeroSection() {
                 to="/liquidity"
                 className="bg-gradient-to-b font-bold w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
               >
-                <button type="button">Stake Rasta</button>
+                <button type="button">Your earnings</button>
               </Link>
 
               <Link
                 to="/stake-zionlions"
                 className="bg-gradient-to-b font-bold w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
               >
-                <button type="button">Stake NFTs</button>
+                <button type="button">Your NFT rewards</button>
               </Link>
 
               <a

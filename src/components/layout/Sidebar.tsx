@@ -289,7 +289,8 @@ export default function Sidebar() {
 
         <div className="text-center">
           <Link to="/">
-            <LazyLoadImage src={Logo} alt="Logo" className="w-40 mx-auto d-block" effect="blur" />
+            {/* <LazyLoadImage src={Logo} alt="Logo" className="w-40 mx-auto d-block" effect="blur" /> */}
+            <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span>
           </Link>
         </div>
 
