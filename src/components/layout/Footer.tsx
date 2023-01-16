@@ -7,7 +7,7 @@ import Logo from '../../assets/z1-rescaled.png'
 
 export default function Footer() {
   // const textUnderLogo = ['@zionlabs_info', 'www.zionlabs.info']
-  const textUnderLogo = ['@zionlabs_info']
+  const textUnderLogo = ['Enjoy your Rasta experience on web 3']
   const navigation = [
     {
       title: 'Useful Links',
