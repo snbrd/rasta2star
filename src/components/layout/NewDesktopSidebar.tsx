@@ -299,7 +299,8 @@ export default function NewDesktopSidebar() {
 
         <div className="text-center">
           <Link to="/">
-            <LazyLoadImage src={Logo} alt="Logo" className="w-64 mx-auto d-block" effect="blur" />
+            {/* <LazyLoadImage src={Logo} alt="Logo" className="w-64 mx-auto d-block" effect="blur" /> */}
+            <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span>
           </Link>
         </div>
 
@@ -310,7 +311,7 @@ export default function NewDesktopSidebar() {
         </ul>
 
         <div>
-          <div className="social-media text-center justify-items-end p-4">
+          {/* <div className="social-media text-center justify-items-end p-4">
             <div className="md:flex md:flex-row md:space-x-4 gap-4 md:gap-0 mt-4 justify-center">
               {socialMedia.map((item, index) => {
                 return (
@@ -326,7 +327,7 @@ export default function NewDesktopSidebar() {
                 )
               })}
             </div>
-          </div>
+          </div> */}
           <div className="flex items-center">
             <img src={RastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />
             <span className="font-bold">${Math.round(rastaPriceUsd.toNumber() * 1000) / 1000}</span>

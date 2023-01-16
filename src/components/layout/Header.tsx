@@ -84,7 +84,8 @@ export default function Header() {
 
             <div className="logo flex-grow-1 text-center md:hidden">
               <Link to="/">
-                <LazyLoadImage src={Logo} alt="Logo" className="w-32 mx-auto d-block" effect="blur" />
+                {/* <LazyLoadImage src={Logo} alt="Logo" className="w-32 mx-auto d-block" effect="blur" /> */}
+                <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span>
               </Link>
             </div>
             <div className="right-cta items-center flex flex-row">

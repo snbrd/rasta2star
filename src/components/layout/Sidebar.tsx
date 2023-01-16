@@ -300,7 +300,7 @@ export default function Sidebar() {
         </ul>
 
         <div>
-          <div className="social-media text-center justify-items-end p-4">
+          {/* <div className="social-media text-center justify-items-end p-4">
             <div className="md:flex md:flex-row md:space-x-4 gap-4 md:gap-0 mt-4 justify-center">
               {socialMedia.map((item, index) => {
                 return (
@@ -316,7 +316,7 @@ export default function Sidebar() {
                 )
               })}
             </div>
-          </div>
+          </div> */}
           <div className="flex items-center">
             <img src={RastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />
             <span className="font-bold">${Math.round(rastaPriceUsd.toNumber() * 1000) / 1000}</span>

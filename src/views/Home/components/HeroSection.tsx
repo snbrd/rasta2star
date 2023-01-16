@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PotionImage from '../../../assets/potion-bottle.png'
-import HeroImage from '../../../assets/Banner-Twitter-Zionlab-new.jpg'
+// import HeroImage from '../../../assets/Banner-Twitter-Zionlab-new.jpg'
 // import HeroImage from '../../../assets/home-header.jpg'
 // import HeroImage from '../../../assets/hero-new-background-zion.jpg'
 
@@ -18,7 +18,7 @@ export default function HeroSection() {
         className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto md:h-screen"
         style={{
           backgroundColor: '#0000008c',
-          backgroundImage: `url(${HeroImage})`,
+          // backgroundImage: `url(${HeroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'left center',
           backgroundBlendMode: 'multiply'

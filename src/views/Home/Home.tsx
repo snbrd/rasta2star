@@ -34,7 +34,7 @@ const Home: React.FC = () => {
         <section>
           <HeroSection />
           <Mint />
-          <Community />
+          {/* <Community /> */}
           <div className="flex w-full bg-white text-black flex-col py-12 md:py-16">
             <div className="container mx-auto">
               <div className="mx-auto mb-8">

@@ -6,7 +6,8 @@ import * as Io5Icons from 'react-icons/io5'
 import Logo from '../../assets/z1-rescaled.png'
 
 export default function Footer() {
-  const textUnderLogo = ['@zionlabs_info', 'www.zionlabs.info']
+  // const textUnderLogo = ['@zionlabs_info', 'www.zionlabs.info']
+  const textUnderLogo = ['@zionlabs_info']
   const navigation = [
     {
       title: 'Useful Links',
@@ -49,16 +50,17 @@ export default function Footer() {
   return (
     <div className="w-full bg-black text-white py-10 md:py-12">
       <div className="mx-auto w-10/12">
-        <div className="flex flex-col md:flex-row space-between border-b-1 pb-8 mb-4">
+        <div className="flex flex-col md:flex-row space-between border-b-0 pb-8 mb-4">
           <div className="flex-grow-1 flex flex-col">
-            <LazyLoadImage
+            {/* <LazyLoadImage
               data-aos="fade-up"
               data-aos-duration="1000"
               src={Logo}
               alt="Logo"
               className="w-40 pl-6 md:pl-0"
               effect="blur"
-            />
+            /> */}
+            <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span>
             {textUnderLogo.map((item, index) => {
               return (
                 <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-6 md:pl-0">
@@ -98,7 +100,7 @@ export default function Footer() {
               {socialMedia.map((item, index) => {
                 return (
                   <a
-                    className=" inline-block md:block mr-5 last:mr-0 md:mr-0 text-md w-50 h-50 border-1 border-white rounded-full p-2 hover:bg-yellow-rasta hover:text-green-rasta"
+                    className=" inline-block md:block mr-5 last:mr-0 md:mr-0 text-md w-50 h-50 rounded-full p-2 hover:bg-yellow-rasta hover:text-green-rasta"
                     key={index}
                     href={item.link}
                     target="_blank"
