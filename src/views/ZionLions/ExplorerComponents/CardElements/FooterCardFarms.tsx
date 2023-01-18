@@ -47,7 +47,12 @@ export default function FooterCardFarms({ farmValue, farmBscLink, stackedValue, 
               View on BscScan
             </a>
           </span> */}
-          <span className="text-blue-zion_cyan">
+          {/* <span className="text-blue-zion_cyan">
+            <a href={farmBscLink} target="_blank" rel="noreferrer">
+              View on BscScan
+            </a>
+          </span> */}
+          <span className="text-newpurple-400">
             <a href={farmBscLink} target="_blank" rel="noreferrer">
               View on BscScan
             </a>
@@ -58,8 +63,12 @@ export default function FooterCardFarms({ farmValue, farmBscLink, stackedValue, 
           onClick={() => setShow(!show)}
           style={{ color: 'red' }}
         > */}
-        <div
+        {/* <div
           className="flex flex-row space-x-4 items-center text-blue-zion_cyan cursor-pointer"
+          onClick={() => setShow(!show)}
+        > */}
+        <div
+          className="flex flex-row space-x-4 items-center text-newpurple-400 cursor-pointer"
           onClick={() => setShow(!show)}
         >
           <span className="font-bold text-md">DETAILS</span>

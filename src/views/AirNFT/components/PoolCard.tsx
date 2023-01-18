@@ -65,8 +65,10 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
 
   // const buttonClass =
   //   'w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
+  // const buttonClass =
+  //   'w-full flex flex-row text-white py-2 bg-gradient-to-b from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
   const buttonClass =
-    'w-full flex flex-row text-white py-2 bg-gradient-to-b from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
+    'w-full flex flex-row text-white py-2 bg-gradient-to-b from-newpurple-400 to-newpurple-900 items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
 
   return (
     <>
@@ -105,7 +107,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, apy, removed = false }) => {
                 {Number(apy) > 0 && apy !== 'Infinity' && !isFinished ? `${apy}%` : '-'}
               </span>
               {/* <span className="apr-label text-red-rasta text-sm">APR</span> */}
-              <span className="apr-label text-blue-zion_cyan text-sm">APR</span>
+              {/* <span className="apr-label text-blue-zion_cyan text-sm">APR</span> */}
+              <span className="apr-label text-newpurple-400 text-sm">APR</span>
             </div>
           )}
         </div>

@@ -67,11 +67,17 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account, 
       //   onClick={handleApprove}
       //   className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
       // >
+      // <button
+      //   type="button"
+      //   disabled={requestedApproval}
+      //   onClick={handleApprove}
+      //   className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 rounded-xl cursor-pointer"
+      // >
       <button
         type="button"
         disabled={requestedApproval}
         onClick={handleApprove}
-        className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 rounded-xl cursor-pointer"
+        className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-newpurple-400 to-newpurple-900 items-center justify-center space-x-4 rounded-xl cursor-pointer"
       >
         <FaIcons.FaWallet />
         <span>{TranslateString(758, 'Approve Contract')}</span>

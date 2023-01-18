@@ -37,8 +37,11 @@ const CustomTitle = styled.div`
   }
 `
 
+// const buttonClass =
+//   'w-full disabled font-bold flex flex-row text-white py-2 bg-gradient-to-b from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
+
 const buttonClass =
-  'w-full disabled font-bold flex flex-row text-white py-2 bg-gradient-to-b from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
+  'w-full disabled font-bold flex flex-row text-white py-2 bg-gradient-to-b from-newpurple-400 to-newpurple-900 items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
 
 const activeButtonClass2 =
   'w-full font-bold flex flex-row text-white py-2 bg-gradient-to-b from-yellow-rasta to-orange-zion items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
@@ -129,7 +132,10 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
         }}
       >
         {ribbon && (
-          <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-blue-zion to-blue-zion_cyan">
+          // <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-blue-zion to-blue-zion_cyan">
+          //   {ribbonText}
+          // </CustomTitle>
+          <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-newpurple-400 to-newpurple-900">
             {ribbonText}
           </CustomTitle>
         )}
@@ -153,7 +159,8 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
                   ? '0.0000'
                   : Number(new BigNumber(pendingReward).div(new BigNumber(10).pow(18))).toFixed(4)}
               </span>
-              <span className="apr-label text-blue-zion_cyan text-sm">{rewardTokenSymbol} earned</span>
+              {/* <span className="apr-label text-blue-zion_cyan text-sm">{rewardTokenSymbol} earned</span> */}
+              <span className="apr-label text-newpurple-400 text-sm">{rewardTokenSymbol} earned</span>
             </div>
             {!removed && (
               <div
@@ -165,7 +172,8 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
                 <span className="apr-value text-2xl w-full text-white ">
                   {Number(apy) > 0 && apy !== 'Infinity' && !isFinished ? `${apy}%` : '-'}
                 </span>
-                <span className="apr-label text-blue-zion_cyan text-sm">APR</span>
+                {/* <span className="apr-label text-blue-zion_cyan text-sm">APR</span> */}
+                <span className="apr-label text-newpurple-400 text-sm">APR</span>
               </div>
             )}
           </div>
@@ -190,7 +198,8 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
               }}
             >
               <span className="apr-value text-2xl w-full text-white ">{depositFee}%</span>
-              <span className="apr-label text-blue-zion_cyan text-sm">Deposit Fee</span>
+              {/* <span className="apr-label text-blue-zion_cyan text-sm">Deposit Fee</span> */}
+              <span className="apr-label text-newpurple-400 text-sm">Deposit Fee</span>
             </div>
             <div
               className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-6 px-6  mt-4 md:mt-0"
@@ -203,7 +212,8 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
                   ? '0.0000'
                   : Number(new BigNumber(stakedAmount).div(new BigNumber(10).pow(18))).toFixed(4)}
               </span>
-              <span className="apr-label text-blue-zion_cyan text-sm">$RASTA Staked</span>
+              {/* <span className="apr-label text-blue-zion_cyan text-sm">$RASTA Staked</span> */}
+              <span className="apr-label text-newpurple-400 text-sm">$RASTA Staked</span>
             </div>
           </div>
         </div>

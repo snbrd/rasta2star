@@ -41,20 +41,25 @@ export default function FooterCardFarms({ farmStake = 'GET RASTA', farmValue, ad
       <div className="flex justify-between w-full items-center mt-5">
         <div>
           {/* <span className="text-red-rasta">View on BscScan</span> */}
-          <span className="text-blue-zion_cyan">View on BscScan</span>
+          {/* <span className="text-blue-zion_cyan">View on BscScan</span> */}
+          <span className="text-newpurple-400">View on BscScan</span>
         </div>
         {/* <div
           className="flex flex-row space-x-4 items-center text-red-rasta cursor-pointer"
           onClick={() => setShow(!show)}
           style={{ color: 'red' }}
         > */}
-        <div
+        {/* <div
           className="flex flex-row space-x-4 items-center text-blue-zion_cyan cursor-pointer"
+          onClick={() => setShow(!show)}
+        > */}
+        <div
+          className="flex flex-row space-x-4 items-center text-newpurple-400 cursor-pointer"
           onClick={() => setShow(!show)}
         >
           <span className="font-bold text-md">DETAILS</span>
-          {show && <FaIcons.FaChevronCircleUp />}
-          {!show && <FaIcons.FaChevronCircleDown />}
+          {show && <FaIcons.FaChevronCircleUp className="text-newpurple-400" />}
+          {!show && <FaIcons.FaChevronCircleDown className="text-newpurple-400" />}
         </div>
       </div>
     </div>

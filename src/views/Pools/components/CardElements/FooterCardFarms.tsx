@@ -35,14 +35,19 @@ export default function FooterCardFarms({ farmStake, farmValue, addLPurl }: Prop
       )}
       <div className="flex justify-between w-full items-center mt-5">
         <div />
-        <div
+        {/* <div
           className="flex flex-row space-x-4 items-center text-blue-zion_cyan cursor-pointer"
+          onClick={() => setShow(!show)}
+          // style={{ color: 'red' }}
+        > */}
+        <div
+          className="flex flex-row space-x-4 items-center text-newpurple-400 cursor-pointer"
           onClick={() => setShow(!show)}
           // style={{ color: 'red' }}
         >
           <span className="font-bold text-md">DETAILS</span>
-          {show && <FaIcons.FaChevronCircleUp className="text-blue-zion_cyan" />}
-          {!show && <FaIcons.FaChevronCircleDown className="text-blue-zion_cyan" />}
+          {show && <FaIcons.FaChevronCircleUp className="text-newpurple-400" />}
+          {!show && <FaIcons.FaChevronCircleDown className="text-newpurple-400" />}
         </div>
       </div>
     </div>

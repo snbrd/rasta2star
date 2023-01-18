@@ -108,7 +108,10 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
         // <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-r from-yellow-rasta to-green-rasta">
         //   {ribbonText}
         // </CustomTitle>
-        <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-b from-blue-zion to-blue-zion_cyan">
+        // <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-b from-blue-zion to-blue-zion_cyan">
+        //   {ribbonText}
+        // </CustomTitle>
+        <CustomTitle className="absolute text-md md:text-md xl:text-lg bg-gradient-to-b from-newpurple-400 to-newpurple-900">
           {ribbonText}
         </CustomTitle>
       )}
@@ -130,7 +133,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
             {/* <span className="apr-value text-2xl w-full text-gray-700 ">{farmAPY}%</span> */}
             <span className="apr-value text-2xl w-full text-white">{farmAPY}%</span>
             {/* <span className="apr-label text-red-rasta text-md">APR</span> */}
-            <span className="apr-label text-blue-zion_cyan text-md">APR</span>
+            {/* <span className="apr-label text-blue-zion_cyan text-md">APR</span> */}
+            <span className="apr-label text-newpurple-400 text-md">APR</span>
           </div>
           // <Flex justifyContent="space-between" alignItems="center">
           //   <Text color="yellow">{TranslateString(736, 'APR')}:</Text>

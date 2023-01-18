@@ -33,7 +33,8 @@ const CompoundAction: React.FC<FarmCardActionsProps> = ({ pid, earnings, type, p
   const buttonClass = 'px-4 py-2 flex-row space-x-2 flex w-full items-center justify-center cursor-pointer'
   return (
     // <div className="harvest flex mt-4 bg-gradient-to-l text-white w-full from-green-rasta to-yellow-rasta  rounded-md">
-    <div className="harvest flex mt-4 bg-gradient-to-b text-white w-full from-blue-zion to-blue-zion_cyan rounded-md">
+    // <div className="harvest flex mt-4 bg-gradient-to-b text-white w-full from-blue-zion to-blue-zion_cyan rounded-md">
+    <div className="harvest flex mt-4 bg-gradient-to-b text-white w-full from-newpurple-400 to-newpurple-900 rounded-md">
       <button
         type="button"
         className={(type === false ? 'disabled ' : '') + buttonClass}

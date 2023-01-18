@@ -23,7 +23,8 @@ export default function FarmHarvest({ pool, type }: Props) {
               : Number(new BigNumber(pendingReward).div(new BigNumber(10).pow(18))).toFixed(4)}
           </h2>
           {/* <span className="text-red-rasta text-left text-sm">{rewardTokenSymbol} earned</span> */}
-          <span className="text-blue-zion_cyan text-left text-sm">{rewardTokenSymbol} earned</span>
+          {/* <span className="text-blue-zion_cyan text-left text-sm">{rewardTokenSymbol} earned</span> */}
+          <span className="text-newpurple-400 text-left text-sm">{rewardTokenSymbol} earned</span>
           <div className="flex flex-row space-x-3 xl:flex-col xl:space-x-0">
             <HarvestAction
               earnings={pendingReward ? new BigNumber(pendingReward) : new BigNumber('0x00')}
@@ -41,7 +42,8 @@ export default function FarmHarvest({ pool, type }: Props) {
         >
           <span className="apr-value text-2xl w-full text-white ">0%</span>
           {/* <span className="apr-label text-red-rasta text-sm">Deposit Fee</span> */}
-          <span className="apr-label text-blue-zion_cyan text-sm">Deposit Fee</span>
+          {/* <span className="apr-label text-blue-zion_cyan text-sm">Deposit Fee</span> */}
+          <span className="apr-label text-newpurple-400 text-sm">Deposit Fee</span>
         </div>
       </div>
     </div>

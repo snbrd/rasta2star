@@ -15,7 +15,8 @@ export default function FarmHarvest({ farmEarned, depositFee, pid, earning }: Pr
         <div className="items-detail flex flex-col pb-2  xl:pr-5 ml-0 md:ml-2">
           <h2 className="text-3xl font-bold text-left">{farmEarned}</h2>
           {/* <span className="text-red-rasta text-left">Rasta Earned</span> */}
-          <span className="text-blue-zion_cyan text-left">Rasta Earned</span>
+          {/* <span className="text-blue-zion_cyan text-left">Rasta Earned</span> */}
+          <span className="text-newpurple-400 text-left">Rasta Earned</span>
           <HarvestAction pid={pid} earnings={earning} />
         </div>
 
@@ -27,7 +28,8 @@ export default function FarmHarvest({ farmEarned, depositFee, pid, earning }: Pr
         >
           <span className="apr-value text-2xl w-full text-white ">{depositFee}%</span>
           {/* <span className="apr-label text-red-rasta text-md">Deposit Fee</span> */}
-          <span className="apr-label text-blue-zion_cyan text-md">Deposit Fee</span>
+          {/* <span className="apr-label text-blue-zion_cyan text-md">Deposit Fee</span> */}
+          <span className="apr-label text-newpurple-400 text-md">Deposit Fee</span>
         </div>
       </div>
     </div>

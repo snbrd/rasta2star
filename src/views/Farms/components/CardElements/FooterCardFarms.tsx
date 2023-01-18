@@ -34,17 +34,25 @@ export default function FooterCardFarms({ farmStake, farmValue, farmBscLink, add
       )}
       <div className="flex justify-between w-full items-center mt-5">
         {/* <a href={farmBscLink} rel="noreferrer" target="_blank" className="text-red-rasta"> */}
-        <a href={farmBscLink} rel="noreferrer" target="_blank" className="text-blue-zion_cyan">
+        {/* <a href={farmBscLink} rel="noreferrer" target="_blank" className="text-blue-zion_cyan">
+          View on BscScan
+        </a> */}
+         <a href={farmBscLink} rel="noreferrer" target="_blank" className="text-newpurple-400">
           View on BscScan
         </a>
-        <div
+        {/* <div
           className="flex flex-row space-x-4 items-center text-blue-zion_cyan cursor-pointer"
+          // style={{ color: 'red' }}
+          onClick={() => setShow(!show)}
+        > */}
+        <div
+          className="flex flex-row space-x-4 items-center text-newpurple-400 cursor-pointer"
           // style={{ color: 'red' }}
           onClick={() => setShow(!show)}
         >
           <span className="font-bold text-md">DETAILS</span>
-          {show && <FaIcons.FaChevronCircleUp className="text-blue-zion_cyan" />}
-          {!show && <FaIcons.FaChevronCircleDown className="text-blue-zion_cyan" />}
+          {show && <FaIcons.FaChevronCircleUp className="text-newpurple-400" />}
+          {!show && <FaIcons.FaChevronCircleDown className="text-newpurple-400" />}
         </div>
       </div>
     </div>

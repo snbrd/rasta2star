@@ -69,8 +69,10 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
   const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isBnbPool
   // const buttonClass =
   //   'w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer'
+  // const buttonClass =
+  //   'w-full flex flex-row text-white py-2 bg-gradient-to-r from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 rounded-xl cursor-pointer'
   const buttonClass =
-    'w-full flex flex-row text-white py-2 bg-gradient-to-r from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 rounded-xl cursor-pointer'
+    'w-full flex flex-row text-white py-2 bg-gradient-to-r from-newpurple-400 to-newpurple-900 items-center justify-center space-x-4 rounded-xl cursor-pointer'
 
   const [isApproval, SETisApproval] = useState(needsApproval)
 
@@ -177,11 +179,17 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, type, removed = false }) => {
               onClick={onPresentWithdraw}
               className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
             > */}
-            <button
+            {/* <button
               type="button"
               disabled={requestedApproval}
               onClick={onPresentWithdraw}
               className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 rounded-xl cursor-pointer"
+            > */}
+            <button
+              type="button"
+              disabled={requestedApproval}
+              onClick={onPresentWithdraw}
+              className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-newpurple-400 to-newpurple-900 items-center justify-center space-x-4 rounded-xl cursor-pointer"
             >
               <span>{TranslateString(758, 'Unstake RASTA')}</span>
             </button>
