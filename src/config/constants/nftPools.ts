@@ -78,10 +78,10 @@ const nftPools = [
     type: 'zlnft',
     icon: 'zionlions.jpg',
     harvest: true,
-    isFinished: false,
+    isFinished: true,
     tokenDecimals: 18,
     ribbon: true,
-    ribbonText: 'New',
+    ribbonText: 'Retired',
   },
   {
     id: 5,
@@ -99,12 +99,12 @@ const nftPools = [
     type: 'zlnft',
     icon: 'explorer.png',
     harvest: true,
-    isFinished: false,
+    isFinished: true,
     tokenDecimals: 18,
     maxDepositAmount: '25000000000000000000000',
     depositFee: 3,
     ribbon: true,
-    ribbonText: 'New',
+    ribbonText: 'Retired',
   },
 ]
 

@@ -3,10 +3,10 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import AnimatedPage from 'components/AnimatedPage'
 import HeroSection from './components/HeroSection'
-import Community from './components/Community'
+// import Community from './components/Community'
 import FavCreator from './components/FavoriteCreator'
 import ZIONLIONImage from '../../assets/zionlion-nft.jpg'
-import NFTNomicsImage from '../../assets/NFTNomics-n.png'
+// import NFTNomicsImage from '../../assets/NFTNomics-n.png'
 import Mint from './components/Mint'
 
 const Home: React.FC = () => {

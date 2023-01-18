@@ -10,11 +10,11 @@ import {
   // RiCoinLine,
   // GiTwoCoins,
   // IoChatboxEllipsesOutline,
-  FaTelegramPlane,
-  FaTwitter,
-  FaMediumM,
+  // FaTelegramPlane,
+  // FaTwitter,
+  // FaMediumM,
   // FaReddit,
-  FaInstagram,
+  // FaInstagram,
   FaBars,
   FaRegWindowClose,
   // GoMail,
@@ -23,13 +23,13 @@ import {
   // RiMoneyDollarCircleLine,
 } from 'react-icons/all'
 
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+// import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import MenuItem from './MenuItem'
 import RastaIcon from '../../assets/menu_coin2.jpg'
 import MRastaIcon from '../../assets/menu_coin1.jpg'
 
-import Logo from '../../assets/z1-rescaled.png'
+// import Logo from '../../assets/z1-rescaled.png'
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false)
@@ -265,13 +265,13 @@ export default function Sidebar() {
       child: [],
     },
   ]
-  const socialMedia = [
-    { name: 'Telegram', icon: <FaTelegramPlane />, link: 'https://t.me/zionlabscommunity' },
-    { name: 'Twitter', icon: <FaTwitter />, link: 'https://www.twitter.com/zionlabs_info' },
-    { name: 'Medium', icon: <FaMediumM />, link: 'https:///zionlabs.medium.com' },
-    // { name: 'Reddit', icon: <FaReddit />, link: 'https://www.reddit.com/r/rastafinance' },
-    { name: 'Instagram', icon: <FaInstagram />, link: 'https://instagram.com/zionlabs_info?igshid=YmMyMTA2M2Y=' },
-  ]
+  // const socialMedia = [
+  //   { name: 'Telegram', icon: <FaTelegramPlane />, link: 'https://t.me/zionlabscommunity' },
+  //   { name: 'Twitter', icon: <FaTwitter />, link: 'https://www.twitter.com/zionlabs_info' },
+  //   { name: 'Medium', icon: <FaMediumM />, link: 'https:///zionlabs.medium.com' },
+  //   // { name: 'Reddit', icon: <FaReddit />, link: 'https://www.reddit.com/r/rastafinance' },
+  //   { name: 'Instagram', icon: <FaInstagram />, link: 'https://instagram.com/zionlabs_info?igshid=YmMyMTA2M2Y=' },
+  // ]
 
   return (
     <div className="navbar text-white">
