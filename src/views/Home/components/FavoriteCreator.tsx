@@ -29,7 +29,7 @@ export default function FavoriteCreator() {
               Interact with Your Favorite Creators.
               <br />
               {/* <span className="text-yellow-rasta">Completely Decentralized.</span> */}
-              <span className="text-blue-zion_cyan">with ZION Labs Launchpad</span>
+              <span className="text-newpurple-400">with ZION Labs Launchpad</span>
             </h2>
             <div
               data-aos="fade-up"
@@ -63,7 +63,7 @@ export default function FavoriteCreator() {
                   href="https://www.zionlp.com/launchpad-artists"
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-gradient-to-b font-bold text-white mx-auto from-blue-zion to-blue-zion_cyan text-center py-3 px-8 rounded-xl"
+                  className="bg-gradient-to-b font-bold text-white mx-auto from-newpurple-400 to-newpurple-900 text-center py-3 px-8 rounded-xl"
                 >
                   <button type="button" className="uppercase ">
                     Launchpad
