@@ -69,12 +69,12 @@ export default function HeroSection() {
               </Link>
 
               <a
-                href="https://docs.zionlabs.info/introduction/master"
+                href="https://send.zionlabs.info/"
                 target="_blank"
                 rel="noreferrer"
-                className="border-2 font-bold border-blue-zion_cyan w-1/3 to-blue-zion_cyan text-center py-3 rounded-xl text-blue-zion_cyan"
+                className="bg-gradient-to-b font-bold w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
               >
-                <button type="button">Docs</button>
+                <button type="button">Zion Transporter</button>
               </a>
             </div>
           </div>
