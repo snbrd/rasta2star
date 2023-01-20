@@ -53,17 +53,17 @@ export default function HeroSection() {
             <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
             ZionLabs is a creative collective with a strong presence on the Binance Blockchain. Powered by Web3 tools, ZionLabs is the custodian of a fully decentralized financial eco-system, in addition to providing Web3 and React development services for various initiatives across the world.
             </p>
-            <div className="cta flex-row mt-8 space-x-8 hidden md:flex" data-aos="fade-right" data-aos-duration="2500">
+            <div className="cta flex flex-col md:flex-row justify-center items-center mt-8 space-y-8 md:space-y-0 md:space-x-8 md:flex" data-aos="fade-right" data-aos-duration="2500">
               <Link
                 to="/liquidity"
-                className="bg-gradient-to-b font-bold w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
+                className="bg-gradient-to-b font-bold w-full md:w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
               >
                 <button type="button">Your earnings</button>
               </Link>
 
               <Link
                 to="/stake-zionlions"
-                className="bg-gradient-to-b font-bold w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
+                className="bg-gradient-to-b font-bold w-full md:w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
               >
                 <button type="button">Your NFT rewards</button>
               </Link>
@@ -72,7 +72,7 @@ export default function HeroSection() {
                 href="https://send.zionlabs.info/"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-gradient-to-b font-bold w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
+                className="bg-gradient-to-b font-bold w-full md:w-1/3 from-newpurple-400 to-newpurple-900 text-center py-3 rounded-xl"
               >
                 <button type="button">Zion Transporter</button>
               </a>

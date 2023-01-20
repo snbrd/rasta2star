@@ -273,7 +273,7 @@ export default function About() {
           <CardButton items={cardBtnItem} />
         </section> */}
 
-        <section
+        {/* <section
           className=" w-full bg-black md:mx-auto items-center pt-10 pb-10 md:pt-16 md:pb-16"
           style={{
             backgroundImage: `url(${AboutBackground2})`,
@@ -283,7 +283,7 @@ export default function About() {
           }}
         >
           <TeamSlide items={team} />
-        </section>
+        </section> */}
 
         {/* <section className=" w-full flex bg-white md:mx-auto items-center md:flex-row -mt-48 md:-mt-64 ">
           <LetsConnect items={letsConnect} bg={NFTsBackground} />
