@@ -244,7 +244,20 @@ function Mint() {
 
             <s.FlexDiv direction={['column']} gap="2rem" margin="16px 0 0 0" mdWidth="87%">
               <s.Text align='justify' lineHeight='1.5rem'>
-                To complement the strong community, a novel collection of ZionLions have been released as 6,200 NFTs with rarity factors that are unrivaled in the space. Made up of 4 unique tiers (Farmers, Explorers, Builders and Professors), each ZionLion unlocks its own set of utility and return on investment.
+                To complement the strong community, a novel collection of ZionLions have been released as 6,200 NFTs with rarity factors that are unrivaled in the space.
+                
+              </s.Text>
+              <s.Text align="justify" lineHeight="0.75rem">
+              T1 Farmers Staking -Up to 10% APR
+              </s.Text>
+              <s.Text align="justify" lineHeight="0.75rem">
+              T2 Explorers Staking -Up to 122% APY
+              </s.Text>
+              <s.Text align="justify" lineHeight="0.75rem">
+              T3 Builders Staking -Up to 120% APR
+              </s.Text>
+              <s.Text align="justify" lineHeight="0.75rem">
+              T4 Farmers Staking -Up to Mega APR
               </s.Text>
               <s.Text align="justify" lineHeight="1.5rem">
                 Please make sure you are connected to the right network (Binance Smart Chain Mainnet) and the correct
