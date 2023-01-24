@@ -3,6 +3,7 @@ import BigNumber from 'bignumber.js'
 import { getAddress } from 'utils/addressHelpers'
 import { useApproveAll } from 'hooks/useAirFarm'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
+import { BlockAccounts } from 'config/constants/nftPools'
 import { approve } from 'utils/callHelpers'
 import { useModal } from 'rasta-uikit'
 import DepositModal from '../DepositModal'
@@ -50,9 +51,11 @@ export default function FarmHarvest({
 
   const isApprovedToken = useMemo(() => Number(allowance) >= Number(maxDepositAmount), [allowance, maxDepositAmount])
   const isStakedToken = useMemo(() => new BigNumber(stakedAmount).toNumber() > 0, [stakedAmount])
+  const blocked = useMemo(() => BlockAccounts.indexOf(account) !== -1, [account])
 
   const onStakeNft = async () => {
     if (!poolContract) return
+    if (blocked) return
     if (!balance || balance < 10) return
 
     try {
@@ -88,6 +91,7 @@ export default function FarmHarvest({
 
   const onStakeRasta = async (amount) => {
     if (!poolContract || !account) return
+    if (blocked) return
 
     setLoading(true)
     try {
@@ -144,25 +148,36 @@ export default function FarmHarvest({
             >
               <span>{isApproval ? 'Approved' : 'Approve'}</span>
             </button>
-            <button
-              type="button"
-              disabled={loading}
-              className={`${staked ? activeButtonClass2 : buttonClass} ${!isApproval && ' disabled'}`}
-              style={{ maxWidth: 220 }}
-              onClick={async () => {
-                setLoading(true)
-                if (!staked) {
-                  if (!isApproval) return
+            {blocked ? (
+              <button
+                type="button"
+                disabled
+                className={`${buttonClass} ${' disabled'}`}
+                style={{ maxWidth: 220 }}
+              >
+                <span>Stake 10 Explorers</span>
+              </button>
+            ) : (
+              <button
+                type="button"
+                disabled={loading || blocked}
+                className={`${staked ? activeButtonClass2 : buttonClass} ${!isApproval && ' disabled'}`}
+                style={{ maxWidth: 220 }}
+                onClick={async () => {
+                  setLoading(true)
+                  if (!staked) {
+                    if (!isApproval) return
 
-                  await onStakeNft()
-                } else {
-                  await onUnStakeNft()
-                }
-                setLoading(false)
-              }}
-            >
-              <span>{staked ? 'Unstake Explorers' : 'Stake 10 Explorers'}</span>
-            </button>
+                    await onStakeNft()
+                  } else {
+                    await onUnStakeNft()
+                  }
+                  setLoading(false)
+                }}
+              >
+                <span>{staked ? 'Unstake Explorers' : 'Stake 10 Explorers'}</span>
+              </button>
+            )}
           </div>
         </div>
         <div className="w-full items-detail flex flex-col pb-4 md:pb-0 ml-0 gap-6">
@@ -170,7 +185,7 @@ export default function FarmHarvest({
           <div className="flex flex-row space-x-3 xl:space-x-0 justify-between md:pr-10">
             <button
               type="button"
-              disabled={loading}
+              disabled={loading || blocked}
               className={`${isApprovedToken ? activeButtonClass : buttonClass} ${!staked && ' disabled'}`}
               style={{ maxWidth: 220 }}
               onClick={async () => {
@@ -188,7 +203,7 @@ export default function FarmHarvest({
             </button>
             <button
               type="button"
-              disabled={loading}
+              disabled={loading || blocked}
               className={`${isStakedToken ? activeButtonClass2 : buttonClass} ${!isApprovedToken && ' disabled'}`}
               style={{ maxWidth: 220 }}
               onClick={async () => {
