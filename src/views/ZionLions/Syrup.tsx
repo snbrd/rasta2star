@@ -37,7 +37,12 @@ const Farm: React.FC = () => {
             <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Purchased ZionLions')}</h2>
             <p className="text-white">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
 
-            <p className='text-white py-3 font-bold'>{TranslateString(696, '“Pending and unharvested amounts will be void, in case of blockchain integration and pool errors”')}</p>
+            <p className="text-white py-3 font-bold">
+              {TranslateString(
+                696,
+                '“Pending and unharvested amounts will be void, in case of blockchain integration and pool errors”',
+              )}
+            </p>
 
             <div className="toggle-button items-end flex-col flex w-full">
               <ToggleSwitch id="toggleSwitch" checked={Active} onChange={setActive} />
@@ -49,7 +54,7 @@ const Farm: React.FC = () => {
                     if (farm.type !== 'zlnft') return null
                     if (Active) {
                       if (!farm.isFinished) {
-                        if (farm.id === 5) {
+                        if (farm.id === 8 || farm.id === 5) {
                           return <ExplorerPoolCard key={index} pool={{ ...farmInfo[index], ...farm, rastaPriceUSD }} />
                         }
                         return (
@@ -59,7 +64,7 @@ const Farm: React.FC = () => {
                       return null
                     }
                     if (farm.isFinished) {
-                      if (farm.id === 4 || farm.id === 5) {
+                      if (farm.id === 8 || farm.id === 5) {
                         return <ExplorerPoolCard key={index} pool={{ ...farmInfo[index], ...farm, rastaPriceUSD }} />
                       }
                       return <PoolCard key={index} pool={{ ...farmInfo[index], ...farm, bnbPriceUSD, rastaPriceUSD }} />

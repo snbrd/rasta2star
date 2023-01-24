@@ -10,7 +10,7 @@ import Header from './components/HeroSection'
 // import Card from './components/CardSection'
 import Dsc from './components/DescriptionSection'
 // import CardButton from './components/CardButton'
-import TeamSlide from './components/TeamSlide'
+// import TeamSlide from './components/TeamSlide'
 // import LetsConnect from './components/LetsConnect'
 import Accordion from './components/Accordion'
 // import LeafBg from '../../assets/leaf-bg.jpg'
@@ -37,7 +37,7 @@ import BadgerProfile from '../../assets/Zion-Rasta-DrBadger.png'
 import LoreanProfile from '../../assets/Zion-Rasta-Lorean.png'
 import LionAbout from '../../assets/Ganyah22.png'
 import AboutBackground from '../../assets/about-new-banner.jpg'
-import AboutBackground2 from '../../assets/about-background-bottom.jpg'
+// import AboutBackground2 from '../../assets/about-background-bottom.jpg'
 
 export default function About() {
   // const cardSection = [
@@ -150,39 +150,39 @@ export default function About() {
   //   },
   // ]
 
-  const team = [
-    {
-      name: '@Lorean',
-      position: 'NFTNOMICS',
-      avatar: LoreanProfile,
-    },
-    {
-      name: '@BioTech',
-      position: 'Co-Founder',
-      avatar: BioTechProfile,
-    },
+  // const team = [
+  //   {
+  //     name: '@Lorean',
+  //     position: 'NFTNOMICS',
+  //     avatar: LoreanProfile,
+  //   },
+  //   {
+  //     name: '@BioTech',
+  //     position: 'Co-Founder',
+  //     avatar: BioTechProfile,
+  //   },
 
-    {
-      name: '@Dr. Badger',
-      position: 'Co-Founder',
-      avatar: BadgerProfile,
-    },
-    {
-      name: '@SeñorBurdy',
-      position: 'Co-Founder',
-      avatar: BurdyProfile,
-    },
-    {
-      name: "@ChicagoD'One",
-      position: 'Graphics',
-      avatar: ChicagoProfile,
-    },
-    {
-      name: '@RastaBinna',
-      position: 'Development',
-      avatar: BinnaProfile,
-    },
-  ]
+  //   {
+  //     name: '@Dr. Badger',
+  //     position: 'Co-Founder',
+  //     avatar: BadgerProfile,
+  //   },
+  //   {
+  //     name: '@SeñorBurdy',
+  //     position: 'Co-Founder',
+  //     avatar: BurdyProfile,
+  //   },
+  //   {
+  //     name: "@ChicagoD'One",
+  //     position: 'Graphics',
+  //     avatar: ChicagoProfile,
+  //   },
+  //   {
+  //     name: '@RastaBinna',
+  //     position: 'Development',
+  //     avatar: BinnaProfile,
+  //   },
+  // ]
 
   // const letsConnect = {
   //   heading: 'zionlabs.info',
