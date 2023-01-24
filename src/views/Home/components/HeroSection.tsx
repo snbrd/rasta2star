@@ -49,6 +49,7 @@ export default function HeroSection() {
               <span className="text-blue-zion_cyan text-heading font-bold uppercase">Zion Labs</span>
               <br /> 
               <span className="hidden md:block">Enjoy your Rasta experience on web 3</span>
+              <span style={{fontSize: '20px'}}>Stake Rasta for upto 125% APR</span>
             </h1>
             <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
             ZionLabs is a creative collective with a strong presence on the Binance Blockchain. Powered by Web3 tools, ZionLabs is the custodian of a fully decentralized financial eco-system, in addition to providing Web3 and React development services for various initiatives across the world.

@@ -248,16 +248,16 @@ function Mint() {
                 
               </s.Text>
               <s.Text align="justify" lineHeight="0.75rem">
-              T1 Farmers Staking -Up to 10% APR
+              T1 Staking -Up to 10% APR
               </s.Text>
               <s.Text align="justify" lineHeight="0.75rem">
-              T2 Explorers Staking -Up to 122% APY
+              T2 Staking -Up to 122% APY
               </s.Text>
               <s.Text align="justify" lineHeight="0.75rem">
-              T3 Builders Staking -Up to 120% APR
+              T3 Staking -Up to 120% APR
               </s.Text>
               <s.Text align="justify" lineHeight="0.75rem">
-              T4 Farmers Staking -Up to Mega APR
+              T4 Staking -Up to Mega APR
               </s.Text>
               <s.Text align="justify" lineHeight="1.5rem">
                 Please make sure you are connected to the right network (Binance Smart Chain Mainnet) and the correct
