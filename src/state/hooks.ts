@@ -121,10 +121,10 @@ export const usePriceRastaBusd = (): BigNumber => {
     (async () => {
       try {
         const response = await fetch(
-          `https://api.pancakeswap.info/api/v2/tokens/0xe3e8cc42da487d1116d26687856e9fb684817c52`,
+          `https://api.dexscreener.com/latest/dex/pairs/bsc/0x950b7377695e81235397da1b608c2087bc7002dc`,
         )
-        const { data } = await response.json()
-        return setPrice(new BigNumber(data.price))
+        const { pair } = await response.json()
+        return setPrice(new BigNumber(pair?.priceUsd || 0))
       } catch (error) {
         return setPrice(ZERO)
       }
