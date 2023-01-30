@@ -123,7 +123,7 @@ export const fetchNFTUserBalance = async (account) => {
       return { [farm.id]: airBalance }
     }
     if (farm.type === 'zlnft') {
-      if (farm.id === 5 || farm.id === 8) {
+      if (farm.id === 5 || farm.id === 8 || farm.id === 9) {
         return { [farm.id]: zionlionsBalance.explorer }
       }
       if (farm.id === 3 || farm.id === 7) {

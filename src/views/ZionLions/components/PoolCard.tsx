@@ -46,12 +46,10 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
   const {
     id,
     icon,
-    type,
     ribbon,
     balance,
     approved,
     poolName,
-    rewardRate,
     ribbonText,
     isFinished,
     bnbPriceUSD,
@@ -81,25 +79,13 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
   }, [contractAddress])
 
   const apy = (() => {
-    if (type === 'zlnft') {
-      return new BigNumber(rastaPriceUSD)
-        .div(bnbPriceUSD)
-        .times(rate)
-        .times(SEC_PER_YEAR)
-        .div(
-          Number(farmbalance) > 0
-            ? new BigNumber(farmbalance).times(new BigNumber(0.18).times(new BigNumber(10).pow(18)))
-            : new BigNumber(10).pow(18),
-        )
-        .times(100)
-        .toFixed(0)
-        .toString()
-    }
-    return new BigNumber(rewardRate)
+    return new BigNumber(rastaPriceUSD)
+      .div(bnbPriceUSD)
+      .times(rate)
       .times(SEC_PER_YEAR)
       .div(
         Number(farmbalance) > 0
-          ? new BigNumber(farmbalance).times(new BigNumber(0.1).times(new BigNumber(10).pow(18)))
+          ? new BigNumber(farmbalance).times(new BigNumber(0.18).times(new BigNumber(10).pow(18)))
           : new BigNumber(10).pow(18),
       )
       .times(100)
