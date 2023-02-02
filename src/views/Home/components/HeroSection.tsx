@@ -48,16 +48,16 @@ export default function HeroSection() {
             >
               <span className="text-blue-zion_cyan text-heading font-bold uppercase">Zion Labs</span>
               <br /> 
-              <span className="hidden md:block">Enjoy your Rasta experience on web 3</span>
-              <span style={{fontSize: '20px'}}>Stake Rasta for upto 125% APR</span>
+              <span className="hidden md:block">Enjoy your Rasta Experience on Web 3</span>
+              <span style={{fontSize: '20px'}}>Now Also Stake $RASTA to earn upto 125% APR</span>
             </h1>
             <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
-            ZionLabs is a creative collective with a strong presence on the Binance Blockchain. Powered by Web3 tools, ZionLabs is the custodian of a fully decentralized financial eco-system, in addition to providing Web3 and React development services for various initiatives across the world.
+            ZionLabs is a creative-tech collective, developing novel technologies on the blockchain to be used within the music industry and beyond. Powered by the Binance Blockchain. 
             </p>
 
             <p className="mt-4 md:mt-8 text-center md:text-left  break-words" data-aos="fade-right" data-aos-duration="2000">
               <a href='https://bscscan.com/token/0xe3e8cc42da487d1116d26687856e9fb684817c52' target="_blank" rel="noreferrer">
-              Rasta Contract:0xE3e8cC42DA487d1116D26687856e9FB684817c52
+              $RASTA Token Contract: 0xE3e8cC42DA487d1116D26687856e9FB684817c52
               </a>
               </p>            
             
@@ -82,7 +82,7 @@ export default function HeroSection() {
                 rel="noreferrer"
                 className="bg-gradient-to-b font-bold w-full md:w-1/3 from-newpurple-400 to-newpurple-900 text-center py-3 rounded-xl"
               >
-                <button type="button">Zion Transporter</button>
+                <button type="button">Batch NFT Transporter</button>
               </a>
             </div>
           </div>
