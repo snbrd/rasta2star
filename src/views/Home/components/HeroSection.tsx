@@ -49,10 +49,10 @@ export default function HeroSection() {
               <span className="text-blue-zion_cyan text-heading font-bold uppercase">Zion Labs</span>
               <br /> 
               <span className="hidden md:block">Enjoy your Rasta Experience on Web 3</span>
-              <span style={{fontSize: '20px'}}>Now Also Stake $RASTA to earn upto 125% APR</span>
+              <span style={{fontSize: '20px'}}>Now Stake $RASTA to earn upto 125% APR</span>
             </h1>
             <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
-            ZionLabs is a creative-tech collective, developing novel technologies on the blockchain to be used within the music industry and beyond. Powered by the Binance Blockchain. 
+            ZionLabs is a creative-tech collective developing novel technologies on the blockchain; to be used within the music industry and beyond. Powered by the Binance Blockchain. 
             </p>
 
             <p className="mt-4 md:mt-8 text-center md:text-left  break-words" data-aos="fade-right" data-aos-duration="2000">

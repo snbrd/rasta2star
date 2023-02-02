@@ -91,7 +91,7 @@ export default function Sidebar() {
       child: [],
     },
     {
-      label: 'RastaSwap ★',
+      label: 'Buy $RASTA ★',
       path: 'https://swap.zionlabs.info/',
       parent: false,
       child: [],
@@ -113,7 +113,7 @@ export default function Sidebar() {
     //   ],
     // },
     {
-      label: 'Stake Rasta',
+      label: 'Stake $RASTA',
       path: '/pools',
       // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
