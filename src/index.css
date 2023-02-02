@@ -93,3 +93,7 @@ header .lazy-load-image-background.blur.lazy-load-image-loaded {
 .text-heading {
   font-family: 'Oswald', sans-serif;
 }
+
+img.about-image{ 
+  transform: scale(0.75)
+}

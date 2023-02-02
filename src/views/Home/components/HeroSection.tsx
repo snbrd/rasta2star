@@ -54,6 +54,13 @@ export default function HeroSection() {
             <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
             ZionLabs is a creative collective with a strong presence on the Binance Blockchain. Powered by Web3 tools, ZionLabs is the custodian of a fully decentralized financial eco-system, in addition to providing Web3 and React development services for various initiatives across the world.
             </p>
+
+            <p className="mt-4 md:mt-8 text-center md:text-left  break-words" data-aos="fade-right" data-aos-duration="2000">
+              <a href='https://bscscan.com/token/0xe3e8cc42da487d1116d26687856e9fb684817c52' target="_blank" rel="noreferrer">
+              Rasta Contract:0xE3e8cC42DA487d1116D26687856e9FB684817c52
+              </a>
+              </p>            
+            
             <div className="cta flex flex-col md:flex-row justify-center items-center mt-8 space-y-8 md:space-y-0 md:space-x-8 md:flex" data-aos="fade-right" data-aos-duration="2500">
               <Link
                 to="/liquidity"
