@@ -131,9 +131,9 @@ export default function FavoriteCreator() {
               </div>
             </div>
           )}
-          {account ? (
+          {/* {account ? ( */}
             <TotalValueLockedCard />
-          ) : (
+          {/* ) : (
             <div
               data-aos="fade-up"
               data-aos-duration="1000"
@@ -158,7 +158,7 @@ export default function FavoriteCreator() {
                 </div>
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </div>
       {/* <div className="bg-gradient-to-r text-white from-red-rasta to-yellow-rasta py-16">
