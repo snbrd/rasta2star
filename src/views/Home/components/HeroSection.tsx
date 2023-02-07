@@ -17,8 +17,8 @@ export default function HeroSection() {
   return (
     <div>
       <div
-        // className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto md:h-screen"
-        className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto"
+        className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto md:h-screen"
+        // className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto"
         style={{
           backgroundColor: '#0000008c',
           backgroundImage: `url(${HeroImage})`,
@@ -110,7 +110,7 @@ export default function HeroSection() {
           })}
         </div>
       </div>
-      <CarouselSlider/>
+      {/* <CarouselSlider/> */}
     </div>
   )
 }

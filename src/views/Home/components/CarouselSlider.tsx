@@ -20,6 +20,7 @@ export default function CarouselSlider(){
         cssEase: "linear",
         centerMode: true,
         centerPadding: "60px",
+        arrows: false,
         responsive: [
             {
               breakpoint: 1024,

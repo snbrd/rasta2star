@@ -8,6 +8,7 @@ import FavCreator from './components/FavoriteCreator'
 import ZIONLIONImage from '../../assets/zionlion-nft.jpg'
 // import NFTNomicsImage from '../../assets/NFTNomics-n.png'
 import Mint from './components/Mint'
+import CarouselSlider from './components/CarouselSlider'
 
 const Home: React.FC = () => {
   return (
@@ -33,6 +34,7 @@ const Home: React.FC = () => {
       <div>
         <section>
           <HeroSection />
+          <CarouselSlider/>
           {/* <Mint /> */}
           {/* <Community /> */}
           <div className="flex w-full bg-white text-black flex-col py-12 md:py-16">
