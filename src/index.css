@@ -97,3 +97,8 @@ header .lazy-load-image-background.blur.lazy-load-image-loaded {
 img.about-image{ 
   transform: scale(0.75)
 }
+
+.slick-prev:before,
+.slick-next:before {
+  color: #881798 !important;
+}

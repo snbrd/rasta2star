@@ -33,7 +33,7 @@ const Home: React.FC = () => {
       <div>
         <section>
           <HeroSection />
-          <Mint />
+          {/* <Mint /> */}
           {/* <Community /> */}
           <div className="flex w-full bg-white text-black flex-col py-12 md:py-16">
             <div className="container mx-auto">

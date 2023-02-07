@@ -38,6 +38,7 @@ const Blog = lazy(() => import('./views/Blog'))
 const SinglePost = lazy(() => import('./views/Blog/SinglePost'))
 const Category = lazy(() => import('./views/Blog/Category'))
 const ZionLions = lazy(() => import('./views/ZionLions'))
+const Minter = lazy(()=> import('./views/Minter'))
 
 // This config is required for number formating
 BigNumber.config({
@@ -120,6 +121,9 @@ const App: React.FC = () => {
                 </Route>
                 <Route path="/profile">
                   <Profile />
+                </Route>
+                <Route path="/mint" exact>
+                  <Minter/>
                 </Route>
                 {/* Redirect */}
                 <Route path="/staking">

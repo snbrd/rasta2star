@@ -30,7 +30,7 @@ const Farm: React.FC = () => {
             backgroundRepeat: 'no-repeat',
           }}
         >
-          <h1 className="text-4xl font-bold text-center">{TranslateString(696, 'Stake ZionLions NFT')}</h1>
+          <h1 className="text-4xl font-bold text-center">{TranslateString(696, 'Stake Weight 0.18 BNB')}</h1>
         </div>
         <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-black text-white">
           <div className=" flex flex-col text-white items-center w-10/12 mx-auto">
