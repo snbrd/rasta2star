@@ -54,21 +54,37 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
+          path: '/mint',
+          label: 'Mint',
+        },
+        {
+          path: '/stake-zionlions',
+          label: 'NFT Staking',
+        },
+        // {
+        //   path: '/#mintstation',
+        //   label: 'NFT Staking',
+        // },
+        {
           path: '/stakenft',
           label: 'DividendNFT',
         },
         // {
+        //   path: '/stakenft',
+        //   label: 'DividendNFT',
+        // },
+        // {
         //   path: '/stake-zionlions',
         //   label: 'ZionBuilders',
         // },
-        {
-          path: '/stake-zionlions',
-          label: 'ZionLion NFT',
-        },
-        {
-          path: '/#mintstation',
-          label: 'NFT Staking',
-        },
+        // {
+        //   path: '/stake-zionlions',
+        //   label: 'ZionLion NFT',
+        // },
+        // {
+        //   path: '/#mintstation',
+        //   label: 'NFT Staking',
+        // },
       ],
     },
     {

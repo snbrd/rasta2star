@@ -229,7 +229,7 @@ function Mint() {
         </s.Heading2>
       </s.MobileHide>
       <s.Container>
-        <s.Column bordered={false} width="35%" className='black-bg'>
+        <s.Column bordered={false} width="50%" className='black-bg'>
           <s.FlexDiv direction={['column']}>
             <s.FlexDiv direction={['column']}>
               <s.Heading2>MINT</s.Heading2>
@@ -243,13 +243,15 @@ function Mint() {
             </s.FlexDiv>
 
             <s.FlexDiv direction={['column']} gap="2rem" margin="16px 0 0 0" mdWidth="87%">
-              <s.Text align='justify' lineHeight='1.5rem'>
+              {/* <s.Text align='justify' lineHeight='1.5rem'>
                 To complement the strong community, a novel collection of ZionLions have been released as 6,200 NFTs with rarity factors that are unrivaled in the space.
                 
-              </s.Text>
-              <s.Text align="justify" lineHeight="0.75rem">
-              T1 Staking -Up to 10% APR
-              </s.Text>
+              </s.Text> */}
+              <div style={{marginTop: '30px'}}>
+                <s.Text align="justify" lineHeight="0.75rem">
+                T1 Staking -Up to 10% APR
+                </s.Text>
+              </div>
               <s.Text align="justify" lineHeight="0.75rem">
               T2 Staking -Up to 122% APY
               </s.Text>
@@ -264,8 +266,7 @@ function Mint() {
                 address. Please note: Once you mint, this action cannot be undone.
               </s.Text>
               <s.Text align="justify" lineHeight="1.5rem">
-                {`We have set the gas limit to 285000 for the contract to successfully mint your NFT. We recommend that
-                you don't lower the gas limit`}
+                We have set the gas limit to 285000 for the contract to successfully mint your NFT.
               </s.Text>
             </s.FlexDiv>
 
@@ -280,29 +281,36 @@ function Mint() {
             </a>
           </s.FlexDiv>
         </s.Column>
-        <s.Column bordered="true" grow="true">
+        <s.Column grow="true">
           <s.FlexDiv direction={['row', 'column-reverse']} gap="1rem" content="center">
-            <s.FlexDiv direction={['column', 'row']} content="center">
-              <s.Heading2>
-                {totalSupply} / {CONFIG.MAX_SUPPLY}
-              </s.Heading2>
+            <s.FlexDiv direction={['row', 'row']} content="center" items="center" gap='1.5rem'>
+              <s.RoundedImage src="/images/mint/lion-nft.jpg" />
+              <s.FlexDiv direction={['column','column']}>
+                <s.Heading2>
+                  {totalSupply} / {CONFIG.MAX_SUPPLY}
+                </s.Heading2>
+                <s.Text color="#F87171">Contract Address:</s.Text>
+                <s.Link target="_blank" href={CONFIG.SCAN_LINK}>
+                  {truncate(CONFIG.CONTRACT_ADDRESS, 20)}
+                </s.Link>
+              </s.FlexDiv>
             </s.FlexDiv>
           </s.FlexDiv>
 
-          <s.FlexDiv direction={['row']} content="center" margin="16px 0 0 0">
-            <s.Text color="#F87171">Contract Address:</s.Text>
-          </s.FlexDiv>
-          <s.FlexDiv direction={['row']} content="center" margin="16px 0 0 0">
+          {/* <s.FlexDiv direction={['row']} content="center" margin="16px 0 0 0"> */}
+            {/* <s.Text color="#F87171">Contract Address:</s.Text> */}
+          {/* </s.FlexDiv> */}
+          {/* <s.FlexDiv direction={['row']} content="center" margin="16px 0 0 0">
             <s.Link target="_blank" href={CONFIG.SCAN_LINK}>
               {truncate(CONFIG.CONTRACT_ADDRESS, 20)}
             </s.Link>
-          </s.FlexDiv>
+          </s.FlexDiv> */}
 
           <s.FlexDiv direction={['row', 'column']} content="space-around">
-            <s.FlexDiv direction={['row']} gap="1rem" content="center">
+            {/* <s.FlexDiv direction={['row']} gap="1rem" content="center"> */}
               {/* <s.RoundedImage src="/images/mint/newgif.gif" /> */}
-              <s.RoundedImage src="/images/mint/lion-nft.jpg" />
-            </s.FlexDiv>
+              {/* <s.RoundedImage src="/images/mint/lion-nft.jpg" /> */}
+            {/* </s.FlexDiv> */}
 
             <s.FlexDiv direction={['column']} content="center" grow={0}>
               {Number(totalSupply) >= CONFIG.MAX_SUPPLY ? (
@@ -320,7 +328,8 @@ function Mint() {
                 </>
               ) : (
                 <>
-                  <s.FlexDiv direction={['column']} content="center" items="center" margin="16px 0">
+                  <s.FlexDiv direction={['column']} content="center" items="center" margin="36px 0" style={{backgroundColor
+                  : '#242031', padding: '1.5rem', borderRadius: '1rem'}}>
                     <table style={{ color: 'var(--accent-text)', fontWeight: 'bold' }} className="table">
                       <tbody>
                         <tr>
@@ -411,26 +420,30 @@ function Mint() {
                       </s.FlexDiv>
                     </>
                   ) : (
-                    <s.FlexDiv direction={['column']} content="center" items="center" margin="16px 0 0 0" gap="1rem">
-                      <s.Text
-                        style={{
-                          textAlign: 'center',
-                          color: 'var(--accent-text)',
-                        }}
-                      >
-                        Connect to the {CONFIG.NETWORK.NAME} network
-                      </s.Text>
+                    <div>
+                      <s.FlexDiv direction={['column']} content="center" items="center" margin="16px 0 0 0" gap="1rem">
+                        <s.Text
+                          style={{
+                            textAlign: 'center',
+                            color: 'var(--accent-text)',
+                          }}
+                        >
+                          Connect to the {CONFIG.NETWORK.NAME} network
+                        </s.Text>
 
-                      <Wallet />
-                    </s.FlexDiv>
+                      </s.FlexDiv>
+                      <s.FlexDiv direction={['column']} content="center" items="center" margin="2.25rem 0 0 0" gap="1rem">
+                        <Wallet />
+                      </s.FlexDiv>
+                    </div>
                   )}
                 </>
               )}
             </s.FlexDiv>
-            <s.FlexDiv direction={['row']} gap="1rem" content="center" mobileHide="true">
+            {/* <s.FlexDiv direction={['row']} gap="1rem" content="center" mobileHide="true"> */}
               {/* <s.RoundedImage src="/images/mint/newgif.gif" /> */}
-              <s.RoundedImage src="/images/mint/lion-nft-2.jpg" />
-            </s.FlexDiv>
+              {/* <s.RoundedImage src="/images/mint/lion-nft-2.jpg" /> */}
+            {/* </s.FlexDiv> */}
           </s.FlexDiv>
         </s.Column>
       </s.Container>

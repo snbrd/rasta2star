@@ -33,11 +33,11 @@ export const Container = styled.div`
   @media screen and (max-width: 767px) {
     flex-direction: column;
   }
-  gap: 4rem;
+  gap: 0rem;
 `
 
 export const Column = styled(`div`)<{ bordered?: any; grow?: any; width?: string }>`
-  background-color: #00000099;
+  background-color: #1d1a21;
   border: ${({ bordered }) => (bordered ? 'solid 3px #02c4fe;' : '')};
   padding: 2rem;
   flex-grow: ${({ grow }) => (grow ? '1' : '')};
@@ -51,6 +51,9 @@ export const Heading2 = styled.h2`
   font-size: 2.25rem;
   color: #ffffff;
   font-weight: 700;
+  @media screen and (max-width:767px) {
+    font-size: 1.25rem;
+  }
 `
 
 export const Text = styled(`p`)<{ align?: string; color?: string; lineHeight?: string }>`
@@ -71,8 +74,8 @@ export const Link = styled.a`
 `
 
 export const RoundedImage = styled(`img`)<{ flip?: boolean }>`
-  width: 12rem;
-  height: 12rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 10px;
   transform: ${({ flip }) => (flip ? 'scaleX(-1)' : '')};
 `
@@ -98,6 +101,7 @@ export const FlexDiv = styled(`div`)<{
   @media screen and (max-width: 767px) {
     flex-direction: ${(props) => (props.direction[1] ? props.direction[1] : props.direction[0])};
     display: ${({ mobileHide }) => (mobileHide ? 'none;' : '')};
+    overflow-x: hidden;
   }
   margin: ${({ margin }) => margin};
   flex-grow: ${({ grow }) => grow};
@@ -106,8 +110,8 @@ export const FlexDiv = styled(`div`)<{
 export const OutlineButton = styled(`button`)<{ disabled?: boolean }>`
   padding: 1rem;
   background: transparent;
-  border: solid 1px #02c4fe;
-  color: #02c4fe;
+  border: solid 1px #be42b4;
+  color: #be42b4;
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
   @media screen and (max-width: 767px) {
@@ -128,7 +132,7 @@ export const FilledButton = styled(`button`)<{ disabled?: boolean }>`
   padding-left: 3rem;
   padding-right: 3rem;
   background: rgb(15, 132, 255);
-  background: linear-gradient(175deg, rgba(15, 132, 255, 1) 35%, rgba(2, 196, 254, 1) 100%);
+  background: linear-gradient(175deg, rgba(209, 74, 198, 1) 35%, rgba(80, 17, 41, 1) 100%);
   color: #ffffff;
   font-weight: 700;
   text-align: center;

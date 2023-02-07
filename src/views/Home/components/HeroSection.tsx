@@ -5,6 +5,7 @@ import PotionImage from '../../../assets/potion-bottle.png'
 // import HeroImage from '../../../assets/home-header.jpg'
 // import HeroImage from '../../../assets/hero-new-background-zion.jpg'
 import HeroImage from '../../../assets/new-hero-image.jpg'
+import CarouselSlider from './CarouselSlider'
 
 export default function HeroSection() {
   const counter = [
@@ -16,7 +17,8 @@ export default function HeroSection() {
   return (
     <div>
       <div
-        className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto md:h-screen"
+        // className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto md:h-screen"
+        className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto"
         style={{
           backgroundColor: '#0000008c',
           backgroundImage: `url(${HeroImage})`,
@@ -32,7 +34,7 @@ export default function HeroSection() {
         {/* <source src="/new-hero-video.mp4" type="video/mp4" />
         </video> */}
 
-        <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row justify-center h-full z-20 md:mt-48">
+        <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row justify-center h-full z-20 md:mt-24">
           <div className="leftSection w-full md:w-6/12 md:pl-16">
             <img
               src={PotionImage}
@@ -90,7 +92,8 @@ export default function HeroSection() {
             {/* <LazyLoadImage src={HeroImage} alt="Logo" className="w-full mx-auto" effect="blur" /> */}
           </div>
         </div>
-        <div className=" w-full hidden md:flex md:max-w-screen-xl md:mx-auto items-center md:flex-row space-x-8 my-32 md:my-20 invisible">
+        <div className=" w-full md:flex md:max-w-screen-xl md:mx-auto items-center md:flex-row space-x-8 my-32 md:my-20" style={{display
+        :'none'}}>
           {counter.map((item, index) => {
             return (
               <div
@@ -107,6 +110,7 @@ export default function HeroSection() {
           })}
         </div>
       </div>
+      <CarouselSlider/>
     </div>
   )
 }

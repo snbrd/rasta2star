@@ -48,26 +48,39 @@ export default function NewDesktopSidebar() {
       child: [],
     },
     {
-      label: 'NFT Staking',
+      // label: 'NFT Staking',
+      label: 'Zion Lion NFTs',
       path: '#',
       // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
       parent: true,
       child: [
-        {
-          path: '/stakenft',
-          label: 'DividendNFT',
-        },
+        // {
+        //   path: '/stakenft',
+        //   label: 'DividendNFT',
+        // },
         // {
         //   path: '/stake-zionlions',
         //   label: 'ZionBuilders',
         // },
+        // {
+        //   path: '/stake-zionlions',
+        //   label: 'ZionLion NFT',
+        // },
         {
-          path: '/stake-zionlions',
-          label: 'ZionLion NFT',
+          path: '/mint',
+          label: 'Mint',
         },
         {
-          path: '/#mintstation',
+          path: '/stake-zionlions',
           label: 'NFT Staking',
+        },
+        // {
+        //   path: '/#mintstation',
+        //   label: 'NFT Staking',
+        // },
+        {
+          path: '/stakenft',
+          label: 'DividendNFT',
         },
       ],
     },
