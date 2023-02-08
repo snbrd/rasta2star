@@ -5,7 +5,8 @@ import AnimatedPage from 'components/AnimatedPage'
 import HeroSection from './components/HeroSection'
 // import Community from './components/Community'
 import FavCreator from './components/FavoriteCreator'
-import ZIONLIONImage from '../../assets/zionlion-nft.jpg'
+// import ZIONLIONImage from '../../assets/zionlion-nft.jpg'
+import ZIONLIONImage from '../../assets/zionlion-nfts.jpg'
 // import NFTNomicsImage from '../../assets/NFTNomics-n.png'
 import Mint from './components/Mint'
 import CarouselSlider from './components/CarouselSlider'
@@ -55,7 +56,7 @@ const Home: React.FC = () => {
 
               <div className="flex flex-col md:flex-row">
                 <div
-                  className="items-center flex justify-center flex-1 pb-4 md:pb-0"
+                  className="items-center flex justify-center flex-1 pb-4 px-5 md:px-0 md:pb-0"
                   data-aos="fade-right"
                   data-aos-duration="1000"
                 >
