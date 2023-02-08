@@ -74,14 +74,14 @@ const Home: React.FC = () => {
                         ZIONLION - BNB
                       </h2>
 
-                      <a
+                      {/* <a
                         className="bg-gradient-to-b font-bold text-white from-blue-zion to-blue-zion_cyan text-center py-2 px-8 rounded-xl"
                         href="https://docs.zionlabs.info/introduction/zion-lions-of-zion-island-nfts"
                         target="_blank"
                         rel="noreferrer"
                       >
                         Read More
-                      </a>
+                      </a> */}
                     </div>
 
                     <div className="card-body">
@@ -106,26 +106,39 @@ const Home: React.FC = () => {
                   >
                     <div className="card-title flex justify-between">
                       <h2 className="md:text-xl font-bold pr-0 md:pr-48 text-left md:text-left leading-tight flex-1">
-                        Launchpad NFTs - MRASTA
+                        {/* Launchpad NFTs - MRASTA */}
+                        STAKING TOKENOMICS
                       </h2>
 
-                      <a
+                      {/* <a
                         className="bg-gradient-to-b font-bold text-white from-blue-zion to-blue-zion_cyan text-center py-2 items-center px-8 rounded-xl"
                         href="https://docs.zionlabs.info/zion-launchpad/zion-launchpad-nfts"
                         target="_blank"
                         rel="noreferrer"
                       >
                         Read More
-                      </a>
+                      </a> */}
                     </div>
 
                     <div className="card-body">
                       <ul className="space-y-2">
-                        <li>25% to Artist</li>
+                        <li>
+                          Harvest is locked for 30 days
+                        </li>
+                        <li>
+                          User receives 70% of Harvest (2 years)
+                        </li>
+                        <li>
+                          20% for Marketing
+                        </li>
+                        <li>
+                          10% of all Harvest rewards are put into liquidity for MRASTA/RASTA LP
+                        </li>
+                        {/* <li>25% to Artist</li>
                         <li>25% to Creator</li>
                         <li>20% to Rare NFT Pool</li>
                         <li>15% to Genesis Prize Pool</li>
-                        <li>15% to Future Pool (Stored)</li>
+                        <li>15% to Future Pool (Stored)</li> */}
                       </ul>
                     </div>
 
@@ -142,25 +155,44 @@ const Home: React.FC = () => {
                   >
                     <div className="card-title flex justify-between items-center">
                       <h2 className="md:text-xl font-bold pr-0 md:pr-48 text-left md:text-left leading-tight flex-1">
-                        Launchpad Staking Tokenomics
+                        {/* Launchpad Staking Tokenomics */}
+                        SALE TOKENOMICS
                       </h2>
 
-                      <a
+                      {/* <a
                         className="bg-gradient-to-b font-bold text-white from-blue-zion to-blue-zion_cyan text-center py-2 px-8 rounded-xl"
                         href="https://docs.zionlabs.info/zion-launchpad/zion-launchpad-nfts"
                         target="_blank"
                         rel="noreferrer"
                       >
                         Read More
-                      </a>
+                      </a> */}
                     </div>
 
                     <div className="card-body">
                       <ul className="space-y-2">
-                        <li>Harvest is locked for 30 days (for both artists and users)</li>
+                        <li>
+                          20% to Music Artist
+                        </li>
+                        <li>
+                          10% to Artist Management / Label
+                        </li>
+                        <li>
+                          15% to Music Artist Marketing Fund
+                        </li>
+                        <li>
+                          25% to Zion Labs
+                        </li>
+                        <li>
+                          25% T4 professor
+                        </li>
+                        <li>
+                          5% to Rasta farms
+                        </li>
+                        {/* <li>Harvest is locked for 30 days (for both artists and users)</li>
                         <li>User receives 65% of Harvest (2 years)</li>
                         <li>Artist receives 25% of Harvest (90 days)</li>
-                        <li>10% of all Harvest rewards are put into liquidity for MRASTA/RASTA LP</li>
+                        <li>10% of all Harvest rewards are put into liquidity for MRASTA/RASTA LP</li> */}
                       </ul>
                     </div>
 

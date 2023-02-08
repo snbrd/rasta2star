@@ -122,7 +122,8 @@ const Farms: React.FC = () => {
             backgroundPosition: 'top center',
           }}
         >
-          <h1 className="text-4xl font-bold">{stackedOnly ? 'Mr Rasta Liquidity' : 'Mr Rasta Liquidity'}</h1>
+          {/* <h1 className="text-4xl font-bold">{stackedOnly ? 'Mr Rasta Liquidity' : 'Mr Rasta Liquidity'}</h1> */}
+          <h1 className="text-4xl font-bold">{stackedOnly ? 'Create Liquidity' : 'Create Liquidity'}</h1>
         </div>
 
         <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-black text-white">
