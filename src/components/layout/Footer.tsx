@@ -20,8 +20,10 @@ export default function Footer() {
     {
       title: 'Stake',
       item: [
-        { label: 'Mr. Rasta', path: '/liquidity' },
-        { label: 'Ms. Rasta', path: '/liquidity' },
+        { label: 'Rasta Token', path: '/liquidity' },
+        { label: 'Stake Liquidity', path: '/liquidity' },
+        // { label: 'Mr. Rasta', path: '/liquidity' },
+        // { label: 'Ms. Rasta', path: '/liquidity' },
       ],
     },
   ]

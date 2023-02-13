@@ -85,7 +85,7 @@ export default function FavoriteCreator() {
               className="cus-h rounded-md"
               style={{
                 backgroundColor: '#fff',
-                backgroundImage: `url(/images/lion1.png)`,
+                backgroundImage: `url(/images/lion1.jpg)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '100% 100%',
               }}
@@ -113,7 +113,7 @@ export default function FavoriteCreator() {
               className="cus-h rounded-md"
               style={{
                 backgroundColor: '#fff',
-                backgroundImage: `url(/images/lion2.png)`,
+                backgroundImage: `url(/images/lion2.jpg)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '100% 100%',
               }}
