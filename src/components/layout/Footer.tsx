@@ -63,7 +63,7 @@ export default function Footer() {
             <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span>
             {textUnderLogo.map((item, index) => {
               return (
-                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-6 md:pl-0">
+                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-0 md:pl-0">
                   {item}
                 </span>
               )
@@ -74,7 +74,7 @@ export default function Footer() {
               <div
                 data-aos="fade-up"
                 data-aos-duration="1000"
-                className="flex flex-col mr-4 last:mr-0 pl-6 md:pl-0 mt-4"
+                className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4"
                 key={index}
               >
                 {item.title}
@@ -86,7 +86,7 @@ export default function Footer() {
           })}
         </div>
 
-        <div className="bottom-footer flex space-between pl-6 md:pl-0 pr-6 md:pr-0 flex-col md:flex-row w-full space-between mx-auto">
+        <div className="bottom-footer flex space-between pl-0 md:pl-0 pr-6 md:pr-0 flex-col md:flex-row w-full space-between mx-auto">
           <div className="copyright flex-grow-1">
             <span>
               <a href="/" className="text-yellow-rasta">

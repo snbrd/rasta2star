@@ -150,7 +150,7 @@ const Farms: React.FC = () => {
   }, [checked, path, history])
 
   return (
-    <AnimatedPage>
+    // <AnimatedPage>
       <div>
         <div
           className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 bg-left-center-small md:bg-center text-white py-16 items-center"
@@ -194,7 +194,7 @@ const Farms: React.FC = () => {
           </div>
         </div>
       </div>
-    </AnimatedPage>
+    // </AnimatedPage>
   )
 }
 

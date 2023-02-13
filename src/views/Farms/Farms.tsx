@@ -111,7 +111,7 @@ const Farms: React.FC = () => {
   )
 
   return (
-    <AnimatedPage>
+    // <AnimatedPage>
       <div>
         <div
           className="flex w-full bg-left-center-small md:bg-center flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
@@ -159,7 +159,7 @@ const Farms: React.FC = () => {
         </div>
         {/* <FarmTabButtons stackedOnly={stackedOnly} setStackedOnly={setStackedOnly} /> */}
       </div>
-    </AnimatedPage>
+    // </AnimatedPage>
   )
 }
 
