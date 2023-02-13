@@ -48,13 +48,13 @@ return(
                     <h1 className='text-4xl md:text-6xl font-bold text-heading'>For You</h1>
 
                     <p className='break-words'>
-                        Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet 
+                        Since our conception in 2020, we have been studying and discovering novel ways of revolutionizing the music industry, 
                     </p>
                     <p className='break-words'>
-                        Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+                        We want to help empower artists, to expand their horizons and reach an audience without borders.
                     </p>
                     <p className='break-words'>
-                        Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet 
+                        Using novel Web3 protocols, we seek to bring transparent innovation to the masses.
                     </p>
                 </div>
             </div>
