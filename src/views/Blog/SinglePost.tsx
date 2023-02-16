@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import renderHTML from 'react-render-html'
 import api from './helper/Connector'
 
@@ -10,6 +10,8 @@ import SideNavigation from './components/SideNavigation'
 export default function SinglePost() {
   const { id: slug }: { id: string } = useParams()
   const [sidenav, setSidenav] = useState(false)
+
+  const location = useLocation()
 
   const [post, setPost] = useState([])
 
@@ -49,6 +51,7 @@ export default function SinglePost() {
 
       {post.map((pos) => (
         <div key={pos.id}>
+          
           <div
             className="h-screen hidden md:flex md:flex-col items-start justify-center px-10 md:px-40 gap-y-5"
             style={{
@@ -84,6 +87,12 @@ export default function SinglePost() {
           <div className="bg-white text-black w-full py-20 md:px-20">
             <div className="container mx-auto px-10 md:px-10 lg:px-0">
               <div className="flex flex-col space-y-8" data-aos="fade-up" data-aos-duration="1000">
+                <div className='breadcrumb text-gray-500'>
+                  <Link to='/educations'>Education</Link>
+                   &nbsp; &gt; &nbsp;
+                   <Link to={location.pathname} className={location.pathname && 'underline'}>{pos.title.rendered}</Link>
+                </div>
+
                 {renderHTML(pos.content.rendered)}
               </div>
             </div>
