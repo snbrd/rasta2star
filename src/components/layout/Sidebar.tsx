@@ -48,6 +48,13 @@ export default function Sidebar() {
       child: [],
     },
     {
+      label: 'Batch NFT Transporter',
+      path: 'https://send.zionlabs.info/',
+      // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
+    },
+    {
       label: 'NFT Staking',
       path: '#',
       // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,

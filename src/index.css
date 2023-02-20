@@ -41,6 +41,13 @@
   height: 400px;
 }
 
+@media screen and (max-width: 1024px) {
+  .cus-h {
+    height: auto;
+    aspect-ratio: 1;
+  } 
+}
+
 .w-26 {
   width: 7rem;
 }

@@ -48,6 +48,13 @@ export default function NewDesktopSidebar() {
       child: [],
     },
     {
+      label: 'Batch NFT Transporter',
+      path: 'https://send.zionlabs.info/',
+      // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
+    },
+    {
       // label: 'NFT Staking',
       label: 'Zion Lion NFTs',
       path: '#',
