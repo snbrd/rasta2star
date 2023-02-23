@@ -69,7 +69,8 @@ const Farm: React.FC = () => {
   })
 
   return (
-    <AnimatedPage>
+    // <AnimatedPage>
+      <>
       <div>
         <div
           className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
@@ -118,7 +119,8 @@ const Farm: React.FC = () => {
           </div>
         </div>
       </div>
-    </AnimatedPage>
+    {/* </AnimatedPage> */}
+    </>
   )
 }
 

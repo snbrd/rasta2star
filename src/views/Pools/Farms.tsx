@@ -25,7 +25,8 @@ import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 // import PoolCard from '../Stake/components/PoolCard'
 
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
-import MrRastaImage from '../../assets/new-banner-image.jpg'
+// import MrRastaImage from '../../assets/new-banner-image.jpg'
+import MrRastaImage from '../../assets/newimage/stake_token.jpg'
 import MrsRastaImage from '../../assets/lion-mrs-rasta.jpg'
 
 const Farms: React.FC = () => {

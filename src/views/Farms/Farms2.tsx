@@ -309,7 +309,8 @@ export default function Farms2() {
   }
 
   return (
-    <AnimatedPage>
+    // <AnimatedPage>
+      <>
       <div className="">
         <div
           className="flex w-full text-black flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
@@ -346,6 +347,7 @@ export default function Farms2() {
           </div>
         </div>
       </div>
-    </AnimatedPage>
+      {/* </AnimatedPage> */}
+      </>
   )
 }

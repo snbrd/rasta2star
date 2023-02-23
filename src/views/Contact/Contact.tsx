@@ -64,11 +64,11 @@ export default function Contact() {
     ],
   }
   return (
-    <AnimatedPage>
+    // <AnimatedPage>
       <div>
         <Heading />
         <Forms fields={fields} desc={heading.desc} contactInfo={contactInfo} />
       </div>
-    </AnimatedPage>
+    // </AnimatedPage>
   )
 }

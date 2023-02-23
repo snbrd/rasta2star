@@ -31,7 +31,7 @@ const Home: React.FC = () => {
     //     </CTACards>
     //   </div>
     // </Page>
-    <AnimatedPage>
+    // <AnimatedPage>
       <div>
         <section>
           <HeroSection />
@@ -209,7 +209,7 @@ const Home: React.FC = () => {
           <FavCreator />
         </section>
       </div>
-    </AnimatedPage>
+    // </AnimatedPage>
   )
 }
 

@@ -8,7 +8,8 @@ import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 import AnimatedPage from 'components/AnimatedPage'
 import PoolCard from './components/PoolCard'
-import MrRastaImage from '../../assets/new-banner-image.jpg'
+// import MrRastaImage from '../../assets/new-banner-image.jpg'
+import MrRastaImage from '../../assets/newimage/stake_weight.jpg'
 import ExplorerPoolCard from './ExplorerComponents/ExplorerPoolCard'
 
 const Farm: React.FC = () => {

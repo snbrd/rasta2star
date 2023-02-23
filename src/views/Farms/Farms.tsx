@@ -21,7 +21,8 @@ import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 // import FarmTabButtons from './components/FarmTabButtons'
 // import Divider from './components/Divider'
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
-import MrRastaImage from '../../assets/new-banner-image.jpg'
+// import MrRastaImage from '../../assets/new-banner-image.jpg'
+import MrRastaImage from '../../assets/newimage/Create_liquidity.jpg'
 
 const Farms: React.FC = () => {
   const TranslateString = useI18n()

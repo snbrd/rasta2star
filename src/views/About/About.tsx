@@ -9,7 +9,8 @@ import ArtistsImage from '../../assets/newaboutpage/launchpad-artists-.png'
 
 export default function About(){
 return(
-    <AnimatedPage>
+    // <AnimatedPage>
+    <>
         <div className='h-screen' style={{backgroundImage: `url(${FirstSection})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
             <div className='h-full w-full'>
                 <div className='h-full w-full flex items-center justify-center flex-col'>
@@ -59,6 +60,7 @@ return(
                 </div>
             </div>
         </div>
-    </AnimatedPage>
+    {/* </AnimatedPage> */}
+    </>
 )
 }
