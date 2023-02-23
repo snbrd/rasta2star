@@ -19,15 +19,16 @@ return(
                 </div>
             </div>
         </div>
-        <div className='h-screen' style={{backgroundImage: `url(${SecondSection})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} >
+        <div className='lg:h-screen' style={{backgroundImage: `url(${SecondSection})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} >
             <div className='h-full w-full grid md:grid-cols-2 items-center'>
                 <div className='flex items-center justify-center'>
                     <LazyLoadImage src={ArtistsImage} alt="" effect="blur" className="about-image" />
                 </div>
-                <div className='flex flex-col items-center md:items-start justify-center px-5 text-center md:text-left md:px-0 gap-y-4'>
+                <div className='flex flex-col items-center md:items-start justify-center px-5 text-center md:text-left md:px-0'>
                     <span>About the</span>
                     <h2 className='text-4xl text-heading font-bold'>Zion launch Pad</h2>
-
+                    
+                    <div className='flex flex-col gap-4 mt-4'>
                     <p>
                     The Zion Launchpad is an NFT based utility minting / launchpad for artists. 
                     </p>
@@ -39,22 +40,23 @@ return(
                     <p>
                     stake their purchased NFT from the music artists on the Zion Labs platform.
                     </p>
+                    </div>
                 </div>
             </div>
         </div>
         <div className='h-screen' style={{backgroundImage: `url(${ThirdSection})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
             <div className='h-full w-full'>
-                <div className='h-full w-full flex items-center justify-center flex-col'>
+                <div className='h-full w-full flex items-center justify-center flex-col px-5'>
                     <span>From us</span>
                     <h1 className='text-4xl md:text-6xl font-bold text-heading'>For You</h1>
 
-                    <p className='break-words'>
+                    <p className='break-words text-center'>
                         Since our conception in 2020, we have been studying and discovering novel ways of revolutionizing the music industry, 
                     </p>
-                    <p className='break-words'>
+                    <p className='break-words text-center'>
                         We want to help empower artists, to expand their horizons and reach an audience without borders.
                     </p>
-                    <p className='break-words'>
+                    <p className='break-words text-center'>
                         Using novel Web3 protocols, we seek to bring transparent innovation to the masses.
                     </p>
                 </div>
