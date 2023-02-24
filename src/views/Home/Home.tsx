@@ -1,6 +1,7 @@
 import React from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
+import { Link } from 'react-router-dom'
 import AnimatedPage from 'components/AnimatedPage'
 import HeroSection from './components/HeroSection'
 // import Community from './components/Community'
@@ -35,11 +36,21 @@ const Home: React.FC = () => {
       <div>
         <section>
           <HeroSection />
-          <CarouselSlider/>
+          {/* <CarouselSlider/> */}
           {/* <Mint /> */}
           {/* <Community /> */}
 
-          <div className="flex w-full bg-white text-black flex-col py-12 md:py-16">
+{/* new section | later */}
+          {/* <div className="flex w-full bg-white text-black flex-col py-12 md:py-16 px-10 md:px-0">
+          <h2 data-aos="fade-up" data-aos-duration="1000" className="text-2xl text-center md:text-5xl font-bold leading-tight">
+          Zion Transporter
+                </h2>
+          </div> */}
+
+          {/* end new section | later */}
+
+          {/* <div className="flex w-full bg-white text-black flex-col py-12 md:py-16 px-10 md:px-0"> */}
+          <div className="flex w-full bg-black text-white flex-col py-12 md:py-16 px-10 md:px-0">
             <div className="container mx-auto">
                 <h2 data-aos="fade-up" data-aos-duration="1000" className="text-2xl text-center md:text-5xl font-bold leading-tight">
                 ZION LION NFTs
@@ -63,6 +74,11 @@ const Home: React.FC = () => {
                   </p>
 
                 </div>
+
+                <div className='w-full text-center mt-10 mb-2 lg:mb-8'>
+                  <Link className='border-white border-1 p-3 md:w-1/3 text-center hover:bg-white hover:text-black' to="/mint">Mint Collection</Link>
+                </div>
+
             </div>
           </div>
 
@@ -242,6 +258,7 @@ const Home: React.FC = () => {
             <div style={{ height: '0.5rem' }}>&nbsp;</div>
           </div>
           <FavCreator />
+          <CarouselSlider/>
         </section>
       </div>
     // </AnimatedPage>

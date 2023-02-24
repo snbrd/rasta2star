@@ -139,6 +139,18 @@ export const FilledButton = styled(`button`)<{ disabled?: boolean }>`
   border-radius: 0.75rem;
 `
 
+export const WhiteOutlineButton = styled(`button`)<{ disabled?: boolean }>`
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  border: solid 2px #ffffff;
+`
+
 export const RoundedOutlineButton = styled(`button`)<{ height?: string; width?: string; disabled?: boolean }>`
   background: transparent;
   border: solid 1px #fff;

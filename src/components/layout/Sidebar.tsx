@@ -48,7 +48,15 @@ export default function Sidebar() {
       child: [],
     },
     {
-      label: 'Batch NFT Transporter',
+      label: 'About',
+      path: '/about',
+      // icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
+    },
+    {
+      // label: 'Batch NFT Transporter',
+      label: 'NFT Swap',
       path: 'https://send.zionlabs.info/',
       // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
@@ -100,13 +108,13 @@ export default function Sidebar() {
       parent: false,
       child: [],
     },
-    {
-      label: 'About',
-      path: '/about',
-      // icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
-    },
+    // {
+    //   label: 'About',
+    //   path: '/about',
+    //   // icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
+    //   parent: false,
+    //   child: [],
+    // },
     {
       label: 'Docs',
       path: 'https://docs.zionlabs.info',

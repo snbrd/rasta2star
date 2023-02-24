@@ -98,7 +98,8 @@ export default function Wallet() {
         onClick={() => setShowModal(true)}
       > */}
       {/* <s.OutlineButton onClick={() => setShowModal(true)}>CONNECT</s.OutlineButton> */}
-      <s.FilledButton onClick={() => setShowModal(true)}>CONNECT</s.FilledButton>
+      {/* <s.FilledButton onClick={() => setShowModal(true)}>CONNECT</s.FilledButton> */}
+      <s.WhiteOutlineButton onClick={() => setShowModal(true)}>CONNECT</s.WhiteOutlineButton>
     </div>
   )
 }

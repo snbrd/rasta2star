@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import * as s from './NewGlobalStyles'
 import '../style.css'
 import Wallet from './Wallet'
+import MrRastaImage from '../../../assets/newimage/Stake-Weight-ZLS.png'
+
 
 const truncate = (input, len) => (input.length > len ? `${input.substring(0, len)}...` : input)
 
@@ -218,6 +220,25 @@ function Mint() {
   return (
     // <s.Screen image={CONFIG.SHOW_BACKGROUND ? '/images/mint/ZL-Background-2.jpg' : null} id="mintstation">
     <s.Screen image={CONFIG.SHOW_BACKGROUND ? '' : null} id="mintstation">
+
+        <div
+          className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-40 items-center"
+          style={{
+            backgroundImage: `url(${MrRastaImage})`,
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          &nbsp;
+        </div>
+
+        <div className='py-8 container mx-auto'>
+          <p className='text-center px-12'>
+          Welcome to Zion Labs, where art meets blockchain. Our NFTs are more than just digital assets,  they are a unique expression of creativity and innovation. With our easy-to-use minting platform,  you can create and own one-of-a-kind NFTs that are securely verified on the blockchain.
+          </p>
+        </div>
+
       <s.MobileHide>
         <s.Heading2
           style={{
@@ -229,6 +250,8 @@ function Mint() {
         </s.Heading2>
       </s.MobileHide>
       <s.Container>
+      
+
         <s.Column bordered={false} width="50%" className='black-bg'>
           <s.FlexDiv direction={['column']}>
             <s.FlexDiv direction={['column']}>
@@ -277,7 +300,8 @@ function Mint() {
                 textAlign: 'center',
               }}
             >
-              <s.FilledButton>Stake NFTs</s.FilledButton>
+              {/* <s.FilledButton>Stake NFTs</s.FilledButton> */}
+              <s.WhiteOutlineButton>Stake NFTs</s.WhiteOutlineButton>
             </a>
           </s.FlexDiv>
         </s.Column>

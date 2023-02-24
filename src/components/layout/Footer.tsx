@@ -7,7 +7,8 @@ import * as Io5Icons from 'react-icons/io5'
 
 export default function Footer() {
   // const textUnderLogo = ['@zionlabs_info', 'www.zionlabs.info']
-  const textUnderLogo = ['Enjoy your Rasta experience on web 3']
+  // const textUnderLogo = ['Enjoy your Rasta experience on web 3']
+  const textUnderLogo = ['Explore a new dimension of the Zion experience with Web 3.0 technology']
   const navigation = [
     {
       title: 'Useful Links',
@@ -65,7 +66,7 @@ export default function Footer() {
             <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span>
             {textUnderLogo.map((item, index) => {
               return (
-                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-0 md:pl-0">
+                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-0 md:pl-0 lg:w-1/3">
                   {item}
                 </span>
               )

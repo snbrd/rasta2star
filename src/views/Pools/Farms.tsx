@@ -153,8 +153,17 @@ const Farms: React.FC = () => {
   return (
     // <AnimatedPage>
       <div>
-        <div
+        {/* <div
           className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 bg-left-center-small md:bg-center text-white py-16 items-center"
+          style={{
+            backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'top center',
+          }}
+        > */}
+        <div
+          className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 bg-left-center-small md:bg-center text-white py-40 items-center"
           style={{
             backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
             backgroundSize: 'cover',

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import AnimatedPage from 'components/AnimatedPage'
 import FirstSection from '../../assets/newaboutpage/daniel-eliashevskyi-T3Neg57nlYs-unsplash-1.jpg'
@@ -73,6 +74,10 @@ return(
                             {/* Using novel Web3 protocols, we seek to bring transparent innovation to the masses. */}
                             Join us on our journey to revolutionize the music industry and create a more transparent and equitable future for artists!
                         </p>
+                    </div>
+
+                    <div className='mt-10'>
+                        <Link className='border-white border-1 p-3 md:w-1/3 text-center hover:bg-white hover:text-black' to="/">Go to Homepage</Link>
                     </div>
                 </div>
             </div>

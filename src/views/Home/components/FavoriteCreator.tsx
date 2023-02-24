@@ -63,7 +63,8 @@ export default function FavoriteCreator() {
                   href="https://www.zionlp.com/launchpad-artists"
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-gradient-to-b font-bold text-white mx-auto from-newpurple-400 to-newpurple-900 text-center py-3 px-8 rounded-xl"
+                  // className="bg-gradient-to-b font-bold text-white mx-auto from-newpurple-400 to-newpurple-900 text-center py-3 px-8 rounded-xl"
+                  className='border-white border-1 p-3 text-center hover:bg-white hover:text-black mx-auto'
                 >
                   <button type="button" className="uppercase ">
                     Launchpad

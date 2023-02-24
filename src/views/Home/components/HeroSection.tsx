@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import PotionImage from '../../../assets/potion-bottle.png'
+// import PotionImage from '../../../assets/potion-bottle.png'
+import PotionImage from '../../../assets/newimage/potion-bottle.png'
 // import HeroImage from '../../../assets/Banner-Twitter-Zionlab-new.jpg'
 // import HeroImage from '../../../assets/home-header.jpg'
 // import HeroImage from '../../../assets/hero-new-background-zion.jpg'
@@ -50,7 +51,10 @@ export default function HeroSection() {
             >
               <span className="text-blue-zion_cyan text-heading font-bold uppercase">Zion Labs</span>
               <br /> 
-              <span className="hidden md:block">Enjoy your Rasta Experience on Web 3</span>
+              <span className="hidden md:block">
+                {/* Enjoy your Rasta Experience on Web 3 */}
+                Explore a new dimension of the Zion experience with Web 3.0 technology.
+                </span>
               <span style={{fontSize: '20px'}}>Now Stake $RASTA to earn upto 125% APR</span>
             </h1>
             <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
@@ -66,14 +70,16 @@ export default function HeroSection() {
             <div className="cta flex flex-col md:flex-row justify-center items-center mt-8 space-y-8 md:space-y-0 md:space-x-8 md:flex" data-aos="fade-right" data-aos-duration="2500">
               <Link
                 to="/liquidity"
-                className="bg-gradient-to-b font-bold w-full md:w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
+                // className="bg-gradient-to-b font-bold w-full md:w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
+                className='border-white border-1 p-3 md:w-1/3 text-center hover:bg-white hover:text-black'
               >
                 <button type="button">Your earnings</button>
               </Link>
 
               <Link
                 to="/stake-zionlions"
-                className="bg-gradient-to-b font-bold w-full md:w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
+                // className="bg-gradient-to-b font-bold w-full md:w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
+                className='border-white border-1 p-3 md:w-1/3 text-center hover:bg-white hover:text-black'
               >
                 <button type="button">Your NFT rewards</button>
               </Link>
@@ -82,9 +88,10 @@ export default function HeroSection() {
                 href="https://send.zionlabs.info/"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-gradient-to-b font-bold w-full md:w-1/3 from-newpurple-400 to-newpurple-900 text-center py-3 rounded-xl"
+                // className="bg-gradient-to-b font-bold w-full md:w-1/3 from-newpurple-400 to-newpurple-900 text-center py-3 rounded-xl"
+                className='border-white border-1 p-3 md:w-1/3 text-center hover:bg-white hover:text-black'
               >
-                <button type="button">Batch NFT Transporter</button>
+                <button type="button">NFT Transporter</button>
               </a>
             </div>
           </div>
