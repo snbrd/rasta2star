@@ -37,7 +37,15 @@ export default function Footer() {
         { label: "Raggadat Cris", path: "https://www.zionlp.com/RaggadatCris/0xE98964c1E4Ff584E3fF44EF3599f0a84803Fa50e/stake" },
       ],
     },
-  
+  ];
+
+  const artistNFTNavigation = [
+    {
+      title: "Artist NFT",
+      item: [
+        { label: "Raggadat Cris", path: "https://www.zionlp.com/list/artist/RaggadatCris" },
+      ],
+    },
   ];
 
 const stakeOne = [
@@ -225,6 +233,20 @@ const usefulLinksThree = [
                 </div>
 
                 {artistNavigation.map((item, index) => {
+            return (
+              <div
+                className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4"
+                key={index}
+              >
+                {item.title === 'Useful Links' ? <p>&nbsp;</p> : item.title }
+                <ul className="list-none mt-0 md:mt-6 text-yellow-rasta">
+                  <ShowLinks items={item.item} />
+                </ul>
+              </div>
+            );
+          })}
+
+{artistNFTNavigation.map((item, index) => {
             return (
               <div
                 className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4"
