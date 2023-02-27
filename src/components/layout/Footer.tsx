@@ -30,6 +30,16 @@ export default function Footer() {
     },
   ]
 
+  const artistNavigation = [
+    {
+      title: "Artists Launchpad",
+      item: [
+        { label: "Raggadat Cris", path: "https://www.zionlp.com/RaggadatCris/0xE98964c1E4Ff584E3fF44EF3599f0a84803Fa50e/stake" },
+      ],
+    },
+  
+  ];
+
 const stakeOne = [
   {
     item: [
@@ -94,7 +104,7 @@ const usefulLinksThree = [
   const socialMedia = [
     { name: 'Twitter', icon: <FaIcons.FaTwitter />, link: 'https://www.twitter.com/zionlabs_info' },
     { name: 'Telegram', icon: <FaIcons.FaTelegramPlane />, link: 'https://t.me/zionlabscommunity' },
-    { name: 'Tik Tok', icon: <Io5Icons.IoLogoTiktok />, link: 'https://www.tiktok.com/@zionlabs.info' },
+    // { name: 'Tik Tok', icon: <Io5Icons.IoLogoTiktok />, link: 'https://www.tiktok.com/@zionlabs.info' },
     { name: 'Medium', icon: <FaIcons.FaMediumM />, link: 'https:///zionlabs.medium.com' },
     { name: 'Instagram', icon: <FaIcons.FaInstagram />, link: 'https://instagram.com/zionlabs_info' },
   ]
@@ -213,6 +223,20 @@ const usefulLinksThree = [
                 )
               })}
                 </div>
+
+                {artistNavigation.map((item, index) => {
+            return (
+              <div
+                className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4"
+                key={index}
+              >
+                {item.title === 'Useful Links' ? <p>&nbsp;</p> : item.title }
+                <ul className="list-none mt-0 md:mt-6 text-yellow-rasta">
+                  <ShowLinks items={item.item} />
+                </ul>
+              </div>
+            );
+          })}
 
         </div>
 
