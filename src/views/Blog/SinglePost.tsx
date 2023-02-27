@@ -53,12 +53,14 @@ export default function SinglePost() {
         <div key={pos.id}>
           
           <div
-            className="h-screen hidden md:flex md:flex-col items-start justify-center px-10 md:px-40 gap-y-5"
+            // className="h-screen hidden md:flex md:flex-col items-start justify-center px-10 md:px-40 gap-y-5"
+            className="py-32 md:py-40 hidden md:flex md:flex-col items-start justify-center px-10 md:px-40 gap-y-5"
             style={{
               backgroundColor: '#00000059',
               backgroundImage: `url(${pos._embedded['wp:featuredmedia'][0].source_url})`,
               backgroundSize: 'cover',
               backgroundBlendMode: 'multiply',
+              backgroundAttachment: 'fixed'
             }}
           >
             <h1 className="text-4xl font-bold hidden" data-aos="fade-right" data-aos-duration="1000">

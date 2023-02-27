@@ -1,19 +1,25 @@
 import React from 'react'
 import Slider from 'react-slick'
-import FirstImage from '../../../assets/homepageslider/BNB-Buyback.jpg'
-import SecondImage from '../../../assets/homepageslider/Builders-Staking.jpg'
-import ThirdImage from '../../../assets/homepageslider/Explorers-Staking.jpg'
-import FourthImage from '../../../assets/homepageslider/Farmers-Flip.jpg'
-import FifthImage from '../../../assets/homepageslider/Farmers-Staking.jpg'
-import SixthImage from '../../../assets/homepageslider/Liquidity-Fair.jpg'
-import SeventhImage from '../../../assets/homepageslider/Zero-Tax.jpg'
-import EightImage from '../../../assets/homepageslider/Zion-Transporter.jpg'
+// import FirstImage from '../../../assets/homepageslider/BNB-Buyback.jpg'
+// import SecondImage from '../../../assets/homepageslider/Builders-Staking.jpg'
+// import ThirdImage from '../../../assets/homepageslider/Explorers-Staking.jpg'
+// import FourthImage from '../../../assets/homepageslider/Farmers-Flip.jpg'
+// import FifthImage from '../../../assets/homepageslider/Farmers-Staking.jpg'
+// import SixthImage from '../../../assets/homepageslider/Liquidity-Fair.jpg'
+// import SeventhImage from '../../../assets/homepageslider/Zero-Tax.jpg'
+// import EightImage from '../../../assets/homepageslider/Zion-Transporter.jpg'
+
+import FirstImage from '../../../assets/newimage/slide-1.jpg'
+import SecondImage from '../../../assets/newimage/slide-2.jpg'
+import ThirdImage from '../../../assets/newimage/slide-3.jpg'
 
 export default function CarouselSlider(){
     const sliderSettings = {
         infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        // slidesToShow: 4,
+        // slidesToScroll: 4,
+        slidesToShow: 2,
+        slidesToScroll: 3,
         autoplay: true,
         speed: 5500,
         autoplaySpeed: 5500,
@@ -62,7 +68,7 @@ export default function CarouselSlider(){
                 <div>
                     <img src={ThirdImage} alt=""/>
                 </div>
-                <div>
+                {/* <div>
                     <img src={FourthImage} alt=""/>
                 </div>
                 <div>
@@ -76,7 +82,7 @@ export default function CarouselSlider(){
                 </div>
                 <div>
                     <img src={EightImage} alt=""/>
-                </div>
+                </div> */}
             </Slider>
         </div>
         </>

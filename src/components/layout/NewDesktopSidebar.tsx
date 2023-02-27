@@ -56,7 +56,8 @@ export default function NewDesktopSidebar() {
     },
     {
       // label: 'Batch NFT Transporter',
-      label: 'NFT Swap',
+      // label: 'NFT Swap',
+      label: 'NFT Center',
       path: 'https://send.zionlabs.info/',
       // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
@@ -105,6 +106,12 @@ export default function NewDesktopSidebar() {
       parent: false,
       child: [],
     },
+    {
+      label: 'Win Big',
+      path: '/win-big',
+      parent: false,
+      child: [],
+    },
     // {
     //   label: 'About',
     //   path: '/about',
@@ -112,12 +119,12 @@ export default function NewDesktopSidebar() {
     //   parent: false,
     //   child: [],
     // },
-    {
-      label: 'Docs',
-      path: 'https://docs.zionlabs.info',
-      parent: false,
-      child: [],
-    },
+    // {
+    //   label: 'Docs',
+    //   path: 'https://docs.zionlabs.info',
+    //   parent: false,
+    //   child: [],
+    // },
     {
       label: 'RastaSwap ★',
       path: 'https://swap.zionlabs.info/',
@@ -151,6 +158,12 @@ export default function NewDesktopSidebar() {
       label: 'Stake Liquidity',
       path: '/liquidity',
       // icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
+    },
+    {
+      label: 'Docs',
+      path: 'https://docs.zionlabs.info',
       parent: false,
       child: [],
     },

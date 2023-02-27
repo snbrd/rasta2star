@@ -56,7 +56,8 @@ export default function Sidebar() {
     },
     {
       // label: 'Batch NFT Transporter',
-      label: 'NFT Swap',
+      // label: 'NFT Swap',
+      label: 'NFT Center',
       path: 'https://send.zionlabs.info/',
       // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
@@ -108,6 +109,12 @@ export default function Sidebar() {
       parent: false,
       child: [],
     },
+    {
+      label: 'Win Big',
+      path: '/win-big',
+      parent: false,
+      child: [],
+    },
     // {
     //   label: 'About',
     //   path: '/about',
@@ -115,14 +122,15 @@ export default function Sidebar() {
     //   parent: false,
     //   child: [],
     // },
+    // {
+    //   label: 'Docs',
+    //   path: 'https://docs.zionlabs.info',
+    //   parent: false,
+    //   child: [],
+    // },
     {
-      label: 'Docs',
-      path: 'https://docs.zionlabs.info',
-      parent: false,
-      child: [],
-    },
-    {
-      label: 'Buy $RASTA ★',
+      // label: 'Buy $RASTA ★',
+      label: 'RASTASwap ★',
       path: 'https://swap.zionlabs.info/',
       parent: false,
       child: [],
@@ -144,7 +152,8 @@ export default function Sidebar() {
     //   ],
     // },
     {
-      label: 'Stake $RASTA',
+      label: 'Stake RASTA',
+      // label: 'Stake $RASTA',
       path: '/pools',
       // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
@@ -154,6 +163,12 @@ export default function Sidebar() {
       label: 'Stake Liquidity',
       path: '/liquidity',
       // icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
+    },
+    {
+      label: 'Docs',
+      path: 'https://docs.zionlabs.info',
       parent: false,
       child: [],
     },

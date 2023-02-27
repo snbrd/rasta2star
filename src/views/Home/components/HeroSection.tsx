@@ -18,14 +18,17 @@ export default function HeroSection() {
   return (
     <div>
       <div
-        className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto md:h-screen"
+      className="flex w-full bg-opacity-50 py-24 md:py-10 lg:py-32 md:justify-between text-white flex-col h-auto badger-screen:h-full"
+        // className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto md:h-screen"
+        
         // className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto"
         style={{
           backgroundColor: '#0000008c',
           backgroundImage: `url(${HeroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'left center',
-          backgroundBlendMode: 'multiply'
+          backgroundBlendMode: 'multiply',
+          backgroundAttachment: 'fixed'
         }}
       >
         {/* <img src={HeroImage} alt='' className="absolute invisible md:visible h-screen w-full object-cover" /> */}

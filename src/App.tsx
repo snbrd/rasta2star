@@ -40,6 +40,8 @@ const Category = lazy(() => import('./views/Blog/Category'))
 const ZionLions = lazy(() => import('./views/ZionLions'))
 const Minter = lazy(()=> import('./views/Minter'))
 
+const WinBig = lazy(() => import('./views/WinBig'))
+
 // This config is required for number formating
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
@@ -147,6 +149,10 @@ const App: React.FC = () => {
 
                 <Route path="/category/:id">
                   <Category />
+                </Route>
+
+                <Route path="/win-big">
+                    <WinBig/>
                 </Route>
 
                 {/* 404 */}

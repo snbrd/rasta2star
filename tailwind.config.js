@@ -709,6 +709,11 @@ module.exports = {
         },
       },
     },
+    extends:{
+      screens: {
+        'badger-screen': {'raw': '(max-height:461px)'}
+      }
+    }
   },
   variants: {
     accessibility: ['responsive', 'focus'],

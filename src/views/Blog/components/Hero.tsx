@@ -5,7 +5,8 @@ export default function Hero() {
   return (
     <>
       <div
-        className="py-32 md:py-0 md:h-screen flex items-center justify-center"
+        // className="py-32 md:py-0 md:h-screen flex items-center justify-center"
+        className="py-32 md:py-40 flex items-center justify-center"
         style={{
           backgroundColor: '#00000059',
           backgroundImage: `url(${Background})`,

@@ -23,11 +23,74 @@ export default function Footer() {
       item: [
         { label: 'Rasta Token', path: '/liquidity' },
         { label: 'Stake Liquidity', path: '/liquidity' },
+        { label: 'Mint', path: '/mint' },
         // { label: 'Mr. Rasta', path: '/liquidity' },
         // { label: 'Ms. Rasta', path: '/liquidity' },
       ],
     },
   ]
+
+const stakeOne = [
+  {
+    item: [
+      { label: 'NFT Staking', path: '/stake-zionlions' },
+        { label: 'Dividend NFT', path: '/stakenft' },
+    ]
+  }
+]
+
+const usefulLinks = [
+  {item: [
+    {
+      label:'NFT Center',
+      path: 'https://send.zionlabs.info/'
+    },
+    {
+      label:'Launchpad',
+      path: 'https://zionlp.com/launchpad-artists'
+    },
+    {
+      label:'RastaSwap ★',
+      path: 'https://swap.zionlabs.info/'
+    },
+    
+  ]}
+]
+
+const usefulLinksTwo = [
+  {item: [
+    {
+      label:'Stake Rasta',
+      path: '/pools'
+    },
+    {
+      label:'Stake Liquidity',
+      path: '/liquidity'
+    },
+    {
+      label:'Docs',
+      path: 'https://docs.zionlabs.info/'
+    },
+  ]}
+]
+
+const usefulLinksThree = [
+  {item: [
+    {
+      label:'Educations',
+      path: '/educations'
+    },
+    {
+      label:'Whitepaper',
+      path: 'https://docs.zionlabs.info/'
+    },
+    {
+      label:'CoinMarketCap',
+      path: 'https://coinmarketcap.com/currencies/rasta-finance/'
+    },
+  ]}
+]
+
   const socialMedia = [
     { name: 'Twitter', icon: <FaIcons.FaTwitter />, link: 'https://www.twitter.com/zionlabs_info' },
     { name: 'Telegram', icon: <FaIcons.FaTelegramPlane />, link: 'https://t.me/zionlabscommunity' },
@@ -72,6 +135,52 @@ export default function Footer() {
               )
             })}
           </div>
+
+          <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4"
+              >
+              Useful Links
+
+              {usefulLinks.map((item) => {
+                return (
+                <ul className="list-none mt-0 md:mt-6 text-yellow-rasta">
+                  <ShowLinks items={item.item}/>
+                </ul>
+              
+                )
+              })}
+              </div>
+
+              <div data-aos="fade-up"
+                data-aos-duration="1000"
+                className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4">
+                   <p>&nbsp;</p>
+              {usefulLinksTwo.map((item) => {
+                return (
+                <ul className="list-none mt-0 md:mt-6 text-yellow-rasta">
+                  <ShowLinks items={item.item}/>
+                </ul>
+              
+                )
+              })}
+              </div>
+
+              <div data-aos="fade-up"
+                data-aos-duration="1000"
+                className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4">
+                   <p>&nbsp;</p>
+              {usefulLinksThree.map((item) => {
+                return (
+                <ul className="list-none mt-0 md:mt-6 text-yellow-rasta">
+                  <ShowLinks items={item.item}/>
+                </ul>
+              
+                )
+              })}
+              </div>
+
           {navigation.map((item, index) => {
             return (
               <div
@@ -80,14 +189,34 @@ export default function Footer() {
                 className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4"
                 key={index}
               >
-                {item.title}
+                {item.title === 'Useful Links' ? <p>&nbsp;</p> : item.title}
                 <ul className="list-none mt-0 md:mt-6 text-yellow-rasta">
                   <ShowLinks items={item.item} />
                 </ul>
               </div>
             )
           })}
+
+<div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4"
+              >
+ <p>&nbsp;</p> 
+
+ {stakeOne.map((item) => {
+                return (
+                <ul className="list-none mt-0 md:mt-6 text-yellow-rasta">
+                  <ShowLinks items={item.item}/>
+                </ul>
+              
+                )
+              })}
+                </div>
+
         </div>
+
+       
 
         <div className="bottom-footer flex space-between pl-0 md:pl-0 pr-6 md:pr-0 flex-col md:flex-row w-full space-between mx-auto">
           <div className="copyright flex-grow-1">

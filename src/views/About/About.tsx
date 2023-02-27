@@ -51,7 +51,7 @@ return(
 
                     </div>
 
-                    <a className='p-5 border-white border-1 mt-5 hover:bg-white hover:text-black' href="https://www.zionlp.com/launchpad-artists">Go to Launchpad</a>
+                    <a className='p-3 border-white border-1 mt-5 hover:bg-white hover:text-black' href="https://www.zionlp.com/launchpad-artists">Go to Launchpad</a>
                 </div>
             </div>
         </div>

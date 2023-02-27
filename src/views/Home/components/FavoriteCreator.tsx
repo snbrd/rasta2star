@@ -21,6 +21,7 @@ export default function FavoriteCreator() {
           backgroundPosition: 'top center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
         }}
       >
         <div className="flex mb-2 w-full md:max-w-screen-xl md:mx-auto items-center md:flex-row text-center">
