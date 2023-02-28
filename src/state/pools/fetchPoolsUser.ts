@@ -92,17 +92,17 @@ const calcuZionLionsNFT = async (account) => {
   }
   const tokenIds = await multicall(airNFTABI, calls)
   const balances = {
-    builder: 0,
-    explorer: 0,
-    farmers: 0,
+    builder: [],
+    explorer: [],
+    farmers: [],
   }
   for (let i = 0; i < tokenIds.length; i++) {
     const is1 = ZionLionsNftIDs.indexOf(new BigNumber(tokenIds[i]).toNumber())
     const is2 = ZionLionsExplorerIDs.indexOf(new BigNumber(tokenIds[i]).toNumber())
     const is3 = ZionLionsFarmersIDs.indexOf(new BigNumber(tokenIds[i]).toNumber())
-    if (is1 !== -1) balances.builder++
-    if (is2 !== -1) balances.explorer++
-    if (is3 !== -1) balances.farmers++
+    if (is1 !== -1) balances.builder.push(new BigNumber(tokenIds[i]).toNumber())
+    if (is2 !== -1) balances.explorer.push(new BigNumber(tokenIds[i]).toNumber())
+    if (is3 !== -1) balances.farmers.push(new BigNumber(tokenIds[i]).toNumber())
   }
 
   return balances
@@ -123,10 +123,10 @@ export const fetchNFTUserBalance = async (account) => {
       return { [farm.id]: airBalance }
     }
     if (farm.type === 'zlnft') {
-      if (farm.id === 5 || farm.id === 8 || farm.id === 9) {
+      if (farm.subType === 'explorer' || farm.subType === 'explorer-adventure') {
         return { [farm.id]: zionlionsBalance.explorer }
       }
-      if (farm.id === 3 || farm.id === 7) {
+      if (farm.subType === 'builder') {
         return { [farm.id]: zionlionsBalance.builder }
       }
       return { [farm.id]: zionlionsBalance.farmers }
@@ -142,6 +142,7 @@ export const fetchStakedBalance = async (account) => {
     params: [account],
   }))
   const stakedAmount = await multicall(airFarmABI, call)
+
   return nftPools.map((farm, index) => ({
     [farm.id]: new BigNumber(stakedAmount[index]).toJSON(),
   }))

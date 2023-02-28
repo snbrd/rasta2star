@@ -1,7 +1,7 @@
 import React from 'react'
 import * as FaIcons from 'react-icons/fa'
 import * as Io5Icons from 'react-icons/io5'
-import AnimatedPage from 'components/AnimatedPage'
+// import AnimatedPage from 'components/AnimatedPage'
 import Heading from './components/Heading'
 import Forms from './components/Forms'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import AnimatedPage from 'components/AnimatedPage'
+// import AnimatedPage from 'components/AnimatedPage'
 import FirstSection from '../../assets/newaboutpage/daniel-eliashevskyi-T3Neg57nlYs-unsplash-1.jpg'
 import SecondSection from '../../assets/newaboutpage/How-does-the-STA-1.jpg'
 import ThirdSection from '../../assets/newaboutpage/geetanjal-khanna-8CwoHpZe3qE-unsplash-1.jpg'

@@ -14,7 +14,7 @@ import { BASE_EXCHANGE_URL } from 'config'
 // import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import DetailsSection from './DetailsSection'
 import CardHeading from './CardHeading'
-import CardActionsContainer from './CardActionsContainer'
+// import CardActionsContainer from './CardActionsContainer'
 import ApyButton from './ApyButton'
 import FarmHarvest from '../CardElements/FarmHarvest'
 import FooterCardFarms from '../CardElements/FooterCardFarms'
@@ -160,7 +160,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, ethereum,
       <div className={` expanded md:block`}>
         {/* <FarmHarvest farmEarned={displayBalance} depositFee={farm.depositFee} pid={pid} earning={earnings} /> */}
       </div>
-      <CardActionsContainer farm={farm} ethereum={ethereum} account={account} addLiquidityUrl={addLiquidityUrl} />
+      {/* <CardActionsContainer farm={farm} ethereum={ethereum} account={account} addLiquidityUrl={addLiquidityUrl} /> */}
       <FooterCardFarms
         farmBscLink={`https://bscscan.com/address/${farm.lpAddresses[process.env.REACT_APP_CHAIN_ID]}`}
         farmValue={totalValueFormated}

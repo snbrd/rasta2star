@@ -7,7 +7,7 @@ import { fetchFarmUserDataAsync } from 'state/farms'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 
 import * as FaIcons from 'react-icons/fa'
-import AnimatedPage from 'components/AnimatedPage'
+// import AnimatedPage from 'components/AnimatedPage'
 import CardsSection from './components/CardSection'
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 import MrRastaImage from '../../assets/new-banner-image.jpg'
@@ -313,7 +313,7 @@ export default function Farms2() {
       <>
       <div className="">
         <div
-          className="flex w-full text-black flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
+          className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-16 items-center"
           style={{
             backgroundImage: `url(${farmPage.page.header_img})`,
             backgroundPosition: 'center',

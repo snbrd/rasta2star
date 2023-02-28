@@ -6,7 +6,7 @@ import PotionImage from '../../../assets/newimage/potion-bottle.png'
 // import HeroImage from '../../../assets/home-header.jpg'
 // import HeroImage from '../../../assets/hero-new-background-zion.jpg'
 import HeroImage from '../../../assets/new-hero-image.jpg'
-import CarouselSlider from './CarouselSlider'
+// import CarouselSlider from './CarouselSlider'
 
 export default function HeroSection() {
   const counter = [

@@ -2,7 +2,7 @@ import React from 'react'
 // import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
-import * as Io5Icons from 'react-icons/io5'
+// import * as Io5Icons from 'react-icons/io5'
 // import Logo from '../../assets/z1-rescaled.png'
 
 export default function Footer() {
@@ -75,8 +75,8 @@ const usefulLinks = [
   ]}
 ]
 
-const usefulLinksTwo = [
-  {item: [
+// const usefulLinksTwo = [
+//   {item: [
     // {
     //   label:'Stake Rasta',
     //   path: '/pools'
@@ -89,8 +89,8 @@ const usefulLinksTwo = [
     //   label:'Docs',
     //   path: 'https://docs.zionlabs.info/'
     // },
-  ]}
-]
+//   ]}
+// ]
 
 const usefulLinksThree = [
   {item: [

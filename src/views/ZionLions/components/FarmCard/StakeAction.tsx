@@ -7,7 +7,7 @@ import useStake from 'hooks/useStake'
 import useUnstake from 'hooks/useUnstake'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { getDecimals } from 'utils/callHelpers'
-import DepositModal from '../DepositModal'
+import DepositModal from '../StakeModal'
 import WithdrawModal from '../WithdrawModal'
 
 interface FarmCardActionsProps {
@@ -41,7 +41,6 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
 
   const [onPresentDeposit] = useModal(
     <DepositModal
-      max={tokenBalance}
       onConfirm={onStake}
       tokenName={tokenName}
       addLiquidityUrl={addLiquidityUrl}

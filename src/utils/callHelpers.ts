@@ -165,6 +165,24 @@ export const stakeAirNFT = async (NftContract, account) => {
     })
 }
 
+export const stakeNFT = async (NftContract, tokens, account) => {
+  return NftContract.methods
+    .stake(tokens)
+    .send({ from: account })
+    .on('transactionHash', (tx) => {
+      return tx.transactionHash
+    })
+}
+
+export const unStakeNFT = async (NftContract, tokens, account) => {
+  return NftContract.methods
+    .unstake(tokens)
+    .send({ from: account })
+    .on('transactionHash', (tx) => {
+      return tx.transactionHash
+    })
+}
+
 export const unstakeAirNFT = async (NftContract, account) => {
   return NftContract.methods
     .unstakeAll()

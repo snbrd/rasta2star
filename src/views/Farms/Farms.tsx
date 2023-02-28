@@ -14,7 +14,7 @@ import useRefresh from 'hooks/useRefresh'
 import { fetchFarmUserDataAsync } from 'state/actions'
 import { QuoteToken } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
-import AnimatedPage from 'components/AnimatedPage'
+// import AnimatedPage from 'components/AnimatedPage'
 
 import ToggleSwitchForStack from 'components/toggle-switch/ToggleSwitchForStack'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'

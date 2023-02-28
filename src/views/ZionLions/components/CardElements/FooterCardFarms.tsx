@@ -6,7 +6,7 @@ type Props = {
   farmValue?: string
   farmBscLink?: string
   addLPurl?: string
-  stackedValue?: string
+  stackedValue?: number
   type?: boolean
   poolId?: number
 }

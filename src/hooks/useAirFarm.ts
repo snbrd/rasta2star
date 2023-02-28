@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { useDispatch } from 'react-redux'
-import { claim, approveAll, stakeAirNFT, unstakeAirNFT } from 'utils/callHelpers'
+import { claim, approveAll, stakeAirNFT, unstakeAirNFT, stakeNFT, unStakeNFT } from 'utils/callHelpers'
 import { fetchNFTPoolsAUserDataAsync } from 'state/pools'
 import airnft from 'config/abi/airToken.json'
 import { AbiItem } from 'web3-utils'
@@ -22,6 +22,36 @@ const useStake = (poolAddress) => {
     }
   }, [account, dispatch, airFarmContract])
 
+  const handleStakeManual = useCallback(
+    async (tokens) => {
+      try {
+        const txHash = await stakeNFT(airFarmContract, tokens, account)
+        dispatch(fetchNFTPoolsAUserDataAsync(account))
+        console.info(txHash)
+        return txHash
+      } catch (error) {
+        console.log(error)
+        return false
+      }
+    },
+    [account, dispatch, airFarmContract],
+  )
+
+  const handleUnStakeManual = useCallback(
+    async (tokens) => {
+      try {
+        const txHash = await unStakeNFT(airFarmContract, tokens, account)
+        dispatch(fetchNFTPoolsAUserDataAsync(account))
+        console.info(txHash)
+        return txHash;
+      } catch (error) {
+        console.log(error)
+        return false;
+      }
+    },
+    [account, dispatch, airFarmContract],
+  )
+
   const handleUnStake = useCallback(async () => {
     try {
       const txHash = await unstakeAirNFT(airFarmContract, account)
@@ -32,7 +62,12 @@ const useStake = (poolAddress) => {
     }
   }, [account, dispatch, airFarmContract])
 
-  return { onStake: handleStake, onUnStake: handleUnStake }
+  return {
+    onStake: handleStake,
+    onStakeManual: handleStakeManual,
+    onUnstakeManual: handleUnStakeManual,
+    onUnStake: handleUnStake,
+  }
 }
 
 export const useClaim = (poolAddress) => {

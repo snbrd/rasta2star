@@ -10,11 +10,15 @@ import zionLionsABI from 'config/abi/zionlionsPool.json'
 import { getWeb3 } from 'utils/web3'
 import { AbiItem } from 'web3-utils'
 import { SEC_PER_YEAR } from 'config'
+import { useModal } from 'rasta-uikit'
+import airFarmABI from 'config/abi/airFarm.json'
+import multicall from 'utils/multicall'
 
 import CardHeading from './CardHeading'
 import FarmHarvest from './CardElements/FarmHarvest'
 import FooterCardFarms from './CardElements/FooterCardFarms'
 import Wallet from './CardElements/Wallet'
+import StakeModal from './StakeModal'
 
 interface HarvestProps {
   pool?: any
@@ -47,6 +51,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
     id,
     icon,
     ribbon,
+    subType,
     balance,
     approved,
     poolName,
@@ -63,9 +68,29 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
 
   const TranslateString = useI18n()
   const { account, status } = useWallet()
-  const [isApproval, SETisApproval] = useState(approved)
   const [rate, setRate] = useState(0)
   const [loading, setLoading] = useState(false)
+  const [isApproval, SETisApproval] = useState(approved)
+  const [depositTime, setDepositTime] = useState('0')
+  const [stakedTokens, setStakedTokens] = useState([])
+
+  useEffect(() => {
+    if (!Number(stakedBalance) || !stakedBalance || !account) return;
+
+    (async () => {
+      const call2 = []
+      for (let i = 0; i < Number(stakedBalance); i++) {
+        call2.push({
+          address: getAddress(contractAddress),
+          name: 'tokenOfOwnerByIndex',
+          params: [account, i],
+        })
+      }
+      const values = await multicall(airFarmABI, call2);
+      setStakedTokens(values);
+    })()
+  }, [stakedBalance, account, contractAddress])
+
   useEffect(() => {
     SETisApproval(approved)
   }, [approved])
@@ -75,8 +100,13 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
       const ZionLionsContract = new web3.eth.Contract(zionLionsABI as unknown as AbiItem, getAddress(contractAddress))
       const _rate = await ZionLionsContract.methods.rewardRate().call()
       setRate(_rate)
+
+      if (id === 10 && account) {
+        const _userInfo = await ZionLionsContract.methods.userInfo(account).call();
+        setDepositTime(_userInfo.depositedAt)
+      }
     })()
-  }, [contractAddress])
+  }, [contractAddress, id, account])
 
   const apy = (() => {
     return new BigNumber(rastaPriceUSD)
@@ -94,7 +124,37 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
   })()
 
   const { onApproveAll } = useApproveAll(nftContractAddress, getAddress(contractAddress))
-  const { onStake, onUnStake } = useStake(getAddress(contractAddress))
+  const { onStake, onStakeManual, onUnStake, onUnstakeManual } = useStake(getAddress(contractAddress))
+
+  const handleStake = async () => {
+    setLoading(true);
+    await onStake()
+    setLoading(false);
+  }
+
+  const handleUnStake = async () => {
+    setLoading(true);
+    await onUnStake()
+    setLoading(false);
+  }
+
+  const [onPresentDeposit] = useModal(
+    <StakeModal
+      onConfirm={onStakeManual}
+      tokenName={poolName}
+      tokens={balance}
+      type="Stake"
+    />,
+  );
+
+  const [onPresentUnStake] = useModal(
+    <StakeModal
+      onConfirm={onUnstakeManual}
+      tokenName={poolName}
+      tokens={stakedTokens}
+      type="Unstake"
+    />,
+  )
 
   // const buttonClass =
   //   'w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-md md:text-xl rounded-md xl:rounded-xl cursor-pointer'
@@ -132,7 +192,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
           <CardHeading lpLabel={poolName} isCommunityFarm={false} farmImage={icon} tokenSymbol="farm.tokenSymbol" />
           {!removed && (
             <div
-              className="w-full text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0"
+              className={`${id === 10 ? "lg:w-2/3 w-full" : "w-full"} text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0`}
               style={{
                 background: '#241f31',
               }}
@@ -147,14 +207,14 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
           )}
         </div>
         <div className={` expanded md:block`}>
-          <FarmHarvest pool={pool} type={status === 'connected'} />
+          <FarmHarvest depositTime={depositTime} pool={pool} type={status === 'connected'} />
         </div>
         {(() => {
           if (!account) {
             return <Wallet />
           }
 
-          if (!balance && (Number(stakedBalance) === 0 || !stakedBalance)) {
+          if (!balance?.length && (Number(stakedBalance) === 0 || !stakedBalance)) {
             return (
               <a href={projectLink} target="_blank" rel="noreferrer">
                 <span className={buttonClass}>
@@ -183,11 +243,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
                 <button
                   type="button"
                   disabled={!isApproval || loading || isFinished}
-                  onClick={async () => {
-                    setLoading(true)
-                    await onStake()
-                    setLoading(false)
-                  }}
+                  onClick={subType === 'farmer' ? handleStake : onPresentDeposit}
                   className={(isFinished ? 'disabled ' : '') + buttonClass}
                 >
                   <span>{TranslateString(758, 'Stake NFTs')}</span>
@@ -201,25 +257,17 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
               <button
                 type="button"
                 disabled={loading}
-                onClick={async () => {
-                  setLoading(true)
-                  await onUnStake()
-                  setLoading(false)
-                }}
+                onClick={subType === "farmer" ? handleUnStake : onPresentUnStake}
                 className={buttonClass}
               >
                 <span>{TranslateString(758, 'Unstake')}</span>
               </button>
               <button
                 type="button"
-                disabled={!isApproval || loading || Number(stakedBalance) === 0 || isFinished || !Number(balance)}
-                onClick={async () => {
-                  setLoading(true)
-                  await onStake()
-                  setLoading(false)
-                }}
+                disabled={!isApproval || loading || Number(stakedBalance) === 0 || isFinished || !Number(balance?.length)}
+                onClick={subType === 'farmer' ? handleStake : onPresentDeposit}
                 className={
-                  !isApproval || loading || Number(stakedBalance) === 0 || isFinished || !Number(balance)
+                  !isApproval || loading || Number(stakedBalance) === 0 || isFinished || !Number(balance?.length)
                     ? `disabled ${buttonClass}`
                     : buttonClass
                 }
