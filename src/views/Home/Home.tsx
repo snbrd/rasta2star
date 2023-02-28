@@ -57,11 +57,11 @@ const Home: React.FC = () => {
           Zion Transporter
                 </h2>
 
-            <div className='px-64 text-center mt-10'>
+            <div className='px-4 md:px-64 text-center mt-10'>
                 <p>Zion Transporter offers seamless and cost-effective NFT transactions on Binance Smart Chain. With our cutting-edge technology, you can bulk send up to 500 NFTs from multiple wallets to multiple recipients while saving on gas fees. Say goodbye to the hassle of individual transfers and hello to Zion Transporter. Try it now for the ultimate NFT transaction experience!</p>
             </div>
 
-            <div className='px-64 text-center mt-10'>
+            <div className='px-10 md:px-64 text-center mt-10 mb-10 md:mb-0'>
             <a className='p-3 border-1 border-white mt-10' href='https://send.zionlabs.info/'>NFT Center</a>
             </div>
 

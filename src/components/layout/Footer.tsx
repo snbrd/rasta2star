@@ -139,7 +139,7 @@ const usefulLinksThree = [
     <div className="w-full bg-black text-white py-10 md:py-12">
       <div className="mx-auto w-10/12">
         <div className="flex flex-col md:flex-row space-between border-b-0 pb-8 mb-4">
-          <div className="flex-grow-1 flex flex-col">
+          <div className="flex-grow-1 flex flex-col lg:w-1/4">
             {/* <LazyLoadImage
               data-aos="fade-up"
               data-aos-duration="1000"
@@ -151,7 +151,7 @@ const usefulLinksThree = [
             <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span>
             {textUnderLogo.map((item, index) => {
               return (
-                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-0 md:pl-0 lg:w-1/2">
+                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-0 md:pl-0 lg:w-3/4">
                   {item}
                 </span>
               )
