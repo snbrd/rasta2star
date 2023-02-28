@@ -18,7 +18,7 @@ export default function HeroSection() {
   return (
     <div>
       <div
-      className="flex w-full bg-opacity-50 py-24 md:py-10 lg:py-32 md:justify-between text-white flex-col h-auto badger-screen:h-full"
+      className="flex w-full bg-opacity-50 py-24 md:py-10 lg:py-40 md:justify-between text-white flex-col h-auto badger-screen:h-full"
         // className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto md:h-screen"
         
         // className="flex w-full bg-opacity-50 py-24 md:py-0 md:justify-between text-white flex-col h-auto"
@@ -39,7 +39,8 @@ export default function HeroSection() {
         </video> */}
 
         <div className="flex w-full px-8 md:px-0 md:max-w-screen-xl md:mx-auto items-center flex-col md:flex-row justify-center h-full z-20 md:mt-24">
-          <div className="leftSection w-full md:w-6/12 md:pl-16">
+          {/* <div className="leftSection w-full md:w-6/12 md:pl-16"> */}
+          <div className="leftSection w-full md:w-3/4 md:pl-16">
             <img
               src={PotionImage}
               className="w-32 text-center block md:hidden m-auto"
@@ -98,7 +99,8 @@ export default function HeroSection() {
               </a>
             </div>
           </div>
-          <div className="images hidden md:block md:w-6/12 text-right">
+          {/* <div className="images hidden md:block md:w-6/12 text-right"> */}
+          <div className="images hidden md:block md:w-1/4 text-right">
             {/* <LazyLoadImage src={HeroImage} alt="Logo" className="w-full mx-auto" effect="blur" /> */}
           </div>
         </div>

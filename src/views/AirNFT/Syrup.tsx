@@ -12,7 +12,8 @@ import { AbiItem } from 'web3-utils'
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 import AnimatedPage from 'components/AnimatedPage'
 import PoolCard from './components/PoolCard'
-import MrRastaImage from '../../assets/new-banner-image.jpg'
+// import MrRastaImage from '../../assets/new-banner-image.jpg'
+import MrRastaImage from '../../assets/newimage/BEATS.jpg'
 
 const web3 = getWeb3()
 const AirNftPoolContract = new web3.eth.Contract(
@@ -88,6 +89,7 @@ const Farm: React.FC = () => {
             backgroundPosition: 'top center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed'
           }}
         >
           <h1 className="text-4xl font-bold text-center">{TranslateString(696, 'Stake RastaDividend NFT')}</h1>

@@ -26,7 +26,8 @@ import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 
 // import MrRastaImage from '../../assets/lion-mr-rasta.jpg'
 // import MrRastaImage from '../../assets/new-banner-image.jpg'
-import MrRastaImage from '../../assets/newimage/stake_token.jpg'
+// import MrRastaImage from '../../assets/newimage/stake_token.jpg'
+import MrRastaImage from '../../assets/newimage/BEATS.jpg'
 import MrsRastaImage from '../../assets/lion-mrs-rasta.jpg'
 
 const Farms: React.FC = () => {
@@ -169,6 +170,7 @@ const Farms: React.FC = () => {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'top center',
+            backgroundAttachment: 'fixed'
           }}
         >
           {/* <h1 className="text-4xl font-bold">{stackedOnly ? 'Mrs. Rasta Pools' : 'Mr. Rasta Pools'}</h1> */}

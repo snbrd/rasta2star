@@ -32,7 +32,7 @@ export default function Footer() {
 
   const artistNavigation = [
     {
-      title: "Artists Launchpad",
+      title: "Beat by Zion",
       item: [
         { label: "Raggadat Cris", path: "https://www.zionlp.com/RaggadatCris/0xE98964c1E4Ff584E3fF44EF3599f0a84803Fa50e/stake" },
       ],
@@ -77,18 +77,18 @@ const usefulLinks = [
 
 const usefulLinksTwo = [
   {item: [
-    {
-      label:'Stake Rasta',
-      path: '/pools'
-    },
-    {
-      label:'Stake Liquidity',
-      path: '/liquidity'
-    },
-    {
-      label:'Docs',
-      path: 'https://docs.zionlabs.info/'
-    },
+    // {
+    //   label:'Stake Rasta',
+    //   path: '/pools'
+    // },
+    // {
+    //   label:'Stake Liquidity',
+    //   path: '/liquidity'
+    // },
+    // {
+    //   label:'Docs',
+    //   path: 'https://docs.zionlabs.info/'
+    // },
   ]}
 ]
 
@@ -102,9 +102,13 @@ const usefulLinksThree = [
       label:'Whitepaper',
       path: 'https://docs.zionlabs.info/'
     },
+    // {
+    //   label:'CoinMarketCap',
+    //   path: 'https://coinmarketcap.com/currencies/rasta-finance/'
+    // },
     {
-      label:'CoinMarketCap',
-      path: 'https://coinmarketcap.com/currencies/rasta-finance/'
+      label:'Docs',
+      path: 'https://docs.zionlabs.info/'
     },
   ]}
 ]
@@ -147,7 +151,7 @@ const usefulLinksThree = [
             <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span>
             {textUnderLogo.map((item, index) => {
               return (
-                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-0 md:pl-0 lg:w-1/3">
+                <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-0 md:pl-0 lg:w-1/2">
                   {item}
                 </span>
               )
@@ -171,7 +175,7 @@ const usefulLinksThree = [
               })}
               </div>
 
-              <div data-aos="fade-up"
+              {/* <div data-aos="fade-up"
                 data-aos-duration="1000"
                 className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4">
                    <p>&nbsp;</p>
@@ -183,7 +187,7 @@ const usefulLinksThree = [
               
                 )
               })}
-              </div>
+              </div> */}
 
               <div data-aos="fade-up"
                 data-aos-duration="1000"

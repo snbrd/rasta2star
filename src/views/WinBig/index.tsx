@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import Accordion from 'views/About/components/Accordion'
-import MrRastaImage from '../../assets/newimage/stake_token.jpg'
+import MrRastaImage from '../../assets/newimage/BEATS-BY-ZION-COMING-SOON-ON-LAUNCHPAD.jpg'
 
 export default function WinBig(){
 
@@ -64,7 +64,8 @@ export default function WinBig(){
             backgroundImage: `url(${MrRastaImage})`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'top center',
+            backgroundAttachment:'fixed',
+
           }}
         >
           <h1 className="text-4xl font-bold text-center">How to Win Big with Zion Lion NFTs</h1>
