@@ -57,7 +57,7 @@ export default function CarouselSlider(){
       };
     return(
         <>
-        <div className='w-full px-12 pb-16 md:px-20 md:mt-16 md:pb-16'>
+        <div className='w-full px-0 pb-16 md:px-20 md:mt-16 md:pb-16'>
             <Slider {...sliderSettings}>
                 <div>
                     <img src={FirstImage} alt=""/>
