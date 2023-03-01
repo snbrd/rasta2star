@@ -45,7 +45,7 @@ const Home: React.FC = () => {
         {/* <Community /> */}
 
         {/* new section | later */}
-        <div className="flex w-full text-white flex-col py-12 md:py-16 px-10 md:px-0 items-center" style={{
+        <div className="zion-transporter flex w-full text-white flex-col py-12 md:py-16 px-10 md:px-0 items-center" style={{
           backgroundColor: '#00000059',
           backgroundImage: `url(${ZTPBackground})`,
           backgroundSize: 'cover',

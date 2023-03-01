@@ -109,3 +109,9 @@ img.about-image{
 .slick-next:before {
   color: #881798 !important;
 }
+
+@media screen and (min-width:1366px){
+    .zion-transporter{
+    background-position: 21vh 100% !important;
+  }
+}
