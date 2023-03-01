@@ -1,9 +1,10 @@
 import React from 'react'
-// import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 // import * as Io5Icons from 'react-icons/io5'
 // import Logo from '../../assets/z1-rescaled.png'
+import Logo from '../../assets/newimage/ZION-logo-white.png'
 
 export default function Footer() {
   // const textUnderLogo = ['@zionlabs_info', 'www.zionlabs.info']
@@ -140,15 +141,15 @@ const usefulLinksThree = [
       <div className="mx-auto w-10/12">
         <div className="flex flex-col md:flex-row space-between border-b-0 pb-8 mb-4">
           <div className="flex-grow-1 flex flex-col lg:w-1/4">
-            {/* <LazyLoadImage
+            <LazyLoadImage
               data-aos="fade-up"
               data-aos-duration="1000"
               src={Logo}
               alt="Logo"
-              className="w-40 pl-6 md:pl-0"
+              className="w-32 pb-4 pl-0 md:pl-0 md:px-4"
               effect="blur"
-            /> */}
-            <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span>
+            />
+            {/* <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span> */}
             {textUnderLogo.map((item, index) => {
               return (
                 <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-0 md:pl-0 lg:w-3/4">

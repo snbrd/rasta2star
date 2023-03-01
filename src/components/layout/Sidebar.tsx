@@ -23,13 +23,14 @@ import {
   // RiMoneyDollarCircleLine,
 } from 'react-icons/all'
 
-// import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import MenuItem from './MenuItem'
 import RastaIcon from '../../assets/menu_coin2.jpg'
 import MRastaIcon from '../../assets/menu_coin1.jpg'
 
 // import Logo from '../../assets/z1-rescaled.png'
+import Logo from '../../assets/newimage/ZION-logo-white.png'
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false)
@@ -335,8 +336,8 @@ export default function Sidebar() {
 
         <div className="text-center">
           <Link to="/">
-            {/* <LazyLoadImage src={Logo} alt="Logo" className="w-40 mx-auto d-block" effect="blur" /> */}
-            <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span>
+            <LazyLoadImage src={Logo} alt="Logo" className="w-40 px-4 mx-auto d-block" effect="blur" />
+            {/* <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span> */}
           </Link>
         </div>
 
