@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-// import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import * as FaIcons from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import WalletConnect from '../../assets/wallet/wallet-connect.png'
 import Sidebar from './Sidebar'
 // import Logo from '../../assets/z1-rescaled.png'
+import Logo from '../../assets/newimage/ZION-logo-white.png';
 import BinanceWallet from '../../assets/wallet/binance-wallet.png'
 import MathWallet from '../../assets/wallet/math-wallet.png'
 import MetaMask from '../../assets/wallet/meta-mask.png'
@@ -84,8 +85,8 @@ export default function Header() {
 
             <div className="logo flex-grow-1 text-center md:hidden">
               <Link to="/">
-                {/* <LazyLoadImage src={Logo} alt="Logo" className="w-32 mx-auto d-block" effect="blur" /> */}
-                <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span>
+                <LazyLoadImage src={Logo} alt="Logo" className="w-full mx-auto d-block px-12" effect="blur" />
+                {/* <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span> */}
               </Link>
             </div>
             <div className="right-cta items-center flex flex-row">
