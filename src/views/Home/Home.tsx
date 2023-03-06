@@ -15,6 +15,8 @@ import ZTPBackground from '../../assets/newimage/background.jpg'
 import ZTPTable from '../../assets/newimage/table.png'
 import nftimage from '../../assets/newimage/home-image.png'
 import ZTPTableMobile from '../../assets/newimage/ZIONLION-POST-2.png'
+import { CardsData } from './components/Data'
+import FlippingCard from './components/Card'
 
 const Home: React.FC = () => {
   return (
@@ -43,6 +45,36 @@ const Home: React.FC = () => {
         {/* <CarouselSlider/> */}
         {/* <Mint /> */}
         {/* <Community /> */}
+
+        {/* card flip */}
+        <div className="flex w-full bg-white text-black flex-col py-12 md:py-16 px-10 md:px-0 items-center">
+          <h2 data-aos="fade-up" data-aos-duration="1000" className="text-2xl text-center md:text-5xl font-bold leading-tight">
+          Big Win competition
+          </h2>
+          {/* <div className='px-4 md:px-64 text-center mt-5'>
+
+          </div> */}
+
+          <div className='px-4 md:px-64 text-center mt-10 flex flex-col items-center justify-center'>
+            <p>Are you ready to roar with the Zion Lion Mint Competition? Mint your own unique digital artwork and enter to win rare and valuable NFTs and cash prizes, and even two Pancake Squad NFT worth up to $3000! Hold your NFT and enter additional mini-competitions for even more chances to win big.</p>
+
+            <Link className='w-1/3 flex mt-10 flex-row text-white py-2 bg-black items-center justify-center space-x-4 cursor-pointer' to="/win-big">Big Win</Link>
+          </div>
+
+          <div className='container mx-auto py-5 md:py-10 md:px-10 mt-5'>
+          <div className='px-4 md:px-64 text-center'>
+          <h3 data-aos="fade-up" data-aos-duration="1000" className="text-xl text-center md:text-3xl font-bold leading-tight mb-4">
+          Current finalist for the big win
+          </h3>
+</div>
+          <div className='grid grid-cols-2 md:grid-cols-6'>
+            {CardsData.map((card,index) => (
+              <FlippingCard key={index} card={card}/>
+            ))}
+          </div>
+          </div>
+        </div>
+      {/* end */}
 
         {/* new section | later */}
         <div className="zion-transporter flex w-full text-white flex-col py-12 md:py-16 px-10 md:px-0 items-center" style={{
