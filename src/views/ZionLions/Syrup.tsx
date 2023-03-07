@@ -58,7 +58,7 @@ const Farm: React.FC = () => {
           <p className="text-white py-3 font-bold text-center">
             {TranslateString(
               696,
-              'Experience the thrill of staking with Zion Lions NFT pools. By staking your tokens in our exclusive pools, you&apos;ll earn rewards and get the chance to participate in our vibrant NFT ecosystem. Discover new artists, collect unique NFTs, and connect with like-minded individuals as you stake your way to success. Join the adventure and stake with Zion Lions today',
+              'Stake with Zion Lions NFT pools for rewards and an exciting NFT ecosystem. Discover new artists, collect unique NFTs, and connect with like-minded individuals. Join the adventure today!',
             )}
           </p>
 
