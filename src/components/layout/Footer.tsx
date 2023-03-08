@@ -61,7 +61,7 @@ const stakeOne = [
 const usefulLinks = [
   {item: [
     {
-      label:'NFT Center',
+      label:'NFT Transporter',
       path: 'https://send.zionlabs.info/'
     },
     {

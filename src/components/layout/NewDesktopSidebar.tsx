@@ -58,7 +58,8 @@ export default function NewDesktopSidebar() {
     {
       // label: 'Batch NFT Transporter',
       // label: 'NFT Swap',
-      label: 'NFT Center',
+      // label: 'NFT Center',
+      label: 'NFT Sender',
       path: 'https://send.zionlabs.info/',
       // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
