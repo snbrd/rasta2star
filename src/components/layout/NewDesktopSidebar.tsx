@@ -103,6 +103,16 @@ export default function NewDesktopSidebar() {
       ],
     },
     {
+      // label: 'Batch NFT Transporter',
+      // label: 'NFT Swap',
+      // label: 'NFT Center',
+      label: 'Farmers Flip',
+      path: 'https://flip.zionlabs.info/',
+      // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
+    },
+    {
       label: 'Launchpad',
       path: 'https://zionlp.com/launchpad-artists',
       parent: false,
@@ -163,12 +173,7 @@ export default function NewDesktopSidebar() {
       parent: false,
       child: [],
     },
-    {
-      label: 'Docs',
-      path: 'https://docs.zionlabs.info',
-      parent: false,
-      child: [],
-    },
+    
     // {
     //   label: 'Launchpad',
     //   path: 'https://zionlp.com/launchpad-artists',
@@ -176,12 +181,7 @@ export default function NewDesktopSidebar() {
     //   child: [],
     // },
     // blog
-    {
-      label: 'Education',
-      path: '/educations',
-      parent: false,
-      child: [],
-    },
+   
     // end blog
     // {
     //   label: 'Zion Launchpad',
@@ -287,6 +287,14 @@ export default function NewDesktopSidebar() {
           path: 'https://coinmarketcap.com/currencies/rasta-finance/',
           label: 'CoinMarketCap',
         },
+         {
+            label: 'Docs',
+            path: 'https://docs.zionlabs.info',
+          },
+          {
+            label: 'Education',
+            path: '/educations',
+          }
 
         // {
         //   path: 'https://rastafinance.medium.com',
