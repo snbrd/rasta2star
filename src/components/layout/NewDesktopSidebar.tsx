@@ -329,7 +329,7 @@ export default function NewDesktopSidebar() {
   return (
     <div className="navbar text-white hidden md:block">
       <span className="menu-bars text-2xl cursor-pointer">
-        <FaBars onClick={showSidebar} className="hidden" />
+        <FaBars onClick={showSidebar} className="hidden s" />
       </span>
       {/* <nav
         className={`h-full w-auto top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
