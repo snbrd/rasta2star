@@ -344,7 +344,7 @@ export default function NewDesktopSidebar() {
         // data-aos="fade-right"
         // data-aos-duration="1000"
       >
-        <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer">
+        <span className="menu-bars absolute right-4 text-3xl text-white a cursor-pointer">
           <FaRegWindowClose onClick={showSidebar} className="hidden" />
         </span>
 
