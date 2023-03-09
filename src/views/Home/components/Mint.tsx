@@ -357,7 +357,7 @@ function Mint() {
                     <table style={{ color: 'var(--accent-text)', fontWeight: 'bold' }} className="table">
                       <tbody>
                         <tr>
-                          <td>Remainder of Collection {CONFIG.SYMBOL}</td>
+                          <td>A  {CONFIG.SYMBOL}</td>
                           <td> costs </td>
                           <td>0.10 {CONFIG.NETWORK.SYMBOL}</td>
                         </tr>
