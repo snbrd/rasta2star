@@ -67,10 +67,23 @@ export default function Sidebar() {
     },
     {
       label: 'NFT Staking',
+      // label: 'Zion Lion NFTs',
       path: '#',
       // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
       parent: true,
       child: [
+        // {
+        //   path: '/stakenft',
+        //   label: 'DividendNFT',
+        // },
+        // {
+        //   path: '/stake-zionlions',
+        //   label: 'ZionBuilders',
+        // },
+        // {
+        //   path: '/stake-zionlions',
+        //   label: 'ZionLion NFT',
+        // },
         {
           path: '/mint',
           label: 'Mint',
@@ -87,23 +100,17 @@ export default function Sidebar() {
           path: '/stakenft',
           label: 'DividendNFT',
         },
-        // {
-        //   path: '/stakenft',
-        //   label: 'DividendNFT',
-        // },
-        // {
-        //   path: '/stake-zionlions',
-        //   label: 'ZionBuilders',
-        // },
-        // {
-        //   path: '/stake-zionlions',
-        //   label: 'ZionLion NFT',
-        // },
-        // {
-        //   path: '/#mintstation',
-        //   label: 'NFT Staking',
-        // },
       ],
+    },
+    {
+      // label: 'Batch NFT Transporter',
+      // label: 'NFT Swap',
+      // label: 'NFT Center',
+      label: 'Farmers Flip',
+      path: 'https://flip.zionlabs.info/',
+      // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
+      parent: false,
+      child: [],
     },
     {
       label: 'Launchpad',
@@ -131,8 +138,7 @@ export default function Sidebar() {
     //   child: [],
     // },
     {
-      // label: 'Buy $RASTA ★',
-      label: 'RASTASwap ★',
+      label: 'RastaSwap ★',
       path: 'https://swap.zionlabs.info/',
       parent: false,
       child: [],
@@ -154,8 +160,7 @@ export default function Sidebar() {
     //   ],
     // },
     {
-      label: 'Stake RASTA',
-      // label: 'Stake $RASTA',
+      label: 'Stake Rasta',
       path: '/pools',
       // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
@@ -168,24 +173,16 @@ export default function Sidebar() {
       parent: false,
       child: [],
     },
-    {
-      label: 'Docs',
-      path: 'https://docs.zionlabs.info',
-      parent: false,
-      child: [],
-    },
-    {
-      label: 'Education',
-      path: '/educations',
-      parent: false,
-      child: [],
-    },
+    
     // {
     //   label: 'Launchpad',
     //   path: 'https://zionlp.com/launchpad-artists',
     //   parent: false,
     //   child: [],
     // },
+    // blog
+   
+    // end blog
     // {
     //   label: 'Zion Launchpad',
     //   path: '#',
@@ -290,6 +287,14 @@ export default function Sidebar() {
           path: 'https://coinmarketcap.com/currencies/rasta-finance/',
           label: 'CoinMarketCap',
         },
+         {
+            label: 'Docs',
+            path: 'https://docs.zionlabs.info',
+          },
+          {
+            label: 'Education',
+            path: '/educations',
+          }
 
         // {
         //   path: 'https://rastafinance.medium.com',
