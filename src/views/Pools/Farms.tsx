@@ -82,7 +82,7 @@ const Farms: React.FC = () => {
         farmList.find((farm) => farm.pid === RASTA_POOL_PID)?.tokenPriceVsQuote || 0,
       )
       const farmsToDisplayWithAPY: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
-        if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !priceData) {
+        if (!farm.tokenAmount || !farm.lpTotalInQuoteToken) {
           return farm
         }
         const cakeRewardPerBlock = RASTA_PER_BLOCK.times(farm.poolWeight)
@@ -153,8 +153,8 @@ const Farms: React.FC = () => {
 
   return (
     // <AnimatedPage>
-      <div>
-        {/* <div
+    <div>
+      {/* <div
           className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 bg-left-center-small md:bg-center text-white py-16 items-center"
           style={{
             backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
@@ -163,49 +163,49 @@ const Farms: React.FC = () => {
             backgroundPosition: 'top center',
           }}
         > */}
-        <div
-          className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 bg-left-center-small md:bg-center text-white py-40 items-center"
-          style={{
-            backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'top center',
-            backgroundAttachment: 'fixed'
-          }}
-        >
-          {/* <h1 className="text-4xl font-bold">{stackedOnly ? 'Mrs. Rasta Pools' : 'Mr. Rasta Pools'}</h1> */}
-          <h1 className="text-4xl font-bold">{stackedOnly ? 'Stake Rasta' : 'Stake Rasta'}</h1>
-        </div>
-        <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-black text-white">
-          <div className=" flex flex-col text-white items-center w-10/12 mx-auto">
-            <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Tokens')}</h2>
-            <p className="text-white">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
-            <div className="toggle-button items-end flex-col flex w-full">
-              <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
-            </div>
-            <div className="card items-center text-center w-full mt-3 md:mt-16 mb-12">
-              <div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 space-4">
-                  <Route exact path={`${path}`}>
-                    {stackedOnly ? farmsList(stackedOnlyFarms, false) : farmsList(activeFarms, false)}
-                  </Route>
-                  {/* <div style={{minHeight:'20vh'}}>&nbsp;</div> */}
-                  {/* <Route exact path={`${path}/history`}>
+      <div
+        className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 bg-left-center-small md:bg-center text-white py-40 items-center"
+        style={{
+          backgroundImage: `url(${stackedOnly ? MrsRastaImage : MrRastaImage})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'top center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* <h1 className="text-4xl font-bold">{stackedOnly ? 'Mrs. Rasta Pools' : 'Mr. Rasta Pools'}</h1> */}
+        <h1 className="text-4xl font-bold">{stackedOnly ? 'Stake Rasta' : 'Stake Rasta'}</h1>
+      </div>
+      <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-black text-white">
+        <div className=" flex flex-col text-white items-center w-10/12 mx-auto">
+          <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Tokens')}</h2>
+          <p className="text-white">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>
+          <div className="toggle-button items-end flex-col flex w-full">
+            <ToggleSwitch id="toggleSwitch" checked={checked} onChange={setChecked} />
+          </div>
+          <div className="card items-center text-center w-full mt-3 md:mt-16 mb-12">
+            <div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 space-4">
+                <Route exact path={`${path}`}>
+                  {stackedOnly ? farmsList(stackedOnlyFarms, false) : farmsList(activeFarms, false)}
+                </Route>
+                {/* <div style={{minHeight:'20vh'}}>&nbsp;</div> */}
+                {/* <Route exact path={`${path}/history`}>
                     {farmsList(inactiveFarms, true)}
                   </Route> */}
-                </div>
               </div>
-              {/* {checked && <CardsSection itemsToRender={list}/>}
+            </div>
+            {/* {checked && <CardsSection itemsToRender={list}/>}
               {showMore && checked &&
                 <button type="button" onClick={loadMore} className="flex items-center justify-center mx-auto mt-8 text-md space-x-4 hover:text-red-rasta" > 
                 <FaIcons.FaChevronCircleDown/>
                 <span>Load More</span> </button>
               }
               {!checked && "No Farm Data Found"} */}
-            </div>
           </div>
         </div>
       </div>
+    </div>
     // </AnimatedPage>
   )
 }
