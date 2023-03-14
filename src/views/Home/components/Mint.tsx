@@ -222,7 +222,7 @@ function Mint() {
     <s.Screen image={CONFIG.SHOW_BACKGROUND ? '' : null} id="mintstation">
 
         <div
-          className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-40 items-center"
+          className="flex w-full flex-col bg-blend-overlay bg-black bg-opacity-50 text-white py-12 md:py-40 items-center"
           style={{
             backgroundImage: `url(${MrRastaImage})`,
             backgroundPosition: 'center center',

@@ -21,7 +21,7 @@ export const Screen = styled(`div`)<{ image: string }>`
     padding-bottom: 12vh;
   }
   @media screen and (max-width: 480px) {
-    padding-top: 10vh;
+    padding-top: 5vh;
     padding-bottom: 7.5vh;
   }
 `
