@@ -47,7 +47,7 @@ const Home: React.FC = () => {
         {/* <Community /> */}
 
         {/* card flip */}
-        <div className="flex w-full bg-white text-black flex-col py-12 md:py-16 px-10 md:px-0 items-center">
+        <div className="flex w-full bg-white text-black flex-col py-12 md:py-16 px-10 md:px-0 items-center s">
           <h2 data-aos="fade-up" data-aos-duration="1000" className="text-2xl text-center md:text-5xl font-bold leading-tight">
           Big Win competition
           </h2>
