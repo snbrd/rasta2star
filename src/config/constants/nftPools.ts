@@ -54,8 +54,8 @@ const nftPools = [
     rewardRate: '2300000000000000',
     projectLink: '/',
     type: 'zlnft',
-    subType: 'explorer',
-    icon: 'explorer_lock.jfif',
+    subType: 'builder',
+    icon: 'builder_lock.jfif',
     harvest: true,
     isFinished: false,
     tokenDecimals: 18,
@@ -107,7 +107,7 @@ const nftPools = [
     tokenDecimals: 18,
     maxDepositAmount: '25000000000000000000000',
     depositFee: 0,
-    ribbon: true,
+    ribbon: false,
     ribbonText: 'New',
   },
   {
@@ -151,7 +151,7 @@ const nftPools = [
     harvest: true,
     isFinished: false,
     tokenDecimals: 18,
-    ribbon: true,
+    ribbon: false,
     ribbonText: 'New',
   },
   {
@@ -175,7 +175,7 @@ const nftPools = [
     tokenDecimals: 18,
     maxDepositAmount: '25000000000000000000000',
     depositFee: 0,
-    ribbon: true,
+    ribbon: false,
     ribbonText: 'New',
   },
   {
