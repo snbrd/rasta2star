@@ -101,7 +101,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
       const _rate = await ZionLionsContract.methods.rewardRate().call()
       setRate(_rate)
 
-      if (id === 10 && account) {
+      if ((id === 10 || id === 11) && account) {
         const _userInfo = await ZionLionsContract.methods.userInfo(account).call();
         setDepositTime(_userInfo.depositedAt)
       }
@@ -192,7 +192,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
           <CardHeading lpLabel={poolName} isCommunityFarm={false} farmImage={icon} tokenSymbol="farm.tokenSymbol" />
           {!removed && (
             <div
-              className={`${id === 10 ? "lg:w-2/3 w-full" : "w-full"} text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0`}
+              className={`${(id === 10 || id === 11) ? "lg:w-2/3 w-full" : "w-full"} text-center apr bg-gray-300 flex flex-col rounded-lg justify-center py-4 px-6  mt-4 md:mt-0`}
               style={{
                 background: '#241f31',
               }}
@@ -257,7 +257,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
               <button
                 type="button"
                 disabled={loading}
-                onClick={subType === "farmer" ? handleUnStake : onPresentUnStake}
+                onClick={(id === 6 || id === 7) ? handleUnStake : onPresentUnStake}
                 className={buttonClass}
               >
                 <span>{TranslateString(758, 'Unstake')}</span>

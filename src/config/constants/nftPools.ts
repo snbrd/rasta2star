@@ -42,7 +42,7 @@ const nftPools = [
     ribbonText: 'New',
   },
   {
-    id: 10,
+    id: 11,
     poolName: 'Builders Construction Pool',
     rewardTokenAddress: getCakeAddress(),
     rewardTokenSymbol: 'RASTA',
