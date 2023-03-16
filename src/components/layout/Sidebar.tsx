@@ -347,7 +347,7 @@ export default function Sidebar() {
           </Link>
         </div>
 
-        <ul className="menu-items text-white mt-0 text-2xl space-y-6 font-light font-sans">
+        <ul className="menu-items text-white mt-0 text-2xl space-y-5 font-light font-sans">
           {menu.map((item, index) => {
             return <MenuItem key={index} menu={item} showSidebar={showSidebar} />
           })}

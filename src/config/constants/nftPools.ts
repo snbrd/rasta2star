@@ -55,7 +55,7 @@ const nftPools = [
     projectLink: '/',
     type: 'zlnft',
     subType: 'builder',
-    icon: 'builder_lock.jfif',
+    icon: 'builder_lock.jpg',
     harvest: true,
     isFinished: false,
     tokenDecimals: 18,

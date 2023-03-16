@@ -21,7 +21,7 @@ export default function MenuItem({ menu, showSidebar }) {
           rel="noreferrer"
         >
           {menu.icon}
-          <span className="flex-grow-1" style={{ fontSize: '18px' }}>
+          <span className="flex-grow-1" style={{ fontSize: '15px' }}>
             {menu.label}
             <h1 style={{ fontSize: '13px', color: 'white' }}>{menu.sublabel}</h1>
           </span>
@@ -29,12 +29,12 @@ export default function MenuItem({ menu, showSidebar }) {
       ) : (
         <Link to={menu.path} className="flex flex-row space-x-0 items-center" onClick={() => showChildren(menu.parent)}>
           {menu.icon}
-          <span className="flex-grow-1" style={{ fontSize: '18px' }}>
+          <span className="flex-grow-1" style={{ fontSize: '15px' }}>
             {menu.label}
             <h1 style={{ fontSize: '13px' }}>{menu.sublabel}</h1>
           </span>
-          {menu.parent && children && <IoIcons.IoIosArrowDropdown style={{ fontSize: '18px' }} />}
-          {menu.parent && !children && <IoIcons.IoIosArrowDropright style={{ fontSize: '18px' }} />}
+          {menu.parent && children && <IoIcons.IoIosArrowDropdown style={{ fontSize: '15px' }} />}
+          {menu.parent && !children && <IoIcons.IoIosArrowDropright style={{ fontSize: '15px' }} />}
         </Link>
       )}
       {menu.child.length > 0 && children && (

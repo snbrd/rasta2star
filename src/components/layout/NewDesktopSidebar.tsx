@@ -355,7 +355,7 @@ export default function NewDesktopSidebar() {
           </Link>
         </div>
 
-        <ul className="menu-items text-white mt-0 text-2xl space-y-6 font-sans font-light">
+        <ul className="menu-items text-white mt-0 text-2xl space-y-5 font-sans font-light">
           {menu.map((item, index) => {
             return <MenuItem key={index} menu={item} showSidebar={showSidebar} />
           })}
