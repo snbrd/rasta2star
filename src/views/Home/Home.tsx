@@ -231,15 +231,15 @@ const Home: React.FC = () => {
                     <ul className="space-y-2">
                       <li>
                         {/* Harvest is locked for 30 days */}
-                        Farmer Upto 15% APR
+                        Farmer Up to 15% APR
                       </li>
                       <li>
                         {/* User receives 70% of Harvest (2 years) */}
-                        Explorer Upto 122%APY
+                        Explorer Up to 122%APY
                       </li>
                       <li>
                         {/* 20% for Marketing */}
-                        Builder Upto 128% APR
+                        Builder Up to 128% APR
                       </li>
                       <li>
                         {/* 10% of all Harvest rewards are put into liquidity for MRASTA/RASTA LP */}

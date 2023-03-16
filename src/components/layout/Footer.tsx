@@ -9,7 +9,7 @@ import Logo from '../../assets/newimage/ZION-logo-white.png'
 export default function Footer() {
   // const textUnderLogo = ['@zionlabs_info', 'www.zionlabs.info']
   // const textUnderLogo = ['Enjoy your Rasta experience on web 3']
-  const textUnderLogo = ['Explore a new dimension of the Zion experience with Web 3.0 technology']
+  const textUnderLogo = ['Explore a new dimension of Web3.0, with the Zion Experience']
   const navigation = [
     {
       title: 'Useful Links',
@@ -275,7 +275,7 @@ const usefulLinksThree = [
               <a href="/" className="text-yellow-rasta">
                 Zion Labs
               </a>{' '}
-              2022 // All Rights Reserved
+              2023 // All Rights Reserved
             </span>
           </div>
           <div className="social-media text-left md:text-right justify-items-end">
