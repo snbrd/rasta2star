@@ -137,29 +137,31 @@ const usefulLinksThree = [
     })
   }
   return (
-    <div className="w-full bg-black text-white py-10 md:py-12">
-      <div className="mx-auto w-10/12">
-        <div className="flex flex-col md:flex-row space-between border-b-0 pb-8 mb-4">
-          <div className="flex-grow-1 flex flex-col lg:w-1/4">
+    <div className="w-full bg-black text-white py-0 md:py-10">
+      <div className="mx-auto w-10/12 flex flex-col md:flex-row items-center justify-center">
+        {/* <div className="flex flex-col md:flex-row space-between border-b-0 pb-8 mb-4"> */}
+        <div className="flex flex-col md:flex-row space-between border-b-0 pb-0 mb-0">
+          <div className="flex-grow-1 flex flex-col lg:w-1/5">
             <LazyLoadImage
-              data-aos="fade-up"
-              data-aos-duration="1000"
+              // data-aos="fade-up"
+              // data-aos-duration="1000"
               src={Logo}
               alt="Logo"
-              className="w-32 pb-4 pl-0 md:pl-0 md:px-4"
+              // className="w-20 pb-4 pl-0 md:pl-0 md:px-4"
+              className="w-32 pb-0 pl-0 md:pl-0 md:px-4"
               effect="blur"
             />
             {/* <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span> */}
-            {textUnderLogo.map((item, index) => {
+            {/* {textUnderLogo.map((item, index) => {
               return (
                 <span data-aos="fade-up" data-aos-duration="1000" key={index} className="pl-0 md:pl-0 lg:w-3/4">
                   {item}
                 </span>
               )
-            })}
+            })} */}
           </div>
 
-          <div
+          {/* <div
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4"
@@ -174,7 +176,7 @@ const usefulLinksThree = [
               
                 )
               })}
-              </div>
+              </div> */}
 
               {/* <div data-aos="fade-up"
                 data-aos-duration="1000"
@@ -190,7 +192,7 @@ const usefulLinksThree = [
               })}
               </div> */}
 
-              <div data-aos="fade-up"
+              {/* <div data-aos="fade-up"
                 data-aos-duration="1000"
                 className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4">
                    <p>&nbsp;</p>
@@ -202,9 +204,9 @@ const usefulLinksThree = [
               
                 )
               })}
-              </div>
+              </div> */}
 
-          {navigation.map((item, index) => {
+          {/* {navigation.map((item, index) => {
             return (
               <div
                 data-aos="fade-up"
@@ -218,9 +220,9 @@ const usefulLinksThree = [
                 </ul>
               </div>
             )
-          })}
+          })} */}
 
-<div
+{/* <div
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4"
@@ -235,9 +237,9 @@ const usefulLinksThree = [
               
                 )
               })}
-                </div>
+                </div> */}
 
-                {artistNavigation.map((item, index) => {
+                {/* {artistNavigation.map((item, index) => {
             return (
               <div
                 className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4"
@@ -249,9 +251,9 @@ const usefulLinksThree = [
                 </ul>
               </div>
             );
-          })}
+          })} */}
 
-{artistNFTNavigation.map((item, index) => {
+{/* {artistNFTNavigation.map((item, index) => {
             return (
               <div
                 className="flex flex-col mr-4 last:mr-0 pl-0 md:pl-0 mt-4"
@@ -263,14 +265,22 @@ const usefulLinksThree = [
                 </ul>
               </div>
             );
-          })}
+          })} */}
 
         </div>
 
        
 
-        <div className="bottom-footer flex space-between pl-0 md:pl-0 pr-6 md:pr-0 flex-col md:flex-row w-full space-between mx-auto">
-          <div className="copyright flex-grow-1">
+        <div className="bottom-footer flex space-between pl-0 md:pl-0 pr-0 md:pr-0 flex-col md:flex-row w-full space-between mx-auto">
+          <div className="copyright flex-grow-1 flex flex-col items-center gap-y-3 md:gap-y-0">
+          {textUnderLogo.map((item, index) => {
+              return (
+                <span key={index} className="pl-0 md:pl-0 text-center md:text-left">
+                  {item}
+                </span>
+              )
+            })}
+            
             <span>
               <a href="/" className="text-yellow-rasta">
                 Zion Labs
@@ -278,7 +288,8 @@ const usefulLinksThree = [
               2023 // All Rights Reserved
             </span>
           </div>
-          <div className="social-media text-left md:text-right justify-items-end">
+          {/* <div className="social-media text-left md:text-right justify-items-end"> */}
+          <div className="social-media text-left md:text-right flex justify-center">
             <div className="md:flex md:flex-row md:space-x-4 gap-4 md:gap-0 mt-4">
               {socialMedia.map((item, index) => {
                 return (

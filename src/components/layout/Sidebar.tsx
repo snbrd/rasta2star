@@ -44,235 +44,98 @@ export default function Sidebar() {
     {
       label: 'Home',
       path: '/',
-      // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
       child: [],
     },
     {
       label: 'About',
-      path: '/about',
-      // icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
-    },
-    {
-      // label: 'Batch NFT Transporter',
-      // label: 'NFT Swap',
-      // label: 'NFT Center',
-      label: 'NFT Sender',
-      path: 'https://send.zionlabs.info/',
-      // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
-    },
-    {
-      label: 'NFT Staking',
-      // label: 'Zion Lion NFTs',
       path: '#',
-      // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
       parent: true,
       child: [
-        // {
-        //   path: '/stakenft',
-        //   label: 'DividendNFT',
-        // },
-        // {
-        //   path: '/stake-zionlions',
-        //   label: 'ZionBuilders',
-        // },
-        // {
-        //   path: '/stake-zionlions',
-        //   label: 'ZionLion NFT',
-        // },
+        {
+          path: '/about',
+          label: 'Zion Labs',
+        },
+        {
+          path: '/win-big',
+          label: 'Win Big',
+        },
+      ]
+    },
+    {
+      label: 'NFT Transporter',
+      path: 'https://send.zionlabs.info/',
+      parent: false,
+      child: [],
+    },
+    {
+      label: 'Mint',
+      path: '#',
+      parent: true,
+      child: [
         {
           path: '/mint',
-          label: 'Mint',
+          label: 'Zion Lions',
         },
         {
-          path: '/stake-zionlions',
-          label: 'NFT Staking',
-        },
-        // {
-        //   path: '/#mintstation',
-        //   label: 'NFT Staking',
-        // },
-        {
-          path: '/stakenft',
-          label: 'DividendNFT',
+          path: 'https://www.zionlp.com/RaggadatCris/Melody_1',
+          label: 'Raggadat Cris',
         },
       ],
     },
     {
-      // label: 'Batch NFT Transporter',
-      // label: 'NFT Swap',
-      // label: 'NFT Center',
+      label: 'Staking',
+      path: '#',
+      parent: true,
+      child: [
+        {
+          path: '/stake-zionlions',
+          label: 'Zion Lion Staking',
+        },
+        {
+          path: '/liquidity',
+          label: 'Liquidity',
+        },
+        {
+          path: '/pools',
+          label: 'Rasta',
+        },
+      ],
+    },
+    {
       label: 'Farmers Flip',
       path: 'https://flip.zionlabs.info/',
-      // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
       child: [],
     },
     {
       label: 'Launchpad',
-      path: 'https://zionlp.com/launchpad-artists',
-      parent: false,
-      child: [],
+      path: '#',
+      parent: true,
+      child: [
+        {
+          path: 'https://www.zionlp.com/launchpad-artists',
+          label: 'Home',
+        },
+        {
+          path: 'https://www.zionlp.com/',
+          label: 'Marketplace',
+        },
+        {
+          path: 'https://www.zionlp.com/RaggadatCris/Melody_1/stake',
+          label: 'Raggadat Cris',
+        },
+      ],
     },
     {
-      label: 'Win Big',
-      path: '/win-big',
-      parent: false,
-      child: [],
-    },
-    // {
-    //   label: 'About',
-    //   path: '/about',
-    //   // icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
-    //   parent: false,
-    //   child: [],
-    // },
-    // {
-    //   label: 'Docs',
-    //   path: 'https://docs.zionlabs.info',
-    //   parent: false,
-    //   child: [],
-    // },
-    {
-      label: 'RastaSwap ★',
+      label: 'Dex',
       path: 'https://swap.zionlabs.info/',
       parent: false,
       child: [],
     },
-    // {
-    //   label: 'Trade',
-    //   path: '#',
-    //   // icon: <IoIosSwap className="inline-block" style={{ width: '32px', height: '32px' }} />,
-    //   parent: true,
-    //   child: [
-    //     {
-    //       path: 'https://swap.zionlabs.info/',
-    //       label: 'RastaSwap ★',
-    //     },
-    //     {
-    //       path: 'https://exchange.zionlabs.info',
-    //       label: 'Old RastaDex',
-    //     },
-    //   ],
-    // },
-    {
-      label: 'Stake Rasta',
-      path: '/pools',
-      // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
-    },
-    {
-      label: 'Stake Liquidity',
-      path: '/liquidity',
-      // icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
-      parent: false,
-      child: [],
-    },
-    
-    // {
-    //   label: 'Launchpad',
-    //   path: 'https://zionlp.com/launchpad-artists',
-    //   parent: false,
-    //   child: [],
-    // },
-    // blog
-   
-    // end blog
-    // {
-    //   label: 'Zion Launchpad',
-    //   path: '#',
-    //   // icon: <GiLion className="inline-block" style={{ width: '32px', height: '32px' }} />,
-    //   parent: true,
-    //   child: [
-    //     {
-    //       path: 'https://zionlp.com/launchpad-artists',
-    //       label: 'Launchpad Artists',
-    //       blank: true,
-    //     },
-    //     {
-    //       path: 'https://zionlp.com',
-    //       label: 'Launchpad NFTs',
-    //     },
-    //   ],
-    // },
-    // {
-    //   label: 'NFT Staking',
-    //   path: '#',
-    //   // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
-    //   parent: true,
-    //   child: [
-    //     {
-    //       path: '/stakenft',
-    //       label: 'DividendNFT',
-    //     },
-    //     // {
-    //     //   path: '/stake-zionlions',
-    //     //   label: 'ZionBuilders',
-    //     // },
-    //     {
-    //       path: '/stake-zionlions',
-    //       label: 'ZionLion NFT',
-    //     },
-    //     // {
-    //     //   path: '/streetpunksnft',
-    //     //   label: 'Streetpunk NFT',
-    //     // },
-    //   ],
-    // },
-    // {
-    //  label: 'Rasino',
-    //  sublabel:'(coming soon)',
-    //  plusLabel: '(Coming Soon)',
-    //  path: '#',
-    //  icon: <RiMoneyDollarCircleLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
-    //  parent: false,
-    //  child: [],
-    // },
-    // {
-    //   label: 'Stake Liquidity',
-    //   path: '/liquidity',
-    //   // icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
-    //   parent: false,
-    //   child: [],
-    // },
-    // {
-    //   label: 'Stake Rasta',
-    //   path: '/pools',
-    //   // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
-    //   parent: false,
-    //   child: [],
-    // },
-    // {
-    //   label: 'StakeRasta',
-    //   path: '/stake',
-    //   // icon: <RiMoneyDollarCircleLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
-    //   parent: false,
-    //   child: [],
-    // },
-    // {
-    //  label: 'TOP LAUNCH PAD',
-    //  sublabel:'(coming soon)',
-    //  path: '#',
-    //  icon: <AiFillStar className="inline-block" style={{ width: '32px', height: '32px' }} />,
-    //  parent: false,
-    //  child: [],
-    // },
-    // {
-    //   label: 'TECHRATE AUDIT',
-    //   path: 'https://zionlabs.info/files/RastaAudit.pdf',
-    //  icon: <FaBook className="inline-block" style={{ width: '32px', height: '32px' }} />,
-    //  parent: false,
-    //  child: [],
-    // },
     {
       label: 'View More...',
       path: '#',
-      // icon: <IoChatboxEllipsesOutline className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: true,
       child: [
         {
@@ -287,7 +150,7 @@ export default function Sidebar() {
           path: 'https://coinmarketcap.com/currencies/rasta-finance/',
           label: 'CoinMarketCap',
         },
-         {
+          {
             label: 'Docs',
             path: 'https://docs.zionlabs.info',
           },
@@ -295,29 +158,294 @@ export default function Sidebar() {
             label: 'Education',
             path: '/educations',
           }
-
-        // {
-        //   path: 'https://rastafinance.medium.com',
-        //   label: 'Medium',
-        // },
-        // {
-        //   path: 'https://dappradar.com/binance-smart-chain/defi/rasta-finance',
-        //   label: 'Dapp Radar',
-        // },
-        // {
-        //   path: 'https://dex.guru/token/0xe3e8cc42da487d1116d26687856e9fb684817c52-bsc',
-        //   label: 'Chart',
-        // },
       ],
     },
     {
       label: 'Contact',
       path: '/contact',
-      // icon: <GoMail className="inline-block" style={{ width: '32px', height: '32px' }} />,
       parent: false,
       child: [],
     },
   ]
+
+  // const menu = [
+  //   {
+  //     label: 'Home',
+  //     path: '/',
+  //     // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //     parent: false,
+  //     child: [],
+  //   },
+  //   {
+  //     label: 'About',
+  //     path: '/about',
+  //     // icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //     parent: false,
+  //     child: [],
+  //   },
+  //   {
+  //     // label: 'Batch NFT Transporter',
+  //     // label: 'NFT Swap',
+  //     // label: 'NFT Center',
+  //     label: 'NFT Sender',
+  //     path: 'https://send.zionlabs.info/',
+  //     // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //     parent: false,
+  //     child: [],
+  //   },
+  //   {
+  //     label: 'NFT Staking',
+  //     // label: 'Zion Lion NFTs',
+  //     path: '#',
+  //     // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
+  //     parent: true,
+  //     child: [
+  //       // {
+  //       //   path: '/stakenft',
+  //       //   label: 'DividendNFT',
+  //       // },
+  //       // {
+  //       //   path: '/stake-zionlions',
+  //       //   label: 'ZionBuilders',
+  //       // },
+  //       // {
+  //       //   path: '/stake-zionlions',
+  //       //   label: 'ZionLion NFT',
+  //       // },
+  //       {
+  //         path: '/mint',
+  //         label: 'Mint',
+  //       },
+  //       {
+  //         path: '/stake-zionlions',
+  //         label: 'NFT Staking',
+  //       },
+  //       // {
+  //       //   path: '/#mintstation',
+  //       //   label: 'NFT Staking',
+  //       // },
+  //       {
+  //         path: '/stakenft',
+  //         label: 'DividendNFT',
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     // label: 'Batch NFT Transporter',
+  //     // label: 'NFT Swap',
+  //     // label: 'NFT Center',
+  //     label: 'Farmers Flip',
+  //     path: 'https://flip.zionlabs.info/',
+  //     // icon: <FaHome className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //     parent: false,
+  //     child: [],
+  //   },
+  //   {
+  //     label: 'Launchpad',
+  //     path: 'https://zionlp.com/launchpad-artists',
+  //     parent: false,
+  //     child: [],
+  //   },
+  //   {
+  //     label: 'Win Big',
+  //     path: '/win-big',
+  //     parent: false,
+  //     child: [],
+  //   },
+  //   // {
+  //   //   label: 'About',
+  //   //   path: '/about',
+  //   //   // icon: <RiErrorWarningFill className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //   //   parent: false,
+  //   //   child: [],
+  //   // },
+  //   // {
+  //   //   label: 'Docs',
+  //   //   path: 'https://docs.zionlabs.info',
+  //   //   parent: false,
+  //   //   child: [],
+  //   // },
+  //   {
+  //     label: 'RastaSwap ★',
+  //     path: 'https://swap.zionlabs.info/',
+  //     parent: false,
+  //     child: [],
+  //   },
+  //   // {
+  //   //   label: 'Trade',
+  //   //   path: '#',
+  //   //   // icon: <IoIosSwap className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //   //   parent: true,
+  //   //   child: [
+  //   //     {
+  //   //       path: 'https://swap.zionlabs.info/',
+  //   //       label: 'RastaSwap ★',
+  //   //     },
+  //   //     {
+  //   //       path: 'https://exchange.zionlabs.info',
+  //   //       label: 'Old RastaDex',
+  //   //     },
+  //   //   ],
+  //   // },
+  //   {
+  //     label: 'Stake Rasta',
+  //     path: '/pools',
+  //     // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //     parent: false,
+  //     child: [],
+  //   },
+  //   {
+  //     label: 'Stake Liquidity',
+  //     path: '/liquidity',
+  //     // icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //     parent: false,
+  //     child: [],
+  //   },
+    
+  //   // {
+  //   //   label: 'Launchpad',
+  //   //   path: 'https://zionlp.com/launchpad-artists',
+  //   //   parent: false,
+  //   //   child: [],
+  //   // },
+  //   // blog
+   
+  //   // end blog
+  //   // {
+  //   //   label: 'Zion Launchpad',
+  //   //   path: '#',
+  //   //   // icon: <GiLion className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //   //   parent: true,
+  //   //   child: [
+  //   //     {
+  //   //       path: 'https://zionlp.com/launchpad-artists',
+  //   //       label: 'Launchpad Artists',
+  //   //       blank: true,
+  //   //     },
+  //   //     {
+  //   //       path: 'https://zionlp.com',
+  //   //       label: 'Launchpad NFTs',
+  //   //     },
+  //   //   ],
+  //   // },
+  //   // {
+  //   //   label: 'NFT Staking',
+  //   //   path: '#',
+  //   //   // icon: <FaDonate className="inline-block" style={{ width: '32px', height: '28px' }} />,
+  //   //   parent: true,
+  //   //   child: [
+  //   //     {
+  //   //       path: '/stakenft',
+  //   //       label: 'DividendNFT',
+  //   //     },
+  //   //     // {
+  //   //     //   path: '/stake-zionlions',
+  //   //     //   label: 'ZionBuilders',
+  //   //     // },
+  //   //     {
+  //   //       path: '/stake-zionlions',
+  //   //       label: 'ZionLion NFT',
+  //   //     },
+  //   //     // {
+  //   //     //   path: '/streetpunksnft',
+  //   //     //   label: 'Streetpunk NFT',
+  //   //     // },
+  //   //   ],
+  //   // },
+  //   // {
+  //   //  label: 'Rasino',
+  //   //  sublabel:'(coming soon)',
+  //   //  plusLabel: '(Coming Soon)',
+  //   //  path: '#',
+  //   //  icon: <RiMoneyDollarCircleLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //   //  parent: false,
+  //   //  child: [],
+  //   // },
+  //   // {
+  //   //   label: 'Stake Liquidity',
+  //   //   path: '/liquidity',
+  //   //   // icon: <RiCoinLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //   //   parent: false,
+  //   //   child: [],
+  //   // },
+  //   // {
+  //   //   label: 'Stake Rasta',
+  //   //   path: '/pools',
+  //   //   // icon: <GiTwoCoins className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //   //   parent: false,
+  //   //   child: [],
+  //   // },
+  //   // {
+  //   //   label: 'StakeRasta',
+  //   //   path: '/stake',
+  //   //   // icon: <RiMoneyDollarCircleLine className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //   //   parent: false,
+  //   //   child: [],
+  //   // },
+  //   // {
+  //   //  label: 'TOP LAUNCH PAD',
+  //   //  sublabel:'(coming soon)',
+  //   //  path: '#',
+  //   //  icon: <AiFillStar className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //   //  parent: false,
+  //   //  child: [],
+  //   // },
+  //   // {
+  //   //   label: 'TECHRATE AUDIT',
+  //   //   path: 'https://zionlabs.info/files/RastaAudit.pdf',
+  //   //  icon: <FaBook className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //   //  parent: false,
+  //   //  child: [],
+  //   // },
+  //   {
+  //     label: 'View More...',
+  //     path: '#',
+  //     // icon: <IoChatboxEllipsesOutline className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //     parent: true,
+  //     child: [
+  //       {
+  //         path: 'https://docs.zionlabs.info',
+  //         label: 'Whitepaper',
+  //       },
+  //       {
+  //         path: 'https://docs.zionlabs.info/faq/rasta-audit',
+  //         label: 'Audit',
+  //       },
+  //       {
+  //         path: 'https://coinmarketcap.com/currencies/rasta-finance/',
+  //         label: 'CoinMarketCap',
+  //       },
+  //        {
+  //           label: 'Docs',
+  //           path: 'https://docs.zionlabs.info',
+  //         },
+  //         {
+  //           label: 'Education',
+  //           path: '/educations',
+  //         }
+
+  //       // {
+  //       //   path: 'https://rastafinance.medium.com',
+  //       //   label: 'Medium',
+  //       // },
+  //       // {
+  //       //   path: 'https://dappradar.com/binance-smart-chain/defi/rasta-finance',
+  //       //   label: 'Dapp Radar',
+  //       // },
+  //       // {
+  //       //   path: 'https://dex.guru/token/0xe3e8cc42da487d1116d26687856e9fb684817c52-bsc',
+  //       //   label: 'Chart',
+  //       // },
+  //     ],
+  //   },
+  //   {
+  //     label: 'Contact',
+  //     path: '/contact',
+  //     // icon: <GoMail className="inline-block" style={{ width: '32px', height: '32px' }} />,
+  //     parent: false,
+  //     child: [],
+  //   },
+  // ]
   // const socialMedia = [
   //   { name: 'Telegram', icon: <FaTelegramPlane />, link: 'https://t.me/zionlabscommunity' },
   //   { name: 'Twitter', icon: <FaTwitter />, link: 'https://www.twitter.com/zionlabs_info' },
@@ -342,7 +470,7 @@ export default function Sidebar() {
 
         <div className="text-center">
           <Link to="/">
-            <LazyLoadImage src={Logo} alt="Logo" className="w-40 px-4 mx-auto d-block" effect="blur" />
+            <LazyLoadImage src={Logo} alt="Logo" className="w-32 px-4 mx-auto d-block" effect="blur" />
             {/* <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span> */}
           </Link>
         </div>
@@ -352,6 +480,27 @@ export default function Sidebar() {
             return <MenuItem key={index} menu={item} showSidebar={showSidebar} />
           })}
         </ul>
+
+        <a href='https://www.zionlp.com/RaggadatCris/Melody_1/stake' rel='nofollow'>
+            
+            <div className='my-2 w-full text-center'>
+              <span className='font-bold text-center'>Featured Artist</span>
+            </div>
+
+            <div className='w-full flex items-center justify-center'>
+              <div className='border-1 mb-5 w-1/2' style={{
+              boxShadow: '4px 4px 0px #F9B262',
+              borderColor: '#E94D75'
+            }}>
+
+                <img src="https://music.api.zlp.rasta.finance/profile/ktliwtnl17aunve_profile.jpeg" alt='raggadat'/>
+
+                <div className='w-full p-3'>
+                  <span className='text-center w-full'>Raggadat Cris</span>
+                </div>
+              </div>
+            </div>
+          </a>
 
         <div>
           {/* <div className="social-media text-center justify-items-end p-4">
@@ -371,6 +520,9 @@ export default function Sidebar() {
               })}
             </div>
           </div> */}
+
+          
+
           <div className="flex items-center">
             <img src={RastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />
             <span className="font-bold">${Math.round(rastaPriceUsd.toNumber() * 1000) / 1000}</span>

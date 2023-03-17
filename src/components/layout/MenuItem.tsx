@@ -18,7 +18,7 @@ export default function MenuItem({ menu, showSidebar }) {
           className="flex flex-row space-x-4 items-center"
           onClick={() => showChildren(menu.parent)}
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer nofollow"
         >
           {menu.icon}
           <span className="flex-grow-1" style={{ fontSize: '15px' }}>
@@ -54,7 +54,7 @@ export default function MenuItem({ menu, showSidebar }) {
                   }
                   if (i.path.includes('http')) {
                     return (
-                      <a href={i.path} onClick={showSidebar} target="_blank" rel="noreferrer">
+                      <a href={i.path} onClick={showSidebar} target="_blank" rel="noreferrer nofollow">
                         <span className="ml-10" style={{ fontSize: '14px', marginLeft: '1rem' }}>
                           {i.label}
                         </span>
