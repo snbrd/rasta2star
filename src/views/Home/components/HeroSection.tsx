@@ -56,7 +56,7 @@ export default function HeroSection() {
               <span className="text-blue-zion_cyan text-heading font-bold uppercase">Zion Labs</span>
               <br /> 
               <span className="hidden md:block">
-                Enjoy your Rasta <br/> Experience on Web 3
+                Enjoy your Zion <br/> Experience on Web 3
                 {/* Welcomes You to Web3.0 */}
                 </span>
               {/* <span style={{fontSize: '20px'}}>We Build Decentralized Applications (dApps) on the Blockchain</span> */}

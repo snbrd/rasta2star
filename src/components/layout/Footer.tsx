@@ -9,7 +9,9 @@ import Logo from '../../assets/newimage/ZION-logo-white.png'
 export default function Footer() {
   // const textUnderLogo = ['@zionlabs_info', 'www.zionlabs.info']
   // const textUnderLogo = ['Enjoy your Rasta experience on web 3']
-  const textUnderLogo = ['Explore a new dimension of Web3.0, with the Zion Experience']
+  // const textUnderLogo = ['Explore a new dimension of Web3.0, with the Zion Experience']
+  const textUnderLogo = ['Enjoy your Zion Experience on Web 3']
+
   const navigation = [
     {
       title: 'Useful Links',
