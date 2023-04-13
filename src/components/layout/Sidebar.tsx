@@ -93,6 +93,10 @@ export default function Sidebar() {
           label: 'Zion Lion Staking',
         },
         {
+          path: '/stakenft',
+          label: 'DividendNFT',
+        },
+        {
           path: '/liquidity',
           label: 'Liquidity',
         },
