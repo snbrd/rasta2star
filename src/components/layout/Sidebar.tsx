@@ -132,7 +132,8 @@ export default function Sidebar() {
       ],
     },
     {
-      label: 'Dex',
+      // label: 'Dex',
+      label: 'Buy',
       path: 'https://swap.zionlabs.info/',
       parent: false,
       child: [],
