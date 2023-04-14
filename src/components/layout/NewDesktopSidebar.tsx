@@ -133,7 +133,7 @@ export default function NewDesktopSidebar() {
     },
     {
       // label: 'Dex',
-      label: 'Dex',
+      label: 'Buy',
       path: 'https://swap.zionlabs.info/',
       parent: false,
       child: [],
