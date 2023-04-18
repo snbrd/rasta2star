@@ -26,6 +26,7 @@ import NewDesktopSidebar from './components/layout/NewDesktopSidebar'
 const Home = lazy(() => import('./views/Home'))
 const Farms = lazy(() => import('./views/Farms'))
 const Pools = lazy(() => import('./views/Pools'))
+const Convert = lazy(() => import('./views/Convert'))
 const Lottery = lazy(() => import('./views/Lottery'))
 const Ifos = lazy(() => import('./views/Ifos'))
 const NotFound = lazy(() => import('./views/NotFound'))
@@ -93,6 +94,9 @@ const App: React.FC = () => {
                 </Route>
                 <Route path="/pools">
                   <Pools />
+                </Route>
+                <Route path="/convert">
+                  <Convert />
                 </Route>
                 <Route path="/stake">
                   <Stake />

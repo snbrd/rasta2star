@@ -56,7 +56,21 @@ const Home: React.FC = () => {
           </div> */}
 
           <div className='px-4 md:px-64 text-center mt-10 flex flex-col items-center justify-center'>
-            <p>Are you ready to roar with the Zion Lion Mint Competition? Mint your own unique digital artwork and enter to win rare and valuable NFTs and cash prizes, and even two Pancake Squad NFT worth up to $3000 each! Hold your NFT and enter additional mini-competitions for even more chances to win big.</p>
+            {/* <p>Are you ready to roar with the Zion Lion Mint Competition? Mint your own unique digital artwork and enter to win rare and valuable NFTs and cash prizes, and even two Pancake Squad NFT worth up to $3000 each! Hold your NFT and enter additional mini-competitions for even more chances to win big.</p> */}
+            <div className='flex flex-col gap-y-3'>
+              
+            <p>
+            Are you ready to roar with the Zion Lion Mint Competition? Mint your own unique digital artwork!
+            </p>
+
+            <p>
+            Enter to win rare, valuable NFTs and cash prizes! 
+            </p>
+
+            <p>
+            Even two Pancake Squad NFT worth up to $3000 each are at stake! Hold your NFT and enter additional mini-competitions for even more chances to win big.
+            </p>
+            </div>
 
             <Link className='w-1/3 flex mt-10 flex-row text-white py-2 bg-black items-center justify-center space-x-4 cursor-pointer' to="/win-big">Big Win</Link>
           </div>
