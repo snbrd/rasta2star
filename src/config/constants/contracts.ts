@@ -115,4 +115,8 @@ export default {
     56: '0xFee8A195570a18461146F401d6033f5ab3380849',
     97: '0x7b7b1583De1DeB32Ce6605F6deEbF24A0671c17C',
   },
+  zionConverter: {
+    56: '',
+    97: '0xAaB19B66EA22C9a66D71FB81AAa0ceff9ACF47C7',
+  },
 }

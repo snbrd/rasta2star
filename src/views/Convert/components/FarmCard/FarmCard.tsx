@@ -20,9 +20,10 @@ export interface FarmWithStakedValue extends Farm {
 interface FarmCardProps {
   pool: any
   account?: string
+  ethereum?: provider
 }
 
-const FarmCard: React.FC<FarmCardProps> = ({ pool, account }) => {
+const FarmCard: React.FC<FarmCardProps> = ({ pool, account, ethereum }) => {
   const farmImage = pool.poolImage.split(' ')[0].toLocaleLowerCase()
 
   return (
@@ -53,7 +54,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ pool, account }) => {
       <div className={` expanded md:block`}>
         <FarmHarvest pool={pool} farmEarned={0} earning={0} />
       </div>
-      <CardActionsContainer account={account} />
+      <CardActionsContainer account={account} ethereum={ethereum} />
       <FooterCardFarms />
     </div>
   )

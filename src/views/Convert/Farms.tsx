@@ -46,6 +46,7 @@ const Farms: React.FC = () => {
                         key={index}
                         pool={pool}
                         account={account}
+                        ethereum={ethereum}
                       />
                     ))
                   }
