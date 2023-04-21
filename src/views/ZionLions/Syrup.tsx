@@ -10,7 +10,8 @@ import ToggleSwitch from 'components/toggle-switch/ToggleSwitch'
 import PoolCard from './components/PoolCard'
 // import MrRastaImage from '../../assets/new-banner-image.jpg'
 // import MrRastaImage from '../../assets/newimage/stake_weight.jpg'
-import MrRastaImage from '../../assets/newimage/Stake-Weight-ZLS.png'
+// import MrRastaImage from '../../assets/newimage/Stake-Weight-ZLS.png'
+import MrRastaImage from '../../assets/newimage/mint-banner-new.jpg'
 import ExplorerPoolCard from './ExplorerComponents/ExplorerPoolCard'
 
 const Farm: React.FC = () => {
@@ -37,7 +38,8 @@ const Farm: React.FC = () => {
         style={{
           backgroundImage: `url(${MrRastaImage})`,
           backgroundPosition: 'center center',
-          backgroundSize: 'cover',
+          // backgroundSize: 'cover',
+          backgroundSize: '100vh',
           backgroundRepeat: 'no-repeat',
         }}
       >
