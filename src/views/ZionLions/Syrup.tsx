@@ -45,7 +45,8 @@ const Farm: React.FC = () => {
       >
         {/* <h1 className="text-4xl font-bold text-center">{TranslateString(696, 'Stake Weight 0.18 BNB')}</h1> */}
       </div>
-      <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-black text-white">
+      {/* <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-black text-white"> */}
+      <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-gradient-to-br from-red-rasta to-blue-zion text-black">
         <div className=" flex flex-col text-white items-center w-10/12 mx-auto">
           <h2 className="font-bold text-xl">{TranslateString(696, 'Stake Purchased ZionLions')}</h2>
           <p className="text-white">{TranslateString(696, 'Earn Brand New Rasta Tokens')}</p>

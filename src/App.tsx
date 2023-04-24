@@ -7,6 +7,7 @@ import { AnimatePresence } from 'framer-motion/dist/framer-motion'
 import BigNumber from 'bignumber.js'
 import { useFetchProfile, useFetchPublicData } from 'state/hooks'
 import About from 'views/About/About'
+import NewPools from 'views/Pools/NewPoolsDemo'
 import Contact from './views/Contact/Contact'
 import Farms2 from './views/Farms/Farms2'
 import AirFarm from './views/AirNFT'
@@ -153,6 +154,10 @@ const App: React.FC = () => {
 
                 <Route path="/win-big">
                     <WinBig/>
+                </Route>
+
+                <Route path="/pools-demo">
+                  <NewPools/>
                 </Route>
 
                 {/* 404 */}
