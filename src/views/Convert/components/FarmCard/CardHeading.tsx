@@ -16,9 +16,9 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({ pool, multiplier, farmI
     <>
       <div className="w-full items-detail flex flex-col border-b-2 pb-2 border-black flex-grow-1">
         <div className="w-full items-detail flex flex-row justify-between">
-          <h2 className="text-2xl font-bold text-left">${pool?.from.name}</h2>
-          <h2 className="text-2xl font-bold text-left">{'- - >'}</h2>
-          <h2 className="text-2xl font-bold text-left">${pool?.to.name}</h2>
+          <h2 className="text-2xl font-bold text-left">${pool?.from}</h2>
+          <h2 className="text-2xl font-bold text-left">{'-->'}</h2>
+          <h2 className="text-2xl font-bold text-left">${pool?.to}</h2>
         </div>
         <div className="coin-info flex  items-center">
           <div className="core py-2 text-left">

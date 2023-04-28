@@ -52,6 +52,17 @@ export const getPointCenterIfoAddress = () => {
 export const getBunnySpecialAddress = () => {
   return getAddress(addresses.bunnySpecial)
 }
-export const getZionConvertAddress = () => {
-  return getAddress(addresses.zionConverter)
+export const getTokenConverterAddress = () => {
+  return getAddress(addresses.tokenConverter)
+}
+export const getAddressByName = (name: string) => {
+  if (name.toLowerCase() === "rasta")
+    return getAddress(addresses.rasta)
+  if (name.toLowerCase() === "mrasta")
+    return getAddress(addresses.mrasta)
+  if (name.toLowerCase() === "zion")
+    return getAddress(addresses.zion)
+  if (name.toLowerCase() === "sound")
+    return getAddress(addresses.sound)
+  return "";
 }

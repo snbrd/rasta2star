@@ -1,17 +1,10 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
-import { communityFarms } from 'config/constants'
 import { Farm } from 'state/types'
 import { provider } from 'web3-core'
-import { useFarmFromSymbol, useFarmUser } from 'state/hooks'
-import { getBalanceNumber } from 'utils/formatBalance'
-// import { QuoteToken } from 'config/constants/types'
-import { BASE_EXCHANGE_URL } from 'config'
-// import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import CardHeading from './CardHeading'
 import CardActionsContainer from './CardActionsContainer'
 import FarmHarvest from '../CardElements/FarmHarvest'
-import FooterCardFarms from '../CardElements/FooterCardFarms'
 
 export interface FarmWithStakedValue extends Farm {
   apy?: BigNumber
@@ -52,10 +45,10 @@ const FarmCard: React.FC<FarmCardProps> = ({ pool, account, ethereum }) => {
         </div>
       </div>
       <div className={` expanded md:block`}>
-        <FarmHarvest pool={pool} farmEarned={0} earning={0} />
+        <FarmHarvest pool={pool} />
       </div>
-      <CardActionsContainer account={account} ethereum={ethereum} />
-      <FooterCardFarms />
+      <CardActionsContainer account={account} ethereum={ethereum} pool={pool} />
+      {/* <FooterCardFarms /> */}
     </div>
   )
 }

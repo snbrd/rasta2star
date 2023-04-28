@@ -1,15 +1,15 @@
-import React, { useMemo, useState, useCallback } from 'react'
+import React, { useMemo, useState, useCallback, useEffect } from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { provider } from 'web3-core'
 import { getContract } from 'utils/erc20'
-import { getZionConvertAddress } from 'utils/addressHelpers'
-import { Farm } from 'state/types'
-import { useFarmFromSymbol, useFarmUser } from 'state/hooks'
+import { getAddressByName, getTokenConverterAddress } from 'utils/addressHelpers'
 import * as FaIcons from 'react-icons/fa'
 import useI18n from 'hooks/useI18n'
-import { useApprove } from 'hooks/useApprove'
-import StakeAction from './StakeAction'
+import useTokenBalance from 'hooks/useTokenBalance'
+import { useTokenConverterApprove } from 'hooks/useApprove'
+import { useIfoAllowance } from 'hooks/useAllowance'
+import useConvert from 'hooks/useConvert'
 import Wallet from '../CardElements/Wallet'
 
 const Action = styled.div`
@@ -19,23 +19,32 @@ const Action = styled.div`
 interface FarmCardActionsProps {
   account?: string
   ethereum?: provider
+  pool: any
 }
 
-const CardActions: React.FC<FarmCardActionsProps> = ({ account, ethereum }) => {
+const CardActions: React.FC<FarmCardActionsProps> = ({ account, ethereum, pool }) => {
   const TranslateString = useI18n()
   const [requestedApproval, setRequestedApproval] = useState(false)
-  // const { pid, lpAddresses } = useFarmFromSymbol(farm.lpSymbol)
-  // const { allowance, tokenBalance, stakedBalance } = useFarmUser(pid)
-  const contractAddress = getZionConvertAddress()
+  const [convertPending, setConvertPending] = useState(false)
+  const tokenAddress = getAddressByName(pool.from);
   // const lpName = farm.lpSymbol.toUpperCase()
-  // const isApproved = account && allowance && allowance.isGreaterThan(0)
-  const isApproved = false;
 
-  const convertContract = useMemo(() => {
-    return getContract(ethereum as provider, contractAddress)
-  }, [ethereum, contractAddress])
+  const tokenContract = useMemo(() => {
+    return getContract(ethereum as provider, tokenAddress)
+  }, [ethereum, tokenAddress])
 
-  const { onApprove } = useApprove(convertContract)
+  const { onApprove } = useTokenConverterApprove(tokenContract)
+  const { onConvert } = useConvert()
+  const allowance = useIfoAllowance(tokenContract, getTokenConverterAddress());
+  const tokenBalance = useTokenBalance(getAddressByName(pool.from))
+  const [isApproved, setIsApproved] = useState(false)
+
+  useEffect(() => {
+    const getApprovedStatus = async () => {
+      setIsApproved(account && allowance && allowance.isGreaterThan(0))
+    }
+    getApprovedStatus()
+  }, [account, allowance, requestedApproval])
 
   const handleApprove = useCallback(async () => {
     try {
@@ -44,32 +53,39 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ account, ethereum }) => {
       setRequestedApproval(false)
     } catch (e) {
       console.error(e)
+      setRequestedApproval(false)
     }
   }, [onApprove])
 
+  const handleConvert = useCallback(async () => {
+    try {
+      if (new BigNumber(tokenBalance).isGreaterThan(0)) {
+        setConvertPending(true)
+        await onConvert(getAddressByName(pool.from), getAddressByName(pool.to), tokenBalance);
+        setConvertPending(false)
+      } else {
+        // eslint-disable-next-line no-alert
+        alert(`You have no ${pool.from} token to convert.`)
+      }
+      setConvertPending(false)
+    } catch (e) {
+      console.error(e)
+      setConvertPending(false)
+    }
+  }, [onConvert, pool, tokenBalance])
+  
   const renderApprovalOrConvertButton = () => {
     return isApproved ? (
-      // <StakeAction
-      //   stakedBalance={stakedBalance}
-      //   tokenBalance={tokenBalance}
-      //   tokenName={lpName}
-      //   pid={pid}
-      //   addLiquidityUrl={addLiquidityUrl}
-      // />
-      ""
+      <button
+        type="button"
+        disabled={convertPending}
+        onClick={handleConvert}
+        className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-newpurple-400 to-newpurple-900 items-center justify-center space-x-4 rounded-xl cursor-pointer"
+      >
+        <FaIcons.FaWallet />
+        <span>{TranslateString(758, 'Convert')}</span>
+      </button>
     ) : (
-      // <button
-      //   type="button"
-      //   disabled={requestedApproval}
-      //   onClick={handleApprove}
-      //   className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-yellow-rasta to-green-rasta items-center justify-center space-x-4 text-xl rounded-xl cursor-pointer"
-      // >
-      // <button
-      //   type="button"
-      //   disabled={requestedApproval}
-      //   onClick={handleApprove}
-      //   className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-blue-zion to-blue-zion_cyan items-center justify-center space-x-4 rounded-xl cursor-pointer"
-      // >
       <button
         type="button"
         disabled={requestedApproval}
@@ -77,7 +93,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ account, ethereum }) => {
         className="w-full flex flex-row text-white py-2 bg-gradient-to-r from-newpurple-400 to-newpurple-900 items-center justify-center space-x-4 rounded-xl cursor-pointer"
       >
         <FaIcons.FaWallet />
-        <span>{TranslateString(758, 'Approve Contract')}</span>
+        <span>{TranslateString(758, 'Approve Convert')}</span>
       </button>
     )
   }

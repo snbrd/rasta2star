@@ -34,7 +34,7 @@ const Farms: React.FC = () => {
       <div className="pt-8 py-0 md:pt-8 md:py-8 w-full bg-black text-white">
         <div className=" flex flex-col text-white items-center w-10/12 mx-auto">
           <h2 className="font-bold text-xl">{TranslateString(696, 'Use the Terminals below to Convert your $RASTA & $MRASTA Tokens')}</h2>
-          <p className="text-white">{TranslateString(696, 'Conversion will take place between XX/XX/XXXX and YY/YY/YYYY')}</p>
+          {/* <p className="text-white">{TranslateString(696, 'Conversion will take place between XX/XX/XXXX and YY/YY/YYYY')}</p> */}
    
           <div className="card items-center text-center w-full mt-3 md:mt-16 mb-12">
             <div>
