@@ -116,7 +116,7 @@ export default {
     97: '0x7b7b1583De1DeB32Ce6605F6deEbF24A0671c17C',
   },
   tokenConverter: {
-    56: '',
+    56: '0x5bE111400301Db3C31d31CB1A9D6d24eAA4315Be',
     97: '0x266D307A4c24297A9652753eA98729F534511cA2',
   },
   zion: {
