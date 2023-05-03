@@ -5,6 +5,7 @@ import { provider } from 'web3-core'
 import CardHeading from './CardHeading'
 import CardActionsContainer from './CardActionsContainer'
 import FarmHarvest from '../CardElements/FarmHarvest'
+import FooterCardFarms from '../CardElements/FooterCardFarms'
 
 export interface FarmWithStakedValue extends Farm {
   apy?: BigNumber
@@ -48,7 +49,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ pool, account, ethereum }) => {
         <FarmHarvest pool={pool} />
       </div>
       <CardActionsContainer account={account} ethereum={ethereum} pool={pool} />
-      {/* <FooterCardFarms /> */}
+      <FooterCardFarms pool={pool} />
     </div>
   )
 }
