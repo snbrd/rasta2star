@@ -191,3 +191,12 @@ export const unstakeAirNFT = async (NftContract, account) => {
       return tx.transactionHash
     })
 }
+
+export const convert = async (contract, src: string, dst: string, amount: any, account: any) => {
+  return contract.methods
+    .convertToken(src, dst, new BigNumber(amount).toString())
+    .send({ from: account })
+    .on('transactionHash', (tx) => {
+      return tx.transactionHash
+    })
+}

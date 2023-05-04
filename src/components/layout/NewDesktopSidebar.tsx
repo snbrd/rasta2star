@@ -77,6 +77,13 @@ export default function NewDesktopSidebar() {
           path: '/mint',
           label: 'Zion Lions',
         },
+      ],
+    },
+    {
+      label: 'Staking',
+      path: '#',
+      parent: true,
+      child: [
         {
           path: 'https://www.zionlp.com/RaggadatCris/Melody_1',
           label: 'Raggadat Cris',
