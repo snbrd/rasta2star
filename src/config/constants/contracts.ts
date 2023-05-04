@@ -1,6 +1,6 @@
 export default {
   rasta: {
-    97: '0xeE14CBfAaD3BADa6fc9886bf2BA11D1c5F373DF2',
+    97: '0x19f6746BCeb90D625A2E24b5fDA820cA3B994260',
     56: '0xe3e8cc42da487d1116d26687856e9fb684817c52',
   },
   syrup: {
@@ -73,7 +73,7 @@ export default {
   },
   mrasta: {
     56: '0xeaa4a2469a8471bd8314b2ff63c1d113fe8114ba',
-    97: '',
+    97: '0x19f6746BCeb90D625A2E24b5fDA820cA3B994260',
   },
   cns: {
     56: '0xF6Cb4ad242BaB681EfFc5dE40f7c8FF921a12d63',
@@ -114,5 +114,17 @@ export default {
   bunnySpecial: {
     56: '0xFee8A195570a18461146F401d6033f5ab3380849',
     97: '0x7b7b1583De1DeB32Ce6605F6deEbF24A0671c17C',
+  },
+  tokenConverter: {
+    56: '0x5bE111400301Db3C31d31CB1A9D6d24eAA4315Be',
+    97: '0x266D307A4c24297A9652753eA98729F534511cA2',
+  },
+  zion: {
+    56: '0x1E5AcF2b8f7886a69850d13bE861Efdb26D2C0A6',
+    97: '0x8ec4a1e5d2C8118Ca7860340d108747a0a30afCF',
+  },
+  sound: {
+    56: '0xB50B04Ed85FfdCeB61BFe2b44004FdfF87586C1A',
+    97: '0x8ec4a1e5d2C8118Ca7860340d108747a0a30afCF',
   },
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import useMRastaPrice from 'hooks/useMRastaPrice'
 import { usePriceRastaBusd } from 'state/hooks'
 import { Link } from 'react-router-dom'
@@ -34,11 +34,19 @@ import Logo from '../../assets/newimage/ZION-logo-white.png'
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false)
+  const [mrastaPrice, setMrastaPrice] = useState(0)
+  const mRastaPriceUsd = useMRastaPrice()
+  const rastaPriceUsd = usePriceRastaBusd()
+
   const showSidebar = () => {
     setSidebar(!sidebar)
   }
-  const rastaPriceUsd = usePriceRastaBusd()
-  const mRastaPriceUsd = useMRastaPrice()
+
+  useEffect(() => {
+    if (mRastaPriceUsd > 0) {
+      setMrastaPrice(mRastaPriceUsd);
+    }
+  }, [mRastaPriceUsd])
 
   const menu = [
     {
@@ -465,9 +473,8 @@ export default function Sidebar() {
         <FaBars onClick={showSidebar} className="md:hidden" />
       </span>
       <nav
-        className={`h-full w-full top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
-          sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
-        }`}
+        className={`h-full w-auto top-0 py-6 px-8 bg-gray-rasta z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
+          }`}
       >
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer">
           <FaRegWindowClose onClick={showSidebar} />
@@ -534,7 +541,7 @@ export default function Sidebar() {
           </div>
           <div className="flex items-center mt-2">
             <img src={MRastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />
-            <span className="font-bold">${Math.round(mRastaPriceUsd * 1000) / 1000}</span>
+            <span className="font-bold">${Math.round(mrastaPrice * 1000) / 1000}</span>
           </div>
         </div>
       </nav>
