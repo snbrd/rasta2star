@@ -21,17 +21,32 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({ pool, multiplier, farmI
           <h2 className="text-2xl font-bold text-left">${pool?.to}</h2>
         </div>
         <div className="coin-info flex  items-center">
-          <div className="core py-2 text-left">
-            <div className="rounded-full w-12 h-12  ">
-              <div className="rounded-full w-12 h-12  ">
-                <span className="text-white text-3xl flex flex-col pt-2 items-center justify-center">
-                  <Image
+          <div className="core py-2 text-left w-full">
+            {/* <div className="rounded-full w-12 h-12  ">
+              <div className="rounded-full w-12 h-12  "> */}
+            <div className="rounded-full w-full h-16  ">
+              <div className="rounded-full w-full h-16  ">
+                {/* <span className="text-white text-3xl flex flex-col pt-2 items-center justify-center"> */}
+                <span className="text-white text-3xl flex flex-row pt-2 items-center justify-between w-full">
+                  {/* <Image
                     src={`/images/farms/${farmImage}.png`}
                     alt={tokenSymbol}
                     width={64}
                     marginTop={-2}
                     height={48}
                   />
+
+                  <Image src={`/images/tokens/${pool.logo}`} alt={tokenSymbol} width={64} marginTop={-2} height={48} /> */}
+
+                  <Image
+                    src={`/images/farms/${farmImage}.png`}
+                    alt={tokenSymbol}
+                    width={48}
+                    marginTop={-2}
+                    height={48}
+                  />
+
+                  <Image src={`/images/tokens/${pool.logo}`} alt={tokenSymbol} width={48} marginTop={-2} height={48} />
                 </span>
               </div>
             </div>

@@ -5,7 +5,7 @@ const converts = [
     to: 'ZION',
     poolImage: 'rasta',
     ratio: '1:1',
-    logo: "zion.png",
+    logo: 'Z-zion.png',
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const converts = [
     to: 'SOUND',
     poolImage: 'mrasta',
     ratio: '1:1',
-    logo: "sound.png",
+    logo: 'S-Sound.png',
   },
 ]
 
