@@ -26,7 +26,7 @@ const useRastaPrice = () => {
       setPrice(0)
     }
   }, [price, rastaPrice])
- 
+
   useEffect(() => {
     if (mrastaRastaPairContract) {
       fetchBalance()

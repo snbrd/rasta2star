@@ -14,7 +14,6 @@ import {
   getPointCenterIfoAddress,
   getBunnySpecialAddress,
   getAirNftAddress,
-  getTokenConverterAddress,
 } from 'utils/addressHelpers'
 import { poolsConfig } from 'config/constants'
 import { PoolCategory } from 'config/constants/types'
@@ -25,7 +24,6 @@ import pancakeRabbits from 'config/abi/pancakeRabbits.json'
 import lottery from 'config/abi/lottery.json'
 import lotteryTicket from 'config/abi/lotteryNft.json'
 import masterChef from 'config/abi/masterchef.json'
-import tokenConverter from 'config/abi/tokenConverter.json'
 import sousChef from 'config/abi/sousChef.json'
 import sousChefV2 from 'config/abi/sousChef.v2.json'
 import sousChefBnb from 'config/abi/sousChefBnb.json'
@@ -93,11 +91,6 @@ export const useLotteryTicket = () => {
 export const useMasterchef = () => {
   const abi = masterChef as unknown as AbiItem
   return useContract(abi, getMasterChefAddress())
-}
-
-export const useTokenConverter = () => {
-  const abi = tokenConverter as unknown as AbiItem
-  return useContract(abi, getTokenConverterAddress())
 }
 
 export const useSousChef = (id) => {

@@ -66,7 +66,6 @@ export default function FarmHarvest({ pool, depositTime, type }: Props) {
         </div>
         <div className='w-full flex flex-col gap-3'>
           {
-
             (id === 10 || id === 11) && Number(depositTime) > 0 && Number(stakedBalance) > 0 && lockDate && (
               <span className="text-newpurple-400 text-left text-sm">
                 {
