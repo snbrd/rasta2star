@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import { Link } from 'react-router-dom'
@@ -19,6 +19,19 @@ import { CardsData } from './components/Data'
 import FlippingCard from './components/Card'
 
 const Home: React.FC = () => {
+
+  const [count, setCount] = useState(6)
+
+  const viewMore = () => {
+    setCount(count+6)
+  }
+
+  const showLess = () => {
+    setCount(6)
+  }
+
+  const visibleLions = CardsData.slice(0,count)
+
   return (
     // <Page>
     //   <Hero>
@@ -82,16 +95,29 @@ const Home: React.FC = () => {
           </h3>
 </div>
           <div className='grid grid-cols-2 md:grid-cols-6'>
-            {CardsData.map((card,index) => (
+            {/* {CardsData.map((card,index) => ( */}
+            {visibleLions.map((card,index) =>(
               <FlippingCard key={index} card={card}/>
             ))}
+              
           </div>
+
+          {visibleLions.length < CardsData.length ? 
+            <div className='w-full flex flex-col justify-center items-center'>
+              <button className='w-1/3 flex mt-10 flex-row text-white py-2 bg-black items-center justify-center space-x-4 cursor-pointer' type='button' onClick={viewMore}>Load More</button> 
+
+            </div>
+            :
+            <div className='w-full flex flex-col justify-center items-center'>
+              <button className='w-1/3 flex mt-10 flex-row text-white py-2 bg-black items-center justify-center space-x-4 cursor-pointer' type='button' onClick={showLess}>Show Less</button>  
+            </div>
+            }
           </div>
         </div>
       {/* end */}
 
         {/* new section | later */}
-        <div className="zion-transporter flex w-full text-white flex-col py-12 md:py-16 px-10 md:px-0 items-center" style={{
+        {/* <div className="zion-transporter flex w-full text-white flex-col py-12 md:py-16 px-10 md:px-0 items-center" style={{
           backgroundColor: '#00000059',
           backgroundImage: `url(${ZTPBackground})`,
           backgroundSize: 'cover',
@@ -115,7 +141,7 @@ const Home: React.FC = () => {
             <img src={ZTPTable} alt="table" className='hidden md:block -mt-20' />
             <img src={ZTPTableMobile} alt="table" className='block md:hidden' />
           </div>
-        </div>
+        </div> */}
 
         {/* end new section | later */}
 

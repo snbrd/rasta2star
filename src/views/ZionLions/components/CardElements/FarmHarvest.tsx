@@ -15,6 +15,8 @@ export default function FarmHarvest({ pool, depositTime, type }: Props) {
   const { id, pendingReward, stakedBalance, contractAddress, projectLink, rewardTokenSymbol } = pool;
 
   const handleTime = (d) => {
+    if (d < 0) return null;
+
     let delta = Math.abs(d) / 1000;
     const days = Math.floor(delta / 86400);
     delta -= days * 86400;
@@ -29,7 +31,17 @@ export default function FarmHarvest({ pool, depositTime, type }: Props) {
     return { days, hours, minutes, seconds };
   }
 
-  const lockDate = handleTime(new Date(depositTime * 1000 + 2592000000) as any - new Date().getTime());
+  const utcTimeValue = Date.UTC(
+    new Date().getUTCFullYear(),
+    new Date().getUTCMonth(),
+    new Date().getUTCDate(),
+    new Date().getUTCHours(),
+    new Date().getUTCMinutes(),
+    new Date().getUTCSeconds(),
+    new Date().getUTCMilliseconds()
+  );
+
+  const lockDate = handleTime(new Date(depositTime * 1000 + 2592000000).getTime() as any - utcTimeValue);
 
   return (
     <div>
@@ -54,7 +66,8 @@ export default function FarmHarvest({ pool, depositTime, type }: Props) {
         </div>
         <div className='w-full flex flex-col gap-3'>
           {
-            (id === 10 || id === 11) && Number(depositTime) > 0 && Number(stakedBalance) > 0 && (
+
+            (id === 10 || id === 11) && Number(depositTime) > 0 && Number(stakedBalance) > 0 && lockDate && (
               <span className="text-newpurple-400 text-left text-sm">
                 {
                   lockDate.days === 0 ? `Locked for ${lockDate.hours} Hours` : `Locked for ${lockDate.days} Days`

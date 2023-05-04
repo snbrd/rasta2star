@@ -77,12 +77,6 @@ export default function Sidebar() {
       child: [],
     },
     {
-      label: 'Convert',
-      path: '/convert',
-      parent: false,
-      child: [],
-    },
-    {
       label: 'Mint',
       path: '#',
       parent: true,
