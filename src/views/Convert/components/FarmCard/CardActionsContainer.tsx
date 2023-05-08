@@ -41,7 +41,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ account, ethereum, pool }
 
   useEffect(() => {
     const getApprovedStatus = async () => {
-      setIsApproved(account && allowance && allowance.isGreaterThan(tokenBalance))
+      setIsApproved(account && allowance && allowance.isGreaterThan(0) && allowance.eq(tokenBalance))
     }
     getApprovedStatus()
   }, [account, allowance, requestedApproval, tokenBalance])
