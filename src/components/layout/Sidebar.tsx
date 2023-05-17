@@ -535,14 +535,14 @@ export default function Sidebar() {
 
           
 
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             <img src={RastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />
             <span className="font-bold">${Math.round(rastaPriceUsd.toNumber() * 1000) / 1000}</span>
           </div>
           <div className="flex items-center mt-2">
             <img src={MRastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />
             <span className="font-bold">${Math.round(mrastaPrice * 1000) / 1000}</span>
-          </div>
+          </div> */}
         </div>
       </nav>
     </div>
