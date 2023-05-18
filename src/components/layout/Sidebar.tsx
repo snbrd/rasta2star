@@ -163,14 +163,14 @@ export default function Sidebar() {
           path: 'https://coinmarketcap.com/currencies/rasta-finance/',
           label: 'CoinMarketCap',
         },
-          {
-            label: 'Docs',
-            path: 'https://docs.zionlabs.info',
-          },
-          {
-            label: 'Education',
-            path: '/educations',
-          }
+        {
+          label: 'Docs',
+          path: 'https://docs.zionlabs.info',
+        },
+        {
+          label: 'Education',
+          path: '/educations',
+        }
       ],
     },
     {
@@ -314,7 +314,7 @@ export default function Sidebar() {
   //     parent: false,
   //     child: [],
   //   },
-    
+
   //   // {
   //   //   label: 'Launchpad',
   //   //   path: 'https://zionlp.com/launchpad-artists',
@@ -322,7 +322,7 @@ export default function Sidebar() {
   //   //   child: [],
   //   // },
   //   // blog
-   
+
   //   // end blog
   //   // {
   //   //   label: 'Zion Launchpad',
@@ -473,7 +473,7 @@ export default function Sidebar() {
         <FaBars onClick={showSidebar} className="md:hidden" />
       </span>
       <nav
-        className={`h-full w-auto top-0 py-6 px-8 bg-gray-rasta z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
+        className={`h-full w-full top-0 py-6 px-8 bg-gray-rasta z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
           }`}
       >
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer">
@@ -494,25 +494,25 @@ export default function Sidebar() {
         </ul>
 
         <a href='https://www.zionlp.com/RaggadatCris/Melody_1/stake' rel='nofollow'>
-            
-            <div className='my-2 w-full text-center'>
-              <span className='font-bold text-center'>Featured Artist</span>
-            </div>
 
-            <div className='w-full flex items-center justify-center'>
-              <div className='border-1 mb-5 w-1/2' style={{
+          <div className='my-2 w-full text-center'>
+            <span className='font-bold text-center'>Featured Artist</span>
+          </div>
+
+          <div className='w-full flex items-center justify-center'>
+            <div className='border-1 mb-5 w-1/2' style={{
               boxShadow: '4px 4px 0px #F9B262',
-              borderColor: '#E94D75'
+              borderColor: '#E94D75',
             }}>
 
-                <img src="https://music.api.zlp.rasta.finance/profile/ktliwtnl17aunve_profile.jpeg" alt='raggadat'/>
+              <img src="https://api.zionlabs.info/profile/ktliwtnl17aunve_profile.jpeg" alt='raggadat' />
 
-                <div className='w-full p-3'>
-                  <span className='text-center w-full'>Raggadat Cris</span>
-                </div>
+              <div className='w-full p-3'>
+                <span className='text-center w-full'>Raggadat Cris</span>
               </div>
             </div>
-          </a>
+          </div>
+        </a>
 
         <div>
           {/* <div className="social-media text-center justify-items-end p-4">
@@ -533,7 +533,7 @@ export default function Sidebar() {
             </div>
           </div> */}
 
-          
+
 
           {/* <div className="flex items-center">
             <img src={RastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />

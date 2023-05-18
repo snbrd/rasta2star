@@ -512,7 +512,7 @@ export default function NewDesktopSidebar() {
               borderColor: '#E94D75'
             }}>
 
-              <img src="https://music.api.zlp.rasta.finance/profile/ktliwtnl17aunve_profile.jpeg" alt='raggadat'/>
+              <img src="https://api.zionlabs.info/profile/ktliwtnl17aunve_profile.jpeg" width='150px' alt='raggadat'/>
 
               <div className='w-full p-3'>
                 <span className='text-center w-full'>Raggadat Cris</span>
