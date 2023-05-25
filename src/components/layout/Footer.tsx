@@ -1,6 +1,5 @@
 import React from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 // import * as Io5Icons from 'react-icons/io5'
 // import Logo from '../../assets/z1-rescaled.png'
@@ -12,110 +11,6 @@ export default function Footer() {
   // const textUnderLogo = ['Explore a new dimension of Web3.0, with the Zion Experience']
   const textUnderLogo = ['Enjoy your Zion Experience on Web 3']
 
-  const navigation = [
-    {
-      title: 'Useful Links',
-      item: [
-        { label: 'About', path: '/about' },
-        { label: 'Contact', path: '/contact' },
-        { label: 'Zion Launchpad', path: 'https://zionlp.com' },
-      ],
-    },
-    {
-      title: 'Stake',
-      item: [
-        { label: 'Rasta Token', path: '/liquidity' },
-        { label: 'Stake Liquidity', path: '/liquidity' },
-        { label: 'Mint', path: '/mint' },
-        // { label: 'Mr. Rasta', path: '/liquidity' },
-        // { label: 'Ms. Rasta', path: '/liquidity' },
-      ],
-    },
-  ]
-
-  const artistNavigation = [
-    {
-      title: "Beat by Zion",
-      item: [
-        { label: "Raggadat Cris", path: "https://www.zionlp.com/RaggadatCris/0xE98964c1E4Ff584E3fF44EF3599f0a84803Fa50e/stake" },
-      ],
-    },
-  ];
-
-  const artistNFTNavigation = [
-    {
-      title: "Artist NFT",
-      item: [
-        { label: "Raggadat Cris", path: "https://www.zionlp.com/list/artist/RaggadatCris" },
-      ],
-    },
-  ];
-
-const stakeOne = [
-  {
-    item: [
-      { label: 'NFT Staking', path: '/stake-zionlions' },
-        { label: 'Dividend NFT', path: '/stakenft' },
-    ]
-  }
-]
-
-const usefulLinks = [
-  {item: [
-    {
-      label:'NFT Transporter',
-      path: 'https://send.zionlabs.info/'
-    },
-    {
-      label:'Launchpad',
-      path: 'https://zionlp.com/launchpad-artists'
-    },
-    {
-      label:'RastaSwap ★',
-      path: 'https://swap.zionlabs.info/'
-    },
-    
-  ]}
-]
-
-// const usefulLinksTwo = [
-//   {item: [
-    // {
-    //   label:'Stake Rasta',
-    //   path: '/pools'
-    // },
-    // {
-    //   label:'Stake Liquidity',
-    //   path: '/liquidity'
-    // },
-    // {
-    //   label:'Docs',
-    //   path: 'https://docs.zionlabs.info/'
-    // },
-//   ]}
-// ]
-
-const usefulLinksThree = [
-  {item: [
-    {
-      label:'Educations',
-      path: '/educations'
-    },
-    {
-      label:'Whitepaper',
-      path: 'https://docs.zionlabs.info/'
-    },
-    // {
-    //   label:'CoinMarketCap',
-    //   path: 'https://coinmarketcap.com/currencies/rasta-finance/'
-    // },
-    {
-      label:'Docs',
-      path: 'https://docs.zionlabs.info/'
-    },
-  ]}
-]
-
   const socialMedia = [
     { name: 'Twitter', icon: <FaIcons.FaTwitter />, link: 'https://www.twitter.com/zionlabs_info' },
     { name: 'Telegram', icon: <FaIcons.FaTelegramPlane />, link: 'https://t.me/zionlabscommunity' },
@@ -123,21 +18,22 @@ const usefulLinksThree = [
     { name: 'Medium', icon: <FaIcons.FaMediumM />, link: 'https:///zionlabs.medium.com' },
     { name: 'Instagram', icon: <FaIcons.FaInstagram />, link: 'https://instagram.com/zionlabs_info' },
   ]
-  function ShowLinks(props) {
-    return props.items.map((item, index) => {
-      return (
-        <li key={index}>
-          {item.path.includes('http') ? (
-            <a href={item.path}>{item.label}</a>
-          ) : (
-            <Link to={item.path}>
-              <span className="">{item.label}</span>
-            </Link>
-          )}
-        </li>
-      )
-    })
-  }
+  // function ShowLinks(props) {
+  //   return props.items.map((item, index) => {
+  //     return (
+  //       <li key={index}>
+  //         {item.path.includes('http') ? (
+  //           <a href={item.path}>{item.label}</a>
+  //         ) : (
+  //           <Link to={item.path}>
+  //             <span className="">{item.label}</span>
+  //           </Link>
+  //         )}
+  //       </li>
+  //     )
+  //   })
+  // }
+
   return (
     <div className="w-full bg-black text-white py-0 md:py-10">
       <div className="mx-auto w-10/12 flex flex-col md:flex-row items-center justify-center">

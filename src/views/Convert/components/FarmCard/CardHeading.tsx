@@ -1,6 +1,5 @@
 import React from 'react'
 import { Image } from 'rasta-uikit'
-import * as FaIcons from 'react-icons/fa'
 
 export interface ExpandableSectionProps {
   pool?: any
@@ -11,7 +10,7 @@ export interface ExpandableSectionProps {
   tokenSymbol?: string
 }
 
-const CardHeading: React.FC<ExpandableSectionProps> = ({ pool, multiplier, farmImage, tokenSymbol }) => {
+const CardHeading: React.FC<ExpandableSectionProps> = ({ pool, farmImage, tokenSymbol }) => {
   return (
     <>
       <div className="w-full items-detail flex flex-col border-b-2 pb-2 border-black flex-grow-1">

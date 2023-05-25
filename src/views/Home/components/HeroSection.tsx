@@ -83,7 +83,7 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                to="/stake-zionlions"
+                to="/stake-zionlions-v2"
                 // className="bg-gradient-to-b font-bold w-full md:w-1/3 from-blue-zion to-blue-zion_cyan text-center py-3 rounded-xl"
                 className='border-white border-1 p-3 md:w-1/3 text-center hover:bg-white hover:text-black'
               >
