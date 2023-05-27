@@ -1,10 +1,10 @@
-import React from 'react'
-import { Route, useRouteMatch } from 'react-router-dom'
+import React, { useEffect, useCallback, useState } from 'react'
+import { Route, useHistory, useRouteMatch } from 'react-router-dom'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { provider } from 'web3-core'
 import useI18n from 'hooks/useI18n'
 import converts from 'config/constants/convert'
-import FarmCard from './components/FarmCard/FarmCard'
+import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 import MrRastaImage from '../../assets/newimage/BEATS.jpg'
 import MrsRastaImage from '../../assets/lion-mrs-rasta.jpg'
 
