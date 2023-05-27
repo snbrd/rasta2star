@@ -15,6 +15,7 @@ import {
   getBunnySpecialAddress,
   getAirNftAddress,
   getTokenConverterAddress,
+  getAddressByName,
 } from 'utils/addressHelpers'
 import { poolsConfig } from 'config/constants'
 import { PoolCategory } from 'config/constants/types'
@@ -63,6 +64,10 @@ export const useERC20 = (address: string) => {
 
 export const useCake = () => {
   return useERC20(getCakeAddress())
+}
+
+export const useZION = () => {
+  return useERC20(getAddressByName("zion"))
 }
 
 export const useBunnyFactory = () => {

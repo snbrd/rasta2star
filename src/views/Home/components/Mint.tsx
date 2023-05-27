@@ -294,7 +294,7 @@ function Mint() {
             </s.FlexDiv>
 
             <a
-              href="/stake-zionlions"
+              href="/stake-zionlions-v2"
               style={{
                 marginTop: '20px',
                 textAlign: 'center',
