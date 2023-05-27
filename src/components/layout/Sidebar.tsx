@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { usePriceZionBusd } from 'state/hooks'
+import React, { useEffect, useState } from 'react'
+import useMRastaPrice from 'hooks/useMRastaPrice'
+import { usePriceRastaBusd } from 'state/hooks'
 import { Link } from 'react-router-dom'
 
 import {
@@ -25,17 +26,27 @@ import {
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import MenuItem from './MenuItem'
+import RastaIcon from '../../assets/menu_coin2.jpg'
+import MRastaIcon from '../../assets/menu_coin1.jpg'
 
-import ZionLogo from '../../assets/newimage/zion.jpg'
+// import Logo from '../../assets/z1-rescaled.png'
 import Logo from '../../assets/newimage/ZION-logo-white.png'
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false)
-  const zionPriceUsd = usePriceZionBusd()
+  const [mrastaPrice, setMrastaPrice] = useState(0)
+  const mRastaPriceUsd = useMRastaPrice()
+  const rastaPriceUsd = usePriceRastaBusd()
 
   const showSidebar = () => {
     setSidebar(!sidebar)
   }
+
+  useEffect(() => {
+    if (mRastaPriceUsd > 0) {
+      setMrastaPrice(mRastaPriceUsd);
+    }
+  }, [mRastaPriceUsd])
 
   const menu = [
     {
@@ -86,7 +97,7 @@ export default function Sidebar() {
       parent: true,
       child: [
         {
-          path: '/stake-zionlions-v2',
+          path: '/stake-zionlions',
           label: 'Zion Lion Staking',
         },
         {
@@ -524,11 +535,11 @@ export default function Sidebar() {
 
 
 
-          <div className="flex items-center">
-            <img src={ZionLogo} alt="token icon" width="20" className="mr-2 rounded-full" />
-            <span className="font-bold">${Math.round(zionPriceUsd.toNumber() * 1000) / 1000}</span>
+          {/* <div className="flex items-center">
+            <img src={RastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />
+            <span className="font-bold">${Math.round(rastaPriceUsd.toNumber() * 1000) / 1000}</span>
           </div>
-          {/* <div className="flex items-center mt-2">
+          <div className="flex items-center mt-2">
             <img src={MRastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />
             <span className="font-bold">${Math.round(mrastaPrice * 1000) / 1000}</span>
           </div> */}

@@ -4,7 +4,6 @@ import masterChefABI from 'config/abi/masterchef.json'
 import airNFTABI from 'config/abi/airToken.json'
 import zionLionsABI from 'config/abi/zionlions.json'
 import airFarmABI from 'config/abi/airFarm.json'
-import zionPoolABI from 'config/abi/zionlionsPool.json'
 import sousChefABI from 'config/abi/sousChef.json'
 import erc20ABI from 'config/abi/erc20.json'
 import { QuoteToken } from 'config/constants/types'
@@ -49,13 +48,13 @@ export const fetchNFTAllowance = async (account) => {
     name: 'isApprovedForAll',
     params: [account, getAddress(farm.contractAddress)],
   }))
-  const approved = await multicall(zionLionsABI, call)
+  const approved = await multicall(airNFTABI, call)
   return nftPools.map((farm, index) => ({
     [farm.id]: approved[index][0],
   }))
 }
 
-export const calcuAirNFT = async (account) => {
+const calcuAirNFT = async (account) => {
   const airbalance = await AirNftContract.methods.balanceOf(account).call()
 
   const calls = []
@@ -80,7 +79,6 @@ export const calcuAirNFT = async (account) => {
 
   return _airBalance
 }
-
 const calcuZionLionsNFT = async (account) => {
   const zionlionsbalance = await ZionLionsContract.methods.balanceOf(account).call()
 
@@ -116,15 +114,15 @@ export const fetchNFTUserBalance = async (account) => {
     name: 'balanceOf',
     params: [account],
   }))
-  const balances = await multicall(zionLionsABI, call)
-  // const airBalance = await calcuAirNFT(account)
+  const balances = await multicall(airNFTABI, call)
+  const airBalance = await calcuAirNFT(account)
   const zionlionsBalance = await calcuZionLionsNFT(account)
 
   return nftPools.map((farm, index) => {
-    // if (farm.type === 'airnft') {
-    //   return { [farm.id]: airBalance }
-    // }
-    if (farm.type === 'zion-lion') {
+    if (farm.type === 'airnft') {
+      return { [farm.id]: airBalance }
+    }
+    if (farm.type === 'zlnft') {
       if (farm.subType === 'explorer' || farm.subType === 'explorer-adventure') {
         return { [farm.id]: zionlionsBalance.explorer }
       }
@@ -143,7 +141,7 @@ export const fetchStakedBalance = async (account) => {
     name: 'userTokenBalanceOf',
     params: [account],
   }))
-  const stakedAmount = await multicall(zionPoolABI, call)
+  const stakedAmount = await multicall(airFarmABI, call)
 
   return nftPools.map((farm, index) => ({
     [farm.id]: new BigNumber(stakedAmount[index]).toJSON(),
@@ -156,7 +154,7 @@ export const fetchNFTPendingReward = async (account) => {
     name: 'claimable',
     params: [account],
   }))
-  const pendingReward = await multicall(zionPoolABI, call)
+  const pendingReward = await multicall(airFarmABI, call)
   return nftPools.map((farm, index) => ({
     [farm.id]: new BigNumber(pendingReward[index]).toJSON(),
   }))
@@ -168,7 +166,7 @@ export const fetchNftBalance = async () => {
     name: 'balanceOf',
     params: [getAddress(farm.contractAddress)],
   }))
-  const balance = await multicall(zionLionsABI, call)
+  const balance = await multicall(airNFTABI, call)
   return nftPools.map((farm, index) => ({
     [farm.id]: new BigNumber(balance[index]).toJSON(),
   }))
@@ -204,7 +202,7 @@ export const fetchPoolStatus = async () => {
     name: 'paused',
     params: [],
   }))
-  const paused = await multicall(zionPoolABI, call2)
+  const paused = await multicall(airFarmABI, call2)
   return nftPools.map((farm, index) => ({
     [farm.id]: paused[index][0],
   }))

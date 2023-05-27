@@ -54,7 +54,7 @@ export default function Footer() {
 const stakeOne = [
   {
     item: [
-      { label: 'NFT Staking', path: '/stake-zionlions-v2' },
+      { label: 'NFT Staking', path: '/stake-zionlions' },
         { label: 'Dividend NFT', path: '/stakenft' },
     ]
   }

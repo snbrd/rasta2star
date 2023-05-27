@@ -40,7 +40,6 @@ const Blog = lazy(() => import('./views/Blog'))
 const SinglePost = lazy(() => import('./views/Blog/SinglePost'))
 const Category = lazy(() => import('./views/Blog/Category'))
 const ZionLions = lazy(() => import('./views/ZionLions'))
-const ZionLionsV2 = lazy(() => import('./views/ZionLionsV2'))
 const Minter = lazy(()=> import('./views/Minter'))
 
 const WinBig = lazy(() => import('./views/WinBig'))
@@ -108,9 +107,6 @@ const App: React.FC = () => {
                 </Route>
                 <Route path="/stake-zionlions">
                   <ZionLions />
-                </Route>
-                <Route path="/stake-zionlions-v2">
-                  <ZionLionsV2 />
                 </Route>
                 <Route path="/streetpunksnft">
                   <StreetPunksNFT />

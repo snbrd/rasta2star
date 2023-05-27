@@ -134,26 +134,6 @@ export const usePriceRastaBusd = (): BigNumber => {
   return rastaPrice
 }
 
-export const usePriceZionBusd = (): BigNumber => {
-  const [zionPrice, setPrice] = useState(ZERO)
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch(
-          `https://api.dexscreener.com/latest/dex/pairs/bsc/0x521C24024E9C43158cb09263565AE2EC1647C360`,
-        )
-        const { pair } = await response.json()
-        return setPrice(new BigNumber(pair?.priceUsd || 0))
-      } catch (error) {
-        return setPrice(ZERO)
-      }
-    })()
-  }, [])
-
-  return zionPrice
-}
-
 export const usePriceLatteBnb = (): BigNumber => {
   const [lattePrice, setPrice] = useState(ZERO)
 
