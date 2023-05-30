@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import {
   FaBars,
   FaRegWindowClose,
-} from 'react-icons/all'
+} from 'react-icons/fa'
 
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 

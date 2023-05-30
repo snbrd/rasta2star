@@ -4,24 +4,14 @@ import { usePriceRastaBusd } from 'state/hooks'
 import { Link } from 'react-router-dom'
 
 import {
-  FaHome,
-  RiErrorWarningFill,
-  IoIosSwap,
-  RiCoinLine,
-  GiTwoCoins,
-  IoChatboxEllipsesOutline,
   FaTelegramPlane,
   FaTwitter,
   FaMediumM,
   FaReddit,
   FaInstagram,
   FaBars,
-  FaRegWindowClose,
-  GoMail,
-  FaDonate,
-  GiLion,
-  RiMoneyDollarCircleLine,
-} from 'react-icons/all'
+  FaRegWindowClose
+} from 'react-icons/fa'
 // import MenuItem from './MenuItem'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import NewMenuItem from './NewMenuItem'

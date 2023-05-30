@@ -114,7 +114,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
       .times(SEC_PER_YEAR)
       .div(
         Number(farmbalance) > 0
-          ? new BigNumber(farmbalance).times(new BigNumber(0.1).times(new BigNumber(10).pow(18)))
+          ? new BigNumber(farmbalance).times(new BigNumber(0.18).times(new BigNumber(10).pow(18)))
           : new BigNumber(10).pow(18),
       )
       .times(100)

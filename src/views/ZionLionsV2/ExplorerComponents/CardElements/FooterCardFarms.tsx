@@ -23,7 +23,7 @@ export default function FooterCardFarms({ farmValue, farmBscLink, stackedValue, 
       {show && (
         <div>
           <div className="flex justify-between w-full mt-8">
-            <span className="text-black-rasta font-bold">Total NFTs Staked</span>
+            <span className="text-black-rasta font-bold">Staked Value</span>
             <span className="text-black-rasta font-bold"> </span>
             <div className="flex flex-col md:flex-row space-x-4">
               <span className="text-black-rasta font-bold">{numberWithCommas(farmValue)}</span>

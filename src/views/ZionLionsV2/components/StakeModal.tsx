@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { LinkExternal, Skeleton } from 'rasta-uikit'
 import useI18n from 'hooks/useI18n'
-import { GiCheckMark } from 'react-icons/all'
+import { GiCheckMark } from 'react-icons/gi'
 import BigNumber from 'bignumber.js'
 
 interface DepositModalProps {
