@@ -77,7 +77,7 @@ export default function NewDesktopSidebar() {
       parent: true,
       child: [
         {
-          path: '/stake-zionlions-v2',
+          path: '/stake-zionlions',
           label: 'Zion Lion Staking',
         },
         {
