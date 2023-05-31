@@ -88,10 +88,10 @@ export default function NewDesktopSidebar() {
           path: '/liquidity',
           label: 'Liquidity',
         },
-        {
-          path: '/pools',
-          label: 'Rasta',
-        },
+        // {
+        //   path: '/pools',
+        //   label: 'Rasta',
+        // },
       ],
     },
     {

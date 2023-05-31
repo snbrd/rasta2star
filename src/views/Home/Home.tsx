@@ -233,8 +233,10 @@ const Home: React.FC = () => {
                   <div className="card-body">
                     <ul className="space-y-2">
                       <li>5% Sweep the floor</li>
-                      <li>10% Liquidity for Rasta/BNB locked pool</li>
-                      <li>35% Rasta buy back</li>
+                      <li>10% Liquidity for ZION/BNB locked pool</li>
+                      {/* <li>10% Liquidity for Rasta/BNB locked pool</li> */}
+                      {/* <li>35% Rasta buy back</li> */}
+                      <li>35% ZION buy back</li>
                       <li>50% Creators</li>
                     </ul>
                   </div>

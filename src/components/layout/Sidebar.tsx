@@ -82,10 +82,10 @@ export default function Sidebar() {
           path: '/liquidity',
           label: 'Liquidity',
         },
-        {
-          path: '/pools',
-          label: 'Rasta',
-        },
+        // {
+        //   path: '/pools',
+        //   label: 'Rasta',
+        // },
       ],
     },
     {

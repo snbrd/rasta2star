@@ -60,18 +60,18 @@ export default function HeroSection() {
                 {/* Welcomes You to Web3.0 */}
                 </span>
               {/* <span style={{fontSize: '20px'}}>We Build Decentralized Applications (dApps) on the Blockchain</span> */}
-              <span style={{fontSize: '20px'}}>Now Stake $RASTA to earn upto 125% APR</span>
+              <span style={{fontSize: '20px'}}>Now Stake $ZION to earn upto 125% APR</span>
             </h1>
             <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
             {/* We are a creative tech-collective developing innovative technologies on the blockchain; with a core focus on augmenting the music industry with artist-centered DeFi tools.  */}
             ZionLabs is a creative-tech collective developing novel technologies on the blockchain; to be used within the music industry and beyond. Powered by the Binance Blockchain.
             </p>
 
-            <p className="mt-4 md:mt-8 text-center md:text-left  break-words" data-aos="fade-right" data-aos-duration="2000">
+            {/* <p className="mt-4 md:mt-8 text-center md:text-left  break-words" data-aos="fade-right" data-aos-duration="2000">
               <a href='https://bscscan.com/token/0xe3e8cc42da487d1116d26687856e9fb684817c52' target="_blank" rel="noreferrer">
               $RASTA Token Contract: 0xE3e8cC42DA487d1116D26687856e9FB684817c52
               </a>
-              </p>            
+              </p>             */}
             
             <div className="cta flex flex-col md:flex-row justify-center items-center mt-8 space-y-8 md:space-y-0 md:space-x-8 md:flex" data-aos="fade-right" data-aos-duration="2500">
               <Link
