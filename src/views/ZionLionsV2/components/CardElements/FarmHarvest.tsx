@@ -67,7 +67,7 @@ export default function FarmHarvest({ pool, depositTime, type }: Props) {
         <div className='w-full flex flex-col gap-3'>
           {
 
-            (id === 2 || id === 2) && Number(depositTime) > 0 && Number(stakedBalance) > 0 && lockDate && (
+            (id === 2 || id === 3 || id === 4) && Number(depositTime) > 0 && Number(stakedBalance) > 0 && lockDate && (
               <span className="text-newpurple-400 text-left text-sm">
                 {
                   lockDate.days === 0 ? `Locked for ${lockDate.hours} Hours` : `Locked for ${lockDate.days} Days`
