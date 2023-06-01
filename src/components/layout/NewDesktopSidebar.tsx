@@ -60,17 +60,17 @@ export default function NewDesktopSidebar() {
         },
       ],
     },
-    {
-      label: 'Staking',
-      path: '#',
-      parent: true,
-      child: [
-        {
-          path: 'https://www.zionlp.com/RaggadatCris/Melody_1',
-          label: 'Raggadat Cris',
-        },
-      ],
-    },
+    // {
+    //   label: 'Staking',
+    //   path: '#',
+    //   parent: true,
+    //   child: [
+    //     {
+    //       path: 'https://www.zionlp.com/RaggadatCris/Melody_1',
+    //       label: 'Raggadat Cris',
+    //     },
+    //   ],
+    // },
     {
       label: 'Staking',
       path: '#',
@@ -88,10 +88,10 @@ export default function NewDesktopSidebar() {
           path: '/liquidity',
           label: 'Liquidity',
         },
-        // {
-        //   path: '/pools',
-        //   label: 'Rasta',
-        // },
+        {
+          path: 'https://www.zionlp.com/RaggadatCris/Melody_1',
+          label: 'Raggadat Cris',
+        },
       ],
     },
     {

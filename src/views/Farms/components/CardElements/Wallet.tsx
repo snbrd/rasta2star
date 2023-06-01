@@ -27,17 +27,17 @@ export default function Wallet() {
     {
       name: 'TrustWallet',
       icon: TrustWallet,
-      link: '/',
+      link: 'injected',
     },
     {
       name: 'MathWallet',
       icon: MathWallet,
-      link: '/',
+      link: 'injected',
     },
     {
       name: 'TokenPocket',
       icon: TokenPocket,
-      link: '/',
+      link: 'injected',
     },
     {
       name: 'WalletConnect',
@@ -47,7 +47,7 @@ export default function Wallet() {
     {
       name: 'Binance Chain',
       icon: BinanceWallet,
-      link: '/',
+      link: 'bsc',
     },
   ]
   return (
