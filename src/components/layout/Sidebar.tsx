@@ -113,13 +113,13 @@ export default function Sidebar() {
         },
       ],
     },
-    {
-      // label: 'Dex',
-      label: 'Buy',
-      path: 'https://swap.zionlabs.info/',
-      parent: false,
-      child: [],
-    },
+    // {
+    //   // label: 'Dex',
+    //   label: 'Buy',
+    //   path: 'https://swap.zionlabs.info/',
+    //   parent: false,
+    //   child: [],
+    // },
     {
       label: 'View More...',
       path: '#',

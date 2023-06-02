@@ -67,6 +67,24 @@ export default function HeroSection() {
             ZionLabs is a creative-tech collective developing novel technologies on the blockchain; to be used within the music industry and beyond. Powered by the Binance Blockchain.
             </p>
 
+            <p className="mt-4 md:mt-8 text-center md:text-left  break-words" data-aos="fade-right" data-aos-duration="2000">
+            Buy ZION Royal Tokens on 
+            
+            <a href='https://pancakeswap.finance/' target="_blank" rel="noreferrer">
+            {' '}Pancake Swap
+            </a>
+            :
+              
+              </p>            
+
+          <p className="mt-4 md:mt-8 text-center md:text-left  break-words" data-aos="fade-right" data-aos-duration="2000">
+              $ZION Token Contract: 0x1E5AcF2b8f7886a69850d13bE861Efdb26D2C0A6
+          </p>
+
+          <p className="mt-2 md:mt-2 text-center md:text-left  break-words" data-aos="fade-right" data-aos-duration="2000">
+              $SOUND Token Contract: 0x2DaE9705fE45eb2F18C8f15b7e74B8572e7819F8
+          </p>            
+
             {/* <p className="mt-4 md:mt-8 text-center md:text-left  break-words" data-aos="fade-right" data-aos-duration="2000">
               <a href='https://bscscan.com/token/0xe3e8cc42da487d1116d26687856e9fb684817c52' target="_blank" rel="noreferrer">
               $RASTA Token Contract: 0xE3e8cC42DA487d1116D26687856e9FB684817c52

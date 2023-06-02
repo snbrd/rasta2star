@@ -6,7 +6,8 @@ import { useWallet } from '@binance-chain/bsc-use-wallet'
 import WalletConnect from '../../assets/wallet/wallet-connect.png'
 import Sidebar from './Sidebar'
 // import Logo from '../../assets/z1-rescaled.png'
-import Logo from '../../assets/newimage/ZION-logo-white.png';
+// import Logo from '../../assets/newimage/ZION-logo-white.png';
+import Logo from '../../assets/newimage/zionwhite.png';
 import BinanceWallet from '../../assets/wallet/binance-wallet.png'
 import MathWallet from '../../assets/wallet/math-wallet.png'
 import MetaMask from '../../assets/wallet/meta-mask.png'
@@ -85,7 +86,7 @@ export default function Header() {
 
             <div className="logo flex-grow-1 text-center md:hidden">
               <Link to="/">
-                <LazyLoadImage src={Logo} alt="Logo" className="w-full mx-auto d-block px-12" effect="blur" />
+                <LazyLoadImage src={Logo} alt="Logo" className="w-full mx-auto d-block px-8" effect="blur" />
                 {/* <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span> */}
               </Link>
             </div>

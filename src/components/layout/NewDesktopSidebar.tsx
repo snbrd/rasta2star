@@ -12,7 +12,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import MenuItem from './MenuItem'
 import ZionLogo from '../../assets/newimage/zion.jpg'
-import Logo from '../../assets/newimage/ZION-logo-white.png'
+// import Logo from '../../assets/newimage/ZION-logo-white.png'
+import Logo from '../../assets/newimage/zionwhite.png'
 
 export default function NewDesktopSidebar() {
   const [sidebar, setSidebar] = useState(false)
@@ -119,13 +120,13 @@ export default function NewDesktopSidebar() {
         },
       ],
     },
-    {
-      // label: 'Dex',
-      label: 'Buy',
-      path: 'https://swap.zionlabs.info/',
-      parent: false,
-      child: [],
-    },
+    // {
+    //   // label: 'Dex',
+    //   label: 'Buy',
+    //   path: 'https://swap.zionlabs.info/',
+    //   parent: false,
+    //   child: [],
+    // },
     {
       label: 'View More...',
       path: '#',
@@ -472,7 +473,8 @@ export default function NewDesktopSidebar() {
 
         <div className="text-center">
           <Link to="/">
-            <LazyLoadImage src={Logo} alt="Logo" className="w-32 mx-auto d-block px-4" effect="blur" />
+          <LazyLoadImage src={Logo} alt="Logo" className="w-64 mx-auto d-block px-4" effect="blur" />
+            {/* <LazyLoadImage src={Logo} alt="Logo" className="w-32 mx-auto d-block px-4" effect="blur" /> */}
             {/* <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span> */}
           </Link>
         </div>
