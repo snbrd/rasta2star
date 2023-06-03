@@ -30,7 +30,7 @@ const TwitterCard = () => {
         <Block>
           <TwitterTimelineEmbed
             sourceType="url"
-            url="https://twitter.com/rastafinance"
+            url="https://twitter.com/_Zion_Royal_?s=20"
             options={{ height: 300 }}
             theme={isDark ? 'dark' : ''}
           />

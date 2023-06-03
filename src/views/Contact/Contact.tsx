@@ -46,11 +46,11 @@ export default function Contact() {
     socialMedia: [
       {
         icon: <FaIcons.FaTwitter />,
-        link: 'https://www.twitter.com/RastaFinance',
+        link: 'https://twitter.com/_Zion_Royal_?s=20',
       },
       {
         icon: <FaIcons.FaTelegramPlane />,
-        link: 'https://www.t.me/rastafinance',
+        link: 'https://www.t.me/zionroyal',
       },
       {
         icon: <Io5Icons.IoLogoTiktok />,

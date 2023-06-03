@@ -197,11 +197,11 @@ export default function About() {
   //     social: [
   //       {
   //         icon: <FaIcons.FaTwitter />,
-  //         link: 'https://www.twitter.com/RastaFinance',
+  //         link: 'https://twitter.com/_Zion_Royal_?s=20',
   //       },
   //       {
   //         icon: <FaIcons.FaTelegramPlane />,
-  //         link: 'https://t.me/zionlabscommunity',
+  //         link: 'https://t.me/zionroyal',
   //       },
   //       {
   //         icon: <Io5Icons.IoLogoTiktok />,
@@ -209,7 +209,7 @@ export default function About() {
   //       },
   //       {
   //         icon: <FaIcons.FaMediumM />,
-  //         link: 'https:///rastafinance.medium.com',
+  //         link: 'https:///zionlabs.medium.com',
   //       },
   //       { icon: <FaIcons.FaInstagram />, link: 'https://instagram.com/zionlabs_info?igshid=YmMyMTA2M2Y=' },
   //     ],
