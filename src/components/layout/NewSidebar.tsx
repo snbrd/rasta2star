@@ -147,10 +147,10 @@ export default function NewSidebar() {
           path: 'https://zionlabs.info/files/RastaAudit.pdf',
           label: 'Audit',
         },
-        {
-          path: 'https://coinmarketcap.com/currencies/rasta-finance/',
-          label: 'CoinMarketCap',
-        },
+      //  {
+      //    path: 'https://coinmarketcap.com/currencies/rasta-finance/',
+      //    label: 'CoinMarketCap',
+      //  },
         {
           path: 'https://docs.zionlabs.info',
           label: 'Whitepaper',
@@ -164,7 +164,7 @@ export default function NewSidebar() {
           label: 'Dapp Radar',
         },
         {
-          path: 'https://dex.guru/token/0xe3e8cc42da487d1116d26687856e9fb684817c52-bsc',
+          path: 'https://dexscreener.com/bsc/0x521c24024e9c43158cb09263565ae2ec1647c360',
           label: 'Chart',
         },
       ],
@@ -194,7 +194,7 @@ export default function NewSidebar() {
         className={`h-full w-full top-0 py-6 px-8 z-50 transition duration-1000 flex flex-col justify-between overflow-x-auto fixed md:visible md:w-64 ${
           sidebar ? 'visible' : 'invisible'
         }`}
-        style={{ backgroundColor: '#303446' }}
+        style={{ backgroundColor: '#000000' }}
       >
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer md:invisible">
           <FaRegWindowClose onClick={showSidebar} />

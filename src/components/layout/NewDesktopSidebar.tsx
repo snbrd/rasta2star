@@ -36,7 +36,7 @@ export default function NewDesktopSidebar() {
       child: [
         {
           path: '/about',
-          label: 'Zion Labs',
+          label: 'Zion Royal',
         },
         {
           path: '/win-big',
@@ -46,7 +46,7 @@ export default function NewDesktopSidebar() {
     },
     {
       label: 'NFT Transporter',
-      path: 'https://send.zionlabs.info/',
+      path: 'https://send.zionroyal.com/',
       parent: false,
       child: [],
     },
@@ -140,10 +140,10 @@ export default function NewDesktopSidebar() {
           path: 'https://docs.zionlabs.info/faq/rasta-audit',
           label: 'Audit',
         },
-        {
-          path: 'https://coinmarketcap.com/currencies/rasta-finance/',
-          label: 'CoinMarketCap',
-        },
+      //  {
+      //    path: 'https://coinmarketcap.com/currencies/rasta-finance/',
+      //    label: 'CoinMarketCap',
+      //  },
           {
             label: 'Docs',
             path: 'https://docs.zionlabs.info',
