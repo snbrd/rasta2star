@@ -97,7 +97,8 @@ export default function NewDesktopSidebar() {
     },
     {
       label: 'Farmers Flip',
-      path: 'https://flip.zionlabs.info/',
+      // path: 'https://flip.zionlabs.info/',
+      path: 'https://flip.zionroyal.com/',
       parent: false,
       child: [],
     },
@@ -133,21 +134,24 @@ export default function NewDesktopSidebar() {
       parent: true,
       child: [
         {
-          path: 'https://docs.zionlabs.info',
+          // path: 'https://docs.zionlabs.info',
+          path: 'https://docs.zionroyal.com/',
           label: 'Whitepaper',
         },
         {
-          path: 'https://docs.zionlabs.info/faq/rasta-audit',
+          // path: 'https://docs.zionlabs.info/faq/rasta-audit',
+          path: 'https://docs.zionroyal.com/faq/rasta-audit',
           label: 'Audit',
         },
       //  {
       //    path: 'https://coinmarketcap.com/currencies/rasta-finance/',
       //    label: 'CoinMarketCap',
       //  },
-          {
-            label: 'Docs',
-            path: 'https://docs.zionlabs.info',
-          },
+          // {
+          //   label: 'Docs',
+          //   path: 'https://docs.zionroyal.com/',
+          //   // path: 'https://docs.zionlabs.info',
+          // },
           {
             label: 'Education',
             path: '/educations',
