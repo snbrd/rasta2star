@@ -21,7 +21,7 @@ export default function MenuItem({ menu, showSidebar }) {
           rel="noreferrer nofollow"
         >
           {menu.icon}
-          <span className="flex-grow-1" style={{ fontSize: '15px' }}>
+          <span className="flex-grow-1 bg-gradient-to-br hover:from-newpurple-900 to-blue-zion_cyan px-2 py-1 rounded-sm" style={{ fontSize: '16px' }}>
             {menu.label}
             <h1 style={{ fontSize: '13px', color: 'white' }}>{menu.sublabel}</h1>
           </span>
@@ -29,19 +29,19 @@ export default function MenuItem({ menu, showSidebar }) {
       ) : (
         <Link to={menu.path} className="flex flex-row space-x-0 items-center" onClick={() => showChildren(menu.parent)}>
           {menu.icon}
-          <span className="flex-grow-1" style={{ fontSize: '15px' }}>
+          <span className="flex-grow-1  bg-gradient-to-br hover:from-newpurple-900 to-blue-zion_cyan px-2 py-1 rounded-sm" style={{ fontSize: '16px' }}>
             {menu.label}
             <h1 style={{ fontSize: '13px' }}>{menu.sublabel}</h1>
           </span>
-          {menu.parent && children && <IoIcons.IoIosArrowDropdown style={{ fontSize: '15px' }} />}
-          {menu.parent && !children && <IoIcons.IoIosArrowDropright style={{ fontSize: '15px' }} />}
+          {menu.parent && children && <IoIcons.IoIosArrowDropdown style={{ fontSize: '16px' }} />}
+          {menu.parent && !children && <IoIcons.IoIosArrowDropright style={{ fontSize: '16px' }} />}
         </Link>
       )}
       {menu.child.length > 0 && children && (
         <ul className="flex flex-col items-start text-sm space-y-4 font-normal mt-4">
           {menu.child.map((i) => {
             return (
-              <li key={i.label}>
+              <li key={i.label} className='bg-gradient-to-br hover:from-newpurple-900 to-blue-zion_cyan px-2 py-1 rounded-sm'>
                 {(() => {
                   if (i.blank) {
                     return (

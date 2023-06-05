@@ -12,7 +12,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import MenuItem from './MenuItem'
 
 import ZionLogo from '../../assets/newimage/zion.jpg'
-import Logo from '../../assets/newimage/ZION-logo-white.png'
+// import Logo from '../../assets/newimage/ZION-logo-white.png'
+import Logo from '../../assets/newimage/zionwhite.png'
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false)
@@ -446,8 +447,12 @@ export default function Sidebar() {
       <span className="menu-bars text-2xl cursor-pointer">
         <FaBars onClick={showSidebar} className="md:hidden" />
       </span>
-      <nav
+      {/* <nav
         className={`h-full w-full top-0 py-6 px-8 bg-gray-rasta z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
+          }`}
+      > */}
+      <nav
+        className={`h-full w-full top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${sidebar ? 'left-0 ml-0' : '-left-full -ml-16'
           }`}
       >
         <span className="menu-bars absolute right-4 text-3xl text-white cursor-pointer">
@@ -456,7 +461,7 @@ export default function Sidebar() {
 
         <div className="text-center">
           <Link to="/">
-            <LazyLoadImage src={Logo} alt="Logo" className="w-32 px-4 mx-auto d-block" effect="blur" />
+            <LazyLoadImage src={Logo} alt="Logo" className="w-48 px-4 mx-auto d-block" effect="blur" />
             {/* <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span> */}
           </Link>
         </div>
@@ -467,7 +472,7 @@ export default function Sidebar() {
           })}
         </ul>
 
-        <a href='https://www.zionlp.com/RaggadatCris/Melody_1/stake' rel='nofollow'>
+        {/* <a href='https://www.zionlp.com/RaggadatCris/Melody_1/stake' rel='nofollow'>
 
           <div className='my-2 w-full text-center'>
             <span className='font-bold text-center'>Featured Artist</span>
@@ -486,7 +491,7 @@ export default function Sidebar() {
               </div>
             </div>
           </div>
-        </a>
+        </a> */}
 
         <div>
           {/* <div className="social-media text-center justify-items-end p-4">

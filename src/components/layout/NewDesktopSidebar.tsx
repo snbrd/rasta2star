@@ -485,7 +485,7 @@ export default function NewDesktopSidebar() {
           })}
         </ul>
 
-        <a href='https://www.zionlp.com/RaggadatCris/Melody_1/stake' rel='nofollow'>
+        {/* <a href='https://www.zionlp.com/RaggadatCris/Melody_1/stake' rel='nofollow'>
             <div className='my-2'>
               <span className='font-bold'>Featured Artist</span>
             </div>
@@ -501,7 +501,7 @@ export default function NewDesktopSidebar() {
                 <span className='text-center w-full'>Raggadat Cris</span>
               </div>
             </div>
-          </a>
+          </a> */}
 
         <div>
           {/* <div className="social-media text-center justify-items-end p-4">
