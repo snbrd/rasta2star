@@ -26,7 +26,7 @@ export default function FooterCardFarms({ farmValue, farmBscLink, stackedValue, 
             <span className="text-black-rasta font-bold">Staked Value</span>
             <span className="text-black-rasta font-bold"> </span>
             <div className="flex flex-col md:flex-row space-x-4">
-              <span className="text-black-rasta font-bold">{numberWithCommas(farmValue)}</span>
+              <span className="text-black-rasta font-bold">{numberWithCommas((Number(farmValue) * 0.18).toFixed(2))} BNB</span>
             </div>
           </div>
           {type && (
@@ -34,7 +34,7 @@ export default function FooterCardFarms({ farmValue, farmBscLink, stackedValue, 
               <span className="text-black-rasta font-bold">My NFTs Staked</span>
               <span className="text-black-rasta font-bold"> </span>
               <div className="flex flex-col md:flex-row space-x-4">
-                <span className="text-black-rasta font-bold">{numberWithCommas(stackedValue)}</span>
+                <span className="text-black-rasta font-bold">{numberWithCommas(stackedValue)} NFTs</span>
               </div>
             </div>
           )}

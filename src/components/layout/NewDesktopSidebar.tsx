@@ -464,7 +464,7 @@ export default function NewDesktopSidebar() {
         }`}
       > */}
       <nav
-        className={`h-full w-48 top-0 py-6 px-8 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
+        className={`h-full w-48 top-0 py-6 px-4 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
           sidebar ? 'left-0 ml-0' : ''
         }`}
 
