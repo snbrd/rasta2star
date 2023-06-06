@@ -67,7 +67,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
   const [staked, setStaked] = useState(false)
   const [loading, setLoading] = useState(false)
   const [totalSupply, setTotalSupply] = useState(new BigNumber(0))
-  const [rastaBalance, setRastaBalance] = useState(new BigNumber(0))
+  const [zionBalance, setZionBalance] = useState(new BigNumber(0))
   const [stakedAmount, setStakedAmount] = useState(new BigNumber(0))
 
   const zionContract = useZION()
@@ -92,7 +92,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
             const res = await getAllowance(zionContract, poolContract, account)
             setAllowance(new BigNumber(res).toString())
             const _balance = await zionContract.methods.balanceOf(account).call()
-            setRastaBalance(new BigNumber(_balance))
+            setZionBalance(new BigNumber(_balance))
           }
         } catch (error) {
           console.log(error)
@@ -185,7 +185,7 @@ const ExplorerPoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => 
             pool={pool}
             isApproval={isApproval}
             stakedAmount={stakedAmount}
-            rastaBalance={rastaBalance}
+            zionBalance={zionBalance}
             onFetch={handleFetch}
           />
           <div className="flex flex-col justify-between md:w-2/5">

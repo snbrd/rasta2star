@@ -17,7 +17,7 @@ type Props = {
   poolContract?: any
   zionContract?: any
   stakedAmount?: any
-  rastaBalance?: any
+  zionBalance?: any
   onFetch?: any
 }
 
@@ -34,7 +34,7 @@ const activeButtonClass2 =
 
 export default function FarmHarvest({
   onFetch,
-  rastaBalance,
+  zionBalance,
   stakedAmount,
   poolContract,
   zionContract,
@@ -43,13 +43,13 @@ export default function FarmHarvest({
   isApproval,
   pool,
 }: Props) {
-  const { balance, contractAddress, maxDepositAmount, nftContractAddress } = pool
+  const { balance, contractAddress, nftContractAddress } = pool
 
   const { account } = useWallet()
   const { onApproveAll } = useApproveAll(nftContractAddress, getAddress(contractAddress))
   const [loading, setLoading] = useState(false)
 
-  const isApprovedToken = useMemo(() => Number(allowance) >= Number(maxDepositAmount), [allowance, maxDepositAmount])
+  const isApprovedToken = useMemo(() => (Number(allowance) !== 0 && Number(allowance) >= Number(zionBalance)), [allowance, zionBalance])
   const isStakedToken = useMemo(() => new BigNumber(stakedAmount).toNumber() > 0, [stakedAmount])
   const blocked = useMemo(() => BlockAccounts.indexOf(account) !== -1, [account])
 
@@ -82,7 +82,8 @@ export default function FarmHarvest({
     setLoading(true)
 
     try {
-      await approve(zionContract, poolContract, account)
+      await approve(zionContract, poolContract, account);
+      onFetch()
     } catch (error) {
       console.log(error)
     }
@@ -121,7 +122,7 @@ export default function FarmHarvest({
   }
 
   const [onPresentDeposit] = useModal(
-    <DepositModal max={new BigNumber(rastaBalance)} onConfirm={onStakeZion} tokenName="Rasta" />,
+    <DepositModal max={new BigNumber(zionBalance)} onConfirm={onStakeZion} tokenName="Rasta" />,
   )
 
   const [onPresentWithdraw] = useModal(
@@ -186,7 +187,7 @@ export default function FarmHarvest({
             <button
               type="button"
               disabled={loading || blocked}
-              className={`${isApprovedToken ? activeButtonClass : buttonClass} ${!staked && ' disabled'}`}
+              className={`${isApprovedToken && staked ? activeButtonClass : buttonClass} ${!staked && ' disabled'}`}
               style={{ maxWidth: 220 }}
               onClick={async () => {
                 if (loading) return
@@ -204,11 +205,12 @@ export default function FarmHarvest({
             <button
               type="button"
               disabled={loading || blocked}
-              className={`${isStakedToken ? activeButtonClass2 : buttonClass} ${!isApprovedToken && ' disabled'}`}
+              className={`${isStakedToken && staked ? activeButtonClass2 : buttonClass} ${(!isApprovedToken || !staked) && ' disabled'}`}
               style={{ maxWidth: 220 }}
               onClick={async () => {
                 if (loading) return
                 if (!isApprovedToken) return
+                if (!staked) return
 
                 if (!isStakedToken) {
                   onPresentDeposit()
