@@ -43,8 +43,7 @@ export default function FarmHarvest({
   isApproval,
   pool,
 }: Props) {
-  const { balance, contractAddress, nftContractAddress } = pool
-
+  const { balance, contractAddress, nftContractAddress, maxDepositAmount } = pool
   const { account } = useWallet()
   const { onApproveAll } = useApproveAll(nftContractAddress, getAddress(contractAddress))
   const [loading, setLoading] = useState(false)
@@ -122,7 +121,12 @@ export default function FarmHarvest({
   }
 
   const [onPresentDeposit] = useModal(
-    <DepositModal max={new BigNumber(zionBalance)} onConfirm={onStakeZion} tokenName="Rasta" />,
+    <DepositModal
+      tokenName="Rasta"
+      onConfirm={onStakeZion}
+      max={new BigNumber(zionBalance).toNumber() > new BigNumber(maxDepositAmount).toNumber() ? new BigNumber(maxDepositAmount) : new BigNumber(zionBalance)}
+      balance={new BigNumber(zionBalance)}
+    />,
   )
 
   const [onPresentWithdraw] = useModal(

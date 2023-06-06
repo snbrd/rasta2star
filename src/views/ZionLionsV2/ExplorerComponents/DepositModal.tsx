@@ -11,16 +11,20 @@ interface DepositModalProps {
   onDismiss?: () => void
   tokenName?: string
   addLiquidityUrl?: string
+  balance?: BigNumber
 }
 
-const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, tokenName = '', addLiquidityUrl }) => {
+const DepositModal: React.FC<DepositModalProps> = ({ max, balance, onConfirm, onDismiss, tokenName = '', addLiquidityUrl }) => {
   const [val, setVal] = useState('')
   const [pendingTx, setPendingTx] = useState(false)
   const TranslateString = useI18n()
-  const fullBalance = useMemo(() => {
+  const fullMax = useMemo(() => {
     return getFullDisplayBalance(max)
   }, [max])
-  console.log(fullBalance)
+
+  const fullBalance = useMemo(() => {
+    return getFullDisplayBalance(balance)
+  }, [balance])
 
   const handleChange = useCallback(
     (e: React.FormEvent<HTMLInputElement>) => {
@@ -30,8 +34,10 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, 
   )
 
   const handleSelectMax = useCallback(() => {
-    setVal(fullBalance)
-  }, [fullBalance, setVal])
+    setVal(fullMax)
+  }, [fullMax, setVal]);
+
+  const isError = useMemo(() => Number(val) > Number(fullMax), [val, fullMax])
 
   return (
     <div
@@ -40,6 +46,7 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, 
     >
       <div className="text-2xl font-bold text-center pb-6">Stake {tokenName}</div>
       <ModalInput
+        isError={isError}
         value={val}
         onSelectMax={handleSelectMax}
         onChange={handleChange}
@@ -58,8 +65,8 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, onConfirm, onDismiss, 
         </button>
         <button
           type="button"
-          className="w-1/2 bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-lg px-3 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer"
-          disabled={pendingTx || fullBalance === '0' || !val || Number(val) > Number(fullBalance)}
+          className={`${pendingTx || fullMax === '0' || !val || isError ? "disabled " : ""} w-1/2 bg-gradient-to-l text-white from-green-rasta to-yellow-rasta  rounded-lg px-3 py-2 flex-row space-x-2 flex items-center justify-center cursor-pointer`}
+          disabled={pendingTx || fullMax === '0' || !val || isError}
           onClick={async () => {
             setPendingTx(true)
             await onConfirm(val)

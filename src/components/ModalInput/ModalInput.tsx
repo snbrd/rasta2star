@@ -10,9 +10,10 @@ interface ModalInputProps {
   value: string
   addLiquidityUrl?: string
   inputTitle?: string
+  isError?: boolean
 }
 
-const ModalInput: React.FC<ModalInputProps> = ({ max, onChange, onSelectMax, value, inputTitle }) => {
+const ModalInput: React.FC<ModalInputProps> = ({ max, isError, onChange, onSelectMax, value, inputTitle }) => {
   const TranslateString = useI18n()
   const isBalanceZero = max === '0' || !max
 
@@ -27,7 +28,7 @@ const ModalInput: React.FC<ModalInputProps> = ({ max, onChange, onSelectMax, val
       <div className="flex justify-between my-2">
         <input
           type="number"
-          className="border-2 border-gray-500 rounded-md outline-none px-2 w-1/2"
+          className={`${isError ? "border-red-500 " : "border-gray-500 "} border-2 rounded-md outline-none px-2 w-1/2`}
           onChange={onChange}
           placeholder="0"
           value={value}
@@ -44,8 +45,7 @@ const ModalInput: React.FC<ModalInputProps> = ({ max, onChange, onSelectMax, val
         </button>
       </div>
       <span className="text-xl mt-2">
-        {TranslateString(1120, 'Balance')}: <br />
-        {displayBalance.toLocaleString()}
+        {TranslateString(1120, 'Balance')}: {displayBalance.toLocaleString()}
       </span>
     </div>
   )
