@@ -193,14 +193,14 @@ export default function FarmHarvest({
                 if (loading) return
                 if (!staked) return
 
-                if (isApprovedToken) {
+                if (isApprovedToken && isStakedToken) {
                   onPresentDeposit()
                 } else {
                   await onApproveToken()
                 }
               }}
             >
-              <span>{isApprovedToken ? 'Stake More $ZION' : 'Approve'}</span>
+              <span>{isApprovedToken && isStakedToken ? 'Stake More $ZION' : 'Approve'}</span>
             </button>
             <button
               type="button"
