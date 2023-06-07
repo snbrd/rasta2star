@@ -71,9 +71,9 @@ export default function FooterCardFarms({ farmValue, farmBscLink, stackedValue, 
           className="flex flex-row space-x-4 items-center text-newpurple-400 cursor-pointer"
           onClick={() => setShow(!show)}
         >
-          <span className="font-bold text-md">DETAILS</span>
+          {/* <span className="font-bold text-md">DETAILS</span>
           {show && <FaIcons.FaChevronCircleUp className="text-newpurple-400" />}
-          {!show && <FaIcons.FaChevronCircleDown className="text-newpurple-400" />}
+          {!show && <FaIcons.FaChevronCircleDown className="text-newpurple-400" />} */}
         </div>
       </div>
     </div>
