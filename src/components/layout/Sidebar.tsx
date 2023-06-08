@@ -11,8 +11,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import MenuItem from './MenuItem'
 
-import ZionLogo from '../../assets/newimage/zion.jpg'
-// import Logo from '../../assets/newimage/ZION-logo-white.png'
 import Logo from '../../assets/newimage/zionwhite.png'
 
 export default function Sidebar() {
@@ -520,7 +518,7 @@ export default function Sidebar() {
 
 
           <div className="flex items-center">
-            <img src={ZionLogo} alt="token icon" width="20" className="mr-2 rounded-full" />
+            <img src='images/zion_coins/zion.png' alt="token icon" width="20" className="mr-2 rounded-full" />
             <span className="font-bold">${Math.round(zionPriceUsd.toNumber() * 1000) / 1000}</span>
           </div>
           {/* <div className="flex items-center mt-2">

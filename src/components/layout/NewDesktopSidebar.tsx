@@ -11,7 +11,6 @@ import {
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import MenuItem from './MenuItem'
-import ZionLogo from '../../assets/newimage/zion.jpg'
 // import Logo from '../../assets/newimage/ZION-logo-white.png'
 import Logo from '../../assets/newimage/zionwhite.png'
 
@@ -143,19 +142,19 @@ export default function NewDesktopSidebar() {
           path: 'https://docs.zionroyal.com/faq/rasta-audit',
           label: 'Audit',
         },
-      //  {
-      //    path: 'https://coinmarketcap.com/currencies/rasta-finance/',
-      //    label: 'CoinMarketCap',
-      //  },
-          // {
-          //   label: 'Docs',
-          //   path: 'https://docs.zionroyal.com/',
-          //   // path: 'https://docs.zionlabs.info',
-          // },
-          {
-            label: 'Education',
-            path: '/educations',
-          }
+        //  {
+        //    path: 'https://coinmarketcap.com/currencies/rasta-finance/',
+        //    label: 'CoinMarketCap',
+        //  },
+        // {
+        //   label: 'Docs',
+        //   path: 'https://docs.zionroyal.com/',
+        //   // path: 'https://docs.zionlabs.info',
+        // },
+        {
+          label: 'Education',
+          path: '/educations',
+        }
       ],
     },
     {
@@ -300,7 +299,7 @@ export default function NewDesktopSidebar() {
   //     parent: false,
   //     child: [],
   //   },
-    
+
   //   // {
   //   //   label: 'Launchpad',
   //   //   path: 'https://zionlp.com/launchpad-artists',
@@ -308,7 +307,7 @@ export default function NewDesktopSidebar() {
   //   //   child: [],
   //   // },
   //   // blog
-   
+
   //   // end blog
   //   // {
   //   //   label: 'Zion Launchpad',
@@ -464,12 +463,11 @@ export default function NewDesktopSidebar() {
         }`}
       > */}
       <nav
-        className={`h-full w-48 top-0 py-6 px-4 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${
-          sidebar ? 'left-0 ml-0' : ''
-        }`}
+        className={`h-full w-48 top-0 py-6 px-4 bg-black z-50 fixed transition duration-1000 flex flex-col justify-between overflow-x-auto ${sidebar ? 'left-0 ml-0' : ''
+          }`}
 
-        // data-aos="fade-right"
-        // data-aos-duration="1000"
+      // data-aos="fade-right"
+      // data-aos-duration="1000"
       >
         <span className="menu-bars absolute right-4 text-3xl text-white a cursor-pointer">
           <FaRegWindowClose onClick={showSidebar} className="hidden" />
@@ -477,7 +475,7 @@ export default function NewDesktopSidebar() {
 
         <div className="text-center">
           <Link to="/">
-          <LazyLoadImage src={Logo} alt="Logo" className="w-64 mx-auto d-block px-4" effect="blur" />
+            <LazyLoadImage src={Logo} alt="Logo" className="w-64 mx-auto d-block px-4" effect="blur" />
             {/* <LazyLoadImage src={Logo} alt="Logo" className="w-32 mx-auto d-block px-4" effect="blur" /> */}
             {/* <span className='text-heading uppercase font-bold text-3xl'>Zion Labs</span> */}
           </Link>
@@ -525,15 +523,15 @@ export default function NewDesktopSidebar() {
               })}
             </div>
           </div> */}
-        
+
 
           <div className="flex items-center">
-            <img src={ZionLogo} alt="token icon" width="20" className="mr-2 rounded-full" />
+            <img src='images/zion_coins/zion.png' alt="token icon" width="20" className="mr-2 rounded-full" />
             <span className="font-bold">${Math.round(zionPriceUsd.toNumber() * 1000) / 1000}</span>
           </div>
           {/* <div className="flex items-center mt-2">
-            <img src={MRastaIcon} alt="token icon" width="20" className="mr-2 rounded-full" />
-            <span className="font-bold">${Math.round(mRastaPriceUsd * 1000) / 1000}</span>
+            <img src='images/zion_coins/sound.png' alt="token icon" width="20" className="mr-2 rounded-full" />
+            <span className="font-bold">${Math.round(zionPriceUsd.toNumber() * 1000) / 1000}</span>
           </div> */}
         </div>
       </nav>
