@@ -1,15 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { useWallet } from '@binance-chain/bsc-use-wallet'
 
-// import BgImage from '../../../assets/favCreator-bg-leafs.jpg'
-import StakingCard from './FarmStakingCard'
-import CakeStats from './CakeStats'
-import TotalValueLockedCard from './TotalValueLockedCard'
 import SpaceBackground from '../../../assets/Interact-with-your-favorit-creators.jpg'
 
 export default function FavoriteCreator() {
-  const { account } = useWallet()
 
   return (
     <div>

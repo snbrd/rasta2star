@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import * as FaIcons from 'react-icons/fa'
 
 type Props = {
   farmStake?: string

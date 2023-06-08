@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import useI18n from 'hooks/useI18n'
 import useStake, { useApproveAll } from 'hooks/useAirFarm'
@@ -107,7 +107,9 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
     })()
   }, [contractAddress, id, account])
 
-  const apy = (() => {
+  const apy = useMemo(() => {
+    if (!rate) return 0;
+
     return new BigNumber(zionPriceUSD)
       .div(bnbPriceUSD)
       .times(rate)
@@ -120,7 +122,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool, removed = false }) => {
       .times(100)
       .toFixed(0)
       .toString()
-  })()
+  }, [zionPriceUSD, bnbPriceUSD, farmbalance, rate]);
 
   const { onApproveAll } = useApproveAll(nftContractAddress, getAddress(contractAddress))
   const { onStakeManual, onUnstakeManual } = useStake(getAddress(contractAddress))
