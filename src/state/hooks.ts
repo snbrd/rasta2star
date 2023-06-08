@@ -154,6 +154,26 @@ export const usePriceZionBusd = (): BigNumber => {
   return zionPrice
 }
 
+export const usePriceSoundBusd = (): BigNumber => {
+  const [soundPrice, setPrice] = useState(ZERO)
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch(
+          `https://api.dexscreener.com/latest/dex/pairs/bsc/0xb9b70fd010D783725cBc2281CF90f47331DfF97f`,
+        )
+        const { pair } = await response.json()
+        return setPrice(new BigNumber(pair?.priceUsd || 0))
+      } catch (error) {
+        return setPrice(ZERO)
+      }
+    })()
+  }, [])
+
+  return soundPrice
+}
+
 export const usePriceLatteBnb = (): BigNumber => {
   const [lattePrice, setPrice] = useState(ZERO)
 

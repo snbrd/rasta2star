@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { usePriceZionBusd } from 'state/hooks'
+import { usePriceSoundBusd, usePriceZionBusd } from 'state/hooks'
 
 import { Link } from 'react-router-dom'
 
@@ -20,6 +20,7 @@ export default function NewDesktopSidebar() {
     setSidebar(!sidebar)
   }
   const zionPriceUsd = usePriceZionBusd()
+  const soundPriceUsd = usePriceSoundBusd()
 
   const menu = [
     {
@@ -529,10 +530,10 @@ export default function NewDesktopSidebar() {
             <img src='images/zion_coins/zion.png' alt="token icon" width="20" className="mr-2 rounded-full" />
             <span className="font-bold">${Math.round(zionPriceUsd.toNumber() * 1000) / 1000}</span>
           </div>
-          {/* <div className="flex items-center mt-2">
+          <div className="flex items-center mt-2">
             <img src='images/zion_coins/sound.png' alt="token icon" width="20" className="mr-2 rounded-full" />
-            <span className="font-bold">${Math.round(zionPriceUsd.toNumber() * 1000) / 1000}</span>
-          </div> */}
+            <span className="font-bold">${Math.round(soundPriceUsd.toNumber() * 1000) / 1000}</span>
+          </div>
         </div>
       </nav>
     </div>
