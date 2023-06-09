@@ -53,7 +53,7 @@ export default function HeroSection() {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-              <span className="text-blue-zion_cyan text-heading font-bold uppercase">Zion Labs</span>
+              <span className="text-blue-zion_cyan text-heading font-bold uppercase">Zion Royal</span>
               <br /> 
               <span className="hidden md:block">
                 Enjoy your Zion <br/> Experience on Web 3
@@ -64,7 +64,7 @@ export default function HeroSection() {
             </h1>
             <p className="mt-4 md:mt-8 text-center md:text-left" data-aos="fade-right" data-aos-duration="2000">
             {/* We are a creative tech-collective developing innovative technologies on the blockchain; with a core focus on augmenting the music industry with artist-centered DeFi tools.  */}
-            ZionLabs is a creative-tech collective developing novel technologies on the blockchain; to be used within the music industry and beyond. Powered by the Binance Blockchain.
+            Zion Royal is a creative-tech collective developing novel technologies on the blockchain; to be used within the music industry and beyond. Powered by the Binance Blockchain.
             </p>
 
             <p className="mt-4 md:mt-8 text-center md:text-left  break-words" data-aos="fade-right" data-aos-duration="2000">

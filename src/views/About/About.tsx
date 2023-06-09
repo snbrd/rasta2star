@@ -32,7 +32,7 @@ return(
                     <div className='flex flex-col gap-4 mt-4 md:pr-16'>
                     <p>
                     {/* The Zion Launchpad is an NFT based utility minting / launchpad for artists.  */}
-                    Welcome to Zion Labs, the ultimate NFT-based utility minting and launchpad platform for artists!
+                    Welcome to Zion Royal, the ultimate NFT-based utility minting and launchpad platform for artists!
                     </p>
 
                     <p>
@@ -42,11 +42,11 @@ return(
 
                     <p>
                     {/* stake their purchased NFT from the music artists on the Zion Labs platform. */}
-                    Not only can artists earn revenue from their NFT sales, but users can also further monetize their purchases by staking them on our platform. By staking NFTs from music artists on Zion Labs, users can earn even more revenue and contribute to the growth of the art community.
+                    Not only can artists earn revenue from their NFT sales, but users can also further monetize their purchases by staking them on our platform. By staking NFTs from music artists on Zion Royal, users can earn even more revenue and contribute to the growth of the art community.
                     </p>
 
                     <p>
-                    Join our community of artists and art enthusiasts today and experience the power of Zion Labs for yourself!
+                    Join our community of artists and art enthusiasts today and experience the power of Zion Royal for yourself!
                     </p>
 
                     </div>

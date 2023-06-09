@@ -235,7 +235,7 @@ function Mint() {
 
         <div className='py-8 container mx-auto'>
           <p className='text-center px-12'>
-          Welcome to Zion Labs, where art meets blockchain. Our NFTs are more than just digital assets,  they are a unique expression of creativity and innovation. With our easy-to-use minting platform,  you can create and own one-of-a-kind NFTs that are securely verified on the blockchain.
+          Welcome to Zion Royal, where art meets blockchain. Our NFTs are more than just digital assets,  they are a unique expression of creativity and innovation. With our easy-to-use minting platform,  you can create and own one-of-a-kind NFTs that are securely verified on the blockchain.
           </p>
         </div>
 

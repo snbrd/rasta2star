@@ -157,13 +157,13 @@ const Home: React.FC = () => {
 
                 <div className='flex flex-col gap-y-5 mt-10 lg:px-24'>
                   <p className='text-center md:text-left'>
-                    Zion Labs&apos; Novel Collection of Zion Lions is the ultimate NFT collection for collectors and enthusiasts seeking unique and valuable digital assets. This one-of-a-kind collection includes 6200 randomly minted NFTs, each with a rarity class and corresponding rewards.
+                    Zion Royal&apos; Novel Collection of Zion Lions is the ultimate NFT collection for collectors and enthusiasts seeking unique and valuable digital assets. This one-of-a-kind collection includes 6200 randomly minted NFTs, each with a rarity class and corresponding rewards.
                   </p>
                   <p className='text-center  md:text-left'>
                     You can acquire rare and valuable digital assets and earn high APR rewards by staking them on our platform. The Zion Lions stand out from other NFT collections with their set BNB value, making it easy to evaluate their worth. To acquire your own Zion Lion, simply visit our minting page and purchase a randomly generated NFT from our collection.
                   </p>
                   <p className='text-center  md:text-left'>
-                    With affordable minting fees and the potential for high rewards, the Zion Lions are the perfect addition to any NFT collection. Join our community of collectors and enthusiasts today and start minting your Zion Lions on Zion Labs&apos; platform!
+                    With affordable minting fees and the potential for high rewards, the Zion Lions are the perfect addition to any NFT collection. Join our community of collectors and enthusiasts today and start minting your Zion Lions on Zion Royal&apos; platform!
                   </p>
 
                   <div className='w-full text-center mt-10 mb-2 lg:mb-8'>

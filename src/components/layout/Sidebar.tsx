@@ -36,7 +36,7 @@ export default function Sidebar() {
       child: [
         {
           path: '/about',
-          label: 'Zion Labs',
+          label: 'Zion Royal',
         },
         {
           path: '/win-big',

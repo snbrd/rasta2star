@@ -3,7 +3,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import * as FaIcons from 'react-icons/fa'
 // import * as Io5Icons from 'react-icons/io5'
 // import Logo from '../../assets/z1-rescaled.png'
-import Logo from '../../assets/newimage/ZION-logo-white.png'
+// import Logo from '../../assets/newimage/ZION-logo-white.png'
+import Logo from '../../assets/newimage/zionwhite.png'
 
 export default function Footer() {
   // const textUnderLogo = ['@zionlabs_info', 'www.zionlabs.info']
@@ -270,7 +271,7 @@ export default function Footer() {
             
             <span>
               <a href="/" className="text-yellow-rasta">
-                Zion Labs
+                Zion Royal
               </a>{' '}
               2023 // All Rights Reserved
             </span>

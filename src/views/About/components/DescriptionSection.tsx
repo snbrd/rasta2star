@@ -12,7 +12,7 @@ export default function DescriptionSection() {
         <hr className="w-1/2 md:w-1/6 mx-auto border-2 border-blue-zion_cyan" />
       </div>
       <p>
-        RASTA is our tax-free currency for the Zion Labs artistic ecosystem. Our art and launchpad creation is our
+        RASTA is our tax-free currency for the Zion Royal artistic ecosystem. Our art and launchpad creation is our
         stored value.
       </p>
 
@@ -24,7 +24,7 @@ export default function DescriptionSection() {
       <p>10% of all Rasta staking rewards are put into liquidity to maintain effective trading.</p>
 
       <p>
-        For a sustainable future and longevity of our Zion Labs ecosystem, we will always be tax-free. We believe art
+        For a sustainable future and longevity of our Zion Royal ecosystem, we will always be tax-free. We believe art
         has a big future in blockchain adoption.
       </p>
       {/* <p>
