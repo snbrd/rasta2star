@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { FaChevronCircleUp, FaChevronCircleDown } from 'react-icons/fa'
 
 type Props = {
   farmStake?: string
@@ -21,19 +22,26 @@ export default function FooterCardFarms({ farmValue, farmBscLink, stackedValue, 
     <div className="space-y-8">
       {show && (
         <div>
-          <div className="flex justify-between w-full mt-8">
-            <span className="text-black-rasta font-bold">Staked Value</span>
+          <div className="flex justify-between w-full mt-5">
+            <span className="text-black-rasta font-bold">Total NFTs staked</span>
             <span className="text-black-rasta font-bold"> </span>
             <div className="flex flex-col md:flex-row space-x-4">
-              <span className="text-black-rasta font-bold">{numberWithCommas((Number(farmValue) * 0.18).toFixed(2))} BNB</span>
+              <span className="text-newpurple-400 font-bold">{farmValue} NFTs</span>
+            </div>
+          </div>
+          <div className="flex justify-between w-full mt-5">
+            <span className="text-black-rasta font-bold">BNB Value</span>
+            <span className="text-black-rasta font-bold"> </span>
+            <div className="flex flex-col md:flex-row space-x-4">
+              <span className="text-newpurple-400 font-bold">{numberWithCommas((Number(farmValue) * 0.18).toFixed(2))} BNB</span>
             </div>
           </div>
           {type && (
-            <div className="flex justify-between w-full mt-8">
+            <div className="flex justify-between w-full mt-5">
               <span className="text-black-rasta font-bold">My NFTs Staked</span>
               <span className="text-black-rasta font-bold"> </span>
               <div className="flex flex-col md:flex-row space-x-4">
-                <span className="text-black-rasta font-bold">{numberWithCommas(stackedValue)} NFTs</span>
+                <span className="text-newpurple-400 font-bold">{numberWithCommas(stackedValue)} NFTs</span>
               </div>
             </div>
           )}
@@ -41,38 +49,19 @@ export default function FooterCardFarms({ farmValue, farmBscLink, stackedValue, 
       )}
       <div className="flex justify-between w-full items-center mt-5">
         <div>
-          {/* <span className="text-red-rasta">
-            <a href={farmBscLink} target="_blank" rel="noreferrer">
-              View on BscScan
-            </a>
-          </span> */}
-          {/* <span className="text-blue-zion_cyan">
-            <a href={farmBscLink} target="_blank" rel="noreferrer">
-              View on BscScan
-            </a>
-          </span> */}
           <span className="text-newpurple-400">
             <a href={farmBscLink} target="_blank" rel="noreferrer">
               View on BscScan
             </a>
           </span>
         </div>
-        {/* <div
-          className="flex flex-row space-x-4 items-center text-red-rasta cursor-pointer"
-          onClick={() => setShow(!show)}
-          style={{ color: 'red' }}
-        > */}
-        {/* <div
-          className="flex flex-row space-x-4 items-center text-blue-zion_cyan cursor-pointer"
-          onClick={() => setShow(!show)}
-        > */}
         <div
           className="flex flex-row space-x-4 items-center text-newpurple-400 cursor-pointer"
           onClick={() => setShow(!show)}
         >
-          {/* <span className="font-bold text-md">DETAILS</span>
-          {show && <FaIcons.FaChevronCircleUp className="text-newpurple-400" />}
-          {!show && <FaIcons.FaChevronCircleDown className="text-newpurple-400" />} */}
+          <span className="font-bold text-md">DETAILS</span>
+          {show && <FaChevronCircleUp className="text-newpurple-400" />}
+          {!show && <FaChevronCircleDown className="text-newpurple-400" />}
         </div>
       </div>
     </div>
