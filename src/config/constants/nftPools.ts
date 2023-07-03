@@ -20,7 +20,7 @@ const nftPools = [
     harvest: true,
     isFinished: false,
     tokenDecimals: 18,
-    maxDepositAmount: '15000000000000000000000',
+    maxDepositAmount: '30000000000000000000000',
     depositFee: 0,
     ribbon: true,
     ribbonText: 'New',
